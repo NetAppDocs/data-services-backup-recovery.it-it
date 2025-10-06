@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kvm.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, workloads, protect 
+summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per poterli proteggere. 
+---
+= Scopri i carichi di lavoro KVM in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery deve prima rilevare gli host KVM e le macchine virtuali per poterli proteggere.
+
+*Ruolo di console obbligatorio* Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+
+
+== Aggiungi un host KVM e scopri le risorse
+
+Aggiungi le informazioni sull'host KVM e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro.  All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Nel riquadro KVM, seleziona *Scopri e gestisci*.
++
+Se è la prima volta che accedi a questo servizio, hai già un sistema nella Console ma non hai ancora individuato alcuna risorsa, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
+
+. Seleziona *Scopri risorse*.
+. Inserisci le seguenti informazioni:
++
+.. *Tipo di carico di lavoro*: selezionare *KVM*.
+.. Se non hai ancora memorizzato le credenziali per questo host KVM, seleziona *Aggiungi credenziali*.
++
+... Selezionare l'agente della console da utilizzare con questo host.
+... Inserisci un nome per questa credenziale.
+... Scegliere se utilizzare credenziali di root o credenziali non di root.
+... Inserisci il nome utente e la password per l'account.
+... Selezionare *Fatto*.
+
+
+.. *Registrazione host*: aggiungi un nuovo host KVM.  Immettere l'FQDN o l'indirizzo IP dell'host, le credenziali, l'agente della console e il numero di porta.
+
+
+. Seleziona *Scopri*.
++
+
+TIP: Questo processo potrebbe richiedere alcuni minuti.
+
+
+
+.Risultato
+Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventario.
+
+
+
+== Continua alla dashboard di NetApp Backup and Recovery
+
+. Per visualizzare la dashboard NetApp Backup and Recovery, dal menu in alto selezionare *Dashboard*.
+. Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
+

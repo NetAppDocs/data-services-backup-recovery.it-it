@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore.html 
+keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+---
+= Ripristina i carichi di lavoro VMware con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ripristina i carichi di lavoro VMware da copie snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+
+.Ripristina da queste posizioni
+È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:
+
+* Ripristina da una posizione primaria (snapshot locale)
+* Ripristina da una risorsa replicata su un archivio secondario
+* Ripristina da un backup di archiviazione di oggetti
+
+
+.Ripristinare questi punti
+È possibile ripristinare i dati in questi punti:
+
+* Ripristina la posizione originale
+
+
+.Considerazioni sul ripristino da storage di oggetti
+Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e la protezione ransomware nei criteri di backup), ti verrà chiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
+
+
+TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
+
+
+
+== Come funziona il ripristino dei carichi di lavoro
+
+Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
+
+* Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
+* Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema originale o su un sistema ONTAP locale.
++
+image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flusso per ripristinare una risorsa"]
+
+* Quando si ripristina un backup da un archivio di oggetti, è possibile ripristinare i dati nel sistema originale o in un sistema ONTAP locale.
+
+
+Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare una risorsa anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. È possibile cercare l'istantanea utilizzando i filtri.
+
+
+
+== Ripristina i dati del carico di lavoro dall'opzione Ripristina (Cerca e ripristina)
+
+Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
+
+*Ruolo richiesto della console NetApp * Ruolo di visualizzatore di storage, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Macchine virtuali*.
+. Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al vCenter, al datacenter o al datastore in cui si trova la risorsa da ripristinare.
++
+Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+
+. Seleziona lo snapshot che vuoi ripristinare.
++
+Viene visualizzato un elenco di opzioni di posizione di ripristino.
+
+. Selezionare la posizione di ripristino in cui si desidera ripristinare lo snapshot:
++
+** Locale: ripristina lo snapshot nella posizione originale.
+** Archiviazione secondaria: ripristina lo snapshot in una posizione di archiviazione secondaria.
++
+Se si sceglie l'archiviazione secondaria, immettere le informazioni sulla posizione di origine e di destinazione, nonché la posizione di origine e secondaria per i log.
+
+** Archiviazione oggetti: ripristina lo snapshot in una posizione di archiviazione oggetti.
++
+Se si sceglie l'archiviazione di oggetti, verificare se si desidera eseguire nuovamente la scansione dello snapshot prima del ripristino.
+
+
+
+. Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.
++
+Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+
+[discrete]
+===== Selezione della destinazione
+
+. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+[role="tabbed-block"]
+====
+.Ripristina nella posizione originale
+--
+Nella pagina dei dettagli della destinazione di ripristino, immettere le seguenti informazioni:
+
+. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. I volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
+. *Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
+. *Opzioni post-ripristino*:
++
+** *Riavvia VM*: selezionare questa opzione per riavviare la VM al termine dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
+** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+
+
+. Sezione *Notifiche*:
++
+** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
+
+
+. Selezionare *Ripristina*.
+
+
+--
+.Ripristina in posizione alternativa
+--
+Non disponibile per l'anteprima VMware.
+
+. Selezionare *Ripristina*.
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

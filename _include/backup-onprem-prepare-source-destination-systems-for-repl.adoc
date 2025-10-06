@@ -1,0 +1,23 @@
+= Requisiti di rete ONTAP in sede
+:allow-uri-read: 
+
+
+Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizzando NetApp Backup and Recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino i seguenti requisiti di rete.
+
+
+
+==== Requisiti di rete ONTAP in sede
+
+* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud.  In genere si tratta di una connessione VPN.
+* I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
++
+Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+
+
+
+
+
+==== Requisiti di rete Cloud Volumes ONTAP
+
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105.  Queste regole sono incluse nel gruppo di sicurezza predefinito.
+

@@ -1,0 +1,242 @@
+---
+settings:
+  name: NetApp Backup and Recovery
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  filter:
+    label: Fornitore di cloud
+    default: Tutti i provider cloud
+    options:
+    - name: Servizi Web Amazon
+      alias: AWS
+      id: aws
+    - name: Google Cloud
+      alias: Google Cloud
+      id: gcp
+    - name: Microsoft Azure
+      alias: Azzurro
+      id: azure
+  langs: it-it,us-en,de-de,es-es,fr-fr,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: Documentazione NetApp Backup and Recovery
+    url: "/index.html"
+  - title: Note di rilascio
+    entries:
+    - title: Cosa c'è di nuovo
+      url: "/whats-new.html"
+    - title: Limitazioni note per i carichi di lavoro dei volumi ONTAP
+      url: "/br-reference-limitations.html"
+    - title: Limitazioni note per i carichi di lavoro di Microsoft SQL Server
+      url: "/br-limitations.html"
+    - title: Limitazioni note per i carichi di lavoro VMware
+      url: "/br-limitations-vmware.html"
+    - title: Limitazioni note per i carichi di lavoro Hyper-V
+      url: "/br-limitations-hyperv.html"
+    - title: Limitazioni note per i carichi di lavoro KVM
+      url: "/br-limitations-kvm.html"
+    - title: Limitazioni note per i carichi di lavoro Oracle
+      url: "/br-limitations-oracle.html"
+  - title: Iniziare
+    entries:
+    - title: Scopri di più su NetApp Backup and Recovery
+      url: "/concept-backup-to-cloud.html"
+    - title: Prerequisiti per NetApp Backup and Recovery
+      url: "/concept-start-prereq.html"
+    - title: Impostare la licenza per NetApp Backup and Recovery
+      url: "/br-start-licensing.html"
+    - title: Configurare le destinazioni di backup prima di utilizzare NetApp Backup
+        and Recovery
+      url: "/br-start-setup.html"
+    - title: Accedi a NetApp Backup and Recovery
+      url: "/br-start-login.html"
+    - title: Scopri le destinazioni di backup
+      url: "/br-start-discover-backup-targets.html"
+    - title: Passa a diversi carichi di lavoro di backup e ripristino NetApp
+      url: "/br-start-switch-ui.html"
+    - title: Configurare le impostazioni generali NetApp Backup and Recovery
+      url: "/br-start-configure.html"
+  - title: Utilizzare NetApp Backup and Recovery
+    entries:
+    - title: Visualizza lo stato di protezione nella Dashboard
+      url: "/br-use-dashboard.html"
+    - title: Creare policy per gestire backup e ripristini
+      url: "/br-use-policies-create.html"
+    - title: Proteggere i carichi di lavoro del volume ONTAP
+      entries:
+      - title: Panoramica dei carichi di lavoro del volume Protect ONTAP
+        url: "/prev-ontap-protect-overview.html"
+      - title: Pianifica il tuo percorso di protezione per i volumi ONTAP
+        url: "/prev-ontap-protect-journey.html"
+      - title: Gestire le policy per i volumi ONTAP
+        url: "/prev-ontap-policy-manage.html"
+      - title: Opzioni di policy di backup su oggetto per volumi ONTAP
+        url: "/prev-ontap-policy-object-options.html"
+      - title: Gestisci le opzioni delle impostazioni avanzate dei criteri di backup
+          su oggetto
+        url: "/prev-ontap-policy-object-advanced-settings.html"
+      - title: Backup Cloud Volumes ONTAP su Amazon S3
+        url: "/prev-ontap-backup-cvo-aws.html"
+      - title: Eseguire il backup Cloud Volumes ONTAP su Azure Blob
+        url: "/prev-ontap-backup-cvo-azure.html"
+      - title: Esegui il backup Cloud Volumes ONTAP su Google Cloud
+        url: "/prev-ontap-backup-cvo-gcp.html"
+      - title: Eseguire il backup ONTAP in locale su Amazon S3
+        url: "/prev-ontap-backup-onprem-aws.html"
+      - title: Eseguire il backup ONTAP locale su Azure Blob
+        url: "/prev-ontap-backup-onprem-azure.html"
+      - title: Esegui il backup ONTAP on-premise su Google Cloud
+        url: "/prev-ontap-backup-onprem-gcp.html"
+      - title: Eseguire il backup ONTAP in sede su ONTAP S3
+        url: "/prev-ontap-backup-onprem-ontaps3.html"
+      - title: Backup di ONTAP in locale su StorageGRID
+        url: "/prev-ontap-backup-onprem-storagegrid.html"
+      - title: Migrare i volumi utilizzando SnapMirror su Cloud Resync
+        url: "/prev-ontap-migrate-resync.html"
+      - title: Ripristinare i dati di configurazione in un sito oscuro
+        url: "/reference-backup-cbs-db-in-dark-site.html"
+      - title: Gestire i backup ONTAP
+        url: "/prev-ontap-backup-manage.html"
+      - title: Ripristina dai backup ONTAP
+        url: "/prev-ontap-restore.html"
+    - title: Proteggere i carichi di lavoro di Microsoft SQL Server
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro di Microsoft SQL
+          Server
+        url: "/br-use-mssql-protect-overview.html"
+      - title: Configurare elementi aggiuntivi se si importa da SnapCenter
+        url: "/concept-start-prereq-snapcenter-import.html"
+      - title: Scopri i carichi di lavoro di Microsoft SQL Server
+        url: "/br-start-discover.html"
+      - title: Eseguire il backup dei carichi di lavoro di Microsoft SQL Server
+        url: "/br-use-mssql-backup.html"
+      - title: Ripristinare i carichi di lavoro di Microsoft SQL Server
+        url: "/br-use-mssql-restore.html"
+      - title: Clonazione dei carichi di lavoro di Microsoft SQL Server
+        url: "/br-use-mssql-clone.html"
+      - title: Gestire l'inventario di Microsoft SQL Server
+        url: "/br-use-manage-inventory.html"
+      - title: Gestire gli snapshot di Microsoft SQL Server
+        url: "/br-use-manage-snapshots.html"
+      - title: Creare report di Microsoft SQL Server
+        url: "/br-use-reports.html"
+    - title: Protezione dei carichi di lavoro VMware (anteprima senza plug-in SnapCenter
+        per VMware)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro VMware
+        url: "/br-use-vmware-protect-overview.html"
+      - title: Scopri i carichi di lavoro VMware
+        url: "/br-use-vmware-discovery.html"
+      - title: Crea e gestisci gruppi di protezione per carichi di lavoro VMware
+        url: "/br-use-vmware-protection-groups.html"
+      - title: Eseguire il backup dei carichi di lavoro VMware
+        url: "/br-use-vmware-backup.html"
+      - title: Ripristinare i carichi di lavoro VMware
+        url: "/br-use-vmware-restore.html"
+    - title: Proteggi i carichi di lavoro VMware (con il plug-in SnapCenter per VMware)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali
+        url: "/prev-vmware-protect-overview.html"
+      - title: Prerequisiti per la protezione dei carichi di lavoro delle macchine
+          virtuali
+        url: "/prev-vmware-prereqs.html"
+      - title: Registra il SnapCenter Plug-in for VMware vSphere
+        url: "/prev-vmware-register-snapcenter.html"
+      - title: Creare una policy per eseguire il backup dei dati della macchina virtuale
+        url: "/prev-vmware-policy-create.html"
+      - title: Eseguire il backup degli archivi dati su Amazon Web Services
+        url: "/prev-vmware-backup-aws.html"
+      - title: Eseguire il backup degli archivi dati su Microsoft Azure
+        url: "/prev-vmware-backup-azure.html"
+      - title: Eseguire il backup degli archivi dati su Google Cloud Platform
+        url: "/prev-vmware-backup-gcp.html"
+      - title: Eseguire il backup degli archivi dati su StorageGRID
+        url: "/prev-vmware-backup-storagegrid.html"
+      - title: Gestire la protezione dei dati degli archivi dati e delle macchine
+          virtuali
+        url: "/prev-vmware-manage.html"
+      - title: Ripristinare i dati e gli archivi dati delle macchine virtuali
+        url: "/prev-vmware-restore.html"
+    - title: Protezione dei carichi di lavoro KVM (anteprima)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro KVM
+        url: "/br-use-kvm-protect-overview.html"
+      - title: Scopri i carichi di lavoro KVM
+        url: "/br-start-discover-kvm.html"
+      - title: Crea e gestisci gruppi di protezione per carichi di lavoro KVM
+        url: "/br-use-kvm-protection-groups.html"
+      - title: Eseguire il backup dei carichi di lavoro KVM
+        url: "/br-use-kvm-backup.html"
+      - title: Ripristinare i carichi di lavoro KVM
+        url: "/br-use-kvm-restore.html"
+    - title: Protezione dei carichi di lavoro Hyper-V (anteprima)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro Hyper-V
+        url: "/br-use-hyperv-protect-overview.html"
+      - title: Scopri i carichi di lavoro Hyper-V
+        url: "/br-start-discover-hyperv.html"
+      - title: Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V
+        url: "/br-use-hyperv-protection-groups.html"
+      - title: Eseguire il backup dei carichi di lavoro Hyper-V
+        url: "/br-use-hyperv-backup.html"
+      - title: Ripristinare i carichi di lavoro Hyper-V
+        url: "/br-use-hyperv-restore.html"
+    - title: Proteggi i carichi di lavoro Oracle (anteprima)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro Oracle
+        url: "/br-use-oracle-protect-overview.html"
+      - title: Scopri i carichi di lavoro Oracle
+        url: "/br-start-discover-oracle.html"
+      - title: Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle
+        url: "/br-use-oracle-protection-groups.html"
+      - title: Eseguire il backup dei carichi di lavoro Oracle
+        url: "/br-use-oracle-backup.html"
+      - title: Ripristinare i carichi di lavoro Oracle
+        url: "/br-use-oracle-restore.html"
+      - title: Montare e smontare i punti di ripristino
+        url: "/br-use-oracle-mount-unmount.html"
+    - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
+        url: "/br-use-kubernetes-protect-overview.html"
+      - title: Scopri i carichi di lavoro di Kubernetes
+        url: "/br-start-discover-kubernetes.html"
+      - title: Aggiungi e proteggi le applicazioni Kubernetes
+        url: "/br-use-protect-kubernetes-applications.html"
+      - title: Ripristina le applicazioni Kubernetes
+        url: "/br-use-restore-kubernetes-applications.html"
+      - title: Gestire i cluster Kubernetes
+        url: "/br-use-manage-kubernetes-clusters.html"
+      - title: Gestire le applicazioni Kubernetes
+        url: "/br-use-manage-kubernetes-applications.html"
+      - title: Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes
+        url: "/br-use-manage-execution-hook-templates.html"
+    - title: Monitorare i lavori
+      url: "/br-use-monitor-tasks.html"
+    - title: Riavvia NetApp Backup and Recovery
+      url: "/reference-restart-backup.html"
+  - title: Automatizza con l'API REST
+    url: "/br-api-backup-restore.html"
+  - title: Riferimento
+    entries:
+    - title: Criteri in SnapCenter confrontati con NetApp Backup and Recovery
+      url: "/reference-policy-differences-snapcenter.html"
+    - title: Ruoli e privilegi NetApp Backup and Recovery
+      url: "/reference-roles.html"
+    - title: Ripristinare i dati di NetApp Backup and Recovery in un sito buio
+      url: "/reference-backup-cbs-db-in-dark-site.html"
+    - title: Livelli di archiviazione AWS supportati
+      url: "/prev-reference-aws-archive-storage-tiers.html"
+    - title: Livelli di archiviazione di Azure supportati
+      url: "/prev-reference-azure-archive-storage-tiers.html"
+    - title: Livelli di archiviazione supportati da Google Cloud
+      url: "/prev-reference-gcp-archive-storage-tiers.html"
+  - title: Note legali
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

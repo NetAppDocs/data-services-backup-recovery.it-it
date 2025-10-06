@@ -1,0 +1,42 @@
+= SnapMirror su Cloud Resync per le migrazioni dei volumi
+:allow-uri-read: 
+
+
+
+
+=== SnapMirror su Cloud Resync per le migrazioni dei volumi
+
+La funzionalità SnapMirror to Cloud Resync semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp .  Quando un volume viene migrato tramite SnapMirror Logical Replication (LRSE) da una distribuzione NetApp locale a un'altra o a una soluzione basata su cloud come Cloud Volumes ONTAP o Cloud Volumes Service, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
+
+Questa funzionalità elimina la necessità di un'operazione di reimpostazione della baseline, che richiede molto tempo e risorse, consentendo alle operazioni di backup di continuare anche dopo la migrazione.  Questa funzionalità è utile negli scenari di migrazione del carico di lavoro, supportando sia FlexVols che FlexGroups ed è disponibile a partire dalla versione 9.16.1 ONTAP .
+
+Mantenendo la continuità del backup in tutti gli ambienti, SnapMirror to Cloud Resync migliora l'efficienza operativa e riduce la complessità della gestione dei dati ibridi e multi-cloud.
+
+Per i dettagli su come eseguire l'operazione di risincronizzazione, vedere https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["Migrare i volumi utilizzando SnapMirror su Cloud Resync"] .
+
+
+
+=== Supporto per l'archivio oggetti MinIO di terze parti (anteprima)
+
+NetApp Backup and Recovery estende ora il suo supporto agli archivi di oggetti di terze parti, concentrandosi principalmente su MinIO.  Questa nuova funzionalità di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e ripristino.
+
+Con questa versione di anteprima, speriamo di garantire una solida integrazione con gli archivi di oggetti di terze parti prima che venga implementata la funzionalità completa.  Vi invitiamo a esplorare questa nuova funzionalità e a fornire feedback per contribuire a migliorare il servizio.
+
+
+IMPORTANT: Questa funzionalità non dovrebbe essere utilizzata in produzione.
+
+*Limitazioni della modalità di anteprima*
+
+Sebbene questa funzionalità sia in anteprima, presenta alcune limitazioni:
+
+* La funzione Bring Your Own Bucket (BYOB) non è supportata.
+* L'abilitazione di DataLock nel criterio non è supportata.
+* L'abilitazione della modalità di archiviazione nel criterio non è supportata.
+* Sono supportati solo gli ambienti ONTAP locali.
+* MetroCluster non è supportato.
+* Le opzioni per abilitare la crittografia a livello di bucket non sono supportate.
+
+
+*Iniziare*
+
+Per iniziare a utilizzare questa funzionalità di anteprima, è necessario abilitare un flag sull'agente della console.  È quindi possibile immettere i dettagli di connessione dell'archivio oggetti di terze parti MinIO nel flusso di lavoro di protezione selezionando l'archivio oggetti *Compatibile con terze parti* nella sezione di backup.

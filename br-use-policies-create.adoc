@@ -1,0 +1,308 @@
+---
+sidebar: sidebar 
+permalink: br-use-policies-create.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che stabiliscano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
+---
+= Crea e gestisci policy per gestire i backup in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+In NetApp Backup and Recovery, puoi creare policy personalizzate che stabiliscono la frequenza dei backup, l'ora in cui vengono eseguiti e il numero di file di backup conservati.
+
+
+NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
+
+Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery. Vedere link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+
+È possibile raggiungere i seguenti obiettivi relativi alle politiche:
+
+* Creare un criterio di snapshot locale
+* Creare una policy per la replica su storage secondario
+* Creare una policy per le impostazioni di archiviazione degli oggetti
+* Configurare le impostazioni avanzate dei criteri
+* Modifica policy (non disponibile per i carichi di lavoro di anteprima VMware)
+* Elimina le policy
+
+
+
+
+== Visualizza le politiche
+
+. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Esaminare i dettagli di questa politica.
++
+** *Carico di lavoro*: alcuni esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.
+** *Tipo di backup*: alcuni esempi includono il backup completo e il backup del registro.
+** *Architettura*: Alcuni esempi includono snapshot locale, fan-out, cascading, disco su disco e disco su archivio oggetti.
+** *Risorse protette*: mostra quante risorse sul totale delle risorse di quel carico di lavoro sono protette.
+** *Protezione ransomware*: indica se la policy include il blocco degli snapshot sullo snapshot locale, il blocco degli snapshot sull'archiviazione secondaria o il blocco DataLock sull'archiviazione degli oggetti.
+
+
+
+
+
+
+== Crea una politica
+
+È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti.  Una parte della strategia 3-2-1 prevede la creazione di una copia snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
+
+*Ruolo richiesto della console NetApp * Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Prima di iniziare
+Se si prevede di replicare su un archivio secondario e si desidera utilizzare il blocco degli snapshot sugli snapshot locali o sull'archivio secondario ONTAP remoto, è necessario innanzitutto inizializzare il clock di conformità ONTAP a livello di cluster.  Questo è un requisito per abilitare il blocco degli snapshot nella policy.
+
+Per istruzioni su come fare, fare riferimento a https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inizializza l'orologio di conformità in ONTAP"^] .
+
+Per informazioni generali sul blocco degli snapshot, fare riferimento a https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["Blocco degli snapshot in ONTAP"^] .
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
+. Nella pagina Criteri, fornire le seguenti informazioni.
++
+** Sezione *Dettagli*:
++
+*** Tipo di carico di lavoro: seleziona il carico di lavoro che utilizzerà il criterio.
+*** Inserisci un nome per la policy.
++
+
+TIP: Per un elenco dei personaggi da evitare, vedere il suggerimento.
+
+*** Selezionare un agente della console dall'elenco *Agente*.
+
+
+** Sezione *Architettura di backup*: selezionare la freccia rivolta verso il basso e scegliere il flusso di dati per il backup, ad esempio fan-out 3-2-1, cascata 3-2-1 o disco su disco.
++
+*** *Fanout 3-2-1*: da storage primario (disco) a storage secondario (disco) a cloud (archivio oggetti). Crea più copie di dati su diversi sistemi di archiviazione, ad esempio configurazioni ONTAP su ONTAP e ONTAP su object-store. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID. Queste configurazioni aiutano a ottenere una protezione ottimale dei dati e un ripristino in caso di emergenza.
++
+
+NOTE: Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
+
++
+Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o sulle VM sul primario e lo replica dall'archiviazione su disco primaria all'archiviazione su disco secondaria, nonché dallo storage primario allo storage di oggetti cloud.
+
+*** *Cascata 3-2-1*: (non disponibile per i carichi di lavoro Kubernetes) Da storage primario (disco) a storage secondario (disco) e da storage primario (disco) a storage cloud (archivio oggetti). Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID. Ciò crea una catena di replicazione dei dati su più sistemi per garantire ridondanza e affidabilità.
++
+
+NOTE: Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
+
++
+Per i carichi di lavoro VMware, questo configura lo snapshot locale sui datastore o sulle VM sullo storage primario e una cascata dallo storage su disco primario allo storage su disco secondario e quindi allo storage di oggetti cloud.
+
+*** *Da disco a disco*: (non disponibile per i carichi di lavoro Kubernetes) Da storage primario (disco) a storage secondario (disco). La strategia di protezione dei dati ONTAP - ONTAP replica i dati tra due sistemi ONTAP per garantire elevata disponibilità e ripristino in caso di emergenza. In genere, questo risultato viene ottenuto utilizzando SnapMirror, che supporta sia la replica sincrona che quella asincrona. Questo metodo garantisce che i tuoi dati siano costantemente aggiornati e disponibili in più posizioni, offrendo una solida protezione contro la perdita di dati.
++
+Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o VMware sul sistema di storage primario e quindi replica i dati dal sistema di storage su disco primario al sistema di storage su disco secondario.
+
+*** *Archiviazione da disco a oggetto*: archiviazione primaria (disco) nel cloud (archivio oggetti).  Questa replica i dati da un sistema ONTAP a un sistema di archiviazione di oggetti, come AWS S3, Azure Blob Storage o StorageGRID.  In genere, questo risultato viene ottenuto utilizzando SnapMirror Cloud, che fornisce backup incrementali permanenti trasferendo solo i blocchi di dati modificati dopo il trasferimento di base iniziale. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID.  Questo metodo è ideale per la conservazione e l'archiviazione dei dati a lungo termine, offrendo una soluzione conveniente e scalabile per la protezione dei dati.
++
+Per i carichi di lavoro VMWare, questa opzione configura lo snapshot locale sui datastore o sulle VM sul server primario e la replica dall'archiviazione su disco primario all'archiviazione di oggetti cloud.
+
+*** *Fanout da disco a disco*: (non disponibile per i carichi di lavoro Kubernetes) Da storage primario (disco) a storage secondario (disco) e da storage primario (disco) a storage secondario (disco).
++
+
+NOTE: È possibile configurare più impostazioni secondarie per l'opzione fanout da disco a disco.
+
++
+Per i carichi di lavoro VMware, questa operazione configura l'archiviazione su disco primaria in quella su disco secondaria e replica l'archiviazione su disco primaria in quella su disco secondaria.
+
+*** *Snapshot locali*: snapshot locale sul volume selezionato (Microsoft SQL Server). Gli snapshot locali sono una componente fondamentale delle strategie di protezione dei dati, poiché catturano lo stato dei dati in momenti specifici. In questo modo vengono create copie di sola lettura e in un dato momento dei volumi di produzione in cui vengono eseguiti i carichi di lavoro. Lo snapshot consuma uno spazio di archiviazione minimo e comporta un sovraccarico di prestazioni trascurabile perché registra solo le modifiche apportate ai file dall'ultimo snapshot. È possibile utilizzare snapshot locali per ripristinare dati persi o danneggiati, nonché per creare backup per scopi di disaster recovery.
++
+Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o sulle VM sul sistema di storage primario.
+
+
+
+
+
+
+
+
+
+=== Creare un criterio di snapshot locale
+
+Fornire informazioni per lo snapshot locale.
+
+* Selezionare l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni degli snapshot.  È possibile avere un massimo di 5 pianificazioni.
+* *Frequenza snapshot*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.  La frequenza annuale non è disponibile per i carichi di lavoro Kubernetes.
+* *Conservazione degli snapshot*: immettere il numero di snapshot da conservare.
+* *Abilita backup del log*: (si applica solo ai carichi di lavoro di Microsoft SQL Server e Oracle Database.)  Abilitare questa opzione per eseguire il backup dei registri e impostare la frequenza e la conservazione dei backup dei registri. Per fare ciò, è necessario aver già configurato un backup del registro. Vedere link:br-start-configure.html["Configurare le directory di registro"] .
++
+** *Elimina i log di archivio dopo il backup*: (solo carichi di lavoro di Oracle Database) Se i backup dei log sono abilitati, è possibile abilitare facoltativamente questa funzionalità per limitare il periodo di tempo per cui Backup and Recovery conserva i log di archivio di Oracle.  È possibile scegliere il periodo di conservazione e il punto in cui Backup e Recovery devono eliminare i registri di archivio.
+
+
+* *Provider*: (solo carichi di lavoro Kubernetes) Seleziona il provider di archiviazione che ospita le risorse dell'applicazione Kubernetes.
+
+
+
+
+=== Creare una policy per le impostazioni secondarie (replica su storage secondario)
+
+Fornire informazioni per la replicazione su storage secondario. Le informazioni sulla pianificazione delle impostazioni degli snapshot locali vengono visualizzate nelle impostazioni secondarie. Queste impostazioni non sono disponibili per i carichi di lavoro Kubernetes.
+
+* *Backup*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.
+* *Destinazione backup*: seleziona il sistema di destinazione sull'archiviazione secondaria per il backup.
+* *Conservazione*: immettere il numero di snapshot da conservare.
+* *Abilita blocco snapshot*: seleziona se desideri abilitare gli snapshot antimanomissione.
+* *Periodo di blocco dello snapshot*: immettere il numero di giorni, mesi o anni per i quali si desidera bloccare lo snapshot.
+* *Trasferimento alla secondaria*:
++
+** L'opzione * Pianificazione trasferimento ONTAP - Inline* è selezionata per impostazione predefinita e indica che gli snapshot vengono trasferiti immediatamente al sistema di archiviazione secondario.  Non è necessario pianificare il backup.
+** Altre opzioni: se si sceglie un trasferimento differito, i trasferimenti non sono immediati e si può impostare una pianificazione.
+
+
+* * Relazione secondaria SMAS tra SnapMirror e SnapVault *: utilizzare le relazioni secondarie SMAS tra SnapMirror e SnapVault per i carichi di lavoro di SQL Server.
+
+
+
+
+=== Creare una policy per le impostazioni di archiviazione degli oggetti
+
+Fornire informazioni per il backup nell'archiviazione degli oggetti.  Queste impostazioni sono chiamate "Impostazioni di backup" per i carichi di lavoro Kubernetes.
+
+
+NOTE: I campi visualizzati variano a seconda del provider e dell'architettura selezionati.
+
+
+
+==== Creare una policy per l'archiviazione di oggetti AWS
+
+Inserisci le informazioni in questi campi:
+
+* *Provider*: seleziona *AWS*.
+* *Account AWS*: seleziona l'account AWS.
+* *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti S3 registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+* *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
+* *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
+* *Copie di conservazione*: immettere il numero di snapshot da conservare.
+* *Esegui a*: scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archivio oggetti.
+* *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
+* *Abilita scansione integrità*: (non disponibile per i carichi di lavoro Kubernetes) Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'archiviazione degli oggetti.  Ciò garantisce che i backup siano validi e possano essere ripristinati correttamente.  Per impostazione predefinita, la frequenza della scansione dell'integrità è impostata su 7 giorni.  Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*.  La scansione avviene solo sull'ultimo snapshot.  È possibile abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+
+
+
+
+==== Creare un criterio per l'archiviazione degli oggetti di Microsoft Azure
+
+Inserisci le informazioni in questi campi:
+
+* *Provider*: seleziona *Azure*.
+* *Sottoscrizione Azure*: seleziona la sottoscrizione Azure tra quelle individuate.
+* *Gruppo di risorse di Azure*: seleziona il gruppo di risorse di Azure tra quelli individuati.
+* *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+* *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
+* *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
+* *Copie di conservazione*: immettere il numero di snapshot da conservare.
+* *Esegui a*: scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archivio oggetti.
+* *Suddividere i backup in livelli dall'archivio oggetti all'archiviazione*: se si sceglie di suddividere i backup in livelli nell'archiviazione, selezionare l'opzione del livello e il numero di giorni di archiviazione.
+* *Abilita scansione integrità*: (non disponibile per i carichi di lavoro Kubernetes) Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'archiviazione degli oggetti.  Ciò garantisce che i backup siano validi e possano essere ripristinati correttamente.  Per impostazione predefinita, la frequenza della scansione dell'integrità è impostata su 7 giorni.  Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*.  La scansione avviene solo sull'ultimo snapshot.  È possibile abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+
+
+
+
+==== Creare una policy per l'archiviazione degli oggetti StorageGRID
+
+Inserisci le informazioni in questi campi:
+
+* *Provider*: Seleziona * StorageGRID*.
+* * Credenziali StorageGRID *: seleziona le credenziali StorageGRID tra quelle rilevate.  Queste credenziali vengono utilizzate per accedere al sistema di archiviazione degli oggetti StorageGRID e sono state immesse nell'opzione Impostazioni.
+* *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti S3 registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+* *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
+* *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
+* *Copie di conservazione*: immettere il numero di snapshot da conservare per ciascuna frequenza.
+* *Pianificazione del trasferimento per l'archiviazione di oggetti*: (non disponibile per i carichi di lavoro Kubernetes) Scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archiviazione di oggetti.
+* *Abilita scansione integrità*: (non disponibile per i carichi di lavoro Kubernetes) Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'archiviazione degli oggetti.  Ciò garantisce che i backup siano validi e possano essere ripristinati correttamente.  Per impostazione predefinita, la frequenza della scansione dell'integrità è impostata su 7 giorni.  Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*.  La scansione avviene solo sull'ultimo snapshot.  È possibile abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+* *Suddividere i backup in livelli dall'archivio oggetti all'archiviazione*: (non disponibile per i carichi di lavoro Kubernetes) Se si sceglie di suddividere i backup in livelli nell'archiviazione, selezionare l'opzione del livello e il numero di giorni di archiviazione.
+
+
+
+
+=== Configurare le impostazioni avanzate nella policy
+
+Facoltativamente, è possibile configurare le impostazioni avanzate nel criterio.  Queste impostazioni sono disponibili per tutte le architetture di backup, inclusi gli snapshot locali, la replica su storage secondario e i backup su storage di oggetti. Queste impostazioni non sono disponibili per i carichi di lavoro Kubernetes.  Le impostazioni avanzate disponibili variano a seconda del carico di lavoro selezionato nella parte superiore della pagina, pertanto le impostazioni avanzate descritte qui potrebbero non essere applicabili a tutti i carichi di lavoro.  Le impostazioni avanzate non sono disponibili quando si configura un criterio per i carichi di lavoro Kubernetes.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
+. Nella sezione Impostazioni *Criteri > Avanzate*, seleziona il menu *Seleziona azione avanzata* per scegliere da un elenco di impostazioni avanzate.
+. Abilita le impostazioni che desideri visualizzare o modificare, quindi seleziona *Accetta*.
+. Fornire le seguenti informazioni:
++
+** *Backup di sola copia*: (si applica solo ai carichi di lavoro di Microsoft SQL Server) Scegli il backup di sola copia (un tipo di backup di Microsoft SQL Server) se devi eseguire il backup delle tue risorse utilizzando un'altra applicazione di backup.
+** *Impostazioni del gruppo di disponibilità*: (si applica solo ai carichi di lavoro di Microsoft SQL Server) Seleziona le repliche di backup preferite o specifica una replica specifica.  Questa impostazione è utile se si dispone di un gruppo di disponibilità di SQL Server e si desidera controllare quale replica viene utilizzata per i backup.
+** *Velocità di trasferimento massima*: per non impostare un limite all'utilizzo della larghezza di banda, selezionare *Illimitato*.  Se si desidera limitare la velocità di trasferimento, selezionare *Limitata* e selezionare la larghezza di banda di rete tra 1 e 1.000 Mbps assegnata per caricare i backup nell'archiviazione degli oggetti.  Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi del sistema all'archiviazione degli oggetti.  Se noti che il traffico di backup influisce sui normali carichi di lavoro degli utenti, valuta la possibilità di ridurre la quantità di larghezza di banda di rete utilizzata durante il trasferimento.
+** *Nuovi tentativi di backup*: (non applicabile ai carichi di lavoro VMware) Per riprovare il processo in caso di errore o interruzione, selezionare *Abilita nuovi tentativi di processo in caso di errore*. Immettere il numero massimo di tentativi di snapshot e backup e l'intervallo di tempo tra i tentativi. Il riconteggio deve essere inferiore a 10. Questa impostazione è utile se si desidera garantire che il processo di backup venga ripetuto in caso di errore o interruzione.
++
+
+TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, insieme al conteggio dei nuovi tentativi, non dovrebbe superare i 45 minuti.
+
+** *Abilita snapshot coerenti con la VM*: (si applica solo ai carichi di lavoro VMware) Seleziona se desideri abilitare snapshot coerenti con la VM. Ciò garantisce che gli snapshot appena creati siano coerenti con lo stato della macchina virtuale al momento dello snapshot. Ciò è utile per garantire che i backup possano essere ripristinati correttamente e che i dati siano in uno stato coerente. Ciò non si applica agli snapshot esistenti.
+** *Scansione ransomware*: seleziona se desideri abilitare la scansione ransomware su ciascun bucket. Ciò richiede il blocco DataLock sull'archiviazione degli oggetti. Inserire la frequenza della scansione in giorni. Questa opzione si applica all'archiviazione di oggetti AWS e Microsoft Azure. Tieni presente che questa opzione potrebbe comportare costi aggiuntivi, a seconda del provider cloud.
+** *Verifica del backup*: (non applicabile ai carichi di lavoro VMware) Seleziona se desideri abilitare la verifica del backup e se desideri eseguirla immediatamente o in un secondo momento. Questa funzionalità garantisce che i backup siano validi e possano essere ripristinati correttamente. Ti consigliamo di abilitare questa opzione per garantire l'integrità dei tuoi backup. Per impostazione predefinita, la verifica del backup viene eseguita dall'archivio secondario, se questo è configurato. Se l'archiviazione secondaria non è configurata, la verifica del backup viene eseguita dall'archiviazione primaria.
++
+Inoltre, configurare le seguenti opzioni:
+
++
+*** Verifica *Giornaliera*, *Settimanale*, *Mensile* o *Annuale*: se hai scelto *Più tardi* come verifica del backup, seleziona la frequenza della verifica del backup.  Ciò garantisce che l'integrità dei backup venga regolarmente verificata e che sia possibile ripristinarli correttamente.
+*** *Etichette di backup*: immettere un'etichetta per il backup.  Questa etichetta viene utilizzata per identificare il backup nel sistema e può essere utile per monitorare e gestire i backup.
+*** *Controllo della coerenza del database*: (non applicabile ai carichi di lavoro VMware) Seleziona se desideri abilitare i controlli della coerenza del database. Questa opzione garantisce che i database siano in uno stato coerente prima che venga eseguito il backup, il che è fondamentale per garantire l'integrità dei dati.
+*** *Verifica backup del registro*: (non applicabile ai carichi di lavoro VMware) Seleziona se desideri verificare i backup del registro. Seleziona il server di verifica. Se hai scelto disk-to-disk o 3-2-1, seleziona anche la posizione di archiviazione della verifica. Questa opzione garantisce che i backup del registro siano validi e possano essere ripristinati correttamente, il che è importante per mantenere l'integrità dei database.
+
+
+** *Rete*: selezionare l'interfaccia di rete da utilizzare per le operazioni di backup.  Questa funzionalità è utile se si dispone di più interfacce di rete e si desidera controllare quale viene utilizzata per i backup.
++
+*** *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
+*** *Configurazione endpoint privato*: se si utilizza un endpoint privato per l'archiviazione degli oggetti, selezionare la configurazione dell'endpoint privato da utilizzare per le operazioni di backup.  Questa funzionalità è utile se si desidera garantire che i backup vengano trasferiti in modo sicuro tramite una connessione di rete privata.
+
+
+** *Notifica*: seleziona se desideri abilitare le notifiche e-mail per le operazioni di backup.  Questa funzione è utile se si desidera ricevere una notifica quando un'operazione di backup viene avviata, completata o non riesce.
+** *Dischi indipendenti*: (si applica solo ai carichi di lavoro VMware) Selezionare questa opzione per includere nel backup tutti gli archivi dati con dischi indipendenti che contengono dati temporanei. Un disco indipendente è un disco VM non incluso negli snapshot VMware.
+** * Formato del volume e dello snapshot SnapMirror *: facoltativamente, inserisci il nome del tuo snapshot in un criterio che regola i backup per i carichi di lavoro di Microsoft SQL Server. Inserisci il formato e il testo personalizzato. Se si sceglie di eseguire il backup su un archivio secondario, è anche possibile aggiungere un prefisso e un suffisso del volume SnapMirror .
+
+
+
+
+
+
+== Modifica una policy
+
+È possibile modificare l'architettura di backup, la frequenza di backup, i criteri di conservazione e altre impostazioni per un criterio.
+
+
+NOTE: Questa funzionalità non è disponibile per i carichi di lavoro VMware Preview.
+
+È possibile aggiungere un altro livello di protezione quando si modifica una policy, ma non è possibile rimuovere un livello di protezione.  Ad esempio, se il criterio protegge solo gli snapshot locali, è possibile aggiungere la replica all'archiviazione secondaria o i backup all'archiviazione degli oggetti.  Se si dispone di snapshot e repliche locali, è possibile aggiungere l'archiviazione di oggetti.  Tuttavia, se si dispone di snapshot locali, replica e archiviazione di oggetti, non è possibile rimuovere uno di questi livelli.
+
+Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti, è possibile abilitare l'archiviazione.
+
+Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery. Vedere link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+
+.Ruolo richiesto della console NetApp
+Amministratore dell'organizzazione o amministratore della cartella o del progetto. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Nella console NetApp , vai su *Protezione* > *Backup e ripristino*.
+. Selezionare l'opzione *Criteri*.
+. Seleziona la policy che vuoi modificare.
+. Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica*.
+
+
+
+
+== Elimina una policy
+
+Puoi eliminare una policy se non ti serve più.
+
+
+TIP: Non è possibile eliminare un criterio associato a un carico di lavoro.
+
+.Passi
+. Nella Console, vai a *Protezione* > *Backup e ripristino*.
+. Selezionare l'opzione *Criteri*.
+. Seleziona la policy che vuoi eliminare.
+. Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Elimina*.
+. Conferma l'azione e seleziona *Elimina*.
+

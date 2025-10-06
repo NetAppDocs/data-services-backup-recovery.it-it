@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+summary: Proteggi i tuoi carichi di lavoro KVM con il backup e il ripristino NetApp . 
+---
+= Esegui il backup dei carichi di lavoro KVM con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esegui il backup dei gruppi di protezione KVM dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei dati.  Quando si esegue il backup di un gruppo di protezione, la console NetApp esegue il backup delle VM e dei pool di archiviazione contenuti nel gruppo di protezione. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+
+
+NOTE: Per eseguire il backup dei gruppi di protezione in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+
+* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro KVM con NetApp Backup and Recovery"] per maggiori informazioni.
+
+
+
+
+== Esegui subito il backup dei gruppi di protezione con un backup su richiesta
+
+È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
+
+*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Nel riquadro KVM, seleziona *Scopri e gestisci*.
+. Selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
+. Selezionare il gruppo di protezione di cui si desidera eseguire il backup.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
++
+
+NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo di protezione.
+
+. Selezionare il livello di pianificazione.
+. Selezionare *Backup*.
+

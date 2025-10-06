@@ -1,0 +1,159 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-restore.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro Oracle con NetApp Backup and Recovery. 
+---
+= Ripristina i database Oracle con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ripristina i database Oracle da copie snapshot, da un backup replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+
+.Ripristina da queste posizioni
+È possibile ripristinare i database da diverse posizioni di partenza:
+
+* Ripristina da una posizione primaria (snapshot locale)
+* Ripristina da una risorsa replicata su un archivio secondario
+* Ripristina da un backup di archiviazione di oggetti
+
+
+.Ripristinare questi punti
+È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima privata.
+
+* Ripristina la posizione originale
+
+
+
+
+== Come funziona il ripristino dei database Oracle
+
+Quando si ripristinano i database Oracle, si verifica quanto segue:
+
+* Quando si ripristina un database da uno snapshot locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
+* Quando si esegue il ripristino da un archivio replicato, è possibile ripristinarlo nella posizione originale.
+* Quando si ripristina un backup da un archivio oggetti, è possibile ripristinare i dati nell'archivio di origine o in un sistema ONTAP locale e recuperare il database da lì.
+
+
+Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare un database anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni.  È possibile effettuare ricerche nel database utilizzando i filtri.
+
+
+
+== Ripristinare un database Oracle
+
+A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile cercare il database utilizzando il suo nome o utilizzando filtri specifici.
+
+*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Oracle*.
+. Immettere il nome del database che si desidera ripristinare oppure filtrare in base all'host del database in cui si trova il database che si desidera ripristinare.
++
+Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+
+. Selezionare il pulsante *Ripristina* per il database che si desidera ripristinare.
+. Scegli un'opzione di ripristino:
++
+[role="tabbed-block"]
+====
+.Ripristinare un punto specifico nel tempo
+--
+.. Seleziona *Ripristina a un punto specifico nel tempo*.
+.. Selezionare *Avanti*.
+.. Scegli una data dal menu a discesa e seleziona *Cerca*.
++
+Viene visualizzato un elenco di snapshot corrispondenti alla data specificata.
+
+
+
+--
+.Ripristinare un numero di modifica del sistema specifico (SCN)
+--
+.. Selezionare *Ripristina a un numero di modifica del sistema (SCN) specifico*.
+.. Selezionare *Avanti*.
+.. Inserisci l'SCN da utilizzare come punto di ripristino e seleziona *Cerca*.
++
+Viene visualizzato un elenco di snapshot corrispondenti per l'SCN specificato.
+
+
+
+--
+.Ripristina l'ultimo backup (ultimo stato valido)
+--
+.. Seleziona *Ripristina all'ultimo backup*.
+.. Selezionare *Avanti*.
++
+Vengono visualizzati gli ultimi backup completi e di registro.
+
+
+
+--
+.Ripristina da snapshot senza recupero
+--
+.. Seleziona *Ripristina da snapshot senza ripristino*.
+.. Selezionare *Avanti*.
++
+Vengono visualizzate le istantanee corrispondenti.
+
+
+
+--
+====
+. Selezionare una posizione di origine dello snapshot.
+. Selezionare *Avanti* per procedere alla pagina Impostazioni di destinazione del ripristino.
++
+Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+
+[discrete]
+===== Selezione della destinazione
+
+. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+[role="tabbed-block"]
+====
+.Ripristina nella posizione originale
+--
+. *Impostazioni di destinazione*:
++
+** Scegliere se ripristinare l'intero database o solo i tablespace del database.
+** *File di controllo*: facoltativamente, abilitare questa opzione per ripristinare anche i file di controllo del database.
+
+
+. *Opzioni pre-ripristino*:
++
+** Facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
+** Scegliere un valore di timeout per lo script.  Se lo script non riesce a essere eseguito entro questo periodo di tempo, il ripristino verrà comunque eseguito.
+
+
+. *Opzioni post-ripristino*:
++
+** *Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+** *Aprire il database o il database contenitore in modalità LETTURA-SCRITTURA dopo il ripristino*: una volta completata l'operazione di ripristino, Backup and Recovery abiliterà la modalità LETTURA-SCRITTURA per il database.
+
+
+. Sezione *Notifiche*:
++
+** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
+
+
+. Selezionare *Ripristina*.
+
+
+--
+.Ripristina in posizione alternativa
+--
+Non disponibile per l'anteprima dei carichi di lavoro Oracle.
+
+--
+====

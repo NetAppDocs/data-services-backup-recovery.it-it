@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: br-reference-limitations.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Le limitazioni note identificano funzioni non supportate da questa versione del prodotto o che non interagiscono correttamente con essa. Esamina attentamente queste limitazioni. 
+---
+= Limitazioni note con NetApp Backup and Recovery per volumi ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le limitazioni note identificano funzioni non supportate da questa versione di NetApp Backup and Recovery o che non interagiscono correttamente con essa. Esamina attentamente queste limitazioni.
+
+* NetApp Backup and Recovery può eseguire il backup Cloud Volumes ONTAP in un archivio oggetti nelle regioni AWS Cina (incluse Pechino e Ningxia); tuttavia, potrebbe essere necessario modificare manualmente prima le policy di identità e di accesso.
++
+Per i dettagli sulla creazione di un agente Console in AWS, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Installazione di un agente Console in AWS"^] .
+
++
+Per ulteriori dettagli, fare riferimento al post del blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog sulle funzionalità di backup e ripristino NetApp , maggio 2023"^] .
+
+* NetApp Backup and Recovery non supporta le regioni Microsoft Azure Cina.
++
+Per i dettagli sulla creazione di un agente Console in Azure, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-azure-bluexp.html["Installazione di un agente console in Azure"^] .
+
+* NetApp Backup and Recovery non supporta i backup dei volumi FlexCache .
+
+
+
+
+== Limitazioni di replica per i volumi ONTAP
+
+* È possibile selezionare un solo volume FlexGroup alla volta per la replica.  Sarà necessario attivare i backup separatamente per ogni volume FlexGroup .
++
+Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi FlexVol nel tuo sistema e assegnare gli stessi criteri di backup.
+
+* La seguente funzionalità è supportata in https://docs.netapp.com/us-en/data-services-replication/index.html["Replicazione NetApp"] , ma non quando si utilizza la funzionalità di replica di NetApp Backup and Recovery:
++
+** Non è supportato alcun tipo di configurazione a cascata in cui la replica avviene dal volume A al volume B e dal volume B al volume C. Il supporto include la replica dal volume A al volume B.
+** Non è disponibile alcun supporto per la replica dei dati da e verso FSx per i sistemi ONTAP .
+** Non è disponibile alcun supporto per la creazione di una replica una tantum di un volume.
+
+
+* Quando si creano repliche da sistemi ONTAP locali, se la versione ONTAP sul sistema Cloud Volumes ONTAP di destinazione è 9.8, 9.9 o 9.11, sono consentiti solo criteri mirror-vault.
+
+
+
+
+== Limitazioni del backup su oggetto per i volumi ONTAP
+
+* Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
++
+Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
+
+
+
+* Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
+* Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
++
+Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
+
+
+
+* Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
+* Quando si crea o si modifica un criterio di backup senza che vi siano volumi assegnati, il numero massimo di backup conservati può essere 1018.  Dopo aver assegnato i volumi al criterio, è possibile modificarlo per creare fino a 4000 backup.
+* Durante il backup dei volumi di protezione dei dati (DP):
++
+** Relazioni con le etichette SnapMirror `app_consistent` E `all_source_snapshot` non verrà eseguito il backup sul cloud.
+** Se si creano copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), questi Snapshot non verranno spostati nel cloud come backup.  A questo punto sarà necessario creare una policy Snapshot con le etichette desiderate sul volume DP di origine affinché NetApp Backup and Recovery ne esegua il backup.
+
+
+* I backup dei volumi FlexGroup non possono essere spostati nell'archiviazione.
+* I backup dei volumi FlexGroup possono utilizzare la protezione DataLock e Ransomware se il cluster esegue ONTAP 9.13.1 o versione successiva.
+* Il backup del volume SVM-DR è supportato con le seguenti restrizioni:
++
+** I backup sono supportati solo dal dispositivo secondario ONTAP .
+** La policy Snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, tra cui giornaliera, settimanale, mensile, ecc. La policy predefinita "sm_created" (utilizzata per *Mirror All Snapshots*) non viene riconosciuta e il volume DP non verrà visualizzato nell'elenco dei volumi di cui è possibile eseguire il backup.
+** Il backup e il ripristino di SVM-DR e del volume funzionano in modo completamente indipendente quando il backup viene eseguito dall'origine o dalla destinazione.  L'unica limitazione è che SVM-DR non replica la relazione cloud SnapMirror .  Nello scenario DR, quando l'SVM va online nella posizione secondaria, è necessario aggiornare manualmente la relazione cloud SnapMirror .
+
+
+
+
+* Supporto MetroCluster :
++
+** Se si utilizza ONTAP 9.12.1 GA o versione successiva, il backup è supportato quando si è connessi al sistema primario.  L'intera configurazione del backup viene trasferita al sistema secondario, in modo che i backup sul cloud continuino automaticamente dopo il passaggio.  Non è necessario impostare il backup sul sistema secondario (anzi, non è consentito farlo).
+** Quando si utilizza ONTAP 9.12.0 e versioni precedenti, il backup è supportato solo dal sistema secondario ONTAP .
+** Al momento i backup dei volumi FlexGroup non sono supportati.
+
+
+* Il backup del volume ad hoc tramite il pulsante *Esegui backup ora* non è supportato sui volumi di protezione dati.
+* Le configurazioni SM-BC non sono supportate.
+* ONTAP non supporta il fan-out delle relazioni SnapMirror da un singolo volume a più archivi di oggetti; pertanto, questa configurazione non è supportata da NetApp Backup and Recovery.
+* Al momento, la modalità WORM/Compliance su un archivio oggetti è supportata su Amazon S3, Azure e StorageGRID .  Questa funzionalità è nota come DataLock e deve essere gestita tramite le impostazioni di NetApp Backup and Recovery, non tramite l'interfaccia del provider cloud.
+
+
+
+
+== Limitazioni di ripristino per i volumi ONTAP
+
+Queste limitazioni si applicano sia ai metodi Cerca e ripristina che Sfoglia e ripristina per il ripristino di file e cartelle, a meno che non siano espressamente indicate.
+
+* Browse & Restore può ripristinare fino a 100 file singoli alla volta.
+* Search & Restore può ripristinare 1 file alla volta.
+* Se si utilizza ONTAP 9.13.0 o versione successiva, Browse & Restore e Search & Restore possono ripristinare una cartella insieme a tutti i file e le sottocartelle in essa contenuti.
++
+Quando si utilizza una versione di ONTAP successiva alla 9.11.1 ma precedente alla 9.13.0, l'operazione di ripristino può ripristinare solo la cartella selezionata e i file in quella cartella; non vengono ripristinate le sottocartelle o i file nelle sottocartelle.
+
++
+Se si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino delle cartelle non è supportato.
+
+* Il ripristino di directory/cartelle è supportato per i dati che risiedono nell'archiviazione solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
+* Il ripristino di directory/cartelle è supportato per i dati protetti tramite DataLock solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
+* Il ripristino di directory/cartelle non è attualmente supportato da repliche e/o snapshot locali.
+* Il ripristino da volumi FlexGroup a volumi FlexVol o da volumi FlexVol a volumi FlexGroup non è supportato.
+* Il file da ripristinare deve utilizzare la stessa lingua del volume di destinazione.  Se le lingue non sono le stesse, verrà visualizzato un messaggio di errore.
+* La priorità di ripristino _Alta_ non è supportata durante il ripristino dei dati dall'archiviazione di Azure ai sistemi StorageGRID .
+* Se si esegue il backup di un volume DP e poi si decide di interrompere la relazione SnapMirror con quel volume, non sarà possibile ripristinare i file su quel volume a meno che non si elimini anche la relazione SnapMirror o si inverta la direzione SnapMirror .
+* Limitazioni del ripristino rapido:
++
+** La posizione di destinazione deve essere un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva.
+** Non è supportato con i backup memorizzati in un archivio.
+** I volumi FlexGroup sono supportati solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.12.1 o versione successiva.
+** I volumi SnapLock sono supportati solo se il sistema di origine da cui è stato creato il backup su cloud eseguiva ONTAP 9.11.0 o versione successiva.
+
+
+

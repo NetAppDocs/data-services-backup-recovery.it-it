@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq-snapcenter-import.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery, snapcenter, import, migration, migrate 
+summary: 'Inizia a utilizzare NetApp Backup and Recovery verificando la prontezza del tuo ambiente operativo, dell"agente della console e dell"account della console.  Per utilizzare NetApp Backup and Recovery, sono necessari i seguenti prerequisiti.' 
+---
+= Prerequisiti per l'importazione dal servizio Plug-in in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Se si desidera importare risorse dal servizio plug-in SnapCenter per Microsoft SQL Server in NetApp Backup and Recovery, sarà necessario configurare alcuni altri elementi.
+
+
+
+== Crea prima i sistemi nella console NetApp
+
+Se si desidera importare risorse da SnapCenter, è necessario aggiungere prima tutto lo storage del cluster SnapCenter locale alla pagina *Sistemi* della console prima di importare da SnapCenter.  Ciò garantisce che le risorse host possano essere scoperte e importate correttamente.
+
+
+
+== Verificare i requisiti dell'host per installare il plug-in SnapCenter
+
+Per importare risorse dal plug-in SnapCenter per Microsoft SQL Server, assicurarsi che siano soddisfatti i requisiti host per l'installazione del plug-in SnapCenter per Microsoft SQL Server.
+
+Verificare specificamente i requisiti SnapCenter inlink:concept-start-prereq.html["Prerequisiti per NetApp Backup and Recovery"] .
+
+
+
+== Disabilitare le restrizioni remote del Controllo account utente
+
+Prima di importare risorse da SnapCenter, disabilitare le restrizioni remote del Controllo account utente (UAC) sull'host Windows SnapCenter .  Disattivare UAC se si utilizza un account amministrativo locale per connettersi in remoto all'host del server SnapCenter o all'host SQL.
+
+*Considerazioni sulla sicurezza*
+
+Prima di disattivare le restrizioni remote UAC, tenere presente quanto segue:
+
+* Rischi per la sicurezza: la disattivazione del filtro dei token può esporre il sistema a vulnerabilità di sicurezza, soprattutto se gli account amministrativi locali vengono compromessi da malintenzionati.
+* Usare con cautela:
++
+** Modificare questa impostazione solo se è essenziale per le proprie attività amministrative.
+** Assicurarsi che siano in atto password complesse e altre misure di sicurezza per proteggere gli account amministrativi.
+
+
+
+
+*Soluzioni alternative*
+
+* Se è necessario l'accesso amministrativo remoto, valutare l'utilizzo di account di dominio con privilegi appropriati.
+* Utilizzare strumenti di gestione remota sicuri che rispettino le migliori pratiche di sicurezza per ridurre al minimo i rischi.
+
+
+.Passaggi per disattivare le restrizioni remote del Controllo account utente
+. Modificare il `LocalAccountTokenFilterPolicy` chiave di registro sull'host Windows SnapCenter .
++
+Per farlo, utilizza uno dei seguenti metodi, di seguito le istruzioni:
+
++
+** Metodo 1: Editor del Registro di sistema
+** Metodo 2: script PowerShell
+
+
+
+
+
+
+=== Metodo 1: disabilitare il controllo dell'account utente utilizzando l'editor del Registro di sistema
+
+Questo è uno dei metodi che puoi utilizzare per disattivare il Controllo dell'account utente.
+
+.Passi
+. Aprire l'Editor del Registro di sistema sull'host Windows di SnapCenter procedendo come segue:
++
+.. Premere `Windows+R` per aprire la finestra di dialogo Esegui.
+.. Tipo `regedit` e premere `Enter` .
+
+
+. Passare alla chiave della policy:
++
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+
+. Crea o modifica il `DWORD` valore:
++
+.. Individuare: `LocalAccountTokenFilterPolicy`
+.. Se non esiste, creane uno nuovo `DWORD` (32 bit) Valore denominato `LocalAccountTokenFilterPolicy` .
+
+
+. Sono supportati i seguenti valori.  Per questo scenario, impostare il valore su `1` :
++
+** `0`(Predefinito): le restrizioni remote UAC sono abilitate.  Gli account locali hanno token filtrati quando accedono da remoto.
+** `1`: Le restrizioni remote UAC sono disabilitate.  Gli account locali ignorano il filtraggio dei token e dispongono di privilegi amministrativi completi quando accedono da remoto.
+
+
+. Fare clic su *OK*.
+. Chiudere l'editor del Registro di sistema.
+. Riavviare l'host Windows di SnapCenter .
+
+
+.Esempio di modifica del registro
+In questo esempio LocalAccountTokenFilterPolicy viene impostato su "1", disabilitando le restrizioni remote UAC.
+
+[listing]
+----
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+
+"LocalAccountTokenFilterPolicy"=dword:00000001
+----
+
+
+=== Metodo 2: disabilitare il controllo dell'account utente utilizzando uno script di PowerShell
+
+Questo è un altro metodo che puoi utilizzare per disattivare il Controllo dell'account utente.
+
+
+CAUTION: L'esecuzione di comandi PowerShell con privilegi elevati può influire sulle impostazioni di sistema.  Prima di eseguirli, assicurati di aver compreso i comandi e le loro implicazioni.
+
+.Passi
+. Aprire una finestra di PowerShell con privilegi amministrativi sull'host Windows di SnapCenter :
++
+.. Fare clic sul menu *Start*.
+.. Cerca *PowerShell 7* o *Windows Powershell*.
+.. Fare clic con il tasto destro del mouse su tale opzione e selezionare *Esegui come amministratore*.
+
+
+. Assicurati che PowerShell sia installato sul tuo sistema.  Dopo l'installazione, dovrebbe apparire nel menu *Start*.
++
+
+TIP: PowerShell è incluso di default in Windows 7 e nelle versioni successive.
+
+. Per disabilitare le restrizioni remote UAC, impostare LocalAccountTokenFilterPolicy su "1" eseguendo il seguente comando:
++
+[listing]
+----
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
+----
+. Verificare che il valore corrente sia impostato su "1" in `LocalAccountTokenFilterPolicy`` eseguendo:
++
+[listing]
+----
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy"
+----
++
+** Se il valore è 1, le restrizioni remote UAC sono disabilitate.
+** Se il valore è 0, le restrizioni remote UAC sono abilitate.
+
+
+. Per applicare le modifiche, riavviare il computer.
+
+
+.Esempi di comandi di PowerShell 7 per disabilitare le restrizioni remote UAC:
+Questo esempio con il valore impostato su "1" indica che le restrizioni remote UAC sono disabilitate.
+
+[listing]
+----
+# Disable UAC remote restrictions
+
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy" -Value 1 -Type DWord
+
+# Verify the change
+
+Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "LocalAccountTokenFilterPolicy"
+
+# Output
+
+LocalAccountTokenFilterPolicy : 1
+----

@@ -1,0 +1,42 @@
+= Scopri i tuoi sistemi ONTAP nella console NetApp
+:allow-uri-read: 
+
+
+Sarà necessario preparare il sistema ONTAP locale di origine e tutti i sistemi ONTAP locali secondari o Cloud Volumes ONTAP .
+
+La preparazione dei cluster ONTAP prevede i seguenti passaggi:
+
+* Scopri i tuoi sistemi ONTAP nella console NetApp
+* Verificare i requisiti di sistema ONTAP
+* Verificare i requisiti di rete ONTAP per il backup dei dati su storage di oggetti
+* Verificare i requisiti di rete ONTAP per la replica dei volumi
+
+
+
+
+=== Scopri i tuoi sistemi ONTAP nella console NetApp
+
+Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della console NetApp .
+
+Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione del cluster e la password dell'account utente amministratore. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Scopri come scoprire un cluster"^] .
+
+
+
+=== Verificare i requisiti di sistema ONTAP
+
+Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP :
+
+* Minimo ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.
+* Una licenza SnapMirror (inclusa come parte del Premium Bundle o del Data Protection Bundle).
++
+*Nota:* il "Hybrid Cloud Bundle" non è richiesto quando si utilizza NetApp Backup and Recovery.
+
++
+Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestisci le licenze del tuo cluster"^] .
+
+* L'ora e il fuso orario sono impostati correttamente.  Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configura l'ora del tuo cluster"^] .
+* Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^] .
+
+

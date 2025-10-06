@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: reference-policy-differences-snapcenter.html 
+keywords: backup policy, backup policies, snapcenter, migration 
+summary: Esistono alcune differenze tra i criteri utilizzati in NetApp Backup and Recovery e quelli utilizzati in SnapCenter. 
+---
+= Criteri in SnapCenter confrontati con quelli in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esistono alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery che potrebbero influire su ciò che viene visualizzato dopo l'importazione di risorse e criteri da SnapCenter.
+
+
+
+== Pianifica i livelli
+
+SnapCenter utilizza i seguenti livelli di pianificazione:
+
+* *Ogni ora*: più ore e minuti con qualsiasi ora (0-23) e qualsiasi minuto (0-60).
+* *Giornaliero*: include un'opzione per ripetere ogni tot giorni, ad esempio ogni 3 giorni.
+* *Settimanale*: da domenica a lunedì, con la possibilità di eseguire uno snapshot il primo giorno della settimana o in più giorni della settimana.
+* *Mensile*: mesi da gennaio a dicembre, con la possibilità di eseguire l'operazione in giorni specifici del mese, ad esempio il 7 di ogni mese e persino in più giorni del mese.
+
+
+NetApp Backup and Recovery utilizza i seguenti livelli di pianificazione, leggermente diversi:
+
+* *Ogni ora*: esegue snapshot solo a intervalli di 15 minuti, ad esempio intervalli di 1 ora o 15 minuti inferiori a 60.
+* *Giornaliero*: Ore del giorno (0-23) con inizio, ad esempio, alle 10:00, con la possibilità di eseguire l'attività ogni tot di ore.
+* *Settimanale*: Giorno della settimana (da domenica a lunedì) con la possibilità di eseguire l'attività in 1 o più giorni.  È lo stesso di SnapCenter.
+* *Mensile*: Date del mese (0-30) con un orario di inizio in più date del mese.
+* *Annuale*: Mensile.  Ciò corrisponde al dato mensile di SnapCenter.
+
+
+
+
+== Più policy in SnapCenter con lo stesso livello di pianificazione
+
+È possibile assegnare più policy con lo stesso livello di pianificazione a una risorsa in SnapCenter.  Tuttavia, NetApp Backup and Recovery non supporta più policy su una risorsa che utilizza lo stesso livello di pianificazione.
+
+*Esempio*: se si utilizzano tre policy (per dati, registro e registro degli snapshot) in SnapCenter, dopo la migrazione da SnapCenter, NetApp Backup and Recovery utilizza una singola policy anziché tutte e tre.
+
+
+
+== Pianificazioni giornaliere SnapCenter importate
+
+NetApp Backup and Recovery regola le pianificazioni SnapCenter come segue:
+
+* Se la pianificazione SnapCenter è impostata su un intervallo inferiore o uguale a 7 giorni, NetApp Backup and Recovery imposta la pianificazione su settimanale.  Durante la settimana alcune istantanee verranno saltate.
++
+*Esempio*: se si dispone di una policy giornaliera SnapCenter con un intervallo di ripetizione ogni 3 giorni a partire da lunedì, NetApp Backup and Recovery imposta la pianificazione su settimanale il lunedì, il giovedì e la domenica.  Alcuni giorni verranno saltati perché non si verificano esattamente ogni 3 giorni.
+
+* Se la pianificazione SnapCenter è impostata su un intervallo superiore a 7 giorni, NetApp Backup and Recovery imposta la pianificazione su mensile.  Durante il mese alcune istantanee verranno saltate.
++
+*Esempio*: se si dispone di una policy giornaliera SnapCenter con un intervallo di ripetizione ogni 10 giorni a partire dal 2 del mese, NetApp Backup and Recovery (post migrazione) imposta la pianificazione su mensile il 2, il 12 e il 22 del mese.  Il mese prossimo alcuni giorni verranno saltati.
+
+
+
+
+
+== Pianificazioni orarie SnapCenter importate
+
+I criteri orari SnapCenter con intervalli di ripetizione superiori a un'ora vengono convertiti in criteri giornalieri in NetApp Backup and Recovery.
+
+Qualsiasi politica oraria con intervalli ripetuti che non siano un fattore di 24 (ad esempio 5, 7, ecc.) salterà alcuni snapshot in un giorno.
+
+*Esempio*: se si dispone di una policy oraria SnapCenter con un intervallo ripetuto ogni 5 ore a partire dall'1:00, NetApp Backup and Recovery (dopo la migrazione) imposterà la pianificazione su giornaliera con intervalli di 5 ore all'1:00, alle 6:00, alle 11:00, alle 16:00 e alle 21:00.  Alcune ore verranno saltate, dopo le 21:00 dovrebbe essere alle 2:00 del mattino per ripetere ogni 5 ore, ma sarà sempre all'1:00 del mattino.
+
+
+
+== Conservazione dei registri dalle policy SnapCenter
+
+Se si dispone di una risorsa in SnapCenter con più policy, NetApp Backup and Recovery utilizza il seguente ordine di priorità per assegnare il valore di conservazione del registro:
+
+* Per i criteri "Backup completo con backup del registro" più i criteri "solo registro" in SnapCenter, NetApp Backup and Recovery utilizza il valore di conservazione del criterio solo registro.
+* Per i criteri "Backup completo solo con registro" e "Completo e registro" in SnapCenter, NetApp Backup and Recovery utilizza il valore di conservazione solo registro.
+* Per "Backup completo e registro" più "Backup completo" in SnapCenter, NetApp Backup and Recovery utilizza il valore di conservazione "Backup completo e registro".
+* Se in SnapCenter è presente solo un backup completo, NetApp Backup and Recovery non abilita il backup del registro.
+
+
+
+
+== Conservazione del backup del registro
+
+Con SnapCenter è possibile avere più valori di conservazione su più policy associate a una risorsa. Tuttavia, NetApp Backup and Recovery supporta un solo valore di conservazione per tutte le policy associate a una risorsa.
+
+
+
+== Conteggio della conservazione dai criteri di SnapCenter
+
+Se si dispone di una risorsa con protezione secondaria abilitata in SnapCenter con più volumi di origine, più volumi di destinazione e più relazioni SnapMirror , NetApp Backup and Recovery utilizza solo il conteggio di conservazione del primo criterio.
+
+*Esempio*: se si dispone di una policy SnapCenter con un conteggio di conservazione pari a 5 e di un'altra policy con un conteggio di conservazione pari a 10, NetApp Backup and Recovery utilizza il conteggio di conservazione pari a 5.
+
+
+
+== Etichette SnapMirror dalle policy SnapCenter
+
+Le etichette SnapMirror per ogni policy in SnapCenter rimangono intatte dopo la migrazione, anche se il livello viene modificato.
+
+*Esempio*: una policy oraria di SnapCenter potrebbe cambiare in giornaliera in NetApp Backup and Recovery.  Tuttavia, le etichette SnapMirror rimangono le stesse dopo la migrazione.

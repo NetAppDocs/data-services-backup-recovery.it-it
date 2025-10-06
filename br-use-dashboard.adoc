@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini e rispondi a tutti gli avvisi che compaiono nella dashboard di NetApp Backup and Recovery.  È possibile esaminare il riepilogo della protezione, il riepilogo del ripristino, il riepilogo del sistema e altro ancora. 
+---
+= Visualizza lo stato di protezione sulla dashboard di NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini nella dashboard NetApp Backup and Recovery.  È possibile esaminare il riepilogo del sistema, il riepilogo della protezione, il riepilogo del processo, il riepilogo del ripristino e altro ancora.
+
+*Ruolo richiesto nella console NetApp * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Dashboard*.
++
+** Numero di host o VM scoperti
+** Numero di cluster Kubernetes scoperti
+** Numero di destinazioni di backup su storage di oggetti
+** Numero di vCenter
+** Numero di cluster di archiviazione in ONTAP
+
+
+
+
+
+
+== Visualizza il riepilogo della protezione
+
+Esaminare le seguenti informazioni nel Riepilogo della protezione:
+
+* Numero totale di database, VM e datastore protetti e non protetti.
++
+
+TIP: Un database protetto è un database a cui è assegnata una policy di backup.  Un database non protetto è un database a cui non è assegnata alcuna policy di backup.
+
+* Numero di backup riusciti, con avviso o non riusciti.
+* La capacità totale rilevata dal servizio di backup e la capacità protetta rispetto a quella non protetta.  Passa il mouse sull'icona "*i*" per visualizzare i dettagli.
+
+
+
+
+== Visualizza il riepilogo del lavoro
+
+Esamina il totale dei lavori completati, in esecuzione o non riusciti nel Riepilogo lavori.
+
+.Passi
+. Per ogni distribuzione dei lavori, modifica un filtro per visualizzare il riepilogo di quelli non riusciti, in esecuzione e completati in base al numero di giorni, ad esempio gli ultimi 30 giorni, gli ultimi 7 giorni, le ultime 24 ore o l'ultimo anno.
+. Visualizza i dettagli dei processi non riusciti, in esecuzione e completati selezionando *Visualizza monitoraggio processi*.
+
+
+
+
+== Visualizza il riepilogo del ripristino
+
+Esaminare le seguenti informazioni nel riepilogo del ripristino:
+
+* Numero totale di processi di ripristino eseguiti
+* La quantità totale di capacità che è stata ripristinata
+* Numero di processi di ripristino eseguiti su storage locale, secondario e di oggetti.  Passa il mouse sul grafico per visualizzare i dettagli.
+

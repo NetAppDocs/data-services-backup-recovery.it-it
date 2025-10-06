@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato dei tuoi backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l"ora del backup.' 
+---
+= Crea report per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft SQL Server per visualizzare lo stato dei backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l'ora del backup.
+
+
+
+== Crea un report
+
+*Ruolo richiesto della console NetApp * Visualizzatore di storage, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clone di Backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+. Dal menu NetApp Backup and Recovery, selezionare l'opzione *Report*.
+. Seleziona *Crea report*.
+. Inserisci i dettagli dell'ambito del report:
++
+** *Nome del report*: immettere un nome univoco per il report.
+** *Tipo di report*: scegli se desideri un report per account o per carico di lavoro (Microsoft SQL Server).
+** *Seleziona host*: se hai selezionato in base al carico di lavoro, seleziona l'host per il quale desideri generare il report.
+** *Seleziona contenuto*: scegli se desideri che il report includa un riepilogo di tutti i backup o i dettagli di ciascun backup.  (Se hai scelto "Per account")
+
+
+. Inserisci l'intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
+. Inserisci i dettagli di consegna del report: se desideri che il report venga consegnato via e-mail, seleziona *Invia report tramite e-mail*.  Inserisci l'indirizzo email a cui desideri che venga inviato il report.
++
+Configura le notifiche e-mail nella pagina Impostazioni.  Per i dettagli sulla configurazione delle notifiche e-mail, vederelink:br-use-settings-advanced.html["Configurare le impostazioni"] .
+
+

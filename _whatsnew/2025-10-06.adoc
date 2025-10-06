@@ -1,0 +1,90 @@
+= NetApp Backup and Recovery è ora NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+=== NetApp Backup and Recovery è ora NetApp Backup and Recovery
+
+NetApp Backup and Recovery è stato rinominato NetApp Backup and Recovery.
+
+
+
+=== BlueXP è ora NetApp Console
+
+NetApp Console, basata sulle fondamenta BlueXP migliorate e ristrutturate, offre una gestione centralizzata dello storage NetApp e dei NetApp Data Services in ambienti on-premise e cloud di livello aziendale, offrendo informazioni in tempo reale, flussi di lavoro più rapidi e un'amministrazione semplificata, il tutto in modo altamente sicuro e conforme.
+
+Per i dettagli su cosa è cambiato, vederelink:https://docs.netapp.com/us-en/console-relnotes/index.html["Note sulla versione NetApp Console."]
+
+
+
+=== Supporto del carico di lavoro Hyper-V come anteprima privata
+
+Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Hyper-V:
+
+* Backup e ripristino di VM su istanze autonome e istanze di cluster di failover (FCI)
+* Proteggere le VM archiviate su condivisioni SMB3
+* Protezione in blocco a livello di macchina virtuale
+* Backup coerenti con VM e crash
+* Ripristinare le VM da storage primario, secondario e di oggetti
+* Cerca e ripristina i backup delle VM
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+
+
+
+=== Supporto del carico di lavoro KVM come anteprima privata
+
+Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro KVM:
+
+* Eseguire il backup e il ripristino delle immagini VM qcow2 archiviate su condivisioni NFS
+* Backup dei pool di archiviazione
+* Protezione in blocco di VM e pool di archiviazione mediante gruppi di protezione
+* Backup di VM coerenti con la VM e con gli arresti anomali
+* Cerca e ripristina i backup delle VM
+* Procedura guidata per il backup e il ripristino di VM basate su KVM e dati di VM
+
+
+Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
+
+
+
+=== Miglioramenti dell'anteprima di Kubernetes
+
+La versione di anteprima dei carichi di lavoro Kubernetes introduce i seguenti miglioramenti:
+
+* Supporto dell'architettura di backup fan-out 3-2-1
+* Supporto per ONTAP S3 come destinazione di backup
+* Nuova dashboard di Kubernetes per una gestione più semplice
+* La configurazione avanzata del controllo degli accessi basato sui ruoli (RBAC) include il supporto per i seguenti ruoli:
++
+** Super amministratore di backup e ripristino
+** amministratore del backup di backup e ripristino
+** Backup e ripristino ripristino amministratore
+** Visualizzatore di backup e ripristino
+
+
+* Supporto per la distribuzione Kubernetes di SUSE Rancher
+* Supporto multi-bucket: ora puoi proteggere i volumi all'interno di un sistema con più bucket per sistema su diversi provider cloud
+
+
+Per i dettagli sulla protezione dei carichi di lavoro di Kubernetes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+
+
+
+=== Supporto del carico di lavoro di Oracle Database come anteprima privata
+
+Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro di Oracle Database:
+
+* Scopri i database Oracle autonomi
+* Creare policy di protezione solo per i dati o per i backup di dati e log
+* Proteggi i database Oracle con uno schema di backup 3-2-1
+* Configurare la conservazione del backup
+* Montare e smontare i backup ARCHIVELOG
+* Database virtualizzati
+* Cerca e ripristina i backup del database
+* Supporto dashboard Oracle
+
+
+Per i dettagli sulla protezione dei carichi di lavoro di Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Oracle"] .

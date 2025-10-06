@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+---
+= Esegui il backup dei carichi di lavoro VMware con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esegui il backup delle VM VMware e degli archivi dati dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+
+* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware con NetApp Backup and Recovery"] per maggiori informazioni.
+* Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
+
+
+
+
+== Esegui subito il backup dei carichi di lavoro con un backup on-demand
+
+Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare, potresti voler eseguire un backup su richiesta.
+
+*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu Backup e ripristino, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
+. Selezionare il gruppo di protezione, gli archivi dati o le macchine virtuali di cui si desidera eseguire il backup.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
++
+
+NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo di protezione, al datastore o alla macchina virtuale.
+
+. Selezionare il livello di pianificazione.
+. Seleziona *Esegui backup ora*.
+

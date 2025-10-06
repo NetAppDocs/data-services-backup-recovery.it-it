@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-policy-create.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+---
+= Creare una policy per eseguire il backup degli archivi dati in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare una policy o utilizzare una delle seguenti policy predefinite disponibili in NetApp Backup and Recovery.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+
+====
+.Prima di iniziare
+* Se non si desidera modificare i criteri predefiniti, è necessario creare delle policy.
+* Per spostare i backup dall'archivio oggetti allo storage di archiviazione, è necessario eseguire ONTAP 9.10.1 o versione successiva e Amazon Web Services o Microsoft Azure devono essere il provider cloud.
+* È necessario configurare il livello di accesso all'archivio per ciascun provider cloud.
+
+
+.Informazioni su questo compito
+Nella console NetApp sono disponibili le seguenti policy predefinite:
+
+|===
+| Nome della polizza | Etichetta | Valore di ritenzione 
+
+
+ a| 
+1 anno di LTR giornaliero (ritenzione a lungo termine)
+ a| 
+Quotidiano
+ a| 
+366
+
+
+
+ a| 
+5 anni di LTR giornaliero
+ a| 
+Quotidiano
+ a| 
+1830
+
+
+
+ a| 
+LTR settimanale di 7 anni
+ a| 
+Settimanale
+ a| 
+370
+
+
+
+ a| 
+LTR mensile a 10 anni
+ a| 
+Mensile
+ a| 
+120
+
+|===
+.Passi
+. Nella pagina Macchine virtuali, dall'elenco a discesa Impostazioni, seleziona *Criteri*.
+. Selezionare *Crea policy*.
+. Nella sezione Dettagli policy, specificare il nome della policy.
+. Nella sezione Conservazione, seleziona uno dei tipi di conservazione e specifica il numero di backup da conservare.
+. Selezionare Primario o Secondario come origine dell'archiviazione di backup.
+. (Facoltativo) Se si desidera spostare i backup dall'archivio oggetti all'archiviazione dopo un certo numero di giorni per ottimizzare i costi, selezionare la casella di controllo *Backup su livelli di archiviazione* e immettere il numero di giorni dopo i quali il backup deve essere archiviato.
+. Seleziona *Crea*.
++
+
+NOTE: Non è possibile modificare o eliminare un criterio associato a un datastore.
+
+

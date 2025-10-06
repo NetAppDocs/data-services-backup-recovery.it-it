@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-azure-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 'NetApp Backup and Recovery supporta un livello di accesso all"archivio di Azure e la maggior parte delle regioni.' 
+---
+= Livelli di accesso all'archivio di Azure supportati con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery supporta un livello di accesso all'archivio di Azure e la maggior parte delle regioni.
+
+[]
+====
+*NOTA* Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente di NetApp Backup and Recovery"] .
+
+====
+
+
+== Livelli di accesso Azure Blob supportati per NetApp Backup and Recovery
+
+Quando vengono creati inizialmente i file di backup, questi vengono archiviati nel livello di accesso _Cool_.  Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma che, quando necessario, sono immediatamente accessibili.
+
+Se i cluster di origine eseguono ONTAP 9.10.1 o versione successiva, è possibile scegliere di suddividere i backup da _Cool_ ad _Azure Archive_ dopo un certo numero di giorni (in genere più di 30 giorni) per un'ulteriore ottimizzazione dei costi.  I dati in questo livello non sono accessibili immediatamente quando necessario e richiederanno un costo di recupero più elevato, quindi è necessario valutare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati.  Consultare la sezione di questa pagina sul ripristino dei dati dall'archivio.
+
+Tieni presente che quando configuri NetApp Backup and Recovery con questo tipo di regola del ciclo di vita, non devi configurare alcuna regola del ciclo di vita quando imposti il ​​contenitore nel tuo account Azure.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Scopri di più sui livelli di accesso di Azure Blob"^] .
+
+
+
+== Ripristinare i dati dall'archivio
+
+Sebbene l'archiviazione di file di backup più vecchi in un archivio sia molto meno costosa rispetto all'archiviazione Cool, l'accesso ai dati da un file di backup in Azure Archive per le operazioni di ripristino richiederà più tempo e avrà un costo maggiore.
+
+Quanto costa ripristinare i dati da Azure Archive?:: Quando si recuperano dati da Azure Archive, è possibile scegliere tra due priorità di ripristino:
++
+--
+* *Alto*: Recupero più rapido, costo più elevato
+* *Standard*: Recupero più lento, costo inferiore
+
+
+Ogni metodo prevede una tariffa di recupero per GB e una tariffa per richiesta diverse.  Per i prezzi dettagliati di Azure Archive per regione di Azure, visitare il sito https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Pagina dei prezzi di Azure"^] .
+
+--
+
+
+
+NOTE: La priorità Alta non è supportata durante il ripristino dei dati da Azure ai sistemi StorageGRID .
+
+Quanto tempo ci vorrà per ripristinare i miei dati archiviati in Azure Archive?:: Il tempo di ripristino è composto da 2 parti:
++
+--
+* *Tempo di recupero*: tempo necessario per recuperare il file di backup archiviato da Azure Archive e posizionarlo nell'archivio Cool.  Questo è talvolta chiamato il periodo di "reidratazione".  Il tempo di recupero varia a seconda della priorità di ripristino scelta:
++
+** *Alto*: < 1 ora
+** *Standard*: < 15 ore
+
+
+* *Tempo di ripristino*: tempo necessario per ripristinare i dati dal file di backup nell'archivio Cool.  Questa volta non c'è differenza rispetto alla tipica operazione di ripristino eseguita direttamente dall'archiviazione Cool, quando non si utilizza un livello di archiviazione.
+
+
+Per ulteriori informazioni sulle opzioni di recupero di Azure Archive, fare riferimento a https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["queste FAQ di Azure"^] .
+
+--
+

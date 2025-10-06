@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kvm-vms.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. 
+---
+= Ripristina le applicazioni Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che quest'ultima disponga di almeno un punto di ripristino. Un punto di ripristino può essere costituito dallo snapshot locale o dal backup nell'archivio oggetti (o da entrambi). È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
+
+.Ruolo richiesto della console NetApp
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. In NetApp Backup and Recovery, seleziona *Inventario*.
+. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. Selezionare la scheda *Applicazioni*.
+. Nell'elenco delle applicazioni, seleziona l'applicazione che desideri ripristinare e seleziona il menu Azioni associato.
+. Seleziona *Visualizza e ripristina*.
++
+Viene visualizzato l'elenco dei punti di ripristino.
+
+. Aprire il menu Azioni per il punto di ripristino che si desidera utilizzare e selezionare *Ripristina*.
+
+
+[discrete]
+===== Impostazioni generali
+
+. Selezionare l'origine da cui effettuare il ripristino (archivio locale o archivio oggetti).
+. Selezionare il cluster di destinazione dall'elenco *Cluster*.
+. Selezionare lo spazio dei nomi di destinazione del ripristino.
++
+È possibile ripristinare lo spazio dei nomi originale o uno nuovo.
+
+. Selezionare *Avanti*.
+
+
+[discrete]
+===== Selezione delle risorse
+
+. Scegli se desideri ripristinare tutte le risorse associate all'applicazione oppure utilizzare un filtro per selezionare risorse specifiche da ripristinare:
+
+
+[role="tabbed-block"]
+====
+.Ripristina tutte le risorse
+--
+. Seleziona *Ripristina tutte le risorse*.
+. Selezionare *Avanti*.
+
+
+--
+.Ripristina risorse specifiche
+--
+. Seleziona *Risorse selettive*.
+. Scegli il comportamento del filtro delle risorse.  Se scegli *Includi*, le risorse selezionate verranno ripristinate.  Se si sceglie *Escludi*, le risorse selezionate non verranno ripristinate.
+. Selezionare *Aggiungi regole* per aggiungere regole che definiscono i filtri per la selezione delle risorse.  Per filtrare le risorse è necessaria almeno una regola.
++
+Ogni regola può filtrare in base a criteri quali lo spazio dei nomi della risorsa, le etichette, il gruppo, la versione e il tipo.
+
+. Selezionare *Salva* per salvare ciascuna regola.
+. Dopo aver aggiunto tutte le regole necessarie, seleziona *Cerca* per visualizzare le risorse disponibili nell'archivio di backup che corrispondono ai criteri di filtro.
++
+
+NOTE: Le risorse mostrate sono le risorse attualmente presenti nel cluster.
+
+. Una volta soddisfatti dei risultati, selezionare *Avanti*.
+
+
+--
+====
+[discrete]
+===== Impostazioni di destinazione
+
+. Scegliere se ripristinare la classe di archiviazione predefinita o una classe di archiviazione diversa.
+. Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine.
+. Selezionare *Ripristina*.
+

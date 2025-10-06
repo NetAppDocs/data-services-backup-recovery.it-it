@@ -1,0 +1,174 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-migrate-resync.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, NetApp Cloud Volumes Service, FlexVols, FlexGroups 
+summary: La funzionalità SnapMirror to Cloud Resync di NetApp Backup and Recovery semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp . 
+---
+= Migrare i volumi utilizzando SnapMirror su Cloud Resync in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La funzionalità SnapMirror to Cloud Resync di NetApp Backup and Recovery semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp .  Quando un volume viene migrato tramite SnapMirror Logical Replication (LRSE) da una distribuzione NetApp locale a un'altra o a una soluzione basata su cloud come Cloud Volumes ONTAP o Cloud Volumes Service, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
+
+Questa funzionalità elimina la necessità di un'operazione di reimpostazione della baseline, che richiede molto tempo e risorse, consentendo alle operazioni di backup di continuare anche dopo la migrazione.  Questa funzionalità è utile negli scenari di migrazione del carico di lavoro, supportando sia FlexVols che FlexGroups ed è disponibile a partire dalla versione 9.16.1 ONTAP .
+
+
+NOTE: Questa funzionalità è disponibile a partire dalla versione 4.0.3 di NetApp Backup and Recovery, rilasciata a maggio 2025.
+
+Mantenendo la continuità del backup in tutti gli ambienti, SnapMirror to Cloud Resync migliora l'efficienza operativa e riduce la complessità della gestione dei dati ibridi e multi-cloud.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+
+====
+.Prima di iniziare
+Assicurarsi che siano soddisfatti i seguenti prerequisiti:
+
+* Il cluster ONTAP di destinazione deve eseguire ONTAP versione 9.16.1 o successiva.
+* Il vecchio cluster ONTAP di origine deve essere protetto tramite NetApp Backup and Recovery.
+* La funzionalità SnapMirror to Cloud Resync è disponibile a partire dalla versione 4.0.3 NetApp Backup and Recovery, rilasciata a maggio 2025.
+* L'ultimo backup nell'archivio oggetti deve essere lo snapshot comune tra la vecchia origine, la nuova origine e l'archivio oggetti. Lo snapshot comune non può essere più vecchio dell'ultimo snapshot sottoposto a backup nell'archivio oggetti.
+* Sia i criteri snapshot che quelli SnapMirror , utilizzati sul vecchio ONTAP , devono essere creati sul nuovo cluster ONTAP prima di avviare l'operazione di risincronizzazione. Se nel processo di risincronizzazione verrà utilizzata una policy, sarà necessario crearla. L'operazione di risincronizzazione non crea i criteri.
+* Assicurarsi che il criterio SnapMirror applicato alla relazione SnapMirror del volume di migrazione includa la stessa etichetta utilizzata dalla relazione cloud. Per evitare problemi, utilizzare la policy che gestisce un mirror esatto del volume e di tutti gli snapshot.
+
+
+
+NOTE: Al momento, SnapMirror su Cloud Resync dopo le migrazioni tramite i metodi SVM-Migrate, SVM-DR o Head Swap non è supportato.
+
+
+
+== Come funziona NetApp Backup and Recovery SnapMirror to Cloud Resync
+
+Se si completa un aggiornamento tecnico o si migrano volumi da un cluster ONTAP a un altro, è importante che i backup continuino a funzionare senza interruzioni.  NetApp Backup and Recovery SnapMirror to Cloud Resync aiuta in questo, garantendo che i backup cloud rimangano coerenti anche dopo una migrazione del volume.
+
+Ecco un esempio:
+
+Immagina di avere un volume locale denominato Vol1a.  Questo volume contiene tre istantanee: S1, S2 e S3.  Questi snapshot sono come punti di ripristino.  Il backup di Vol1 è già in corso su un endpoint di archivio oggetti cloud tramite SnapMirror to Cloud (SM-C).  Tuttavia, finora solo S1 e S2 sono stati sottoposti a backup nell'archivio oggetti.
+
+Ora vuoi migrare Vol1 su un altro cluster ONTAP .  Per fare ciò, si crea una relazione SnapMirror Logical Replication (LRSE) su un nuovo volume cloud denominato Vol1b.  In questo modo vengono trasferiti tutti e tre gli snapshot (S1, S2 e S3) da Vol1a a Vol1b.
+
+Una volta completata la migrazione, la configurazione sarà la seguente:
+
+* La relazione SM-C originale (Vol1a → Archivio oggetti) viene eliminata.
+* Viene eliminata anche la relazione LRSE (Vol1a → Vol1b).
+* Vol1b è ora il tuo volume attivo.
+
+
+A questo punto, si desidera continuare a eseguire il backup di Vol1b sullo stesso endpoint cloud.  Ma invece di avviare un backup completo da zero (che richiederebbe tempo e risorse), puoi usare SnapMirror per Cloud Resync.
+
+Ecco come funziona la risincronizzazione:
+
+* Il sistema verifica la presenza di uno snapshot comune tra Vol1a e Object Store.  In questo caso, entrambi hanno S2.
+* Grazie a questa istantanea condivisa, il sistema deve trasferire solo le modifiche incrementali tra S2 e S3.
+
+
+Ciò significa che solo i nuovi dati aggiunti dopo S2 vengono inviati all'archivio oggetti, non l'intero volume.
+
+Questo processo evita di dover reinviare dati già sottoposti a backup, consente di risparmiare larghezza di banda e garantisce che la catena di backup continui senza problemi dopo la migrazione.
+
+image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery SnapMirror per la risincronizzazione del cloud"]
+
+
+
+== Note sulla procedura
+
+* Le migrazioni e gli aggiornamenti tecnologici non vengono eseguiti tramite NetApp Backup and Recovery.  Dovrebbero essere eseguiti da un team di servizi professionali o da un amministratore di storage qualificato.
+* Un team di migrazione NetApp è responsabile della creazione della relazione SnapMirror tra i cluster ONTAP di origine e di destinazione per facilitare la migrazione dei volumi.
+* Assicurarsi che la migrazione durante un aggiornamento tecnologico sia basata sulla migrazione basata su SnapMirror.
+
+
+
+
+== Come migrare i volumi utilizzando SnapMirror su Cloud Resync
+
+La migrazione dei volumi tramite SnapMirror su Cloud Resync prevede i seguenti passaggi principali, ciascuno descritto più dettagliatamente di seguito:
+
+* *Seguire una checklist pre-migrazione*: prima di iniziare la migrazione, un team NetApp Tech Refresh verifica che siano soddisfatti i seguenti prerequisiti per evitare la perdita di dati e garantire un processo di migrazione senza intoppi.
+* *Seguire una checklist post-migrazione*: dopo la migrazione, un team NetApp Tech Refresh verifica che vengano completati i seguenti passaggi per stabilire la protezione e preparare la risincronizzazione.
+* *Eseguire un'operazione di risincronizzazione SnapMirror a Cloud*: dopo la migrazione, un team NetApp Tech Refresh esegue un'operazione di risincronizzazione SnapMirror a Cloud per riprendere i backup su cloud dai volumi appena migrati.
+
+
+image:diagram-snapmirror-cloud-resync-migration-steps.png["Passaggi per migrare i volumi utilizzando SnapMirror su Cloud Resync"]
+
+
+
+=== Seguire una checklist pre-migrazione
+
+Prima di iniziare la migrazione, un team NetApp Tech Refresh verifica che siano soddisfatti i seguenti prerequisiti per evitare la perdita di dati e garantire un processo di migrazione senza intoppi.
+
+. Assicurarsi che tutti i volumi da migrare siano protetti tramite NetApp Backup and Recovery.
+. Registra gli UUID delle istanze del volume.  Annotare gli UUID delle istanze di tutti i volumi prima di avviare la migrazione.  Questi identificatori sono fondamentali per le successive operazioni di mappatura e risincronizzazione.
+. Eseguire uno snapshot finale di ciascun volume per preservare lo stato più recente, prima di eliminare qualsiasi relazione SnapMirror .
+. Criteri SnapMirror del documento.  Registrare la policy SnapMirror attualmente associata alla relazione di ciascun volume.  Questo sarà necessario in seguito durante il processo di risincronizzazione da SnapMirror a Cloud.
+. Eliminare le relazioni di SnapMirror Cloud con l'archivio oggetti.
+. Creare una relazione SnapMirror standard con il nuovo cluster ONTAP per migrare il volume al nuovo cluster ONTAP di destinazione.
+
+
+
+
+=== Seguire una checklist post-migrazione
+
+Dopo la migrazione, un team NetApp Tech Refresh verifica che vengano completati i seguenti passaggi per stabilire la protezione e preparare la risincronizzazione.
+
+. Registra i nuovi UUID delle istanze di volume di tutti i volumi migrati nel cluster ONTAP di destinazione.
+. Verificare che tutti i criteri SnapMirror richiesti disponibili nel vecchio cluster ONTAP siano configurati correttamente nel nuovo cluster ONTAP .
+. Aggiungere il nuovo cluster ONTAP come sistema nella pagina *Sistemi* della Console.
++
+
+NOTE: Deve essere utilizzato l'UUID dell'istanza del volume, non l'ID del volume. L'UUID dell'istanza del volume è un identificatore univoco che rimane coerente durante le migrazioni, mentre l'ID del volume può cambiare dopo la migrazione.
+
+
+
+
+
+=== Eseguire una risincronizzazione SnapMirror su Cloud
+
+Dopo la migrazione, un team NetApp Tech Refresh esegue un'operazione SnapMirror to Cloud Resync per riprendere i backup cloud dai volumi appena migrati.
+
+. Aggiungere il nuovo cluster ONTAP come sistema nella pagina *Sistemi* della Console.
+. Consultare la pagina NetApp Backup and Recovery Volumes per assicurarsi che i dettagli del vecchio sistema di origine siano disponibili.
+. Dalla pagina NetApp Backup and Recovery Volumes, seleziona *Impostazioni di backup*.
++
+** Nella pagina Impostazioni di backup, seleziona *Visualizza tutto*.
+** Dal menu Azioni ... a destra della _nuova_ origine, seleziona *Risincronizza backup*.
+
+
+. Nella pagina del sistema di risincronizzazione, procedere come segue:
++
+.. *Nuovo sistema sorgente*: immettere il nuovo cluster ONTAP in cui sono stati migrati i volumi.
+.. *Archivio oggetti di destinazione esistente*: selezionare l'archivio oggetti di destinazione che contiene i backup del vecchio sistema di origine.
+
+
+. Selezionare *Scarica modello CSV* per scaricare il foglio Excel dei dettagli di risincronizzazione.  Utilizzare questo foglio per immettere i dettagli dei volumi da migrare.  Nel file CSV, inserisci i seguenti dettagli:
++
+** Il vecchio UUID dell'istanza del volume dal cluster di origine
+** Il nuovo UUID dell'istanza del volume dal cluster di destinazione
+** Criterio SnapMirror da applicare alla nuova relazione.
+
+
+. Selezionare *Carica* in *Carica dettagli mapping volume* per caricare il foglio CSV completato nell'interfaccia utente NetApp Backup and Recovery.
++
+
+NOTE: Deve essere utilizzato l'UUID dell'istanza del volume, non l'ID del volume. L'UUID dell'istanza del volume è un identificatore univoco che rimane coerente durante le migrazioni, mentre l'ID del volume può cambiare dopo la migrazione.
+
+. Immettere le informazioni di configurazione del provider e della rete necessarie per l'operazione di risincronizzazione.
+. Selezionare *Invia* per avviare il processo di convalida.
++
+NetApp Backup and Recovery verifica che ogni volume selezionato per la risincronizzazione sia lo snapshot più recente e disponga di almeno uno snapshot comune. Ciò garantisce che i volumi siano pronti per l'operazione SnapMirror to Cloud Resync.
+
+. Esaminare i risultati della convalida, inclusi i nuovi nomi dei volumi di origine e lo stato di risincronizzazione per ciascun volume.
+. Verificare l'idoneità del volume. Il sistema verifica se i volumi sono idonei per la risincronizzazione. Se un volume non è idoneo, significa che non si tratta dell'ultimo snapshot oppure non è stato trovato alcun snapshot comune.
++
+
+IMPORTANT: Per garantire che i volumi rimangano idonei per l'operazione SnapMirror su Cloud Resync, eseguire uno snapshot finale di ciascun volume prima di eliminare qualsiasi relazione SnapMirror durante la fase di pre-migrazione.  In questo modo si preserva lo stato più recente dei dati.
+
+. Selezionare *Risincronizzazione* per avviare l'operazione di risincronizzazione. Il sistema utilizza lo snapshot più recente e comune per trasferire solo le modifiche incrementali, garantendo la continuità del backup.
+. Monitorare il processo di risincronizzazione nella pagina Job Monitor.
+

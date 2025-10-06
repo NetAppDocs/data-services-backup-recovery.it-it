@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+---
+= Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Proteggi i carichi di lavoro delle tue macchine virtuali con NetApp Backup and Recovery.  NetApp Backup and Recovery fornisce operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con le VM per VM, datastore e VMDK.
+
+È possibile eseguire il backup degli archivi dati su Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e ripristinare le macchine virtuali sull'host SnapCenter Plug-in for VMware vSphere .
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+
+====
+Per istruzioni sulla protezione dei carichi di lavoro delle macchine virtuali, vedere i seguenti argomenti:
+
+* link:prev-vmware-policy-create.html["Creare una policy per i carichi di lavoro VMware"]
+* link:prev-vmware-backup-aws.html["Eseguire il backup dei datastore VMware su Amazon Web Services"]
+* link:prev-vmware-backup-azure.html["Eseguire il backup dei datastore VMware su Microsoft Azure"]
+* link:prev-vmware-backup-gcp.html["Eseguire il backup dei datastore VMware su Google Cloud Platform"]
+* link:prev-vmware-backup-storagegrid.html["Eseguire il backup dei datastore VMware su StorageGRID"]
+* link:prev-vmware-restore.html["Ripristinare i carichi di lavoro VMware"]
+* link:prev-vmware-manage.html["Gestisci la protezione per i carichi di lavoro VMware"]
+

@@ -1,0 +1,42 @@
+= Aggiornamenti del supporto del catalogo indicizzato
+:allow-uri-read: 
+
+
+
+
+=== Aggiornamenti del supporto del catalogo indicizzato
+
+A febbraio 2025 abbiamo introdotto la funzionalità di indicizzazione aggiornata (Catalogo indicizzato v2) da utilizzare durante il metodo di ricerca e ripristino dei dati.  La versione precedente ha migliorato significativamente le prestazioni di indicizzazione dei dati negli ambienti on-premise.  Con questa versione, il catalogo di indicizzazione è ora disponibile negli ambienti Amazon Web Services, Microsoft Azure e Google Cloud Platform (GCP).
+
+Se sei un nuovo cliente, il Catalogo indicizzato v2 è abilitato per impostazione predefinita per tutti i nuovi ambienti.  Se sei un cliente esistente, puoi reindicizzare il tuo ambiente per sfruttare Indexed Catalog v2.
+
+.Come si abilita l'indicizzazione?
+Prima di poter utilizzare il metodo Cerca e ripristina per ripristinare i dati, è necessario abilitare "Indicizzazione" su ogni ambiente di lavoro di origine da cui si prevede di ripristinare volumi o file.  Selezionare l'opzione *Abilita indicizzazione* quando si esegue una ricerca e un ripristino.
+
+Il catalogo indicizzato può quindi tenere traccia di ogni volume e file di backup, rendendo le ricerche rapide ed efficienti.
+
+Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Abilita l'indicizzazione per Ricerca e Ripristino"] .
+
+
+
+=== Endpoint di collegamento privato di Azure ed endpoint di servizio
+
+In genere, NetApp Backup and Recovery stabilisce un endpoint privato con il provider cloud per gestire le attività di protezione.  Questa versione introduce un'impostazione facoltativa che consente di abilitare o disabilitare la creazione automatica di un endpoint privato da parte NetApp Backup and Recovery.  Potrebbe esserti utile se desideri un maggiore controllo sul processo di creazione dell'endpoint privato.
+
+È possibile abilitare o disabilitare questa opzione quando si abilita la protezione o si avvia il processo di ripristino.
+
+Se si disabilita questa impostazione, è necessario creare manualmente l'endpoint privato affinché NetApp Backup and Recovery funzioni correttamente.  Senza una connettività adeguata, potresti non essere in grado di eseguire correttamente le attività di backup e ripristino.
+
+
+
+=== Supporto per SnapMirror su Cloud Resync su ONTAP S3
+
+La versione precedente ha introdotto il supporto per SnapMirror su Cloud Resync (SM-C Resync).  La funzionalità semplifica la protezione dei dati durante la migrazione dei volumi negli ambienti NetApp .  Questa versione aggiunge il supporto per SM-C Resync su ONTAP S3 e altri provider compatibili con S3 come Wasabi e MinIO.
+
+
+
+=== Porta il tuo bucket per StorageGRID
+
+Quando si creano file di backup nell'archiviazione di oggetti per un ambiente di lavoro, per impostazione predefinita NetApp Backup and Recovery crea il contenitore (bucket o account di archiviazione) per i file di backup nell'account di archiviazione di oggetti configurato.  In precedenza, era possibile ignorare questa impostazione e specificare un contenitore personalizzato per Amazon S3, Azure Blob Storage e Google Cloud Storage.  Con questa versione, ora puoi utilizzare il tuo contenitore di archiviazione oggetti StorageGRID .
+
+Vedere https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-journey.html["Crea il tuo contenitore di archiviazione oggetti"] .

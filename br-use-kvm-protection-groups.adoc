@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-protection-groups.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, vm, virtual machines, workloads, volumes, snapshots 
+summary: Crea e gestisci gruppi di protezione per carichi di lavoro KVM in NetApp Backup and Recovery. 
+---
+= Crea e gestisci gruppi di protezione per carichi di lavoro KVM con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Creare gruppi di protezione per gestire le operazioni di backup per un set di risorse KVM.  Un gruppo di protezione è un raggruppamento logico di risorse, quali macchine virtuali e pool di archiviazione, che si desidera proteggere insieme.  È necessario creare un gruppo di protezione per eseguire il backup delle macchine virtuali KVM o dei pool di archiviazione.
+
+È possibile eseguire le seguenti attività relative ai gruppi di protezione:
+
+* Crea un gruppo di protezione.
+* Visualizza i dettagli della protezione.
+* Crea subito un gruppo di protezione. Vedere link:br-use-kvm-backup.html["Esegui subito il backup dei carichi di lavoro KVM"] .
+* Elimina un gruppo di protezione.
+
+
+
+
+== Crea un gruppo di protezione
+
+Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo di protezione.
+
+*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare *Crea gruppo di protezione*.
+. Fornire un nome per il gruppo di protezione.
+. Selezionare le VM o i pool di archiviazione che si desidera includere nel gruppo di protezione.
+. Selezionare *Avanti*.
+. Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
++
+Per ulteriori informazioni sulla creazione di una policy di backup, fare riferimento alink:br-use-policies-create.html["Creare e gestire policy"] .
+
+. Selezionare *Avanti*.
+. Rivedere la configurazione.
+. Selezionare *Crea* per creare il gruppo di protezione.
+
+
+
+
+== Elimina un gruppo di protezione
+
+L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare il gruppo di protezione che si desidera eliminare.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina*.
+. Rivedere il messaggio di conferma relativo all'eliminazione dei backup associati e confermare l'eliminazione.
+

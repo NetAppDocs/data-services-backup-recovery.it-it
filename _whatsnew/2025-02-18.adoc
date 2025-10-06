@@ -1,0 +1,51 @@
+= Indicizzazione ad alte prestazioni
+:allow-uri-read: 
+
+
+
+
+=== Indicizzazione ad alte prestazioni
+
+NetApp Backup and Recovery introduce una funzionalità di indicizzazione aggiornata che rende più efficiente l'indicizzazione dei dati sul sistema di origine.  La nuova funzionalità di indicizzazione include aggiornamenti all'interfaccia utente, prestazioni migliorate del metodo Cerca e ripristina per il ripristino dei dati, aggiornamenti alle funzionalità di ricerca globale e una migliore scalabilità.
+
+Ecco una ripartizione dei miglioramenti:
+
+* *Consolidamento delle cartelle*: la versione aggiornata raggruppa le cartelle utilizzando nomi che includono identificatori specifici, rendendo il processo di indicizzazione più fluido.
+* *Compattazione dei file Parquet*: la versione aggiornata riduce il numero di file utilizzati per indicizzare ciascun volume, semplificando il processo ed eliminando la necessità di un database aggiuntivo.
+* *Scale-out con più sessioni*: la nuova versione aggiunge più sessioni per gestire le attività di indicizzazione, velocizzando il processo.
+* *Supporto per più contenitori di indicizzazione*: la nuova versione utilizza più contenitori per gestire e distribuire meglio le attività di indicizzazione.
+* *Flusso di lavoro dell'indice diviso*: la nuova versione divide il processo di indicizzazione in due parti, migliorando l'efficienza.
+* *Miglioramento della concorrenza*: la nuova versione consente di eliminare o spostare le directory contemporaneamente, velocizzando il processo di indicizzazione.
+
+
+.Chi trae vantaggio da questa funzionalità?
+La nuova funzionalità di indicizzazione è disponibile per tutti i nuovi clienti.
+
+.Come si abilita l'indicizzazione?
+Prima di poter utilizzare il metodo Cerca e ripristina per ripristinare i dati, è necessario abilitare "Indicizzazione" su ciascun sistema di origine da cui si prevede di ripristinare volumi o file.  Ciò consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche rapide ed efficienti.
+
+Abilitare l'indicizzazione nell'ambiente di lavoro di origine selezionando l'opzione "Abilita indicizzazione" quando si esegue una ricerca e un ripristino.
+
+Per maggiori informazioni, consultare la documentazione https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["come ripristinare i dati ONTAP utilizzando Cerca e Ripristina"] .
+
+.Scala supportata
+La nuova funzionalità di indicizzazione supporta quanto segue:
+
+* Efficienza di ricerca globale in meno di 3 minuti
+* Fino a 5 miliardi di file
+* Fino a 5000 volumi per cluster
+* Fino a 100.000 snapshot per volume
+* Il tempo massimo per l'indicizzazione di base è inferiore a 7 giorni.  Il tempo effettivo varierà a seconda dell'ambiente.
+
+
+
+
+=== Miglioramenti delle prestazioni di ricerca globale
+
+Questa versione include anche miglioramenti alle prestazioni della ricerca globale.  Ora vedrai indicatori di avanzamento e risultati di ricerca più dettagliati, tra cui il numero di file e il tempo impiegato per la ricerca.  Contenitori dedicati per la ricerca e l'indicizzazione garantiscono che le ricerche globali vengano completate in meno di cinque minuti.
+
+Tieni presente queste considerazioni relative alla ricerca globale:
+
+* Il nuovo indice non viene eseguito sugli snapshot etichettati come orari.
+* La nuova funzionalità di indicizzazione funziona solo sugli snapshot su FlexVols e non sugli snapshot su FlexGroups.
+

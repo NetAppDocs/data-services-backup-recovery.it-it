@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-vmware.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vcenter 
+summary: 'Per poter utilizzare il servizio NetApp Backup and Recovery è necessario prima rilevare i dati.  Durante l"individuazione, NetApp Backup and Recovery analizza tutti i volumi e i file nei sistemi all"interno della tua organizzazione.' 
+---
+= Limitazioni note con NetApp Backup and Recovery per carichi di lavoro VMware
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le limitazioni note identificano piattaforme, dispositivi o funzioni che non sono supportati da questa versione del prodotto o che non interagiscono correttamente con esso. Esamina attentamente queste limitazioni.
+
+Le seguenti azioni non sono supportate nella versione di anteprima dei carichi di lavoro VMware in NetApp Backup and Recovery:
+
+* Montare
+* Smonta
+* Ripristina in posizione alternativa
+* Ripristina VMDK
+* Allega VMDK
+* Stacca VMDK
+* Supporto vVol
+* Supporto NVMe
+* Integrazione e-mail
+* Modifica la politica
+* Modifica gruppo di protezione
+* Supporto per il controllo degli accessi basato sui ruoli (RBAC)
+

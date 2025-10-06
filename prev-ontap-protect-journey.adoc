@@ -1,0 +1,293 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-journey.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+---
+= Pianifica il tuo percorso di protezione con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery consente di creare fino a tre copie dei volumi di origine per proteggere i dati.  Sono numerose le opzioni che puoi selezionare quando abiliti questo servizio sui tuoi volumi, quindi dovresti rivedere le tue scelte per essere preparato.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+
+====
+Esamineremo le seguenti opzioni:
+
+* Quali funzionalità di protezione utilizzerai: copie snapshot, volumi replicati e/o backup sul cloud
+* Quale architettura di backup utilizzerai: un backup a cascata o a fan-out dei tuoi volumi
+* Utilizzerai i criteri di backup predefiniti o dovrai creare criteri personalizzati?
+* Desideri che il servizio crei i bucket cloud per te o desideri creare i contenitori di archiviazione degli oggetti prima di iniziare?
+* Quale modalità di distribuzione dell'agente della console stai utilizzando (modalità standard, limitata o privata)
+
+
+
+
+== Quali funzionalità di protezione utilizzerai?
+
+Prima di selezionare le funzionalità da utilizzare, ecco una breve spiegazione delle funzioni di ciascuna funzionalità e del tipo di protezione che offre.
+
+[cols="20,70"]
+|===
+| Tipo di backup | Descrizione 
+
+
+| Istantanea | Crea un'immagine di sola lettura e in un punto temporale specifico di un volume all'interno del volume di origine come copia snapshot.  È possibile utilizzare la copia snapshot per recuperare singoli file o per ripristinare l'intero contenuto di un volume. 
+
+
+| Replicazione | Crea una copia secondaria dei dati su un altro sistema di archiviazione ONTAP e aggiorna continuamente i dati secondari.  I tuoi dati saranno sempre aggiornati e disponibili ogni volta che ne avrai bisogno. 
+
+
+| Backup su cloud | Crea backup dei tuoi dati sul cloud per proteggerli e archiviarli a lungo termine.  Se necessario, è possibile ripristinare un volume, una cartella o singoli file dal backup sullo stesso sistema o su un sistema diverso. 
+|===
+Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino.  Una copia snapshot è un'immagine di un volume, di sola lettura e memorizzata in un punto temporale specifico.  L'immagine consuma uno spazio di archiviazione minimo e comporta un sovraccarico di prestazioni trascurabile, poiché registra solo le modifiche apportate ai file dall'ultima copia snapshot effettuata.  La copia snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
+
+image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono sul sistema di origine come copie snapshot, come volumi replicati sul sistema di archiviazione secondario e come file di backup nell'archiviazione di oggetti."]
+
+È possibile scegliere di creare sia volumi replicati su un altro sistema di archiviazione ONTAP sia file di backup nel cloud.  Oppure puoi semplicemente scegliere di creare volumi replicati o file di backup: la scelta è tua.
+
+Riassumendo, ecco i flussi di protezione validi che puoi creare per i volumi nel tuo sistema ONTAP :
+
+* Volume di origine -> Copia snapshot -> Volume replicato -> File di backup
+* Volume sorgente -> Copia snapshot -> File di backup
+* Volume sorgente -> Copia snapshot -> Volume replicato
+
+
+
+NOTE: La creazione iniziale di un volume replicato o di un file di backup include una copia completa dei dati di origine: questo processo è denominato _trasferimento di base_.  I trasferimenti successivi contengono solo copie differenziali dei dati di origine (lo snapshot).
+
+*Confronto tra i diversi metodi di backup*
+
+La tabella seguente mostra un confronto generalizzato dei tre metodi di backup.  Sebbene lo spazio di archiviazione degli oggetti sia in genere meno costoso dell'archiviazione su disco in locale, se pensi di dover ripristinare frequentemente i dati dal cloud, le tariffe di uscita dei provider cloud possono ridurre parte dei tuoi risparmi.  Dovrai stabilire con quale frequenza dovrai ripristinare i dati dai file di backup nel cloud.
+
+Oltre a questo criterio, l'archiviazione cloud offre opzioni di sicurezza aggiuntive se si utilizza la funzionalità DataLock e Ransomware Protection, nonché ulteriori risparmi sui costi selezionando classi di archiviazione per i file di backup più vecchi. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione DataLock e Ransomware e sulle impostazioni di archiviazione"] .
+
+[cols="18,18,22,18,22"]
+|===
+| Tipo di backup | Velocità di backup | Costo di backup | Ripristinare la velocità | Costo di ripristino 
+
+
+| *Istantanea* | Alto | Basso (spazio su disco) | Alto | Basso 
+
+
+| *Replicazione* | Medio | Mezzo (spazio su disco) | Medio | Mezzo (rete) 
+
+
+| *Backup su cloud* | Basso | Basso (spazio oggetto) | Basso | Alto (commissioni del fornitore) 
+|===
+
+
+== Quale architettura di backup utilizzerai?
+
+Quando si creano sia volumi replicati sia file di backup, è possibile scegliere un'architettura fan-out o a cascata per eseguire il backup dei volumi.
+
+Un'architettura *fan-out* trasferisce la copia snapshot in modo indipendente sia al sistema di archiviazione di destinazione sia all'oggetto di backup nel cloud.
+
+image:diagram-321-fanout-detailed.png["Un diagramma che mostra come una copia snapshot di un volume viene utilizzata per creare e aggiornare un volume replicato e un file di backup."]
+
+Un'architettura *a cascata* trasferisce prima la copia dello snapshot al sistema di archiviazione di destinazione, che poi trasferisce la copia all'oggetto di backup nel cloud.
+
+image:diagram-321-cascade-detailed.png["Un diagramma che mostra come una copia snapshot di un volume viene utilizzata per creare e aggiornare un volume replicato e un file di backup."]
+
+*Confronto tra le diverse scelte architettoniche*
+
+Questa tabella fornisce un confronto tra le architetture fan-out e a cascata.
+
+[cols="50,50"]
+|===
+| Fan-out | Cascata 
+
+
+| Piccolo impatto sulle prestazioni del sistema sorgente perché invia copie snapshot a 2 sistemi distinti | Minore impatto sulle prestazioni del sistema di archiviazione di origine perché invia la copia snapshot una sola volta 
+
+
+| Più facile da configurare perché tutte le policy, le reti e le configurazioni ONTAP vengono eseguite sul sistema sorgente | Richiede che alcune configurazioni di rete e ONTAP vengano eseguite anche dal sistema secondario. 
+|===
+
+
+== Utilizzerai i criteri predefiniti per snapshot, repliche e backup?
+
+Per creare i backup è possibile utilizzare i criteri predefiniti forniti da NetApp oppure creare criteri personalizzati.  Quando si utilizza la procedura guidata di attivazione per abilitare il servizio di backup e ripristino per i volumi, è possibile selezionare tra i criteri predefiniti e qualsiasi altro criterio già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP locale).  Se si desidera utilizzare una policy diversa da quelle esistenti, è possibile crearla prima di iniziare o durante l'utilizzo della procedura guidata di attivazione.
+
+* Il criterio di snapshot predefinito crea copie di snapshot orarie, giornaliere e settimanali, conservando 6 copie di snapshot orarie, 2 giornaliere e 2 settimanali.
+* La policy di replica predefinita replica copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 copie snapshot settimanali.
+* La policy di backup predefinita replica copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 copie snapshot settimanali.
+
+
+Se si creano policy personalizzate per la replica o il backup, le etichette delle policy (ad esempio, "giornaliera" o "settimanale") devono corrispondere alle etichette presenti nelle policy snapshot, altrimenti i volumi replicati e i file di backup non verranno creati.
+
+È possibile creare policy di archiviazione di snapshot, repliche e backup su oggetti nell'interfaccia utente NetApp Backup and Recovery.  Vedi la sezione perlink:prev-ontap-backup-manage.html["aggiunta di una nuova politica di backup"] per i dettagli.
+
+Oltre a utilizzare NetApp Backup and Recovery per creare policy personalizzate, è possibile utilizzare System Manager o l'interfaccia della riga di comando (CLI) ONTAP :
+
+* https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Creare un criterio di snapshot utilizzando System Manager o ONTAP CLI"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Creare una policy di replicazione utilizzando System Manager o ONTAP CLI"^]
+
+
+*Nota:* quando si utilizza System Manager, selezionare *Asincrono* come tipo di policy per le policy di replica e selezionare *Asincrono* e *Backup su cloud* per le policy di backup su oggetto.
+
+Ecco alcuni esempi di comandi ONTAP CLI che potrebbero essere utili se si creano policy personalizzate.  Si noti che è necessario utilizzare il vserver _admin_ (VM di archiviazione) come `<vserver_name>` in questi comandi.
+
+[cols="30,70"]
+|===
+| Descrizione della politica | Comando 
+
+
+| Criterio di snapshot semplice | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
+
+
+| Backup semplice sul cloud | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| Backup su cloud con protezione DataLock e Ransomware | `snapmirror policy create -policy CloudBackupService-Enterprise -snapshot-lock-mode enterprise -vserver <vserver_name>`
+`snapmirror policy add-rule -policy CloudBackupService-Enterprise -retention-period 30days` 
+
+
+| Backup su cloud con classe di archiviazione | `snapmirror policy create -vserver <vserver_name> -policy <policy_name> -archive-after-days <days> -create-snapshot-on-source false -type vault`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+
+
+| Semplice replica su un altro sistema di archiviazione | `snapmirror policy create -policy <policy_name> -type async-mirror -vserver <vserver_name>`
+`snapmirror policy add-rule -policy <policy_name> -vserver <vserver_name> -snapmirror-label <snapmirror_label> -keep` 
+|===
+
+NOTE: Per il backup delle relazioni cloud è possibile utilizzare solo criteri di vault.
+
+
+
+== Dove risiedono le mie polizze?
+
+Le policy di backup risiedono in posizioni diverse a seconda dell'architettura di backup che si intende utilizzare: Fan-out o Cascading.  Le policy di replicazione e le policy di backup non sono progettate allo stesso modo perché le repliche accoppiano due sistemi di archiviazione ONTAP e il backup su oggetto utilizza un provider di archiviazione come destinazione.
+
+* I criteri di snapshot risiedono sempre sul sistema di archiviazione primario.
+* Le policy di replica risiedono sempre sul sistema di archiviazione secondario.
+* I criteri di backup su oggetto vengono creati sul sistema in cui risiede il volume di origine: si tratta del cluster primario per le configurazioni fan-out e del cluster secondario per le configurazioni a cascata.
+
+
+Queste differenze sono mostrate nella tabella.
+
+[cols="25,25,25,25"]
+|===
+| Architettura | Politica di snapshot | Politica di replicazione | Politica di backup 
+
+
+| *Fan-out* | Primario | Secondario | Primario 
+
+
+| *Cascata* | Primario | Secondario | Secondario 
+|===
+Pertanto, se si prevede di creare policy personalizzate quando si utilizza l'architettura a cascata, sarà necessario creare le policy di replica e backup sugli oggetti sul sistema secondario in cui verranno creati i volumi replicati.  Se si prevede di creare policy personalizzate quando si utilizza l'architettura fan-out, sarà necessario creare le policy di replica sul sistema secondario in cui verranno creati i volumi replicati e il backup sulle policy degli oggetti sul sistema primario.
+
+Se si utilizzano i criteri predefiniti presenti su tutti i sistemi ONTAP , allora è tutto a posto.
+
+
+
+== Vuoi creare il tuo contenitore di archiviazione di oggetti
+
+Quando si creano file di backup nell'archiviazione oggetti per un sistema, per impostazione predefinita il servizio di backup e ripristino crea il contenitore (bucket o account di archiviazione) per i file di backup nell'account di archiviazione oggetti configurato.  Per impostazione predefinita, il bucket AWS o GCP è denominato "netapp-backup-<uuid>".  L'account di archiviazione BLOB di Azure è denominato "netappbackup<uuid>".
+
+È possibile creare autonomamente il contenitore nell'account del provider di oggetti se si desidera utilizzare un determinato prefisso o assegnare proprietà speciali.  Se si desidera creare un contenitore personalizzato, è necessario crearlo prima di avviare la procedura guidata di attivazione.  NetApp Backup and Recovery può utilizzare qualsiasi bucket e condividere i bucket.  La procedura guidata di attivazione del backup rileverà automaticamente i contenitori forniti per l'account e le credenziali selezionati, in modo da poter selezionare quello che si desidera utilizzare.
+
+Puoi creare il bucket dalla Console o dal tuo provider cloud.
+
+* https://docs.netapp.com/us-en/storage-management-s3-storage/task-add-s3-bucket.html["Crea bucket Amazon S3 dalla console"^]
+* https://docs.netapp.com/us-en/storage-management-blob-storage/task-add-blob-storage.html["Creare account di archiviazione BLOB di Azure dalla console"^]
+* https://docs.netapp.com/us-en/storage-management-google-cloud-storage/task-add-gcp-bucket.html["Crea bucket di Google Cloud Storage dalla Console"^]
+
+
+Se si prevede di utilizzare un prefisso bucket diverso da "netapp-backup-xxxxxx", sarà necessario modificare le autorizzazioni S3 per il ruolo IAM dell'agente della console.
+
+*Impostazioni avanzate del bucket*
+
+Se intendi spostare i vecchi file di backup in un archivio o se intendi abilitare la protezione DataLock e Ransomware per bloccare i file di backup ed eseguirne la scansione alla ricerca di possibili ransomware, dovrai creare il contenitore con determinate impostazioni di configurazione:
+
+* Al momento, l'archiviazione sui tuoi bucket è supportata nell'archiviazione AWS S3 quando utilizzi il software ONTAP 9.10.1 o versioni successive sui tuoi cluster.  Per impostazione predefinita, i backup vengono avviati nella classe di archiviazione S3 _Standard_.  Assicurati di creare il bucket con le regole del ciclo di vita appropriate:
++
+** Spostare gli oggetti nell'intero ambito del bucket in S3 _Standard-IA_ dopo 30 giorni.
+** Sposta gli oggetti con il tag "smc_push_to_archive: true" in _Glacier Flexible Retrieval_ (in precedenza S3 Glacier)
+
+
+* La protezione DataLock e Ransomware è supportata nello storage AWS quando si utilizza il software ONTAP 9.11.1 o versione successiva sui cluster e nello storage Azure quando si utilizza il software ONTAP 9.12.1 o versione successiva.
++
+** Per AWS, è necessario abilitare il blocco degli oggetti sul bucket utilizzando un periodo di conservazione di 30 giorni.
+** Per Azure, è necessario creare la classe di archiviazione con supporto di immutabilità a livello di versione.
+
+
+
+
+
+
+== Quale modalità di distribuzione dell'agente della console stai utilizzando?
+
+Se stai già utilizzando la Console per gestire il tuo storage, significa che è già stato installato un agente Console.  Se intendi utilizzare lo stesso agente Console con NetApp Backup and Recovery, sei a posto.  Se è necessario utilizzare un agente Console diverso, sarà necessario installarlo prima di avviare l'implementazione del backup e del ripristino.
+
+NetApp Console offre diverse modalità di distribuzione che consentono di utilizzare la console in base alle proprie esigenze aziendali e di sicurezza.  La _modalità standard_ sfrutta il livello SaaS della console per fornire funzionalità complete, mentre la _modalità limitata_ e la _modalità privata_ sono disponibili per le organizzazioni con restrizioni di connettività.
+
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Scopri di più sulle modalità di distribuzione della console NetApp"^] .
+
+
+
+=== Supporto per siti con connettività Internet completa
+
+Quando NetApp Backup and Recovery viene utilizzato in un sito con connettività Internet completa (nota anche come _modalità standard_ o _modalità SaaS_), è possibile creare volumi replicati su qualsiasi sistema ONTAP locale o Cloud Volumes ONTAP gestito dalla Console, nonché creare file di backup su storage di oggetti in uno qualsiasi dei provider cloud supportati. link:concept-backup-to-cloud.html["Visualizza l'elenco completo delle destinazioni di backup supportate"] .
+
+Per un elenco delle posizioni valide degli agenti della console, fare riferimento a una delle seguenti procedure di backup per il provider cloud in cui si prevede di creare i file di backup.  Esistono alcune restrizioni per cui l'agente Console deve essere installato manualmente su una macchina Linux o distribuito in un provider cloud specifico.
+
+* link:prev-ontap-backup-cvo-aws.html["Esegui il backup dei dati Cloud Volumes ONTAP su Amazon S3"]
+* link:prev-ontap-backup-cvo-azure.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Azure Blob"]
+* link:prev-ontap-backup-cvo-gcp.html["Esegui il backup dei dati Cloud Volumes ONTAP su Google Cloud"]
+* link:prev-ontap-backup-onprem-aws.html["Eseguire il backup dei dati ONTAP locali su Amazon S3"]
+* link:prev-ontap-backup-onprem-azure.html["Eseguire il backup dei dati ONTAP locali su Azure Blob"]
+* link:prev-ontap-backup-onprem-gcp.html["Esegui il backup dei dati ONTAP locali su Google Cloud"]
+* link:prev-ontap-backup-onprem-storagegrid.html["Eseguire il backup dei dati ONTAP locali su StorageGRID"]
+* link:prev-ontap-backup-onprem-ontaps3.html["Eseguire il backup ONTAP in sede su ONTAP S3"]
+
+
+
+
+=== Supporto per siti con connettività Internet limitata
+
+NetApp Backup and Recovery può essere utilizzato in un sito con connettività Internet limitata (nota anche come _modalità limitata_) per eseguire il backup dei dati del volume.  In questo caso, sarà necessario distribuire l'agente Console nella regione cloud di destinazione.
+
+ifdef::aws[]
+
+* È possibile eseguire il backup dei dati dai sistemi ONTAP locali o dai sistemi Cloud Volumes ONTAP installati nelle regioni commerciali AWS su Amazon S3. link:prev-ontap-backup-cvo-aws.html["Esegui il backup dei dati Cloud Volumes ONTAP su Amazon S3"] .
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* È possibile eseguire il backup dei dati dai sistemi ONTAP locali o dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di Azure su Azure Blob. link:prev-ontap-backup-cvo-azure.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Azure Blob"] .
+
+
+endif::azure[]
+
+
+
+=== Supporto per siti senza connettività Internet
+
+NetApp Backup and Recovery può essere utilizzato in un sito senza connettività Internet (noto anche come _modalità privata_ o _siti oscuri_) per eseguire il backup dei dati del volume.  In questo caso, sarà necessario distribuire l'agente Console su un host Linux nello stesso sito.
+
+
+NOTE: La modalità privata BlueXP (interfaccia BlueXP legacy) viene in genere utilizzata con ambienti locali privi di connessione Internet e con regioni cloud sicure, tra cui AWS Secret Cloud, AWS Top Secret Cloud e Azure IL6. NetApp continua a supportare questi ambienti con l'interfaccia legacy BlueXP . Per la documentazione sulla modalità privata nell'interfaccia legacy BlueXP , fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentazione PDF per la modalità privata BlueXP"] .
+
+* È possibile eseguire il backup dei dati dai sistemi ONTAP locali sui sistemi NetApp StorageGRID locali. link:prev-ontap-backup-onprem-storagegrid.html["Eseguire il backup dei dati ONTAP locali su StorageGRID"] .
+* È possibile eseguire il backup dei dati dai sistemi ONTAP locali in sede ai sistemi ONTAP locali in sede o ai sistemi Cloud Volumes ONTAP configurati per l'archiviazione di oggetti S3. link:prev-ontap-backup-onprem-ontaps3.html["Eseguire il backup dei dati ONTAP locali su ONTAP S3"] . ifdef::aws[]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]

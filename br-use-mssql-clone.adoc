@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-clone.html 
+keywords: backing up, restoring, back up, backup, clone, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Clona i dati delle applicazioni Microsoft SQL Server per scopi di sviluppo, test o protezione.  È possibile creare cloni da snapshot istantanei o da snapshot esistenti dei carichi di lavoro di Microsoft SQL Server. 
+---
+= Clona i carichi di lavoro di Microsoft SQL Server con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Clona i dati delle applicazioni Microsoft SQL Server sulla stessa macchina virtuale o su una diversa per scopi di sviluppo, test o protezione utilizzando NetApp Backup and Recovery.  È possibile creare cloni da snapshot istantanei o da snapshot esistenti dei carichi di lavoro di Microsoft SQL Server.
+
+Scegli tra i seguenti tipi di cloni:
+
+* *Snapshot e clone istantanei*: puoi creare un clone dei tuoi carichi di lavoro Microsoft SQL Server da uno snapshot istantaneo.  Uno snapshot istantaneo è una copia puntuale dei dati di origine creata da un backup.  Il clone viene archiviato in un archivio oggetti nel tuo account cloud pubblico o privato.  È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
+* *Clona da uno snapshot esistente*: puoi scegliere uno snapshot esistente da un elenco di snapshot disponibili per il carico di lavoro.  Questa opzione è utile se si desidera creare un clone da un punto specifico nel tempo.  Clonazione su storage primario o secondario.
+
+
+È possibile raggiungere i seguenti obiettivi di protezione:
+
+* Crea un clone
+* Aggiorna un clone
+* Dividi un clone
+* Elimina un clone
+
+
+*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+
+
+== Crea un clone
+
+È possibile creare un clone dei carichi di lavoro di Microsoft SQL Server.  Un clone è una copia dei dati di origine creata da un backup.  Il clone viene archiviato in un archivio oggetti nel tuo account cloud pubblico o privato.  È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
+
+È possibile creare un clone da uno snapshot esistente o da uno snapshot istantaneo.  Uno snapshot istantaneo è una copia puntuale dei dati di origine creata da un backup.  È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Seleziona *Crea nuovo clone*.
+. Seleziona il tipo di clone:
++
+** *Clone e aggiornamento del database da snapshot esistente*: scegli lo snapshot per il clone e configura le opzioni per il clone.  Questa opzione è utile se si desidera scegliere lo snapshot per il clone e configurare le opzioni.
+** *Snapshot e clone istantanei*: acquisisci subito uno snapshot dei dati di origine e crea un clone da tale snapshot.  Questa opzione è utile se si desidera creare un clone dai dati più recenti nel carico di lavoro di origine.
+
+
+. Completare la sezione *Origine del database*:
++
+** *Clone singolo o clone in blocco*: seleziona se creare un singolo clone o più cloni.  Se selezioni *Clonazione in blocco*, puoi creare più cloni contemporaneamente utilizzando un gruppo di protezione già creato.  Questa opzione è utile se si desidera creare più cloni per carichi di lavoro diversi.
+** *Host, istanza e nome del database di origine*: selezionare l'host, l'istanza e il nome del database di origine per il clone.  Il database di origine è il database da cui verrà creato il clone.
+
+
+. Completare la sezione *Destinazione database*:
++
+** *Host, istanza e nome del database di destinazione*: selezionare l'host, l'istanza e il nome del database di destinazione per il clone.  Il database di destinazione è la posizione in cui verrà creato il clone.
++
+Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di destinazione e aggiungere un suffisso al nome del database clonato.  Se non si specifica un suffisso, il nome del database clonato sarà lo stesso del nome del database di origine.
+
+** *QoS (velocità massima)*: seleziona la velocità massima di trasmissione della qualità del servizio (QoS) in MBps per il clone.  La QoS definisce le caratteristiche prestazionali del clone, come la velocità massima di trasmissione e gli IOPS.
+
+
+. Completa la sezione *Monte*:
++
+** *Assegna automaticamente punto di montaggio*: seleziona questa opzione per assegnare automaticamente un punto di montaggio per il clone.  Il punto di montaggio è la posizione in cui il clone verrà montato nell'archivio oggetti.
+** *Definisci percorso punto di montaggio*: inserisci un punto di montaggio per il clone.  Il punto di montaggio è la posizione in cui il clone verrà montato nell'archivio oggetti.  Selezionare la lettera dell'unità, immettere il percorso del file di dati e immettere il percorso del file di registro.
+
+
+. Selezionare *Avanti*.
+. Seleziona il punto di ripristino:
++
+** *Snapshot esistenti*: seleziona uno snapshot esistente dall'elenco degli snapshot disponibili per il carico di lavoro.  Questa opzione è utile se si desidera creare un clone da un punto specifico nel tempo.
+** *Snapshot e clone istantanei*: seleziona lo snapshot più recente dall'elenco degli snapshot disponibili per il carico di lavoro.  Questa opzione è utile se si desidera creare un clone dai dati più recenti nel carico di lavoro di origine.
+
+
+. Se hai scelto di creare *Snapshot istantaneo e clone*, seleziona la posizione di archiviazione del clone:
++
+** *Archiviazione locale*: selezionare questa opzione per creare il clone nell'archiviazione locale del sistema ONTAP .  L'archiviazione locale è l'archiviazione direttamente collegata al sistema ONTAP .
+** *Archiviazione secondaria*: selezionare questa opzione per creare il clone nell'archiviazione secondaria del sistema ONTAP .  Lo storage secondario è lo storage utilizzato per i carichi di lavoro di backup e ripristino.
+
+
+. Selezionare la posizione di destinazione per i dati e i registri.
+. Selezionare *Avanti*.
+. Completa la sezione *Opzioni avanzate*.
+. Se hai scelto *Snapshot e clonazione istantanei*, completa le seguenti opzioni:
++
+** *Pianificazione e scadenza dell'aggiornamento del clone*: se hai scelto *Clonazione istantanea*, inserisci la data in cui iniziare ad aggiornare il clone.  La pianificazione della clonazione definisce quando verrà creato il clone.
++
+*** *Elimina il clone se la pianificazione scade*: se si desidera eliminare il clone alla data di scadenza.
+*** *Aggiorna clone ogni*: seleziona la frequenza con cui il clone deve essere aggiornato.  Puoi scegliere di aggiornare il clone ogni ora, ogni giorno, ogni settimana, ogni mese o ogni trimestre.  Questa opzione è utile se si desidera mantenere il clone aggiornato con il carico di lavoro di origine.
+
+
+** *Prescript e postscript*: facoltativamente, specificare gli script pre e post-clone da eseguire prima e dopo la creazione del clone.  Questi script possono essere utilizzati per eseguire attività aggiuntive, come la configurazione del clone o l'invio di notifiche.
+** *Notifica*: facoltativamente, specificare gli indirizzi e-mail per ricevere notifiche sullo stato di creazione del clone insieme al report del lavoro.  È anche possibile specificare un URL webhook per ricevere notifiche sullo stato di creazione del clone.  È possibile specificare se si desiderano notifiche di successo e di fallimento oppure solo una o l'altra.
+** *Tag*: seleziona una o più etichette che ti aiuteranno in seguito a cercare il gruppo di risorse e seleziona *Applica*.  Ad esempio, se aggiungi "HR" come tag a più gruppi di risorse, potrai successivamente trovare tutti i gruppi di risorse associati al tag HR.
+
+
+. Seleziona *Crea*.
+. Una volta creato il clone, puoi visualizzarlo nella pagina *Inventario*.
+
+
+
+
+== Aggiorna un clone
+
+È possibile aggiornare un clone dei carichi di lavoro di Microsoft SQL Server.  L'aggiornamento di un clone comporta l'aggiornamento del clone con i dati più recenti dal carico di lavoro di origine.  Questa opzione è utile se si desidera mantenere il clone aggiornato con il carico di lavoro di origine.
+
+È possibile modificare il nome del database, utilizzare l'ultimo snapshot istantaneo o aggiornare da uno snapshot di produzione esistente.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Seleziona il clone che vuoi aggiornare.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Aggiorna clone*.
+. Completa la sezione *Impostazioni avanzate*:
++
+** *Ambito di ripristino*: scegli se ripristinare tutti i backup del registro o solo i backup del registro fino a un punto specifico nel tempo.  Questa opzione è utile se si desidera ripristinare il clone fino a un punto specifico nel tempo.
+** *Pianificazione e scadenza dell'aggiornamento del clone*: se hai scelto *Clonazione istantanea*, inserisci la data in cui iniziare ad aggiornare il clone.  La pianificazione della clonazione definisce quando verrà creato il clone.
++
+*** *Elimina il clone se la pianificazione scade*: se si desidera eliminare il clone alla data di scadenza.
+*** *Aggiorna clone ogni*: seleziona la frequenza con cui il clone deve essere aggiornato.  Puoi scegliere di aggiornare il clone ogni ora, ogni giorno, ogni settimana, ogni mese o ogni trimestre.  Questa opzione è utile se si desidera mantenere il clone aggiornato con il carico di lavoro di origine.
+
+
+** *Impostazioni iGroup*: seleziona l'iGroup per il clone.  L'igroup è un raggruppamento logico di iniziatori utilizzati per accedere al clone.  È possibile selezionare un igroup esistente o crearne uno nuovo.  Selezionare l'igroup dal sistema di archiviazione ONTAP primario o secondario.
+** *Prescript e postscript*: facoltativamente, specificare gli script pre e post-clone da eseguire prima e dopo la creazione del clone.  Questi script possono essere utilizzati per eseguire attività aggiuntive, come la configurazione del clone o l'invio di notifiche.
+** *Notifica*: facoltativamente, specificare gli indirizzi e-mail per ricevere notifiche sullo stato di creazione del clone insieme al report del lavoro.  È anche possibile specificare un URL webhook per ricevere notifiche sullo stato di creazione del clone.  È possibile specificare se si desiderano notifiche di successo e di fallimento oppure solo una o l'altra.
+** *Tag*: inserisci una o più etichette che ti aiuteranno a cercare in seguito il gruppo di risorse.  Ad esempio, se aggiungi "HR" come tag a più gruppi di risorse, potrai successivamente trovare tutti i gruppi di risorse associati al tag HR.
+
+
+. Nella finestra di dialogo di conferma Aggiorna, per continuare, seleziona *Aggiorna*.
+
+
+
+
+== Salta un aggiornamento clone
+
+Potrebbe essere opportuno saltare un aggiornamento del clone se non si desidera aggiornare il clone con i dati più recenti dal carico di lavoro di origine.  Saltare l'aggiornamento di un clone consente di mantenere il clone così com'è senza doverlo aggiornare.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Seleziona il clone per il quale vuoi saltare l'aggiornamento.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Salta aggiornamento*.
+. Nella finestra di dialogo di conferma Ignora aggiornamento, procedere come segue:
++
+.. Per saltare solo la prossima pianificazione di aggiornamento, seleziona *Salta solo la prossima pianificazione di aggiornamento*.
+.. Per continuare, seleziona *Salta*.
+
+
+
+
+
+
+== Dividi un clone
+
+È possibile suddividere un clone dei carichi di lavoro di Microsoft SQL Server.  La divisione di un clone crea un nuovo backup dal clone.  Il nuovo backup può essere utilizzato per ripristinare i carichi di lavoro.
+
+È possibile scegliere di dividere un clone in cloni indipendenti o a lungo termine.  Una procedura guidata mostra l'elenco degli aggregati che fanno parte dell'SVM, le loro dimensioni e dove risiede il volume clonato.  NetApp Backup and Recovery indica anche se c'è abbastanza spazio per dividere il clone.  Dopo essere stato diviso, il clone diventa un database indipendente a scopo di protezione.
+
+Il lavoro di clonazione non può essere rimosso e può essere riutilizzato per altri cloni.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Seleziona un clone.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Clonazione divisa*.
+. Rivedi i dettagli del clone diviso e seleziona *Dividi*.
+. Una volta creato il clone diviso, è possibile visualizzarlo nella pagina *Inventario*.
+
+
+
+
+== Elimina un clone
+
+È possibile eliminare un clone dei carichi di lavoro di Microsoft SQL Server.  L'eliminazione di un clone rimuove il clone dall'archivio oggetti e libera spazio di archiviazione.
+
+Se il clone è protetto da una policy, il clone viene eliminato, incluso il processo.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Seleziona un clone.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina clone*.
+. Nella finestra di dialogo di conferma dell'eliminazione del clone, rivedere i dettagli dell'eliminazione.
++
+.. Per eliminare le risorse clonate da SnapCenter anche se i cloni o il loro archivio non sono accessibili, selezionare *Forza eliminazione*.
+.. Seleziona *Elimina*.
+
+
+. Quando il clone viene eliminato, viene rimosso dalla pagina *Inventario*.
+

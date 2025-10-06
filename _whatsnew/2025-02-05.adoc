@@ -1,0 +1,20 @@
+= Versione di anteprima NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+=== Versione di anteprima NetApp Backup and Recovery
+
+Questa versione di anteprima di NetApp Backup and Recovery fornisce un'interfaccia utente aggiornata che consente di gestire i carichi di lavoro di Microsoft SQL Server utilizzando una strategia di protezione 3-2-1, nota in NetApp Backup and Recovery.  Con questa nuova versione, è possibile eseguire il backup di questi carichi di lavoro sullo storage primario, replicarli sullo storage secondario ed eseguirne il backup sullo storage di oggetti cloud.
+
+
+NOTE: La presente documentazione viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
+
+Questa versione di NetApp Backup and Recovery Preview 2025 include i seguenti aggiornamenti.
+
+* Un'interfaccia utente riprogettata che offre un'esperienza più intuitiva per la gestione delle attività di backup e ripristino.
+* La versione di anteprima consente di eseguire il backup e il ripristino dei database Microsoft SQL Server.  (Il supporto per altri carichi di lavoro verrà aggiunto nelle versioni future.)
+* Questa versione integra le funzionalità SnapCenter , consentendo di gestire e proteggere le risorse SnapCenter con una strategia di protezione dei dati 3-2-1 dall'interfaccia utente NetApp Backup and Recovery.
+* Questa versione consente di importare i carichi di lavoro SnapCenter in NetApp Backup and Recovery.
+

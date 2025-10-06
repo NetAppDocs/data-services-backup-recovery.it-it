@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protection-groups.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
+summary: Crea e gestisci gruppi di protezione per carichi di lavoro VMware in NetApp Backup and Recovery. 
+---
+= Crea e gestisci gruppi di protezione per carichi di lavoro VMware con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di carichi di lavoro. Un gruppo di protezione è un raggruppamento logico di risorse, quali VM e datastore, che si desidera proteggere insieme.
+
+È possibile eseguire le seguenti attività relative ai gruppi di protezione:
+
+* Crea un gruppo di protezione.
+* Visualizza i dettagli della protezione.
+* Crea subito un gruppo di protezione. Vedere link:br-use-vmware-backup.html["Esegui subito il backup dei carichi di lavoro VMware"] .
+* Sospendere e riprendere la pianificazione del backup di un gruppo di protezione.
+* Elimina un gruppo di protezione.
+
+
+
+
+== Crea un gruppo di protezione
+
+Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. È possibile creare un gruppo di protezione per un set di carichi di lavoro di cui si desidera eseguire il backup e il ripristino insieme.
+
+*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare *Crea gruppo di protezione*.
+. Fornire un nome per il gruppo di protezione.
+. Selezionare le VM o i database che si desidera includere nel gruppo di protezione.
+. Selezionare *Avanti*.
+. Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
++
+Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le istruzioni per creare una policy. Vedere link:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
+
+. Selezionare *Avanti*.
+. Rivedere la configurazione.
+. Selezionare *Crea* per creare il gruppo di protezione.
+
+
+
+
+== Sospendere la pianificazione del backup di un gruppo di protezione
+
+La sospensione di un gruppo di protezione interrompe i backup pianificati per il gruppo di protezione. Potrebbe essere necessario sospendere un gruppo di protezione se si desidera interrompere temporaneamente i backup per i carichi di lavoro in quel gruppo.
+
+Quando si sospende un gruppo di protezione, lo stato di protezione cambia in "In manutenzione". È possibile riprendere la pianificazione del backup in qualsiasi momento.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Sospendi gruppo di protezione*.
+. Rivedi il messaggio di conferma e seleziona *Sospendi*.
+
+
+
+
+== Riprendi la pianificazione del backup di un gruppo di protezione
+
+La ripresa di un gruppo di protezione sospeso riavvia i backup pianificati per il gruppo di protezione.
+
+Lo stato di protezione cambia da "In manutenzione" quando si sospende un gruppo di protezione a "Protetto" quando lo si riprende. È possibile riprendere la pianificazione del backup in qualsiasi momento.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Riprendi gruppo di protezione*.
+. Rivedi il messaggio di conferma e seleziona *Riprendi*.
+
+
+.Risultato
+Il sistema convalida le pianificazioni e modifica lo stato di protezione in "Protetto" se le pianificazioni sono valide. Se le pianificazioni non sono valide, il sistema visualizza un messaggio di errore e non riprende il gruppo di protezione.
+
+
+
+== Elimina un gruppo di protezione
+
+L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare il gruppo di protezione che si desidera eliminare.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina*.
+. Rivedere il messaggio di conferma relativo all'eliminazione dei backup associati e confermare l'eliminazione.
+

@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-restore.html 
+keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro KVM con NetApp Backup and Recovery. 
+---
+= Ripristinare le macchine virtuali KVM con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ripristina le macchine virtuali KVM da copie snapshot, da un backup del gruppo di protezione replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+
+.Ripristina da queste posizioni
+È possibile ripristinare le macchine virtuali da diverse posizioni di partenza:
+
+* Ripristina da una posizione primaria (snapshot locale)
+* Ripristina da una risorsa replicata su un archivio secondario
+* Ripristina da un backup di archiviazione di oggetti
+
+
+.Ripristinare questi punti
+È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima.
+
+* Ripristina la posizione originale
+
+
+.Considerazioni sul ripristino da storage di oggetti
+Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e la protezione ransomware nei criteri di backup), ti verrà chiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
+
+
+TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
+
+
+
+== Come funziona il ripristino delle macchine virtuali
+
+Quando si ripristinano macchine virtuali, si verifica quanto segue:
+
+* Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
+* Quando si esegue il ripristino da una VM replicata, è possibile ripristinarla nel sistema originale o in un sistema ONTAP locale.
+* Quando si ripristina un backup da un archivio di oggetti, è possibile ripristinare i dati nel sistema originale o in un sistema ONTAP locale.
+
+
+Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare una VM anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. È possibile cercare l'istantanea utilizzando i filtri.
+
+
+
+== Ripristina le VM dall'opzione Ripristina (Cerca e ripristina)
+
+Ripristinare le macchine virtuali KVM utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
+
+*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *KVM*.
+. Immettere il nome della macchina virtuale che si desidera ripristinare oppure filtrare in base all'host della macchina virtuale o al pool di archiviazione in cui si trova la risorsa da ripristinare.
++
+Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+
+. Selezionare il pulsante *Ripristina* per lo snapshot che si desidera ripristinare.
++
+Viene visualizzato un elenco di possibili punti di ripristino.
+
+. Seleziona il punto di ripristino che desideri utilizzare.
+. Selezionare una posizione di origine dello snapshot.
+
+
+. Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.
++
+Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+
+[discrete]
+===== Selezione della destinazione
+
+. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+
+
+[role="tabbed-block"]
+====
+.Ripristina nella posizione originale
+--
+. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. I volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
+. *Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
+. *Opzioni post-ripristino*:
++
+** *Riavvia VM*: selezionare questa opzione per riavviare la VM al termine dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
+** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+
+
+. Sezione *Notifiche*:
++
+** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
+
+
+. Selezionare *Ripristina*.
+
+
+--
+.Ripristina in posizione alternativa
+--
+Non disponibile per l'anteprima KVM.
+
+. Selezionare *Ripristina*.
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

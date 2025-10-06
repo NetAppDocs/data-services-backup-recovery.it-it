@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: br-start-switch-ui.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 'È possibile passare da un carico di lavoro all"altro NetApp Backup and Recovery.  Alcuni carichi di lavoro utilizzano un"interfaccia utente diversa.' 
+---
+= Passa a diversi carichi di lavoro di backup e ripristino NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile passare da un carico di lavoro all'altro NetApp Backup and Recovery.
+
+
+
+== Passa a un carico di lavoro diverso
+
+È possibile passare a un carico di lavoro diverso nell'interfaccia utente di NetApp Backup and Recovery.
+
+.Passi
+. Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.
+. Dall'angolo in alto a destra della pagina, seleziona l'elenco a discesa *Cambia carico di lavoro*.
+. Seleziona il carico di lavoro a cui vuoi passare.
++
+La pagina si aggiorna e mostra il carico di lavoro selezionato.
+
+

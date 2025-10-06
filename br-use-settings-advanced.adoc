@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: br-use-settings-advanced.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 'Alcune impostazioni avanzate potrebbero essere utili per la manutenzione dell"ambiente di backup e ripristino.  È possibile configurare impostazioni avanzate per gestire l"inventario, eliminare backup, annullare la registrazione delle risorse, eliminare relazioni, rimuovere la protezione delle risorse per interrompere i costi del servizio, impostare la velocità di trasferimento massima per la relazione SnapMirror , esportare copie snapshot in un archivio oggetti, abilitare l"eliminazione automatica annuale degli snapshot, abilitare la modalità di manutenzione e aggiornare il plug-in dell"applicazione.' 
+---
+= Configurare le impostazioni avanzate in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Alcune impostazioni avanzate potrebbero essere utili per la manutenzione dell'ambiente di backup e ripristino.  È possibile configurare impostazioni avanzate per gestire l'inventario, eliminare backup, annullare la registrazione delle risorse, eliminare relazioni, rimuovere la protezione delle risorse per interrompere i costi del servizio, impostare la velocità di trasferimento massima per la relazione SnapMirror , esportare copie snapshot in un archivio oggetti, abilitare l'eliminazione automatica annuale degli snapshot, abilitare la modalità di manutenzione e aggiornare il plug-in dell'applicazione.
+
+Configurare le impostazioni avanzate NetApp Backup and Recovery nei seguenti modi:
+
+* Elimina i backup.
+* Annullare la registrazione di backup, database, istanze o host di applicazioni.
+* Elimina le relazioni.
+* Per interrompere i costi dei servizi, rimuovere la protezione da database, istanze, host di applicazioni e ambienti di lavoro.
+* Imposta la velocità di trasferimento massima per la relazione SnapMirror : gestisci l'utilizzo della larghezza di banda, assicurandoti che le operazioni SnapMirror non interferiscano con altre attività di rete.
+* Esportare copie snapshot in un archivio oggetti per inizializzare i backup nel cloud spostando le copie snapshot più vecchie nella copia di backup di base.
+* Abilita l'eliminazione automatica annuale degli snapshot
+* Abilitare la modalità di manutenzione in modo che sia possibile eseguire aggiornamenti o attività di manutenzione.
+* Aggiorna il plugin dell'applicazione.
+
+
+
+
+== Elimina i backup
+
+Puoi eliminare i backup per liberare spazio nel tuo archivio.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Elimina backup**.
+. Seleziona il backup che vuoi eliminare.
+. Selezionare **Elimina**.
+
+
+
+
+== Annullare la registrazione di backup, database, istanze o host di applicazioni
+
+È possibile annullare la registrazione di backup, database, istanze o host di applicazioni per rimuoverli dall'inventario.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Annulla registrazione risorse**.
+. Seleziona la risorsa di cui vuoi annullare la registrazione.
+. Seleziona **Annulla registrazione**.
+
+
+
+
+== Eliminare le relazioni
+
+È possibile eliminare le relazioni per rimuoverle dall'inventario.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Elimina relazioni**.
+. Seleziona la relazione che vuoi eliminare.
+. Selezionare **Elimina**.
+
+
+
+
+== Rimuovere la protezione da database, istanze, host di applicazioni e ambienti di lavoro
+
+È possibile rimuovere la protezione da database, istanze, host di applicazioni e ambienti di lavoro per interrompere i costi dei servizi.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Rimuovi protezione risorse**.
+
+
+
+
+== Imposta la velocità di trasferimento massima per la relazione SnapMirror
+
+È possibile impostare la velocità di trasferimento massima per la relazione SnapMirror per gestire l'utilizzo della larghezza di banda, assicurandosi che le operazioni SnapMirror non interferiscano con altre attività di rete.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Imposta la velocità di trasferimento massima per la relazione SnapMirror **.
+. Inserisci la velocità di trasferimento massima.
+. Seleziona **Salva**.
+
+
+
+
+== Esportare copie snapshot in un archivio oggetti
+
+È possibile esportare copie snapshot in un archivio oggetti per inizializzare i backup nel cloud spostando le copie snapshot più vecchie nella copia di backup di base.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Esporta copie snapshot in un archivio oggetti**.
+. Seleziona la copia snapshot che desideri esportare.
+. Selezionare **Esporta**.
+
+
+
+
+== Abilita l'eliminazione automatica annuale degli snapshot
+
+È possibile abilitare l'eliminazione automatica annuale degli snapshot per eliminare gli snapshot più vecchi di un anno.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Abilita eliminazione automatica degli snapshot annuali**.
+. Selezionare **Abilita**.
+
+
+
+
+== Abilita la modalità di manutenzione
+
+È possibile abilitare la modalità di manutenzione in modo da poter eseguire aggiornamenti o attività di manutenzione.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Selezionare **Abilita modalità di manutenzione**.
+. Selezionare **Abilita**.
+
+
+
+
+== Aggiorna il plugin dell'applicazione
+
+È possibile aggiornare il plugin dell'applicazione per assicurarsi che siano disponibili le funzionalità più recenti.
+
+. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Selezionare **Impostazioni avanzate**.
+. Seleziona **Aggiorna il plugin dell'applicazione**.
+. Selezionare **Aggiorna**.
+

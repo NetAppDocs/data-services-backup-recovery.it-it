@@ -1,0 +1,73 @@
+= Miglioramenti dell'interfaccia utente
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti dell'interfaccia utente
+
+Questa versione migliora la tua esperienza semplificando l'interfaccia:
+
+* La rimozione della colonna Aggregate dalle tabelle Volumi, insieme alle colonne Snapshot Policy, Backup Policy e Replication Policy dalla tabella Volume nella Dashboard V2, si traduce in un layout più snello.
+* Escludendo gli ambienti di lavoro non attivati dall'elenco a discesa, l'interfaccia diventa meno confusa, la navigazione più efficiente e il caricamento più rapido.
+* Anche se l'ordinamento nella colonna Tag è disabilitato, è comunque possibile visualizzare i tag, assicurandosi che le informazioni importanti restino facilmente accessibili.
+* La rimozione delle etichette sulle icone di protezione contribuisce a un aspetto più pulito e riduce i tempi di caricamento.
+* Durante il processo di attivazione dell'ambiente di lavoro, una finestra di dialogo visualizza un'icona di caricamento per fornire feedback fino al completamento del processo di individuazione, migliorando la trasparenza e la fiducia nelle operazioni del sistema.
+
+
+
+
+=== Dashboard del volume migliorata (anteprima)
+
+La dashboard del volume ora si carica in meno di 10 secondi, offrendo un'interfaccia molto più veloce ed efficiente.  Questa versione di anteprima è disponibile per clienti selezionati, offrendo loro un'anteprima di questi miglioramenti.
+
+
+
+=== Supporto per l'archivio oggetti Wasabi di terze parti (anteprima)
+
+NetApp Backup and Recovery estende ora il supporto agli archivi di oggetti di terze parti, concentrandosi principalmente su Wasabi.  Questa nuova funzionalità di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e ripristino.
+
+
+
+==== Come iniziare con Wasabi
+
+Per iniziare a utilizzare un archivio di terze parti come archivio oggetti, è necessario abilitare un flag nell'agente della console.  Successivamente, puoi immettere i dettagli di connessione per il tuo archivio oggetti di terze parti e integrarlo nei tuoi flussi di lavoro di backup e ripristino.
+
+.Passi
+. Accedi tramite SSH al tuo connettore.
+. Accedere al contenitore del server NetApp Backup and Recovery cbs:
++
+[listing]
+----
+docker exec -it cloudmanager_cbs sh
+----
+. Apri il `default.json` file all'interno del `config` cartella tramite VIM o qualsiasi altro editor:
++
+[listing]
+----
+vi default.json
+----
+. Modificare `allow-s3-compatible` : falso a `allow-s3-compatible` : VERO.
+. Salva le modifiche.
+. Uscire dal contenitore.
+. Riavviare il contenitore del server NetApp Backup and Recovery cbs.
+
+
+.Risultato
+Dopo aver riattivato il contenitore, aprire l'interfaccia utente NetApp Backup and Recovery.  Quando avvii un backup o modifichi una strategia di backup, vedrai elencato il nuovo provider "S3 Compatible" insieme ad altri provider di backup di AWS, Microsoft Azure, Google Cloud, StorageGRID e ONTAP S3.
+
+
+
+==== Limitazioni della modalità di anteprima
+
+Sebbene questa funzionalità sia in anteprima, tieni presente le seguenti limitazioni:
+
+* La funzione Bring Your Own Bucket (BYOB) non è supportata.
+* L'abilitazione di DataLock in un criterio non è supportata.
+* L'abilitazione della modalità di archiviazione in un criterio non è supportata.
+* Sono supportati solo gli ambienti ONTAP locali.
+* MetroCluster non è supportato.
+* Le opzioni per abilitare la crittografia a livello di bucket non sono supportate.
+
+
+Durante questa anteprima, ti invitiamo a esplorare questa nuova funzionalità e a fornire feedback sull'integrazione con archivi di oggetti di terze parti prima che la funzionalità completa venga implementata.

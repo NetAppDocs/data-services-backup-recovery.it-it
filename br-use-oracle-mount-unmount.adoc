@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-mount-unmount.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro Oracle con NetApp Backup and Recovery. 
+---
+= Montare e smontare i punti di ripristino del database Oracle con NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Potrebbe essere necessario montare un punto di ripristino di Oracle Database se è necessario accedere al database in uno stato controllato per eseguire operazioni di ripristino.
+
+
+
+== Montare un punto di ripristino del database Oracle
+
+Se si configura il criterio di protezione per un database in modo che conservi i log di archivio, è possibile montare i punti di ripristino per il database per visualizzare la cronologia di tutte le modifiche apportate al database.
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Seleziona la tessera Oracle.
+. Nel menu Backup e ripristino, selezionare *Inventario*.
+. Per il carico di lavoro Oracle Database nell'elenco, selezionare *Visualizza*.
+. Selezionare il menu *Database*.
+. Scegli un database dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza i dettagli della protezione*.
++
+Viene visualizzato un elenco di punti di ripristino per quel database.
+
+. Scegli un punto di ripristino dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Monte*.
+. Nella finestra di dialogo che appare, procedi come segue:
++
+.. Selezionare dall'elenco l'host che deve montare il punto di ripristino.
+.. Selezionare la posizione che Backup e Ripristino devono utilizzare per montare il punto di ripristino.  Per la versione di anteprima, il montaggio dall'archivio oggetti non è supportato.
++
+Viene visualizzato il percorso di montaggio che Backup e Ripristino devono utilizzare.
+
+
+
+. Selezionare *Monta*.
++
+Il punto di ripristino è montato sull'host Oracle.
+
+
+
+
+
+== Smontare un punto di ripristino del database Oracle
+
+Smontare il punto di ripristino quando non è più necessario visualizzare le modifiche apportate al database.
+
+.Passi
+. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Seleziona la tessera Oracle.
+. Nel menu Backup e ripristino, selezionare *Inventario*.
+. Per il carico di lavoro Oracle nell'elenco, selezionare *Visualizza*.
+. Selezionare il menu *Database*.
+. Scegli un database dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza i dettagli della protezione*.
++
+Viene visualizzato un elenco di punti di ripristino per quel database.
+
+. Scegli un punto di ripristino dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Smonta*.
+. Confermare l'azione selezionando *Smonta*.
+

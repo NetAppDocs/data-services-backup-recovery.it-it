@@ -1,0 +1,26 @@
+= Supporto per la protezione dei carichi di lavoro VMware in anteprima
+:allow-uri-read: 
+
+
+
+
+=== Supporto per la protezione dei carichi di lavoro VMware in anteprima
+
+Questa versione aggiunge il supporto in anteprima per la protezione dei carichi di lavoro VMware. Esegui il backup di VM VMware e datastore dai sistemi ONTAP locali ad Amazon Web Services e StorageGRID.
+
+
+NOTE: La documentazione sulla protezione dei carichi di lavoro VMware viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
+
+link:br-use-vmware-protect-overview.html["Scopri di più sulla protezione dei carichi di lavoro VMware con NetApp Backup and Recovery"] .
+
+
+
+=== L'indicizzazione ad alte prestazioni per AWS, Azure e GCP è generalmente disponibile
+
+A febbraio 2025 abbiamo annunciato l'anteprima dell'indicizzazione ad alte prestazioni (Indexed Catalog v2) per AWS, Azure e GCP. Questa funzionalità è ora generalmente disponibile (GA). Nel giugno 2025 lo abbiamo fornito di default a tutti i _nuovi_ clienti. Con questa versione, il supporto è disponibile per _tutti_ i clienti. L'indicizzazione ad alte prestazioni migliora le prestazioni delle operazioni di backup e ripristino per i carichi di lavoro protetti nell'archiviazione di oggetti.
+
+Abilitato per impostazione predefinita:
+
+* Se sei un nuovo cliente, l'indicizzazione ad alte prestazioni è abilitata per impostazione predefinita.
+* Se sei un cliente esistente, puoi abilitare la reindicizzazione andando alla sezione Ripristina dell'interfaccia utente.
+
