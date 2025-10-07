@@ -251,10 +251,7 @@
   <block id="5ced283cbe92781b3a48240fd1fde5cd" category="paragraph">Abilitato per impostazione predefinita:</block>
   <block id="234f6b906c6e6adf3ab5f1a4906d5366" category="list-text">Se sei un nuovo cliente, l'indicizzazione ad alte prestazioni è abilitata per impostazione predefinita.</block>
   <block id="3b98c4910d4638f409d4421b51847611" category="list-text">Se sei un cliente esistente, puoi abilitare la reindicizzazione andando alla sezione Ripristina dell'interfaccia utente.</block>
-  <block id="fc93653f0e9d2392483e6d5d49522050" category="doc">NetApp Backup and Recovery è ora NetApp Backup and Recovery</block>
-  <block id="380fa8333654730810eec55ed85c680c" category="paragraph">NetApp Backup and Recovery è stato rinominato NetApp Backup and Recovery.</block>
   <block id="bc2fe31b1e2682a9a79513d792e9c721" category="section-title">BlueXP è ora NetApp Console</block>
-  <block id="995c8f79a8e07fbd8d519e45d03d6004" category="paragraph">NetApp Console, basata sulle fondamenta BlueXP migliorate e ristrutturate, offre una gestione centralizzata dello storage NetApp e dei NetApp Data Services in ambienti on-premise e cloud di livello aziendale, offrendo informazioni in tempo reale, flussi di lavoro più rapidi e un'amministrazione semplificata, il tutto in modo altamente sicuro e conforme.</block>
   <block id="387c71fcb2fb7fdf9038db9d12137530" category="inline-link-macro">Note sulla versione NetApp Console.</block>
   <block id="3a1e37eecca95e81d9e509646022ffda" category="paragraph">Per i dettagli su cosa è cambiato, vedere<block ref="019a5c722618673de9fa5ca0cf2abddb" category="inline-link-macro-rx"></block></block>
   <block id="86df852f08da7feceb910d31327e83d7" category="section-title">Supporto del carico di lavoro Hyper-V come anteprima privata</block>
@@ -5059,4 +5056,7 @@
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
+  <block id="83b5525699223779088aa2e2c9ca5b1a" category="doc">Il BlueXP backup and recovery ora sono NetApp Backup e Recovery</block>
+  <block id="6a119fc880b70d0e27bca4b7243a7a55" category="paragraph">Il BlueXP backup and recovery sono stati rinominati NetApp Backup and Recovery.</block>
+  <block id="56ed5396ea479b4ed31e75f97a4377c7" category="paragraph">NetApp Console, basata sulle fondamenta BlueXP migliorate e ristrutturate, offre una gestione centralizzata dello storage NetApp e dei NetApp Data Services in ambienti on-premise e cloud di livello aziendale, offrendo informazioni in tempo reale, flussi di lavoro più rapidi e un'amministrazione semplificata, altamente sicura e conforme.</block>
 </blocks>
