@@ -62,7 +62,7 @@ Questa versione di NetApp Backup and Recovery introduce il supporto per l'indivi
 * Backup dei pool di archiviazione
 * Protezione in blocco di VM e pool di archiviazione mediante gruppi di protezione
 * Backup di VM coerenti con la VM e con gli arresti anomali
-* Cerca e ripristina i backup delle VM
+* Cerca e ripristina i backup delle VM da storage primario, secondario e di oggetti
 * Procedura guidata per il backup e il ripristino di VM basate su KVM e dati di VM
 
 

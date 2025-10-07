@@ -14,7 +14,7 @@ summary: Le limitazioni note identificano funzioni non supportate da questa vers
 
 
 [role="lead"]
-Le limitazioni note identificano funzioni non supportate da questa versione di NetApp Backup and Recovery o che non interagiscono correttamente con essa. Esamina attentamente queste limitazioni.
+Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
 
 * NetApp Backup and Recovery può eseguire il backup Cloud Volumes ONTAP in un archivio oggetti nelle regioni AWS Cina (incluse Pechino e Ningxia); tuttavia, potrebbe essere necessario modificare manualmente prima le policy di identità e di accesso.
 +

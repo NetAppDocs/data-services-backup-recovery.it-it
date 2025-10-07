@@ -51,7 +51,7 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina)*, puoi ripristinare
 
 Ripristinare i carichi di lavoro Hyper-V utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
 
-*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.

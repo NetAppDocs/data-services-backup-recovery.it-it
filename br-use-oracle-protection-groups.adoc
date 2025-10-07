@@ -30,7 +30,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ri
 
 Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo di protezione.
 
-*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Dal menu NetApp Backup and Recovery, selezionare *Inventario*.

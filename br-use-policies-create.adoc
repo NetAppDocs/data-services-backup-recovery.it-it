@@ -281,7 +281,7 @@ Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti
 Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery. Vedere link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
 
 .Ruolo richiesto della console NetApp
-Amministratore dell'organizzazione o amministratore della cartella o del progetto. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Nella console NetApp , vai su *Protezione* > *Backup e ripristino*.

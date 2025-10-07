@@ -49,7 +49,7 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 
 A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile cercare il database utilizzando il suo nome o utilizzando filtri specifici.
 
-*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.

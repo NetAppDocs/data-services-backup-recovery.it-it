@@ -30,7 +30,7 @@ NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base 
 
 È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
 
-*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
@@ -55,7 +55,7 @@ NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo 
 
 È possibile eseguire un backup su richiesta di un singolo database.
 
-*Ruolo di console obbligatorio* Ruolo di amministratore dell'organizzazione, amministratore di cartelle o progetti, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
 .Passi
 . Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
