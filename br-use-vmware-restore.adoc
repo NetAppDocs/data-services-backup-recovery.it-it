@@ -31,7 +31,7 @@ Ripristina i carichi di lavoro VMware da copie snapshot, da un backup del carico
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e la protezione ransomware nei criteri di backup), ti verrà chiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.

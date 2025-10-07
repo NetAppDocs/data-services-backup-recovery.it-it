@@ -69,7 +69,7 @@ NOTE: La creazione iniziale di un volume replicato o di un file di backup includ
 
 La tabella seguente mostra un confronto generalizzato dei tre metodi di backup.  Sebbene lo spazio di archiviazione degli oggetti sia in genere meno costoso dell'archiviazione su disco in locale, se pensi di dover ripristinare frequentemente i dati dal cloud, le tariffe di uscita dei provider cloud possono ridurre parte dei tuoi risparmi.  Dovrai stabilire con quale frequenza dovrai ripristinare i dati dai file di backup nel cloud.
 
-Oltre a questo criterio, l'archiviazione cloud offre opzioni di sicurezza aggiuntive se si utilizza la funzionalità DataLock e Ransomware Protection, nonché ulteriori risparmi sui costi selezionando classi di archiviazione per i file di backup più vecchi. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione DataLock e Ransomware e sulle impostazioni di archiviazione"] .
+Oltre a questo criterio, l'archiviazione cloud offre opzioni di sicurezza aggiuntive se si utilizza la funzionalità DataLock e Ransomware Resilience, nonché ulteriori risparmi sui costi selezionando classi di archiviazione per i file di backup più vecchi. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione DataLock e Ransomware e sulle impostazioni di archiviazione"] .
 
 [cols="18,18,22,18,22"]
 |===

@@ -230,7 +230,7 @@ La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (una c
 
 . Selezionare *Avanti*.
 +
-Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Protection nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà richiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware. (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
 
 . Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare il volume.
 . Quando si ripristina un file di backup da un archivio oggetti, se si seleziona un sistema ONTAP locale e non è ancora stata configurata la connessione del cluster all'archivio oggetti, vengono richieste informazioni aggiuntive:
@@ -376,7 +376,7 @@ Se si ripristinano cartelle o file da un file di backup che risiede in un livell
 link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"] . link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] . I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
 
 +
-Se Ransomware Resilience è attivo per il file di backup (se hai abilitato DataLock e Ransomware Protection nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+Se Ransomware Resilience è attivo per il file di backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware. (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
 
 . Nella pagina _Seleziona elementi_, seleziona la cartella o i file che desideri ripristinare e seleziona *Continua*.  Per aiutarti a trovare l'articolo:
 +

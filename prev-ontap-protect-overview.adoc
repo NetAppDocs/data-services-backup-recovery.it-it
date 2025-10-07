@@ -218,7 +218,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
-* Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Protection per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
+* Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Resilience per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
 
 
 *Spese di servizio*
@@ -362,7 +362,7 @@ TIP: Il periodo di conservazione per i backup dei volumi di protezione dei dati 
 
 === Impostazioni di protezione dei file di backup
 
-Se il tuo cluster utilizza ONTAP 9.11.1 o versione successiva, puoi proteggere i tuoi backup nell'archiviazione degli oggetti da eliminazioni e attacchi ransomware.  Ogni policy di backup prevede una sezione per la _Protezione da DataLock e Ransomware_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_.
+Se il tuo cluster utilizza ONTAP 9.11.1 o versione successiva, puoi proteggere i tuoi backup nell'archiviazione degli oggetti da eliminazioni e attacchi ransomware. Ogni policy di backup prevede una sezione per _DataLock e Ransomware Resilience_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_.
 
 * _DataLock_ protegge i file di backup da modifiche o eliminazioni.
 * La _protezione ransomware_ analizza i file di backup per cercare prove di un attacco ransomware quando viene creato un file di backup e quando i dati di un file di backup vengono ripristinati.

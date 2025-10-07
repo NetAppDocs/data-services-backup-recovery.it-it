@@ -116,7 +116,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Uno screenshot della voce I
 
 Le scansioni di protezione dal ransomware sono abilitate per impostazione predefinita.  L'impostazione predefinita per la frequenza di scansione è 7 giorni.  La scansione viene eseguita solo sull'ultima copia dello snapshot.  È possibile abilitare o disabilitare le scansioni ransomware sull'ultima copia snapshot utilizzando l'opzione nella pagina Impostazioni avanzate.  Se si attiva questa opzione, per impostazione predefinita le scansioni vengono eseguite ogni 7 giorni.
 
-Per i dettagli sulle opzioni DataLock e Ransomware Protection, fare riferimento alink:prev-ontap-policy-object-options.html["Opzioni di protezione da DataLock e Ransomware"] .
+Per i dettagli sulle opzioni DataLock e Ransomware Resilience, fare riferimento alink:prev-ontap-policy-object-options.html["Opzioni di resilienza DataLock e Ransomware"] .
 
 È possibile modificare la programmazione in giorni o settimane oppure disattivarla, risparmiando sui costi.
 

@@ -59,7 +59,7 @@ I backup annuali vengono eliminati automaticamente dal sistema di origine dopo e
 
 NetApp Backup and Recovery fornisce supporto per la protezione da DataLock e Ransomware per i backup dei volumi.  Queste funzionalità consentono di bloccare i file di backup e di analizzarli per rilevare eventuali ransomware presenti sui file di backup.  Si tratta di un'impostazione facoltativa che puoi definire nei tuoi criteri di backup quando desideri una protezione extra per i backup dei volumi di un cluster.
 
-Entrambe queste funzionalità proteggono i tuoi file di backup, così avrai sempre a disposizione un file di backup valido da cui recuperare i dati in caso di tentativo di attacco ransomware ai tuoi backup.  È utile anche per soddisfare determinati requisiti normativi in ​​base ai quali i backup devono essere bloccati e conservati per un determinato periodo di tempo.  Quando l'opzione DataLock and Ransomware Protection è abilitata, il bucket cloud fornito come parte dell'attivazione di NetApp Backup and Recovery avrà il blocco degli oggetti e il controllo delle versioni degli oggetti abilitati.
+Entrambe queste funzionalità proteggono i tuoi file di backup, così avrai sempre a disposizione un file di backup valido da cui recuperare i dati in caso di tentativo di attacco ransomware ai tuoi backup. È utile anche per soddisfare determinati requisiti normativi in ​​base ai quali i backup devono essere bloccati e conservati per un determinato periodo di tempo. Quando l'opzione DataLock and Ransomware Resilience è abilitata, il bucket cloud fornito come parte dell'attivazione di NetApp Backup and Recovery avrà il blocco degli oggetti e il controllo delle versioni degli oggetti abilitati.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Per maggiori dettagli, consulta il blog sulla protezione da DataLock e Ransomware"^] .
 
@@ -124,7 +124,7 @@ L'impostazione di conservazione di DataLock sostituisce l'impostazione di conser
 
 È possibile abilitare la protezione DataLock e Ransomware quando si crea un criterio.  Non è possibile abilitare, modificare o disabilitare questa opzione dopo aver creato il criterio.
 
-. Quando si crea un criterio, espandere la sezione *Protezione da DataLock e Ransomware*.
+. Quando si crea un criterio, espandere la sezione *DataLock e Resilienza Ransomware*.
 . Scegli una delle seguenti opzioni:
 +
 ** *Nessuno*: la protezione DataLock e la resilienza al ransomware sono disabilitate.
@@ -165,7 +165,7 @@ Vediamo come funziona:
 
 === Sistemi supportati e provider di archiviazione di oggetti
 
-È possibile abilitare la protezione DataLock e Ransomware sui volumi ONTAP dai seguenti sistemi quando si utilizza l'archiviazione di oggetti nei seguenti provider di cloud pubblici e privati.  Nelle versioni future verranno aggiunti altri provider cloud.
+È possibile abilitare la protezione DataLock e Ransomware sui volumi ONTAP dai seguenti sistemi quando si utilizza l'archiviazione di oggetti nei seguenti provider di cloud pubblici e privati.
 
 [cols="55,45"]
 |===
@@ -175,10 +175,13 @@ Vediamo come funziona:
 | Cloud Volumes ONTAP in AWS | Amazon S3 endif::aws[] ifdef::azure[] 
 
 
-| Cloud Volumes ONTAP in Azure | Blob di Azure endif::azure[] ifdef::gcp[] endif::gcp[] 
+| Cloud Volumes ONTAP in Azure | Blob di Azure endif::azure[] ifdef::gcp[] 
 
 
-| Sistema ONTAP in sede | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob di Azure endif::azure[] ifdef::gcp[] endif::gcp[] NetApp StorageGRID 
+| Cloud Volumes ONTAP in Google Cloud | Google Cloud endif::gcp[] 
+
+
+| Sistema ONTAP in sede | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob di Azure endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
 |===
 
 
@@ -244,6 +247,18 @@ ifdef::azure[]
 
 
 endif::azure[]
+
+ifdef::gcp[]
+
+* Per Google Cloud:
++
+** I cluster devono eseguire ONTAP 9.17.1 o versione successiva
+** L'agente della console può essere distribuito nel cloud o in sede
+
+
+
+
+endif::gcp[]
 
 * Per StorageGRID:
 +
