@@ -22,7 +22,7 @@ Puoi avviare la prova gratuita di NetApp Backup and Recovery dopo aver effettuat
 
 .Passi
 . Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.
-. Se è la prima volta che accedi a questo servizio, hai già un sistema nella NetApp Console, ma non hai ancora iniziato la prova gratuita, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" con l'opzione *Inizia la prova gratuita*.
+. Se è la prima volta che accedi a Backup and Recovery, hai già un sistema nella NetApp Console, ma non hai ancora avviato la prova gratuita, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" con l'opzione *Avvia la prova gratuita*.
 +
 image:screen-br-landing-unified-start-trial.png["Screenshot della landing page per NetApp Backup and Recovery senza prova gratuita"]
 
@@ -34,7 +34,7 @@ image:screen-br-landing-unified-start-trial.png["Screenshot della landing page p
 
 Dopo aver avviato la prova gratuita, puoi scoprire i carichi di lavoro e creare policy per eseguirne il backup.
 
-Se è la prima volta che accedi a questo servizio, hai già un sistema nella console NetApp e hai avviato la prova gratuita, ma non hai trovato alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Trovare risorse*.
+Se è la prima volta che accedi a Backup and Recovery, hai già un sistema nella NetApp Console e hai avviato la prova gratuita, ma non hai trovato alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Trovare risorse*.
 
 Per i dettagli sulla scoperta dei carichi di lavoro, vederelink:br-start-discover.html["Scopri i carichi di lavoro"] .
 

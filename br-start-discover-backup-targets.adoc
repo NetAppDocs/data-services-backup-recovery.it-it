@@ -20,14 +20,14 @@ Completa alcuni passaggi per scoprire o aggiungere manualmente destinazioni di b
 
 == Scopri un target di backup
 
-Prima di utilizzare NetApp Backup and Recovery, è necessario configurare le destinazioni di backup di Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID.
+Configurare le destinazioni di backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di utilizzare NetApp Backup and Recovery.
 
 È possibile scoprire questi obiettivi automaticamente oppure aggiungerli manualmente.
 
-Fornire le credenziali necessarie per accedere al sistema di account di archiviazione.  Queste credenziali vengono utilizzate per individuare i carichi di lavoro di cui si desidera eseguire il backup.
+Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro di cui si desidera eseguire il backup.
 
 .Prima di iniziare
-Per aggiungere una destinazione di backup offsite, è necessario individuare almeno un carico di lavoro.
+È necessario individuare almeno un carico di lavoro prima di poter aggiungere una destinazione di backup fuori sede.
 
 .Passi
 . Dal menu NetApp Backup and Recovery, selezionare *Inventario*.

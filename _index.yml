@@ -49,7 +49,7 @@ indexpage:
       url: br-use-mssql-restore.html
     - title: Clonazione dei carichi di lavoro di Microsoft SQL Server
       url: br-use-mssql-clone.html
-  - title: Proteggi i carichi di lavoro VMware (anteprima privata)
+  - title: Proteggi i carichi di lavoro VMware (anteprima)
     links:
     - title: Panoramica sulla protezione dei carichi di lavoro VMware
       url: br-use-vmware-protect-overview.html

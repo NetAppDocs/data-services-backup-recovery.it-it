@@ -14,20 +14,20 @@ summary: 'Le funzionalità di backup e ripristino NetApp disponibili tramite l"i
 
 
 [role="lead"]
-Le funzionalità di backup e ripristino NetApp disponibili tramite l'interfaccia utente Web sono disponibili anche tramite l'API RESTful.
+Le funzionalità di backup e ripristino NetApp disponibili tramite l'interfaccia utente Web sono disponibili anche tramite l'API REST di backup e ripristino.
 
 In NetApp Backup and Recovery sono definite dieci categorie di endpoint:
 
-* backup: gestisce le operazioni di backup delle risorse cloud e on-premise e recupera i dettagli dei dati di backup
-* catalogo - gestisce la ricerca nel catalogo indicizzato dei file in base a una query (Cerca e ripristina)
-* cloud: recupera informazioni sulle varie risorse del provider cloud dalla console NetApp
-* job - gestisce le voci di dettaglio del job nel database NetApp Console
-* licenza - recupera la validità della licenza dei sistemi dalla console NetApp
-* scansione ransomware: avvia una scansione ransomware su un file di backup specifico
-* ripristino: consente di eseguire operazioni di ripristino a livello di volume, file e cartella
-* sfr - recupera i file da un file di backup per operazioni di ripristino a livello di singolo file (Sfoglia e ripristina)
-* storagegrid - recupera i dettagli su un server StorageGRID e consente di scoprire un server StorageGRID
-* sistema - gestisce le policy di backup e configura l'archivio oggetti di destinazione associato a un sistema
+* `backup`- gestisce le operazioni di backup delle risorse cloud e on-premise e recupera i dettagli dei dati di backup
+* `catalog`- gestisce la ricerca nel catalogo indicizzato dei file in base a una query (Cerca e Ripristina)
+* `cloud`- recupera informazioni sulle varie risorse del provider cloud dalla console NetApp
+* `job`- gestisce le voci dei dettagli del lavoro sul database della console NetApp
+* `license`- recupera la validità della licenza dei sistemi dalla console NetApp
+* `ransomware scan`- avvia una scansione ransomware su uno specifico file di backup
+* `restore`- consente di eseguire operazioni di ripristino a livello di volume, file e cartella
+* `sfr`- recupera i file da un file di backup per operazioni di ripristino a livello di singolo file (Sfoglia e ripristina)
+* `storagegrid`- recupera i dettagli su un server StorageGRID e consente di scoprire un server StorageGRID
+* `system`- gestisce le policy di backup e configura l'archivio oggetti di destinazione associato a un sistema
 
 
 
@@ -53,7 +53,7 @@ NOTE: Se si utilizza un account di servizio, è necessario utilizzare il token d
 Assicurati di generare il token di aggiornamento dal seguente link: https://services.cloud.netapp.com/refresh-token/.  Il token di aggiornamento è una stringa alfanumerica che verrà utilizzata per generare un token utente.
 
 +
-[source, http]
+[source, console]
 ----
 curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token?=' \
 --header 'Content-Type: application/json' \
@@ -69,24 +69,36 @@ NOTE: Il token utente dal sito Web della console NetApp ha una data di scadenza.
 
 . Ottieni l'ID del tuo account NetApp Console.
 +
-[source, http]
+[source, console]
 ----
 GET 'https://api.bluexp.netapp.com/tenancy/account' -H 'authority: api.bluexp.netapp.com'
 Header:
 -H 'accept: application/json'
 -H 'accept-language: en-GB,en;q=0.9'
--H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR………
+-H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR
 ----
 +
 Questa API restituirà una risposta simile alla seguente. È possibile recuperare l'ID dell'account analizzando l'output da *[0].[ accountPublicId]*.
 
 +
- [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
+[source, json]
+----
+{
+  "accountPublicId": "account-i6vJXvZW",
+  "accountName": "rashidn",
+  "isSaas": true,
+  "isGov": false,
+  "isPrivatePreviewEnabled": false,
+  "is3rdPartyServicesEnabled": false,
+  "accountSerial": "96064469711530003565",
+  "userRole": "Role-1"
+}
+----
 . Ottieni x-agent-id che contiene l'ID dell'agente della console.
 +
-[source, http]
+[source, console]
 ----
-GET curl 'https://api.services.cloud.netapp.com/occm/list-occms/account-OOnAR4ZS?excludeStandalone=true&source=saas' \
+GET 'https://api.services.cloud.netapp.com/occm/list-occms/account-OOnAR4ZS?excludeStandalone=true&source=saas' \
 Header:
   -H 'authority: api.services.cloud.netapp.com' \
   -H 'accept: application/json' \
@@ -94,10 +106,8 @@ Header:
   -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5…………
 ----
 +
-Questa API restituirà una risposta simile alla seguente. È possibile recuperare l'ID dell'agente analizzando l'output da *occm.[0].[agent].[agentId]*.
+È possibile recuperare l'ID dell'agente dalla risposta analizzando l'output da *occm.[0].[agent].[agentId]*.
 
-+
- {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
 
 
 
@@ -109,7 +119,7 @@ L'esempio seguente mostra una chiamata API per attivare NetApp Backup and Recove
 .Richiesta API
 Vedrai che utilizziamo l'ID account della console NetApp `account-DpTFcxN3` , ID agente console `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients` e token utente `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in questo comando.
 
-[source, http]
+[source, console]
 ----
 curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
@@ -141,17 +151,17 @@ curl --location --request POST 'https://api.bluexp.netapp.com/account/account-Dp
       "resource-group": "rn-test-backup-rg",
       "subscription": "3beb4dd0-25d4-464f-9bb0-303d7cf5c0c2"
     }
-  }'
+  }
 ----
-.La risposta è un ID di processo che puoi monitorare.
-[source, text]
+.La risposta è un ID di processo che puoi monitorare:
+[source, json]
 ----
 {
  "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
 }
 ----
-.Monitorare la risposta.
-[source, http]
+.Monitorare la risposta:
+[source, console]
 ----
 curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
@@ -159,33 +169,33 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…hE9ss2NubK6wZRHUdSaORI7JvcOorUhJ8srqdiUiW6MvuGIFAQIh668of2M3dLbhVDBe8BBMtsa939UGnJx7Qz6Eg'
 ----
-.Risposta.
-[source, text]
+.Risposta:
+[source, json]
 ----
 {
-    "job": [
-        {
-            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
-            "type": "backup-working-environment",
-            "status": "PENDING",
-            "error": "",
-            "time": 1651852160000
-        }
-    ]
+  "job": [
+    {
+      "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+      "type": "backup-working-environment",
+      "status": "PENDING",
+      "error": "",
+      "time": 1651852160000
+    }
+  ]
 }
 ----
-.Monitorare finché lo "stato" non è "COMPLETO".
-[source, text]
+.Monitorare finché lo "stato" non è "COMPLETO":
+[source, json]
 ----
 {
-    "job": [
-        {
-            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
-            "type": "backup-working-environment",
-            "status": "COMPLETED",
-            "error": "",
-            "time": 1651852160000
-        }
-    ]
+  "job": [
+    {
+      "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+      "type": "backup-working-environment",
+      "status": "COMPLETED",
+      "error": "",
+      "time": 1651852160000
+    }
+  ]
 }
 ----

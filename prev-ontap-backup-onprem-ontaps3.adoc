@@ -322,7 +322,7 @@ TIP: Se si desidera creare una policy personalizzata prima di attivare lo Snapsh
 
 +
 
-TIP: Per creare una policy personalizzata utilizzando questo servizio, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+TIP: Per creare una policy personalizzata utilizzando Backup e Ripristino, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
 
 +
 Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
@@ -367,7 +367,7 @@ TIP: È possibile creare una policy con System Manager o ONTAP CLI.  Per creare 
 
 +
 
-TIP: Per creare una policy personalizzata utilizzando questo servizio, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+TIP: Per creare una policy personalizzata utilizzando Backup e Ripristino, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
 
 +
 Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:

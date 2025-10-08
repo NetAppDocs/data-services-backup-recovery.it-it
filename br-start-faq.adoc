@@ -27,7 +27,7 @@ Questa sezione FAQ può aiutarti se stai cercando una risposta rapida a una doma
 
 *Come si abilita NetApp Backup and Recovery?*  NetApp Backup and Recovery non richiede alcuna abilitazione.  L'opzione di backup e ripristino è abilitata automaticamente nella barra di navigazione a sinistra della Console.
 
-Per iniziare, è necessario registrarsi o contattare il proprio rappresentante commerciale NetApp per provare questo servizio.  Quindi, quando si utilizza l'agente Console, questo includerà le funzionalità appropriate per il servizio.
+Per iniziare, è necessario registrarsi o contattare il proprio rappresentante commerciale NetApp per provare Backup and Recovery. Quindi, quando si utilizza l'agente Console, questo includerà le funzionalità appropriate per il servizio.
 
 Per iniziare a utilizzare NetApp Backup and Recovery, seleziona "Inizia a scoprire i carichi di lavoro" dalla pagina di destinazione iniziale.
 
@@ -53,7 +53,7 @@ Per una spiegazione su queste modalità in tutti i servizi dati NetApp , fare ri
 
 * NetApp Backup and Recovery è a conoscenza delle impostazioni di protezione effettuate in NetApp ONTAP?*  Sì, NetApp Backup and Recovery rileva le pianificazioni degli snapshot impostate in ONTAP.
 
-*Se imposti una policy utilizzando NetApp Backup and Recovery, dovrai apportare modifiche future solo a questo servizio?*  Ti consigliamo di apportare modifiche ai criteri da NetApp Backup and Recovery.
+*Se imposti una policy utilizzando NetApp Backup and Recovery, dovrai apportare modifiche future solo in Backup and Recovery?* Ti consigliamo di apportare modifiche ai criteri da NetApp Backup and Recovery.
 
 
 

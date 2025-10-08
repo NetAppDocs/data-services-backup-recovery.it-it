@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 
 
 [role="lead"]
-NetApp Backup and Recovery deve prima rilevare gli host KVM e le macchine virtuali per poterli proteggere.
+NetApp Backup and Recovery deve rilevare gli host KVM e le macchine virtuali prima di proteggerli.
 
 *Ruolo di console obbligatorio* Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
 
@@ -28,7 +28,7 @@ Aggiungi le informazioni sull'host KVM e lascia che NetApp Backup and Recovery r
 . Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
 . Nel riquadro KVM, seleziona *Scopri e gestisci*.
 +
-Se è la prima volta che accedi a questo servizio, hai già un sistema nella Console ma non hai ancora individuato alcuna risorsa, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
+Se è la prima volta che accedi a Backup and Recovery, hai già un sistema nella Console ma non hai ancora individuato alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
 
 . Seleziona *Scopri risorse*.
 . Inserisci le seguenti informazioni:
@@ -60,6 +60,7 @@ Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nel
 
 == Continua alla dashboard di NetApp Backup and Recovery
 
+.Passi
 . Per visualizzare la dashboard NetApp Backup and Recovery, dal menu in alto selezionare *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 
