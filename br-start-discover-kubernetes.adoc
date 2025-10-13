@@ -16,19 +16,19 @@ summary: Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima
 [role="lead"]
 NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di proteggerli.
 
-*Ruolo richiesto della console NetApp * Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
 == Scopri i carichi di lavoro di Kubernetes
 
-Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes nel tuo ambiente.  Aggiungendo un carico di lavoro si aggiunge un cluster Kubernetes a NetApp Backup and Recovery.  È quindi possibile aggiungere applicazioni e proteggere le risorse del cluster.
+Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes nel tuo ambiente.  L'aggiunta di un carico di lavoro aggiunge un cluster Kubernetes a NetApp Backup and Recovery.  È quindi possibile aggiungere applicazioni e proteggere le risorse del cluster.
 
 .Passi
 . Eseguire una delle seguenti operazioni:
 +
-** Se stai rilevando carichi di lavoro Kubernetes per la prima volta, in NetApp Backup and Recovery seleziona *Discover and Manage* nel tipo di carico di lavoro Kubernetes.
-** Se hai già individuato i carichi di lavoro Kubernetes, in NetApp Backup and Recovery seleziona *Inventario* > *Carichi di lavoro* e poi seleziona *Individuazione risorse*.
+** Se stai rilevando carichi di lavoro Kubernetes per la prima volta, in NetApp Backup and Recovery, seleziona *Discover and Manage* nel tipo di carico di lavoro Kubernetes.
+** Se hai già individuato i carichi di lavoro Kubernetes, in NetApp Backup and Recovery seleziona *Inventario* > *Carichi di lavoro* e quindi seleziona *Individuazione risorse*.
 
 
 . Selezionare il tipo di carico di lavoro *Kubernetes*.
@@ -53,13 +53,13 @@ Il cluster viene aggiunto all'inventario.
 
 
 
-== Continua alla dashboard di NetApp Backup and Recovery
+== Continua alla dashboard NetApp Backup and Recovery
 
-Per visualizzare la dashboard di NetApp Backup and Recovery, seguire questi passaggi.
+Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.
 
 . Dal menu in alto, seleziona *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 +
-link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"] .
+link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"].
 
 

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-preview-setup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 'Partecipando all"anteprima di NetApp Backup and Recovery, svolgerai un ruolo fondamentale nel perfezionamento e nel miglioramento NetApp Backup and Recovery.  Per la versione Preview di NetApp Backup and Recovery, ti aiuteremo con la configurazione.  Ecco il procedimento.' 
+summary: 'Partecipando all"anteprima NetApp Backup and Recovery , svolgerai un ruolo fondamentale nel perfezionamento e nel miglioramento NetApp Backup and Recovery.  Per la versione Preview di NetApp Backup and Recovery, ti aiuteremo con la configurazione.  Ecco il procedimento.' 
 ---
-= Configurare la versione di anteprima di NetApp Backup and Recovery
+= Configurare la versione di anteprima NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 'Partecipando all"anteprima di NetApp Backup and Recovery, svolgerai un
 
 
 [role="lead"]
-Partecipando a una delle versioni di anteprima di NetApp Backup and Recovery, svolgerai un ruolo fondamentale nel perfezionamento e nel miglioramento NetApp Backup and Recovery.  Per la versione di anteprima di NetApp Backup and Recovery, ti aiuteremo con la configurazione.  Ecco il procedimento.
+Partecipando a una delle versioni di anteprima NetApp Backup and Recovery , svolgerai un ruolo fondamentale nel perfezionamento e nel miglioramento NetApp Backup and Recovery.  Per la versione di anteprima di NetApp Backup and Recovery, ti aiuteremo con la configurazione.  Ecco il procedimento.
 
-. *Registrazione*: se non hai ancora un account NetApp Console, registrati per crearne uno.  Ecco come fare:
+. *Registrazione*: se non hai ancora un account NetApp Console , registrati per crearne uno. Ecco come fare:
 +
-.. Visita il https://bluexp.netapp.com/["Portale della console NetApp"] .
+.. Visita il https://bluexp.netapp.com/["Portale NetApp Console"] .
 .. Seleziona *Inizia*.
 +
 image:screen-preview-login.png["Accedi alla schermata del portale"]
@@ -48,7 +48,7 @@ Riceverai un'e-mail con un link per verificare il tuo indirizzo e-mail.
 . *Mantenere contatti regolari*.  Durante la sessione di anteprima, partecipa ai check-in regolari con il team di prodotto NetApp .  Queste sessioni ti aiutano a comprendere il servizio e a fornire feedback:
 +
 ** *Ascolta gli aggiornamenti*: riceverai informazioni sugli ultimi sviluppi relativi all'anteprima.
-** *Fai domande* e ricevi risposte immediate dal team della console NetApp .
+** *Fai domande* e ricevi risposte immediate dal team NetApp Console .
 ** *Fornire feedback* al team di prodotto NetApp per migliorare il servizio.
 ** *Condividere le migliori pratiche* e suggerimenti per utilizzare il servizio in modo efficace.
 ** *Promuovere la collaborazione*: collaborare con altri utenti per condividere esperienze e imparare gli uni dagli altri.

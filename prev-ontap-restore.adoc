@@ -18,7 +18,7 @@ I backup dei dati del volume ONTAP sono disponibili nelle posizioni in cui sono 
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 * È possibile ripristinare un *volume* (come nuovo volume) sul sistema originale, su un sistema diverso che utilizza lo stesso account cloud o su un sistema ONTAP locale.
@@ -36,7 +36,7 @@ Riassumendo, ecco i flussi validi che è possibile utilizzare per ripristinare i
 
 
 
-NOTE: Se l'operazione di ripristino non viene completata, non riprovare il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita.  Se si tenta nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non riuscirà nuovamente.  Quando lo stato di Job Monitor è "Non riuscito", puoi provare a eseguire nuovamente il processo di ripristino.
+NOTE: Se l'operazione di ripristino non viene completata, non riprovare a eseguire il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita.  Se si tenta nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non riuscirà di nuovo.  Quando lo stato di Job Monitor è "Non riuscito", puoi provare a eseguire nuovamente il processo di ripristino.
 
 
 NOTE: Per le limitazioni relative al ripristino dei dati ONTAP , vederelink:br-reference-limitations.html["Limitazioni di backup e ripristino per i volumi ONTAP"] .
@@ -116,19 +116,19 @@ Prima di iniziare a ripristinare un volume, una cartella o un file, è necessari
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
 
 endif::gcp[]
 
@@ -230,7 +230,7 @@ La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (una c
 
 . Selezionare *Avanti*.
 +
-Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà richiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware. (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
 
 . Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare il volume.
 . Quando si ripristina un file di backup da un archivio oggetti, se si seleziona un sistema ONTAP locale e non è ancora stata configurata la connessione del cluster all'archivio oggetti, vengono richieste informazioni aggiuntive:
@@ -276,19 +276,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] . I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
 
 endif::gcp[]
 
@@ -361,7 +361,7 @@ Come puoi vedere, per eseguire un ripristino di una cartella o di un file è nec
 
 ==== Ripristina cartelle e file
 
-Per ripristinare cartelle o file su un volume da un backup del volume ONTAP , seguire questi passaggi.  Dovresti conoscere il nome del volume e la data del file di backup che vuoi utilizzare per ripristinare la cartella o i file.  Questa funzionalità utilizza la navigazione in tempo reale per consentirti di visualizzare l'elenco delle directory e dei file all'interno di ciascun file di backup.
+Per ripristinare cartelle o file su un volume da un backup del volume ONTAP , seguire questi passaggi.  Dovresti conoscere il nome del volume e la data del file di backup che vuoi utilizzare per ripristinare la cartella o il/i file.  Questa funzionalità utilizza la navigazione in tempo reale per consentirti di visualizzare l'elenco delle directory e dei file all'interno di ciascun file di backup.
 
 .Passi
 . Dal menu Console, selezionare *Protezione > Backup e ripristino*.
@@ -373,10 +373,10 @@ Per ripristinare cartelle o file su un volume da un backup del volume ONTAP , se
 Se si ripristinano cartelle o file da un file di backup che risiede in un livello di archiviazione, è possibile selezionare la Priorità di ripristino.
 
 +
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"] . link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] . I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] .  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
 
 +
-Se Ransomware Resilience è attivo per il file di backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware. (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+Se Ransomware Resilience è attivo per il file di backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
 
 . Nella pagina _Seleziona elementi_, seleziona la cartella o i file che desideri ripristinare e seleziona *Continua*.  Per aiutarti a trovare l'articolo:
 +
@@ -456,19 +456,19 @@ Se il file di backup del volume che si desidera ripristinare si trova in un arch
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
 
 endif::gcp[]
 
@@ -590,7 +590,7 @@ ifdef::gcp[]
 
 * Requisiti di Google Cloud:
 +
-** È necessario aggiungere autorizzazioni specifiche di Google BigQuery al ruolo utente che fornisce le autorizzazioni alla console NetApp . link:prev-ontap-backup-onprem-gcp.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
+** È necessario aggiungere autorizzazioni specifiche di Google BigQuery al ruolo utente che fornisce le autorizzazioni alla NetApp Console . link:prev-ontap-backup-onprem-gcp.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
 +
 Se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni BigQuery al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
 
@@ -725,7 +725,7 @@ Si noti che i risultati identificano le copie Snapshot del volume locale e i vol
 +
 ** Per i volumi, è possibile selezionare il sistema di destinazione originale oppure un sistema alternativo.  Quando si ripristina un volume FlexGroup , è necessario scegliere più aggregati.
 ** Per le cartelle, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, tra cui sistema, volume e cartella.
-** Per i file, è possibile ripristinarli nella posizione originale oppure selezionare una posizione alternativa, tra cui sistema, volume e cartella.  Quando si seleziona la posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
+** Per i file, è possibile ripristinarli nella posizione originale oppure selezionare una posizione alternativa, tra cui il sistema, il volume e la cartella.  Quando si seleziona la posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
 +
 Se selezioni un sistema ONTAP locale e non hai ancora configurato la connessione del cluster all'archiviazione degli oggetti, ti verrà richiesto di immettere informazioni aggiuntive:
 
@@ -761,4 +761,4 @@ endif::gcp[]
 
 
 .Risultati
-Il volume, la cartella o i file vengono ripristinati e si torna alla Dashboard di ripristino, dove è possibile esaminare l'avanzamento dell'operazione di ripristino.  È anche possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino. Vedere link:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .
+Il volume, la cartella o i file vengono ripristinati e si torna alla Dashboard di ripristino, dove è possibile esaminare l'avanzamento dell'operazione di ripristino.  È anche possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.  Vederelink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .

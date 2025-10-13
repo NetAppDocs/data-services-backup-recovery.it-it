@@ -21,7 +21,7 @@ NOTE: Queste impostazioni sono disponibili solo per l'archiviazione di backup su
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 Nella pagina Impostazioni avanzate è possibile modificare le seguenti opzioni:

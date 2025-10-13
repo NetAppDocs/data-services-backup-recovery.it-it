@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro KVM con NetApp Backup and Recovery.
 
 
 [role="lead"]
-Ripristina le macchine virtuali KVM da copie snapshot, da un backup del gruppo di protezione replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+Ripristina le macchine virtuali KVM da copie snapshot, da un backup del gruppo di protezione replicato su un archivio secondario o da backup archiviati nell'archivio oggetti utilizzando NetApp Backup and Recovery.
 
 .Ripristina da queste posizioni
 È possibile ripristinare le macchine virtuali da diverse posizioni di partenza:
@@ -31,7 +31,7 @@ Ripristina le macchine virtuali KVM da copie snapshot, da un backup del gruppo d
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
@@ -55,11 +55,11 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 
 Ripristinare le macchine virtuali KVM utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
-. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
 . Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *KVM*.
 . Immettere il nome della macchina virtuale che si desidera ripristinare oppure filtrare in base all'host della macchina virtuale o al pool di archiviazione in cui si trova la risorsa da ripristinare.
 +

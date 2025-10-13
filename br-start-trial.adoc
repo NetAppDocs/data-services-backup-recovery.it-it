@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-trial.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Avvia o termina una prova gratuita di NetApp Backup and Recovery.  La prova gratuita è disponibile per 30 giorni dopo aver sottoscritto un abbonamento a consumo a NetApp Intelligent Services nel marketplace del tuo provider cloud. 
+summary: Avvia o termina una prova gratuita di NetApp Backup and Recovery.  La prova gratuita è disponibile per 30 giorni dopo aver sottoscritto un abbonamento pay-as-you-go nel marketplace del tuo provider cloud per NetApp Intelligent Services. 
 ---
 = Avvia una prova gratuita di NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Avvia o termina una prova gratuita di NetApp Backup and Recovery.  La p
 
 
 [role="lead"]
-È disponibile una prova gratuita di 30 giorni di NetApp Backup and Recovery se sottoscrivi un abbonamento pay-as-you-go nel marketplace del tuo provider cloud a * NetApp Intelligent Services*.  La prova gratuita inizia nel momento in cui ti iscrivi all'elenco del marketplace.  Tieni presente che se paghi l'abbonamento al marketplace quando distribuisci un sistema Cloud Volumes ONTAP e poi avvii la prova gratuita di NetApp Backup and Recovery 10 giorni dopo, avrai 20 giorni rimanenti per utilizzare la prova gratuita.
+È disponibile una prova gratuita di 30 giorni NetApp Backup and Recovery se sottoscrivi un abbonamento pay-as-you-go nel marketplace del tuo provider cloud a * NetApp Intelligent Services*.  La prova gratuita inizia nel momento in cui ti iscrivi all'elenco del marketplace.  Tieni presente che se paghi l'abbonamento al marketplace quando distribuisci un sistema Cloud Volumes ONTAP e poi avvii la prova gratuita NetApp Backup and Recovery 10 giorni dopo, avrai 20 giorni rimanenti per utilizzare la prova gratuita.
 
-Al termine del periodo di prova gratuito, passerai automaticamente all'abbonamento PAYGO senza interruzioni.  Se decidi di non continuare a utilizzare NetApp Backup and Recovery, ti basterà interrompere la prova gratuita.
+Al termine del periodo di prova gratuito, passerai automaticamente all'abbonamento PAYGO senza interruzioni.  Se decidi di non continuare a utilizzare NetApp Backup and Recovery, ti basterà terminare la prova gratuita.
 
 Puoi avviare la prova gratuita di NetApp Backup and Recovery dopo aver effettuato l'accesso alla Console.
 
@@ -51,7 +51,7 @@ Puoi terminare la prova gratuita in qualsiasi momento.  Se interrompi il periodo
 +
 image:screen-br-landing-unified.png["Screenshot della landing page per NetApp Backup and Recovery"]
 
-. Dalla pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery", seleziona *Visualizza dettagli - prova gratuita* oppure nell'angolo in alto a destra della pagina, seleziona *Prova gratuita*.
+. Dalla pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery", seleziona *Visualizza dettagli - prova gratuita* oppure, nell'angolo in alto a destra della pagina, seleziona *Prova gratuita*.
 +
 image:screen-br-landing-unified-end-trial.png["Screenshot della landing page per la prova gratuita NetApp Backup and Recovery"]
 

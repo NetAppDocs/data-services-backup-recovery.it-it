@@ -18,11 +18,11 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 .Passi
-. Nell'interfaccia utente della console NetApp , selezionare *Protezione* > *Backup e ripristino* > *Macchine virtuali*.
+. Nell'interfaccia utente NetApp Console , selezionare *Protezione* > *Backup e ripristino* > *Macchine virtuali*.
 . Dal menu a discesa *Impostazioni*, seleziona * SnapCenter Plug-in for VMware vSphere*.
 . Selezionare *Registra il SnapCenter Plug-in for VMware vSphere*.
 . Specificare i seguenti dettagli:

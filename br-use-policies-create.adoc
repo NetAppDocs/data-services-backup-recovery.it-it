@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-create.html 
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che stabiliscano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
+summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
 ---
 = Crea e gestisci policy per gestire i backup in NetApp Backup and Recovery
 :hardbreaks:
@@ -17,7 +17,7 @@ In NetApp Backup and Recovery, puoi creare policy personalizzate che stabiliscon
 
 NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
 
-Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery. Vedere link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
 
 È possibile raggiungere i seguenti obiettivi relativi alle politiche:
 
@@ -33,7 +33,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 == Visualizza le politiche
 
-. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
 . Esaminare i dettagli di questa politica.
 +
 ** *Carico di lavoro*: alcuni esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.
@@ -51,7 +51,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti.  Una parte della strategia 3-2-1 prevede la creazione di una copia snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
 
-*Ruolo richiesto della console NetApp * Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Prima di iniziare
 Se si prevede di replicare su un archivio secondario e si desidera utilizzare il blocco degli snapshot sugli snapshot locali o sull'archivio secondario ONTAP remoto, è necessario innanzitutto inizializzare il clock di conformità ONTAP a livello di cluster.  Questo è un requisito per abilitare il blocco degli snapshot nella policy.
@@ -61,7 +61,7 @@ Per istruzioni su come fare, fare riferimento a https://docs.netapp.com/us-en/on
 Per informazioni generali sul blocco degli snapshot, fare riferimento a https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["Blocco degli snapshot in ONTAP"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
 . Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
 . Nella pagina Criteri, fornire le seguenti informazioni.
 +
@@ -129,7 +129,7 @@ Fornire informazioni per lo snapshot locale.
 * Selezionare l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni degli snapshot.  È possibile avere un massimo di 5 pianificazioni.
 * *Frequenza snapshot*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.  La frequenza annuale non è disponibile per i carichi di lavoro Kubernetes.
 * *Conservazione degli snapshot*: immettere il numero di snapshot da conservare.
-* *Abilita backup del log*: (si applica solo ai carichi di lavoro di Microsoft SQL Server e Oracle Database.)  Abilitare questa opzione per eseguire il backup dei registri e impostare la frequenza e la conservazione dei backup dei registri. Per fare ciò, è necessario aver già configurato un backup del registro. Vedere link:br-start-configure.html["Configurare le directory di registro"] .
+* *Abilita backup del log*: (si applica solo ai carichi di lavoro di Microsoft SQL Server e Oracle Database.)  Abilitare questa opzione per eseguire il backup dei registri e impostare la frequenza e la conservazione dei backup dei registri. Per fare ciò, è necessario aver già configurato un backup del registro.  Vederelink:br-start-configure.html["Configurare le directory di registro"] .
 +
 ** *Elimina i log di archivio dopo il backup*: (solo carichi di lavoro di Oracle Database) Se i backup dei log sono abilitati, è possibile abilitare facoltativamente questa funzionalità per limitare il periodo di tempo per cui Backup and Recovery conserva i log di archivio di Oracle.  È possibile scegliere il periodo di conservazione e il punto in cui Backup e Recovery devono eliminare i registri di archivio.
 
@@ -225,7 +225,7 @@ Inserisci le informazioni in questi campi:
 Facoltativamente, è possibile configurare le impostazioni avanzate nel criterio.  Queste impostazioni sono disponibili per tutte le architetture di backup, inclusi gli snapshot locali, la replica su storage secondario e i backup su storage di oggetti. Queste impostazioni non sono disponibili per i carichi di lavoro Kubernetes.  Le impostazioni avanzate disponibili variano a seconda del carico di lavoro selezionato nella parte superiore della pagina, pertanto le impostazioni avanzate descritte qui potrebbero non essere applicabili a tutti i carichi di lavoro.  Le impostazioni avanzate non sono disponibili quando si configura un criterio per i carichi di lavoro Kubernetes.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Criteri*.
+. Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
 . Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
 . Nella sezione Impostazioni *Criteri > Avanzate*, seleziona il menu *Seleziona azione avanzata* per scegliere da un elenco di impostazioni avanzate.
 . Abilita le impostazioni che desideri visualizzare o modificare, quindi seleziona *Accetta*.
@@ -278,13 +278,13 @@ NOTE: Questa funzionalità non è disponibile per i carichi di lavoro VMware Pre
 
 Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti, è possibile abilitare l'archiviazione.
 
-Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery. Vedere link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
 
-.Ruolo richiesto della console NetApp
-Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+.Ruolo richiesto NetApp Console
+Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Nella console NetApp , vai su *Protezione* > *Backup e ripristino*.
+. Nella NetApp Console, vai su *Protezione* > *Backup e ripristino*.
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi modificare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica*.

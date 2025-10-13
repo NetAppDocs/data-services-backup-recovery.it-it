@@ -16,7 +16,7 @@ summary: Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai s
 [role="lead"]
 Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure e StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
 
-* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 * Configurare la directory di registro per gli host rilevati prima di avviare un backup.
 * Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
 
@@ -27,10 +27,10 @@ Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ON
 
 Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi di lavoro.
 
-*Ruolo richiesto nella console NetApp * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Esaminare i dettagli nelle schede Host, Gruppi di protezione, Gruppi di disponibilità, Istanze e Database.
@@ -42,10 +42,10 @@ Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi d
 
 Prima di eseguire il backup dei carichi di lavoro, imposta il percorso per i registri delle attività per gli host rilevati.  Ciò consente di monitorare lo stato delle operazioni.
 
-*Ruolo richiesto nella console NetApp * Ruolo di visualizzatore di storage, super amministratore di Backup e Recovery, amministratore di backup di Backup e Recovery o amministratore di ripristino di Backup e Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Ruolo di visualizzatore di storage, super amministratore di Backup e Recovery, amministratore di backup di Backup e Recovery o amministratore di ripristino di Backup e Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Seleziona un host.
@@ -65,10 +65,10 @@ NOTE: I campi visualizzati variano a seconda del modello di distribuzione selezi
 
 È possibile creare un gruppo di protezione per gestire le operazioni di backup e ripristino per un set di carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro che si desidera proteggere insieme.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppi di protezione*.
@@ -78,7 +78,7 @@ NOTE: I campi visualizzati variano a seconda del modello di distribuzione selezi
 . Selezionare *Avanti*.
 . Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
 +
-Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le istruzioni per creare una policy. Vedere link:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
+Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le istruzioni per creare una policy.  Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
 
 . Selezionare *Avanti*.
 . Rivedere la configurazione.
@@ -91,7 +91,7 @@ Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le i
 
 Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare, potresti voler eseguire un backup su richiesta.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
 . Dal menu, seleziona *Inventario*.
@@ -111,10 +111,10 @@ Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sist
 
 La sospensione della pianificazione impedisce temporaneamente l'esecuzione del backup all'ora pianificata.  Potrebbe essere opportuno farlo se si sta eseguendo la manutenzione del sistema o se si verificano problemi con il backup.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppo di protezione*, *Istanze* o *Database*.
@@ -128,10 +128,10 @@ La sospensione della pianificazione impedisce temporaneamente l'esecuzione del b
 
 È possibile creare un gruppo di protezione per gestire le operazioni di backup e ripristino per un set di carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro che si desidera proteggere insieme.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppi di protezione*.
@@ -144,10 +144,10 @@ La sospensione della pianificazione impedisce temporaneamente l'esecuzione del b
 
 È possibile rimuovere la protezione da un carico di lavoro se non si desidera più eseguirne il backup o se si desidera interromperne la gestione in NetApp Backup and Recovery.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppo di protezione*, *Istanze* o *Database*.

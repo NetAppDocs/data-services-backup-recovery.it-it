@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando i backup dei volumi, sospendendo i backup, eliminando i backup e altro ancora.  È anche possibile annullare la registrazione di NetApp Backup and Recovery. 
+summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando i backup dei volumi, sospendendo i backup, eliminando i backup e altro ancora.  È anche possibile annullare la registrazione NetApp Backup and Recovery. 
 ---
 = Gestisci i backup per i tuoi sistemi ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi
 
 
 [role="lead"]
-Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup, forzando l'eliminazione dei backup e molto altro. Ciò include tutti i tipi di backup, tra cui copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti.  È anche possibile annullare la registrazione di NetApp Backup and Recovery.
+Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup, forzando l'eliminazione dei backup e molto altro. Ciò include tutti i tipi di backup, tra cui copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti.  È anche possibile annullare la registrazione NetApp Backup and Recovery.
 
 
 CAUTION: Non gestire o modificare i file di backup direttamente sui tuoi sistemi di archiviazione o dall'ambiente del tuo provider cloud.  Ciò potrebbe danneggiare i file e dar luogo a una configurazione non supportata.
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -69,7 +69,7 @@ Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilita
 . Dalla scheda *Volumi*, identifica il volume su cui vuoi apportare modifiche ai criteri, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Modifica strategia di backup*.
 . Nella pagina _Modifica strategia di backup_, apportare modifiche ai criteri di backup esistenti per le copie snapshot locali, i volumi replicati e i file di backup e selezionare *Avanti*.
 +
-Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione di NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione di NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
+Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
 
 . Rivedere le impostazioni di backup per questo volume, quindi selezionare *Attiva backup*.
 
@@ -112,7 +112,7 @@ Se sono abilitati più di cinque volumi per il backup, NetApp Backup and Recover
 |===
 . Nella pagina di backup visualizzata, apportare modifiche ai criteri di backup esistenti per le copie snapshot locali, i volumi replicati o i file di backup e selezionare *Salva*.
 +
-Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione di NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione di NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
+Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
 
 
 
@@ -126,7 +126,7 @@ Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella pol
 
 Il nome del backup include la marca temporale, in modo da poter distinguere il backup su richiesta da altri backup pianificati.
 
-Se hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione di NetApp Backup and Recovery per questo cluster, anche il backup on-demand verrà configurato con DataLock e il periodo di conservazione sarà di 30 giorni. Le scansioni ransomware non sono supportate per i backup ad hoc. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione da DataLock e Ransomware"^] .
+Se hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery per questo cluster, anche il backup on-demand verrà configurato con DataLock e il periodo di conservazione sarà di 30 giorni.  Le scansioni ransomware non sono supportate per i backup ad hoc. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione da DataLock e Ransomware"^] .
 
 Quando si crea un backup ad hoc, viene creato uno snapshot sul volume di origine.  Poiché questo snapshot non fa parte di una normale pianificazione degli snapshot, non verrà disattivato.  Una volta completato il backup, potrebbe essere necessario eliminare manualmente questo snapshot dal volume di origine.  Ciò consentirà di liberare i blocchi correlati a questo snapshot.  Il nome dello Snapshot inizierà con `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Scopri come eliminare uno Snapshot utilizzando ONTAP CLI"^] .
 
@@ -206,10 +206,10 @@ La tabella seguente descrive le azioni disponibili:
 | Interrompere la replicazione | Disabilita i backup di questo volume sul sistema di destinazione e disabilita anche la possibilità di ripristinare un volume.  Tutti i backup esistenti non verranno eliminati.  Ciò non elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione. 
 
 
-| Risincronizzazione inversa | Inverte i ruoli dei volumi di origine e di destinazione.  Il contenuto del volume di origine viene sovrascritto dal contenuto del volume di destinazione.  Questa funzione è utile quando si desidera riattivare un volume sorgente che è andato offline.  Tutti i dati scritti sul volume di origine originale tra l'ultima replica dei dati e il momento in cui il volume di origine è stato disabilitato non vengono conservati. 
+| Risincronizzazione inversa | Inverte i ruoli dei volumi di origine e di destinazione. Il contenuto del volume di origine viene sovrascritto dal contenuto del volume di destinazione. Questa funzione è utile quando si desidera riattivare un volume sorgente che è andato offline. Tutti i dati scritti sul volume di origine originale tra l'ultima replica dei dati e il momento in cui il volume di origine è stato disabilitato non vengono conservati. 
 
 
-| Elimina relazione | Elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione, il che significa che la replica dei dati non avviene più tra i volumi.  Questa azione non attiva il volume di destinazione per l'accesso ai dati, ovvero non lo rende di lettura/scrittura.  Questa azione elimina anche la relazione peer del cluster e la relazione peer della VM di archiviazione (SVM), se non sono presenti altre relazioni di protezione dei dati tra i sistemi. 
+| Elimina relazione | Elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione, il che significa che la replica dei dati non avviene più tra i volumi. Questa azione non attiva il volume di destinazione per l'accesso ai dati, ovvero non lo rende di lettura/scrittura.  Questa azione elimina anche la relazione peer del cluster e la relazione peer della VM di archiviazione (SVM), se non sono presenti altre relazioni di protezione dei dati tra i sistemi. 
 |===
 
 
@@ -224,7 +224,7 @@ Dopo aver selezionato un'azione, la Console aggiorna la relazione.
 
 [NOTE]
 ====
-* Se hai abilitato _DataLock e Ransomware Resilience_ nella policy iniziale durante l'attivazione di NetApp Backup and Recovery per questo cluster, tutte le policy modificate devono essere configurate con la stessa impostazione DataLock (Governance o Compliance).  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione di NetApp Backup and Recovery, non puoi abilitare DataLock ora.
+* Se hai abilitato _DataLock e Ransomware Resilience_ nella policy iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, tutte le policy modificate devono essere configurate con la stessa impostazione DataLock (Governance o Compliance).  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, non puoi abilitare DataLock ora.
 * Quando si creano backup su AWS, se si sceglie _S3 Glacier_ o _S3 Glacier Deep Archive_ nella prima policy di backup quando si attiva NetApp Backup and Recovery, quel livello sarà l'unico livello di archiviazione disponibile quando si modificano le policy di backup.  Se non hai selezionato alcun livello di archivio nella tua prima policy di backup, _S3 Glacier_ sarà la tua unica opzione di archiviazione quando modifichi una policy.
 
 
@@ -242,19 +242,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Google"] . (Richiede ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Google"].  (Richiede ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -270,7 +270,7 @@ Se si desidera applicare una nuova policy di backup a determinati volumi di un s
 
 [NOTE]
 ====
-* Se hai abilitato _DataLock e Ransomware Resilience_ nella policy iniziale durante l'attivazione di NetApp Backup and Recovery per questo cluster, tutte le policy aggiuntive che crei devono essere configurate con la stessa impostazione DataLock (Governance o Compliance).  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione di NetApp Backup and Recovery, non puoi creare nuove policy che utilizzano DataLock.
+* Se hai abilitato _DataLock e Ransomware Resilience_ nella policy iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, tutte le policy aggiuntive che crei devono essere configurate con la stessa impostazione DataLock (Governance o Compliance).  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, non puoi creare nuove policy che utilizzano DataLock.
 * Quando si creano backup su AWS, se si sceglie _S3 Glacier_ o _S3 Glacier Deep Archive_ nella prima policy di backup quando si attiva NetApp Backup and Recovery, quel livello sarà l'unico livello di archiviazione disponibile per le future policy di backup per quel cluster.  Se non hai selezionato alcun livello di archivio nella tua prima policy di backup, _S3 Glacier_ sarà la tua unica opzione di archiviazione per le policy future.
 
 
@@ -288,19 +288,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Google"] . (Richiede ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'utilizzo dell'archiviazione di Google"].  (Richiede ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -392,7 +392,7 @@ Non è necessario eliminare necessariamente il volume sorgente.  È possibile el
 
 Questa funzionalità è disponibile solo se il sistema esegue ONTAP 9.12.1 o versione successiva.
 
-Non è possibile eliminare il volume di origine dall'interfaccia utente di NetApp Backup and Recovery.  Tuttavia, è possibile aprire la pagina Dettagli volume nella pagina *Sistemi* della console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimina il volume da lì"] .
+Non è possibile eliminare il volume di origine dall'interfaccia utente NetApp Backup and Recovery .  Tuttavia, è possibile aprire la pagina Dettagli volume nella pagina *Sistemi* della console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimina il volume da lì"] .
 
 
 NOTE: Non è possibile eliminare singoli file di backup del volume una volta eliminata la relazione.  Tuttavia, è possibile eliminare tutti i backup del volume.
@@ -420,13 +420,13 @@ NOTE: Quando il backup è disabilitato, per quel sistema viene visualizzato il p
 
 
 
-== Annullare la registrazione di NetApp Backup and Recovery per un sistema
+== Annullare la registrazione NetApp Backup and Recovery per un sistema
 
 È possibile annullare la registrazione di NetApp Backup and Recovery per un sistema se non si desidera più utilizzare la funzionalità di backup e non si desidera più ricevere addebiti per i backup in quel sistema.  In genere questa funzionalità viene utilizzata quando si pianifica di eliminare un sistema e si desidera annullare il servizio di backup.
 
-È possibile utilizzare questa funzionalità anche se si desidera modificare l'archivio oggetti di destinazione in cui vengono archiviati i backup del cluster.  Dopo aver annullato la registrazione di NetApp Backup and Recovery per il sistema, è possibile abilitare NetApp Backup and Recovery per quel cluster utilizzando le informazioni del nuovo provider cloud.
+È possibile utilizzare questa funzionalità anche se si desidera modificare l'archivio oggetti di destinazione in cui vengono archiviati i backup del cluster.  Dopo aver annullato la registrazione NetApp Backup and Recovery per il sistema, è possibile abilitare NetApp Backup and Recovery per quel cluster utilizzando le informazioni del nuovo provider cloud.
 
-Prima di poter annullare la registrazione di NetApp Backup and Recovery, è necessario eseguire i seguenti passaggi, nell'ordine indicato:
+Prima di poter annullare la registrazione NetApp Backup and Recovery, è necessario eseguire i seguenti passaggi, nell'ordine indicato:
 
 * Disattivare NetApp Backup and Recovery per il sistema
 * Elimina tutti i backup per quel sistema

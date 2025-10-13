@@ -16,7 +16,7 @@ summary: Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima
 [role="lead"]
 Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima rilevare i carichi di lavoro di Microsoft SQL Server.  Se lo hai già SnapCenter , puoi facoltativamente importare dati di backup e policy da SnapCenter .
 
-*Ruolo richiesto della console NetApp * Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
@@ -28,10 +28,10 @@ NetApp Backup and Recovery valuta le applicazioni Microsoft SQL Server.  Il serv
 
 La scoperta avviene nei seguenti modi:
 
-* Se hai già SnapCenter, importa le risorse SnapCenter in NetApp Backup and Recovery utilizzando l'interfaccia utente NetApp Backup and Recovery.
+* Se hai già SnapCenter, importa le risorse SnapCenter in NetApp Backup and Recovery utilizzando l'interfaccia utente NetApp Backup and Recovery .
 +
 
-NOTE: Se hai già SnapCenter, verifica innanzitutto di aver soddisfatto i prerequisiti prima di importare da SnapCenter.  Ad esempio, dovresti aggiungere prima i sistemi di storage cluster SnapCenter locali alla console NetApp prima di importare da SnapCenter. Vedere link:concept-start-prereq-snapcenter-import.html["Prerequisiti per l'importazione di risorse da SnapCenter"] .
+NOTE: Se hai già SnapCenter, verifica innanzitutto di aver soddisfatto i prerequisiti prima di importare da SnapCenter.  Ad esempio, dovresti aggiungere prima i sistemi di storage cluster SnapCenter locali alla NetApp Console prima di importare da SnapCenter.  Vederelink:concept-start-prereq-snapcenter-import.html["Prerequisiti per l'importazione di risorse da SnapCenter"] .
 
 * Se non disponi ancora SnapCenter, puoi comunque individuare i carichi di lavoro aggiungendo manualmente un vCenter ed eseguendo l'individuazione.
 
@@ -46,7 +46,7 @@ Puoi farlo nei seguenti modi:
 
 * Durante la scoperta, seleziona un'opzione per importare risorse da SnapCenter.
 * Dopo l'individuazione, dalla pagina Inventario, seleziona un'opzione per importare le risorse SnapCenter .
-* Dopo l'individuazione, dal menu Impostazioni, seleziona un'opzione per importare le risorse SnapCenter . Per maggiori dettagli, vedere link:br-start-configure.html["Configurare NetApp Backup e Recovery"] .
+* Dopo l'individuazione, dal menu Impostazioni, seleziona un'opzione per importare le risorse SnapCenter .  Per i dettagli, vederelink:br-start-configure.html["Configurare NetApp Backup and Recovery"] .
 
 
 Si tratta di un processo in due fasi:
@@ -59,13 +59,13 @@ Si tratta di un processo in due fasi:
 
 ==== Importa l'applicazione SnapCenter Server e le risorse host
 
-Questo primo passaggio importa le risorse host da SnapCenter e le visualizza nella pagina Inventario di NetApp Backup and Recovery.  A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
+Questo primo passaggio importa le risorse host da SnapCenter e le visualizza nella pagina Inventario NetApp Backup and Recovery .  A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
 
 
 TIP: Dopo aver importato le risorse host SnapCenter , NetApp Backup and Recovery non assume automaticamente la gestione della protezione.  Per farlo, è necessario selezionare esplicitamente la gestione delle risorse importate in NetApp Backup and Recovery.  In questo modo sarai pronto a sottoporre tali risorse a backup tramite NetApp Backup and Recovery.
 
 .Passi
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Protezione* > *Backup e ripristino*.
+. Dal menu di navigazione a sinistra NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . Selezionare *Inventario*.
 . Seleziona *Scopri risorse*.
 . Dalla pagina delle risorse del carico di lavoro NetApp Backup and Recovery Discover, seleziona *Importa da SnapCenter*.
@@ -133,7 +133,7 @@ Se hai già scoperto delle risorse, puoi importare le risorse SnapCenter dalla p
 
 === Se SnapCenter non è installato, aggiungi un vCenter e scopri le risorse
 
-Se SnapCenter non è ancora installato, è possibile aggiungere informazioni su vCenter e fare in modo che il backup e il ripristino NetApp rilevino i carichi di lavoro.  All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
+Se SnapCenter non è ancora installato, è possibile aggiungere informazioni su vCenter e fare in modo che il backup e il ripristino NetApp rilevino i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
 
 Questa operazione è facoltativa se si dispone di un ambiente VMware.
 
@@ -192,11 +192,11 @@ Con le Impostazioni avanzate puoi installare manualmente l'agente plugin su tutt
 
 
 
-==== Continua alla dashboard di NetApp Backup and Recovery
+==== Continua alla dashboard NetApp Backup and Recovery
 
-. Per visualizzare la dashboard NetApp Backup and Recovery, dal menu Backup and Recovery, selezionare *Dashboard*.
+. Per visualizzare la dashboard NetApp Backup and Recovery , dal menu Backup and Recovery, selezionare *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 +
-link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"] .
+link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"].
 
 

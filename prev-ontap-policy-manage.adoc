@@ -18,7 +18,7 @@ Con NetApp Backup and Recovery, puoi utilizzare le policy di backup predefinite 
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 Quando si utilizza la procedura guidata di attivazione per abilitare il servizio di backup e ripristino per i volumi, è possibile selezionare tra i criteri predefiniti e qualsiasi altro criterio già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP locale).  Se si desidera utilizzare una policy diversa da quelle esistenti, è possibile crearla prima o durante l'utilizzo della procedura guidata di attivazione.
@@ -39,7 +39,7 @@ NetApp Backup and Recovery fornisce tre tipi di backup dei dati ONTAP : snapshot
 |===
 Crea criteri di backup utilizzando i seguenti strumenti in base al tuo ambiente, alle tue preferenze e al tipo di protezione:
 
-* Interfaccia utente della console NetApp
+* UI NetApp Console
 * Interfaccia utente del gestore di sistema
 * ONTAP CLI
 
@@ -151,14 +151,14 @@ Questa policy di archiviazione risiede in diverse posizioni del sistema di archi
 . Specificare le impostazioni, tra cui la pianificazione del trasferimento e quando archiviare i backup.
 . (Facoltativo) Per spostare i file di backup più vecchi in una classe di archiviazione o in un livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivia* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati.  Inserisci *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio.
 +
-link:prev-ontap-policy-object-options.html["Scopri di più sulle impostazioni di archiviazione"] .
+link:prev-ontap-policy-object-options.html["Scopri di più sulle impostazioni di archiviazione"].
 
 . (Facoltativo) Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Protezione DataLock e Ransomware*.
 +
 Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile scegliere di proteggere i backup dall'eliminazione configurando _DataLock_ e _Protezione ransomware_.
 
 +
-link:prev-ontap-policy-object-options.html["Scopri di più sulle impostazioni DataLock disponibili"] .
+link:prev-ontap-policy-object-options.html["Scopri di più sulle impostazioni DataLock disponibili"].
 
 . Seleziona *Crea*.
 

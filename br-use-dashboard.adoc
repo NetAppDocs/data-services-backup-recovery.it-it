@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-dashboard.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
-summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini e rispondi a tutti gli avvisi che compaiono nella dashboard di NetApp Backup and Recovery.  È possibile esaminare il riepilogo della protezione, il riepilogo del ripristino, il riepilogo del sistema e altro ancora. 
+summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini e rispondi a tutti gli avvisi che compaiono nella dashboard NetApp Backup and Recovery .  È possibile esaminare il riepilogo della protezione, il riepilogo del ripristino, il riepilogo del sistema e altro ancora. 
 ---
 = Visualizza lo stato di protezione sulla dashboard di NetApp Backup and Recovery
 :hardbreaks:
@@ -14,12 +14,12 @@ summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventu
 
 
 [role="lead"]
-Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini nella dashboard NetApp Backup and Recovery.  È possibile esaminare il riepilogo del sistema, il riepilogo della protezione, il riepilogo del processo, il riepilogo del ripristino e altro ancora.
+Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini nella dashboard NetApp Backup and Recovery .  È possibile esaminare il riepilogo del sistema, il riepilogo della protezione, il riepilogo del processo, il riepilogo del ripristino e altro ancora.
 
-*Ruolo richiesto nella console NetApp * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Dashboard*.
+. Dal menu NetApp Backup and Recovery , selezionare *Dashboard*.
 +
 ** Numero di host o VM scoperti
 ** Numero di cluster Kubernetes scoperti

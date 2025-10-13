@@ -18,7 +18,7 @@ NetApp Backup and Recovery supporta una classe di archiviazione Google e la magg
 
 []
 ====
-*NOTA* Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente di NetApp Backup and Recovery"] .
+*NOTA* Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
 
 ====
 
@@ -31,7 +31,7 @@ Se il cluster on-prem utilizza ONTAP 9.12.1 o versione successiva, è possibile 
 
 Tieni presente che quando configuri NetApp Backup and Recovery con questo tipo di regola del ciclo di vita, non devi configurare alcuna regola del ciclo di vita quando imposti il ​​bucket nel tuo account Google.
 
-https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle classi di archiviazione di Google"^] .
+https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle classi di archiviazione di Google"^].
 
 
 

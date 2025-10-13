@@ -16,8 +16,8 @@ summary: NetApp Backup and Recovery consente di ripristinare le applicazioni pro
 [role="lead"]
 NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che quest'ultima disponga di almeno un punto di ripristino. Un punto di ripristino può essere costituito dallo snapshot locale o dal backup nell'archivio oggetti (o da entrambi). È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
 
-.Ruolo richiesto della console NetApp
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+.Ruolo richiesto NetApp Console
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.

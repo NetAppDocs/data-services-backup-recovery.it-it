@@ -121,7 +121,7 @@ Dopo la migrazione, un team NetApp Tech Refresh esegue un'operazione SnapMirror 
 ** Criterio SnapMirror da applicare alla nuova relazione.
 
 
-. Selezionare *Carica* in *Carica dettagli mapping volume* per caricare il foglio CSV completato nell'interfaccia utente NetApp Backup and Recovery.
+. Selezionare *Carica* in *Carica dettagli mapping volume* per caricare il foglio CSV completato nell'interfaccia utente NetApp Backup and Recovery .
 . Immettere le informazioni di configurazione del provider e della rete necessarie per l'operazione di risincronizzazione.
 . Selezionare *Invia* per avviare il processo di convalida.
 +

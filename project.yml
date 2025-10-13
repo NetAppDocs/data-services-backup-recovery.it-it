@@ -58,7 +58,7 @@ sidebar:
       url: "/br-start-login.html"
     - title: Scopri le destinazioni di backup
       url: "/br-start-discover-backup-targets.html"
-    - title: Passa a diversi carichi di lavoro di backup e ripristino NetApp
+    - title: Passa a diversi carichi di lavoro NetApp Backup and Recovery
       url: "/br-start-switch-ui.html"
     - title: Configurare le impostazioni generali NetApp Backup and Recovery
       url: "/br-start-configure.html"

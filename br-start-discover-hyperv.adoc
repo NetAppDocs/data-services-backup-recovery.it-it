@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery deve rilevare le macchine virtuali Hyper-V p
 [role="lead"]
 NetApp Backup and Recovery deve rilevare le macchine virtuali Hyper-V prima di poterle proteggere.
 
-*Ruolo di console obbligatorio* Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
@@ -28,7 +28,7 @@ Aggiungi le informazioni sull'host Hyper-V e lascia che NetApp Backup and Recove
 NOTE: Quando si aggiungono host Hyper-V e si individuano risorse, NetApp Backup and Recovery installa il plug-in NetApp Hyper-V e il plug-in NetApp SnapCenter Windows FileSystem sull'host Hyper-V per facilitare la gestione e la protezione delle macchine virtuali.
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione* > *Backup e ripristino*.
+. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 +
 Se è la prima volta che accedi a NetApp Backup and Recovery, hai già un sistema nella Console ma non hai ancora individuato alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
 
@@ -59,9 +59,9 @@ Dopo che NetApp Backup and Recovery rileva le risorse, la pagina Inventario visu
 
 
 
-== Continua alla dashboard di NetApp Backup and Recovery
+== Continua alla dashboard NetApp Backup and Recovery
 
 .Passi
-. Per visualizzare la dashboard NetApp Backup and Recovery, dal menu NetApp Console, selezionare *Dashboard*.
+. Per visualizzare la dashboard NetApp Backup and Recovery , dal menu NetApp Console , selezionare *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

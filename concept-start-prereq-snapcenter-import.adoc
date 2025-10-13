@@ -18,7 +18,7 @@ Se si desidera importare risorse dal servizio plug-in SnapCenter per Microsoft S
 
 
 
-== Crea prima i sistemi nella console NetApp
+== Crea prima i sistemi nella NetApp Console
 
 Se si desidera importare risorse da SnapCenter, è necessario aggiungere prima tutto lo storage del cluster SnapCenter locale alla pagina *Sistemi* della console prima di importare da SnapCenter.  Ciò garantisce che le risorse host possano essere scoperte e importate correttamente.
 
@@ -28,7 +28,7 @@ Se si desidera importare risorse da SnapCenter, è necessario aggiungere prima t
 
 Per importare risorse dal plug-in SnapCenter per Microsoft SQL Server, assicurarsi che siano soddisfatti i requisiti host per l'installazione del plug-in SnapCenter per Microsoft SQL Server.
 
-Verificare specificamente i requisiti SnapCenter inlink:concept-start-prereq.html["Prerequisiti per NetApp Backup and Recovery"] .
+Verificare specificamente i requisiti SnapCenter inlink:concept-start-prereq.html["Prerequisiti NetApp Backup and Recovery"] .
 
 
 
@@ -40,7 +40,7 @@ Prima di importare risorse da SnapCenter, disabilitare le restrizioni remote del
 
 Prima di disattivare le restrizioni remote UAC, tenere presente quanto segue:
 
-* Rischi per la sicurezza: la disattivazione del filtro dei token può esporre il sistema a vulnerabilità di sicurezza, soprattutto se gli account amministrativi locali vengono compromessi da malintenzionati.
+* Rischi per la sicurezza: la disattivazione del filtraggio dei token può esporre il sistema a vulnerabilità di sicurezza, soprattutto se gli account amministrativi locali vengono compromessi da malintenzionati.
 * Usare con cautela:
 +
 ** Modificare questa impostazione solo se è essenziale per le proprie attività amministrative.
@@ -97,7 +97,7 @@ Questo è uno dei metodi che puoi utilizzare per disattivare il Controllo dell'a
 
 
 . Fare clic su *OK*.
-. Chiudere l'editor del Registro di sistema.
+. Chiudere l'Editor del Registro di sistema.
 . Riavviare l'host Windows di SnapCenter .
 
 

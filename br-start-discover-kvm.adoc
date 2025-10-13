@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-kvm.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, workloads, protect 
-summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per poterli proteggere. 
+summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per consentirti di proteggerli. 
 ---
 = Scopri i carichi di lavoro KVM in NetApp Backup and Recovery
 :hardbreaks:
@@ -16,16 +16,16 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 [role="lead"]
 NetApp Backup and Recovery deve rilevare gli host KVM e le macchine virtuali prima di proteggerli.
 
-*Ruolo di console obbligatorio* Super amministratore di backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
 == Aggiungi un host KVM e scopri le risorse
 
-Aggiungi le informazioni sull'host KVM e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro.  All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
+Aggiungi le informazioni sull'host KVM e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Nel riquadro KVM, seleziona *Scopri e gestisci*.
 +
 Se è la prima volta che accedi a Backup and Recovery, hai già un sistema nella Console ma non hai ancora individuato alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
@@ -58,9 +58,9 @@ Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nel
 
 
 
-== Continua alla dashboard di NetApp Backup and Recovery
+== Continua alla dashboard NetApp Backup and Recovery
 
 .Passi
-. Per visualizzare la dashboard NetApp Backup and Recovery, dal menu in alto selezionare *Dashboard*.
+. Per visualizzare la dashboard NetApp Backup and Recovery , dal menu in alto selezionare *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

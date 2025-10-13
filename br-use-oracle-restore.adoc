@@ -47,13 +47,13 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 
 == Ripristinare un database Oracle
 
-A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile cercare il database utilizzando il suo nome o utilizzando filtri specifici.
+A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile effettuare la ricerca nel database tramite il nome oppure tramite filtri specifici.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
-. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
 . Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Oracle*.
 . Immettere il nome del database che si desidera ripristinare oppure filtrare in base all'host del database in cui si trova il database che si desidera ripristinare.
 +

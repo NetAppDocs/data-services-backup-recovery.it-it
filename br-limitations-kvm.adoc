@@ -27,10 +27,10 @@ Le seguenti azioni non sono supportate nella versione di anteprima privata:
 * Clona, monta o smonta le VM
 * Ripristinare le VM in una posizione alternativa
 * Proteggere le VM archiviate su SAN
-* Proteggi le applicazioni
+* Proteggere le applicazioni
 * Modifica gruppi di protezione
 * Creare gruppi di protezione utilizzando VM da più host KVM
-* Crea backup definiti dall'utente (sono supportati solo i backup avviati dalla console NetApp )
+* Crea backup definiti dall'utente (sono supportati solo i backup avviati dalla NetApp Console )
 
 
 
@@ -53,7 +53,7 @@ Le seguenti configurazioni non sono supportate:
 Gli account NetApp Console legacy non supportano le funzionalità richieste per proteggere i carichi di lavoro KVM.  Controlla se stai utilizzando un account legacy nell'interfaccia utente web della console.  Se si dispone di un account Console legacy, creare un nuovo account prima di proteggere i carichi di lavoro KVM.
 
 .Passi
-. Dal menu NetApp Console, selezionare *Amministrazione > Identità e accesso*.
+. Dal menu NetApp Console , selezionare *Amministrazione > Identità e accesso*.
 . In *Organizzazione*, controlla se accanto all'ID organizzazione è visualizzato un *ID account*.
 +
 Se viene visualizzato un *ID account*, significa che stai utilizzando un account legacy.

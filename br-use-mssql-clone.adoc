@@ -30,7 +30,7 @@ Scegli tra i seguenti tipi di cloni:
 * Elimina un clone
 
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
@@ -41,7 +41,7 @@ Scegli tra i seguenti tipi di cloni:
 È possibile creare un clone da uno snapshot esistente o da uno snapshot istantaneo.  Uno snapshot istantaneo è una copia puntuale dei dati di origine creata da un backup.  È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona *Crea nuovo clone*.
 . Seleziona il tipo di clone:
 +
@@ -112,7 +112,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 È possibile modificare il nome del database, utilizzare l'ultimo snapshot istantaneo o aggiornare da uno snapshot di produzione esistente.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona il clone che vuoi aggiornare.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Aggiorna clone*.
 . Completa la sezione *Impostazioni avanzate*:
@@ -140,7 +140,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 Potrebbe essere opportuno saltare un aggiornamento del clone se non si desidera aggiornare il clone con i dati più recenti dal carico di lavoro di origine.  Saltare l'aggiornamento di un clone consente di mantenere il clone così com'è senza doverlo aggiornare.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona il clone per il quale vuoi saltare l'aggiornamento.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Salta aggiornamento*.
 . Nella finestra di dialogo di conferma Ignora aggiornamento, procedere come segue:
@@ -162,7 +162,7 @@ Potrebbe essere opportuno saltare un aggiornamento del clone se non si desidera 
 Il lavoro di clonazione non può essere rimosso e può essere riutilizzato per altri cloni.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona un clone.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Clonazione divisa*.
 . Rivedi i dettagli del clone diviso e seleziona *Dividi*.
@@ -178,7 +178,7 @@ Il lavoro di clonazione non può essere rimosso e può essere riutilizzato per a
 Se il clone è protetto da una policy, il clone viene eliminato, incluso il processo.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Clona*.
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona un clone.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina clone*.
 . Nella finestra di dialogo di conferma dell'eliminazione del clone, rivedere i dettagli dell'eliminazione.

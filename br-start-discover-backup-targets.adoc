@@ -30,7 +30,7 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 È necessario individuare almeno un carico di lavoro prima di poter aggiungere una destinazione di backup fuori sede.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare la scheda *Destinazioni di backup fuori sede*.
 . Seleziona *Scopri destinazione di backup*.
 . Selezionare uno dei tipi di destinazione del backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
@@ -83,7 +83,7 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucket, puoi aggiungere manualmente un bucket a una destinazione di backup fuori sede.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare *Destinazioni di backup fuori sede*.
 . Seleziona il target e sulla destra seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Aggiungi bucket*.
 . Inserisci le informazioni sul bucket.  Le informazioni variano a seconda del tipo di destinazione di backup selezionata.
@@ -92,7 +92,7 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 +
 *** *Nome bucket*: immettere il nome del bucket S3. Il prefisso "netapp-backup" è obbligatorio e viene aggiunto automaticamente al nome fornito.
 *** *Account AWS*: inserisci il nome dell'account AWS.
-*** *Regione del bucket*: inserisci la regione AWS per il bucket.
+*** *Regione del bucket*: immettere la regione AWS per il bucket.
 *** *Abilita blocco oggetto S3*: seleziona questa opzione per abilitare il blocco oggetto S3 per il bucket.  S3 Object Lock impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati.  Puoi abilitare questa opzione solo quando crei un bucket e non potrai disattivarla in seguito.
 +
 **** *Modalità di governance*: selezionare questa opzione per abilitare la modalità di governance per il bucket S3 Object Lock.  La modalità di governance consente di proteggere gli oggetti dall'eliminazione o dalla sovrascrittura da parte della maggior parte degli utenti, ma consente ad alcuni utenti di modificare le impostazioni di conservazione.
@@ -134,7 +134,7 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 *** *Nome destinazione bucket*: immettere il nome del bucket ONTAP S3.
 *** *Capacità*: immettere la capacità del bucket ONTAP S3.  Questa è la quantità massima di dati che può essere archiviata nel bucket.
 *** *Abilita controllo delle versioni*: seleziona questa opzione per abilitare il controllo delle versioni per il bucket ONTAP S3.  Il controllo delle versioni consente di conservare più versioni degli oggetti nel bucket, il che può essere utile per scopi di backup e ripristino.
-*** *Blocco oggetti*: selezionare questa opzione per abilitare il blocco oggetti per il bucket ONTAP S3.  Il blocco degli oggetti impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati.  Puoi abilitare questa opzione solo quando crei un bucket e non potrai disattivarla in seguito.
+*** *Blocco degli oggetti*: selezionare questa opzione per abilitare il blocco degli oggetti per il bucket ONTAP S3.  Il blocco degli oggetti impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati.  Puoi abilitare questa opzione solo quando crei un bucket e non potrai disattivarla in seguito.
 
 
 
@@ -149,7 +149,7 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 Immettere le credenziali necessarie per accedere alla destinazione di backup.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare *Destinazioni di backup fuori sede*.
 . Seleziona il target e sulla destra seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica credenziali*.
 . Immettere le nuove credenziali per la destinazione di backup.  Le informazioni variano a seconda del tipo di destinazione di backup selezionata.

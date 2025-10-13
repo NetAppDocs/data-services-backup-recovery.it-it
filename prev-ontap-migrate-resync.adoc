@@ -19,13 +19,13 @@ La funzionalità SnapMirror to Cloud Resync di NetApp Backup and Recovery sempli
 Questa funzionalità elimina la necessità di un'operazione di reimpostazione della baseline, che richiede molto tempo e risorse, consentendo alle operazioni di backup di continuare anche dopo la migrazione.  Questa funzionalità è utile negli scenari di migrazione del carico di lavoro, supportando sia FlexVols che FlexGroups ed è disponibile a partire dalla versione 9.16.1 ONTAP .
 
 
-NOTE: Questa funzionalità è disponibile a partire dalla versione 4.0.3 di NetApp Backup and Recovery, rilasciata a maggio 2025.
+NOTE: Questa funzionalità è disponibile a partire dalla versione 4.0.3 NetApp Backup and Recovery, rilasciata a maggio 2025.
 
 Mantenendo la continuità del backup in tutti gli ambienti, SnapMirror to Cloud Resync migliora l'efficienza operativa e riduce la complessità della gestione dei dati ibridi e multi-cloud.
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 .Prima di iniziare
@@ -153,7 +153,7 @@ Dopo la migrazione, un team NetApp Tech Refresh esegue un'operazione SnapMirror 
 ** Criterio SnapMirror da applicare alla nuova relazione.
 
 
-. Selezionare *Carica* in *Carica dettagli mapping volume* per caricare il foglio CSV completato nell'interfaccia utente NetApp Backup and Recovery.
+. Selezionare *Carica* in *Carica dettagli mapping volume* per caricare il foglio CSV completato nell'interfaccia utente NetApp Backup and Recovery .
 +
 
 NOTE: Deve essere utilizzato l'UUID dell'istanza del volume, non l'ID del volume. L'UUID dell'istanza del volume è un identificatore univoco che rimane coerente durante le migrazioni, mentre l'ID del volume può cambiare dopo la migrazione.

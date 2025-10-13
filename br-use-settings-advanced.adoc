@@ -25,7 +25,7 @@ Configurare le impostazioni avanzate NetApp Backup and Recovery nei seguenti mod
 * Imposta la velocità di trasferimento massima per la relazione SnapMirror : gestisci l'utilizzo della larghezza di banda, assicurandoti che le operazioni SnapMirror non interferiscano con altre attività di rete.
 * Esportare copie snapshot in un archivio oggetti per inizializzare i backup nel cloud spostando le copie snapshot più vecchie nella copia di backup di base.
 * Abilita l'eliminazione automatica annuale degli snapshot
-* Abilitare la modalità di manutenzione in modo che sia possibile eseguire aggiornamenti o attività di manutenzione.
+* Abilita la modalità di manutenzione in modo che sia possibile eseguire aggiornamenti o attività di manutenzione.
 * Aggiorna il plugin dell'applicazione.
 
 
@@ -35,7 +35,7 @@ Configurare le impostazioni avanzate NetApp Backup and Recovery nei seguenti mod
 
 Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Elimina backup**.
 . Seleziona il backup che vuoi eliminare.
@@ -48,7 +48,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile annullare la registrazione di backup, database, istanze o host di applicazioni per rimuoverli dall'inventario.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Annulla registrazione risorse**.
 . Seleziona la risorsa di cui vuoi annullare la registrazione.
@@ -61,7 +61,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile eliminare le relazioni per rimuoverle dall'inventario.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Elimina relazioni**.
 . Seleziona la relazione che vuoi eliminare.
@@ -74,7 +74,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile rimuovere la protezione da database, istanze, host di applicazioni e ambienti di lavoro per interrompere i costi dei servizi.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Rimuovi protezione risorse**.
 
@@ -85,7 +85,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile impostare la velocità di trasferimento massima per la relazione SnapMirror per gestire l'utilizzo della larghezza di banda, assicurandosi che le operazioni SnapMirror non interferiscano con altre attività di rete.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Imposta la velocità di trasferimento massima per la relazione SnapMirror **.
 . Inserisci la velocità di trasferimento massima.
@@ -98,7 +98,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile esportare copie snapshot in un archivio oggetti per inizializzare i backup nel cloud spostando le copie snapshot più vecchie nella copia di backup di base.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Esporta copie snapshot in un archivio oggetti**.
 . Seleziona la copia snapshot che desideri esportare.
@@ -111,7 +111,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile abilitare l'eliminazione automatica annuale degli snapshot per eliminare gli snapshot più vecchi di un anno.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Abilita eliminazione automatica degli snapshot annuali**.
 . Selezionare **Abilita**.
@@ -123,7 +123,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile abilitare la modalità di manutenzione in modo da poter eseguire aggiornamenti o attività di manutenzione.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Selezionare **Abilita modalità di manutenzione**.
 . Selezionare **Abilita**.
@@ -135,7 +135,7 @@ Puoi eliminare i backup per liberare spazio nel tuo archivio.
 
 È possibile aggiornare il plugin dell'applicazione per assicurarsi che siano disponibili le funzionalità più recenti.
 
-. Nella console NetApp Backup and Recovery, seleziona **Impostazioni**.
+. Nella console NetApp Backup and Recovery , seleziona **Impostazioni**.
 . Selezionare **Impostazioni avanzate**.
 . Seleziona **Aggiorna il plugin dell'applicazione**.
 . Selezionare **Aggiorna**.

@@ -6,19 +6,19 @@
 
 === Esplorazione degli snapshot SMB
 
-Questo aggiornamento di NetApp Backup and Recovery ha risolto un problema che impediva ai clienti di esplorare gli snapshot locali in un ambiente SMB.
+Questo aggiornamento NetApp Backup and Recovery ha risolto un problema che impediva ai clienti di esplorare gli snapshot locali in un ambiente SMB.
 
 
 
 === Aggiornamento dell'ambiente AWS GovCloud
 
-Questo aggiornamento di NetApp Backup and Recovery ha risolto un problema che impediva all'interfaccia utente di connettersi a un ambiente AWS GovCloud a causa di errori del certificato TLS.  Il problema è stato risolto utilizzando il nome host dell'agente della console anziché l'indirizzo IP.
+Questo aggiornamento NetApp Backup and Recovery ha risolto un problema che impediva all'interfaccia utente di connettersi a un ambiente AWS GovCloud a causa di errori del certificato TLS.  Il problema è stato risolto utilizzando il nome host dell'agente della console anziché l'indirizzo IP.
 
 
 
 === Limiti di conservazione della policy di backup
 
-In precedenza, l'interfaccia utente di NetApp Backup and Recovery limitava i backup a 999 copie, mentre la CLI ne consentiva di più.  Ora è possibile collegare fino a 4.000 volumi a un criterio di backup e includere 1.018 volumi non collegati a un criterio di backup.  Questo aggiornamento include ulteriori convalide che impediscono il superamento di questi limiti.
+In precedenza, l'interfaccia utente NetApp Backup and Recovery limitava i backup a 999 copie, mentre la CLI ne consentiva di più.  Ora è possibile collegare fino a 4.000 volumi a un criterio di backup e includere 1.018 volumi non collegati a un criterio di backup.  Questo aggiornamento include ulteriori convalide che impediscono il superamento di questi limiti.
 
 
 

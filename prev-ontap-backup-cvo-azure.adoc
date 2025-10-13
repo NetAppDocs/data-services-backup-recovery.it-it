@@ -18,7 +18,7 @@ Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire i
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -49,7 +49,7 @@ Configurazione richiesta per la creazione di backup in una sottoscrizione Azure 
 
 Per le licenze NetApp Backup and Recovery PAYGO, è necessario un abbonamento tramite Azure Marketplace prima di abilitare NetApp Backup and Recovery.  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Puoi iscriverti dalla pagina Dettagli e credenziali della procedura guidata di sistema"^] .
 
-Per la licenza BYOL NetApp Backup and Recovery, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .  È necessario utilizzare una licenza BYOL quando l'agente Console e il sistema Cloud Volumes ONTAP vengono distribuiti in un sito oscuro ("modalità privata").
+Per la licenza BYOL NetApp Backup and Recovery , è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .  È necessario utilizzare una licenza BYOL quando l'agente Console e il sistema Cloud Volumes ONTAP vengono distribuiti in un sito oscuro ("modalità privata").
 
 Inoltre, è necessario disporre di un abbonamento a Microsoft Azure per lo spazio di archiviazione in cui verranno salvati i backup.
 
@@ -57,7 +57,7 @@ Inoltre, è necessario disporre di un abbonamento a Microsoft Azure per lo spazi
 
 == Prepara il tuo agente Console
 
-L'agente Console può essere installato in un'area di Azure con accesso a Internet completo o limitato (modalità "standard" o "limitata"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Per i dettagli, vedere le modalità di distribuzione della console NetApp"^] .
+L'agente Console può essere installato in un'area di Azure con accesso a Internet completo o limitato (modalità "standard" o "limitata"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Per i dettagli, vedere le modalità di distribuzione NetApp Console"^] .
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Scopri di più sugli agenti della console"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Distribuisci un agente Console in Azure in modalità standard (accesso completo a Internet)"^]
@@ -68,7 +68,7 @@ L'agente Console può essere installato in un'area di Azure con accesso a Intern
 
 === Verificare o aggiungere autorizzazioni all'agente della console
 
-Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery, è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
+Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
 
 .Prima di iniziare
 * È necessario registrare il provider di risorse di Azure Synapse Analytics (denominato "Microsoft.Synapse") con la sottoscrizione. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] .  Per registrare il fornitore di risorse, devi essere il *Proprietario* o il *Collaboratore* dell'abbonamento.
@@ -156,7 +156,7 @@ NetApp Backup and Recovery supporta i _criteri di accesso di Azure_, il modello 
 
 Per impostazione predefinita, il servizio crea account di archiviazione per te.  Se si desidera utilizzare account di archiviazione personali, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali account di archiviazione nella procedura guidata.
 
-link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi account di archiviazione"] .
+link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi account di archiviazione"].
 
 
 
@@ -168,7 +168,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 
 ==== Requisiti di rete ONTAP in sede
 
-* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud.  In genere si tratta di una connessione VPN.
+* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
 Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
@@ -179,7 +179,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105.  Queste regole sono incluse nel gruppo di sicurezza predefinito.
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di sicurezza predefinito.
 
 
 * Per replicare i dati tra due sistemi Cloud Volumes ONTAP in subnet diverse, le subnet devono essere instradate insieme (questa è l'impostazione predefinita).
@@ -260,7 +260,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 . Proseguire con le seguenti opzioni:
 +
 ** Se hai già un agente Console, sei a posto.  Basta selezionare *Avanti*.
-** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*. Fare riferimento a <<Prepara il tuo agente Console>> .
+** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*.  Fare riferimento a<<Prepara il tuo agente Console>> .
 
 
 
@@ -397,7 +397,7 @@ NOTE: Se hai scelto un account di archiviazione Microsoft esistente, le informaz
 +
 ** *Networking*: scegli lo spazio IP e se utilizzerai un endpoint privato.  Per impostazione predefinita, l'endpoint privato è disabilitato.
 +
-... Lo spazio IP nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup.  I LIF intercluster per questo spazio IP devono avere accesso a Internet in uscita.
+... Lo spazio IP nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. I LIF intercluster per questo spazio IP devono avere accesso a Internet in uscita.
 ... Facoltativamente, scegli se utilizzerai un endpoint privato di Azure precedentemente configurato. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Scopri di più sull'utilizzo di un endpoint privato di Azure"^] .
 
 
@@ -462,7 +462,7 @@ Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi A
 
 == Cosa succederà ora?
 
-* È possibile link:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] Potrebbe Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.
-* È possibile link:prev-ontap-policy-object-advanced-settings.html["gestire le impostazioni di backup a livello di cluster"] Potrebbe Ciò include la modifica delle chiavi di archiviazione utilizzate ONTAP per accedere all'archiviazione cloud, la modifica della larghezza di banda di rete disponibile per caricare i backup nell'archiviazione degli oggetti, la modifica dell'impostazione di backup automatico per i volumi futuri e altro ancora.
+* Puoilink:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] .  Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.
+* Puoilink:prev-ontap-policy-object-advanced-settings.html["gestire le impostazioni di backup a livello di cluster"] .  Ciò include la modifica delle chiavi di archiviazione utilizzate ONTAP per accedere all'archiviazione cloud, la modifica della larghezza di banda di rete disponibile per caricare i backup nell'archiviazione degli oggetti, la modifica dell'impostazione di backup automatico per i volumi futuri e altro ancora.
 * Puoi anchelink:prev-ontap-restore.html["ripristinare volumi, cartelle o singoli file da un file di backup"] a un sistema Cloud Volumes ONTAP in AWS o a un sistema ONTAP locale.
 

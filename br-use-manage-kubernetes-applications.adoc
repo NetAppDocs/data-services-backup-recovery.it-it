@@ -16,8 +16,8 @@ summary: NetApp Backup and Recovery consente di rimuovere la protezione ed elimi
 [role="lead"]
 NetApp Backup and Recovery consente di rimuovere la protezione ed eliminare le applicazioni Kubernetes e le risorse associate.
 
-.Ruolo richiesto della console NetApp
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+.Ruolo richiesto NetApp Console
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 

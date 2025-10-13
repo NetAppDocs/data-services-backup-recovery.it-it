@@ -33,7 +33,7 @@ Ripristina i carichi di lavoro di Microsoft SQL Server da copie snapshot, da un 
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
@@ -62,7 +62,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 * *Dalla pagina Inventario*: usa questa funzione quando devi ripristinare una risorsa specifica dell'ultima settimana o dell'ultimo mese e conosci il nome e la posizione della risorsa, nonché la data dell'ultima volta in cui era in buone condizioni.  Si scorre un elenco di risorse per trovare quella che si desidera ripristinare.
 
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
@@ -71,7 +71,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 Ripristinare i carichi di lavoro del database utilizzando l'opzione Ripristina.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
 . Selezionare il database che si desidera ripristinare.  Utilizza i filtri per effettuare la ricerca.
 . Seleziona l'opzione di ripristino:
 +
@@ -202,7 +202,7 @@ NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di r
 Ripristina i carichi di lavoro del database dalla pagina Inventario.  Utilizzando l'opzione Inventario, è possibile ripristinare solo i database, non le istanze.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare l'host in cui si trova la risorsa che si desidera ripristinare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Visualizza dettagli*.
 . Nella pagina Microsoft SQL Server, selezionare la scheda *Database*.

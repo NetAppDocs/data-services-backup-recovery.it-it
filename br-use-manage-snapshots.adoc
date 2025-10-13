@@ -22,7 +22,7 @@ summary: È possibile eseguire il backup dei dati delle applicazioni Microsoft S
 
 È possibile eliminare solo gli snapshot locali.
 
-*Ruolo di console NetApp obbligatorio* Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo NetApp Console obbligatorio* Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.

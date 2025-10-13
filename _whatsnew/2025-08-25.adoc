@@ -11,7 +11,7 @@ Questa versione aggiunge il supporto in anteprima per la protezione dei carichi 
 
 NOTE: La documentazione sulla protezione dei carichi di lavoro VMware viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
 
-link:br-use-vmware-protect-overview.html["Scopri di più sulla protezione dei carichi di lavoro VMware con NetApp Backup and Recovery"] .
+link:br-use-vmware-protect-overview.html["Scopri di più sulla protezione dei carichi di lavoro VMware con NetApp Backup and Recovery"].
 
 
 

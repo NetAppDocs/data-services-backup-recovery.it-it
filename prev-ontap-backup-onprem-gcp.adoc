@@ -21,7 +21,7 @@ NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select 
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -36,11 +36,11 @@ Scegli quale dei due metodi di connessione utilizzerai quando configuri i backup
 
 Facoltativamente, è possibile connettersi a un sistema ONTAP secondario per i volumi replicati utilizzando anche la connessione pubblica o privata.
 
-Il diagramma seguente mostra il metodo di *connessione pubblica* e le connessioni che è necessario preparare tra i componenti. L'agente della console deve essere distribuito nella VPC di Google Cloud Platform.
+Il diagramma seguente mostra il metodo di *connessione pubblica* e le connessioni che è necessario preparare tra i componenti.  L'agente della console deve essere distribuito nella VPC di Google Cloud Platform.
 
 image:diagram_cloud_backup_onprem_gcp_public.png["Un diagramma che mostra come NetApp Backup and Recovery comunica tramite una connessione pubblica con i volumi sul cluster e lo storage Google Cloud in cui si trovano i file di backup."]
 
-Il diagramma seguente mostra il metodo di *connessione privata* e le connessioni che è necessario preparare tra i componenti. L'agente della console deve essere distribuito nella VPC di Google Cloud Platform.
+Il diagramma seguente mostra il metodo di *connessione privata* e le connessioni che è necessario preparare tra i componenti.  L'agente della console deve essere distribuito nella VPC di Google Cloud Platform.
 
 image:diagram_cloud_backup_onprem_gcp_private.png["Un diagramma che mostra come NetApp Backup and Recovery comunica tramite una connessione privata con i volumi sul cluster e lo storage Google Cloud in cui si trovano i file di backup."]
 
@@ -85,7 +85,7 @@ Segui le istruzioni di Google per impostare queste opzioni di accesso privato.  
 
 === Verificare o aggiungere autorizzazioni all'agente della console
 
-Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery, è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Esaminare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
+Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Esaminare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
 
 .Passi
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
@@ -114,10 +114,10 @@ bigquery.tables.create
 
 == Verificare i requisiti della licenza
 
-* Prima di poter attivare NetApp Backup and Recovery per il tuo cluster, dovrai abbonarti a un'offerta Console Marketplace pay-as-you-go (PAYGO) di Google oppure acquistare e attivare una licenza BYOL di NetApp Backup and Recovery da NetApp.  Queste licenze sono riservate al tuo account e possono essere utilizzate su più sistemi.
+* Prima di poter attivare NetApp Backup and Recovery per il tuo cluster, dovrai abbonarti a un'offerta Console Marketplace pay-as-you-go (PAYGO) di Google oppure acquistare e attivare una licenza BYOL NetApp Backup and Recovery da NetApp.  Queste licenze sono riservate al tuo account e possono essere utilizzate su più sistemi.
 +
 ** Per la licenza NetApp Backup and Recovery PAYGO, è necessario un abbonamento a https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Offerta NetApp Console da Google Marketplace"^] .  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento.
-** Per la licenza BYOL NetApp Backup and Recovery, avrai bisogno del numero di serie di NetApp che ti consentirà di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
+** Per la licenza BYOL NetApp Backup and Recovery , avrai bisogno del numero di serie di NetApp che ti consentirà di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
 
 
 * È necessario disporre di un abbonamento Google per lo spazio di archiviazione degli oggetti in cui verranno salvati i backup.
@@ -135,7 +135,7 @@ Sarà necessario preparare il sistema ONTAP locale di origine e tutti i sistemi 
 
 La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
-* Scopri i tuoi sistemi ONTAP nella console NetApp
+* Scopri i tuoi sistemi ONTAP nella NetApp Console
 * Verificare i requisiti di sistema ONTAP
 * Verificare i requisiti di rete ONTAP per il backup dei dati su storage di oggetti
 * Verificare i requisiti di rete ONTAP per la replica dei volumi
@@ -143,9 +143,9 @@ La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
 
 
-=== Scopri i tuoi sistemi ONTAP nella console NetApp
+=== Scopri i tuoi sistemi ONTAP nella NetApp Console
 
-Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della console NetApp .
+Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della NetApp Console .
 
 Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione del cluster e la password dell'account utente amministratore. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Scopri come scoprire un cluster"^] .
 
@@ -166,7 +166,7 @@ Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-con
 * L'ora e il fuso orario sono impostati correttamente.  Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configura l'ora del tuo cluster"^] .
 * Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^].
 
 
 
@@ -184,12 +184,12 @@ Sono necessari i seguenti requisiti di rete del cluster ONTAP :
 
 * Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 dal LIF intercluster a Google Cloud Storage per le operazioni di backup e ripristino.
 +
-ONTAP legge e scrive dati da e verso l'archiviazione di oggetti. L'archiviazione degli oggetti non si avvia mai, risponde e basta.
+ONTAP legge e scrive dati da e verso l'archiviazione di oggetti.  L'archiviazione degli oggetti non si avvia mai, risponde e basta.
 
 * ONTAP richiede una connessione in ingresso dall'agente della console al LIF di gestione del cluster.  L'agente della console può risiedere in una VPC di Google Cloud Platform.
 * È necessario un LIF intercluster su ciascun nodo ONTAP che ospita i volumi di cui si desidera eseguire il backup.  Il LIF deve essere associato allo _IPspace_ che ONTAP deve utilizzare per connettersi all'archiviazione degli oggetti. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Scopri di più su IPspaces"^] .
 +
-Quando si configura NetApp Backup and Recovery, viene richiesto di specificare lo spazio IP da utilizzare. Dovresti scegliere lo spazio IP a cui è associato ciascun LIF. Potrebbe trattarsi dello spazio IP "predefinito" o di uno spazio IP personalizzato creato da te.
+Quando si configura NetApp Backup and Recovery, viene richiesto di specificare lo spazio IP da utilizzare.  Dovresti scegliere lo spazio IP a cui è associato ciascun LIF.  Potrebbe trattarsi dello spazio IP "predefinito" o di uno spazio IP personalizzato creato da te.
 
 * I LIF intercluster dei nodi sono in grado di accedere all'archivio oggetti.
 * I server DNS sono stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
@@ -197,7 +197,7 @@ Quando si configura NetApp Backup and Recovery, viene richiesto di specificare l
 Se utilizzi Private Google Access o Private Service Connect, assicurati che i tuoi server DNS siano stati configurati per puntare `storage.googleapis.com` all'indirizzo IP interno (privato) corretto.
 
 * Tieni presente che se utilizzi uno spazio IP diverso da quello predefinito, potrebbe essere necessario creare una route statica per accedere all'archiviazione degli oggetti.
-* Se necessario, aggiornare le regole del firewall per consentire le connessioni di NetApp Backup and Recovery da ONTAP all'archiviazione degli oggetti tramite la porta 443 e il traffico di risoluzione dei nomi dalla VM di archiviazione al server DNS tramite la porta 53 (TCP/UDP).
+* Se necessario, aggiornare le regole del firewall per consentire le connessioni NetApp Backup and Recovery da ONTAP all'archiviazione degli oggetti tramite la porta 443 e il traffico di risoluzione dei nomi dalla VM di archiviazione al server DNS tramite la porta 53 (TCP/UDP).
 
 
 
@@ -210,7 +210,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 
 ==== Requisiti di rete ONTAP in sede
 
-* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud.  In genere si tratta di una connessione VPN.
+* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
 Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
@@ -221,7 +221,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105.  Queste regole sono incluse nel gruppo di sicurezza predefinito.
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di sicurezza predefinito.
 
 
 
@@ -239,7 +239,7 @@ Per preparare Google Cloud Storage come destinazione di backup, sono necessari i
 
 === Imposta i permessi
 
-È necessario fornire le chiavi di accesso all'archiviazione per un account di servizio che dispone di autorizzazioni specifiche utilizzando un ruolo personalizzato.  Un account di servizio consente a NetApp Backup and Recovery di autenticare e accedere ai bucket di Cloud Storage utilizzati per archiviare i backup. Le chiavi sono necessarie affinché Google Cloud Storage sappia chi sta effettuando la richiesta.
+È necessario fornire le chiavi di accesso all'archiviazione per un account di servizio che dispone di autorizzazioni specifiche utilizzando un ruolo personalizzato.  Un account di servizio consente a NetApp Backup and Recovery di autenticare e accedere ai bucket di Cloud Storage utilizzati per archiviare i backup.  Le chiavi sono necessarie affinché Google Cloud Storage sappia chi sta effettuando la richiesta.
 
 .Passi
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
@@ -271,7 +271,7 @@ storage.objects.update
 
 . Vai a https://console.cloud.google.com/storage/settings["Impostazioni di archiviazione GCP"^] e creare chiavi di accesso per l'account di servizio:
 +
-.. Seleziona un progetto e seleziona *Interoperabilità*. Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
+.. Seleziona un progetto e seleziona *Interoperabilità*.  Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
 .. In *Chiavi di accesso per gli account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e fai clic su *Crea chiave*.
 +
 Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un secondo momento, quando si configura il servizio di backup.
@@ -286,7 +286,7 @@ Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un s
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
 
-link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"^] .
+link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"^].
 
 
 
@@ -310,7 +310,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto. Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
+* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto.  Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
 
 
 *Considerazioni CMEK:*
@@ -357,7 +357,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 . Proseguire con le seguenti opzioni:
 +
 ** Se hai già un agente Console, sei a posto.  Basta selezionare *Avanti*.
-** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*. Fare riferimento a <<Prepara il tuo agente Console>> .
+** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*.  Fare riferimento a<<Prepara il tuo agente Console>> .
 
 
 
@@ -481,7 +481,7 @@ Se scegli di utilizzare le tue chiavi gestite dal cliente, inserisci il portachi
 
 ** *Networking*: Seleziona lo spazio IP.
 +
-Lo spazio IP nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup.  I LIF intercluster per questo spazio IP devono avere accesso a Internet in uscita.
+Lo spazio IP nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. I LIF intercluster per questo spazio IP devono avere accesso a Internet in uscita.
 
 ** *Criterio di backup*: seleziona un criterio di backup esistente per l'archiviazione degli oggetti oppure creane uno nuovo.
 +
@@ -520,7 +520,7 @@ NetApp Backup and Recovery inizia a eseguire i backup iniziali dei volumi.  Il t
 
 Nel cluster di destinazione viene creato un volume replicato che verrà sincronizzato con il volume di origine.
 
-Un bucket di Google Cloud Storage viene creato automaticamente nell'account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immesse, e i file di backup vengono archiviati lì.  Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
+Un bucket di Google Cloud Storage viene creato automaticamente nell'account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immesse, dove vengono archiviati i file di backup.  Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
 
 È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzandolink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"^] .
 

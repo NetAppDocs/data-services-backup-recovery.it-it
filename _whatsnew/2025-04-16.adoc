@@ -10,7 +10,7 @@ Questa versione migliora la tua esperienza semplificando l'interfaccia:
 
 * La rimozione della colonna Aggregate dalle tabelle Volumi, insieme alle colonne Snapshot Policy, Backup Policy e Replication Policy dalla tabella Volume nella Dashboard V2, si traduce in un layout più snello.
 * Escludendo gli ambienti di lavoro non attivati dall'elenco a discesa, l'interfaccia diventa meno confusa, la navigazione più efficiente e il caricamento più rapido.
-* Anche se l'ordinamento nella colonna Tag è disabilitato, è comunque possibile visualizzare i tag, assicurandosi che le informazioni importanti restino facilmente accessibili.
+* Anche se l'ordinamento nella colonna Tag è disabilitato, è comunque possibile visualizzare i tag, assicurandosi che le informazioni importanti rimangano facilmente accessibili.
 * La rimozione delle etichette sulle icone di protezione contribuisce a un aspetto più pulito e riduce i tempi di caricamento.
 * Durante il processo di attivazione dell'ambiente di lavoro, una finestra di dialogo visualizza un'icona di caricamento per fornire feedback fino al completamento del processo di individuazione, migliorando la trasparenza e la fiducia nelle operazioni del sistema.
 
@@ -54,7 +54,7 @@ vi default.json
 
 
 .Risultato
-Dopo aver riattivato il contenitore, aprire l'interfaccia utente NetApp Backup and Recovery.  Quando avvii un backup o modifichi una strategia di backup, vedrai elencato il nuovo provider "S3 Compatible" insieme ad altri provider di backup di AWS, Microsoft Azure, Google Cloud, StorageGRID e ONTAP S3.
+Dopo aver riattivato il contenitore, aprire l'interfaccia utente NetApp Backup and Recovery .  Quando avvii un backup o modifichi una strategia di backup, vedrai elencato il nuovo provider "S3 Compatible" insieme ad altri provider di backup di AWS, Microsoft Azure, Google Cloud, StorageGRID e ONTAP S3.
 
 
 

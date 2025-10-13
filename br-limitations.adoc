@@ -44,7 +44,7 @@ Il nome del cluster Windows non può contenere un carattere di sottolineatura (_
 
 La migrazione delle risorse da SnapCenter a NetApp Backup and Recovery presenta le seguenti limitazioni.
 
-Per i dettagli su come i criteri di SnapCenter migrano ai criteri di NetApp Backup and Recovery, vederelink:reference-policy-differences-snapcenter.html["Criteri in SnapCenter confrontati con quelli in NetApp Backup and Recovery"] .
+Per i dettagli su come i criteri di SnapCenter migrano ai criteri di NetApp Backup and Recovery , vederelink:reference-policy-differences-snapcenter.html["Criteri in SnapCenter confrontati con quelli in NetApp Backup and Recovery"] .
 
 
 
@@ -90,7 +90,7 @@ NetApp Backup and Recovery non importa policy di backup su richiesta da SnapCent
 
 === Criteri di backup solo log non migrati
 
-NetApp Backup and Recovery non importa policy di backup solo log da SnapCenter.  Se una policy SnapCenter include backup solo di log, NetApp Backup and Recovery non importerà la risorsa.
+NetApp Backup and Recovery non importa i criteri di backup solo log da SnapCenter.  Se una policy SnapCenter include backup solo di log, NetApp Backup and Recovery non importerà la risorsa.
 
 *Soluzione alternativa*: utilizzare un criterio in SnapCenter che utilizzi più dei semplici backup di log.
 
@@ -98,7 +98,7 @@ NetApp Backup and Recovery non importa policy di backup solo log da SnapCenter. 
 
 === Mappatura host
 
-SnapCenter non dispone di cluster di archiviazione delle mappe o SVM per le risorse sugli host, mentre NetApp Backup and Recovery sì.  Il cluster ONTAP o SVM locale non verrà mappato a un host nelle versioni di anteprima di NetApp Backup and Recovery.  Inoltre, NetApp Console non supporta le SVM.
+SnapCenter non dispone di cluster di archiviazione delle mappe o SVM per le risorse sugli host, mentre NetApp Backup and Recovery sì.  Il cluster ONTAP o SVM locale non verrà mappato a un host nelle versioni di anteprima NetApp Backup and Recovery .  Inoltre, NetApp Console non supporta le SVM.
 
 *Soluzione alternativa*: prima di importare risorse da SnapCenter, creare un sistema in NetApp Backup and Recovery per tutti i sistemi di storage ONTAP locali registrati in SnapCenter locali.  Quindi, importare le risorse per quel cluster da SnapCenter in NetApp Backup and Recovery.
 

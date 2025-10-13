@@ -14,12 +14,12 @@ summary: Proteggi i tuoi carichi di lavoro Oracle con il backup e il ripristino 
 
 
 [role="lead"]
-Esegui il backup dei gruppi di protezione o dei database di Oracle Database dai sistemi ONTAP locali ad Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3 per garantire la protezione dei dati.  Quando si esegue il backup di un gruppo di protezione, la console NetApp esegue il backup dei database e dei dati di registro contenuti nel gruppo di protezione.
+Esegui il backup dei gruppi di protezione o dei database di Oracle Database dai sistemi ONTAP locali ad Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3 per garantire la protezione dei dati.  Quando si esegue il backup di un gruppo di protezione, la NetApp Console esegue il backup dei database e dei dati di registro contenuti nel gruppo di protezione.
 
 
-NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 
-* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Oracle con NetApp Backup and Recovery"] per maggiori informazioni.
+* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vederelink:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Oracle con NetApp Backup and Recovery"] per maggiori informazioni.
 * Esegui subito il backup di un gruppo di protezione (crea subito un backup su richiesta).
 * Esegui subito il backup di un database.
 
@@ -30,10 +30,10 @@ NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base 
 
 È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Nel riquadro Oracle, seleziona *Scopri e gestisci*.
 . Selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
@@ -55,10 +55,10 @@ NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo 
 
 È possibile eseguire un backup su richiesta di un singolo database.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu della console NetApp , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Nel riquadro Oracle, seleziona *Scopri e gestisci*.
 . Selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.

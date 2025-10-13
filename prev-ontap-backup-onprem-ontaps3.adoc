@@ -20,7 +20,7 @@ Il sistema ONTAP principale in sede può essere un sistema FAS, AFF o ONTAP Sele
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -68,14 +68,14 @@ Assicurarsi che la rete in cui è installato l'agente Console consenta le seguen
 
 * Una connessione HTTPS sulla porta 443 al server ONTAP S3
 * Una connessione HTTPS sulla porta 443 al LIF di gestione del cluster ONTAP di origine
-* Una connessione Internet in uscita sulla porta 443 a NetApp Backup and Recovery (non richiesta quando l'agente Console è installato in un sito "oscuro")
+* Una connessione Internet in uscita sulla porta 443 verso NetApp Backup and Recovery (non necessaria quando l'agente Console è installato in un sito "oscuro")
 
 
 
 
 ==== Considerazioni sulla modalità privata (sito oscuro)
 
-La funzionalità NetApp Backup and Recovery è integrata nell'agente Console.  Se installato in modalità privata, sarà necessario aggiornare periodicamente il software dell'agente della console per accedere alle nuove funzionalità.  Controlla illink:whats-new.html["NetApp Backup and Recovery: novità"] per vedere le nuove funzionalità di ogni versione NetApp Backup and Recovery.  Quando vuoi utilizzare le nuove funzionalità, segui i passaggi per https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["aggiornare il software dell'agente della console"^] .
+La funzionalità NetApp Backup and Recovery è integrata nell'agente Console.  Se installato in modalità privata, sarà necessario aggiornare periodicamente il software dell'agente della console per accedere alle nuove funzionalità.  Controlla illink:whats-new.html["NetApp Backup and Recovery: novità"] per vedere le nuove funzionalità di ogni versione NetApp Backup and Recovery .  Quando vuoi utilizzare le nuove funzionalità, segui i passaggi per https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["aggiornare il software dell'agente della console"^] .
 
 Quando si utilizza NetApp Backup and Recovery in un ambiente SaaS standard, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel cloud.  Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket ONTAP S3 in cui vengono archiviati i backup.
 
@@ -98,7 +98,7 @@ Sarà necessario preparare il sistema ONTAP locale di origine e tutti i sistemi 
 
 La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
-* Scopri i tuoi sistemi ONTAP nella console NetApp
+* Scopri i tuoi sistemi ONTAP nella NetApp Console
 * Verificare i requisiti di sistema ONTAP
 * Verificare i requisiti di rete ONTAP per il backup dei dati su storage di oggetti
 * Verificare i requisiti di rete ONTAP per la replica dei volumi
@@ -106,9 +106,9 @@ La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
 
 
-=== Scopri i tuoi sistemi ONTAP nella console NetApp
+=== Scopri i tuoi sistemi ONTAP nella NetApp Console
 
-Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della console NetApp .
+Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della NetApp Console .
 
 Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione del cluster e la password dell'account utente amministratore. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Scopri come scoprire un cluster"^] .
 
@@ -129,7 +129,7 @@ Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-con
 * L'ora e il fuso orario sono impostati correttamente.  Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configura l'ora del tuo cluster"^] .
 * Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^].
 
 
 
@@ -144,7 +144,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 * Quando si utilizza un'architettura di backup fan-out, le impostazioni devono essere configurate sul sistema di archiviazione _primario_.
 * Quando si utilizza un'architettura di backup a cascata, le impostazioni devono essere configurate sul sistema di archiviazione _secondario_.
 +
-link:prev-ontap-protect-journey.html["Scopri di più sui tipi di architettura di backup"] .
+link:prev-ontap-protect-journey.html["Scopri di più sui tipi di architettura di backup"].
 
 
 
@@ -153,12 +153,12 @@ Sono necessari i seguenti requisiti di rete del cluster ONTAP :
 
 * Il cluster ONTAP avvia una connessione HTTPS tramite una porta specificata dall'utente dal LIF intercluster al server ONTAP S3 per le operazioni di backup e ripristino.  La porta è configurabile durante la configurazione del backup.
 +
-ONTAP legge e scrive dati da e verso l'archiviazione di oggetti. L'archiviazione degli oggetti non si avvia mai, risponde e basta.
+ONTAP legge e scrive dati da e verso l'archiviazione di oggetti.  L'archiviazione degli oggetti non si avvia mai, risponde e basta.
 
 * ONTAP richiede una connessione in ingresso dall'agente della console al LIF di gestione del cluster.
 * È necessario un LIF intercluster su ciascun nodo ONTAP che ospita i volumi di cui si desidera eseguire il backup.  Il LIF deve essere associato allo _IPspace_ che ONTAP deve utilizzare per connettersi all'archiviazione degli oggetti. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Scopri di più su IPspaces"^] .
 +
-Quando si configura NetApp Backup and Recovery, viene richiesto di specificare lo spazio IP da utilizzare. Dovresti scegliere lo spazio IP a cui è associato ciascun LIF. Potrebbe trattarsi dello spazio IP "predefinito" o di uno spazio IP personalizzato creato da te.
+Quando si configura NetApp Backup and Recovery, viene richiesto di specificare lo spazio IP da utilizzare.  Dovresti scegliere lo spazio IP a cui è associato ciascun LIF.  Potrebbe trattarsi dello spazio IP "predefinito" o di uno spazio IP personalizzato creato da te.
 
 * I LIF intercluster dei nodi sono in grado di accedere all'archivio oggetti (non necessario quando l'agente Console è installato in un sito "dark").
 * I server DNS sono stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
@@ -176,7 +176,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 
 ==== Requisiti di rete ONTAP in sede
 
-* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud.  In genere si tratta di una connessione VPN.
+* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
 Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
@@ -187,14 +187,14 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105.  Queste regole sono incluse nel gruppo di sicurezza predefinito.
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di sicurezza predefinito.
 
 
 
 
 == Prepara ONTAP S3 come destinazione di backup
 
-È necessario abilitare un server di archiviazione oggetti Simple Storage Service (S3) nel cluster ONTAP che si prevede di utilizzare per i backup di archiviazione oggetti. Vedi il https://docs.netapp.com/us-en/ontap/s3-config/index.html["Documentazione ONTAP S3"^] per i dettagli.
+È necessario abilitare un server di archiviazione oggetti Simple Storage Service (S3) nel cluster ONTAP che si prevede di utilizzare per i backup di archiviazione oggetti.  Vedi il https://docs.netapp.com/us-en/ontap/s3-config/index.html["Documentazione ONTAP S3"^] per i dettagli.
 
 *Nota:* è possibile aggiungere questo cluster alla pagina *Sistemi* della console, ma non viene identificato come server di archiviazione oggetti S3 e non è possibile trascinare un sistema sorgente su questo sistema S3 per avviare l'attivazione del backup.
 
@@ -252,7 +252,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 . Proseguire con le seguenti opzioni:
 +
 ** Se hai già un agente Console, sei a posto.  Basta selezionare *Avanti*.
-** Se non si dispone di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*. Fare riferimento a <<Prepara il tuo agente Console>> .
+** Se non si dispone di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*.  Fare riferimento a<<Prepara il tuo agente Console>> .
 
 
 
@@ -318,7 +318,7 @@ Per i dettagli su queste architetture, fare riferimento alink:prev-ontap-protect
 . *Snapshot locale*: scegli un criterio di snapshot esistente o creane uno nuovo.
 +
 
-TIP: Se si desidera creare una policy personalizzata prima di attivare lo Snapshot, è possibile utilizzare System Manager o ONTAP CLI `snapmirror policy create` comando. Fare riferimento a .
+TIP: Se si desidera creare una policy personalizzata prima di attivare lo Snapshot, è possibile utilizzare System Manager o ONTAP CLI `snapmirror policy create` comando.  Fare riferimento a .
 
 +
 

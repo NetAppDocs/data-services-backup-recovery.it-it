@@ -18,9 +18,9 @@ In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft 
 
 == Crea un report
 
-*Ruolo richiesto della console NetApp * Visualizzatore di storage, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clone di Backup e ripristino. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Visualizzatore di storage, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clone di Backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
-. Dal menu NetApp Backup and Recovery, selezionare l'opzione *Report*.
+. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
 . Seleziona *Crea report*.
 . Inserisci i dettagli dell'ambito del report:
 +

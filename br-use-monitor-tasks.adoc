@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Con NetApp Backup and Recovery puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup nei processi di archiviazione degli oggetti avviati, nonché ripristinare i processi avviati. 
+summary: Con NetApp Backup and Recovery puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup nei processi di archiviazione degli oggetti avviati e ripristinare i processi avviati. 
 ---
 = Monitorare i lavori in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Con NetApp Backup and Recovery puoi monitorare lo stato degli snapshot 
 
 
 [role="lead"]
-Con NetApp Backup and Recovery puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup nei processi di storage degli oggetti avviati, nonché ripristinare i processi avviati.  È possibile visualizzare i lavori completati, quelli in corso o quelli falliti, in modo da poter diagnosticare e risolvere i problemi.  Utilizzando il Centro notifiche della console NetApp , puoi abilitare l'invio di notifiche tramite e-mail, in modo da essere informato sulle attività importanti del sistema anche quando non hai effettuato l'accesso al sistema.  Utilizzando la cronologia della console, puoi visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
+Con NetApp Backup and Recovery puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup nei processi di archiviazione degli oggetti avviati e ripristinare i processi avviati.  È possibile visualizzare i lavori completati, quelli in corso o quelli falliti, in modo da poter diagnosticare e risolvere i problemi.  Utilizzando il Centro notifiche NetApp Console , puoi abilitare l'invio di notifiche tramite e-mail, in modo da essere informato sulle attività importanti del sistema anche quando non hai effettuato l'accesso al sistema.  Utilizzando la cronologia della console, puoi visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
 
 NetApp Backup and Recovery conserva le informazioni sui processi per 15 giorni, dopodiché vengono eliminate e non sono più visibili in Job Monitor.
 
-*Ruolo richiesto nella console NetApp * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery. Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
@@ -35,13 +35,13 @@ Lo stato può essere:
 * Fallito
 
 
-Nella scheda Monitoraggio processi sono disponibili snapshot, repliche, backup su storage di oggetti e operazioni di ripristino avviate dall'interfaccia utente e dall'API NetApp Backup and Recovery.
+Nella scheda Monitoraggio processi sono disponibili snapshot, repliche, backup su storage di oggetti e operazioni di ripristino avviate dall'interfaccia utente e dall'API NetApp Backup and Recovery .
 
 
 NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi operazioni di backup pianificate in corso nel Job Monitor, dovrai riavviare NetApp Backup and Recovery. link:reference-restart-backup.html["Scopri come riavviare NetApp Backup and Recovery"] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Monitoraggio*.
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Per visualizzare colonne aggiuntive (Sistema, SVM, Nome utente, Carico di lavoro, Nome policy, Etichetta snapshot), selezionare il segno più.
 
 
@@ -54,7 +54,7 @@ NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi ope
 Per impostazione predefinita, la pagina Monitoraggio processi mostra i processi di protezione e ripristino delle ultime 24 ore.  È possibile modificare l'intervallo di tempo utilizzando il filtro Intervallo di tempo.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Monitoraggio*.
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Per ordinare i risultati in modo diverso, seleziona ogni intestazione di colonna per ordinarli in base a Stato, Ora di inizio, Nome risorsa e altro ancora.
 . Se stai cercando lavori specifici, seleziona l'area *Ricerca avanzata e filtri* per aprire il pannello di ricerca.
 +
@@ -92,7 +92,7 @@ La maggior parte dei filtri sono autoesplicativi.  Il filtro per "Carico di lavo
 I processi di ripristino mostrano dettagli quali il provider di destinazione del backup (Amazon Web Services, Microsoft Azure, Google Cloud, locale), il nome del bucket S3, il nome della SVM, il nome del volume di origine, il volume di destinazione, l'etichetta dello snapshot, il conteggio degli oggetti recuperati, i nomi dei file, le dimensioni dei file, la data dell'ultima modifica e il percorso completo del file.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Monitoraggio*.
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Seleziona il nome del lavoro.
 . Seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] e seleziona *Visualizza dettagli*.
 . Espandi ogni sezione per vedere i dettagli.
@@ -102,12 +102,12 @@ I processi di ripristino mostrano dettagli quali il provider di destinazione del
 
 === Scarica i risultati del monitoraggio dei lavori come report
 
-Dopo averla perfezionata, puoi scaricare il contenuto della pagina principale di Monitoraggio dei lavori come report.  NetApp Backup and Recovery genera e scarica un file .CSV che puoi esaminare e inviare ad altri gruppi, se necessario. Il file .CSV include fino a 10.000 righe di dati.
+Dopo averla perfezionata, puoi scaricare il contenuto della pagina principale di Monitoraggio dei lavori come report.  NetApp Backup and Recovery genera e scarica un file .CSV che puoi esaminare e inviare ad altri gruppi, se necessario.  Il file .CSV include fino a 10.000 righe di dati.
 
-Dalle informazioni sui dettagli del monitoraggio dei lavori, è possibile scaricare un file JSON contenente i dettagli di un singolo lavoro.
+Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaricare un file JSON contenente i dettagli per un singolo lavoro.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Monitoraggio*.
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Per scaricare un file CSV per tutti i lavori, seleziona il pulsante Scarica e individua il file nella directory di download.
 . Per scaricare un file JSON per un singolo lavoro, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] per il lavoro, seleziona *Scarica file JSON* e individua il file nella directory di download.
 
@@ -123,16 +123,16 @@ Un processo di backup del ciclo di vita tiene traccia di tutte le copie Snapshot
 Il tipo di processo "Conservazione" acquisisce tutti i processi di eliminazione degli snapshot avviati su un volume protetto da NetApp Backup and Recovery.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Monitoraggio*.
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Selezionare l'area *Ricerca avanzata e filtro* per aprire il pannello Ricerca.
 . Selezionare "Conservazione" come tipo di lavoro.
 
 
 
 
-== Esaminare gli avvisi di backup e ripristino nel Centro notifiche della console NetApp
+== Esaminare gli avvisi di backup e ripristino nel Centro notifiche NetApp Console
 
-Il Centro notifiche della console NetApp tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, consentendoti di verificare se l'operazione è riuscita o meno.
+Il Centro notifiche NetApp Console tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, consentendoti di verificare se l'operazione è riuscita o meno.
 
 Oltre a visualizzare gli avvisi nel Centro notifiche, puoi configurare la Console in modo che invii determinati tipi di notifiche via e-mail come avvisi, in modo da essere informato sulle attività importanti del sistema anche quando non hai effettuato l'accesso al sistema. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^] .
 
@@ -164,7 +164,7 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 | Replicazione | Errore durante il processo di risincronizzazione della replica NetApp Backup and Recovery | Errore | NO 
 
 
-| Replicazione | Errore di interruzione del processo di replica di NetApp Backup and Recovery | Errore | NO 
+| Replicazione | Errore di interruzione del processo di replica NetApp Backup and Recovery | Errore | NO 
 
 
 | Replicazione | Errore nel processo di risincronizzazione inversa della replica NetApp Backup and Recovery | Errore | SÌ 
@@ -177,9 +177,9 @@ NOTE: A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sis
 
 Per impostazione predefinita, gli amministratori dell'organizzazione e dell'account NetApp Console ricevono e-mail per tutti gli avvisi "Critici" e "Raccomandati".  Per impostazione predefinita, tutti gli altri utenti e destinatari non riceveranno alcuna email di notifica.  Le e-mail possono essere inviate a tutti gli utenti della Console che fanno parte del tuo account NetApp Cloud o a qualsiasi altro destinatario che debba essere a conoscenza delle attività di backup e ripristino.
 
-Per ricevere gli avvisi e-mail NetApp Backup and Recovery, è necessario selezionare i tipi di gravità della notifica "Critico", "Avviso" ed "Errore" nella pagina delle impostazioni Notifiche.
+Per ricevere gli avvisi e-mail NetApp Backup and Recovery , è necessario selezionare i tipi di gravità della notifica "Critico", "Avviso" ed "Errore" nella pagina delle impostazioni Notifiche.
 
-https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri come inviare email di avviso per i processi di backup e ripristino"^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri come inviare email di avviso per i processi di backup e ripristino"^].
 
 .Passi
 . Dal menu Console, selezionare (image:icon_bell.png["campanello di notifica"] ).
@@ -192,4 +192,4 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 È possibile visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori indagini nella cronologia della console.  La cronologia della console fornisce dettagli su ciascun evento, sia esso avviato dall'utente o dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri le differenze tra la Timeline e il Centro Notifiche"^] .
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri le differenze tra la Timeline e il Centro Notifiche"^].

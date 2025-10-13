@@ -16,8 +16,8 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 Esegui il backup delle VM VMware e degli archivi dati dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
 
-* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
-* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware con NetApp Backup and Recovery"] per maggiori informazioni.
+* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vederelink:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware con NetApp Backup and Recovery"] per maggiori informazioni.
 * Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
 
 
@@ -27,7 +27,7 @@ Esegui il backup delle VM VMware e degli archivi dati dai sistemi ONTAP locali a
 
 Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare, potresti voler eseguire un backup su richiesta.
 
-*Ruolo di console NetApp obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
 . Dal menu Backup e ripristino, selezionare *Inventario*.

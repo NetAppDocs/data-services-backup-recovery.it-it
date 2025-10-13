@@ -32,7 +32,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Crea snapshot locali, replica su storage secondario ed esegui il backup dei volumi ONTAP dai sistemi ONTAP locali o Cloud Volumes ONTAP su storage di oggetti nel tuo account cloud pubblico o privato.
 ** Crea backup incrementali permanenti a livello di blocco, archiviati su un altro cluster ONTAP e nell'archiviazione di oggetti nel cloud.
 ** Utilizzare NetApp Backup and Recovery insieme a SnapCenter.
-** Fare riferimento a link:prev-ontap-protect-overview.html["Proteggere i volumi ONTAP"] .
+** Fare riferimento alink:prev-ontap-protect-overview.html["Proteggere i volumi ONTAP"] .
 
 
 * *Carichi di lavoro di Microsoft SQL Server*:
@@ -41,16 +41,16 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Ripristinare i database di Microsoft SQL Server.
 ** Clonare i database Microsoft SQL Server.
 ** Utilizzare NetApp Backup and Recovery senza SnapCenter.
-** Fare riferimento a link:br-use-mssql-protect-overview.html["Proteggere i carichi di lavoro di Microsoft SQL Server"] .
+** Fare riferimento alink:br-use-mssql-protect-overview.html["Proteggere i carichi di lavoro di Microsoft SQL Server"] .
 
 
 * *Carichi di lavoro VMware (anteprima con nuova interfaccia utente senza SnapCenter Plug-in for VMware vSphere)*:
 +
-** Proteggi le tue VM e i tuoi datastore VMware con NetApp Backup and Recovery.
+** Proteggi le tue VM VMware e i tuoi datastore con NetApp Backup and Recovery.
 ** Esegui il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID (per l'anteprima).
 ** Ripristina i dati VMware dal cloud al vCenter locale.
 ** Utilizzare NetApp Backup and Recovery senza il SnapCenter Plug-in for VMware vSphere.
-** Fare riferimento a link:br-use-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
+** Fare riferimento alink:br-use-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
 
 
 * *Carichi di lavoro VMware (con SnapCenter Plug-in for VMware vSphere)*:
@@ -58,7 +58,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Esegui il backup di VM e datastore su Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e ripristina le VM sul SnapCenter Plug-in for VMware vSphere .
 ** Ripristina i dati della VM dal cloud al vCenter locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.
 ** Utilizzare NetApp Backup and Recovery insieme al SnapCenter Plug-in for VMware vSphere.
-** Fare riferimento a link:prev-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
+** Fare riferimento alink:prev-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
 
 
 * *Carichi di lavoro KVM (anteprima)*:
@@ -66,14 +66,14 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Eseguire il backup e il ripristino delle macchine virtuali
 ** Eseguire il backup dei pool di archiviazione KVM
 ** Utilizzare gruppi di protezione per gestire le attività di backup
-** Fare riferimento a link:br-use-kvm-protect-overview.html["Proteggere i carichi di lavoro KVM"] .
+** Fare riferimento alink:br-use-kvm-protect-overview.html["Proteggere i carichi di lavoro KVM"] .
 
 
 * *Carichi di lavoro Hyper-V (anteprima)*:
 +
 ** Eseguire il backup e il ripristino delle macchine virtuali
 ** Utilizzare gruppi di protezione per gestire le attività di backup
-** Fare riferimento a link:br-use-hyperv-protect-overview.html["Proteggere i carichi di lavoro Hyper-V"] .
+** Fare riferimento alink:br-use-hyperv-protect-overview.html["Proteggere i carichi di lavoro Hyper-V"] .
 
 
 * *Carichi di lavoro Oracle (anteprima)*:
@@ -84,7 +84,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Proteggere un database con un'architettura di backup 3-2-1
 ** Configurare la conservazione del backup
 ** Montare e smontare i backup ARCHIVELOG
-** Fare riferimento a link:br-use-oracle-protect-overview.html["Proteggi i carichi di lavoro Oracle"] .
+** Fare riferimento alink:br-use-oracle-protect-overview.html["Proteggi i carichi di lavoro Oracle"] .
 
 
 * *Carichi di lavoro Kubernetes (anteprima)*:
@@ -93,7 +93,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Utilizza criteri di protezione per strutturare i tuoi backup incrementali.
 ** Ripristinare applicazioni e risorse negli stessi cluster e namespace o in cluster e namespace diversi.
 ** Utilizzare NetApp Backup and Recovery senza SnapCenter.
-** Fare riferimento a link:br-use-kubernetes-protect-overview.html["Proteggere i carichi di lavoro di Kubernetes"] .
+** Fare riferimento alink:br-use-kubernetes-protect-overview.html["Proteggere i carichi di lavoro di Kubernetes"] .
 
 
 
@@ -199,13 +199,13 @@ Una licenza di backup è richiesta solo per il backup e il ripristino da un arch
 
 BYOL è basato sulla durata (1, 2 o 3 anni) e sulla capacità in incrementi di 1 TiB.  Si paga NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TiB.
 
-Riceverai un numero di serie che dovrai inserire nella console NetApp per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console.
+Riceverai un numero di serie che dovrai inserire nella NetApp Console per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console .
 
-link:br-start-licensing.html["Scopri come impostare le licenze"] .
+link:br-start-licensing.html["Scopri come impostare le licenze"].
 
 *Abbonamento a consumo*
 
-NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato. La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
+NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato.  La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
 
 Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti registri inizialmente con un abbonamento PAYGO.
 
@@ -229,7 +229,7 @@ Quando utilizzi Azure, sono disponibili due contratti annuali per 1, 2 o 3 anni:
 
 ifdef::gcp[]
 
-Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery. endif::gcp[]
+Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery . endif::gcp[]
 
 
 
@@ -279,16 +279,16 @@ NOTE: È supportato anche lo storage primario verso l'archiviazione di oggetti, 
 
 === Dove risiedono i backup nelle posizioni dell'archivio oggetti
 
-Le copie di backup vengono archiviate in un archivio oggetti creato dalla console NetApp nel tuo account cloud.  Esiste un archivio oggetti per cluster o sistema e la Console assegna a tale archivio il seguente nome: `netapp-backup-clusteruuid` .  Assicurarsi di non eliminare questo archivio oggetti.
+Le copie di backup vengono archiviate in un archivio oggetti creato dalla NetApp Console nel tuo account cloud.  Esiste un archivio oggetti per cluster o sistema e la Console assegna a tale archivio il seguente nome: `netapp-backup-clusteruuid` .  Assicurarsi di non eliminare questo archivio oggetti.
 
 ifdef::aws[]
 
-* In AWS, la console NetApp consente di https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3. endif::aws[]
+* In AWS, la NetApp Console consente di https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3. endif::aws[]
 
 
 ifdef::azure[]
 
-* In Azure, la console NetApp utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB. la console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita. endif::azure[]
+* In Azure, la NetApp Console utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB. la console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita. endif::azure[]
 
 
 ifdef::gcp[]

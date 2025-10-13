@@ -18,7 +18,7 @@ Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire i
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -45,9 +45,9 @@ NOTE: Il ruolo di amministratore di archiviazione non è più necessario per l'a
 
 == Verificare i requisiti della licenza
 
-Per le licenze NetApp Backup and Recovery PAYGO, è disponibile un abbonamento alla console su Google Marketplace che consente le distribuzioni di Cloud Volumes ONTAP e NetApp Backup and Recovery.  Devi https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["iscriviti a questo abbonamento alla Console"^] prima di abilitare NetApp Backup and Recovery.  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Puoi iscriverti dalla pagina Dettagli e credenziali della procedura guidata di sistema"^] .
+Per le licenze NetApp Backup and Recovery PAYGO, è disponibile un abbonamento alla console in Google Marketplace che consente le distribuzioni di Cloud Volumes ONTAP e NetApp Backup and Recovery.  Devi https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["iscriviti a questo abbonamento alla Console"^] prima di abilitare NetApp Backup and Recovery.  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Puoi iscriverti dalla pagina Dettagli e credenziali della procedura guidata di sistema"^] .
 
-Per la licenza BYOL NetApp Backup and Recovery, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
+Per la licenza BYOL NetApp Backup and Recovery , è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
 
 Inoltre, è necessario disporre di un abbonamento Google per lo spazio di archiviazione in cui verranno salvati i backup.
 
@@ -65,7 +65,7 @@ L'agente Console deve essere installato in una regione Google con accesso a Inte
 
 === Verificare o aggiungere autorizzazioni all'agente della console
 
-Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery, è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
+Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
 
 .Passi
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
@@ -111,7 +111,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto. Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
+* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto.  Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
 
 
 *Considerazioni CMEK:*
@@ -129,7 +129,7 @@ cloudkms.keyRings.setIamPolicy
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  Se desideri utilizzare i tuoi bucket, puoi crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
 
-link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"] .
+link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"].
 
 
 
@@ -141,7 +141,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 
 ==== Requisiti di rete ONTAP in sede
 
-* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud.  In genere si tratta di una connessione VPN.
+* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
 Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
@@ -152,7 +152,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105.  Queste regole sono incluse nel gruppo di sicurezza predefinito.
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste: in particolare, le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di sicurezza predefinito.
 
 
 * Per replicare i dati tra due sistemi Cloud Volumes ONTAP in subnet diverse, le subnet devono essere instradate insieme (questa è l'impostazione predefinita).
@@ -220,7 +220,7 @@ Per preparare Google Cloud Storage come destinazione di backup, sono necessari i
 
 === Imposta i permessi
 
-È necessario fornire le chiavi di accesso all'archiviazione per un account di servizio che dispone di autorizzazioni specifiche utilizzando un ruolo personalizzato.  Un account di servizio consente a NetApp Backup and Recovery di autenticare e accedere ai bucket di Cloud Storage utilizzati per archiviare i backup. Le chiavi sono necessarie affinché Google Cloud Storage sappia chi sta effettuando la richiesta.
+È necessario fornire le chiavi di accesso all'archiviazione per un account di servizio che dispone di autorizzazioni specifiche utilizzando un ruolo personalizzato.  Un account di servizio consente a NetApp Backup and Recovery di autenticare e accedere ai bucket di Cloud Storage utilizzati per archiviare i backup.  Le chiavi sono necessarie affinché Google Cloud Storage sappia chi sta effettuando la richiesta.
 
 .Passi
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
@@ -252,7 +252,7 @@ storage.objects.update
 
 . Vai a https://console.cloud.google.com/storage/settings["Impostazioni di archiviazione GCP"^] e creare chiavi di accesso per l'account di servizio:
 +
-.. Seleziona un progetto e seleziona *Interoperabilità*. Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
+.. Seleziona un progetto e seleziona *Interoperabilità*.  Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
 .. In *Chiavi di accesso per gli account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e fai clic su *Crea chiave*.
 +
 Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un secondo momento, quando si configura il servizio di backup.
@@ -267,7 +267,7 @@ Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un s
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
 
-link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"] .
+link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"].
 
 
 
@@ -291,7 +291,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto. Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
+* Dovrai verificare che l'API "Cloud Key Management Service (KMS)" di Google sia abilitata nel tuo progetto.  Vedi il https://cloud.google.com/apis/docs/getting-started#enabling_apis["Documentazione di Google Cloud: abilitazione delle API"^] per i dettagli.
 
 
 *Considerazioni CMEK:*
@@ -338,7 +338,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 . Proseguire con le seguenti opzioni:
 +
 ** Se hai già un agente Console, sei a posto.  Basta selezionare *Avanti*.
-** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*. Fare riferimento a <<Prepara il tuo agente Console>> .
+** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*.  Fare riferimento a<<Prepara il tuo agente Console>> .
 
 
 
@@ -496,7 +496,7 @@ Nel cluster di destinazione viene creato un volume replicato che verrà sincroni
 
 Viene creato un bucket di Google Cloud Storage nell'account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immesse, dove vengono archiviati i file di backup.
 
-Per impostazione predefinita, i backup sono associati alla classe di archiviazione _Standard_.  È possibile utilizzare le classi di archiviazione più economiche _Nearline_, _Coldline_ o _Archive_.  Tuttavia, la classe di archiviazione viene configurata tramite Google e non tramite l'interfaccia utente di NetApp Backup and Recovery.  Vedi l'argomento di Google https://cloud.google.com/storage/docs/changing-default-storage-class["Modifica della classe di archiviazione predefinita di un bucket"^] per i dettagli.
+Per impostazione predefinita, i backup sono associati alla classe di archiviazione _Standard_.  È possibile utilizzare le classi di archiviazione più economiche _Nearline_, _Coldline_ o _Archive_.  Tuttavia, la classe di archiviazione viene configurata tramite Google e non tramite l'interfaccia utente NetApp Backup and Recovery .  Vedi l'argomento di Google https://cloud.google.com/storage/docs/changing-default-storage-class["Modifica della classe di archiviazione predefinita di un bucket"^] per i dettagli.
 
 Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
 
@@ -517,7 +517,7 @@ Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi A
 
 == Cosa succederà ora?
 
-* È possibile link:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] Potrebbe Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.
-* È possibile link:prev-ontap-policy-object-advanced-settings.html["gestire le impostazioni di backup a livello di cluster"] Potrebbe Ciò include la modifica delle chiavi di archiviazione utilizzate ONTAP per accedere all'archiviazione cloud, la modifica della larghezza di banda di rete disponibile per caricare i backup nell'archiviazione degli oggetti, la modifica dell'impostazione di backup automatico per i volumi futuri e altro ancora.
+* Puoilink:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] .  Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.
+* Puoilink:prev-ontap-policy-object-advanced-settings.html["gestire le impostazioni di backup a livello di cluster"] .  Ciò include la modifica delle chiavi di archiviazione utilizzate ONTAP per accedere all'archiviazione cloud, la modifica della larghezza di banda di rete disponibile per caricare i backup nell'archiviazione degli oggetti, la modifica dell'impostazione di backup automatico per i volumi futuri e altro ancora.
 * Puoi anchelink:prev-ontap-restore.html["ripristinare volumi, cartelle o singoli file da un file di backup"] a un sistema Cloud Volumes ONTAP in AWS o a un sistema ONTAP locale.
 

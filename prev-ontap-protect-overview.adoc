@@ -18,7 +18,7 @@ NetApp Backup and Recovery offre funzionalità di backup e ripristino per la pro
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 Dopo l'attivazione, il backup e il ripristino creano backup incrementali a livello di blocco, permanenti, che vengono archiviati su un altro cluster ONTAP e nell'archiviazione di oggetti nel cloud.  Oltre al volume sorgente, avrai:
@@ -52,7 +52,7 @@ Se necessario, è possibile ripristinare un intero _volume_, una _cartella_ o un
 * Crittografia ONTAP nativa in volo impostata tramite chiave pre-condivisa (PSK) tra i due sistemi.
 * I dati copiati sono immutabili finché non vengono resi scrivibili e pronti per l'uso.
 * La replicazione è auto-riparante in caso di errore di trasferimento.
-* Rispetto a https://docs.netapp.com/us-en/data-services-replication/index.html["Replicazione NetApp"^] , la replica in NetApp Backup and Recovery include le seguenti funzionalità:
+* Rispetto a https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^] , la replica in NetApp Backup and Recovery include le seguenti funzionalità:
 +
 ** Replicare più volumi FlexVol contemporaneamente su un sistema secondario.
 ** Ripristina un volume replicato sul sistema di origine o su un sistema diverso tramite l'interfaccia utente.
@@ -246,17 +246,17 @@ Una licenza di backup è richiesta solo per il backup e il ripristino da un arch
 
 BYOL è basato sulla durata (1, 2 o 3 anni) e sulla capacità, con incrementi di 1 TiB.  Si paga NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TiB.
 
-Riceverai un numero di serie che dovrai inserire nella console NetApp per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console.
+Riceverai un numero di serie che dovrai inserire nella NetApp Console per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console .
 
-link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
+link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"].
 
 
 
 === Abbonamento a consumo
 
-NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato. La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
+NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato.  La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
 
-link:br-start-licensing.html["Scopri come impostare un abbonamento a consumo"] .
+link:br-start-licensing.html["Scopri come impostare un abbonamento a consumo"].
 
 Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti registri inizialmente con un abbonamento PAYGO.
 
@@ -286,11 +286,11 @@ endif::azure[]
 
 ifdef::gcp[]
 
-Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery.
+Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery .
 
 endif::gcp[]
 
-link:br-start-licensing.html["Scopri come impostare contratti annuali"] .
+link:br-start-licensing.html["Scopri come impostare contratti annuali"].
 
 
 
@@ -340,13 +340,13 @@ endif::gcp[]
 
 + ** In ONTAP S3, la console utilizza un account utente esistente per il bucket S3.
 
-Se in futuro si desidera modificare l'archivio oggetti di destinazione per un cluster, sarà necessariolink:prev-ontap-backup-manage.html["annullare la registrazione di NetApp Backup and Recovery per il sistema"] e quindi abilitare NetApp Backup and Recovery utilizzando le informazioni del nuovo provider cloud.
+Se in futuro si desidera modificare l'archivio oggetti di destinazione per un cluster, sarà necessariolink:prev-ontap-backup-manage.html["annullare la registrazione NetApp Backup and Recovery per il sistema"] e quindi abilitare NetApp Backup and Recovery utilizzando le informazioni del nuovo provider cloud.
 
 
 
 === Pianificazione di backup e impostazioni di conservazione personalizzabili
 
-Quando si abilita NetApp Backup and Recovery per un sistema, tutti i volumi inizialmente selezionati vengono sottoposti a backup utilizzando i criteri selezionati.  È possibile selezionare policy separate per copie Snapshot, volumi replicati e file di backup.  Se si desidera assegnare policy di backup diverse a determinati volumi con obiettivi di punto di ripristino (RPO) diversi, è possibile creare policy aggiuntive per quel cluster e assegnarle agli altri volumi dopo l'attivazione di NetApp Backup and Recovery.
+Quando si abilita NetApp Backup and Recovery per un sistema, tutti i volumi inizialmente selezionati vengono sottoposti a backup utilizzando i criteri selezionati.  È possibile selezionare policy separate per copie Snapshot, volumi replicati e file di backup.  Se si desidera assegnare policy di backup diverse a determinati volumi con obiettivi di punto di ripristino (RPO) diversi, è possibile creare policy aggiuntive per quel cluster e assegnarle agli altri volumi dopo l'attivazione di NetApp Backup and Recovery .
 
 È possibile scegliere una combinazione di backup orari, giornalieri, settimanali, mensili e annuali di tutti i volumi.  Per il backup dell'oggetto è anche possibile selezionare una delle policy definite dal sistema che prevedono backup e conservazione per 3 mesi, 1 anno e 7 anni.  Anche i criteri di protezione del backup creati sul cluster tramite ONTAP System Manager o ONTAP CLI verranno visualizzati come selezioni.  Sono incluse le policy create utilizzando etichette SnapMirror personalizzate.
 
@@ -362,7 +362,7 @@ TIP: Il periodo di conservazione per i backup dei volumi di protezione dei dati 
 
 === Impostazioni di protezione dei file di backup
 
-Se il tuo cluster utilizza ONTAP 9.11.1 o versione successiva, puoi proteggere i tuoi backup nell'archiviazione degli oggetti da eliminazioni e attacchi ransomware. Ogni policy di backup prevede una sezione per _DataLock e Ransomware Resilience_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_.
+Se il tuo cluster utilizza ONTAP 9.11.1 o versione successiva, puoi proteggere i tuoi backup nell'archiviazione degli oggetti da eliminazioni e attacchi ransomware.  Ogni policy di backup prevede una sezione per _DataLock e Ransomware Resilience_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_.
 
 * _DataLock_ protegge i file di backup da modifiche o eliminazioni.
 * La _protezione ransomware_ analizza i file di backup per cercare prove di un attacco ransomware quando viene creato un file di backup e quando i dati di un file di backup vengono ripristinati.
@@ -372,12 +372,12 @@ Le scansioni di protezione anti-ransomware pianificate sono abilitate per impost
 
 Il periodo di conservazione del backup è lo stesso del periodo di conservazione del backup programmato, più un buffer massimo di 31 giorni.  Ad esempio, i backup _settimanali_ con _5_ copie conservate bloccheranno ogni file di backup per 5 settimane.  I backup _mensili_ con _6_ copie conservate bloccheranno ogni file di backup per 6 mesi.
 
-Il supporto è attualmente disponibile quando la destinazione del backup è Amazon S3, Azure Blob o NetApp StorageGRID.  Nelle versioni future verranno aggiunte altre destinazioni del provider di archiviazione.
+Il supporto è attualmente disponibile quando la destinazione del backup è Amazon S3, Azure Blob o NetApp StorageGRID.  Nelle versioni future verranno aggiunte altre destinazioni di provider di archiviazione.
 
 Per maggiori dettagli fare riferimento a questa informativa:
 
-* link:prev-ontap-policy-object-options.html["Come funzionano la protezione da DataLock e Ransomware"] .
-* link:prev-ontap-policy-object-advanced-settings.html["Come aggiornare le opzioni di protezione Ransomware nella pagina Impostazioni avanzate"] .
+* link:prev-ontap-policy-object-options.html["Come funzionano la protezione da DataLock e Ransomware"].
+* link:prev-ontap-policy-object-advanced-settings.html["Come aggiornare le opzioni di protezione Ransomware nella pagina Impostazioni avanzate"].
 
 
 

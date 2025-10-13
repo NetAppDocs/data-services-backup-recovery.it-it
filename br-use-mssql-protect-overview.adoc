@@ -39,7 +39,7 @@ NetApp Backup and Recovery sfrutta la tecnologia di replicazione dei dati NetApp
 * link:br-use-manage-snapshots.html["Gestisci gli snapshot"]
 
 
-Per eseguire il backup dei carichi di lavoro, in genere si creano policy che regolano le operazioni di backup e ripristino. Vedere link:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
+Per eseguire il backup dei carichi di lavoro, in genere si creano policy che regolano le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
 
 .Destinazioni di backup supportate
 NetApp Backup and Recovery consente di eseguire il backup di istanze e database di Microsoft SQL Server dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati.  Le copie snapshot risiedono sul sistema di origine.

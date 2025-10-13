@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-restart-backup.html 
 keywords: backup restart, restart backup 
-summary: Potrebbero verificarsi situazioni in cui potrebbe essere necessario riavviare NetApp Backup and Recovery. 
+summary: Potrebbero verificarsi situazioni in cui sarà necessario riavviare NetApp Backup and Recovery. 
 ---
 = Riavvia NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Potrebbero verificarsi situazioni in cui potrebbe essere necessario ria
 
 
 [role="lead"]
-Potrebbero verificarsi situazioni in cui potrebbe essere necessario riavviare NetApp Backup and Recovery.
+Potrebbero verificarsi situazioni in cui sarà necessario riavviare NetApp Backup and Recovery.
 
 La funzionalità NetApp Backup and Recovery è integrata nell'agente Console.
 

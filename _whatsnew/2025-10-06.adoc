@@ -1,10 +1,10 @@
-= Il BlueXP backup and recovery ora sono NetApp Backup e Recovery
+= Il BlueXP backup and recovery ora sono NetApp Backup and Recovery
 :allow-uri-read: 
 
 
 
 
-=== Il BlueXP backup and recovery ora sono NetApp Backup e Recovery
+=== Il BlueXP backup and recovery ora sono NetApp Backup and Recovery
 
 Il BlueXP backup and recovery sono stati rinominati NetApp Backup and Recovery.
 
@@ -12,9 +12,9 @@ Il BlueXP backup and recovery sono stati rinominati NetApp Backup and Recovery.
 
 === BlueXP è ora NetApp Console
 
-NetApp Console, basata sulle fondamenta BlueXP migliorate e ristrutturate, offre una gestione centralizzata dello storage NetApp e dei NetApp Data Services in ambienti on-premise e cloud di livello aziendale, offrendo informazioni in tempo reale, flussi di lavoro più rapidi e un'amministrazione semplificata, altamente sicura e conforme.
+NetApp Console, basata sulle fondamenta BlueXP migliorate e ristrutturate, offre una gestione centralizzata dello storage NetApp e NetApp Data Services in ambienti on-premise e cloud di livello aziendale, offrendo informazioni in tempo reale, flussi di lavoro più rapidi e un'amministrazione semplificata, altamente sicura e conforme.
 
-Per i dettagli su cosa è cambiato, vederelink:https://docs.netapp.com/us-en/console-relnotes/index.html["Note sulla versione NetApp Console."]
+Per i dettagli su cosa è cambiato, vederelink:https://docs.netapp.com/us-en/console-relnotes/index.html["Note sulla versione NetApp Console ."]
 
 
 
@@ -60,7 +60,7 @@ La versione di anteprima dei carichi di lavoro Kubernetes introduce le seguenti 
 * La configurazione avanzata del controllo degli accessi basato sui ruoli (RBAC) include il supporto per i seguenti ruoli:
 +
 ** Super amministratore di backup e ripristino
-** amministratore del backup di backup e ripristino
+** Backup e ripristino amministratore del backup
 ** Backup e ripristino ripristino amministratore
 ** Visualizzatore di backup e ripristino
 
@@ -69,7 +69,7 @@ La versione di anteprima dei carichi di lavoro Kubernetes introduce le seguenti 
 * Supporto multi-bucket: ora puoi proteggere i volumi all'interno di un sistema con più bucket per sistema su diversi provider cloud
 
 
-Per i dettagli sulla protezione dei carichi di lavoro di Kubernetes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
 
 
 

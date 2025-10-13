@@ -28,7 +28,7 @@ Utilizza NetApp Backup and Recovery per implementare una strategia di protezione
 
 
 
-NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente di NetApp Backup and Recovery"] .
+NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
 
 È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro KVM:
 

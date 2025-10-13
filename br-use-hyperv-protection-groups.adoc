@@ -20,7 +20,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ma
 
 * Crea un gruppo di protezione.
 * Visualizza i dettagli della protezione.
-* Crea subito un gruppo di protezione. Vedere link:br-use-hyperv-backup.html["Esegui subito il backup dei carichi di lavoro Hyper-V"] .
+* Crea subito un gruppo di protezione. Vederelink:br-use-hyperv-backup.html["Esegui subito il backup dei carichi di lavoro Hyper-V"] .
 * Elimina un gruppo di protezione.
 
 
@@ -30,10 +30,10 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ma
 
 Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. È possibile creare un gruppo di protezione per un set di carichi di lavoro di cui si desidera eseguire il backup e il ripristino insieme.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppi di protezione*.
@@ -54,7 +54,7 @@ Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione
 L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppi di protezione*.

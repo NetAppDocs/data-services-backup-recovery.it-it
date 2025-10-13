@@ -17,4 +17,4 @@ Questa versione di NetApp Backup and Recovery introduce il supporto per l'indivi
 * Crea backup coerenti con l'applicazione utilizzando modelli e hook di esecuzione.
 
 
-Per i dettagli sulla protezione dei carichi di lavoro di Kubernetes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .

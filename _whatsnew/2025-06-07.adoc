@@ -8,17 +8,17 @@
 
 Nell'aprile 2025 abbiamo lanciato un'anteprima di una Dashboard del volume ONTAP migliorata, molto più veloce ed efficiente.
 
-Questa dashboard è stata progettata per aiutare i clienti aziendali con un numero elevato di carichi di lavoro.  Anche per i clienti con 20.000 volumi, il nuovo dashboard si carica in meno di 10 secondi.
+Questa dashboard è stata progettata per aiutare i clienti aziendali con un numero elevato di carichi di lavoro. Anche per i clienti con 20.000 volumi, il nuovo dashboard si carica in meno di 10 secondi.
 
-Dopo un'anteprima di successo e un feedback positivo da parte dei clienti, ora la stiamo rendendo l'esperienza predefinita per tutti i nostri clienti.  Preparatevi a una dashboard incredibilmente veloce.
+Dopo un'anteprima di successo e un feedback positivo da parte dei clienti, ora la stiamo rendendo l'esperienza predefinita per tutti i nostri clienti. Preparatevi a una dashboard incredibilmente veloce.
 
-Per maggiori dettagli, vedere link:br-use-dashboard.html["Visualizza lo stato di protezione nella Dashboard"] .
+Per i dettagli, vederelink:br-use-dashboard.html["Visualizza lo stato di protezione nella Dashboard"] .
 
 
 
 === Supporto del carico di lavoro di Microsoft SQL Server come anteprima tecnologica pubblica
 
-Questa versione di NetApp Backup and Recovery fornisce un'interfaccia utente aggiornata che consente di gestire i carichi di lavoro di Microsoft SQL Server utilizzando una strategia di protezione 3-2-1, nota in NetApp Backup and Recovery.  Con questa nuova versione, è possibile eseguire il backup di questi carichi di lavoro sullo storage primario, replicarli sullo storage secondario ed eseguirne il backup sullo storage di oggetti cloud.
+Questa versione di NetApp Backup and Recovery fornisce un'interfaccia utente aggiornata che consente di gestire i carichi di lavoro di Microsoft SQL Server utilizzando una strategia di protezione 3-2-1, nota in NetApp Backup and Recovery. Con questa nuova versione, è possibile eseguire il backup di questi carichi di lavoro sullo storage primario, replicarli sullo storage secondario ed eseguirne il backup sullo storage di oggetti cloud.
 
 Puoi iscriverti all'anteprima completando questo https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["Anteprima del modulo di registrazione"^] .
 
@@ -27,11 +27,11 @@ NOTE: Questa documentazione sulla protezione dei carichi di lavoro di Microsoft 
 
 Questa versione di NetApp Backup and Recovery include i seguenti aggiornamenti:
 
-* *Funzionalità di backup 3-2-1*: questa versione integra le funzionalità SnapCenter , consentendo di gestire e proteggere le risorse SnapCenter con una strategia di protezione dei dati 3-2-1 dall'interfaccia utente NetApp Backup and Recovery.
+* *Funzionalità di backup 3-2-1*: questa versione integra le funzionalità SnapCenter , consentendo di gestire e proteggere le risorse SnapCenter con una strategia di protezione dei dati 3-2-1 dall'interfaccia utente NetApp Backup and Recovery .
 * *Importa da SnapCenter*: puoi importare i dati di backup e le policy SnapCenter in NetApp Backup and Recovery.
 * *Un'interfaccia utente riprogettata* offre un'esperienza più intuitiva per la gestione delle attività di backup e ripristino.
 * *Destinazioni di backup*: puoi aggiungere bucket negli ambienti Amazon Web Services (AWS), Microsoft Azure Blob Storage, StorageGRID e ONTAP S3 da utilizzare come destinazioni di backup per i carichi di lavoro di Microsoft SQL Server.
-* *Supporto del carico di lavoro*: questa versione consente di eseguire il backup, il ripristino, la verifica e la clonazione di database e gruppi di disponibilità di Microsoft SQL Server.  (Il supporto per altri carichi di lavoro verrà aggiunto nelle versioni future.)
+* *Supporto del carico di lavoro*: questa versione consente di eseguire il backup, il ripristino, la verifica e la clonazione di database e gruppi di disponibilità di Microsoft SQL Server. (Il supporto per altri carichi di lavoro verrà aggiunto nelle versioni future.)
 * *Opzioni di ripristino flessibili*: questa versione consente di ripristinare i database sia nelle posizioni originali che in quelle alternative in caso di danneggiamento o perdita accidentale dei dati.
 * *Copie di produzione istantanee*: genera copie di produzione salvaspazio per sviluppo, test o analisi in pochi minuti anziché in ore o giorni.
 * Questa versione include la possibilità di creare report dettagliati.

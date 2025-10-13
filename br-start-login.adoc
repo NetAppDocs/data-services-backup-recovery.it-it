@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-login.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Per accedere al servizio NetApp Backup and Recovery, utilizzare NetApp Console. 
+summary: Per accedere al servizio NetApp Backup and Recovery, utilizzare NetApp Console . 
 ---
 = Accedi a NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Per accedere al servizio NetApp Backup and Recovery, utilizzare NetApp 
 
 
 [role="lead"]
-Per accedere a NetApp Backup and Recovery è possibile utilizzare la console NetApp .
+Per accedere a NetApp Backup and Recovery , utilizzare la NetApp Console .
 
 NetApp Backup and Recovery utilizza la gestione dell'identità e dell'accesso per controllare cosa può fare ogni utente.
 
@@ -22,20 +22,20 @@ Per i dettagli sulle azioni che ogni ruolo può eseguire, vederelink:reference-r
 
 Per accedere alla NetApp Console, puoi utilizzare le credenziali del sito di supporto NetApp oppure registrarti per accedere alla NetApp Console utilizzando il tuo indirizzo email e una password. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^] .
 
-*Ruolo di console NetApp obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di ripristino di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo NetApp Console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di ripristino di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 Per aggiungere un agente Console, è necessario disporre del ruolo di super amministratore di Backup e ripristino.
 
 .Passi
-. Apri un browser web e vai su https://console.netapp.com/["Console NetApp"^] .
+. Apri un browser web e vai su https://console.netapp.com/["NetApp Console"^] .
 +
-Viene visualizzata la pagina di accesso alla console NetApp .
+Viene visualizzata la pagina di accesso NetApp Console .
 
 . Accedi alla Console.
 . Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.
 +
-** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, Backup and Recovery visualizza la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" e offre un'opzione per aggiungere un sistema. Per i dettagli sull'aggiunta di un sistema alla pagina *Sistemi*, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard della console NetApp"^] .
-** Se è la prima volta che accedi a Backup and Recovery e hai già aggiunto un sistema alla pagina *Sistemi*, ma non hai ancora individuato alcuna risorsa, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Individuare risorse*.
+** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, Backup and Recovery visualizza la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" e offre un'opzione per aggiungere un sistema.  Per i dettagli sull'aggiunta di un sistema alla pagina *Sistemi*, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard NetApp Console"^] .
+** Se è la prima volta che accedi a Backup and Recovery e hai già aggiunto un sistema alla pagina *Sistemi*, ma non hai ancora scoperto alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Scoprire risorse*.
 
 
 . Se non lo hai ancora fatto, seleziona l'opzione *Scopri e gestisci*.

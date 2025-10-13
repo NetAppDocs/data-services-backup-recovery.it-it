@@ -14,11 +14,11 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 
 [role="lead"]
-NetApp Backup and Recovery consente di creare fino a tre copie dei volumi di origine per proteggere i dati. Sono numerose le opzioni che puoi selezionare quando attivi Backup e Ripristino sui tuoi volumi, quindi dovresti rivedere le tue scelte per essere preparato.
+NetApp Backup and Recovery consente di creare fino a tre copie dei volumi di origine per proteggere i dati.  Sono numerose le opzioni che puoi selezionare quando attivi Backup e Ripristino sui tuoi volumi, quindi dovresti rivedere le tue scelte per essere preparato.
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 Esamineremo le seguenti opzioni:
@@ -125,7 +125,7 @@ Per creare i backup è possibile utilizzare i criteri predefiniti forniti da Net
 
 Se si creano policy personalizzate per la replica o il backup, le etichette delle policy (ad esempio, "giornaliera" o "settimanale") devono corrispondere alle etichette presenti nelle policy snapshot, altrimenti i volumi replicati e i file di backup non verranno creati.
 
-È possibile creare policy di archiviazione di snapshot, repliche e backup su oggetti nell'interfaccia utente NetApp Backup and Recovery.  Vedi la sezione perlink:prev-ontap-backup-manage.html["aggiunta di una nuova politica di backup"] per i dettagli.
+È possibile creare policy di archiviazione di snapshot, repliche e backup su oggetti nell'interfaccia utente NetApp Backup and Recovery .  Vedi la sezione perlink:prev-ontap-backup-manage.html["aggiunta di una nuova politica di backup"] per i dettagli.
 
 Oltre a utilizzare NetApp Backup and Recovery per creare policy personalizzate, è possibile utilizzare System Manager o l'interfaccia della riga di comando (CLI) ONTAP :
 
@@ -233,7 +233,7 @@ Se stai già utilizzando la Console per gestire il tuo storage, significa che è
 
 NetApp Console offre diverse modalità di distribuzione che consentono di utilizzare la console in base alle proprie esigenze aziendali e di sicurezza.  La _modalità standard_ sfrutta il livello SaaS della console per fornire funzionalità complete, mentre la _modalità limitata_ e la _modalità privata_ sono disponibili per le organizzazioni con restrizioni di connettività.
 
-https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Scopri di più sulle modalità di distribuzione della console NetApp"^] .
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Scopri di più sulle modalità di distribuzione NetApp Console"^].
 
 
 
@@ -241,7 +241,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Scopri di 
 
 Quando NetApp Backup and Recovery viene utilizzato in un sito con connettività Internet completa (nota anche come _modalità standard_ o _modalità SaaS_), è possibile creare volumi replicati su qualsiasi sistema ONTAP locale o Cloud Volumes ONTAP gestito dalla Console, nonché creare file di backup su storage di oggetti in uno qualsiasi dei provider cloud supportati. link:concept-backup-to-cloud.html["Visualizza l'elenco completo delle destinazioni di backup supportate"] .
 
-Per un elenco delle posizioni valide degli agenti della console, fare riferimento a una delle seguenti procedure di backup per il provider cloud in cui si prevede di creare i file di backup.  Esistono alcune restrizioni per cui l'agente Console deve essere installato manualmente su una macchina Linux o distribuito in un provider cloud specifico.
+Per un elenco delle posizioni valide degli agenti della console, fare riferimento a una delle seguenti procedure di backup per il provider cloud in cui si prevede di creare i file di backup.  Esistono alcune restrizioni per cui l'agente Console deve essere installato manualmente su una macchina Linux o distribuito in uno specifico provider cloud.
 
 * link:prev-ontap-backup-cvo-aws.html["Esegui il backup dei dati Cloud Volumes ONTAP su Amazon S3"]
 * link:prev-ontap-backup-cvo-azure.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Azure Blob"]

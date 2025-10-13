@@ -63,7 +63,7 @@ NetApp Backup and Recovery regola le pianificazioni SnapCenter come segue:
 
 == Pianificazioni orarie SnapCenter importate
 
-I criteri orari SnapCenter con intervalli di ripetizione superiori a un'ora vengono convertiti in criteri giornalieri in NetApp Backup and Recovery.
+I criteri orari SnapCenter con intervalli ripetuti superiori a un'ora vengono convertiti in criteri giornalieri in NetApp Backup and Recovery.
 
 Qualsiasi politica oraria con intervalli ripetuti che non siano un fattore di 24 (ad esempio 5, 7, ecc.) salterà alcuni snapshot in un giorno.
 

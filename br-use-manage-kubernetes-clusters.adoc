@@ -16,11 +16,11 @@ summary: NetApp Backup and Recovery ti consente di scoprire e gestire i tuoi clu
 [role="lead"]
 NetApp Backup and Recovery ti consente di scoprire e gestire i tuoi cluster Kubernetes in modo da poter proteggere le risorse ospitate dai cluster.
 
-.Ruolo richiesto della console NetApp
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+.Ruolo richiesto NetApp Console
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
-NOTE: Per scoprire i cluster Kubernetes, fare riferimento a link:br-start-discover.html["Scopri i carichi di lavoro di Kubernetes"] .
+NOTE: Per scoprire i cluster Kubernetes, fare riferimento alink:br-start-discover.html["Scopri i carichi di lavoro di Kubernetes"] .
 
 
 
@@ -40,7 +40,7 @@ NOTE: Per scoprire i cluster Kubernetes, fare riferimento a link:br-start-discov
 
 == Rimuovere un cluster Kubernetes
 
-Se non hai più bisogno di proteggere le risorse ospitate da un cluster Kubernetes, puoi rimuoverlo da NetApp Backup and Recovery.  La rimozione di un cluster non elimina il cluster stesso o le sue risorse; rimuove solo il cluster dall'inventario della console NetApp .  Prima di poter rimuovere un cluster, è necessario disabilitare la protezione ed eliminare le applicazioni associate da NetApp Backup and Recovery.
+Se non hai più bisogno di proteggere le risorse ospitate da un cluster Kubernetes, puoi rimuoverlo da NetApp Backup and Recovery.  La rimozione di un cluster non elimina il cluster stesso o le sue risorse; rimuove solo il cluster dall'inventario della NetApp Console .  Prima di poter rimuovere un cluster, è necessario disabilitare la protezione ed eliminare le applicazioni associate da NetApp Backup and Recovery.
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.

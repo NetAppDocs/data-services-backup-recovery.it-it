@@ -21,7 +21,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 Per i dettagli sulla creazione di un agente Console in AWS, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Installazione di un agente Console in AWS"^] .
 
 +
-Per ulteriori dettagli, fare riferimento al post del blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog sulle funzionalità di backup e ripristino NetApp , maggio 2023"^] .
+Per ulteriori dettagli, fare riferimento al post del blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog sulle funzionalità NetApp Backup and Recovery , maggio 2023"^] .
 
 * NetApp Backup and Recovery non supporta le regioni Microsoft Azure Cina.
 +
@@ -38,7 +38,7 @@ Per i dettagli sulla creazione di un agente Console in Azure, fare riferimento a
 +
 Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi FlexVol nel tuo sistema e assegnare gli stessi criteri di backup.
 
-* La seguente funzionalità è supportata in https://docs.netapp.com/us-en/data-services-replication/index.html["Replicazione NetApp"] , ma non quando si utilizza la funzionalità di replica di NetApp Backup and Recovery:
+* La seguente funzionalità è supportata in https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , ma non quando si utilizza la funzionalità di replica di NetApp Backup and Recovery:
 +
 ** Non è supportato alcun tipo di configurazione a cascata in cui la replica avviene dal volume A al volume B e dal volume B al volume C. Il supporto include la replica dal volume A al volume B.
 ** Non è disponibile alcun supporto per la replica dei dati da e verso FSx per i sistemi ONTAP .
@@ -70,7 +70,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 * Durante il backup dei volumi di protezione dei dati (DP):
 +
 ** Relazioni con le etichette SnapMirror `app_consistent` E `all_source_snapshot` non verrà eseguito il backup sul cloud.
-** Se si creano copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), questi Snapshot non verranno spostati nel cloud come backup.  A questo punto sarà necessario creare una policy Snapshot con le etichette desiderate sul volume DP di origine affinché NetApp Backup and Recovery ne esegua il backup.
+** Se si creano copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), tali Snapshot non verranno spostati nel cloud come backup.  A questo punto sarà necessario creare una policy Snapshot con le etichette desiderate sul volume DP di origine affinché NetApp Backup and Recovery ne esegua il backup.
 
 
 * I backup dei volumi FlexGroup non possono essere spostati nell'archiviazione.
@@ -91,10 +91,10 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 ** Al momento i backup dei volumi FlexGroup non sono supportati.
 
 
-* Il backup del volume ad hoc tramite il pulsante *Esegui backup ora* non è supportato sui volumi di protezione dati.
+* Il backup di volumi ad hoc tramite il pulsante *Esegui backup ora* non è supportato sui volumi di protezione dati.
 * Le configurazioni SM-BC non sono supportate.
 * ONTAP non supporta il fan-out delle relazioni SnapMirror da un singolo volume a più archivi di oggetti; pertanto, questa configurazione non è supportata da NetApp Backup and Recovery.
-* Al momento, la modalità WORM/Compliance su un archivio oggetti è supportata su Amazon S3, Azure e StorageGRID .  Questa funzionalità è nota come DataLock e deve essere gestita tramite le impostazioni di NetApp Backup and Recovery, non tramite l'interfaccia del provider cloud.
+* Al momento, la modalità WORM/Compliance su un archivio oggetti è supportata su Amazon S3, Azure e StorageGRID .  Questa funzionalità è nota come DataLock e deve essere gestita tramite le impostazioni NetApp Backup and Recovery , non tramite l'interfaccia del provider cloud.
 
 
 

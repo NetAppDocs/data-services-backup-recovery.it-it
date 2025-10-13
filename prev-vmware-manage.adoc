@@ -14,11 +14,11 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 
 [role="lead"]
-Con NetApp Backup and Recovery è possibile visualizzare policy, datastore e macchine virtuali prima di eseguire il backup e il ripristino dei dati.  A seconda delle modifiche apportate al database, alle policy o ai gruppi di risorse, è possibile visualizzare gli aggiornamenti dall'interfaccia utente della console NetApp .
+È possibile visualizzare policy, datastore e macchine virtuali prima di eseguire il backup e il ripristino dei dati con NetApp Backup and Recovery.  A seconda delle modifiche apportate al database, alle policy o ai gruppi di risorse, è possibile visualizzare gli aggiornamenti dall'interfaccia utente NetApp Console .
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -105,7 +105,7 @@ Tutti gli archivi dati e le macchine virtuali associati all'host SnapCenter Plug
 
 == Monitorare i lavori
 
-Vengono creati processi per tutte le operazioni di backup e ripristino NetApp .  È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ogni attività.
+Vengono creati processi per tutte le operazioni NetApp Backup and Recovery .  È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ogni attività.
 
 . Selezionare *Backup e ripristino* > *Monitoraggio processi*.
 +

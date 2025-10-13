@@ -32,9 +32,9 @@ NOTE: La presente documentazione viene fornita come anteprima tecnologica.  Dura
 
 È possibile svolgere le seguenti attività relative alla gestione dei carichi di lavoro Kubernetes:
 
-* link:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"] .
-* link:br-use-manage-kubernetes-clusters.html["Gestire i cluster Kubernetes"] .
-* link:br-use-protect-kubernetes-applications.html["Aggiungi e proteggi le applicazioni Kubernetes"] .
-* link:br-use-manage-kubernetes-applications.html["Gestire le applicazioni Kubernetes"] .
-* link:br-use-restore-kubernetes-applications.html["Ripristina le applicazioni Kubernetes"] .
+* link:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"].
+* link:br-use-manage-kubernetes-clusters.html["Gestire i cluster Kubernetes"].
+* link:br-use-protect-kubernetes-applications.html["Aggiungi e proteggi le applicazioni Kubernetes"].
+* link:br-use-manage-kubernetes-applications.html["Gestire le applicazioni Kubernetes"].
+* link:br-use-restore-kubernetes-applications.html["Ripristina le applicazioni Kubernetes"].
 

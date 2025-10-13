@@ -21,7 +21,7 @@ NOTE: Queste impostazioni dei criteri sono rilevanti solo per l'archiviazione di
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 
@@ -30,7 +30,7 @@ NOTE: Queste impostazioni dei criteri sono rilevanti solo per l'archiviazione di
 
 NetApp Backup and Recovery consente di creare più policy di backup con pianificazioni univoche per ciascun sistema (cluster).  È possibile assegnare criteri di backup diversi ai volumi che hanno obiettivi del punto di ripristino (RPO) diversi.
 
-Ogni criterio di backup fornisce una sezione per _Etichette e conservazione_ che è possibile applicare ai file di backup.  Si noti che il criterio Snapshot applicato al volume deve essere uno dei criteri riconosciuti da NetApp Backup and Recovery, altrimenti i file di backup non verranno creati.
+Ogni criterio di backup fornisce una sezione per _Etichette e conservazione_ che è possibile applicare ai file di backup.  Si noti che il criterio Snapshot applicato al volume deve essere uno dei criteri riconosciuti da NetApp Backup and Recovery , altrimenti i file di backup non verranno creati.
 
 La pianificazione è composta da due parti: l'etichetta e il valore di conservazione:
 
@@ -59,15 +59,15 @@ I backup annuali vengono eliminati automaticamente dal sistema di origine dopo e
 
 NetApp Backup and Recovery fornisce supporto per la protezione da DataLock e Ransomware per i backup dei volumi.  Queste funzionalità consentono di bloccare i file di backup e di analizzarli per rilevare eventuali ransomware presenti sui file di backup.  Si tratta di un'impostazione facoltativa che puoi definire nei tuoi criteri di backup quando desideri una protezione extra per i backup dei volumi di un cluster.
 
-Entrambe queste funzionalità proteggono i tuoi file di backup, così avrai sempre a disposizione un file di backup valido da cui recuperare i dati in caso di tentativo di attacco ransomware ai tuoi backup. È utile anche per soddisfare determinati requisiti normativi in ​​base ai quali i backup devono essere bloccati e conservati per un determinato periodo di tempo. Quando l'opzione DataLock and Ransomware Resilience è abilitata, il bucket cloud fornito come parte dell'attivazione di NetApp Backup and Recovery avrà il blocco degli oggetti e il controllo delle versioni degli oggetti abilitati.
+Entrambe queste funzionalità proteggono i tuoi file di backup, così avrai sempre a disposizione un file di backup valido da cui recuperare i dati in caso di tentativo di attacco ransomware ai tuoi backup.  È utile anche per soddisfare determinati requisiti normativi in ​​base ai quali i backup devono essere bloccati e conservati per un determinato periodo di tempo.  Quando l'opzione DataLock and Ransomware Resilience è abilitata, il bucket cloud fornito come parte dell'attivazione di NetApp Backup and Recovery avrà il blocco degli oggetti e il controllo delle versioni degli oggetti abilitati.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Per maggiori dettagli, consulta il blog sulla protezione da DataLock e Ransomware"^] .
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Per maggiori dettagli, consulta il blog sulla protezione da DataLock e Ransomware"^].
 
 Questa funzionalità non fornisce protezione per i volumi di origine, ma solo per i backup di tali volumi di origine.  Utilizzare alcuni dei https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["protezioni anti-ransomware fornite da ONTAP"^] per proteggere i volumi sorgente.
 
 [CAUTION]
 ====
-* Se si prevede di utilizzare la protezione DataLock e Ransomware, è possibile abilitarla durante la creazione del primo criterio di backup e l'attivazione di NetApp Backup and Recovery per quel cluster.  Successivamente potrai abilitare o disabilitare la scansione ransomware utilizzando le impostazioni avanzate di NetApp Backup and Recovery.
+* Se si prevede di utilizzare la protezione DataLock e Ransomware, è possibile abilitarla durante la creazione del primo criterio di backup e l'attivazione NetApp Backup and Recovery per quel cluster.  Successivamente potrai abilitare o disabilitare la scansione ransomware utilizzando le impostazioni avanzate NetApp Backup and Recovery .
 * Quando la Console esegue la scansione di un file di backup alla ricerca di ransomware durante il ripristino dei dati del volume, verranno addebitati costi di uscita aggiuntivi al provider cloud per accedere al contenuto del file di backup.
 
 
@@ -134,7 +134,7 @@ L'impostazione di conservazione di DataLock sostituisce l'impostazione di conser
 
 
 
-Fare riferimento a link:prev-ontap-policy-object-advanced-settings.html["Come aggiornare le opzioni di protezione Ransomware nella pagina Impostazioni avanzate"] .
+Fare riferimento alink:prev-ontap-policy-object-advanced-settings.html["Come aggiornare le opzioni di protezione Ransomware nella pagina Impostazioni avanzate"] .
 
 
 
@@ -228,7 +228,7 @@ ifdef::aws[]
 
 ====
 +
-https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Visualizza il formato JSON completo per la policy in cui puoi copiare e incollare le autorizzazioni richieste"^] .
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Visualizza il formato JSON completo per la policy in cui puoi copiare e incollare le autorizzazioni richieste"^].
 
 
 
@@ -307,10 +307,10 @@ endif::gcp[]
 === Restrizioni
 
 * La funzionalità di protezione DataLock e Ransomware non è disponibile se è stata configurata l'archiviazione nel criterio di backup.
-* L'opzione DataLock selezionata durante l'attivazione di NetApp Backup and Recovery deve essere utilizzata per tutti i criteri di backup per quel cluster.
+* L'opzione DataLock selezionata durante l'attivazione NetApp Backup and Recovery deve essere utilizzata per tutti i criteri di backup per quel cluster.
 * Non è possibile utilizzare più modalità DataLock su un singolo cluster.
 * Se si abilita DataLock, tutti i backup dei volumi verranno bloccati.  Non è possibile combinare backup di volumi bloccati e non bloccati per un singolo cluster.
-* La protezione DataLock e Ransomware è applicabile ai backup di nuovi volumi utilizzando un criterio di backup con protezione DataLock e Ransomware abilitata. Successivamente potrai abilitare o disabilitare queste funzionalità tramite l'opzione Impostazioni avanzate.
+* La protezione DataLock e Ransomware è applicabile ai backup di nuovi volumi utilizzando un criterio di backup con protezione DataLock e Ransomware abilitata. Successivamente potrai abilitare o disabilitare queste funzionalità utilizzando l'opzione Impostazioni avanzate.
 * I volumi FlexGroup possono utilizzare la protezione DataLock e Ransomware solo se si utilizza ONTAP 9.13.1 o versione successiva.
 
 

@@ -21,7 +21,7 @@ NOTE: Non è possibile ripristinare macchine virtuali distribuite su più datast
 
 []
 ====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery, fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro di backup e ripristino NetApp"] .
+*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 ====
 .Prima di iniziare
@@ -29,7 +29,7 @@ NOTE: Non è possibile ripristinare macchine virtuali distribuite su più datast
 * Se si esegue il ripristino in una posizione alternativa:
 +
 ** Assicurarsi che i vCenter di origine e di destinazione siano in modalità collegata.
-** Assicurarsi che i dettagli del cluster di origine e di destinazione siano aggiunti nella pagina *Sistemi* della console NetApp e nei vCenter in modalità collegata in entrambi gli host SnapCenter Plug-in for VMware vSphere .
+** Assicurarsi che i dettagli del cluster di origine e di destinazione siano aggiunti nella pagina *Sistemi* NetApp Console e nei vCenter in modalità collegata in entrambi gli host SnapCenter Plug-in for VMware vSphere .
 ** Assicurarsi che il sistema aggiunto corrisponda alla posizione alternativa nella pagina *Sistemi* della console.
 
 
@@ -40,7 +40,7 @@ NOTE: Non è possibile ripristinare macchine virtuali distribuite su più datast
 
 
 
-NOTE: Se la macchina virtuale di origine viene spostata in un'altra posizione (vMotion) e se l'utente attiva un ripristino di tale macchina virtuale dalla Console, la macchina virtuale viene ripristinata nella posizione di origine da cui è stato eseguito il backup.
+NOTE: Se la macchina virtuale di origine viene spostata in un'altra posizione (vMotion) e se l'utente avvia un ripristino di tale macchina virtuale dalla Console, la macchina virtuale viene ripristinata nella posizione di origine da cui è stato eseguito il backup.
 
 . È possibile ripristinare la macchina virtuale nella posizione originale o in una posizione alternativa dal datastore o dalle macchine virtuali:
 
@@ -115,4 +115,4 @@ Le priorità di ripristino dell'archivio supportate per Amazon Web Services sono
 
 |===
 
-NOTE: Se l'operazione di ripristino non viene completata, non riprovare il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita.  Se si tenta nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non riuscirà nuovamente.  Quando lo stato di Job Monitor è "Non riuscito", puoi provare a eseguire nuovamente il processo di ripristino.
+NOTE: Se l'operazione di ripristino non viene completata, non riprovare a eseguire il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita.  Se si tenta nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non riuscirà di nuovo.  Quando lo stato di Job Monitor è "Non riuscito", puoi provare a eseguire nuovamente il processo di ripristino.

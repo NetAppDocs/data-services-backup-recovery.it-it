@@ -22,7 +22,7 @@ Prima di iniziare a proteggere i carichi di lavoro delle macchine virtuali con N
 
 
 * ONTAP 9.8 o successivo
-* Console NetApp
+* NetApp Console
 * Sono supportati i datastore NFS e VMFS. I vVols non sono supportati.
 * Per il supporto VMFS, il SnapCenter Plug-in for VMware vSphere deve essere in esecuzione sulla versione 4.9 o successiva.  Assicurarsi di eseguire un backup del datastore VMFS se il SnapCenter Plug-in for VMware vSphere è stato aggiornato da una versione precedente alla versione 4.9.
 * Avrebbe dovuto essere eseguito almeno un backup nel SnapCenter Plug-in for VMware vSphere 4.6P1.

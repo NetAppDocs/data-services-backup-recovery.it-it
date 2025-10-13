@@ -31,7 +31,7 @@ Ripristina i carichi di lavoro VMware da copie snapshot, da un backup del carico
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
@@ -58,10 +58,10 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 
 Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
 
-*Ruolo richiesto della console NetApp * Ruolo di visualizzatore di storage, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso alla console NetApp per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console * Ruolo di visualizzatore di storage, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery, selezionare *Ripristina*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
 . Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Macchine virtuali*.
 . Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al vCenter, al datacenter o al datastore in cui si trova la risorsa da ripristinare.
 +
