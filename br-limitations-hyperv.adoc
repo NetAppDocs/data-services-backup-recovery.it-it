@@ -25,7 +25,7 @@ Le seguenti azioni non sono supportate nella versione di anteprima privata dei c
 * Creare gruppi di risorse
 * Spanning dei dischi (su più condivisioni CIFS)
 * Proteggere le VM su SAN
-* Ripristina dall'archivio oggetti
+* Modifica gruppi di protezione
 * Proteggere gli host Hyper-V in cluster tramite System Center Virtual Machine Manager (SCVMM)
 
 

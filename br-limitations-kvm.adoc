@@ -28,7 +28,6 @@ Le seguenti azioni non sono supportate nella versione di anteprima privata:
 * Ripristinare le VM in una posizione alternativa
 * Proteggere le VM archiviate su SAN
 * Proteggi le applicazioni
-* Backup o ripristino da archivi di oggetti
 * Modifica gruppi di protezione
 * Creare gruppi di protezione utilizzando VM da più host KVM
 * Crea backup definiti dall'utente (sono supportati solo i backup avviati dalla console NetApp )
