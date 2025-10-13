@@ -5007,4 +5007,76 @@
   <block id="7c0ae68b454f9ff601ed1bdd5dcc3c30" category="list-text">Supporto per il backup e il ripristino su storage basato su NVMe</block>
   <block id="dfa4b5c6b997823449e673db12ef526d" category="list-text">Modifica le policy di protezione</block>
   <block id="c54d53d5c9b9527bb4d1e1020b2a04ec" category="paragraph">Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a<block ref="81bdea79654f29d88dbffb87457fe1f5" category="inline-link-rx"></block> .</block>
+  <block id="cbeefab9985d18cf649d85c32d79d188" category="summary">Creare un certificato di sicurezza per abilitare la comunicazione tra NetApp Backup and Recovery e StorageGRID o ONTAP.</block>
+  <block id="63b31af683f5a728cbf36267c289589f" category="doc">Impostare i certificati di sicurezza per StorageGRID e ONTAP in NetApp Backup and Recovery</block>
+  <block id="67fc617cb862496da73f0d13f68e5e84" category="section-title">Creare un certificato di sicurezza per StorageGRID</block>
+  <block id="f4ea80cc019b2160c012d4312934a08a" category="paragraph">Se la comunicazione tra i contenitori NetApp Backup and Recovery e StorageGRID deve verificare il certificato StorageGRID , completare i seguenti passaggi.</block>
+  <block id="66474d54a0b8e88b5463c446c79940ef" category="paragraph">Il certificato generato deve avere CN e Subject Alternative Name come nome fornito in NetApp Backup and Recovery al momento dell'attivazione del backup.</block>
+  <block id="04fad0ac16d7f2deb1987a5510c738a1" category="list-text">Per creare il certificato StorageGRID , seguire i passaggi indicati nella documentazione di StorageGRID .</block>
+  <block id="3b513e24628a82f33115f07ebd442378" category="inline-link">Informazioni StorageGRID sulla configurazione dei certificati</block>
+  <block id="5e2ba642abae06ab3a16a409eca1e0e5" category="paragraph"><block ref="5e2ba642abae06ab3a16a409eca1e0e5" category="inline-link-rx"></block></block>
+  <block id="9a7d2d291eeae561388e0ffff9d3f7ac" category="list-text">Aggiorna StorageGRID con il certificato se non lo hai già fatto.</block>
+  <block id="633ad3b75182daf086c1cc3f90fe4e4e" category="list-text">Accedi all'agente Console come utente root.  Correre:</block>
+  <block id="5eb9563f03c3c7436e00c933df9f6b75" category="list-text">Ottieni il volume Docker NetApp Backup and Recovery (Cloud Backup Service).  Correre:</block>
+  <block id="748a48233aaf091196362e7098f2f829" category="paragraph">Esempio di output:</block>
+  <block id="cdff415187609f29944bf1c630161ca7" category="admonition">Il nome del volume varia tra le modalità di distribuzione Standard, Privata e Limitata.  In questo esempio viene utilizzata la modalità Standard. Fare riferimento a<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
+  <block id="8e7afc71bbbdb7a90d5effeee846b799" category="list-text">Trova il punto di montaggio del volume NetApp Backup and Recovery .  Correre:</block>
+  <block id="e97115c3e90314c60ded3b359ea70498" category="admonition">Il punto di montaggio varia tra le modalità di distribuzione Standard, Privata e Limitata.  Questo esempio mostra una distribuzione cloud standard. Fare riferimento a<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
+  <block id="16a11dc8e42e07e3f4167ea593dc06be" category="list-text">Passare alla directory MountPoint.  Correre:</block>
+  <block id="096c73b5512780e3a3a1510cb1d77009" category="list-text">Se il certificato di StorageGRID è firmato dalla CA radice e da una CA intermedia, aggiungere<block ref="8921ffd638d5e5fd424e4c197e829486" prefix=" " category="inline-code"></block> file di entrambi in un unico file denominato<block ref="0cf87cdc35b35ebc25d6a3bf7c9a3198" prefix=" " category="inline-code"></block> nella posizione attuale.  Non aggiungere il certificato foglia a questo file.</block>
+  <block id="22945d914abe20d687b81ff6fbc05c67" category="section-title">Passaggi per il contenitore cloudmanager_cbs</block>
+  <block id="f96abe500d7acb97552081ca537d4b46" category="paragraph">Sarà necessario abilitare la verifica del certificato del server StorageGRID in NetApp Backup and Recovery (Cloud Backup Service).</block>
+  <block id="54521072283818c6548559cf197c9252" category="list-text">Passare alle directory del volume Docker ottenuto nei passaggi precedenti.</block>
+  <block id="416720095af4a61975e284500b094238" category="list-text">Cambiare directory e passare alla directory config.</block>
+  <block id="0d4c19a4ef88e51b9ffe3f5609b8bde4" category="list-text">Crea e salva un file di configurazione come mostrato di seguito con uno dei seguenti nomi in base all'ambiente di distribuzione:</block>
+  <block id="72865cfb3fb5e28021ec57e8de0c0c90" category="list-text"><block ref="f75ec94858c3cb7483e22bf2aca20589" prefix="" category="inline-code"></block>Utilizzato per le distribuzioni in modalità Standard e in modalità Ristretta.</block>
+  <block id="1710e8ee811ad90099d18b3b25027501" category="list-text"><block ref="8feeb3f80a4b4bce68fbe733434eccba" prefix="" category="inline-code"></block>Utilizzato per le distribuzioni in modalità privata.</block>
+  <block id="07967081530427e42c5b717e6aab42b3" category="paragraph">Fare riferimento a<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
+  <block id="552d0f5f4ed95d3c5f34c5cd6c273fe2" category="paragraph">*File di configurazione*</block>
+  <block id="41788856db9e8912d89c07782a30289a" category="list-text">Uscire dal contenitore.  Correre:</block>
+  <block id="d9927c1839911d8c42fff0104d4ec1f9" category="list-text">Ricomincia<block ref="b9770e32fa2f647842e0e2fcc9593b3f" prefix=" " category="inline-code"></block> .  Correre:</block>
+  <block id="61e7a99037e967c2e0e5fe77a8a35be6" category="section-title">Passaggi per il contenitore cloudmanager_cbs_catalog</block>
+  <block id="0601d74fab8a0598be866541cae245fc" category="paragraph">Successivamente, sarà necessario abilitare la verifica del certificato del server StorageGRID per il servizio di catalogazione.</block>
+  <block id="357a44ffc6819b6b0032f3ad7f75bd76" category="list-text">Cambiare directory nel volume Docker:</block>
+  <block id="26d4e3bcf3c6c99f0129dc8d92c9cbb0" category="list-text">Configura il catalogo. Correre:</block>
+  <block id="392f1b2b0feeb5dbd21077579bd19f05" category="list-text">Crea un file di configurazione come mostrato di seguito con uno dei seguenti nomi in base al tuo ambiente di distribuzione:</block>
+  <block id="e1dda9f5f2b689835a9dc8cef6360a46" category="paragraph">*File di configurazione del catalogo*</block>
+  <block id="acf6f8df2b6e992addc031884f2a0d6b" category="list-text">Riavvia il catalogo.  Correre:</block>
+  <block id="904e200d57b2be6d0bf357f9bcb0b618" category="section-title">Aggiornare il certificato dell'agente della console con il certificato StorageGRID in base al sistema operativo dell'agente</block>
+  <block id="3d945423f8e9496c429a5d8c65b4604f" category="section-title">Ubuntu</block>
+  <block id="247187f25be8c3ca9f4841bc131237bc" category="list-text">Copia il certificato SGWS in<block ref="e620b3101ad262dfee7f30d64fba41ff" prefix=" " category="inline-code"></block> . Ecco un esempio:</block>
+  <block id="57bf85e908432b8c0cb9c75f39a7399b" category="paragraph">Dove<block ref="0cf87cdc35b35ebc25d6a3bf7c9a3198" prefix=" " category="inline-code"></block> è il certificato CA radice.</block>
+  <block id="96dbfbb26e26f15d84bd00d216dc895c" category="list-text">Aggiornare i certificati host con il certificato StorageGRID . Correre</block>
+  <block id="c73bbd3786350b0a8d3577d82afdf489" category="section-title">Red Hat Enterprise Linux</block>
+  <block id="41ed23000c2eaf419de104eae427de9f" category="list-text">Copia il certificato SGWS in<block ref="791ac8ce4363e61c779fda663278e96d" prefix=" " category="inline-code"></block> .</block>
+  <block id="0a32299e66b1a3aaa8ad90ca344cf02c" category="list-text">Aggiornare i certificati host con il certificato StorageGRID .</block>
+  <block id="725e882892c803b0632e0c811d33fba2" category="list-text">Aggiorna il<block ref="0a4e35737ec12368cde6a603d2ae942c" prefix=" " category="inline-code"></block></block>
+  <block id="3e0789932cb2a2fbcab1fe7b07eeb171" category="list-text">Per verificare se i certificati sono presenti, eseguire il seguente comando:</block>
+  <block id="8dc655fbf442c6cae4b3d1f36fe229f8" category="section-title">Creare un certificato di sicurezza per ONTAP</block>
+  <block id="661e16983a3aefe2da70ec9cbbf3d9d9" category="paragraph">Se la comunicazione tra i contenitori NetApp Backup and Recovery e ONTAP deve convalidare il certificato ONTAP , completare i seguenti passaggi.</block>
+  <block id="dd1e2e04c3a1ca1e852f280e3611a580" category="paragraph">NetApp Backup and Recovery utilizza l'IP di gestione del cluster per connettersi a ONTAP.  Immettere l'indirizzo IP del cluster nei nomi alternativi dell'oggetto del certificato.  Specificare questo passaggio quando si genera la CSR tramite l'interfaccia utente di System Manager.</block>
+  <block id="f18a08fed9d86330fb2a48bd4ea901c8" category="paragraph">Utilizzare la documentazione di System Manager per creare un nuovo certificato CA per ONTAP.</block>
+  <block id="2ce7395af64e55f0a3775c08dc6445ec" category="inline-link">Gestisci i certificati con System Manager</block>
+  <block id="70e79bc1dae40cb4d65ff9311b208121" category="list-text"><block ref="70e79bc1dae40cb4d65ff9311b208121" category="inline-link-rx"></block></block>
+  <block id="94127ba5494a8ba1866437839940b777" category="inline-link">Come gestire i certificati SSL ONTAP con System Manager</block>
+  <block id="490355a668be7c4c18c41a966a22c161" category="list-text"><block ref="490355a668be7c4c18c41a966a22c161" category="inline-link-rx"></block></block>
+  <block id="b5864db94d8bb2d25b7f4630a16f599e" category="list-text">Accedi all'agente della console come root.  Correre:</block>
+  <block id="94a9166a0ff55136e38b559d3099942f" category="list-text">Ottieni il volume Docker NetApp Backup and Recovery .  Correre:</block>
+  <block id="d09a6e67f757bf6ab00dd35df5db31cb" category="admonition">Il nome del volume varia tra le modalità di distribuzione Standard, Privata e Limitata.  Questo esempio mostra una distribuzione cloud standard. Fare riferimento a<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
+  <block id="3e964e8f45e1fd19df3c5413fcbd6674" category="list-text">Procuratevi il supporto per il volume.  Correre:</block>
+  <block id="f58943852800ceed3d30d389cf28c8bc" category="list-text">Passare alla directory del punto di montaggio.  Correre:</block>
+  <block id="d5645bdd26cb1c7cd7fc2462048eb19a" category="list-text">Completa uno dei seguenti passaggi:</block>
+  <block id="5b322f522e8027a69e05517cefb87d7a" category="list-text">Se il certificato ONTAP è firmato dalla CA radice e da una CA intermedia, aggiungere<block ref="8921ffd638d5e5fd424e4c197e829486" prefix=" " category="inline-code"></block> file di entrambi in un unico file denominato<block ref="ebb2643bde68bca23b21d9504c43d6dc" prefix=" " category="inline-code"></block> nella posizione attuale.</block>
+  <block id="4b0f4c5a9f52a5b89a2c16d72b93f26f" category="list-text">Se il certificato ONTAP è firmato da una singola CA, rinominarlo<block ref="8921ffd638d5e5fd424e4c197e829486" prefix=" " category="inline-code"></block> archiviare come<block ref="ebb2643bde68bca23b21d9504c43d6dc" prefix=" " category="inline-code"></block> e copiarlo nella posizione corrente.  Non aggiungere il certificato foglia a questo file.</block>
+  <block id="1f0dc6ed89a197ac938252dfbb742d65" category="paragraph">Successivamente, abilitare la verifica del certificato del server ONTAP in NetApp Backup and Recovery (Cloud Backup Service).</block>
+  <block id="977e25cddca251937f1a4e7c0abb2b83" category="list-text">Passare alla directory config.  Correre:</block>
+  <block id="4e5ff0739157cf48bd2c7217db2d954d" category="list-text">Creare un file di configurazione come mostrato di seguito con uno dei seguenti nomi in base all'ambiente di distribuzione:</block>
+  <block id="b1a631943b461fe74fd6185c59f8fd51" category="list-text">Riavviare NetApp Backup and Recovery.  Correre:</block>
+  <block id="a228d73f99d87cf9f3003be6de24ff78" category="paragraph">Abilitare la verifica del certificato del server ONTAP per il servizio di catalogazione.</block>
+  <block id="1a4f5fa237ddde0fd0342cad753be6ca" category="list-text">Passare alla directory del volume Docker.  Correre:</block>
+  <block id="82602ac8fbb0d9bd1ad61b19c8acd7a8" category="list-text">Correre:</block>
+  <block id="d695edb19e936217c197c4df1f739de8" category="section-title">Creare un certificato sia per ONTAP che per StorageGRID</block>
+  <block id="017050da36669c0fe1d6ef36a222f1fb" category="paragraph">Se è necessario abilitare il certificato sia per ONTAP che per StorageGRID, il file di configurazione apparirà come segue:</block>
+  <block id="956f7db1760826e0d78fce0504e6bc36" category="paragraph">*File di configurazione per ONTAP e StorageGRID*</block>
+  <block id="ad4016cac47a83a6e1446b1b38d42180" category="sidebar">Impostare i certificati di sicurezza per ONTAP e StorageGRID</block>
 </blocks>
