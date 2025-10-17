@@ -14,11 +14,11 @@ summary: NetApp Backup and Recovery consente di gestire gli hook di esecuzione p
 
 
 [role="lead"]
-Un hook di esecuzione è un'azione personalizzata che è possibile configurare per essere eseguita insieme a un'operazione di protezione dei dati di un'applicazione Kubernetes gestita.  Ad esempio, se si dispone di un'app di database, è possibile utilizzare un hook di esecuzione per mettere in pausa tutte le transazioni del database prima di uno snapshot e riprendere le transazioni al termine dello snapshot.  Ciò garantisce snapshot coerenti con l'applicazione.  Quando si crea un modello di hook di esecuzione, è possibile specificare il tipo di hook, lo script da eseguire e tutti i filtri che determinano a quali contenitori applicare l'hook.  È quindi possibile utilizzare il modello per associare gli hook di esecuzione alle applicazioni.
+Un hook di esecuzione è un'azione personalizzata che viene eseguita con un'operazione di protezione dei dati in un'applicazione Kubernetes gestita.  Ad esempio, è possibile creare snapshot coerenti con l'applicazione utilizzando un hook di esecuzione per mettere in pausa le transazioni del database prima di uno snapshot e riprenderle dopo.  Quando si crea un modello di hook di esecuzione, specificare il tipo di hook, lo script da eseguire e i filtri per i contenitori di destinazione.  Utilizza il modello per collegare gli hook di esecuzione alle tue applicazioni.
 
 [NOTE]
 ====
-Per impostazione predefinita, NetApp Backup and Recovery blocca e sblocca automaticamente i file system per determinate applicazioni, come KubeVirt, durante le operazioni di protezione dei dati. È possibile disattivare questo comportamento a livello globale o per applicazioni specifiche seguendo le istruzioni contenute nella documentazione di Trident Protect:
+NetApp Backup and Recovery blocca e sblocca i file system per applicazioni come KubeVirt durante la protezione dei dati.  È possibile disattivare questo comportamento a livello globale o per applicazioni specifiche utilizzando la documentazione di Trident Protect:
 
 * Per disattivare questo comportamento per tutte le applicazioni, fare riferimento a https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Protezione dei dati con le VM KubeVirt"] .
 * Per disattivare questo comportamento per un'applicazione specifica, fare riferimento a https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definire un'applicazione"] .
@@ -47,14 +47,14 @@ NetApp Backup and Recovery supporta i seguenti tipi di hook di esecuzione, in ba
 
 Quando viene eseguita un'operazione di protezione dei dati, gli eventi di hook di esecuzione si verificano nel seguente ordine:
 
-. Tutti gli hook di esecuzione pre-operazione personalizzati applicabili vengono eseguiti sui contenitori appropriati.  È possibile creare ed eseguire tutti i hook pre-operazione personalizzati di cui si ha bisogno, ma l'ordine di esecuzione di questi hook prima dell'operazione non è né garantito né configurabile.
+. Tutti gli hook di esecuzione pre-operazione personalizzati applicabili vengono eseguiti sui contenitori appropriati. È possibile creare più hook pre-operativi personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.
 . Se applicabile, si verificano blocchi del file system.
 . L'operazione di protezione dei dati è eseguita.
 . I file system congelati vengono sbloccati, se applicabile.
-. Tutti gli hook di esecuzione post-operazione personalizzati applicabili vengono eseguiti sui contenitori appropriati.  È possibile creare ed eseguire tutti i hook post-operazione personalizzati di cui si ha bisogno, ma l'ordine di esecuzione di questi hook dopo l'operazione non è né garantito né configurabile.
+. NetApp Backup and Recovery esegue tutti gli hook di esecuzione pre-operazione personalizzati applicabili sui contenitori appropriati.  È possibile creare più hook post-operazione personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.
 
 
-Se si creano più hook di esecuzione dello stesso tipo (ad esempio, pre-snapshot), l'ordine di esecuzione di tali hook non è garantito.  Tuttavia, l'ordine di esecuzione dei ganci di diverso tipo è garantito.  Ad esempio, ecco l'ordine di esecuzione di una configurazione che presenta tutti i diversi tipi di hook:
+Se si creano più hook dello stesso tipo, il loro ordine di esecuzione non è garantito.  I ganci di tipo diverso vengono sempre eseguiti nell'ordine specificato. Ad esempio, ecco l'ordine di esecuzione di una configurazione che presenta tutti i diversi tipi di hook:
 
 . Eseguiti i pre-snapshot hook
 . Eseguiti i ganci post-snapshot
@@ -63,7 +63,7 @@ Se si creano più hook di esecuzione dello stesso tipo (ad esempio, pre-snapshot
 
 
 
-NOTE: Dovresti sempre testare gli script di esecuzione prima di abilitarli in un ambiente di produzione.  È possibile utilizzare il comando 'kubectl exec' per testare comodamente gli script.  Dopo aver abilitato gli hook di esecuzione in un ambiente di produzione, testare gli snapshot e i backup risultanti per assicurarsi che siano coerenti.  È possibile farlo clonando l'app in uno spazio dei nomi temporaneo, ripristinando lo snapshot o il backup e quindi testando l'app.
+NOTE: Testare gli script di hook di esecuzione prima di abilitarli in produzione.  Utilizzare 'kubectl exec' per testare gli script, quindi verificare gli snapshot e i backup clonando l'app in uno spazio dei nomi temporaneo e ripristinandola.
 
 
 NOTE: Se un hook di esecuzione pre-snapshot aggiunge, modifica o rimuove risorse Kubernetes, tali modifiche vengono incluse nello snapshot o nel backup e in qualsiasi successiva operazione di ripristino.
@@ -81,7 +81,7 @@ Quando pianifichi gli hook di esecuzione per le tue app, tieni presente quanto s
 
 
 
-NOTE: Poiché gli hook di esecuzione spesso riducono o disabilitano completamente la funzionalità dell'applicazione su cui vengono eseguiti, dovresti sempre cercare di ridurre al minimo il tempo impiegato per l'esecuzione degli hook di esecuzione personalizzati.  Se si avvia un'operazione di backup o snapshot con hook di esecuzione associati ma poi la si annulla, gli hook possono comunque essere eseguiti se l'operazione di backup o snapshot è già iniziata.  Ciò significa che la logica utilizzata in un hook di esecuzione post-backup non può presumere che il backup sia stato completato.
+NOTE: Gli hook di esecuzione possono ridurre o disabilitare la funzionalità dell'applicazione.  Fai in modo che i tuoi hook personalizzati vengano eseguiti il più velocemente possibile. Se si avvia un'operazione di backup o snapshot con hook di esecuzione associati ma poi la si annulla, gli hook possono comunque essere eseguiti se l'operazione di backup o snapshot è già iniziata. Ciò significa che la logica utilizzata in un hook di esecuzione post-backup non può presumere che il backup sia stato completato.
 
 
 
@@ -116,6 +116,6 @@ Visita il https://github.com/NetApp/Verda["Progetto GitHub NetApp Verda"] per sc
 . Nella casella di testo *Script*, immettere lo script shell eseguibile che si desidera eseguire come parte del modello di hook di esecuzione.  Facoltativamente, puoi selezionare *Carica script* per caricare un file di script.
 . Seleziona *Crea*.
 +
-Il modello viene creato e appare nell'elenco dei modelli nella sezione *Modello di hook di esecuzione*.
+Dopo aver creato il modello, questo viene visualizzato nell'elenco dei modelli nella sezione *Modello di hook di esecuzione*.
 
 

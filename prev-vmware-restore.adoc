@@ -14,23 +14,21 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 
 [role="lead"]
-È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter locale con NetApp Backup and Recovery.  È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.  Se il backup della macchina virtuale è stato eseguito utilizzando criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
+È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter Server locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
 
 
 NOTE: Non è possibile ripristinare macchine virtuali distribuite su più datastore.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 .Prima di iniziare
 * Assicurati di aver soddisfatto tutti i requisitilink:prev-vmware-prereqs.html["requisiti di protezione della macchina virtuale"] prima di eseguire il backup degli archivi dati sul cloud.
 * Se si esegue il ripristino in una posizione alternativa:
 +
 ** Assicurarsi che i vCenter di origine e di destinazione siano in modalità collegata.
 ** Assicurarsi che i dettagli del cluster di origine e di destinazione siano aggiunti nella pagina *Sistemi* NetApp Console e nei vCenter in modalità collegata in entrambi gli host SnapCenter Plug-in for VMware vSphere .
-** Assicurarsi che il sistema aggiunto corrisponda alla posizione alternativa nella pagina *Sistemi* della console.
+** Assicurarsi che il sistema sia aggiunto per l'altra posizione nella pagina *Sistemi* della console.
 
 
 
@@ -40,7 +38,7 @@ NOTE: Non è possibile ripristinare macchine virtuali distribuite su più datast
 
 
 
-NOTE: Se la macchina virtuale di origine viene spostata in un'altra posizione (vMotion) e se l'utente avvia un ripristino di tale macchina virtuale dalla Console, la macchina virtuale viene ripristinata nella posizione di origine da cui è stato eseguito il backup.
+NOTE: Se si sposta una macchina virtuale utilizzando VMware vSphere vMotion e la si ripristina dalla Console, Backup and Recovery la ripristina nella posizione di backup originale.
 
 . È possibile ripristinare la macchina virtuale nella posizione originale o in una posizione alternativa dal datastore o dalle macchine virtuali:
 
@@ -58,7 +56,7 @@ alla posizione originale dal datastore
 . Assicurarsi che sia selezionato *Originale* e selezionare *Continua*.
 . Se la macchina virtuale è protetta tramite un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
 +
-Le priorità di ripristino dell'archivio supportate per Amazon Web Services sono alta, standard e bassa, mentre le priorità di ripristino dell'archivio supportate per Microsoft Azure sono alta e standard.
+Le priorità di ripristino dell'archivio supportate sono alta, standard e bassa per Amazon Web Services e alta e standard per Microsoft Azure.
 
 . Rivedi i dettagli e seleziona *Ripristina*.
 
@@ -76,7 +74,7 @@ in una posizione alternativa dal datastore
 . Dopo il ripristino, fornire un nome per la VM e selezionare *Continua*.
 . Se la macchina virtuale è protetta tramite un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
 +
-Le priorità di ripristino dell'archivio supportate per Amazon Web Services sono alta, standard e bassa, mentre le priorità di ripristino dell'archivio supportate per Microsoft Azure sono alta e standard.
+Le priorità di ripristino dell'archivio supportate sono alta, standard e bassa per Amazon Web Services e alta e standard per Microsoft Azure.
 
 . Rivedi i dettagli e seleziona *Ripristina*.
 
@@ -91,7 +89,7 @@ alla posizione originale dalle macchine virtuali
 . Assicurarsi che sia selezionato *Originale* e selezionare *Continua*.
 . Se la macchina virtuale è protetta tramite un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
 +
-Le priorità di ripristino dell'archivio supportate per Amazon Web Services sono alta, standard e bassa, mentre le priorità di ripristino dell'archivio supportate per Microsoft Azure sono alta e standard.
+Le priorità di ripristino dell'archivio supportate sono alta, standard e bassa per Amazon Web Services e alta e standard per Microsoft Azure.
 
 . Rivedi i dettagli e seleziona *Ripristina*.
 
@@ -108,11 +106,11 @@ in una posizione alternativa dalle macchine virtuali
 . Dopo il ripristino, fornire un nome per la VM e selezionare *Continua*.
 . Se la macchina virtuale è protetta tramite un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
 +
-Le priorità di ripristino dell'archivio supportate per Amazon Web Services sono alta, standard e bassa, mentre le priorità di ripristino dell'archivio supportate per Microsoft Azure sono alta e standard.
+Le priorità di ripristino dell'archivio supportate sono alta, standard e bassa per Amazon Web Services e alta e standard per Microsoft Azure.
 
 . Rivedi i dettagli e seleziona *Ripristina*.
 
 
 |===
 
-NOTE: Se l'operazione di ripristino non viene completata, non riprovare a eseguire il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita.  Se si tenta nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non riuscirà di nuovo.  Quando lo stato di Job Monitor è "Non riuscito", puoi provare a eseguire nuovamente il processo di ripristino.
+NOTE: Se l'operazione di ripristino non viene completata, attendere che Job Monitor visualizzi "Fallito" prima di riprovare l'operazione di ripristino.

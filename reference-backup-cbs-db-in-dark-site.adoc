@@ -19,7 +19,7 @@ Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Interne
 
 NOTE: Questa procedura si applica solo ai dati di volume ONTAP .
 
-Quando si utilizza NetApp Backup and Recovery in un ambiente SaaS in cui l'agente Console è distribuito presso il provider cloud o sul proprio sistema host con accesso a Internet, tutti i dati di configurazione importanti NetApp Backup and Recovery vengono sottoposti a backup e protetti nel cloud.  In caso di problemi con l'agente Console, è sufficiente creare un nuovo agente Console e aggiungere i sistemi; i dettagli del backup verranno ripristinati automaticamente.
+Quando si utilizza NetApp Backup and Recovery in un ambiente SaaS con l'agente Console distribuito presso il provider cloud o sul proprio host connesso a Internet, il sistema esegue il backup e protegge tutti i dati di configurazione importanti nel cloud.  Se riscontri un problema con l'agente Console, crea un nuovo agente Console e aggiungi i tuoi sistemi.  I dettagli del backup vengono ripristinati automaticamente.
 
 Esistono due tipi di dati sottoposti a backup:
 
@@ -27,7 +27,7 @@ Esistono due tipi di dati sottoposti a backup:
 * File di catalogo indicizzati: contengono indici dettagliati utilizzati per la funzionalità di ricerca e ripristino, che rendono le ricerche molto rapide ed efficienti quando si cercano dati di volume che si desidera ripristinare.
 
 
-Questi dati vengono sottoposti a backup una volta al giorno a mezzanotte e vengono conservate al massimo 7 copie di ciascun file. Se l'agente Console gestisce più sistemi ONTAP locali, i file di NetApp Backup and Recovery saranno posizionati nel bucket del sistema attivato per primo.
+Questi dati vengono sottoposti a backup una volta al giorno a mezzanotte e vengono conservate al massimo 7 copie di ciascun file. Se l'agente Console gestisce più sistemi ONTAP locali, i file NetApp Backup and Recovery vengono archiviati nel bucket del sistema attivato per primo.
 
 
 TIP: Nessun dato di volume viene mai incluso nel database NetApp Backup and Recovery o nei file del catalogo indicizzato.
@@ -36,7 +36,7 @@ TIP: Nessun dato di volume viene mai incluso nel database NetApp Backup and Reco
 
 == Ripristina i dati NetApp Backup and Recovery su un nuovo agente Console
 
-Se l'agente della console locale subisce un errore irreversibile, sarà necessario installare un nuovo agente della console e quindi ripristinare i dati di NetApp Backup and Recovery sul nuovo agente della console.
+Se l'agente della console locale smette di funzionare, sarà necessario installare un nuovo agente della console e quindi ripristinare i dati di NetApp Backup and Recovery sul nuovo agente della console.
 
 Per ripristinare il funzionamento del sistema NetApp Backup and Recovery, è necessario eseguire le seguenti operazioni:
 
@@ -46,7 +46,7 @@ Per ripristinare il funzionamento del sistema NetApp Backup and Recovery, è nec
 * Riscopri tutti i tuoi sistemi ONTAP on-premise e i sistemi StorageGRID nell'interfaccia utente NetApp Console
 
 
-Una volta verificato che il sistema è tornato a funzionare, ti consigliamo di creare nuovi file di backup.
+Dopo aver verificato il funzionamento del sistema, crea nuovi file di backup.
 
 .Cosa ti servirà
 Sarà necessario accedere ai backup più recenti del database e dell'indice dal bucket StorageGRID o ONTAP S3 in cui sono archiviati i file di backup:
@@ -65,7 +65,7 @@ Questo file si trova nella seguente posizione nel bucket `netapp-backup-<GUID>/c
 
 === Installa un nuovo agente Console su un nuovo host Linux locale
 
-Quando si installa un nuovo agente Console, assicurarsi di scaricare la stessa versione del software installata sull'agente Console originale.  Le modifiche periodiche alla struttura del database NetApp Backup and Recovery potrebbero rendere le nuove versioni del software incompatibili con i backup del database originali.  Puoi https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["aggiornare il software dell'agente della console alla versione più recente dopo aver ripristinato il database di backup"^] .
+Quando si installa un nuovo agente Console, scaricare la stessa versione software dell'agente originale.  Le modifiche apportate al database NetApp Backup and Recovery potrebbero impedire il funzionamento delle versioni software più recenti con i vecchi backup del database. Puoi https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["aggiornare il software dell'agente della console alla versione più recente dopo aver ripristinato il database di backup"^] .
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Installa l'agente Console su un nuovo host Linux locale"^]
 . Accedi alla Console utilizzando le credenziali utente amministratore appena create.
@@ -203,7 +203,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 . Selezionare ciascun sistema ONTAP e fare clic su *Visualizza backup* accanto al servizio Backup e ripristino nel pannello di destra.
 +
-Dovresti essere in grado di vedere tutti i backup creati per i tuoi volumi.
+Dovresti vedere tutti i backup creati per i tuoi volumi.
 
 . Nella Dashboard di ripristino, nella sezione Cerca e ripristina, fai clic su *Impostazioni di indicizzazione*.
 +

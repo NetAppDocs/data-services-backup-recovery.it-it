@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Sarà necessario preparare il sistema ONTAP locale di origine e tutti i sistemi ONTAP locali secondari o Cloud Volumes ONTAP .
+Preparare il sistema ONTAP locale di origine e tutti i sistemi ONTAP locali secondari o Cloud Volumes ONTAP .
 
 La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
@@ -24,7 +24,7 @@ Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione de
 
 === Verificare i requisiti di sistema ONTAP
 
-Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP :
+Assicurati che il tuo sistema ONTAP soddisfi i seguenti requisiti:
 
 * Minimo ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.
 * Una licenza SnapMirror (inclusa come parte del Premium Bundle o del Data Protection Bundle).
@@ -35,7 +35,7 @@ Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP :
 Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestisci le licenze del tuo cluster"^] .
 
 * L'ora e il fuso orario sono impostati correttamente.  Impara come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configura l'ora del tuo cluster"^] .
-* Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
+* Se si replicano i dati, verificare che i sistemi di origine e di destinazione eseguano versioni ONTAP compatibili.
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni ONTAP compatibili per le relazioni SnapMirror"^].
 

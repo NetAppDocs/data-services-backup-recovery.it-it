@@ -31,10 +31,10 @@ Ripristina i carichi di lavoro VMware da copie snapshot, da un backup del carico
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
+Se Ransomware Resilience è abilitato per un file di backup nell'archiviazione di oggetti, ti verrà chiesto di eseguire un controllo aggiuntivo prima del ripristino.  Si consiglia di eseguire la scansione.
 
 
-TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
+TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere al file di backup.
 
 
 
@@ -50,7 +50,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 * Quando si ripristina un backup da un archivio di oggetti, è possibile ripristinare i dati nel sistema originale o in un sistema ONTAP locale.
 
 
-Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare una risorsa anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. È possibile cercare l'istantanea utilizzando i filtri.
+Dalla pagina Ripristina (Cerca e ripristina), puoi ripristinare una risorsa cercando lo snapshot con i filtri, anche se non ne ricordi il nome esatto, la posizione o l'ultima data nota.
 
 
 
@@ -76,7 +76,7 @@ Viene visualizzato un elenco di opzioni di posizione di ripristino.
 ** Locale: ripristina lo snapshot nella posizione originale.
 ** Archiviazione secondaria: ripristina lo snapshot in una posizione di archiviazione secondaria.
 +
-Se si sceglie l'archiviazione secondaria, immettere le informazioni sulla posizione di origine e di destinazione, nonché la posizione di origine e secondaria per i log.
+Se si sceglie l'archiviazione secondaria, immettere le posizioni di origine e di destinazione sia per i dati che per i registri.
 
 ** Archiviazione oggetti: ripristina lo snapshot in una posizione di archiviazione oggetti.
 +
@@ -86,7 +86,7 @@ Se si sceglie l'archiviazione di oggetti, verificare se si desidera eseguire nuo
 
 . Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.
 +
-Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
+Successivamente, seleziona le impostazioni di destinazione e le opzioni pre e post ripristino.
 
 
 
@@ -102,7 +102,7 @@ Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre
 --
 Nella pagina dei dettagli della destinazione di ripristino, immettere le seguenti informazioni:
 
-. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. I volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
+. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. È possibile utilizzare immediatamente i volumi e i dati ripristinati. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
 . *Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
 . *Opzioni post-ripristino*:
 +
@@ -112,7 +112,7 @@ Nella pagina dei dettagli della destinazione di ripristino, immettere le seguent
 
 . Sezione *Notifiche*:
 +
-** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
+** *Abilita notifiche e-mail*: seleziona per ricevere notifiche e-mail sull'operazione di ripristino e scegli i tipi di notifica desiderati.
 
 
 . Selezionare *Ripristina*.
@@ -122,9 +122,6 @@ Nella pagina dei dettagli della destinazione di ripristino, immettere le seguent
 .Ripristina in posizione alternativa
 --
 Non disponibile per l'anteprima VMware.
-
-. Selezionare *Ripristina*.
-
 
 --
 ====

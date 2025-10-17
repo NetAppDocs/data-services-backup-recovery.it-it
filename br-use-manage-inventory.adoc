@@ -63,7 +63,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 Puoi gestire gli host rilevati nel tuo sistema.  È possibile gestirli separatamente o in gruppo.
 
 
-TIP: È possibile gestire solo gli host che mostrano lo stato "Non gestito" nella colonna Host.  Se lo stato è "Gestito", significa che l'host è già gestito da NetApp Backup and Recovery.
+TIP: È possibile gestire gli host con stato "Non gestito" nella colonna Host.  NetApp Backup and Recovery gestisce già gli host con stato "Gestito".
 
 Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisce più le risorse su tali host.
 
@@ -90,7 +90,7 @@ Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisc
 
 === Sospendere gli orari
 
-È possibile sospendere le pianificazioni per interrompere le operazioni di backup e ripristino per un host.  Potrebbe essere opportuno farlo se è necessario eseguire attività di manutenzione sull'host.
+Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino durante la manutenzione dell'host.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -130,7 +130,7 @@ Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisc
 
 == Gestisci le informazioni sulle istanze
 
-È possibile gestire le informazioni sulle istanze per garantire che le risorse dispongano delle credenziali appropriate per la protezione ed è possibile eseguire il backup delle risorse nei seguenti modi:
+È possibile gestire le informazioni sulle istanze per assegnare le credenziali appropriate per la protezione delle risorse ed eseguire il backup delle risorse nei seguenti modi:
 
 * Proteggere le istanze
 * Credenziali associate
@@ -210,7 +210,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 === Esegui il backup ora
 
-Puoi eseguire subito il backup dei tuoi dati per assicurarti che siano protetti immediatamente.
+Esegui subito il backup dei tuoi dati per proteggerli immediatamente.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -260,7 +260,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 === Ripristinare i database
 
-È possibile ripristinare un database per garantire la protezione dei dati.
+Ripristina un database per proteggere i tuoi dati.
 
 *Ruolo NetApp Console obbligatorio* Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -295,7 +295,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 === Esegui il backup ora
 
-Puoi eseguire subito il backup delle istanze e dei database di Microsoft SQL Server per garantire la protezione immediata dei tuoi dati.
+Puoi eseguire subito il backup delle istanze e dei database di Microsoft SQL Server per proteggere immediatamente i tuoi dati.
 
 *Ruolo NetApp Console obbligatorio* Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 

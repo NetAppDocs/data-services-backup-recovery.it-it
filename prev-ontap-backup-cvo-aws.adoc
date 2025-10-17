@@ -183,7 +183,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 
 ==== Requisiti di rete ONTAP in sede
 
-* Se il cluster si trova nei tuoi locali, dovresti disporre di una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
+* Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
 Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .

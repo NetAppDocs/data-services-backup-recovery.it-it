@@ -16,7 +16,7 @@ summary: Potrebbero verificarsi situazioni in cui sarà necessario riavviare Net
 [role="lead"]
 Potrebbero verificarsi situazioni in cui sarà necessario riavviare NetApp Backup and Recovery.
 
-La funzionalità NetApp Backup and Recovery è integrata nell'agente Console.
+L'agente Console include la funzionalità NetApp Backup and Recovery .
 
 .Passi
 . Connettersi al sistema Linux su cui è in esecuzione l'agente Console.
