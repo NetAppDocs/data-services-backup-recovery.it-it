@@ -38,7 +38,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 
 == Eliminare un'applicazione Kubernetes
 
-Puoi eliminare un'applicazione se non ti serve più. Quando si elimina un'applicazione, NetApp Backup and Recovery interrompe la protezione dell'applicazione ed elimina tutti i backup e gli snapshot associati.
+Elimina un'applicazione di cui non hai più bisogno.  NetApp Backup and Recovery interrompe la protezione e rimuove tutti i backup e gli snapshot delle applicazioni eliminate.
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.

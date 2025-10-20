@@ -22,9 +22,9 @@ image:../media/diagram-backup-recovery-general.png["Diagramma dell'architettura 
 
 Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 
-* Le copie multiple dei dati garantiscono una protezione multilivello contro le minacce informatiche interne (interne) ed esterne.
+* Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
 * Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
-* La copia in loco facilita ripristini rapidi, mentre le copie fuori sede sono disponibili nel caso in cui la copia in loco venga compromessa.
+* La copia in loco consente di ripristinare rapidamente i dati e, se la copia in loco è compromessa, è possibile utilizzare le copie fuori sede.
 
 
 Quando si aggiungono host Hyper-V e si individuano risorse, NetApp Backup and Recovery installa il plug-in NetApp Hyper-V e il plug-in NetApp SnapCenter Windows FileSystem sull'host Hyper-V per facilitare la gestione e la protezione delle macchine virtuali.

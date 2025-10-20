@@ -21,16 +21,14 @@ NOTE: Questa versione di NetApp Backup and Recovery supporta solo VMware vCenter
 
 Utilizza NetApp Backup and Recovery per implementare una strategia 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 
-* Le copie multiple dei dati garantiscono una protezione multilivello contro le minacce informatiche interne (interne) ed esterne.
-* Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
-* La copia in loco facilita ripristini rapidi, mentre le copie fuori sede sono disponibili nel caso in cui la copia in loco venga compromessa.
+* Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
+* L'utilizzo di diversi tipi di supporto aiuta a recuperare i dati se un tipo non funziona.
+* È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-[]
-====
-*NOTA* Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
+
 È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro VMware:
 
 * link:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"]

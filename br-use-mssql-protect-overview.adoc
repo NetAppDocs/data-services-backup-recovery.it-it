@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-mssql-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: È possibile eseguire il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure e StorageGRID, garantendo la protezione dei dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.  È possibile implementare una strategia 3-2-1, in cui si hanno 3 copie dei dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. 
+summary: Proteggi i dati delle tue applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure o StorageGRID utilizzando NetApp Backup and Recovery. 
 ---
-= Panoramica sulla protezione dei carichi di lavoro Microsoft SQL con NetApp Backup and Recovery
+= Proteggi i carichi di lavoro Microsoft SQL utilizzando la panoramica NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: È possibile eseguire il backup dei dati delle applicazioni Microsoft S
 
 
 [role="lead"]
-Proteggi i dati delle tue applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure o StorageGRID utilizzando NetApp Backup and Recovery. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato, in base ai criteri che crei.  È possibile implementare una strategia 3-2-1, in cui si hanno 3 copie dei dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud.
+Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad AWS, Azure o StorageGRID utilizzando NetApp Backup and Recovery.  Il sistema crea e archivia automaticamente i backup nel tuo account cloud, in base alle tue policy.  Utilizza una strategia 3-2-1: conserva tre copie dei tuoi dati su due sistemi di archiviazione e una copia nel cloud.
 
 I vantaggi dell'approccio 3-2-1 includono:
 
-* Le copie multiple dei dati garantiscono una protezione multilivello contro le minacce informatiche interne (interne) ed esterne.
-* Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
-* La copia in loco facilita ripristini rapidi, mentre le copie fuori sede sono disponibili nel caso in cui la copia in loco venga compromessa.
+* Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
+* L'utilizzo di diversi tipi di supporto aiuta a recuperare i dati se un tipo non funziona.
+* È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-NetApp Backup and Recovery sfrutta la tecnologia di replicazione dei dati NetApp SnapMirror per garantire che tutti i backup siano completamente sincronizzati creando copie snapshot e trasferendole nelle posizioni di backup.
+NetApp Backup and Recovery utilizza NetApp SnapMirror per sincronizzare i backup creando copie snapshot e trasferendole nelle posizioni di backup.
 
-È possibile raggiungere i seguenti obiettivi di protezione:
+Per proteggere i tuoi dati puoi fare quanto segue:
 
 * link:concept-start-prereq-snapcenter-import.html["Configurare elementi aggiuntivi se si importa da SnapCenter"]
 * link:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server e, facoltativamente, importa le risorse SnapCenter"]
@@ -39,7 +39,7 @@ NetApp Backup and Recovery sfrutta la tecnologia di replicazione dei dati NetApp
 * link:br-use-manage-snapshots.html["Gestisci gli snapshot"]
 
 
-Per eseguire il backup dei carichi di lavoro, in genere si creano policy che regolano le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
+Per eseguire il backup dei carichi di lavoro, è necessario creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
 
 .Destinazioni di backup supportate
 NetApp Backup and Recovery consente di eseguire il backup di istanze e database di Microsoft SQL Server dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati.  Le copie snapshot risiedono sul sistema di origine.

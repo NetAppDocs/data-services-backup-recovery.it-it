@@ -34,9 +34,9 @@ NetApp Backup and Recovery sfrutta la tecnologia di replicazione dei dati SnapMi
 
 I vantaggi dell'approccio 3-2-1 includono:
 
-* Le copie multiple dei dati garantiscono una protezione multilivello contro le minacce informatiche interne (interne) ed esterne.
-* Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
-* La copia in loco facilita i ripristini rapidi, mentre le copie fuori sede sono sempre pronte nel caso in cui la copia in loco venga compromessa.
+* Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
+* L'utilizzo di diversi tipi di supporto aiuta a recuperare i dati se un tipo non funziona.
+* È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
 Se necessario, è possibile ripristinare un intero _volume_, una _cartella_ o uno o più _file_ da una qualsiasi delle copie di backup sullo stesso sistema o su un sistema diverso.

@@ -20,7 +20,7 @@ Potrebbe essere necessario montare un punto di ripristino di Oracle Database se 
 
 == Montare un punto di ripristino del database Oracle
 
-Se si configura il criterio di protezione per un database in modo che conservi i log di archivio, è possibile montare i punti di ripristino per il database per visualizzare la cronologia di tutte le modifiche apportate al database.
+Se si configura il criterio di protezione per un database in modo che conservi i log di archivio, è possibile montare punti di ripristino per visualizzare la cronologia delle modifiche del database.
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.

@@ -28,7 +28,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ma
 
 == Crea un gruppo di protezione
 
-Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. È possibile creare un gruppo di protezione per un set di carichi di lavoro di cui si desidera eseguire il backup e il ripristino insieme.
+Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. Crea un gruppo di protezione per eseguire il backup e il ripristino dei carichi di lavoro insieme.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 

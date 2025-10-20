@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.  È possibile implementare una strategia 3-2-1, in cui si hanno 3 copie dei dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. 
+summary: Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure e StorageGRID per garantire la protezione dei tuoi dati. 
 ---
 = Esegui il backup dei carichi di lavoro di Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai s
 
 
 [role="lead"]
-Esegui il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure e StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+Eseguire il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure o StorageGRID.  Il sistema crea automaticamente dei backup e li memorizza in un archivio oggetti nel tuo account cloud per la protezione dei dati.
 
-* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 * Configurare la directory di registro per gli host rilevati prima di avviare un backup.
 * Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
 
@@ -40,7 +40,7 @@ Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi d
 
 == Configurare la directory dei registri per gli host rilevati
 
-Prima di eseguire il backup dei carichi di lavoro, imposta il percorso per i registri delle attività per gli host rilevati.  Ciò consente di monitorare lo stato delle operazioni.
+Imposta il percorso del registro attività per gli host rilevati per monitorare lo stato delle operazioni prima di eseguire il backup dei carichi di lavoro.
 
 *Ruolo richiesto NetApp Console * Ruolo di visualizzatore di storage, super amministratore di Backup e Recovery, amministratore di backup di Backup e Recovery o amministratore di ripristino di Backup e Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -50,7 +50,7 @@ Prima di eseguire il backup dei carichi di lavoro, imposta il percorso per i reg
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Seleziona un host.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Configura directory registro*.
-. Fornire il percorso host o sfogliare un elenco di host o nodi host sull'host per individuare dove si desidera archiviare il registro host.
+. Inserisci il percorso host o sfoglia un elenco di host o nodi per trovare dove desideri archiviare il registro host.
 . Selezionare quelli su cui si desidera memorizzare i registri.
 +
 
@@ -63,7 +63,7 @@ NOTE: I campi visualizzati variano a seconda del modello di distribuzione selezi
 
 == Crea un gruppo di protezione
 
-È possibile creare un gruppo di protezione per gestire le operazioni di backup e ripristino per un set di carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro che si desidera proteggere insieme.
+Crea un gruppo di protezione per gestire le operazioni di backup e ripristino per più carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro.
 
 *Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -89,7 +89,7 @@ Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le i
 
 == Esegui subito il backup dei carichi di lavoro con un backup on-demand
 
-Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare, potresti voler eseguire un backup su richiesta.
+Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
 
 *Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -109,7 +109,7 @@ Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sist
 
 == Sospendi la pianificazione del backup
 
-La sospensione della pianificazione impedisce temporaneamente l'esecuzione del backup all'ora pianificata.  Potrebbe essere opportuno farlo se si sta eseguendo la manutenzione del sistema o se si verificano problemi con il backup.
+Sospendi la pianificazione per interrompere temporaneamente i backup durante la manutenzione o la risoluzione dei problemi.
 
 *Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -126,7 +126,7 @@ La sospensione della pianificazione impedisce temporaneamente l'esecuzione del b
 
 == Elimina un gruppo di protezione
 
-È possibile creare un gruppo di protezione per gestire le operazioni di backup e ripristino per un set di carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro che si desidera proteggere insieme.
+L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
 
 *Ruolo di NetApp Console obbligatorio* Ruolo di visualizzatore di storage, super amministratore di backup e ripristino o amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 

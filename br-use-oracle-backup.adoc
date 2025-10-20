@@ -4,7 +4,7 @@ permalink: br-use-oracle-backup.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
 summary: Proteggi i tuoi carichi di lavoro Oracle con il backup e il ripristino NetApp . 
 ---
-= Esegui il backup dei carichi di lavoro Oracle con NetApp Backup and Recovery
+= Eseguire il backup dei carichi di lavoro Oracle utilizzando NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: Proteggi i tuoi carichi di lavoro Oracle con il backup e il ripristino 
 
 
 [role="lead"]
-Esegui il backup dei gruppi di protezione o dei database di Oracle Database dai sistemi ONTAP locali ad Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3 per garantire la protezione dei dati.  Quando si esegue il backup di un gruppo di protezione, la NetApp Console esegue il backup dei database e dei dati di registro contenuti nel gruppo di protezione.
+Utilizza NetApp Backup and Recovery per eseguire il backup di gruppi di protezione o database Oracle Database da sistemi ONTAP locali a storage cloud, tra cui Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3.  NetApp Backup and Recovery esegue il backup dei database e dei dati di registro in ciascun gruppo di protezione.
 
 
-NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 
 * Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vederelink:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Oracle con NetApp Backup and Recovery"] per maggiori informazioni.
 * Esegui subito il backup di un gruppo di protezione (crea subito un backup su richiesta).
@@ -28,7 +28,7 @@ NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base 
 
 == Esegui subito il backup dei gruppi di protezione con un backup su richiesta
 
-È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
+Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -43,7 +43,7 @@ NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base 
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
 
-NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo di protezione.
+NOTE: NetApp Backup and Recovery utilizza la stessa policy sia per il gruppo di backup che per quello di protezione.
 
 . Selezionare il livello di pianificazione.
 . Selezionare *Backup*.

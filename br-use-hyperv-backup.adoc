@@ -25,7 +25,7 @@ Esegui il backup delle VM Hyper-V dai sistemi ONTAP locali ad Amazon Web Service
 
 == Esegui subito il backup dei carichi di lavoro con un backup on-demand
 
-È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
+Utilizza il backup su richiesta in modo che i tuoi dati siano protetti prima di apportare modifiche al sistema.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -38,7 +38,7 @@ Esegui il backup delle VM Hyper-V dai sistemi ONTAP locali ad Amazon Web Service
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
 
-NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo di protezione o alla macchina virtuale.
+NOTE: Il backup utilizza lo stesso criterio assegnato al gruppo di protezione o alla macchina virtuale.
 
 . Selezionare il livello di pianificazione.
 . Selezionare *Backup*.

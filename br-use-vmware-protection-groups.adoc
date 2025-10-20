@@ -29,7 +29,7 @@ Creare gruppi di protezione per gestire le operazioni di backup e ripristino per
 
 == Crea un gruppo di protezione
 
-Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. È possibile creare un gruppo di protezione per un set di carichi di lavoro di cui si desidera eseguire il backup e il ripristino insieme.
+Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione per eseguirne il backup e il ripristino insieme.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -55,7 +55,7 @@ Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le i
 
 == Sospendere la pianificazione del backup di un gruppo di protezione
 
-La sospensione di un gruppo di protezione interrompe i backup pianificati per il gruppo di protezione. Potrebbe essere necessario sospendere un gruppo di protezione se si desidera interrompere temporaneamente i backup per i carichi di lavoro in quel gruppo.
+Sospendere un gruppo di protezione per sospendere i backup pianificati.
 
 Quando si sospende un gruppo di protezione, lo stato di protezione cambia in "In manutenzione". È possibile riprendere la pianificazione del backup in qualsiasi momento.
 
@@ -92,7 +92,7 @@ Il sistema convalida le pianificazioni e modifica lo stato di protezione in "Pro
 
 == Elimina un gruppo di protezione
 
-L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
+Quando si elimina un gruppo di protezione, si rimuovono sia il gruppo stesso che tutte le pianificazioni di backup per il gruppo.  Elimina un gruppo di protezione se non ti serve più.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.

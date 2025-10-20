@@ -40,7 +40,7 @@ NOTE: Per scoprire i cluster Kubernetes, fare riferimento alink:br-start-discove
 
 == Rimuovere un cluster Kubernetes
 
-Se non hai più bisogno di proteggere le risorse ospitate da un cluster Kubernetes, puoi rimuoverlo da NetApp Backup and Recovery.  La rimozione di un cluster non elimina il cluster stesso o le sue risorse; rimuove solo il cluster dall'inventario della NetApp Console .  Prima di poter rimuovere un cluster, è necessario disabilitare la protezione ed eliminare le applicazioni associate da NetApp Backup and Recovery.
+Per interrompere la protezione di un cluster Kubernetes, disabilitare la protezione ed eliminare le applicazioni associate, quindi rimuovere il cluster da NetApp Backup and Recovery.  NetApp Backup and Recovery non elimina il cluster o le sue risorse; rimuove solo il cluster dall'inventario della NetApp Console .
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
