@@ -271,9 +271,6 @@ Inoltre, configurare le seguenti opzioni:
 
 È possibile modificare l'architettura di backup, la frequenza di backup, i criteri di conservazione e altre impostazioni per un criterio.
 
-
-NOTE: Questa funzionalità non è disponibile per i carichi di lavoro VMware Preview.
-
 È possibile aggiungere un altro livello di protezione quando si modifica una policy, ma non è possibile rimuovere un livello di protezione.  Ad esempio, se il criterio protegge solo gli snapshot locali, è possibile aggiungere la replica all'archiviazione secondaria o i backup all'archiviazione degli oggetti.  Se si dispone di snapshot e repliche locali, è possibile aggiungere l'archiviazione di oggetti.  Tuttavia, se si dispone di snapshot locali, replica e archiviazione di oggetti, non è possibile rimuovere uno di questi livelli.
 
 Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti, è possibile abilitare l'archiviazione.
