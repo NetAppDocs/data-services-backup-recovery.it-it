@@ -682,7 +682,6 @@
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Questo processo potrebbe richiedere alcuni minuti.</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Dopo che NetApp Backup and Recovery rileva le risorse, la pagina Inventario visualizza il carico di lavoro Hyper-V nell'elenco dei carichi di lavoro.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Continua alla dashboard NetApp Backup and Recovery</block>
-  <block id="4a94cfaf243c22ac5a3b2acf1849db11" category="list-text">Per visualizzare la dashboard NetApp Backup and Recovery , dal menu NetApp Console , selezionare *Dashboard*.</block>
   <block id="8c0d3ed018f04fbf259db34d9167eae7" category="list-text">Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.</block>
   <block id="dd9e4491810d247bd97912faae187a39" category="summary">Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima rilevare i carichi di lavoro.</block>
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">Scopri i carichi di lavoro Kubernetes in NetApp Backup and Recovery</block>
@@ -705,7 +704,6 @@
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">Il cluster viene aggiunto all'inventario.</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">Selezionare *Visualizza* nel carico di lavoro Kubernetes associato per visualizzare l'elenco di applicazioni, cluster e namespace per quel carico di lavoro.</block>
   <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.</block>
-  <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">Dal menu in alto, seleziona *Dashboard*.</block>
   <block id="09799d4864834161536cca195023364b" category="inline-link-macro">Scopri cosa ti mostra la Dashboard</block>
   <block id="d5292ed1370bb405095587cd10827f95" category="paragraph"><block ref="2a35d34f81dbac907e6068b45b5d538a" category="inline-link-macro-rx"></block>.</block>
   <block id="a8d8543f27c131c1d9b3ca0cf9f1f4ea" category="summary">NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per consentirti di proteggerli.</block>
@@ -721,7 +719,6 @@
   <block id="4eefc3e53a1cd35eca7d32b6b2c550f5" category="list-text">Scegliere se utilizzare credenziali di root o credenziali non di root.</block>
   <block id="87f459dd6c99dc89040246d5ef818100" category="list-text">*Registrazione host*: aggiungi un nuovo host KVM.  Immettere l'FQDN o l'indirizzo IP dell'host, le credenziali, l'agente della console e il numero di porta.</block>
   <block id="238fb750ebdea9faf36668536aaa8b42" category="paragraph">Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventario.</block>
-  <block id="bcfa92e95d27d2c808d23768de744fd9" category="list-text">Per visualizzare la dashboard NetApp Backup and Recovery , dal menu in alto selezionare *Dashboard*.</block>
   <block id="0a6dc8ac33152480a18098d8eb98ccb6" category="doc">Scopri i carichi di lavoro Oracle in NetApp Backup and Recovery</block>
   <block id="945f74309f719db5d0fb0d1bb5a31781" category="paragraph">NetApp Backup and Recovery deve prima rilevare i database Oracle per poterli proteggere.</block>
   <block id="bf36d800e1bbaf0ef44cd361867e4e09" category="section-title">Aggiungi un host Oracle e scopri le risorse</block>
@@ -788,7 +785,6 @@
   <block id="80be79a75ac4a79f740ad2838c734534" category="list-text">*Usa installazione manuale*: seleziona questa casella per installare manualmente il plugin.</block>
   <block id="628bc160a519e5ae69b6c8aa88610900" category="list-text">*Aggiungi tutti gli host nel cluster*: seleziona questa casella per aggiungere tutti gli host nel cluster a NetApp Backup and Recovery durante l'individuazione.</block>
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*Salta i controlli pre-installazione facoltativi*: seleziona questa casella per saltare i controlli pre-installazione facoltativi.  Potresti volerlo fare, ad esempio, se sai che le considerazioni sulla memoria o sullo spazio cambieranno nel prossimo futuro e vuoi installare il plugin ora.</block>
-  <block id="413f1bdf68093f037d6630a5904e6a17" category="list-text">Per visualizzare la dashboard NetApp Backup and Recovery , dal menu Backup and Recovery, selezionare *Dashboard*.</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">Modalità di distribuzione NetApp Console</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">Puoi ottenere la licenza NetApp Backup and Recovery acquistando un abbonamento annuale o a consumo dal tuo provider cloud oppure acquistando una licenza Bring-Your-Own-License da NetApp.  Per attivare NetApp Backup and Recovery su un sistema, creare backup dei dati di produzione e ripristinare i dati di backup su un sistema di produzione è necessaria una licenza valida.</block>
   <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">Puoi ottenere la licenza NetApp Backup and Recovery acquistando un abbonamento annuale o pay-as-you-go (PAYGO) a * NetApp Intelligent Services* dal tuo provider cloud oppure acquistando una licenza bring-your-own (BYOL) da NetApp.  Per attivare NetApp Backup and Recovery su un sistema, creare backup dei dati di produzione e ripristinare i dati di backup su un sistema di produzione è necessaria una licenza valida.</block>
@@ -936,7 +932,6 @@
   <block id="a160325dcdf365b6a979dfed5c7d50f7" category="doc">Visualizza lo stato di protezione sulla dashboard di NetApp Backup and Recovery</block>
   <block id="2da92f995ab136dd344c314ba2b4eed1" category="paragraph">Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini nella dashboard NetApp Backup and Recovery .  È possibile esaminare il riepilogo del sistema, il riepilogo della protezione, il riepilogo del processo, il riepilogo del ripristino e altro ancora.</block>
   <block id="f8dd3e1869946d83a9dde01dd1d1532b" category="paragraph">*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery.  Scopri di più<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
-  <block id="cb8f96f7586f61e5cb6878a228c22371" category="list-text">Dal menu NetApp Backup and Recovery , selezionare *Dashboard*.</block>
   <block id="786dc54a357443785ac613f07c08cc8f" category="list-text">Numero di host o VM scoperti</block>
   <block id="6393f4da4761be4d85c7778d5e5ebdea" category="list-text">Numero di cluster Kubernetes scoperti</block>
   <block id="54b82ae02ee9c233cf025fb2566edaf9" category="list-text">Numero di destinazioni di backup su storage di oggetti</block>
@@ -4776,4 +4771,7 @@
   <block id="96de4b90f5864c84829fbe7735879827" category="list-text">*Impostazioni iGroup*: seleziona l'iGroup per il clone. L'iGroup è un raggruppamento logico di iniziatori utilizzati per accedere al clone. È possibile selezionare un iGroup esistente o crearne uno nuovo. Selezionare l'iGroup dal sistema di archiviazione ONTAP primario o secondario.</block>
   <block id="5261c1383d98ed2b1e8b4a1fd943a918" category="list-text">*Interrompi il ripristino se il backup del registro delle transazioni prima del ripristino non riesce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni non riesce.</block>
   <block id="8f40cc47127edbc609e36af0ad86f259" category="list-text">Inserisci i dettagli di consegna del report: se desideri che il report venga consegnato via e-mail, seleziona *Invia report tramite e-mail*. Inserisci l'indirizzo email a cui desideri che venga inviato il report.</block>
+  <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).</block>
+  <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">Dal menu Backup e ripristino, seleziona *Dashboard*.</block>
+  <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">È possibile esaminare i seguenti tipi di informazioni:</block>
 </blocks>

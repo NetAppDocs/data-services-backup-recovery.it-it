@@ -57,7 +57,9 @@ Il cluster viene aggiunto all'inventario.
 
 Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.
 
-. Dal menu in alto, seleziona *Dashboard*.
+. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
+. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Dal menu Backup e ripristino, seleziona *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 +
 link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"].

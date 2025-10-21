@@ -62,6 +62,8 @@ Dopo che NetApp Backup and Recovery rileva le risorse, la pagina Inventario visu
 == Continua alla dashboard NetApp Backup and Recovery
 
 .Passi
-. Per visualizzare la dashboard NetApp Backup and Recovery , dal menu NetApp Console , selezionare *Dashboard*.
+. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
+. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Dal menu Backup e ripristino, seleziona *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

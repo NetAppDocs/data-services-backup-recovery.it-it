@@ -19,7 +19,12 @@ Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali probl
 *Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di Backup and Recovery, amministratore di backup di Backup and Recovery, amministratore di ripristino di Backup and Recovery, amministratore di clonazione di Backup and Recovery o ruolo di visualizzatore di Backup and Recovery.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Dashboard*.
+. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
+. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Dal menu Backup e ripristino, seleziona *Dashboard*.
++
+È possibile esaminare i seguenti tipi di informazioni:
+
 +
 ** Numero di host o VM scoperti
 ** Numero di cluster Kubernetes scoperti
