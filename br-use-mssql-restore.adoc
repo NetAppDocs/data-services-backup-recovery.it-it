@@ -178,7 +178,7 @@ NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di r
 *** *Sovrascrivi il database con lo stesso nome durante il ripristino*: durante il ripristino, il nome originale del database viene mantenuto.
 *** *Mantieni impostazioni di replica del database SQL*: conserva le impostazioni di replica per il database SQL dopo l'operazione di ripristino.
 *** *Crea backup del registro delle transazioni prima del ripristino*: crea un backup del registro delle transazioni prima dell'operazione di ripristino.
-*** *Interrompi il ripristino se il backup del registro delle transazioni prima del ripristino fallisce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni fallisce.
+*** *Interrompi il ripristino se il backup del registro delle transazioni prima del ripristino non riesce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni non riesce.
 *** *Prescript*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino, eventuali argomenti richiesti dallo script e il tempo di attesa per il completamento dello script.
 
 

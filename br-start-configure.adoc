@@ -110,7 +110,7 @@ Fornire le credenziali VMware vCenter per individuare i carichi di lavoro per il
 
 == Importa e gestisci le risorse host SnapCenter
 
-Se in precedenza hai utilizzato SnapCenter per eseguire il backup delle tue risorse, puoi importare e gestire tali risorse in NetApp Backup and Recovery.  Questa opzione consente di importare le informazioni del server SnapCenter per registrare più server SnapCenter e individuare i carichi di lavoro del database.
+Se in precedenza hai utilizzato SnapCenter per eseguire il backup delle tue risorse, puoi importare e gestire tali risorse in NetApp Backup and Recovery. Questa opzione consente di importare le informazioni del server SnapCenter per registrare più server SnapCenter e individuare i carichi di lavoro del database.
 
 Si tratta di un processo in due fasi:
 

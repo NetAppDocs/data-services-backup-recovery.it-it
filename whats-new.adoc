@@ -99,7 +99,6 @@ La versione di anteprima dei carichi di lavoro VMware introduce le seguenti funz
 
 * Supporto per il ripristino da storage di oggetti
 * La dashboard NetApp Console ora visualizza le informazioni sullo stato del carico di lavoro VMware
-* Supporto della modalità demo: esplora le funzionalità dei carichi di lavoro VMware senza aggiungere un ambiente VMware vCenter Server
 * Supporto per il controllo degli accessi basato sui ruoli (RBAC)
 * Supporto per notifiche ed avvisi via e-mail per eventi lavorativi
 * Supporto per il backup e il ripristino su storage basato su NVMe

@@ -355,7 +355,7 @@ Viene visualizzato l'elenco di tutti i file di backup.
 . Selezionare *Impostazioni avanzate*.
 . *Forza eliminazione backup*: indica se desideri o meno forzare l'eliminazione di tutti i backup.
 +
-In alcuni casi estremi, potresti voler impedire a NetApp Backup and Recovery di accedere più ai backup. Ciò potrebbe verificarsi, ad esempio, se il servizio non ha più accesso al bucket di backup o se i backup sono protetti da DataLock ma non li si desidera più. In precedenza non era possibile eliminarli autonomamente, ma era necessario contattare l'assistenza NetApp . Con questa versione è possibile utilizzare l'opzione per forzare l'eliminazione dei backup (a livello di volume e di sistema).
+In alcuni casi estremi, potresti voler impedire a NetApp Backup and Recovery di accedere più ai backup. Ciò potrebbe accadere, ad esempio, se il servizio non ha più accesso al bucket di backup o se i backup sono protetti da DataLock ma non si desidera più utilizzarli. In precedenza non era possibile eliminarli autonomamente, ma era necessario contattare l'assistenza NetApp . Con questa versione è possibile utilizzare l'opzione per forzare l'eliminazione dei backup (a livello di volume e di sistema).
 
 +
 
