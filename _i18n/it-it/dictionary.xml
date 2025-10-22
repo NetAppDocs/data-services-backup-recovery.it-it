@@ -4774,4 +4774,6 @@
   <block id="e666fdc6314d0f6cb22614788075b3bc" category="list-text">Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).</block>
   <block id="55398f7948e83c03d38dfb4b136d75ee" category="list-text">Dal menu Backup e ripristino, seleziona *Dashboard*.</block>
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">È possibile esaminare i seguenti tipi di informazioni:</block>
+  <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Questa versione dei carichi di lavoro del volume ONTAP introduce le seguenti funzionalità migliorate:</block>
+  <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">A partire da ONTAP 9.17.1 e versioni successive, DataLock è ora supportato da Google Cloud Platform. Ciò integra il supporto DataLock esistente con Amazon AWS, Microsoft Azure e NetApp StorageGRID.</block>
 </blocks>
