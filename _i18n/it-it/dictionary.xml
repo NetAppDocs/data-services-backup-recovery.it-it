@@ -4776,4 +4776,9 @@
   <block id="4837f0befea6b35d3b9827d282853ed9" category="paragraph">È possibile esaminare i seguenti tipi di informazioni:</block>
   <block id="70cc82710208295496c70c203368aaf9" category="paragraph">Questa versione dei carichi di lavoro del volume ONTAP introduce le seguenti funzionalità migliorate:</block>
   <block id="bb13349ac4c9ef7d368732d3a4fdabed" category="paragraph">A partire da ONTAP 9.17.1 e versioni successive, DataLock è ora supportato da Google Cloud Platform. Ciò integra il supporto DataLock esistente con Amazon AWS, Microsoft Azure e NetApp StorageGRID.</block>
+  <block id="a0fe305acb95f37513221f1fa15cc736" category="paragraph">Per abilitare la protezione delle VM KVM amministrate da utenti non root, attenersi alla seguente procedura:</block>
+  <block id="7038d2812762c5a3340bd687f860b041" category="list-text">Montare il volume come tipo NFS3 per evitare l'uso del<block ref="6e854442cd2a940c9e95941dce4ad598" prefix=" " category="inline-code"></block> utente e gruppo.</block>
+  <block id="36d8cadfad50f92ea039929a8bfc7450" category="list-text">Utilizzare il seguente comando per aggiungere un utente non root al<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> gruppo pur preservando i loro gruppi esistenti:</block>
+  <block id="aa1cd3801b770b27b2d088367602a652" category="list-text">Utilizzare il seguente comando per concedere la proprietà del percorso di montaggio al<block ref="5b015a9aa658c93e9ef31fbd0e83d2b9" prefix=" " category="inline-code"></block> utente e gruppo e modifica i permessi per il percorso di montaggio:</block>
+  <block id="fba88ec9b188c84767bd0e321c7662a9" category="list-text">Eliminare la directory NetApp_SnapCenter_Backups esistente, se presente.</block>
 </blocks>
