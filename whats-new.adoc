@@ -344,7 +344,7 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 === SnapMirror su Cloud Resync per le migrazioni dei volumi
 
-La funzionalità SnapMirror to Cloud Resync semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp .  Quando un volume viene migrato tramite SnapMirror Logical Replication (LRSE) da una distribuzione NetApp locale a un'altra o a una soluzione basata su cloud come Cloud Volumes ONTAP o Cloud Volumes Service, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
+La funzionalità SnapMirror to Cloud Resync semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp . Quando un volume viene migrato tramite SnapMirror Logical Replication (LRSE) da una distribuzione NetApp locale a un'altra o a una soluzione basata su cloud come Cloud Volumes ONTAP, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
 
 Questa funzionalità elimina la necessità di un'operazione di reimpostazione della baseline, che richiede molto tempo e risorse, consentendo alle operazioni di backup di continuare anche dopo la migrazione.  Questa funzionalità è utile negli scenari di migrazione del carico di lavoro, supportando sia FlexVols che FlexGroups ed è disponibile a partire dalla versione 9.16.1 ONTAP .
 
