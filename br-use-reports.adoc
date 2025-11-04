@@ -33,6 +33,6 @@ In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft 
 . Inserisci l'intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
 . Inserisci i dettagli di consegna del report: se desideri che il report venga consegnato via e-mail, seleziona *Invia report tramite e-mail*. Inserisci l'indirizzo email a cui desideri che venga inviato il report.
 +
-Configura le notifiche e-mail nella pagina Impostazioni.  Per i dettagli sulla configurazione delle notifiche e-mail, vederelink:br-use-settings-advanced.html["Configurare le impostazioni"] .
+Configura le notifiche e-mail nella pagina Impostazioni. Per i dettagli sulla configurazione delle notifiche e-mail, vederelink:br-start-configure.html["Configurare le impostazioni"] .
 
 

@@ -110,9 +110,10 @@ Consultare i requisiti e i passaggi di ripristino per il tipo di operazione di r
 
 == Ripristina i dati ONTAP utilizzando Sfoglia e ripristina
 
-Prima di iniziare a ripristinare un volume, una cartella o un file, è necessario conoscere il nome del volume da cui si desidera effettuare il ripristino, il nome del sistema e dell'SVM in cui risiede il volume e la data approssimativa del file di backup da cui si desidera effettuare il ripristino.  È possibile ripristinare i dati ONTAP da una copia Snapshot, da un volume replicato o da backup archiviati nell'archiviazione oggetti.
+Prima di effettuare il ripristino, annotare il nome del volume di origine, il sistema di origine e l'SVM, nonché la data del file di backup. È possibile ripristinare i dati ONTAP da una copia Snapshot, da un volume replicato o da backup archiviati nell'archiviazione oggetti.
 
-*Nota:* se il file di backup contenente i dati che si desidera ripristinare si trova in un archivio cloud (a partire da ONTAP 9.10.1), l'operazione di ripristino richiederà più tempo e comporterà un costo.  Inoltre, il cluster di destinazione deve eseguire anche ONTAP 9.10.1 o versione successiva per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.
+
+NOTE: Se il file di backup che si desidera ripristinare si trova in un archivio cloud (a partire da ONTAP 9.10.1), l'operazione di ripristino richiede più tempo e comporta un costo.  Il cluster di destinazione deve inoltre eseguire ONTAP 9.10.1 o versione successiva per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.
 
 ifdef::aws[]
 
@@ -159,18 +160,6 @@ NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'ar
 
 | Al sistema ONTAP locale | ONTAP S3 | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
 |===
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 Per Sfoglia e Ripristina, l'agente Console può essere installato nei seguenti percorsi:
 
 ifdef::aws[]
@@ -315,7 +304,7 @@ Se è necessario ripristinare solo alcuni file da un backup del volume ONTAP , �
 
 NOTE: Al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti.  Il ripristino di file e cartelle non è attualmente supportato da una copia snapshot locale o da un file di backup che risiede in un sistema secondario (un volume replicato).
 
-Se selezioni più file, tutti i file verranno ripristinati sullo stesso volume di destinazione scelto.  Pertanto, se si desidera ripristinare i file su volumi diversi, sarà necessario eseguire il processo di ripristino più volte.
+Se si selezionano più file, questi vengono ripristinati nello stesso volume di destinazione.  Per ripristinare i file su volumi diversi, eseguire il processo più volte.
 
 Se si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle in essa contenuti.  Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di quella cartella, ma non le sottocartelle o i file nelle sottocartelle.
 
@@ -345,7 +334,7 @@ Se si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una
 
 Il processo è il seguente:
 
-. Quando si desidera ripristinare una cartella o uno o più file da un backup del volume, fare clic sulla scheda *Ripristina* e quindi su *Ripristina file o cartella* in _Sfoglia e ripristina_.
+. Per ripristinare una cartella o dei file da un backup del volume, selezionare il menu *Ripristina*, quindi selezionare *Ripristina file o cartella* in _Sfoglia e ripristina_.
 . Selezionare il sistema di origine, il volume e il file di backup in cui risiedono la cartella o i file.
 . NetApp Backup and Recovery visualizza le cartelle e i file presenti nel file di backup selezionato.
 . Seleziona la cartella o i file che desideri ripristinare da quel backup.
@@ -355,7 +344,7 @@ Il processo è il seguente:
 
 image:diagram_browse_restore_file.png["Un diagramma che mostra il flusso per eseguire un'operazione di ripristino di un file utilizzando Sfoglia e ripristina."]
 
-Come puoi vedere, per eseguire un ripristino di una cartella o di un file è necessario conoscere il nome del sistema, il nome del volume, la data del file di backup e il nome della cartella/file.
+Per ripristinare un volume sono necessari il nome del sistema di origine, la macchina virtuale di archiviazione, il nome del volume e la data del file di backup.
 
 
 
@@ -433,7 +422,7 @@ Sono disponibili alcune opzioni per la posizione durante il ripristino di cartel
 
 * Se hai selezionato lo stesso sistema di destinazione e lo stesso volume in cui si trovava la cartella/il file di origine, puoi selezionare *Mantieni percorso cartella di origine* per ripristinare la cartella o i file nella stessa cartella in cui si trovavano nella struttura di origine.  Tutte le cartelle e sottocartelle devono già esistere; non vengono create cartelle.  Quando si ripristinano i file nella loro posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
 +
-.. Selezionando *Ripristina* verrai reindirizzato alla Dashboard di ripristino, dove potrai esaminare l'avanzamento dell'operazione di ripristino.  È anche possibile fare clic sulla scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.
+.. Selezionare *Ripristina* per tornare alla Dashboard di ripristino e rivedere l'avanzamento dell'operazione di ripristino.
 
 
 
@@ -701,7 +690,7 @@ A seconda delle dimensioni dei volumi nel sistema e del numero di file di backup
 
 === Ripristina volumi, cartelle e file utilizzando Cerca e ripristina
 
-Dopo aver<<enable-the-indexed-catalog-for-each-working-environment,indicizzazione abilitata per il tuo sistema>> , puoi ripristinare volumi, cartelle e file utilizzando Cerca e ripristina.  Ciò consente di utilizzare un'ampia gamma di filtri per trovare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.
+Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata per il tuo sistema>> , puoi ripristinare volumi, cartelle e file utilizzando Cerca e ripristina. Ciò consente di utilizzare un'ampia gamma di filtri per trovare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.
 
 .Passi
 . Dal menu Console, selezionare *Protezione > Backup e ripristino*.

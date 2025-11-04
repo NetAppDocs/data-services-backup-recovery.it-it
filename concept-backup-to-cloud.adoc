@@ -281,20 +281,8 @@ NOTE: È supportato anche lo storage primario verso l'archiviazione di oggetti, 
 
 Le copie di backup vengono archiviate in un archivio oggetti creato dalla NetApp Console nel tuo account cloud.  Esiste un archivio oggetti per cluster o sistema e la Console assegna a tale archivio il seguente nome: `netapp-backup-clusteruuid` .  Assicurarsi di non eliminare questo archivio oggetti.
 
-ifdef::aws[]
-
-* In AWS, la NetApp Console consente di https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3. endif::aws[]
-
-
-ifdef::azure[]
-
-* In Azure, la NetApp Console utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB. la console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita. endif::azure[]
-
-
-ifdef::gcp[]
-
-endif::gcp[]
-
+* In AWS, la NetApp Console consente di https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3.
+* In Azure, la NetApp Console utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB. la console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita.
 * In StorageGRID, la console utilizza un account di archiviazione esistente per il bucket di archiviazione degli oggetti.
 * In ONTAP S3, la console utilizza un account utente esistente per il bucket S3.
 
