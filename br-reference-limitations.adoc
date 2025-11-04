@@ -56,14 +56,10 @@ Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi F
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
 
-
-
 * Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
 * Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
-
-
 
 * Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
 * Quando si crea o si modifica un criterio di backup senza che vi siano volumi assegnati, il numero massimo di backup conservati può essere 1018.  Dopo aver assegnato i volumi al criterio, è possibile modificarlo per creare fino a 4000 backup.
@@ -80,8 +76,6 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 ** I backup sono supportati solo dal dispositivo secondario ONTAP .
 ** La policy Snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, tra cui giornaliera, settimanale, mensile, ecc. La policy predefinita "sm_created" (utilizzata per *Mirror All Snapshots*) non viene riconosciuta e il volume DP non verrà visualizzato nell'elenco dei volumi di cui è possibile eseguire il backup.
 ** Il backup e il ripristino di SVM-DR e del volume funzionano in modo completamente indipendente quando il backup viene eseguito dall'origine o dalla destinazione.  L'unica limitazione è che SVM-DR non replica la relazione cloud SnapMirror .  Nello scenario DR, quando l'SVM va online nella posizione secondaria, è necessario aggiornare manualmente la relazione cloud SnapMirror .
-
-
 
 
 * Supporto MetroCluster :

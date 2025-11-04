@@ -16,11 +16,9 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 Con NetApp Backup and Recovery, puoi utilizzare le policy di backup predefinite fornite da NetApp per creare i tuoi backup oppure creare policy personalizzate.  Le policy regolano la frequenza del backup, l'ora in cui viene eseguito e il numero di file di backup conservati.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 Quando si utilizza la procedura guidata di attivazione per abilitare il servizio di backup e ripristino per i volumi, è possibile selezionare tra i criteri predefiniti e qualsiasi altro criterio già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP locale).  Se si desidera utilizzare una policy diversa da quelle esistenti, è possibile crearla prima o durante l'utilizzo della procedura guidata di attivazione.
 
 Per informazioni sulle policy di backup predefinite fornite, fare riferimento alink:prev-ontap-protect-journey.html["Pianifica il tuo percorso di protezione"] .

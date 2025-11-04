@@ -19,11 +19,9 @@ Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire i
 
 NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select .
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 
 
 == Identificare il metodo di connessione
@@ -94,7 +92,7 @@ Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery 
 . Selezionare *Modifica ruolo* per aggiornare le autorizzazioni del ruolo.
 . Selezionare *Aggiungi autorizzazioni* per aggiungere le seguenti nuove autorizzazioni al ruolo.
 +
-[source, json]
+[source, console]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -245,7 +243,7 @@ Per preparare Google Cloud Storage come destinazione di backup, sono necessari i
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Crea un nuovo ruolo"^]con le seguenti autorizzazioni:
 +
-[source, json]
+[source, console]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -299,7 +297,7 @@ Se intendi utilizzare le tue chiavi gestite dal cliente:
 * Per poter aggiungere queste informazioni nella procedura guidata di attivazione, è necessario disporre del Key Ring e del Key Name. https://cloud.google.com/kms/docs/cmek["Scopri di più sulle chiavi di crittografia gestite dal cliente"^] .
 * Sarà necessario verificare che le seguenti autorizzazioni richieste siano incluse nel ruolo dell'agente della console:
 +
-[source, json]
+[source, console]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

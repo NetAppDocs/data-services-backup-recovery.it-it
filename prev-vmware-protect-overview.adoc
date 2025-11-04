@@ -18,11 +18,9 @@ Proteggi i carichi di lavoro delle tue macchine virtuali con NetApp Backup and R
 
 È possibile eseguire il backup degli archivi dati su Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e ripristinare le macchine virtuali sull'host SnapCenter Plug-in for VMware vSphere .
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 Per istruzioni sulla protezione dei carichi di lavoro delle macchine virtuali, vedere i seguenti argomenti:
 
 * link:prev-vmware-policy-create.html["Creare una policy per i carichi di lavoro VMware"]

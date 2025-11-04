@@ -16,11 +16,9 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 È necessario registrare il SnapCenter Plug-in for VMware vSphere in NetApp Backup and Recovery affinché i datastore e le macchine virtuali vengano visualizzati.  Solo un utente con accesso amministrativo può registrare il SnapCenter Plug-in for VMware vSphere .
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 .Passi
 . Nell'interfaccia utente NetApp Console , selezionare *Protezione* > *Backup e ripristino* > *Macchine virtuali*.
 . Dal menu a discesa *Impostazioni*, seleziona * SnapCenter Plug-in for VMware vSphere*.

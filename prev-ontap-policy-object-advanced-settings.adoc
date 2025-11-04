@@ -19,11 +19,9 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 NOTE: Queste impostazioni sono disponibili solo per l'archiviazione di backup su oggetti.  Nessuna di queste impostazioni influisce sulle impostazioni di snapshot o replica.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 Nella pagina Impostazioni avanzate è possibile modificare le seguenti opzioni:
 
 * Modifica della larghezza di banda di rete assegnata per caricare i backup nell'archivio oggetti utilizzando l'opzione Velocità di trasferimento massima ifdef::aws[]

@@ -111,11 +111,9 @@ Se vuoi utilizzare questa opzione, configura il tuo abbonamento dalla pagina Mar
 Vedi il https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Argomento sulla licenza Cloud Volumes ONTAP"^] per saperne di più su questa opzione di licenza.
 
 +
-Se desideri utilizzare questa opzione, puoi impostare il contratto annuale quando crei un sistema Cloud Volumes ONTAP e la Console ti chiede di iscriverti ad AWS Marketplace. endif::aws[]
+Se desideri utilizzare questa opzione, puoi impostare il contratto annuale quando crei un sistema Cloud Volumes ONTAP e la Console ti chiederà di iscriverti ad AWS Marketplace.
 
 
-
-ifdef::azure[]
 
 Quando si utilizza Azure, sono disponibili due contratti annuali da https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Pagina di Azure Marketplace"^] per i sistemi Cloud Volumes ONTAP e ONTAP on-premise:
 
@@ -128,15 +126,13 @@ Se vuoi utilizzare questa opzione, configura il tuo abbonamento dalla pagina Mar
 Vedi il https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Argomento sulla licenza Cloud Volumes ONTAP"^] per saperne di più su questa opzione di licenza.
 
 +
-Se si desidera utilizzare questa opzione, è possibile impostare il contratto annuale quando si crea un sistema Cloud Volumes ONTAP e la console richiede di sottoscrivere l'abbonamento ad Azure Marketplace. endif::azure[]
+Se si desidera utilizzare questa opzione, è possibile impostare il contratto annuale quando si crea un sistema Cloud Volumes ONTAP e la Console richiede di sottoscrivere l'abbonamento ad Azure Marketplace.
 
 
-
-ifdef::gcp[]
 
 Se utilizzi GCP, contatta il tuo rappresentante commerciale NetApp per acquistare un contratto annuale.  Il contratto è disponibile come offerta privata su Google Cloud Marketplace.
 
-Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery . endif::gcp[]
+Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante l'attivazione NetApp Backup and Recovery .
 
 
 

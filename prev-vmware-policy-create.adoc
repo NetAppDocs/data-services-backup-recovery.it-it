@@ -16,11 +16,9 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 È possibile creare una policy o utilizzare una delle seguenti policy predefinite disponibili in NetApp Backup and Recovery.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 .Prima di iniziare
 * Se non si desidera modificare i criteri predefiniti, è necessario creare delle policy.
 * Per spostare i backup dall'archivio oggetti allo storage di archiviazione, è necessario eseguire ONTAP 9.10.1 o versione successiva e Amazon Web Services o Microsoft Azure devono essere il provider cloud.

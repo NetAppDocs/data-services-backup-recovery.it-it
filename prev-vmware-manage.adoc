@@ -16,11 +16,9 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 È possibile visualizzare policy, datastore e macchine virtuali prima di eseguire il backup e il ripristino dei dati con NetApp Backup and Recovery.  A seconda delle modifiche apportate al database, alle policy o ai gruppi di risorse, è possibile visualizzare gli aggiornamenti dall'interfaccia utente NetApp Console .
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 
 
 == Visualizza le politiche

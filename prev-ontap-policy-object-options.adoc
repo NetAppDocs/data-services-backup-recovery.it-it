@@ -19,11 +19,9 @@ NetApp Backup and Recovery consente di creare policy di backup con una varietà 
 
 NOTE: Queste impostazioni dei criteri sono rilevanti solo per l'archiviazione di backup su oggetti.  Nessuna di queste impostazioni influisce sui criteri di snapshot o replica.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 
 
 == Opzioni di pianificazione del backup

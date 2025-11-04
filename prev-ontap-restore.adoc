@@ -16,11 +16,9 @@ summary: Con NetApp Backup and Recovery, puoi ripristinare un intero volume ONTA
 [role="lead"]
 I backup dei dati del volume ONTAP sono disponibili nelle posizioni in cui sono stati creati i backup: copie snapshot, volumi replicati e backup archiviati nell'archiviazione di oggetti.  È possibile ripristinare i dati da un punto specifico nel tempo da una qualsiasi di queste posizioni di backup.  Con NetApp Backup and Recovery, puoi ripristinare un intero volume ONTAP da un file di backup oppure, se devi ripristinare solo alcuni file, puoi ripristinare una cartella o singoli file.
 
-[]
-====
-*NOTA* Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-====
+NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
+
 * È possibile ripristinare un *volume* (come nuovo volume) sul sistema originale, su un sistema diverso che utilizza lo stesso account cloud o su un sistema ONTAP locale.
 * È possibile ripristinare una *cartella* su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud o su un volume in un sistema ONTAP locale.
 * È possibile ripristinare *file* su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud o su un volume in un sistema ONTAP locale.
