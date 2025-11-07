@@ -670,6 +670,42 @@ Se hai abilitato il catalogo indicizzato prima della versione v2, nei sistemi si
 Se l'indicizzazione è già stata abilitata per il sistema, passare alla sezione successiva per ripristinare i dati.
 
 .Passaggi per abilitare l'indicizzazione per un sistema:
+Se l'indicizzazione è già stata abilitata per il sistema, passare alla sezione successiva per ripristinare i dati.
+
+Per prima cosa dovrai montare un volume separato per contenere i file di catalogo. In questo modo si evita la perdita di dati se le dimensioni dei file che contengono gli snapshot diventano troppo grandi. Questa operazione non è richiesta su tutti i cluster: è possibile montare un volume qualsiasi da uno qualsiasi dei cluster presenti nel proprio ambiente. In caso contrario, l'indicizzazione potrebbe non funzionare correttamente.
+
+Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
+
+* Utilizzare un volume NetApp NVS
+* Archiviazione AFF consigliata con throughput del disco di 300 MB/s. Una minore produttività avrà un impatto sulla ricerca e su altre operazioni.
+* Abilita gli snapshot NetApp per proteggere i metadati del catalogo oltre ai file zip di backup del catalogo
+* 50 GB per 1 miliardo di file
+* 20 GB per i dati del catalogo con spazio aggiuntivo per la creazione di file zip e file temporanei
+
+
+.Passaggio per montare il volume per reindicizzare il catalogo
+. Montare il volume su `/opt/application/netapp/cbs` immettendo il seguente comando, dove:
++
+** `volume name` è il volume sul cluster in cui verranno archiviati i file di catalogo
+** `/opt/application/netapp/cbs` è il percorso in cui viene montato
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+Esempio:
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.Passaggi per abilitare l'indice
 . Eseguire una delle seguenti operazioni:
 +
 ** Se non è stato indicizzato alcun sistema, nella Dashboard di ripristino in _Cerca e ripristina_, seleziona *Abilita indicizzazione per i sistemi*.

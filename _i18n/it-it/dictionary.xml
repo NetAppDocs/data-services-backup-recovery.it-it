@@ -4777,4 +4777,17 @@
   <block id="0b7639e600f1d3ff92ed788a9be2c0dd" category="list-text">Il server SnapDiff RPC deve essere attivato sull'SVM. La Console esegue questa operazione automaticamente quando si abilita l'indicizzazione sul sistema. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra gli snapshot.)</block>
   <block id="dff115c532ece3121746427a98f68318" category="list-text">Nell'area _Filtra per_, seleziona i criteri di filtro. Ad esempio, è possibile selezionare il sistema in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di posizione di backup se si desidera cercare risultati solo all'interno degli snapshot disponibili o dei file di backup nell'archiviazione degli oggetti.</block>
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dallo snapshot o dal volume replicato.</block>
+  <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Per prima cosa dovrai montare un volume separato per contenere i file di catalogo. In questo modo si evita la perdita di dati se le dimensioni dei file che contengono gli snapshot diventano troppo grandi. Questa operazione non è richiesta su tutti i cluster: è possibile montare un volume qualsiasi da uno qualsiasi dei cluster presenti nel proprio ambiente. In caso contrario, l'indicizzazione potrebbe non funzionare correttamente.</block>
+  <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:</block>
+  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Utilizzare un volume NetApp NVS</block>
+  <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Archiviazione AFF consigliata con throughput del disco di 300 MB/s. Una minore produttività avrà un impatto sulla ricerca e su altre operazioni.</block>
+  <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Abilita gli snapshot NetApp per proteggere i metadati del catalogo oltre ai file zip di backup del catalogo</block>
+  <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB per 1 miliardo di file</block>
+  <block id="d8f2f459c62a4c272bc182a3bf83e97d" category="list-text">20 GB per i dati del catalogo con spazio aggiuntivo per la creazione di file zip e file temporanei</block>
+  <block id="e40baf893187a4f380031521e09aab99" category="list-title">Passaggio per montare il volume per reindicizzare il catalogo</block>
+  <block id="f0b22c7460655890a4c18c0545153bae" category="list-text">Montare il volume su<block ref="f454c0203410fcd923445c6d0fd3fe90" prefix=" " category="inline-code"></block> immettendo il seguente comando, dove:</block>
+  <block id="a644d6f5b4a74fc5834ee2f4deceeb0a" category="list-text"><block ref="9e631ecdc775968f0a566931df27c2eb" prefix="" category="inline-code"></block> è il volume sul cluster in cui verranno archiviati i file di catalogo</block>
+  <block id="de272d4987aa96a00ccf6441ad353c0e" category="list-text"><block ref="f454c0203410fcd923445c6d0fd3fe90" prefix="" category="inline-code"></block> è il percorso in cui viene montato</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">Esempio:</block>
+  <block id="67e93e04234f9801960d3d563faf4619" category="list-title">Passaggi per abilitare l'indice</block>
 </blocks>
