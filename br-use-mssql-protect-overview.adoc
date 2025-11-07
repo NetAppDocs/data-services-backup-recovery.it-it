@@ -23,7 +23,7 @@ I vantaggi dell'approccio 3-2-1 includono:
 * È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-NetApp Backup and Recovery utilizza NetApp SnapMirror per sincronizzare i backup creando copie snapshot e trasferendole nelle posizioni di backup.
+NetApp Backup and Recovery utilizza NetApp SnapMirror per sincronizzare i backup creando snapshot e trasferendoli nelle posizioni di backup.
 
 Per proteggere i tuoi dati puoi fare quanto segue:
 
@@ -42,7 +42,7 @@ Per proteggere i tuoi dati puoi fare quanto segue:
 Per eseguire il backup dei carichi di lavoro, è necessario creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
 
 .Destinazioni di backup supportate
-NetApp Backup and Recovery consente di eseguire il backup di istanze e database di Microsoft SQL Server dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati.  Le copie snapshot risiedono sul sistema di origine.
+NetApp Backup and Recovery consente di eseguire il backup di istanze e database di Microsoft SQL Server dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati. Gli snapshot risiedono sul sistema di origine.
 
 [cols="33,33,33"]
 |===
@@ -58,10 +58,10 @@ NetApp Backup and Recovery consente di eseguire il backup di istanze e database 
 | Sistema ONTAP in sede | Cloud Volumes ONTAP Sistema ONTAP locale | Blob di Azure Amazon S3 NetApp StorageGRID ONTAP S3 
 
 
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | NA ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 .Destinazioni di ripristino supportate
-È possibile ripristinare istanze e database di Microsoft SQL Server da un backup che risiede nell'archivio primario o in un sistema secondario (un volume replicato) o nell'archivio oggetti (un file di backup) nei seguenti sistemi.  Le copie snapshot risiedono sul sistema di origine e possono essere ripristinate solo su quello stesso sistema.
+È possibile ripristinare istanze e database di Microsoft SQL Server da un backup che risiede nell'archivio primario o in un sistema secondario (un volume replicato) o nell'archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
 
 [cols="33,33,33"]
 |===
@@ -74,7 +74,7 @@ NetApp Backup and Recovery consente di eseguire il backup di istanze e database 
 | Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes nel sistema ONTAP locale AWS ONTAP S3 
 
 
-| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure ONTAP S3 ifdef::gcp[] endif::gcp[] 
+| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure ONTAP S3 
 
 
 | StorageGRID | Cloud Volumes ONTAP Sistema ONTAP locale | Sistema ONTAP on-premise ONTAP S3 

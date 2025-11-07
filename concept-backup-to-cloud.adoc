@@ -123,7 +123,7 @@ Esistono due tipi di costi associati all'utilizzo della funzionalità di backup 
 * Spese di servizio
 
 
-Non è previsto alcun costo per la creazione di copie snapshot o volumi replicati, a parte lo spazio su disco necessario per archiviare le copie snapshot e i volumi replicati.
+Non vi è alcun costo per la creazione di snapshot o volumi replicati, a parte lo spazio su disco necessario per archiviare gli snapshot e i volumi replicati.
 
 *Costi delle risorse*
 
@@ -193,7 +193,7 @@ NetApp Backup and Recovery è disponibile con i seguenti modelli di consumo:
 * *Annuale*: un contratto annuale dal marketplace del tuo provider cloud.
 
 
-Una licenza di backup è richiesta solo per il backup e il ripristino da un archivio di oggetti.  La creazione di copie Snapshot e volumi replicati non richiede una licenza.
+Una licenza di backup è richiesta solo per il backup e il ripristino da un archivio di oggetti. La creazione di snapshot e volumi replicati non richiede una licenza.
 
 *Porta la tua patente*
 

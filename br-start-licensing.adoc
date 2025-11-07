@@ -75,19 +75,9 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 Utilizza questi link per abbonarti a NetApp Backup and Recovery dal marketplace del tuo provider cloud:
 
-ifdef::aws[]
-
-* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] . endif::aws[]
-
-
-ifdef::azure[]
-
-* Azzurro: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] . endif::azure[]
-
-
-ifdef::gcp[]
-
-* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] . endif::gcp[]
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] .
+* Azzurro: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] .
+* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Per i dettagli sui prezzi, vai all'offerta Marketplace per NetApp Intelligent Services"^] .
 
 
 
@@ -97,8 +87,6 @@ ifdef::gcp[]
 Paga annualmente NetApp Backup and Recovery acquistando un contratto annuale.  Sono disponibili con durata di 1, 2 o 3 anni.
 
 Se hai un contratto annuale da un marketplace, tutto il consumo NetApp Backup and Recovery verrà addebitato su quel contratto.  Non è possibile combinare un contratto annuale di mercato con un contratto BYOL.
-
-ifdef::aws[]
 
 Quando si utilizza AWS, sono disponibili due contratti annuali da https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Pagina AWS Marketplace"^] per i sistemi Cloud Volumes ONTAP e ONTAP on-premise:
 

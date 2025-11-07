@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 
 
 [role="lead"]
-È possibile modificare le impostazioni di archiviazione del backup su oggetto a livello di cluster definite durante l'attivazione di NetApp Backup and Recovery per ciascun sistema ONTAP utilizzando la pagina Impostazioni avanzate.  È anche possibile modificare alcune impostazioni applicate come impostazioni di backup "predefinite".  Ciò include la modifica della velocità di trasferimento dei backup nell'archiviazione degli oggetti, se le copie Snapshot storiche vengono esportate come file di backup e l'abilitazione o disabilitazione delle scansioni ransomware per un sistema.
+È possibile modificare le impostazioni di archiviazione del backup su oggetto a livello di cluster definite durante l'attivazione di NetApp Backup and Recovery per ciascun sistema ONTAP utilizzando la pagina Impostazioni avanzate. È anche possibile modificare alcune impostazioni applicate come impostazioni di backup "predefinite". Ciò include la modifica della velocità di trasferimento dei backup nell'archiviazione degli oggetti, se gli snapshot storici vengono esportati come file di backup e se si abilitano o disabilitano le scansioni ransomware per un sistema.
 
 
 NOTE: Queste impostazioni sono disponibili solo per l'archiviazione di backup su oggetti.  Nessuna di queste impostazioni influisce sulle impostazioni di snapshot o replica.
@@ -29,7 +29,7 @@ Nella pagina Impostazioni avanzate è possibile modificare le seguenti opzioni:
 
 endif::aws[]
 
-* Modificare se le copie storiche degli snapshot vengono esportate come file di backup e incluse nei file di backup di base iniziali per i volumi futuri
+* Modificare se gli snapshot storici vengono esportati come file di backup e inclusi nei file di backup di base iniziali per i volumi futuri
 * Modificare se gli snapshot "annuali" vengono rimossi dal sistema sorgente
 * Abilitazione o disabilitazione delle scansioni ransomware per un sistema, incluse le scansioni pianificate
 
@@ -77,17 +77,17 @@ endif::aws[]
 
 
 
-== Modifica se le copie degli snapshot storici vengono esportate come file di backup
+== Modifica se gli snapshot storici vengono esportati come file di backup
 
-Se sono presenti copie snapshot locali per volumi che corrispondono all'etichetta di pianificazione del backup utilizzata in questo sistema (ad esempio, giornaliera, settimanale, ecc.), è possibile esportare tali snapshot storici nell'archiviazione degli oggetti come file di backup.  Ciò consente di inizializzare i backup nel cloud spostando le copie snapshot più vecchie nella copia di backup di base.
+Se sono presenti snapshot locali per volumi che corrispondono all'etichetta di pianificazione del backup utilizzata in questo sistema (ad esempio, giornaliera, settimanale, ecc.), è possibile esportare tali snapshot storici nell'archiviazione degli oggetti come file di backup.  Ciò consente di inizializzare i backup nel cloud spostando gli snapshot più vecchi nella copia di backup di base.
 
 Si noti che questa opzione si applica solo ai nuovi file di backup per nuovi volumi di lettura/scrittura e non è supportata con volumi di protezione dati (DP).
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
 . Dalla pagina _Impostazioni di backup_, fare clic suimage:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Impostazioni avanzate*.
-. Nella pagina Impostazioni avanzate, espandi la sezione *Esporta copie Snapshot esistenti*.
-. Seleziona se desideri esportare le copie Snapshot esistenti.
+. Nella pagina Impostazioni avanzate, espandi la sezione *Esporta snapshot esistenti*.
+. Seleziona se desideri esportare gli snapshot esistenti.
 . Selezionare *Applica*.
 
 
@@ -95,7 +95,7 @@ Si noti che questa opzione si applica solo ai nuovi file di backup per nuovi vol
 
 == Modifica se gli snapshot "annuali" vengono rimossi dal sistema sorgente
 
-Quando si seleziona l'etichetta di backup "annuale" per un criterio di backup per uno qualsiasi dei volumi, la copia Snapshot creata è molto grande.  Per impostazione predefinita, questi snapshot annuali vengono eliminati automaticamente dal sistema di origine dopo essere stati trasferiti nell'archiviazione degli oggetti.  È possibile modificare questo comportamento predefinito dalla sezione Eliminazione snapshot annuale.
+Quando si seleziona l'etichetta di backup "annuale" per un criterio di backup per uno qualsiasi dei volumi, lo snapshot creato è molto grande. Per impostazione predefinita, questi snapshot annuali vengono eliminati automaticamente dal sistema di origine dopo essere stati trasferiti nell'archiviazione degli oggetti. È possibile modificare questo comportamento predefinito dalla sezione Eliminazione snapshot annuale.
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
@@ -112,7 +112,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Uno screenshot della voce I
 
 == Abilita o disabilita le scansioni ransomware
 
-Le scansioni di protezione dal ransomware sono abilitate per impostazione predefinita.  L'impostazione predefinita per la frequenza di scansione è 7 giorni.  La scansione viene eseguita solo sull'ultima copia dello snapshot.  È possibile abilitare o disabilitare le scansioni ransomware sull'ultima copia snapshot utilizzando l'opzione nella pagina Impostazioni avanzate.  Se si attiva questa opzione, per impostazione predefinita le scansioni vengono eseguite ogni 7 giorni.
+Le scansioni di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è 7 giorni. La scansione avviene solo sull'ultimo snapshot. È possibile abilitare o disabilitare le scansioni ransomware sull'ultimo snapshot utilizzando l'opzione nella pagina Impostazioni avanzate. Se si attiva questa opzione, per impostazione predefinita le scansioni vengono eseguite ogni 7 giorni.
 
 Per i dettagli sulle opzioni DataLock e Ransomware Resilience, fare riferimento alink:prev-ontap-policy-object-options.html["Opzioni di resilienza DataLock e Ransomware"] .
 
@@ -121,7 +121,7 @@ Per i dettagli sulle opzioni DataLock e Ransomware Resilience, fare riferimento 
 
 TIP: L'attivazione delle scansioni ransomware comporterà costi aggiuntivi a seconda del provider cloud.
 
-Le scansioni ransomware pianificate vengono eseguite solo sulla copia snapshot più recente.
+Le scansioni ransomware pianificate vengono eseguite solo sull'ultimo snapshot.
 
 Se le scansioni ransomware pianificate sono disattivate, è comunque possibile eseguire scansioni su richiesta e la scansione durante un'operazione di ripristino verrà comunque eseguita.
 

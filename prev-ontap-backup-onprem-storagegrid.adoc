@@ -69,7 +69,7 @@ Assicurarsi che la rete in cui è installato l'agente Console consenta le seguen
 
 * La funzionalità NetApp Backup and Recovery è integrata nell'agente Console.  Se installato in modalità privata, sarà necessario aggiornare periodicamente il software dell'agente della console per accedere alle nuove funzionalità.  Controlla illink:whats-new.html["NetApp Backup and Recovery: novità"] per vedere le nuove funzionalità di ogni versione NetApp Backup and Recovery .  Quando vuoi utilizzare le nuove funzionalità, segui i passaggi per https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["aggiornare il software dell'agente della console"^] .
 +
-La nuova versione di NetApp Backup and Recovery , che include la possibilità di pianificare e creare copie Snapshot e volumi replicati, oltre a creare backup nell'archiviazione di oggetti, richiede l'utilizzo della versione 3.9.31 o successiva dell'agente Console.  Ti consigliamo quindi di scaricare questa versione più recente per gestire tutti i tuoi backup.
+La nuova versione di NetApp Backup and Recovery , che include la possibilità di pianificare e creare snapshot e volumi replicati, oltre a creare backup nell'archiviazione di oggetti, richiede l'utilizzo della versione 3.9.31 o successiva dell'agente Console. Ti consigliamo quindi di scaricare questa versione più recente per gestire tutti i tuoi backup.
 
 * Quando si utilizza NetApp Backup and Recovery in un ambiente SaaS, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel cloud.  Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket StorageGRID in cui vengono archiviati i backup.
 
@@ -447,7 +447,7 @@ Se il cluster utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGR
 +
 Seleziona o crea un nuovo cluster StorageGRID .  Per i dettagli sulla creazione di un cluster StorageGRID in modo che la Console possa rilevarlo, fare riferimento a https://docs.netapp.com/us-en/storagegrid-117/["Documentazione StorageGRID"^] .
 
-** *Esporta copie snapshot esistenti nell'archivio oggetti come copie di backup*: se sono presenti copie snapshot locali per i volumi in questo sistema che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo sistema (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo.  Seleziona questa casella per copiare tutti gli snapshot storici nell'archivio oggetti come file di backup, per garantire la protezione più completa per i tuoi volumi.
+** *Esporta snapshot esistenti nell'archivio oggetti come copie di backup*: se sono presenti snapshot locali per i volumi in questo sistema che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo sistema (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Seleziona questa casella per copiare tutti gli snapshot storici nell'archivio oggetti come file di backup, per garantire la protezione più completa per i tuoi volumi.
 
 
 . Selezionare *Avanti*.
@@ -466,7 +466,7 @@ Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se ne
 
 
 .Risultato
-NetApp Backup and Recovery inizia a eseguire i backup iniziali dei volumi.  Il trasferimento di base del volume replicato e del file di backup include una copia completa dei dati di origine.  I trasferimenti successivi contengono copie differenziali dei dati di archiviazione primaria contenuti nelle copie Snapshot.
+NetApp Backup and Recovery inizia a eseguire i backup iniziali dei volumi. Il trasferimento di base del volume replicato e del file di backup include una copia completa dei dati di origine. I trasferimenti successivi contengono copie differenziali dei dati di archiviazione primaria contenuti negli snapshot.
 
 Nel cluster di destinazione viene creato un volume replicato che verrà sincronizzato con il volume di archiviazione primario.
 

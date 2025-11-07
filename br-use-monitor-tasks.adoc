@@ -118,7 +118,7 @@ Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaric
 
 Monitorare i flussi di conservazione (_ciclo di vita del backup_) per controllare i backup, mantenerli al sicuro e supportare gli audit.  Identificare la scadenza delle copie di backup per monitorarne il ciclo di vita.
 
-Un processo di backup del ciclo di vita tiene traccia di tutte le copie Snapshot eliminate o in coda per l'eliminazione.  A partire da ONTAP 9.13, è possibile visualizzare tutti i tipi di lavoro denominati "Retention" nella pagina Job Monitoring.
+Un processo di backup del ciclo di vita tiene traccia di tutti gli snapshot eliminati o in coda per l'eliminazione. A partire da ONTAP 9.13, è possibile visualizzare tutti i tipi di lavoro denominati "Retention" nella pagina Job Monitoring.
 
 Il tipo di processo "Conservazione" acquisisce tutti i processi di eliminazione degli snapshot avviati su un volume protetto da NetApp Backup and Recovery.
 

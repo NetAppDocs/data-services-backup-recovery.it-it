@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-restore.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: 'Ripristina i carichi di lavoro del database da una copia snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell"archivio oggetti.' 
+summary: 'Ripristina i carichi di lavoro del database da uno snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell"archivio oggetti.' 
 ---
 = Ripristina i carichi di lavoro di Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Ripristina i carichi di lavoro del database da una copia snapshot, da 
 
 
 [role="lead"]
-Ripristina i carichi di lavoro di Microsoft SQL Server utilizzando NetApp Backup and Recovery.  Utilizzare copie snapshot, backup replicati su storage secondario o backup in storage a oggetti.  Ripristinare i carichi di lavoro sul sistema originale, su un sistema diverso con lo stesso account cloud o su un sistema ONTAP locale.
+Ripristina i carichi di lavoro di Microsoft SQL Server utilizzando NetApp Backup and Recovery. Utilizzare snapshot, backup replicati su storage secondario o backup in storage di oggetti. Ripristinare i carichi di lavoro sul sistema originale, su un sistema diverso con lo stesso account cloud o su un sistema ONTAP locale.
 
 .Ripristina da queste posizioni
 È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:

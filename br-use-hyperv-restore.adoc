@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro Hyper-V con NetApp Backup and Recover
 
 
 [role="lead"]
-Ripristina i carichi di lavoro Hyper-V da copie snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell'archivio oggetti utilizzando NetApp Backup and Recovery.
+Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell'archivio oggetti utilizzando NetApp Backup and Recovery.
 
 .Ripristina da queste posizioni
 È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:

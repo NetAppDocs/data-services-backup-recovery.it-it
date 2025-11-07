@@ -49,7 +49,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 == Crea una politica
 
-È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti.  Una parte della strategia 3-2-1 prevede la creazione di una copia snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
+È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti. Una parte della strategia 3-2-1 prevede la creazione di uno snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
 
 *Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 

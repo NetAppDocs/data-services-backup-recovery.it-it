@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi
 
 
 [role="lead"]
-Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup, forzando l'eliminazione dei backup e molto altro. Ciò include tutti i tipi di backup, tra cui copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti.  È anche possibile annullare la registrazione NetApp Backup and Recovery.
+Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup, forzando l'eliminazione dei backup e molto altro. Ciò include tutti i tipi di backup, tra cui snapshot, volumi replicati e file di backup nell'archiviazione di oggetti. È anche possibile annullare la registrazione NetApp Backup and Recovery.
 
 
 CAUTION: Non gestire o modificare i file di backup direttamente sui tuoi sistemi di archiviazione o dall'ambiente del tuo provider cloud.  Ciò potrebbe danneggiare i file e dar luogo a una configurazione non supportata.
@@ -26,7 +26,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 == Visualizza lo stato di backup dei volumi nei tuoi sistemi
 
-È possibile visualizzare un elenco di tutti i volumi attualmente sottoposti a backup nella dashboard di backup dei volumi. Ciò include tutti i tipi di backup, tra cui copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti.  È anche possibile visualizzare i volumi nei sistemi di cui non è attualmente in corso il backup.
+È possibile visualizzare un elenco di tutti i volumi attualmente sottoposti a backup nella dashboard di backup dei volumi. Ciò include tutti i tipi di backup, tra cui snapshot, volumi replicati e file di backup nell'archiviazione di oggetti. È anche possibile visualizzare i volumi nei sistemi di cui non è attualmente in corso il backup.
 
 .Passi
 . Dal menu Console, selezionare *Protezione > Backup e ripristino*.
@@ -35,7 +35,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 +
 Per visualizzare colonne aggiuntive (aggregati, stile di sicurezza (Windows o UNIX), criterio di snapshot, criterio di replica e criterio di backup), selezionare il segno più.
 
-. Controllare lo stato delle opzioni di protezione nella colonna "Protezione esistente".  Le 3 icone stanno per "Copie snapshot locali", "Volumi replicati" e "Backup nell'archiviazione di oggetti".
+. Controllare lo stato delle opzioni di protezione nella colonna "Protezione esistente". Le 3 icone stanno per "Snapshot locali", "Volumi replicati" e "Backup nell'archiviazione di oggetti".
 +
 Ogni icona è blu quando il tipo di backup è attivato, mentre è grigia quando il tipo di backup è inattivo.  È possibile passare il cursore su ciascuna icona per visualizzare la policy di backup utilizzata e altre informazioni pertinenti per ciascun tipo di backup.
 
@@ -49,7 +49,7 @@ Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilita
 
 .Passi
 . Dalla scheda *Volumi*, identifica il volume su cui desideri attivare i backup, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Attiva backup*.
-. Nella pagina _Definisci strategia di backup_, seleziona l'architettura di backup, quindi definisci i criteri e altri dettagli per le copie snapshot locali, i volumi replicati e i file di backup.  Consulta i dettagli per le opzioni di backup dai volumi iniziali attivati in questo sistema. Quindi seleziona *Avanti*.
+. Nella pagina _Definisci strategia di backup_, seleziona l'architettura di backup, quindi definisci i criteri e altri dettagli per snapshot locali, volumi replicati e file di backup. Consulta i dettagli per le opzioni di backup dai volumi iniziali attivati in questo sistema. Quindi seleziona *Avanti*.
 . Rivedere le impostazioni di backup per questo volume, quindi selezionare *Attiva backup*.
 
 
@@ -57,7 +57,7 @@ Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilita
 
 == Modificare le impostazioni di backup assegnate ai volumi esistenti
 
-È possibile modificare i criteri di backup assegnarti ai volumi esistenti a cui sono stati assegnati criteri.  È possibile modificare i criteri per le copie snapshot locali, i volumi replicati e i file di backup.  Ogni nuovo snapshot, replica o criterio di backup che si desidera applicare ai volumi deve già esistere.
+È possibile modificare i criteri di backup assegnarti ai volumi esistenti a cui sono stati assegnati criteri. È possibile modificare i criteri per gli snapshot locali, i volumi replicati e i file di backup. Ogni nuovo snapshot, replica o criterio di backup che si desidera applicare ai volumi deve già esistere.
 
 
 
@@ -65,7 +65,7 @@ Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilita
 
 .Passi
 . Dalla scheda *Volumi*, identifica il volume su cui vuoi apportare modifiche ai criteri, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Modifica strategia di backup*.
-. Nella pagina _Modifica strategia di backup_, apportare modifiche ai criteri di backup esistenti per le copie snapshot locali, i volumi replicati e i file di backup e selezionare *Avanti*.
+. Nella pagina _Modifica strategia di backup_, apportare modifiche ai criteri di backup esistenti per snapshot locali, volumi replicati e file di backup e selezionare *Avanti*.
 +
 Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
 
@@ -108,7 +108,7 @@ Se sono abilitati più di cinque volumi per il backup, NetApp Backup and Recover
 
 | Gestisci più tipi di impostazioni di backup.  Questa opzione consente anche di modificare l'architettura di backup. | *Gestisci backup e ripristino* 
 |===
-. Nella pagina di backup visualizzata, apportare modifiche ai criteri di backup esistenti per le copie snapshot locali, i volumi replicati o i file di backup e selezionare *Salva*.
+. Nella pagina di backup visualizzata, apportare modifiche ai criteri di backup esistenti per snapshot locali, volumi replicati o file di backup e selezionare *Salva*.
 +
 Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
 
@@ -120,7 +120,7 @@ Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella pol
 
 È possibile creare un backup su richiesta in qualsiasi momento per acquisire lo stato corrente del volume.  Questa opzione può essere utile se sono state apportate modifiche molto importanti a un volume e non si desidera attendere il successivo backup pianificato per proteggere i dati.  È possibile utilizzare questa funzionalità anche per creare un backup di un volume di cui non è attualmente in corso il backup e di cui si desidera acquisire lo stato attuale.
 
-È possibile creare una copia snapshot ad hoc o un backup dell'oggetto di un volume.  Non è possibile creare un volume replicato ad hoc.
+È possibile creare uno snapshot ad hoc o un backup dell'oggetto di un volume. Non è possibile creare un volume replicato ad hoc.
 
 Il nome del backup include la marca temporale, in modo da poter distinguere il backup su richiesta da altri backup pianificati.
 
@@ -146,7 +146,7 @@ Nella colonna Stato backup per quel volume viene visualizzato "In corso" finché
 .Passi
 . Dalla scheda *Volumi*, selezionaimage:icon-actions-horizontal.gif["Icona Azioni"] per il volume sorgente e seleziona *Visualizza dettagli volume*.
 +
-Vengono visualizzati i dettagli del volume e l'elenco delle copie snapshot.
+Vengono visualizzati i dettagli del volume e l'elenco degli snapshot.
 
 . Selezionare *Snapshot*, *Replica* o *Backup* per visualizzare l'elenco di tutti i file di backup per ciascun tipo di backup.
 
@@ -195,7 +195,7 @@ La tabella seguente descrive le azioni disponibili:
 | Aggiorna replica | Avvia un trasferimento incrementale per aggiornare il volume di destinazione da sincronizzare con il volume di origine. 
 
 
-| Sospendi replicazione | Sospendi il trasferimento incrementale delle copie Snapshot per aggiornare il volume di destinazione.  È possibile riprendere in seguito se si desidera riavviare gli aggiornamenti incrementali. 
+| Sospendi replicazione | Sospendi il trasferimento incrementale degli snapshot per aggiornare il volume di destinazione. È possibile riprendere in seguito se si desidera riavviare gli aggiornamenti incrementali. 
 
 
 | Interrompere la replicazione | Interrompe la relazione tra i volumi di origine e di destinazione e attiva il volume di destinazione per l'accesso ai dati, rendendolo di lettura-scrittura.  Questa opzione viene in genere utilizzata quando il volume di origine non può gestire i dati a causa di eventi quali danneggiamento dei dati, eliminazione accidentale o stato offline.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Scopri come configurare un volume di destinazione per l'accesso ai dati e riattivare un volume di origine nella documentazione ONTAP"^] 
@@ -319,7 +319,7 @@ CAUTION: Se si prevede di eliminare un sistema o un cluster che dispone di backu
 
 L'eliminazione di tutti i backup nell'archivio oggetti di un sistema non disabilita i backup futuri dei volumi in questo sistema.  Se si desidera interrompere la creazione di backup di tutti i volumi in un sistema, è possibile disattivare i backup<<Disattivare NetApp Backup and Recovery per un sistema,come descritto qui>> .
 
-Si noti che questa azione non influisce sulle copie Snapshot o sui volumi replicati: questi tipi di file di backup non vengono eliminati.
+Si noti che questa azione non influisce sugli snapshot o sui volumi replicati: questi tipi di file di backup non vengono eliminati.
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
@@ -366,14 +366,14 @@ CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessi
 
 === Elimina un singolo file di backup per un volume
 
-È possibile eliminare un singolo file di backup se non ne hai più bisogno.  Ciò include l'eliminazione di un singolo backup di una copia snapshot del volume o di un backup nell'archivio oggetti.
+È possibile eliminare un singolo file di backup se non ne hai più bisogno. Ciò include l'eliminazione di un singolo backup di uno snapshot del volume o di un backup nell'archiviazione degli oggetti.
 
 Non è possibile eliminare i volumi replicati (volumi di protezione dei dati).
 
 .Passi
 . Dalla scheda *Volumi*, selezionaimage:icon-actions-horizontal.gif["Più icona"] per il volume sorgente e seleziona *Visualizza dettagli volume*.
 +
-Vengono visualizzati i dettagli del volume ed è possibile selezionare *Snapshot*, *Replica* o *Backup* per visualizzare l'elenco di tutti i file di backup per il volume.  Per impostazione predefinita, vengono visualizzate le copie snapshot disponibili.
+Vengono visualizzati i dettagli del volume ed è possibile selezionare *Snapshot*, *Replica* o *Backup* per visualizzare l'elenco di tutti i file di backup per il volume. Per impostazione predefinita, vengono visualizzati gli snapshot disponibili.
 
 . Selezionare *Snapshot* o *Backup* per visualizzare il tipo di file di backup che si desidera eliminare.
 . Selezionareimage:icon-actions-horizontal.gif["Icona Azioni"] per il file di backup del volume che vuoi eliminare e seleziona *Elimina*.

@@ -22,7 +22,7 @@ Per poter utilizzare il servizio NetApp Backup and Recovery, è necessario innan
 
 == Scopri i carichi di lavoro VMware e, facoltativamente, importa le risorse SnapCenter
 
-Durante la fase di individuazione, NetApp Backup and Recovery analizza i carichi di lavoro VMware all'interno dell'organizzazione e valuta e importa le policy di protezione esistenti, le copie snapshot e le opzioni di backup e ripristino.
+Durante la fase di individuazione, NetApp Backup and Recovery analizza i carichi di lavoro VMware all'interno dell'organizzazione e valuta e importa le policy di protezione, gli snapshot e le opzioni di backup e ripristino esistenti.
 
 È possibile importare datastore e VM VMware NFS e VMFS dal SnapCenter Plug-in for VMware vSphere nell'inventario NetApp Backup and Recovery .
 
@@ -36,7 +36,7 @@ Durante il processo di importazione, NetApp Backup and Recovery esegue le seguen
 * Prepara i metadati del vCenter e lo contrassegna come non gestito nella NetApp Console.
 * Configura l'accesso al database.
 * Rileva VMware vCenter, datastore e VM.
-* Importa criteri di protezione esistenti, copie snapshot e opzioni di backup e ripristino dal SnapCenter Plug-in for VMware vSphere.
+* Importa criteri di protezione, snapshot e opzioni di backup e ripristino esistenti dal SnapCenter Plug-in for VMware vSphere.
 * Visualizza le risorse rilevate nella pagina Inventario NetApp Backup and Recovery .
 
 
@@ -156,3 +156,14 @@ Dopo aver scelto di gestire le risorse, le risorse, le VM e i criteri vengono im
 
 .Risultato
 La pagina Inventario mostra le risorse vCenter appena gestite.
+
+
+
+==== Continua alla dashboard NetApp Backup and Recovery
+
+. Per visualizzare la Dashboard, dal menu Backup e ripristino, selezionare *Dashboard*.
+. Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
++
+link:br-use-dashboard.html["Scopri cosa ti mostra la Dashboard"].
+
+

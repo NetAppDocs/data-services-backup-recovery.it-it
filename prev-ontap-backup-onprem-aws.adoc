@@ -532,7 +532,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 *** Seleziona *Crea*.
 
 
-** *Esporta copie snapshot esistenti nell'archivio oggetti come copie di backup*: se sono presenti copie snapshot locali per i volumi in questo sistema che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo sistema (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo.  Seleziona questa casella per copiare tutti gli snapshot storici nell'archivio oggetti come file di backup, per garantire la protezione più completa per i tuoi volumi.
+** *Esporta snapshot esistenti nell'archivio oggetti come copie di backup*: se sono presenti snapshot locali per i volumi in questo sistema che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo sistema (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Seleziona questa casella per copiare tutti gli snapshot storici nell'archivio oggetti come file di backup, per garantire la protezione più completa per i tuoi volumi.
 
 
 . Selezionare *Avanti*.
@@ -551,7 +551,7 @@ Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se ne
 
 
 .Risultato
-NetApp Backup and Recovery inizia a eseguire i backup iniziali dei volumi.  Il trasferimento di base del volume replicato e del file di backup include una copia completa dei dati del sistema di archiviazione primario.  I trasferimenti successivi contengono copie differenziali dei dati primari contenuti nelle copie Snapshot.
+NetApp Backup and Recovery inizia a eseguire i backup iniziali dei volumi. Il trasferimento di base del volume replicato e del file di backup include una copia completa dei dati del sistema di archiviazione primario. I trasferimenti successivi contengono copie differenziali dei dati primari contenuti negli snapshot.
 
 Nel cluster di destinazione viene creato un volume replicato che verrà sincronizzato con il volume di archiviazione primario.
 

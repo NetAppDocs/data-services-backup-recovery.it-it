@@ -61,7 +61,7 @@ Viene visualizzata la pagina di gestione delle policy.  Per impostazione predefi
 
 == Creare politiche
 
-È possibile creare policy che regolano le copie snapshot, le repliche e i backup nell'archiviazione degli oggetti:
+È possibile creare policy che regolano gli snapshot, le repliche e i backup nell'archiviazione degli oggetti:
 
 * <<Creare un criterio di snapshot prima di avviare lo snapshot>>
 * <<Creare una politica di replicazione prima di avviare la replica>>
@@ -72,7 +72,7 @@ Viene visualizzata la pagina di gestione delle policy.  Per impostazione predefi
 
 === Creare un criterio di snapshot prima di avviare lo snapshot
 
-Una parte della strategia 3-2-1 prevede la creazione di una copia snapshot del volume sul sistema di archiviazione *primario*.
+Una parte della strategia 3-2-1 prevede la creazione di uno snapshot del volume sul sistema di archiviazione *primario*.
 
 Una parte del processo di creazione delle policy prevede l'identificazione delle etichette snapshot e SnapMirror che indicano la pianificazione e la conservazione.  È possibile utilizzare etichette predefinite o crearne di proprie.
 

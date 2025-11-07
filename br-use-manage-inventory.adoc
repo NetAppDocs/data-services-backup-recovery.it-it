@@ -39,7 +39,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 ** Esegui subito il backup avviando un backup su richiesta
 
 
-* Configurare la directory dei registri (da Inventario > Host).  Se si desidera eseguire il backup dei registri per gli host del database nello snapshot, configurare prima i registri in NetApp Backup and Recovery.  Per i dettagli, fare riferimento alink:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"] .
+* Configurare la directory dei registri (da *Inventario* > *Host*). Se si desidera eseguire il backup dei registri per gli host del database nello snapshot, configurare prima i registri in NetApp Backup and Recovery. Per i dettagli, fare riferimento alink:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"] .
 
 
 

@@ -21,7 +21,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 Esamineremo le seguenti opzioni:
 
-* Quali funzionalità di protezione utilizzerai: copie snapshot, volumi replicati e/o backup sul cloud
+* Quali funzionalità di protezione utilizzerai: snapshot, volumi replicati e/o backup sul cloud
 * Quale architettura di backup utilizzerai: un backup a cascata o a fan-out dei tuoi volumi
 * Utilizzerai i criteri di backup predefiniti o dovrai creare criteri personalizzati?
 * Desideri che il servizio crei i bucket cloud per te o desideri creare i contenitori di archiviazione degli oggetti prima di iniziare?
@@ -39,7 +39,7 @@ Prima di selezionare le funzionalità da utilizzare, ecco una breve spiegazione 
 | Tipo di backup | Descrizione 
 
 
-| Istantanea | Crea un'immagine di sola lettura e in un punto temporale specifico di un volume all'interno del volume di origine come copia snapshot.  È possibile utilizzare la copia snapshot per recuperare singoli file o per ripristinare l'intero contenuto di un volume. 
+| Istantanea | Crea un'immagine di sola lettura e in un punto temporale specifico di un volume all'interno del volume di origine come snapshot.  È possibile utilizzare lo snapshot per recuperare singoli file oppure per ripristinare l'intero contenuto di un volume. 
 
 
 | Replicazione | Crea una copia secondaria dei dati su un altro sistema di archiviazione ONTAP e aggiorna continuamente i dati secondari.  I tuoi dati saranno sempre aggiornati e disponibili ogni volta che ne avrai bisogno. 
@@ -47,17 +47,17 @@ Prima di selezionare le funzionalità da utilizzare, ecco una breve spiegazione 
 
 | Backup su cloud | Crea backup dei tuoi dati sul cloud per proteggerli e archiviarli a lungo termine.  Se necessario, è possibile ripristinare un volume, una cartella o singoli file dal backup sullo stesso sistema o su un sistema diverso. 
 |===
-Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino.  Una copia snapshot è un'immagine di un volume, di sola lettura e memorizzata in un punto temporale specifico.  L'immagine consuma uno spazio di archiviazione minimo e comporta un sovraccarico di prestazioni trascurabile, poiché registra solo le modifiche apportate ai file dall'ultima copia snapshot effettuata.  La copia snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
+Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino. Uno snapshot è un'immagine di un volume, di sola lettura e memorizzata in un punto preciso nel tempo. L'immagine occupa uno spazio di archiviazione minimo e comporta un sovraccarico di prestazioni trascurabile, poiché registra solo le modifiche apportate ai file dall'ultima istantanea.  Lo snapshot creato sul volume viene utilizzato per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
 
-image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono sul sistema di origine come copie snapshot, come volumi replicati sul sistema di archiviazione secondario e come file di backup nell'archiviazione di oggetti."]
+image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono sul sistema di origine come snapshot, come volumi replicati sul sistema di archiviazione secondario e come file di backup nell'archiviazione di oggetti."]
 
 È possibile scegliere di creare sia volumi replicati su un altro sistema di archiviazione ONTAP sia file di backup nel cloud.  Oppure puoi semplicemente scegliere di creare volumi replicati o file di backup: la scelta è tua.
 
 Riassumendo, ecco i flussi di protezione validi che puoi creare per i volumi nel tuo sistema ONTAP :
 
-* Volume di origine -> Copia snapshot -> Volume replicato -> File di backup
-* Volume sorgente -> Copia snapshot -> File di backup
-* Volume sorgente -> Copia snapshot -> Volume replicato
+* Volume di origine -> Snapshot -> Volume replicato -> File di backup
+* Volume sorgente -> Snapshot -> File di backup
+* Volume sorgente -> Snapshot -> Volume replicato
 
 
 
@@ -88,13 +88,13 @@ Oltre a questo criterio, l'archiviazione cloud offre opzioni di sicurezza aggiun
 
 Quando si creano sia volumi replicati sia file di backup, è possibile scegliere un'architettura fan-out o a cascata per eseguire il backup dei volumi.
 
-Un'architettura *fan-out* trasferisce la copia snapshot in modo indipendente sia al sistema di archiviazione di destinazione sia all'oggetto di backup nel cloud.
+Un'architettura *fan-out* trasferisce lo snapshot in modo indipendente sia al sistema di archiviazione di destinazione sia all'oggetto di backup nel cloud.
 
-image:diagram-321-fanout-detailed.png["Un diagramma che mostra come una copia snapshot di un volume viene utilizzata per creare e aggiornare un volume replicato e un file di backup."]
+image:diagram-321-fanout-detailed.png["Un diagramma che mostra come uno snapshot di un volume viene utilizzato per creare e aggiornare un volume replicato e un file di backup."]
 
-Un'architettura *a cascata* trasferisce prima la copia dello snapshot al sistema di archiviazione di destinazione, che poi trasferisce la copia all'oggetto di backup nel cloud.
+Un'architettura *a cascata* trasferisce prima lo snapshot al sistema di archiviazione di destinazione, dopodiché il sistema trasferisce la copia all'oggetto di backup nel cloud.
 
-image:diagram-321-cascade-detailed.png["Un diagramma che mostra come una copia snapshot di un volume viene utilizzata per creare e aggiornare un volume replicato e un file di backup."]
+image:diagram-321-cascade-detailed.png["Un diagramma che mostra come uno snapshot di un volume viene utilizzato per creare e aggiornare un volume replicato e un file di backup."]
 
 *Confronto tra le diverse scelte architettoniche*
 
@@ -105,7 +105,7 @@ Questa tabella fornisce un confronto tra le architetture fan-out e a cascata.
 | Fan-out | Cascata 
 
 
-| Piccolo impatto sulle prestazioni del sistema sorgente perché invia copie snapshot a 2 sistemi distinti | Minore impatto sulle prestazioni del sistema di archiviazione di origine perché invia la copia snapshot una sola volta 
+| Piccolo impatto sulle prestazioni del sistema sorgente perché invia snapshot a 2 sistemi distinti | Minore impatto sulle prestazioni del sistema di archiviazione di origine perché invia lo snapshot una sola volta 
 
 
 | Più facile da configurare perché tutte le policy, le reti e le configurazioni ONTAP vengono eseguite sul sistema sorgente | Richiede che alcune configurazioni di rete e ONTAP vengano eseguite anche dal sistema secondario. 
@@ -116,9 +116,9 @@ Questa tabella fornisce un confronto tra le architetture fan-out e a cascata.
 
 Per creare i backup è possibile utilizzare i criteri predefiniti forniti da NetApp oppure creare criteri personalizzati.  Quando si utilizza la procedura guidata di attivazione per abilitare il servizio di backup e ripristino per i volumi, è possibile selezionare tra i criteri predefiniti e qualsiasi altro criterio già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP locale).  Se si desidera utilizzare una policy diversa da quelle esistenti, è possibile crearla prima di iniziare o durante l'utilizzo della procedura guidata di attivazione.
 
-* Il criterio di snapshot predefinito crea copie di snapshot orarie, giornaliere e settimanali, conservando 6 copie di snapshot orarie, 2 giornaliere e 2 settimanali.
-* La policy di replica predefinita replica copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 copie snapshot settimanali.
-* La policy di backup predefinita replica copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 copie snapshot settimanali.
+* Il criterio di snapshot predefinito crea snapshot orari, giornalieri e settimanali, conservando 6 snapshot orari, 2 giornalieri e 2 settimanali.
+* La policy di replica predefinita replica snapshot giornalieri e settimanali, conservando 7 snapshot giornalieri e 52 snapshot settimanali.
+* La policy di backup predefinita replica snapshot giornalieri e settimanali, conservando 7 snapshot giornalieri e 52 settimanali.
 
 
 Se si creano policy personalizzate per la replica o il backup, le etichette delle policy (ad esempio, "giornaliera" o "settimanale") devono corrispondere alle etichette presenti nelle policy snapshot, altrimenti i volumi replicati e i file di backup non verranno creati.

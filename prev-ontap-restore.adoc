@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery, puoi ripristinare un intero volume ONTA
 
 
 [role="lead"]
-I backup dei dati del volume ONTAP sono disponibili nelle posizioni in cui sono stati creati i backup: copie snapshot, volumi replicati e backup archiviati nell'archiviazione di oggetti.  È possibile ripristinare i dati da un punto specifico nel tempo da una qualsiasi di queste posizioni di backup.  Con NetApp Backup and Recovery, puoi ripristinare un intero volume ONTAP da un file di backup oppure, se devi ripristinare solo alcuni file, puoi ripristinare una cartella o singoli file.
+I backup dei dati del volume ONTAP sono disponibili nelle posizioni in cui sono stati creati i backup: snapshot, volumi replicati e backup archiviati nell'archiviazione di oggetti. È possibile ripristinare i dati da un punto specifico nel tempo da una qualsiasi di queste posizioni di backup. Con NetApp Backup and Recovery, puoi ripristinare un intero volume ONTAP da un file di backup oppure, se devi ripristinare solo alcuni file, puoi ripristinare una cartella o singoli file.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -30,7 +30,7 @@ Riassumendo, ecco i flussi validi che è possibile utilizzare per ripristinare i
 
 * File di backup -> volume ripristinato
 * Volume replicato -> volume ripristinato
-* Copia snapshot -> volume ripristinato
+* Snapshot -> volume ripristinato
 
 
 
@@ -87,7 +87,7 @@ Questa tabella fornisce un elenco di operazioni di ripristino valide in base all
 |  | *Ripristina volume* | *Ripristina file* | *Ripristina cartella* | *Ripristina volume* | *Ripristina file* | *Ripristina cartella* 
 
 
-| Copia istantanea | SÌ | NO | NO | SÌ | SÌ | SÌ 
+| Istantanea | SÌ | NO | NO | SÌ | SÌ | SÌ 
 
 
 | Volume replicato | SÌ | NO | NO | SÌ | SÌ | SÌ 
@@ -108,7 +108,7 @@ Consultare i requisiti e i passaggi di ripristino per il tipo di operazione di r
 
 == Ripristina i dati ONTAP utilizzando Sfoglia e ripristina
 
-Prima di effettuare il ripristino, annotare il nome del volume di origine, il sistema di origine e l'SVM, nonché la data del file di backup. È possibile ripristinare i dati ONTAP da una copia Snapshot, da un volume replicato o da backup archiviati nell'archiviazione oggetti.
+Prima di effettuare il ripristino, annotare il nome del volume di origine, il sistema di origine e l'SVM, nonché la data del file di backup. È possibile ripristinare i dati ONTAP da uno snapshot, da un volume replicato o da backup archiviati nell'archiviazione di oggetti.
 
 
 NOTE: Se il file di backup che si desidera ripristinare si trova in un archivio cloud (a partire da ONTAP 9.10.1), l'operazione di ripristino richiede più tempo e comporta un costo.  Il cluster di destinazione deve inoltre eseguire ONTAP 9.10.1 o versione successiva per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.
@@ -138,7 +138,7 @@ NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'ar
 
 === Esplora e ripristina i sistemi supportati e i provider di archiviazione di oggetti
 
-È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi.  Le copie snapshot risiedono sul sistema di origine e possono essere ripristinate solo su quello stesso sistema.
+È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
 
 *Nota:* è possibile ripristinare un volume da qualsiasi tipo di file di backup, ma al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti.
 
@@ -213,7 +213,7 @@ Come puoi vedere, per eseguire un ripristino del volume dovrai conoscere il nome
 . Dalla sezione _Sfoglia e ripristina_, seleziona *Ripristina volume*.
 . Nella pagina _Seleziona origine_, vai al file di backup per il volume che desideri ripristinare.  Selezionare il *sistema*, il *volume* e il file *backup* con la data/ora da cui si desidera effettuare il ripristino.
 +
-La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (una copia Snapshot sul sistema di origine), *Secondario* (un volume replicato su un sistema ONTAP secondario) o *Archiviazione oggetti* (un file di backup nell'archiviazione oggetti).  Seleziona il file che vuoi ripristinare.
+La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (uno snapshot sul sistema di origine), *Secondario* (un volume replicato su un sistema ONTAP secondario) o *Archiviazione oggetti* (un file di backup nell'archiviazione oggetti). Seleziona il file che vuoi ripristinare.
 
 . Selezionare *Avanti*.
 +
@@ -300,7 +300,7 @@ Si noti che il ripristino di un volume da un file di backup residente in un arch
 Se è necessario ripristinare solo alcuni file da un backup del volume ONTAP , è possibile scegliere di ripristinare una cartella o singoli file anziché ripristinare l'intero volume.  È possibile ripristinare cartelle e file su un volume esistente nel sistema originale oppure su un sistema diverso che utilizza lo stesso account cloud.  È anche possibile ripristinare cartelle e file su un volume su un sistema ONTAP locale.
 
 
-NOTE: Al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti.  Il ripristino di file e cartelle non è attualmente supportato da una copia snapshot locale o da un file di backup che risiede in un sistema secondario (un volume replicato).
+NOTE: Al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti. Il ripristino di file e cartelle non è attualmente supportato da uno snapshot locale o da un file di backup che risiede in un sistema secondario (un volume replicato).
 
 Se si selezionano più file, questi vengono ripristinati nello stesso volume di destinazione.  Per ripristinare i file su volumi diversi, eseguire il processo più volte.
 
@@ -431,7 +431,7 @@ Sono disponibili alcune opzioni per la posizione durante il ripristino di cartel
 
 È possibile ripristinare un volume, una cartella o dei file da un file di backup ONTAP utilizzando Cerca e ripristina.  La funzione Cerca e ripristina consente di cercare un volume, una cartella o un file specifico da tutti i backup e quindi di eseguire un ripristino.  Non è necessario conoscere il nome esatto del sistema, del volume o del file: la ricerca esamina tutti i file di backup del volume.
 
-L'operazione di ricerca esamina tutte le copie snapshot locali esistenti per i volumi ONTAP , tutti i volumi replicati sui sistemi di archiviazione secondari e tutti i file di backup esistenti nell'archiviazione degli oggetti.  Poiché il ripristino dei dati da una copia Snapshot locale o da un volume replicato può essere più rapido e meno costoso rispetto al ripristino da un file di backup in un archivio di oggetti, potrebbe essere opportuno ripristinare i dati da queste altre posizioni.
+L'operazione di ricerca esamina tutti gli snapshot locali esistenti per i volumi ONTAP , tutti i volumi replicati sui sistemi di archiviazione secondari e tutti i file di backup esistenti nell'archiviazione di oggetti.  Poiché il ripristino dei dati da uno snapshot locale o da un volume replicato può essere più rapido e meno costoso rispetto al ripristino da un file di backup in un archivio di oggetti, potrebbe essere opportuno ripristinare i dati da queste altre posizioni.
 
 Quando si ripristina un _volume completo_ da un file di backup, NetApp Backup and Recovery crea un _nuovo_ volume utilizzando i dati del backup.  È possibile ripristinare i dati come volume nel sistema originale, in un sistema diverso situato nello stesso account cloud del sistema di origine oppure in un sistema ONTAP locale.
 
@@ -474,7 +474,7 @@ Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume 
 
 === Sistemi supportati da Search & Restore e provider di archiviazione di oggetti
 
-È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi.  Le copie snapshot risiedono sul sistema di origine e possono essere ripristinate solo su quello stesso sistema.
+È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
 
 *Nota:* è possibile ripristinare volumi e file da qualsiasi tipo di file di backup, ma al momento è possibile ripristinare una cartella solo dai file di backup nell'archivio oggetti.
 
@@ -538,7 +538,7 @@ Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF
 ** La versione ONTAP deve essere 9.8 o successiva.
 ** La VM di archiviazione (SVM) su cui risiede il volume deve avere un LIF dati configurato.
 ** NFS deve essere abilitato sul volume (sono supportati sia i volumi NFS che SMB/CIFS).
-** Il server SnapDiff RPC deve essere attivato sull'SVM.  La Console esegue questa operazione automaticamente quando si abilita l'indicizzazione sul sistema.  (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra le copie Snapshot.)
+** Il server SnapDiff RPC deve essere attivato sull'SVM. La Console esegue questa operazione automaticamente quando si abilita l'indicizzazione sul sistema. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra gli snapshot.)
 
 
 
@@ -699,14 +699,14 @@ Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata p
 +
 .. Nella _barra di ricerca_, immettere un nome completo o parziale del volume, un nome della cartella o un nome del file.
 .. Selezionare il tipo di risorsa: *Volumi*, *File*, *Cartelle* o *Tutti*.
-.. Nell'area _Filtra per_, seleziona i criteri di filtro.  Ad esempio, è possibile selezionare il sistema in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG.  In alternativa, è possibile selezionare il tipo di posizione di backup se si desidera cercare risultati solo all'interno delle copie snapshot disponibili o dei file di backup nell'archivio oggetti.
+.. Nell'area _Filtra per_, seleziona i criteri di filtro. Ad esempio, è possibile selezionare il sistema in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di posizione di backup se si desidera cercare risultati solo all'interno degli snapshot disponibili o dei file di backup nell'archiviazione degli oggetti.
 
 
 . Seleziona *Cerca* e nell'area Risultati della ricerca verranno visualizzate tutte le risorse che contengono un file, una cartella o un volume corrispondente alla tua ricerca.
 . Individua la risorsa che contiene i dati che desideri ripristinare e seleziona *Visualizza tutti i backup* per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
 . Individua il file di backup che desideri utilizzare per ripristinare i dati e seleziona *Ripristina*.
 +
-Si noti che i risultati identificano le copie Snapshot del volume locale e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dalla copia snapshot o dal volume replicato.
+Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dallo snapshot o dal volume replicato.
 
 . Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
 +

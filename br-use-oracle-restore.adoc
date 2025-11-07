@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro Oracle con NetApp Backup and Recovery
 
 
 [role="lead"]
-Ripristina i database Oracle da copie snapshot, da un backup replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+Ripristina i database Oracle da snapshot, da un backup replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
 
 .Ripristina da queste posizioni
 È possibile ripristinare i database da diverse posizioni di partenza:
