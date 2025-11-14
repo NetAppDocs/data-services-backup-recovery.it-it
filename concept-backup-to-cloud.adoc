@@ -184,52 +184,34 @@ Esistono tre modi per pagare il servizio Backup:
 
 == Licenza
 
-NetApp Backup and Recovery è disponibile in versione di prova gratuita.  È possibile utilizzare il servizio senza una chiave di licenza per un periodo di tempo limitato.
+NetApp Backup and Recovery offre una prova gratuita, che consente di utilizzarlo senza una chiave di licenza per un periodo di tempo limitato.
 
-NetApp Backup and Recovery è disponibile con i seguenti modelli di consumo:
+Una licenza di backup è richiesta solo per le operazioni di backup e ripristino che coinvolgono l'archiviazione di oggetti.  La creazione di snapshot e volumi replicati non richiede una licenza.
 
-* *Bring your own license (BYOL)*: licenza acquistata da NetApp che può essere utilizzata con qualsiasi provider cloud.
-* *Pagamento a consumo (PAYGO)*: un abbonamento orario dal marketplace del tuo provider cloud.
-* *Annuale*: un contratto annuale dal marketplace del tuo provider cloud.
+Puoi scegliere tra tre opzioni di licenza:
+
+* *Bring Your Own License (BYOL)*: acquista da NetApp una licenza a termine (1, 2 o 3 anni) e basata sulla capacità (in incrementi di 1 TiB).  Per attivare, immettere il numero di serie fornito nella NetApp Console .  La licenza copre tutti i sistemi sorgente della tua organizzazione.  Il rinnovo è necessario quando si raggiunge il termine o il limite di capienza.
+* *Pay As You Go (PAYGO)*: abbonati tramite il marketplace del tuo provider cloud e paga per GiB di dati sottoposti a backup, con fatturazione mensile.  Non è richiesto alcun pagamento anticipato.  Al momento della prima registrazione è disponibile una prova gratuita di 30 giorni. Per maggiori informazioni, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["utilizzare un abbonamento NetApp Backup and Recovery PAYGO"] .
+* *Contratto annuale*: disponibile tramite i marketplace AWS e Azure per 1, 2 o 3 anni.  Sono disponibili due contratti annuali:
++
+** *Cloud Backup*: esegue il backup dei dati Cloud Volumes ONTAP e ONTAP in locale.
+** *CVO Professional*: Bundle Cloud Volumes ONTAP e NetApp Backup and Recovery, con backup illimitati per i volumi Cloud Volumes ONTAP (la capacità di backup non viene conteggiata nella licenza).
++
+*** Con il piano CVO Professional sono previsti due tipi di addebiti:
++
+**** *Costi delle risorse*: in base all'utilizzo dello spazio di archiviazione. Per maggiori informazioni, fare riferimento a https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#packages["licenze per Cloud Volumes ONTAP"] .
+**** *Costi del servizio*: Costi per NetApp Backup and Recovery.  Tuttavia, se il volume di origine si trova in un sistema di archiviazione che utilizza il piano CVO Professional, NetApp Backup and Recovery viene fornito gratuitamente.
 
 
-Una licenza di backup è richiesta solo per il backup e il ripristino da un archivio di oggetti. La creazione di snapshot e volumi replicati non richiede una licenza.
 
-*Porta la tua patente*
 
-BYOL è basato sulla durata (1, 2 o 3 anni) e sulla capacità in incrementi di 1 TiB.  Si paga NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TiB.
 
-Riceverai un numero di serie che dovrai inserire nella NetApp Console per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console .
+
+
+
+Quando utilizzi Google Cloud Platform, richiedi un'offerta privata da NetApp e seleziona il tuo piano durante l'attivazione nel Google Cloud Marketplace.
 
 link:br-start-licensing.html["Scopri come impostare le licenze"].
-
-*Abbonamento a consumo*
-
-NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato.  La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
-
-Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti registri inizialmente con un abbonamento PAYGO.
-
-*Contratto annuale*
-
-ifdef::aws[]
-
-Quando utilizzi AWS, sono disponibili due contratti annuali per 1, 2 o 3 anni:
-
-* Un piano "Cloud Backup" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP locali.
-* Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Ciò include backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza). endif::aws[]
-
-
-ifdef::azure[]
-
-Quando utilizzi Azure, sono disponibili due contratti annuali per 1, 2 o 3 anni:
-
-* Un piano "Cloud Backup" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP locali.
-* Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Ciò include backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza). endif::azure[]
-
-
-ifdef::gcp[]
-
-Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery . endif::gcp[]
 
 
 
@@ -243,6 +225,7 @@ NetApp Backup and Recovery protegge i seguenti carichi di lavoro:
 * VM e datastore VMware
 * Carichi di lavoro KVM (anteprima)
 * Carichi di lavoro Hyper-V (anteprima)
+* Carichi di lavoro Oracle (anteprima)
 * Carichi di lavoro Kubernetes (anteprima)
 
 

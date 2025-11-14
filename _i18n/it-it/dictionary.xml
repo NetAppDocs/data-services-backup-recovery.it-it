@@ -965,8 +965,6 @@
   <block id="4efc134fd5130564588a4806f9c977f0" category="summary">È possibile proteggere le macchine virtuali Hyper-V dai sistemi ONTAP locali allo storage primario e secondario, garantendo la protezione dei dati.</block>
   <block id="997367baf18d147848dcf07ba10d7d8d" category="paragraph">Proteggi le tue VM Hyper-V con NetApp Backup and Recovery.  NetApp Backup and Recovery fornisce operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con le VM, sia per istanze standalone che per istanze cluster FCI.</block>
   <block id="9772979b1b90e72fc3981d222d55243a" category="paragraph">È possibile eseguire il backup dei carichi di lavoro Hyper-V su Amazon Web Services S3 o StorageGRID e ripristinarli su un host Hyper-V locale.</block>
-  <block id="27bf4d1e94a4188d82244d997deb945d" category="inline-image-macro">Diagramma dell'architettura del backup e del ripristino in generale</block>
-  <block id="a25193bbdff09f58ab1dcb4151b659ec" category="paragraph"><block ref="a25193bbdff09f58ab1dcb4151b659ec" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b7bf580752a61d71227184a60f0fbfd3" category="paragraph">Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:</block>
   <block id="79c28420811a3b277df19fdd38cd10e0" category="list-text">Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.</block>
   <block id="532ee325506687dccb969b2e88d92b32" category="inline-link-macro">Passa alla precedente interfaccia utente NetApp Backup and Recovery</block>
@@ -2016,25 +2014,13 @@
   <block id="a426b39cc5038676b39d2265b22cebec" category="list-text">La seconda opzione è quella di stipulare un contratto annuale.</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">Licenza</block>
   <block id="8426d45850b9ec06adef93652db54080" category="list-text">La terza opzione è quella di acquistare le licenze direttamente da NetApp.  Leggi il<block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> sezione per i dettagli.</block>
-  <block id="72097de9125a66d03bbdf7bf977af276" category="paragraph">NetApp Backup and Recovery è disponibile in versione di prova gratuita.  È possibile utilizzare il servizio senza una chiave di licenza per un periodo di tempo limitato.</block>
   <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">NetApp Backup and Recovery è disponibile con i seguenti modelli di consumo:</block>
-  <block id="9db5c387eb2c1a4533c42a082e094d13" category="list-text">*Bring your own license (BYOL)*: licenza acquistata da NetApp che può essere utilizzata con qualsiasi provider cloud.</block>
-  <block id="467e5d512a9162ad6d144008e41f967e" category="list-text">*Pagamento a consumo (PAYGO)*: un abbonamento orario dal marketplace del tuo provider cloud.</block>
   <block id="146cb6145f5238f0a019636047844250" category="list-text">*Annuale*: un contratto annuale dal marketplace del tuo provider cloud.</block>
-  <block id="2d800cbdf9ba7a82c10657f2a93b18b5" category="paragraph">*Porta la tua patente*</block>
-  <block id="e030c8eecbfc992cc68549bf0348d474" category="paragraph">BYOL è basato sulla durata (1, 2 o 3 anni) e sulla capacità in incrementi di 1 TiB.  Si paga NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TiB.</block>
   <block id="b81dcdb5e6cec4dda0b7fdf2110e5d48" category="paragraph">Riceverai un numero di serie che dovrai inserire nella NetApp Console per abilitare il servizio.  Una volta raggiunto uno dei due limiti, sarà necessario rinnovare la licenza.  La licenza Backup BYOL si applica a tutti i sistemi sorgente associati all'organizzazione o all'account NetApp Console .</block>
   <block id="6e26156d53b8aed5293cf52d74acb49c" category="inline-link-macro">Scopri come impostare le licenze</block>
   <block id="520d2c423b38acf3262d3f1e93b53d8a" category="paragraph"><block ref="5f449dd4c94fd29d3e3b83e45dd58382" category="inline-link-macro-rx"></block>.</block>
-  <block id="3e0c229baf295106907effcb0c861fcc" category="paragraph">*Abbonamento a consumo*</block>
   <block id="0f3691e0fad1edbca841aabd38ddfc42" category="paragraph">NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato.  La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.</block>
   <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti registri inizialmente con un abbonamento PAYGO.</block>
-  <block id="9cb9e2f871f88a22d8fe4b82590901c6" category="paragraph">*Contratto annuale*</block>
-  <block id="d53b530085f1dc3e3526eed96fa256d8" category="paragraph">Quando utilizzi AWS, sono disponibili due contratti annuali per 1, 2 o 3 anni:</block>
-  <block id="5987d4056acac19af6f78703bc378427" category="list-text">Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Ciò include backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza). endif::aws[]</block>
-  <block id="365c46b758ba93d5bfe4bf6066ae85d9" category="paragraph">Quando utilizzi Azure, sono disponibili due contratti annuali per 1, 2 o 3 anni:</block>
-  <block id="c2031f4f264e0d58f523db5c7a98efbb" category="list-text">Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Ciò include backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza). endif::azure[]</block>
-  <block id="565e9b99ea730c02b444af9641d863c0" category="paragraph">Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery . endif::gcp[]</block>
   <block id="8d76c3c56611813110af76c5eca39835" category="section-title">Origini dati, sistemi e destinazioni di backup supportati</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">Fonti di dati del carico di lavoro supportate</block>
   <block id="471bdf4d52cdd0764f463e7010138e3f" category="paragraph">NetApp Backup and Recovery protegge i seguenti carichi di lavoro:</block>
@@ -4790,4 +4776,19 @@
   <block id="de272d4987aa96a00ccf6441ad353c0e" category="list-text"><block ref="f454c0203410fcd923445c6d0fd3fe90" prefix="" category="inline-code"></block> è il percorso in cui viene montato</block>
   <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">Esempio:</block>
   <block id="67e93e04234f9801960d3d563faf4619" category="list-title">Passaggi per abilitare l'indice</block>
+  <block id="7c8150e957629e4f178e1453b244de4e" category="paragraph">NetApp Backup and Recovery offre una prova gratuita, che consente di utilizzarlo senza una chiave di licenza per un periodo di tempo limitato.</block>
+  <block id="9b337326626f108661db15ede8612161" category="paragraph">Una licenza di backup è richiesta solo per le operazioni di backup e ripristino che coinvolgono l'archiviazione di oggetti.  La creazione di snapshot e volumi replicati non richiede una licenza.</block>
+  <block id="38791ac6dfcab3a4a150d9b40eb83c4b" category="paragraph">Puoi scegliere tra tre opzioni di licenza:</block>
+  <block id="24a3699faa66664ca496b9a5bd124662" category="list-text">*Bring Your Own License (BYOL)*: acquista da NetApp una licenza a termine (1, 2 o 3 anni) e basata sulla capacità (in incrementi di 1 TiB).  Per attivare, immettere il numero di serie fornito nella NetApp Console .  La licenza copre tutti i sistemi sorgente della tua organizzazione.  Il rinnovo è necessario quando si raggiunge il termine o il limite di capienza.</block>
+  <block id="248848332301b53df791d76f885827be" category="inline-link">utilizzare un abbonamento NetApp Backup and Recovery PAYGO</block>
+  <block id="365539ae3de2669e3c6cab548aad4d26" category="list-text">*Pay As You Go (PAYGO)*: abbonati tramite il marketplace del tuo provider cloud e paga per GiB di dati sottoposti a backup, con fatturazione mensile.  Non è richiesto alcun pagamento anticipato.  Al momento della prima registrazione è disponibile una prova gratuita di 30 giorni. Per maggiori informazioni, fare riferimento a<block ref="8edaf8cd3966d935673fb34ac864f172" category="inline-link-rx"></block> .</block>
+  <block id="b2756926bee4401109074cd37d6bbfc7" category="list-text">*Contratto annuale*: disponibile tramite i marketplace AWS e Azure per 1, 2 o 3 anni.  Sono disponibili due contratti annuali:</block>
+  <block id="56a16935ca4475c6ad8f6940bbbaa577" category="list-text">*Cloud Backup*: esegue il backup dei dati Cloud Volumes ONTAP e ONTAP in locale.</block>
+  <block id="5051cac88a3b9ad2e2baad101b5e4862" category="list-text">*CVO Professional*: Bundle Cloud Volumes ONTAP e NetApp Backup and Recovery, con backup illimitati per i volumi Cloud Volumes ONTAP (la capacità di backup non viene conteggiata nella licenza).</block>
+  <block id="c85bf80350e3e2b3024a57e3e63f42af" category="list-text">Con il piano CVO Professional sono previsti due tipi di addebiti:</block>
+  <block id="b11cbf7b17a0a28de648a14bc329d754" category="inline-link">licenze per Cloud Volumes ONTAP</block>
+  <block id="3e2ef02026c97d7e5a6f8783f142b8ca" category="list-text">*Costi delle risorse*: in base all'utilizzo dello spazio di archiviazione. Per maggiori informazioni, fare riferimento a<block ref="fb7e1562747222c6aa716c91aa0ab813" category="inline-link-rx"></block> .</block>
+  <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*Costi del servizio*: Costi per NetApp Backup and Recovery.  Tuttavia, se il volume di origine si trova in un sistema di archiviazione che utilizza il piano CVO Professional, NetApp Backup and Recovery viene fornito gratuitamente.</block>
+  <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">Quando utilizzi Google Cloud Platform, richiedi un'offerta privata da NetApp e seleziona il tuo piano durante l'attivazione nel Google Cloud Marketplace.</block>
+  <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Carichi di lavoro Oracle (anteprima)</block>
 </blocks>
