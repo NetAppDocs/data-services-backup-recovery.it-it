@@ -216,7 +216,6 @@ Assicurati che la tua istanza Hyper-V soddisfi requisiti specifici per individua
 ** Edizioni Microsoft Hyper-V 2019, 2022 e 2025
 ** ASP.NET Core Runtime 8.0.12 Hosting Bundle (e tutte le patch 8.0.x successive)
 ** PowerShell 7.4.2 o versione successiva
-** Assicurarsi che il ruolo Host Guardian Service sia installato (fare riferimento a https://learn.microsoft.com/en-us/windows-server/administration/server-manager/add-remove-roles-features?tabs=gui#add-roles-and-features-to-windows-server["Documentazione di Microsoft Windows Server"^] per le istruzioni)
 ** Assicurarsi che il traffico HTTPS bidirezionale sia consentito per le seguenti porte nelle impostazioni di Windows Firewall:
 +
 *** 8144 (Plugin NetApp per Hyper-V)
