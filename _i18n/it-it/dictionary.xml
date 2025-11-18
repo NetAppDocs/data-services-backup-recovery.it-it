@@ -346,7 +346,6 @@
   <block id="a9ad02ebb13f3d9fa3cb4a1b59be6548" category="paragraph">Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.</block>
   <block id="0e32e31adc232e70ce479856e16c7f00" category="section-title">Azioni non supportate</block>
   <block id="57a114780f98fd4bb0b06506b0ca9577" category="paragraph">Le seguenti azioni non sono supportate nella versione di anteprima privata dei carichi di lavoro Hyper-V in NetApp Backup and Recovery:</block>
-  <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Creare gruppi di risorse</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Spanning dei dischi (su più condivisioni CIFS)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Proteggere le VM su SAN</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Proteggere gli host Hyper-V in cluster tramite System Center Virtual Machine Manager (SCVMM)</block>
@@ -677,7 +676,6 @@
   <block id="6fa0f470d5826983538c3b3091b8d4f3" category="list-text">Selezionare l'agente della console da utilizzare con questo host.</block>
   <block id="f536637d4867fa48ae5f42ffcabb3da0" category="list-text">Inserisci un nome per questa credenziale.</block>
   <block id="c7312d0cf4cda8f78a6f1769e7958906" category="list-text">Inserisci il nome utente e la password per l'account.</block>
-  <block id="5cf90f1e7bb7c40d89ed2ddaf928978f" category="list-text">*Registrazione host*: aggiungi un nuovo host Hyper-V.  Immettere l'FQDN o l'indirizzo IP dell'host, le credenziali, l'agente della console e il numero di porta.</block>
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Questo processo potrebbe richiedere alcuni minuti.</block>
   <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Dopo che NetApp Backup and Recovery rileva le risorse, la pagina Inventario visualizza il carico di lavoro Hyper-V nell'elenco dei carichi di lavoro.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Continua alla dashboard NetApp Backup and Recovery</block>
@@ -4538,8 +4536,6 @@
   <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. È possibile utilizzare immediatamente i volumi e i dati ripristinati. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.</block>
   <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*Abilita notifiche e-mail*: seleziona per ricevere notifiche e-mail sull'operazione di ripristino e scegli i tipi di notifica desiderati.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisiti software per l'host Hyper-V Windows Server:</block>
-  <block id="1acabacd9fabb89313b2019250c36913" category="inline-link">Documentazione di Microsoft Windows Server</block>
-  <block id="a05b36aea5976933f3daab44cd5602a1" category="list-text">Assicurarsi che il ruolo Host Guardian Service sia installato (fare riferimento a<block ref="48d767cc816bb4d4b129a75bf7c81af1" category="inline-link-rx"></block> per le istruzioni)</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se l'operazione di ripristino non viene completata, attendere che Job Monitor visualizzi "Fallito" prima di riprovare l'operazione di ripristino.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter Server locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento a<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
@@ -4791,4 +4787,9 @@
   <block id="b341302252cb59acb02da2074d4fe6c4" category="list-text">*Costi del servizio*: Costi per NetApp Backup and Recovery.  Tuttavia, se il volume di origine si trova in un sistema di archiviazione che utilizza il piano CVO Professional, NetApp Backup and Recovery viene fornito gratuitamente.</block>
   <block id="40d372f97e4d897da51bc1fa5978329b" category="paragraph">Quando utilizzi Google Cloud Platform, richiedi un'offerta privata da NetApp e seleziona il tuo piano durante l'attivazione nel Google Cloud Marketplace.</block>
   <block id="3cd3cc23191003954a83615e7dc619e1" category="list-text">Carichi di lavoro Oracle (anteprima)</block>
+  <block id="14e2c3c5d70d421449af52fed7355245" category="list-text">Crea gruppi di risorse utilizzando VM da più host Hyper-V</block>
+  <block id="c224c03fd1f5cab444913dab60a8d013" category="list-text">*Registrazione host*: aggiungi un nuovo host Hyper-V immettendo l'FQDN o l'indirizzo IP dell'host, le credenziali, l'agente della console e il numero di porta. Se l'FQDN non è risolvibile dall'agente della console, utilizzare invece l'indirizzo IP. Per i cluster FCI, immettere l'indirizzo IP di gestione del cluster FCI.</block>
+  <block id="36c0d00755a4d8daae367144e5daca38" category="list-text">Se gli utenti che non fanno parte di un dominio amministratore proteggeranno le VM Hyper-V, assicurarsi che l'utente disponga delle seguenti autorizzazioni:</block>
+  <block id="57d2171dbc8d8d7a864a60de1ab4656c" category="list-text">Assicurarsi che l'utente sia membro del gruppo degli amministratori locali.</block>
+  <block id="27bc296e867cae2ef33b5cac51392cb2" category="list-text">Assicurarsi che l'utente faccia parte della policy di sicurezza locale "Accedi come servizio".</block>
 </blocks>
