@@ -293,12 +293,40 @@ Per impostazione predefinita, il servizio crea dei bucket per te.  In alternativ
 
 link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bucket"^].
 
-Se si creano bucket personalizzati, è consigliabile utilizzare il nome "netapp-backup".  Se è necessario utilizzare un nome personalizzato, modificare il `ontapcloud-instance-policy-netapp-backup` IAMRole per i CVO esistenti e aggiungere il seguente elenco alle autorizzazioni S3.  Devi includere `"Resource": "arn:aws:s3:::*"` e assegnare tutte le autorizzazioni necessarie che devono essere associate al bucket.
+Se si creano bucket personalizzati, è consigliabile utilizzare il nome "netapp-backup". Se è necessario utilizzare un nome personalizzato, modificare il `ontapcloud-instance-policy-netapp-backup` IAMRole per i CVO esistenti e aggiungere il seguente blocco JSON alle autorizzazioni S3 `Statement` vettore. Devi includere `"Resource": "arn:aws:s3:::*"` e assegnare tutte le autorizzazioni necessarie che devono essere associate al bucket.
 
 [%collapsible]
 ====
-"Azione": [ "S3:ListBucket" "S3:GetBucketLocation" ] "Risorsa": "arn:aws:s3:::*", "Effetto": "Consenti" }, { "Azione": [ "S3:GetObject", "S3:PutObject", "S3:DeleteObject", "S3:ListAllMyBuckets", "S3:PutObjectTagging", "S3:GetObjectTagging", "S3:RestoreObject", "S3:GetBucketObjectLockConfiguration", "S3:GetObjectRetention", "S3:PutBucketObjectLockConfiguration", "S3:PutObjectRetention" ] "Risorsa": "arn:aws:s3:::*",
-
+[source, json]
+----
+[
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
+    ],
+    "Resource": "arn:aws:s3:::*"
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:DeleteObject",
+      "s3:ListAllMyBuckets",
+      "s3:PutObjectTagging",
+      "s3:GetObjectTagging",
+      "s3:RestoreObject",
+      "s3:GetBucketObjectLockConfiguration",
+      "s3:GetObjectRetention",
+      "s3:PutBucketObjectLockConfiguration",
+      "s3:PutObjectRetention"
+    ],
+    "Resource": "arn:aws:s3:::*"
+  }
+]
+----
 ====
 
 
@@ -332,9 +360,9 @@ Se si utilizza la porta 443 (HTTPS) per la comunicazione con l'endpoint privato,
 . Ottieni il nome DNS dell'endpoint dalla console AWS.
 . Ottieni il certificato dall'endpoint VPC S3.  Lo fai tramite https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["accesso alla VM che ospita l'agente della console"^] ed eseguendo il seguente comando.  Quando si immette il nome DNS dell'endpoint, aggiungere "bucket" all'inizio, sostituendo "*":
 +
-[source, text]
+[source, console]
 ----
-[ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
+openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
 ----
 . Dall'output di questo comando, copiare i dati per il certificato S3 (tutti i dati compresi tra i tag BEGIN / END CERTIFICATE inclusi):
 +
@@ -352,7 +380,7 @@ GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
 ----
 . Accedi alla CLI del cluster ONTAP e applica il certificato copiato utilizzando il seguente comando (sostituisci il nome della tua VM di archiviazione):
 +
-[source, text]
+[source, console]
 ----
 cluster1::> security certificate install -vserver cluster1 -type server-ca
 Please enter Certificate: Press <Enter> when done

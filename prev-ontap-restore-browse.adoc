@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-browse.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Browse & Restore. 
+---
+= Ripristina i dati ONTAP utilizzando Sfoglia e ripristina
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Browse & Restore. Prima di effettuare il ripristino, annotare il nome del volume di origine, il sistema di origine e l'SVM, nonché la data del file di backup. È possibile ripristinare i dati ONTAP da uno snapshot, da un volume replicato o da backup archiviati nell'archiviazione di oggetti.
+
+Le capacità di ripristino dipendono dalla versione ONTAP :
+
+* *Cartelle:* utilizzando ONTAP 9.13.0 o versioni successive, è possibile ripristinare cartelle con tutti i file e le sottocartelle; con le versioni precedenti, era possibile ripristinare solo i file nella cartella.
+* *Archiviazione:* il ripristino dall'archiviazione (disponibile con ONTAP 9.10.1 o versioni successive) è più lento e potrebbe comportare costi aggiuntivi.
+* *Requisiti del cluster di destinazione:*
++
+** Ripristino del volume: ONTAP 9.10.1 o versione successiva
+** Ripristino file: ONTAP 9.11.1 o versione successiva
+** Google Archive and StorageGRID: ONTAP 9.12.1 o versione successiva
+** Ripristino cartella: ONTAP 9.13.1 o versione successiva
+
+
+
+
+ifdef::aws[]
+
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
+
+endif::gcp[]
+
+
+NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'archiviazione di Azure ai sistemi StorageGRID .
+
+
+
+== Esplora e ripristina i sistemi supportati e i provider di archiviazione di oggetti
+
+È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
+
+*Nota:* è possibile ripristinare un volume da qualsiasi tipo di file di backup, ma al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti.
+
+[cols="25,25,25,25"]
+|===
+| *Da Object Store (Backup)* | *Da Primario (Snapshot)* | *Dal sistema secondario (replicazione)* | Al sistema di destinazione ifdef::aws[] 
+
+
+| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale AWS endif::aws[] ifdef::azure[] | Blob azzurro 
+
+
+| Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure endif::azure[] ifdef::gcp[] | Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
+
+
+| Cloud Volumes ONTAP nel sistema Google On-premises ONTAP endif::gcp[] | NetApp StorageGRID | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
+
+
+| Al sistema ONTAP locale | ONTAP S3 | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
+|===
+Per Sfoglia e Ripristina, l'agente Console può essere installato nei seguenti percorsi:
+
+ifdef::aws[]
+
+* Per Amazon S3, l'agente della console può essere distribuito in AWS o nei tuoi locali
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Per Azure Blob, l'agente Console può essere distribuito in Azure o nei tuoi locali
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Per Google Cloud Storage, l'agente della console deve essere distribuito nella VPC di Google Cloud Platform
+
+
+endif::gcp[]
+
+* Per StorageGRID, l'agente della console deve essere distribuito nei tuoi locali, con o senza accesso a Internet
+* Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
+
+
+Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF e ONTAP Select .
+
+
+NOTE: Se la versione ONTAP sul sistema è precedente alla 9.13.1, non sarà possibile ripristinare cartelle o file se il file di backup è stato configurato con DataLock e Ransomware.  In questo caso, puoi ripristinare l'intero volume dal file di backup e quindi accedere ai file di cui hai bisogno.
+
+
+
+== Ripristina i volumi utilizzando Sfoglia e ripristina
+
+Quando si ripristina un volume da un file di backup, NetApp Backup and Recovery crea un _nuovo_ volume utilizzando i dati del backup.  Quando si utilizza un backup da un archivio di oggetti, è possibile ripristinare i dati su un volume nel sistema originale, su un sistema diverso situato nello stesso account cloud del sistema di origine o su un sistema ONTAP locale.
+
+Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva oppure su un sistema ONTAP locale che esegue ONTAP 9.14.1, sarà possibile eseguire un'operazione di _ripristino rapido_. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire l'accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume anziché ripristinare l'intero file di backup.  Il ripristino rapido non è consigliato per applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup in storage archiviati.
+
+
+NOTE: Il ripristino rapido è supportato per i volumi FlexGroup solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.12.1 o versione successiva.  Ed è supportato per i volumi SnapLock solo se il sistema di origine eseguiva ONTAP 9.11.0 o versione successiva.
+
+Quando si esegue il ripristino da un volume replicato, è possibile ripristinare il volume sul sistema originale oppure su un sistema Cloud Volumes ONTAP o ONTAP locale.
+
+image:diagram_browse_restore_volume.png["Un diagramma che mostra il flusso per eseguire un'operazione di ripristino del volume utilizzando Sfoglia e ripristina."]
+
+Per ripristinare un volume sono necessari il nome del sistema di origine, la macchina virtuale di archiviazione, il nome del volume e la data del file di backup.
+
+.Passi
+. Dal menu Console, selezionare *Protezione > Backup e ripristino*.
+. Selezionare la scheda *Ripristina* e verrà visualizzata la Dashboard di ripristino.
+. Dalla sezione _Sfoglia e ripristina_, seleziona *Ripristina volume*.
+. Nella pagina _Seleziona origine_, vai al file di backup per il volume che desideri ripristinare.  Selezionare il *sistema*, il *volume* e il file *backup* con la data/ora da cui si desidera effettuare il ripristino.
++
+La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (uno snapshot sul sistema di origine), *Secondario* (un volume replicato su un sistema ONTAP secondario) o *Archiviazione oggetti* (un file di backup nell'archiviazione oggetti). Seleziona il file che vuoi ripristinare.
+
+. Selezionare *Avanti*.
++
+Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e Ransomware Resilience è attivo per quel backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+
+. Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare il volume.
+. Quando si ripristina un file di backup da un archivio oggetti, se si seleziona un sistema ONTAP locale e non è ancora stata configurata la connessione del cluster all'archivio oggetti, vengono richieste informazioni aggiuntive:
++
+ifdef::aws[]
+
++
+** Durante il ripristino da Amazon S3, seleziona lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, immetti la chiave di accesso e la chiave segreta per l'utente creato per concedere al cluster ONTAP l'accesso al bucket S3 e, facoltativamente, scegli un endpoint VPC privato per il trasferimento sicuro dei dati.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, selezionare la sottoscrizione di Azure per accedere all'archiviazione degli oggetti e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Durante il ripristino da Google Cloud Storage, seleziona il progetto Google Cloud, la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti, alla regione in cui sono archiviati i backup e allo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
+
+
+endif::gcp[]
+
+* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
+* Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
++
+.. Immettere il nome che si desidera utilizzare per il volume ripristinato e selezionare la VM di archiviazione e l'aggregato in cui risiederà il volume.  Quando si ripristina un volume FlexGroup , è necessario selezionare più aggregati.  Per impostazione predefinita, come nome del volume viene utilizzato *<source_volume_name>_restore*.
++
+Quando si ripristina un backup da un archivio di oggetti a un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva oppure a un sistema ONTAP locale che esegue ONTAP 9.14.1, sarà possibile eseguire un'operazione di _ripristino rapido_.
+
++
+Se si ripristina il volume da un file di backup che risiede in un livello di archiviazione (disponibile a partire da ONTAP 9.10.1), è possibile selezionare la priorità di ripristino.
+
++
+ifdef::aws[]
+
+
+
+
+
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
+
+endif::gcp[]
+
+. Selezionare *Avanti* per scegliere se si desidera eseguire un ripristino normale o un ripristino rapido:
++
+** *Ripristino normale*: utilizzare il ripristino normale sui volumi che richiedono prestazioni elevate.  I volumi non saranno disponibili finché il processo di ripristino non sarà completato.
+** *Ripristino rapido*: i volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
+
+
+. Selezionando *Ripristina* si torna alla Dashboard di ripristino, dove è possibile esaminare l'avanzamento dell'operazione di ripristino.
+
+
+.Risultato
+NetApp Backup and Recovery crea un nuovo volume in base al backup selezionato.
+
+Si noti che il ripristino di un volume da un file di backup residente in un archivio può richiedere molti minuti o ore, a seconda del livello di archivio e della priorità di ripristino.  È possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.
+
+
+
+== Ripristina cartelle e file utilizzando Sfoglia e ripristina
+
+Se è necessario ripristinare solo alcuni file da un backup del volume ONTAP , è possibile scegliere di ripristinare una cartella o singoli file anziché ripristinare l'intero volume.  È possibile ripristinare cartelle e file su un volume esistente nel sistema originale oppure su un sistema diverso che utilizza lo stesso account cloud.  È anche possibile ripristinare cartelle e file su un volume su un sistema ONTAP locale.
+
+
+NOTE: Al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti. Il ripristino di file e cartelle non è attualmente supportato da uno snapshot locale o da un file di backup che risiede in un sistema secondario (un volume replicato).
+
+Se si selezionano più file, questi vengono ripristinati nello stesso volume di destinazione.  Per ripristinare i file su volumi diversi, eseguire il processo più volte.
+
+Se si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle in essa contenuti.  Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di quella cartella, ma non le sottocartelle o i file nelle sottocartelle.
+
+[NOTE]
+====
+* Se il file di backup è stato configurato con la protezione DataLock e Ransomware, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e quindi accedere alla cartella e ai file necessari.
+* Se il file di backup risiede in un archivio, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
+* Con ONTAP 9.15.1 è possibile ripristinare le cartelle FlexGroup utilizzando l'opzione "Sfoglia e ripristina".  Questa funzionalità è in modalità Anteprima tecnologica.
++
+È possibile testarlo utilizzando un flag speciale descritto in https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog sulla versione NetApp Backup and Recovery di luglio 2024"^] .
+
+
+
+====
+
+
+=== Ripristina cartelle e file
+
+Per ripristinare cartelle o file su un volume da un backup del volume ONTAP , seguire questi passaggi.  Dovresti conoscere il nome del volume e la data del file di backup che vuoi utilizzare per ripristinare la cartella o il/i file.  Questa funzionalità utilizza la navigazione in tempo reale per consentirti di visualizzare l'elenco delle directory e dei file all'interno di ciascun file di backup.
+
+image:diagram_browse_restore_file.png["Un diagramma che mostra il flusso per eseguire un'operazione di ripristino di un file utilizzando Sfoglia e ripristina."]
+
+.Prima di iniziare
+* Per eseguire operazioni di ripristino dei file, la versione ONTAP deve essere 9.6 o successiva.
+* Per eseguire operazioni di ripristino delle _cartelle_, la versione ONTAP deve essere 9.11.1 o successiva.  La versione 9.13.1 ONTAP è richiesta se i dati si trovano in un archivio o se il file di backup utilizza la protezione DataLock e Ransomware.
+* Per ripristinare le directory FlexGroup utilizzando l'opzione Sfoglia e ripristina, la versione ONTAP deve essere 9.15.1 p2 o successiva.
+
+
+.Passi
+. Dal menu Console, selezionare *Protezione > Backup e ripristino*.
+. Selezionare la scheda *Ripristina* e verrà visualizzata la Dashboard di ripristino.
+. Dalla sezione _Sfoglia e ripristina_, seleziona *Ripristina file o cartella*.
+. Nella pagina _Seleziona origine_, vai al file di backup per il volume che contiene la cartella o i file che desideri ripristinare.  Selezionare il *sistema*, il *volume* e il *backup* che presenta la data/ora da cui si desidera ripristinare i file.
+. Selezionare *Avanti* e verrà visualizzato l'elenco delle cartelle e dei file del backup del volume.
++
+Se si ripristinano cartelle o file da un file di backup che risiede in un livello di archiviazione, è possibile selezionare la Priorità di ripristino.
+
++
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] .  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
+
++
+Se Ransomware Resilience è attivo per il file di backup (se hai abilitato DataLock e Ransomware Resilience nel criterio di backup), ti verrà chiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione del file di backup per individuare eventuali ransomware.  (Per accedere al contenuto del file di backup, verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.)
+
+. Nella pagina _Seleziona elementi_, seleziona la cartella o i file che desideri ripristinare e seleziona *Continua*.  Per aiutarti a trovare l'articolo:
++
+** Se vedi il nome della cartella o del file, puoi selezionarlo.
+** È possibile selezionare l'icona di ricerca e immettere il nome della cartella o del file per passare direttamente all'elemento.
+** È possibile spostarsi nei livelli inferiori delle cartelle utilizzando la freccia giù alla fine della riga per trovare file specifici.
++
+Man mano che selezioni i file, questi vengono aggiunti al lato sinistro della pagina, così puoi vedere i file che hai già scelto.  Se necessario, è possibile rimuovere un file da questo elenco selezionando la *x* accanto al nome del file.
+
+
+
+. Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare gli elementi.
++
+Se selezioni un cluster locale e non hai ancora configurato la connessione del cluster all'archiviazione di oggetti, ti verranno richieste informazioni aggiuntive:
+
++
+ifdef::aws[]
+
++
+** Quando si esegue il ripristino da Amazon S3, immettere lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione, nonché la chiave di accesso AWS e la chiave segreta necessarie per accedere allo storage degli oggetti.  È anche possibile selezionare una configurazione di collegamento privato per la connessione al cluster.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Quando si esegue il ripristino da Azure Blob, immettere lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.  È anche possibile selezionare una configurazione endpoint privata per la connessione al cluster.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Quando si esegue il ripristino da Google Cloud Storage, immettere lo spazio IP nel cluster ONTAP in cui risiedono i volumi di destinazione, nonché la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti.
+
+
+endif::gcp[]
+
+* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.
++
+.. Quindi seleziona il *Volume* e la *Cartella* in cui desideri ripristinare la cartella o il/i file.
++
+Sono disponibili alcune opzioni per la posizione durante il ripristino di cartelle e file.
+
+
+
+* Dopo aver scelto *Seleziona cartella di destinazione*, come mostrato sopra:
++
+** Puoi selezionare qualsiasi cartella.
+** È possibile passare il mouse su una cartella e fare clic alla fine della riga per visualizzare in dettaglio le sottocartelle, quindi selezionare una cartella.
+
+
+* Se hai selezionato lo stesso sistema di destinazione e lo stesso volume in cui si trovava la cartella/il file di origine, puoi selezionare *Mantieni percorso cartella di origine* per ripristinare la cartella o i file nella stessa cartella in cui si trovavano nella struttura di origine.  Tutte le cartelle e sottocartelle devono già esistere; non vengono create cartelle.  Quando si ripristinano i file nella loro posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
++
+.. Selezionare *Ripristina* per tornare alla Dashboard di ripristino e rivedere l'avanzamento dell'operazione di ripristino.
+
+
+

@@ -92,7 +92,7 @@ Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery 
 . Selezionare *Modifica ruolo* per aggiornare le autorizzazioni del ruolo.
 . Selezionare *Aggiungi autorizzazioni* per aggiungere le seguenti nuove autorizzazioni al ruolo.
 +
-[source, console]
+[source, text]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -243,7 +243,7 @@ Per preparare Google Cloud Storage come destinazione di backup, sono necessari i
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Crea un nuovo ruolo"^]con le seguenti autorizzazioni:
 +
-[source, console]
+[source, text]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -297,7 +297,7 @@ Se intendi utilizzare le tue chiavi gestite dal cliente:
 * Per poter aggiungere queste informazioni nella procedura guidata di attivazione, è necessario disporre del Key Ring e del Key Name. https://cloud.google.com/kms/docs/cmek["Scopri di più sulle chiavi di crittografia gestite dal cliente"^] .
 * Sarà necessario verificare che le seguenti autorizzazioni richieste siano incluse nel ruolo dell'agente della console:
 +
-[source, console]
+[source, text]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

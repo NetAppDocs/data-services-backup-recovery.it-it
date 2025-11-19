@@ -106,7 +106,13 @@ sidebar:
       - title: Gestire i backup ONTAP
         url: "/prev-ontap-backup-manage.html"
       - title: Ripristina dai backup ONTAP
-        url: "/prev-ontap-restore.html"
+        entries:
+        - title: Panoramica del ripristino
+          url: "/prev-ontap-restore.html"
+        - title: Ripristina dai backup ONTAP utilizzando Cerca e ripristina
+          url: "/prev-ontap-restore-search.html"
+        - title: Ripristina dai backup ONTAP utilizzando Sfoglia e ripristina
+          url: "/prev-ontap-restore-browse.html"
     - title: Proteggere i carichi di lavoro di Microsoft SQL Server
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro di Microsoft SQL

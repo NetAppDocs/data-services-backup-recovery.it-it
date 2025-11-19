@@ -111,7 +111,7 @@ Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recove
 +
 [%collapsible]
 ====
-[source, console]
+[source, text]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

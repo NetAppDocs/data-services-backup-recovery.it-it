@@ -206,7 +206,7 @@ Quando si configura il backup su StorageGRID, la procedura guidata di backup ric
 
 Queste chiavi di accesso devono essere associate a un utente che dispone delle seguenti autorizzazioni:
 
-[source, console]
+[source, text]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",

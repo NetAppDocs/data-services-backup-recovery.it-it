@@ -1,0 +1,363 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-search.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: È possibile utilizzare Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup ONTAP . 
+---
+= Ripristina dai backup ONTAP utilizzando Cerca e ripristina
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup ONTAP .  Search & Restore consente di effettuare ricerche in tutti i backup (inclusi snapshot locali, volumi replicati e storage di oggetti) senza dover specificare i nomi esatti di sistema, volume o file.
+
+Il ripristino da snapshot locali o volumi replicati è in genere più rapido e meno costoso rispetto al ripristino da storage di oggetti.
+
+Quando si ripristina un volume completo, NetApp Backup and Recovery crea un nuovo volume utilizzando i dati di backup.  È possibile ripristinare il sistema originale, un altro sistema all'interno dello stesso account cloud o un sistema ONTAP locale.  Le cartelle e i file possono essere ripristinati nella loro posizione originale, in un volume diverso nello stesso sistema, in un altro sistema nello stesso account cloud o in un sistema locale.
+
+Le capacità di ripristino dipendono dalla versione ONTAP :
+
+* *Cartelle:* utilizzando ONTAP 9.13.0 o versioni successive, è possibile ripristinare cartelle con tutti i file e le sottocartelle; con le versioni precedenti, era possibile ripristinare solo i file nella cartella.
+* *Archiviazione:* il ripristino dall'archiviazione (disponibile con ONTAP 9.10.1 o versioni successive) è più lento e potrebbe comportare costi aggiuntivi.
+* *Requisiti del cluster di destinazione:*
++
+** Ripristino del volume: ONTAP 9.10.1 o versione successiva
+** Ripristino file: ONTAP 9.11.1 o versione successiva
+** Google Archive and StorageGRID: ONTAP 9.12.1 o versione successiva
+** Ripristino cartella: ONTAP 9.13.1 o versione successiva
+
+
+
+
+ifdef::aws[]
+
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
+
+endif::gcp[]
+
+[NOTE]
+====
+* Se il file di backup nell'archiviazione oggetti è stato configurato con protezione DataLock e Ransomware, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e quindi accedere alla cartella e ai file necessari.
+* Se il file di backup nell'archiviazione degli oggetti risiede nell'archiviazione di archivio, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
+* La priorità di ripristino "Alta" non è supportata quando si ripristinano dati dall'archiviazione di Azure nei sistemi StorageGRID .
+* Il ripristino delle cartelle non è attualmente supportato dai volumi nell'archiviazione di oggetti ONTAP S3.
+
+
+====
+Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume o del file che vuoi ripristinare.
+
+
+
+== Sistemi supportati da Search & Restore e provider di archiviazione di oggetti
+
+È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
+
+*Nota:* è possibile ripristinare volumi e file da qualsiasi tipo di file di backup, ma al momento è possibile ripristinare una cartella solo dai file di backup nell'archivio oggetti.
+
+[cols="33,33,33"]
+|===
+2+| Posizione del file di backup | Sistema di destinazione 
+
+
+| *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* | ifdef::aws[] 
+
+
+| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale AWS endif::aws[] ifdef::azure[] 
+
+
+| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure endif::azure[] ifdef::gcp[] 
+
+
+| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP endif::gcp[] 
+
+
+| NetApp StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
+
+
+| ONTAP S3 | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
+|===
+Per Search & Restore, l'agente Console può essere installato nei seguenti percorsi:
+
+ifdef::aws[]
+
+* Per Amazon S3, l'agente della console può essere distribuito in AWS o nei tuoi locali
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Per Azure Blob, l'agente Console può essere distribuito in Azure o nei tuoi locali
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Per Google Cloud Storage, l'agente della console deve essere distribuito nella VPC di Google Cloud Platform
+
+
+endif::gcp[]
+
+* Per StorageGRID, l'agente della console deve essere distribuito nei tuoi locali, con o senza accesso a Internet
+* Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
+
+
+Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF e ONTAP Select .
+
+
+
+== Prerequisiti per la ricerca e il ripristino
+
+* Requisiti del cluster:
++
+** La versione ONTAP deve essere 9.8 o successiva.
+** La VM di archiviazione (SVM) su cui risiede il volume deve avere un LIF dati configurato.
+** NFS deve essere abilitato sul volume (sono supportati sia i volumi NFS che SMB/CIFS).
+** Il server SnapDiff RPC deve essere attivato sull'SVM. La Console esegue questa operazione automaticamente quando si abilita l'indicizzazione sul sistema. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra gli snapshot.)
+
+
+* NetApp consiglia di montare un volume separato sull'agente Console per aumentare la resilienza di Search & Restore. Per le istruzioni, fare riferimento a<<mount-volume-steps,montare il volume per reindicizzare il catalogo>> .
+
+
+
+
+=== Prerequisiti per Legacy Search & Restore (utilizzando Indexed Catalog v1)
+
+ifdef::aws[]
+
+* Requisiti AWS:
++
+** È necessario aggiungere autorizzazioni specifiche per Amazon Athena, AWS Glue e AWS S3 al ruolo utente che fornisce le autorizzazioni alla Console. link:prev-ontap-backup-onprem-aws.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
++
+Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni Athena e Glue al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
+
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Requisiti di Azure:
++
+** È necessario registrare il provider di risorse di Azure Synapse Analytics (denominato "Microsoft.Synapse") con la sottoscrizione. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] .  Per registrare il fornitore di risorse, devi essere il *Proprietario* o il *Collaboratore* dell'abbonamento.
+** È necessario aggiungere autorizzazioni specifiche per Azure Synapse Workspace e per l'account Data Lake Storage al ruolo utente che fornisce le autorizzazioni alla console. link:prev-ontap-backup-onprem-azure.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
++
+Tieni presente che se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni Azure Synapse Workspace e Data Lake Storage Account al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
+
+** L'agente Console deve essere configurato *senza* un server proxy per la comunicazione HTTP con Internet.  Se hai configurato un server proxy HTTP per il tuo agente Console, non puoi utilizzare la funzionalità Cerca e ripristina.
+
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Requisiti di Google Cloud:
++
+** È necessario aggiungere autorizzazioni specifiche di Google BigQuery al ruolo utente che fornisce le autorizzazioni alla NetApp Console . link:prev-ontap-backup-onprem-gcp.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
++
+Se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni BigQuery al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
+
+
+
+
+
+endif::gcp[]
+
+* Requisiti StorageGRID e ONTAP S3:
++
+A seconda della configurazione, la funzione Ricerca e ripristino può essere implementata in due modi:
+
++
+** Se nel tuo account non sono presenti credenziali del provider cloud, le informazioni del catalogo indicizzato vengono archiviate nell'agente della console.
++
+Per informazioni sul Catalogo indicizzato v2, vedere la sezione seguente su come abilitare il Catalogo indicizzato.
+
+** Se si utilizza un agente Console in un sito privato (oscuro), le informazioni del catalogo indicizzato vengono archiviate nell'agente Console (richiede l'agente Console versione 3.9.25 o successiva).
+** Se hai https://docs.netapp.com/us-en/console-setup-admin/concept-accounts-aws.html["Credenziali AWS"^] O https://docs.netapp.com/us-en/console-setup-admin/concept-accounts-azure.html["Credenziali di Azure"^] nell'account, il catalogo indicizzato viene archiviato presso il provider cloud, proprio come con un agente Console distribuito nel cloud.  (Se si possiedono entrambe le credenziali, AWS è selezionato per impostazione predefinita.)
++
+Anche se si utilizza un agente Console locale, è necessario soddisfare i requisiti del provider cloud sia per le autorizzazioni dell'agente Console sia per le risorse del provider cloud.  Per utilizzare questa implementazione, consultare i requisiti AWS e Azure sopra indicati.
+
+
+
+
+
+
+
+== Processo di ricerca e ripristino
+
+Il processo è il seguente:
+
+. Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema sorgente da cui si desidera ripristinare i dati del volume.  Ciò consente al catalogo indicizzato di tenere traccia dei file di backup per ogni volume.
+. Quando si desidera ripristinare un volume o dei file da un backup del volume, in _Cerca e ripristina_, selezionare *Cerca e ripristina*.
+. Immettere i criteri di ricerca per un volume, una cartella o un file in base al nome parziale o completo del volume, al nome parziale o completo del file, alla posizione del backup, all'intervallo di dimensioni, all'intervallo di date di creazione, ad altri filtri di ricerca e selezionare *Cerca*.
++
+La pagina Risultati della ricerca mostra tutte le posizioni in cui è presente un file o un volume che corrisponde ai criteri di ricerca.
+
+. Selezionare *Visualizza tutti i backup* per la posizione che si desidera utilizzare per ripristinare il volume o il file, quindi selezionare *Ripristina* sul file di backup effettivo che si desidera utilizzare.
+. Selezionare la posizione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
+. Il volume, la cartella o il/i file vengono ripristinati.
+
+
+image:diagram_search_restore_vol_file.png["Un diagramma che mostra il flusso per eseguire un'operazione di ripristino di un volume, di una cartella o di un file utilizzando Cerca e ripristina."]
+
+Basta conoscere un nome parziale e NetApp Backup and Recovery cercherà in tutti i file di backup che corrispondono alla tua ricerca.
+
+
+
+== Abilita il catalogo indicizzato per ogni sistema
+
+Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema di origine da cui si prevede di ripristinare volumi o file.  Ciò consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.
+
+Il catalogo indicizzato è un database che memorizza i metadati relativi a tutti i volumi e ai file di backup presenti nel sistema.  Viene utilizzato dalla funzionalità Cerca e ripristina per trovare rapidamente i file di backup che contengono i dati che si desidera ripristinare.
+
+.Caratteristiche del catalogo indicizzato
+NetApp Backup and Recovery non fornisce un bucket separato quando si utilizza il catalogo indicizzato. Invece, per i backup archiviati in AWS, Azure, Google Cloud Platform, StorageGRID o ONTAP S3, il servizio predispone lo spazio sull'agente della console o sull'ambiente del provider cloud.
+
+Il catalogo indicizzato supporta quanto segue:
+
+* Efficienza di ricerca globale in meno di 3 minuti
+* Fino a 5 miliardi di file
+* Fino a 5000 volumi per cluster
+* Fino a 100.000 snapshot per volume
+* Il tempo massimo per l'indicizzazione di base è inferiore a 7 giorni.  Il tempo effettivo varierà a seconda dell'ambiente.
+
+
+.Passaggi per abilitare l'indicizzazione per un sistema:
+Se l'indicizzazione è già stata abilitata per il sistema, passare alla sezione successiva per ripristinare i dati.
+
+Per prima cosa dovrai montare un volume separato per contenere i file di catalogo. In questo modo si evita la perdita di dati se le dimensioni dei file che contengono gli snapshot diventano troppo grandi. Questa operazione non è richiesta su tutti i cluster: è possibile montare un volume qualsiasi da uno qualsiasi dei cluster presenti nel proprio ambiente. In caso contrario, l'indicizzazione potrebbe non funzionare correttamente.
+
+Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
+
+* Utilizzare un volume NetApp NVS
+* Archiviazione AFF consigliata con throughput del disco di 300 MB/s. Una minore produttività avrà un impatto sulla ricerca e su altre operazioni.
+* Abilita gli snapshot NetApp per proteggere i metadati del catalogo oltre ai file zip di backup del catalogo
+* 50 GB per 1 miliardo di file
+* 20 GB per i dati del catalogo con spazio aggiuntivo per la creazione di file zip e file temporanei
+
+
+[[mount-volume-steps]]
+.Passaggio per montare il volume per reindicizzare il catalogo
+. Montare il volume su `/opt/application/netapp/cbs` immettendo il seguente comando, dove:
++
+** `volume name` è il volume sul cluster in cui verranno archiviati i file di catalogo
+** `/opt/application/netapp/cbs` è il percorso in cui viene montato
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+Esempio:
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.Passaggi per abilitare l'indice
+. Eseguire una delle seguenti operazioni:
++
+** Se non è stato indicizzato alcun sistema, nella Dashboard di ripristino in _Cerca e ripristina_, seleziona *Abilita indicizzazione per i sistemi*.
+** Se almeno un sistema è già stato indicizzato, nella Dashboard di ripristino in _Cerca e ripristina_, seleziona *Impostazioni di indicizzazione*.
+
+
+. Selezionare *Abilita indicizzazione* per il sistema.
+
+
+.Risultato
+Dopo che tutti i servizi sono stati forniti e il catalogo indicizzato è stato attivato, il sistema viene visualizzato come "Attivo".
+
+A seconda delle dimensioni dei volumi nel sistema e del numero di file di backup in tutte e 3 le posizioni di backup, il processo di indicizzazione iniziale potrebbe richiedere fino a un'ora.  Successivamente viene aggiornato in modo trasparente ogni ora con modifiche incrementali per rimanere sempre aggiornato.
+
+
+
+== Ripristina volumi, cartelle e file utilizzando Cerca e ripristina
+
+Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata per il tuo sistema>> , puoi ripristinare volumi, cartelle e file utilizzando Cerca e ripristina. Ciò consente di utilizzare un'ampia gamma di filtri per trovare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.
+
+.Passi
+. Dal menu Console, selezionare *Protezione > Backup e ripristino*.
+. Selezionare la scheda *Ripristina* e verrà visualizzata la Dashboard di ripristino.
+. Dalla sezione _Cerca e ripristina_, seleziona *Cerca e ripristina*.
+. Dalla sezione _Cerca e ripristina_, seleziona *Cerca e ripristina*.
+. Dalla pagina Cerca e ripristina:
++
+.. Nella _barra di ricerca_, immettere un nome completo o parziale del volume, un nome della cartella o un nome del file.
+.. Selezionare il tipo di risorsa: *Volumi*, *File*, *Cartelle* o *Tutti*.
+.. Nell'area _Filtra per_, seleziona i criteri di filtro. Ad esempio, è possibile selezionare il sistema in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di posizione di backup se si desidera cercare risultati solo all'interno degli snapshot disponibili o dei file di backup nell'archiviazione degli oggetti.
+
+
+. Seleziona *Cerca* e nell'area Risultati della ricerca verranno visualizzate tutte le risorse che contengono un file, una cartella o un volume corrispondente alla tua ricerca.
+. Individua la risorsa che contiene i dati che desideri ripristinare e seleziona *Visualizza tutti i backup* per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
+. Individua il file di backup che desideri utilizzare per ripristinare i dati e seleziona *Ripristina*.
++
+Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dallo snapshot o dal volume replicato.
+
+. Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
++
+** Per i volumi, è possibile selezionare il sistema di destinazione originale oppure un sistema alternativo.  Quando si ripristina un volume FlexGroup , è necessario scegliere più aggregati.
+** Per le cartelle, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, tra cui sistema, volume e cartella.
+** Per i file, è possibile ripristinarli nella posizione originale oppure selezionare una posizione alternativa, tra cui il sistema, il volume e la cartella.  Quando si seleziona la posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
++
+Se selezioni un sistema ONTAP locale e non hai ancora configurato la connessione del cluster all'archiviazione degli oggetti, ti verrà richiesto di immettere informazioni aggiuntive:
+
++
+ifdef::aws[]
+
++
+*** Durante il ripristino da Amazon S3, seleziona lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, immetti la chiave di accesso e la chiave segreta per l'utente creato per concedere al cluster ONTAP l'accesso al bucket S3 e, facoltativamente, scegli un endpoint VPC privato per il trasferimento sicuro dei dati. link:prev-ontap-backup-onprem-aws.html["Vedi i dettagli su questi requisiti"] .
+
+
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet. link:prev-ontap-backup-onprem-azure.html["Vedi i dettagli su questi requisiti"] .
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Quando si esegue il ripristino da Google Cloud Storage, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, nonché la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti. link:prev-ontap-backup-onprem-gcp.html["Vedi i dettagli su questi requisiti"] .
+
+
+endif::gcp[]
+
+* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione. link:prev-ontap-backup-onprem-storagegrid.html["Vedi i dettagli su questi requisiti"] .
+* Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione. link:prev-ontap-backup-onprem-ontaps3.html["Vedi i dettagli su questi requisiti"] .
+
+
+.Risultati
+Il volume, la cartella o i file vengono ripristinati e si torna alla Dashboard di ripristino, dove è possibile esaminare l'avanzamento dell'operazione di ripristino.  È anche possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.  Vederelink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .
