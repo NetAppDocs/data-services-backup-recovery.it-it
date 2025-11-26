@@ -3734,10 +3734,6 @@
   <block id="c601431e32ca59eda5545781d799fc84" category="cell">Cerca un volume, una cartella o un file in *tutti i file di backup* per nome parziale o completo del volume, nome parziale o completo della cartella/file, intervallo di dimensioni e filtri di ricerca aggiuntivi.</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">Non gestisce il recupero del file se il file è stato eliminato o rinominato e l'utente non conosce il nome originale del file</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">Gestisce le directory appena create/eliminate/rinominate e i file appena creati/eliminati/rinominati</block>
-  <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">Non sono richieste risorse aggiuntive del provider cloud</block>
-  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">Quando si esegue il ripristino dal cloud, sono necessarie risorse aggiuntive del bucket e del provider di cloud pubblico per account.</block>
-  <block id="f487cfb88239842615093e7eb26153a0" category="cell">Non sono richiesti costi aggiuntivi per il provider cloud</block>
-  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">Quando si esegue il ripristino dal cloud, sono previsti costi aggiuntivi per la scansione dei backup e dei volumi alla ricerca dei risultati di ricerca.</block>
   <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">È supportato il ripristino rapido.</block>
   <block id="acf00c252198c9be0294aaf561c5d662" category="cell">Il ripristino rapido non è supportato.</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">Questa tabella fornisce un elenco di operazioni di ripristino valide in base alla posizione in cui risiedono i file di backup.</block>
@@ -4715,7 +4711,6 @@
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dallo snapshot o dal volume replicato.</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Per prima cosa dovrai montare un volume separato per contenere i file di catalogo. In questo modo si evita la perdita di dati se le dimensioni dei file che contengono gli snapshot diventano troppo grandi. Questa operazione non è richiesta su tutti i cluster: è possibile montare un volume qualsiasi da uno qualsiasi dei cluster presenti nel proprio ambiente. In caso contrario, l'indicizzazione potrebbe non funzionare correttamente.</block>
   <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:</block>
-  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Utilizzare un volume NetApp NVS</block>
   <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Archiviazione AFF consigliata con throughput del disco di 300 MB/s. Una minore produttività avrà un impatto sulla ricerca e su altre operazioni.</block>
   <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Abilita gli snapshot NetApp per proteggere i metadati del catalogo oltre ai file zip di backup del catalogo</block>
   <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB per 1 miliardo di file</block>
@@ -4779,4 +4774,7 @@
   <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
   <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">Panoramica del ripristino</block>
   <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">Ripristina dai backup ONTAP utilizzando Sfoglia e ripristina</block>
+  <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Prima di abilitare Ricerca e ripristino, assicurati che il tuo ambiente soddisfi questi requisiti:</block>
+  <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Di seguito sono riportati i requisiti per Search &amp; Restore quando si utilizza l'indicizzazione legacy:</block>
+  <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilizzare un volume NetApp NFS</block>
 </blocks>

@@ -69,12 +69,6 @@ Questa tabella fornisce un confronto delle caratteristiche dei due metodi.
 | Non gestisce il recupero del file se il file è stato eliminato o rinominato e l'utente non conosce il nome originale del file | Gestisce le directory appena create/eliminate/rinominate e i file appena creati/eliminati/rinominati 
 
 
-| Non sono richieste risorse aggiuntive del provider cloud | Quando si esegue il ripristino dal cloud, sono necessarie risorse aggiuntive del bucket e del provider di cloud pubblico per account. 
-
-
-| Non sono richiesti costi aggiuntivi per il provider cloud | Quando si esegue il ripristino dal cloud, sono previsti costi aggiuntivi per la scansione dei backup e dei volumi alla ricerca dei risultati di ricerca. 
-
-
 | È supportato il ripristino rapido. | Il ripristino rapido non è supportato. 
 |===
 Questa tabella fornisce un elenco di operazioni di ripristino valide in base alla posizione in cui risiedono i file di backup.

@@ -126,6 +126,8 @@ Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF
 
 == Prerequisiti per la ricerca e il ripristino
 
+Prima di abilitare Ricerca e ripristino, assicurati che il tuo ambiente soddisfi questi requisiti:
+
 * Requisiti del cluster:
 +
 ** La versione ONTAP deve essere 9.8 o successiva.
@@ -141,6 +143,10 @@ Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF
 
 === Prerequisiti per Legacy Search & Restore (utilizzando Indexed Catalog v1)
 
+Di seguito sono riportati i requisiti per Search & Restore quando si utilizza l'indicizzazione legacy:
+
+[%collapsible]
+====
 ifdef::aws[]
 
 * Requisiti AWS:
@@ -203,6 +209,7 @@ Anche se si utilizza un agente Console locale, è necessario soddisfare i requis
 
 
 
+====
 
 
 == Processo di ricerca e ripristino
@@ -251,7 +258,7 @@ Per prima cosa dovrai montare un volume separato per contenere i file di catalog
 
 Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
 
-* Utilizzare un volume NetApp NVS
+* Utilizzare un volume NetApp NFS
 * Archiviazione AFF consigliata con throughput del disco di 300 MB/s. Una minore produttività avrà un impatto sulla ricerca e su altre operazioni.
 * Abilita gli snapshot NetApp per proteggere i metadati del catalogo oltre ai file zip di backup del catalogo
 * 50 GB per 1 miliardo di file
