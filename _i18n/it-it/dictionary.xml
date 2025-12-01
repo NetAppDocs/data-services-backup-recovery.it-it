@@ -4777,4 +4777,5 @@
   <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Prima di abilitare Ricerca e ripristino, assicurati che il tuo ambiente soddisfi questi requisiti:</block>
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Di seguito sono riportati i requisiti per Search &amp; Restore quando si utilizza l'indicizzazione legacy:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilizzare un volume NetApp NFS</block>
+  <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery non supporta la conversione di un FlexVol volume con una relazione di backup cloud attiva in un volume FlexGroup mantenendo la funzionalità di backup cloud.</block>
 </blocks>
