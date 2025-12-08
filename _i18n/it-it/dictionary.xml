@@ -1037,7 +1037,6 @@
   <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">Sezione *Notifiche*:</block>
   <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">Selezionare *Ripristina*.</block>
-  <block id="aef04a364ab7bd7fcab1346a4084cdaa" category="paragraph">Non disponibile per l'anteprima privata di Hyper-V.</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">È possibile proteggere le applicazioni Kubernetes e i dati delle applicazioni dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati.</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">Panoramica sulla gestione dei carichi di lavoro Kubernetes</block>
   <block id="14cca4b1ac5c46a49fffa25e733381e7" category="paragraph">La gestione dei carichi di lavoro Kubernetes in NetApp Backup and Recovery consente di individuare, gestire e proteggere i cluster e le applicazioni Kubernetes, il tutto in un unico posto. Puoi gestire risorse e applicazioni ospitate sui tuoi cluster Kubernetes. Puoi anche creare e associare policy di protezione ai tuoi carichi di lavoro Kubernetes, il tutto utilizzando un'unica interfaccia.</block>
@@ -1090,7 +1089,6 @@
   <block id="42b3c9b2282ae6b4644cee5b5995979d" category="summary">Proteggi i tuoi carichi di lavoro KVM con NetApp Backup and Recovery.</block>
   <block id="02055854e5f8d7c0a2161503c5645d5a" category="doc">Ripristinare le macchine virtuali KVM con NetApp Backup and Recovery</block>
   <block id="4ebed5b1ff5b9230bfba78b5f3751082" category="paragraph">È possibile ripristinare le macchine virtuali da diverse posizioni di partenza:</block>
-  <block id="2003d1dd0ff605a8b0183ae69c3823f3" category="paragraph">È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima.</block>
   <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">Ripristina la posizione originale</block>
   <block id="25a77bf38583c396d6997e367e9268c8" category="section-title">Come funziona il ripristino delle macchine virtuali</block>
   <block id="01d60535f98ec4122ee816d29473c760" category="paragraph">Quando si ripristinano macchine virtuali, si verifica quanto segue:</block>
@@ -1101,7 +1099,6 @@
   <block id="108ce4e259c8e5532d28e1f7b55053e0" category="paragraph">Ripristinare le macchine virtuali KVM utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.</block>
   <block id="28826b6f1571b9d0354ca0ae481f50c6" category="list-text">Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *KVM*.</block>
   <block id="066fa262c239f022506c95a1e09ebb65" category="list-text">Immettere il nome della macchina virtuale che si desidera ripristinare oppure filtrare in base all'host della macchina virtuale o al pool di archiviazione in cui si trova la risorsa da ripristinare.</block>
-  <block id="7f95c9104d9c5d062c442ee5aade255c" category="paragraph">Non disponibile per l'anteprima KVM.</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">NetApp Backup and Recovery consente di gestire gli hook di esecuzione per intervenire prima o dopo le operazioni di protezione delle applicazioni.</block>
   <block id="3d932cbb71cd117a65669b165e078b5b" category="doc">Gestisci i modelli di hook di esecuzione di NetApp Backup and Recovery per i carichi di lavoro Kubernetes</block>
   <block id="ac84b7596169ab3fb6c24e8a5c85c234" category="inline-link">Protezione dei dati con le VM KubeVirt</block>
@@ -1916,16 +1913,7 @@
   <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">È possibile ripristinare i dati in questi punti:</block>
   <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.</block>
   <block id="1ca9578c25474d5cfeaa6c44bdbaa9b2" category="paragraph">*Ruolo richiesto NetApp Console * Ruolo di visualizzatore di storage, super amministratore di backup e ripristino, amministratore di ripristino di backup e ripristino.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
-  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Macchine virtuali*.</block>
   <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al vCenter, al datacenter o al datastore in cui si trova la risorsa da ripristinare.</block>
-  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">Viene visualizzato un elenco di opzioni di posizione di ripristino.</block>
-  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">Selezionare la posizione di ripristino in cui si desidera ripristinare lo snapshot:</block>
-  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">Locale: ripristina lo snapshot nella posizione originale.</block>
-  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">Archiviazione secondaria: ripristina lo snapshot in una posizione di archiviazione secondaria.</block>
-  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">Archiviazione oggetti: ripristina lo snapshot in una posizione di archiviazione oggetti.</block>
-  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">Se si sceglie l'archiviazione di oggetti, verificare se si desidera eseguire nuovamente la scansione dello snapshot prima del ripristino.</block>
-  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">Nella pagina dei dettagli della destinazione di ripristino, immettere le seguenti informazioni:</block>
-  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">Non disponibile per l'anteprima VMware.</block>
   <block id="a5315c2927cf2b05876fdd6713fbd713" category="summary">NetApp Backup and Recovery è un servizio dati che fornisce una protezione dati efficiente, sicura e conveniente per tutti i carichi di lavoro ONTAP , inclusi volumi, database, macchine virtuali e carichi di lavoro Kubernetes.</block>
   <block id="0541ead918a4013aad82336e0654ba53" category="paragraph">Il supporto per il backup e il ripristino è già integrato in tutti i sistemi ONTAP , quindi non sono necessari hardware, licenze software o gateway multimediali aggiuntivi.  Ciò rende le operazioni di backup semplici ed economiche.  La console NetApp semplifica l'implementazione di qualsiasi strategia di backup, inclusa l'intera gamma di varianti di backup 3-2-1, senza la necessità di più gestori di risorse o personale specializzato.</block>
   <block id="8fa16cd18cf0722e85fe3e62f649f0c8" category="admonition">La documentazione sulla protezione dei carichi di lavoro VMware, KVM, Hyper-V e Kubernetes viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.</block>
@@ -4487,9 +4475,6 @@
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere al file di backup.</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Dalla pagina Ripristina (Cerca e ripristina), puoi ripristinare una risorsa cercando lo snapshot con i filtri, anche se non ne ricordi il nome esatto, la posizione o l'ultima data nota.</block>
   <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">Se si sceglie l'archiviazione secondaria, immettere le posizioni di origine e di destinazione sia per i dati che per i registri.</block>
-  <block id="9908b0e588dc1ce9587bfb1206e3118e" category="paragraph">Successivamente, seleziona le impostazioni di destinazione e le opzioni pre e post ripristino.</block>
-  <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. È possibile utilizzare immediatamente i volumi e i dati ripristinati. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.</block>
-  <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*Abilita notifiche e-mail*: seleziona per ricevere notifiche e-mail sull'operazione di ripristino e scegli i tipi di notifica desiderati.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisiti software per l'host Hyper-V Windows Server:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se l'operazione di ripristino non viene completata, attendere che Job Monitor visualizzi "Fallito" prima di riprovare l'operazione di ripristino.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter Server locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.</block>
@@ -4778,4 +4763,40 @@
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Di seguito sono riportati i requisiti per Search &amp; Restore quando si utilizza l'indicizzazione legacy:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilizzare un volume NetApp NFS</block>
   <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">NetApp Backup &amp; Recovery non supporta la conversione di un FlexVol volume con una relazione di backup cloud attiva in un volume FlexGroup mantenendo la funzionalità di backup cloud.</block>
+  <block id="063090df0880212c0ba8eec878096a21" category="doc">Miglioramenti dell'anteprima dei carichi di lavoro VMware</block>
+  <block id="24936fb650df7af8295e75a3667becef" category="list-text">Ora puoi ripristinare backup e snapshot in una posizione alternativa. Questa funzionalità è utile se si desidera gestire le versioni di una VM su diverse distribuzioni VMware vCenter, host VMware ESXi o datastore VMware.</block>
+  <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">Ora è possibile ripristinare specifici dischi virtuali VMware (immagini VMDK) da una posizione primaria o secondaria, consentendo un controllo più granulare sul ripristino dei dati della VM.</block>
+  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">Scopri di più sul ripristino dei carichi di lavoro VMware con NetApp Backup and Recovery</block>
+  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>.</block>
+  <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro Hyper-V.</block>
+  <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro KVM.</block>
+  <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*Ripristina nella posizione originale*: la VM viene ripristinata nella posizione originale, nella stessa distribuzione vCenter, nello stesso host ESXi e nello stesso datastore. La VM e tutti i suoi dati vengono sovrascritti.</block>
+  <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*Ripristina in una posizione alternativa*: puoi scegliere un vCenter, un host ESXi o un datastore diverso come destinazione di ripristino per la VM. Questa funzionalità è utile per gestire copie diverse della stessa VM in posizioni e stati diversi.</block>
+  <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *VMware*.</block>
+  <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.</block>
+  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante *Ripristina macchina virtuale* per quella macchina virtuale.</block>
+  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale.</block>
+  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">Seleziona la casella di controllo per lo snapshot che desideri ripristinare.</block>
+  <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">Vengono visualizzate le opzioni per la posizione dello snapshot.</block>
+  <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Selezionare la destinazione di ripristino per lo snapshot:</block>
+  <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Locale*: ripristina lo snapshot dalla posizione locale.</block>
+  <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*Secondario*: ripristina lo snapshot da una posizione di archiviazione remota.</block>
+  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino.</block>
+  <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome della VM. La VM originale viene sovrascritta con l'operazione di ripristino.</block>
+  <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">Selezionare il riquadro *Posizione originale*.</block>
+  <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">Scegli tra le seguenti opzioni:</block>
+  <block id="9969fdcd80f8f04232cfe10158190f8c" category="list-text">Sezione *Opzioni pre-ripristino*:</block>
+  <block id="3e4b444bf949d263dd0a42369aeba637" category="list-text">*Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.</block>
+  <block id="181dff5c613144551ed16703a090b3b5" category="list-text">Sezione *Opzioni post-ripristino*:</block>
+  <block id="81dcec9119b8491a178fac7f1cf17c92" category="list-text">*Riavvia macchina virtuale*: abilita questa opzione per riavviare la macchina virtuale dopo il completamento dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.</block>
+  <block id="7de4def82cb6f4cb7277085992e1be0a" category="list-text">*Postscript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato al termine del ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.</block>
+  <block id="72e03b5a87389f676881b79f8d4170ca" category="paragraph">Quando si esegue il ripristino in una posizione alternativa, è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore e il nome della VM per creare una nuova copia della VM in una posizione diversa o con un nome diverso.</block>
+  <block id="d9a04cc80eb84134a783629255c7bc36" category="list-text">Selezionare il riquadro *Posizione alternativa*.</block>
+  <block id="f78868ada341077e1afdf76ea00e0454" category="list-text">Sezione *Impostazioni di destinazione*:</block>
+  <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*FQDN o indirizzo IP vCenter*: seleziona il server vCenter in cui desideri ripristinare lo snapshot.</block>
+  <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*Host ESXi*: seleziona l'host in cui desideri ripristinare lo snapshot.</block>
+  <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*Rete*: seleziona la rete in cui desideri ripristinare lo snapshot.</block>
+  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*Datastore*: immettere il nome del datastore in cui si desidera ripristinare lo snapshot.</block>
+  <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">08 dicembre 2025</block>
 </blocks>

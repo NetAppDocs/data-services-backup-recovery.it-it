@@ -25,7 +25,10 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 
 
 .Ripristinare questi punti
-È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima privata.
+È possibile ripristinare i dati in questi punti:
+
+* Ripristina la posizione originale
+
 
 .Considerazioni sul ripristino da storage di oggetti
 Se selezioni un file di backup nell'archiviazione oggetti e per quel backup è attiva la protezione ransomware (se hai abilitato DataLock e Ransomware Resilience nei criteri di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati.  Ti consigliamo di eseguire la scansione.
@@ -101,10 +104,7 @@ Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima privata di Hyper-V.
-
-. Selezionare *Ripristina*.
-
+Non disponibile per l'anteprima dei carichi di lavoro Hyper-V.
 
 --
 ====

@@ -25,7 +25,7 @@ Ripristina le macchine virtuali KVM da snapshot, da un backup del gruppo di prot
 
 
 .Ripristinare questi punti
-È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima.
+È possibile ripristinare i dati in questi punti:
 
 * Ripristina la posizione originale
 
@@ -108,10 +108,7 @@ Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima KVM.
-
-. Selezionare *Ripristina*.
-
+Non disponibile per l'anteprima dei carichi di lavoro KVM.
 
 --
 ====

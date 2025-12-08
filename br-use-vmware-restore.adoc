@@ -27,7 +27,8 @@ Ripristina i carichi di lavoro VMware da snapshot, da un backup del carico di la
 .Ripristinare questi punti
 È possibile ripristinare i dati in questi punti:
 
-* Ripristina la posizione originale
+* *Ripristina nella posizione originale*: la VM viene ripristinata nella posizione originale, nella stessa distribuzione vCenter, nello stesso host ESXi e nello stesso datastore. La VM e tutti i suoi dati vengono sovrascritti.
+* *Ripristina in una posizione alternativa*: puoi scegliere un vCenter, un host ESXi o un datastore diverso come destinazione di ripristino per la VM. Questa funzionalità è utile per gestire copie diverse della stessa VM in posizioni e stati diversi.
 
 
 .Considerazioni sul ripristino da storage di oggetti
@@ -62,57 +63,56 @@ Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possi
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
-. Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *Macchine virtuali*.
+. Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *VMware*.
 . Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al vCenter, al datacenter o al datastore in cui si trova la risorsa da ripristinare.
 +
-Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.
 
-. Seleziona lo snapshot che vuoi ripristinare.
+. Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante *Ripristina macchina virtuale* per quella macchina virtuale.
 +
-Viene visualizzato un elenco di opzioni di posizione di ripristino.
+Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale.
 
-. Selezionare la posizione di ripristino in cui si desidera ripristinare lo snapshot:
+. Seleziona la casella di controllo per lo snapshot che desideri ripristinare.
+. Selezionare *Avanti*.
 +
-** Locale: ripristina lo snapshot nella posizione originale.
-** Archiviazione secondaria: ripristina lo snapshot in una posizione di archiviazione secondaria.
+Vengono visualizzate le opzioni per la posizione dello snapshot.
+
+. Selezionare la destinazione di ripristino per lo snapshot:
++
+** *Locale*: ripristina lo snapshot dalla posizione locale.
+** *Secondario*: ripristina lo snapshot da una posizione di archiviazione remota.
 +
 Se si sceglie l'archiviazione secondaria, immettere le posizioni di origine e di destinazione sia per i dati che per i registri.
 
-** Archiviazione oggetti: ripristina lo snapshot in una posizione di archiviazione oggetti.
-+
-Se si sceglie l'archiviazione di oggetti, verificare se si desidera eseguire nuovamente la scansione dello snapshot prima del ripristino.
 
 
-
-. Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.
-+
-Successivamente, seleziona le impostazioni di destinazione e le opzioni pre e post ripristino.
-
+. Selezionare *Avanti* per procedere alla pagina Impostazioni di destinazione del ripristino.
+. Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino.
 
 
 [discrete]
 ===== Selezione della destinazione
 
-. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
-
-
 [role="tabbed-block"]
 ====
 .Ripristina nella posizione originale
 --
-Nella pagina dei dettagli della destinazione di ripristino, immettere le seguenti informazioni:
+Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome della VM. La VM originale viene sovrascritta con l'operazione di ripristino.
 
-. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. È possibile utilizzare immediatamente i volumi e i dati ripristinati. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
-. *Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
-. *Opzioni post-ripristino*:
+. Selezionare il riquadro *Posizione originale*.
+. Scegli tra le seguenti opzioni:
 +
-** *Riavvia VM*: selezionare questa opzione per riavviare la VM al termine dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
-** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
-
-
-. Sezione *Notifiche*:
+** Sezione *Opzioni pre-ripristino*:
 +
-** *Abilita notifiche e-mail*: seleziona per ricevere notifiche e-mail sull'operazione di ripristino e scegli i tipi di notifica desiderati.
+*** *Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+** Sezione *Opzioni post-ripristino*:
++
+*** *Riavvia macchina virtuale*: abilita questa opzione per riavviare la macchina virtuale dopo il completamento dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
+*** *Postscript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato al termine del ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
 
 
 . Selezionare *Ripristina*.
@@ -121,7 +121,35 @@ Nella pagina dei dettagli della destinazione di ripristino, immettere le seguent
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima VMware.
+Quando si esegue il ripristino in una posizione alternativa, è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore e il nome della VM per creare una nuova copia della VM in una posizione diversa o con un nome diverso.
+
+. Selezionare il riquadro *Posizione alternativa*.
+. Inserisci le seguenti informazioni:
++
+** Sezione *Impostazioni di destinazione*:
++
+*** *FQDN o indirizzo IP vCenter*: seleziona il server vCenter in cui desideri ripristinare lo snapshot.
+*** *Host ESXi*: seleziona l'host in cui desideri ripristinare lo snapshot.
+*** *Rete*: seleziona la rete in cui desideri ripristinare lo snapshot.
+*** *Datastore*: immettere il nome del datastore in cui si desidera ripristinare lo snapshot.
+*** *Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.
+
+
+** Sezione *Opzioni pre-ripristino*:
++
+*** *Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+** Sezione *Opzioni post-ripristino*:
++
+*** *Riavvia macchina virtuale*: abilita questa opzione per riavviare la macchina virtuale dopo il completamento dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
+*** *Postscript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato al termine del ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Ripristina*.
+
 
 --
 ====
