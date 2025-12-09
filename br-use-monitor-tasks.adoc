@@ -118,7 +118,7 @@ Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaric
 
 Monitorare i flussi di conservazione (_ciclo di vita del backup_) per controllare i backup, mantenerli al sicuro e supportare gli audit.  Identificare la scadenza delle copie di backup per monitorarne il ciclo di vita.
 
-Un processo di backup del ciclo di vita tiene traccia di tutti gli snapshot eliminati o in coda per l'eliminazione. A partire da ONTAP 9.13, è possibile visualizzare tutti i tipi di lavoro denominati "Retention" nella pagina Job Monitoring.
+Un processo di backup del ciclo di vita tiene traccia di tutti gli snapshot eliminati o in coda per l'eliminazione. A partire da ONTAP 9.13, è possibile visualizzare tutti i tipi di lavoro denominati "Conservazione" nella pagina Monitoraggio lavori.
 
 Il tipo di processo "Conservazione" acquisisce tutti i processi di eliminazione degli snapshot avviati su un volume protetto da NetApp Backup and Recovery.
 
@@ -140,37 +140,94 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 
 [cols="1,2,1,1"]
 |===
-| Tipo di operazione | Evento | Livello di allerta | Email inviata 
+| Tipo di operazione | Evento | Avviso generato | Email inviata 
 
 
-| Attivazione | Attivazione del backup e del ripristino non riuscita per il sistema | Errore | SÌ 
+| Attivazione | Attivazione del backup e del ripristino non riuscita per il sistema | SÌ | SÌ 
 
 
-| Attivazione | Modifica di backup e ripristino non riuscita per il sistema | Errore | SÌ 
+| Attivazione | Modifica di backup e ripristino non riuscita per il sistema | SÌ | SÌ 
 
 
-| Istantanea locale | Errore durante la creazione dello snapshot ad hoc NetApp Backup and Recovery | Errore | SÌ 
+| Attivazione | Volume ora associato al criterio snapshot | SÌ | SÌ 
 
 
-| Replicazione | Errore del processo di replica ad hoc NetApp Backup and Recovery | Errore | SÌ 
+| Attivazione | Backup del volume o stato modificato | SÌ | SÌ 
 
 
-| Replicazione | Errore durante la pausa della replica NetApp Backup and Recovery | Errore | NO 
+| Attivazione | Attivazione del backup e del ripristino riuscita per il sistema | SÌ | SÌ 
 
 
-| Replicazione | Errore durante l'interruzione della replica NetApp Backup and Recovery | Errore | NO 
+| Attivazione | Backup del volume ad hoc non riuscito | SÌ | SÌ 
 
 
-| Replicazione | Errore durante il processo di risincronizzazione della replica NetApp Backup and Recovery | Errore | NO 
+| Attivazione | Backup del volume ad hoc riuscito | SÌ | NO 
 
 
-| Replicazione | Errore di interruzione del processo di replica NetApp Backup and Recovery | Errore | NO 
+| Attivazione | Backup multivolume non riuscito | SÌ | SÌ 
 
 
-| Replicazione | Errore nel processo di risincronizzazione inversa della replica NetApp Backup and Recovery | Errore | SÌ 
+| Operazioni Cron | Controllo delle etichette snapshot mancanti | SÌ | SÌ 
 
 
-| Replicazione | Errore di eliminazione della replica NetApp Backup and Recovery | Errore | SÌ 
+| Operazioni Cron | Impossibile inviare il token di sicurezza a ONTAP per questo sistema | SÌ | SÌ 
+
+
+| Eventi Pub/Sub | Errore di connessione | SÌ | NO 
+
+
+| Eventi Pub/Sub | Impossibile eliminare uno snapshot pianificato | SÌ | NO 
+
+
+| Eventi Pub/Sub | Backup pianificato del volume non riuscito | SÌ | NO 
+
+
+| Eventi Pub/Sub | Ripristino del volume riuscito | SÌ | NO 
+
+
+| Eventi Pub/Sub | Ripristino del volume non riuscito | SÌ | NO 
+
+
+| Ransomware | Potenziale attacco ransomware identificato sulla copia di backup | SÌ | SÌ 
+
+
+| Ransomware | Potenziale attacco ransomware identificato sulla copia di backup di questo sistema | SÌ | SÌ 
+
+
+| Istantanea locale | Errore durante la creazione dello snapshot ad hoc NetApp Backup and Recovery | SÌ | SÌ 
+
+
+| Replicazione | Modifica della relazione di replicazione del fallimento del volume | SÌ | SÌ 
+
+
+| Replicazione | Errore del processo di replica ad hoc NetApp Backup and Recovery | SÌ | SÌ 
+
+
+| Replicazione | Errore durante la pausa della replica NetApp Backup and Recovery | SÌ | NO 
+
+
+| Replicazione | Errore durante l'interruzione della replica NetApp Backup and Recovery | SÌ | NO 
+
+
+| Replicazione | Errore durante il processo di risincronizzazione della replica NetApp Backup and Recovery | SÌ | NO 
+
+
+| Replicazione | Errore di interruzione del processo di replica NetApp Backup and Recovery | SÌ | NO 
+
+
+| Replicazione | Errore nel processo di risincronizzazione inversa della replica NetApp Backup and Recovery | SÌ | SÌ 
+
+
+| Replicazione | Errore di eliminazione della replica NetApp Backup and Recovery | SÌ | SÌ 
+
+
+| Operazioni mirate | Errore di ripristino nella destinazione locale o cloud | SÌ | SÌ 
+
+
+| Operazioni mirate | Errore di ripristino su richiesta | SÌ | SÌ 
+
+
+| Operazioni di sistema | Errore nella creazione dello snapshot del volume ad hoc | SÌ | SÌ 
 |===
 
 NOTE: A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi Cloud Volumes ONTAP e ONTAP locali.  Per i sistemi con Cloud Volumes ONTAP 9.13.0 e ONTAP on-premises, viene visualizzato solo l'avviso relativo a "Ripristino attività completato, ma con avvisi".
