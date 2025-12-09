@@ -169,15 +169,15 @@ ifdef::gcp[]
 
 *Spese di servizio*
 
-I costi del servizio vengono pagati a NetApp e coprono sia il costo per creare backup su un archivio di oggetti o su una destinazione ONTAP sia per ripristinare volumi o file da tali backup.  Paghi solo per i dati che proteggi nell'archiviazione di oggetti o in ONTAP (incluse le configurazioni SnapMirror ).  I costi vengono calcolati utilizzando la capacità logica utilizzata all'origine (prima delle efficienze ONTAP ) dei volumi ONTAP sottoposti a backup su un archivio oggetti o su una destinazione ONTAP . Questa capacità è anche nota come Front-End Terabyte (FETB).
+40ff88020bcb9f0e42545b8535db30db
 
 
 NOTE: Per Microsoft SQL Server, vengono applicati dei costi quando si avvia la replica di snapshot su una destinazione ONTAP secondaria o su un archivio di oggetti.
 
-Esistono tre modi per pagare Backup e Ripristino:
+da19f2e50cbb3312d0bcc973d8486544
 
 * La prima opzione è quella di abbonarsi al tuo provider cloud, che ti consente di pagare mensilmente.
-* La seconda opzione è quella di acquistare un contratto annuale.
+* a426b39cc5038676b39d2265b22cebec
 * La terza opzione è quella di acquistare le licenze direttamente da NetApp.  Leggi il<<Licenza,Licenza>> sezione per i dettagli.
 
 

@@ -4846,7 +4846,4 @@
   <block id="985aacac93e75bfb41dca796dd136773" category="cell">Errore di ripristino su richiesta</block>
   <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Operazioni di sistema</block>
   <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Errore nella creazione dello snapshot del volume ad hoc</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">I costi del servizio vengono pagati a NetApp e coprono sia il costo per creare backup su un archivio di oggetti o su una destinazione ONTAP sia per ripristinare volumi o file da tali backup.  Paghi solo per i dati che proteggi nell'archiviazione di oggetti o in ONTAP (incluse le configurazioni SnapMirror ).  I costi vengono calcolati utilizzando la capacità logica utilizzata all'origine (prima delle efficienze ONTAP ) dei volumi ONTAP sottoposti a backup su un archivio oggetti o su una destinazione ONTAP . Questa capacità è anche nota come Front-End Terabyte (FETB).</block>
-  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Esistono tre modi per pagare Backup e Ripristino:</block>
-  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">La seconda opzione è quella di acquistare un contratto annuale.</block>
 </blocks>
