@@ -147,6 +147,8 @@ sidebar:
         url: "/br-use-vmware-backup.html"
       - title: Ripristinare i carichi di lavoro VMware
         url: "/br-use-vmware-restore.html"
+      - title: Ripristina dischi virtuali specifici dai backup
+        url: "/br-use-vmware-restore-vmdks-from-backups.html"
     - title: Proteggi i carichi di lavoro VMware (con il plug-in SnapCenter per VMware)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali

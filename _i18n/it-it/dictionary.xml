@@ -389,7 +389,6 @@
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">Montare</block>
   <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">Smonta</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">Ripristina in posizione alternativa</block>
-  <block id="635e272d16a4b652a6ff48968baf8726" category="list-text">Ripristina VMDK</block>
   <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">Allega VMDK</block>
   <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">Stacca VMDK</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">Supporto vVol</block>
@@ -4474,7 +4473,6 @@
   <block id="fc7c1a6c328c3622bdd68b73c548bb4f" category="paragraph">Se Ransomware Resilience è abilitato per un file di backup nell'archiviazione di oggetti, ti verrà chiesto di eseguire un controllo aggiuntivo prima del ripristino.  Si consiglia di eseguire la scansione.</block>
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere al file di backup.</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Dalla pagina Ripristina (Cerca e ripristina), puoi ripristinare una risorsa cercando lo snapshot con i filtri, anche se non ne ricordi il nome esatto, la posizione o l'ultima data nota.</block>
-  <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">Se si sceglie l'archiviazione secondaria, immettere le posizioni di origine e di destinazione sia per i dati che per i registri.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisiti software per l'host Hyper-V Windows Server:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se l'operazione di ripristino non viene completata, attendere che Job Monitor visualizzi "Fallito" prima di riprovare l'operazione di ripristino.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter Server locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.</block>
@@ -4766,17 +4764,12 @@
   <block id="063090df0880212c0ba8eec878096a21" category="doc">Miglioramenti dell'anteprima dei carichi di lavoro VMware</block>
   <block id="24936fb650df7af8295e75a3667becef" category="list-text">Ora puoi ripristinare backup e snapshot in una posizione alternativa. Questa funzionalità è utile se si desidera gestire le versioni di una VM su diverse distribuzioni VMware vCenter, host VMware ESXi o datastore VMware.</block>
   <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">Ora è possibile ripristinare specifici dischi virtuali VMware (immagini VMDK) da una posizione primaria o secondaria, consentendo un controllo più granulare sul ripristino dei dati della VM.</block>
-  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">Scopri di più sul ripristino dei carichi di lavoro VMware con NetApp Backup and Recovery</block>
-  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>.</block>
   <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro Hyper-V.</block>
   <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro KVM.</block>
   <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*Ripristina nella posizione originale*: la VM viene ripristinata nella posizione originale, nella stessa distribuzione vCenter, nello stesso host ESXi e nello stesso datastore. La VM e tutti i suoi dati vengono sovrascritti.</block>
   <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*Ripristina in una posizione alternativa*: puoi scegliere un vCenter, un host ESXi o un datastore diverso come destinazione di ripristino per la VM. Questa funzionalità è utile per gestire copie diverse della stessa VM in posizioni e stati diversi.</block>
   <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *VMware*.</block>
   <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.</block>
-  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante *Ripristina macchina virtuale* per quella macchina virtuale.</block>
-  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale.</block>
-  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">Seleziona la casella di controllo per lo snapshot che desideri ripristinare.</block>
   <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">Vengono visualizzate le opzioni per la posizione dello snapshot.</block>
   <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Selezionare la destinazione di ripristino per lo snapshot:</block>
   <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Locale*: ripristina lo snapshot dalla posizione locale.</block>
@@ -4796,7 +4789,40 @@
   <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*FQDN o indirizzo IP vCenter*: seleziona il server vCenter in cui desideri ripristinare lo snapshot.</block>
   <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*Host ESXi*: seleziona l'host in cui desideri ripristinare lo snapshot.</block>
   <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*Rete*: seleziona la rete in cui desideri ripristinare lo snapshot.</block>
-  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*Datastore*: immettere il nome del datastore in cui si desidera ripristinare lo snapshot.</block>
   <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.</block>
   <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">08 dicembre 2025</block>
+  <block id="14a4fd4957d1a547c2b4ccadbaed0a90" category="inline-link-macro">Scopri di più sul ripristino delle VM VMware con NetApp Backup and Recovery</block>
+  <block id="6dc955af209317a9d714156228721ed4" category="paragraph"><block ref="dd7466c8c4dbfb4163f16106a1d7f80c" category="inline-link-macro-rx"></block>.</block>
+  <block id="01f07264521662850e2d8465c322c978" category="inline-link-macro">Scopri di più sul ripristino dei dischi virtuali VMware con NetApp Backup and Recovery</block>
+  <block id="61b4efc27d21705d0d4d56786ccc1f78" category="paragraph"><block ref="78a5fc4b6640a61792f9693d7c0f443b" category="inline-link-macro-rx"></block>.</block>
+  <block id="af5eb3f6323875097e7bb24b26d6173d" category="summary">È possibile ripristinare i VMDK esistenti, oppure quelli eliminati o scollegati, da un backup primario o secondario di VM tradizionali o VM vVol.</block>
+  <block id="26b80604718acd7f55cf527a0bdacff9" category="doc">Ripristina dischi virtuali specifici dai backup</block>
+  <block id="49ad71250d1ffd36154d69faa3ad6ea1" category="paragraph">È possibile ripristinare dischi virtuali esistenti (VMDK) oppure dischi virtuali eliminati o scollegati da backup primari o secondari di VM tradizionali. Ciò consente di ripristinare solo dati o applicazioni specifici della VM, in modo da non dover ripristinare l'intera VM e tutti i dischi virtuali associati in situazioni in cui sono interessati solo dati specifici. Dopo il ripristino, il disco virtuale viene collegato alla sua VM originale ed è pronto per l'uso.</block>
+  <block id="25734bf6409795c4ad848a8de171d984" category="paragraph">È possibile ripristinare uno o più dischi di macchine virtuali (VMDK) su una VM nello stesso datastore o in datastore diversi.</block>
+  <block id="65edaa2fcae57d6f852991cc8468f875" category="admonition">Per migliorare le prestazioni delle operazioni di ripristino negli ambienti NFS, abilitare l'API vStorage dell'applicazione VMware per l'integrazione di array (VAAI).</block>
+  <block id="9560f1f6257455641b369c78c24ba389" category="list-text">Deve esistere un backup.</block>
+  <block id="8b5bb04e87b59bfec2f1d748b4ce1dc1" category="list-text">La VM non deve essere in transito.</block>
+  <block id="ded66736229bb16e0827ec27ef3ebd43" category="paragraph">La VM che si desidera ripristinare non deve essere in stato vMotion o Storage vMotion.</block>
+  <block id="35317c90c50ee8180041c9d51a4f8af2" category="list-text">Se il VMDK viene eliminato o scollegato dalla VM, l'operazione di ripristino collega il VMDK alla VM.</block>
+  <block id="1e6537897e726c537f77519264b64453" category="list-text">Un'operazione di ripristino potrebbe non riuscire se il livello di archiviazione del FabricPool in cui si trova la VM non è disponibile.</block>
+  <block id="b59c69b3461a70dfc0aa2e0732ab7524" category="list-text">Le operazioni di collegamento e ripristino collegano i VMDK utilizzando il controller SCSi predefinito. Tuttavia, quando si esegue il backup dei VMDK collegati a una VM con un disco NVMe, le operazioni di collegamento e ripristino utilizzano il controller NVMe, se disponibile.</block>
+  <block id="bcaa22a88e6250de97f1c34ff1815b3e" category="list-text">Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante del menu delle opzioni per quella macchina virtuale.</block>
+  <block id="2bf7491fa72c164885118e8edcadf89c" category="list-text">Nel menu visualizzato, seleziona *Ripristina dischi virtuali*.</block>
+  <block id="4ebce1ab53c9ce1f839951332126f91e" category="paragraph">Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale. Per impostazione predefinita, vengono mostrati gli snapshot più recenti per l'intervallo di tempo selezionato nel menu a discesa *Intervallo di tempo*.</block>
+  <block id="20bc64a67ad04aa40e6f57492daf95cd" category="paragraph">Per ogni snapshot, le icone illuminate nella colonna *Posizione* indicano le posizioni di archiviazione in cui è disponibile lo snapshot (archiviazione primaria, secondaria o di oggetti).</block>
+  <block id="cd1f1a4a4415e09f2c3fc9ab17aff625" category="list-text">Abilita il pulsante di opzione per lo snapshot che desideri ripristinare.</block>
+  <block id="57385260ec48afcc58eb70dc9059c8c0" category="list-text">*Archivio oggetti*: ripristina lo snapshot dall'archivio oggetti.</block>
+  <block id="c1389ae5f188f85d79b6e1088e21576d" category="paragraph">Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazione dall'elenco a discesa.</block>
+  <block id="a1ff6993d36232fbd0d0471769216a69" category="list-text">Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino:</block>
+  <block id="21ba1fcc630eae9c060829f621ac7124" category="paragraph">Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome del disco virtuale. Il disco virtuale originale viene sovrascritto.</block>
+  <block id="9f63eee4b169a6ac1fce2d2e6ec65d64" category="list-text">Nella sezione *Impostazioni di destinazione*, seleziona la casella di controllo per tutti i dischi virtuali che desideri ripristinare.</block>
+  <block id="e3926503d87ede09d428d2ca5fc4abf5" category="paragraph">Quando si esegue il ripristino in una posizione alternativa, è possibile modificare il datastore di destinazione. Dopo l'operazione di ripristino, il disco virtuale viene collegato alla VM originale, indipendentemente dal datastore scelto.</block>
+  <block id="a52505a238fc5c9d5d1a17651cbc03f5" category="list-text">Per tutti i dischi virtuali selezionati:</block>
+  <block id="9f53070c09f51b35472e37750d246cce" category="list-text">Selezionare *Seleziona datastore* per scegliere una destinazione di ripristino del datastore diversa per il disco virtuale.</block>
+  <block id="51b825d58961da2f3a3564b41afdfb96" category="list-text">Selezionare *Seleziona* per confermare la scelta e chiudere la finestra di selezione.</block>
+  <block id="ba17c5605be67b2a72ebec653d77cbda" category="list-text">Quando si ripristina un carico di lavoro da uno snapshot locale o da un backup remoto, NetApp Backup and Recovery sovrascrive la VM originale se si esegue il ripristino nella posizione originale e crea una _nuova_ risorsa se si esegue il ripristino in una posizione alternativa.</block>
+  <block id="28a03a8c8c98d85d8de8ad54702a82fa" category="list-text">Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema ONTAP locale originale o su un sistema ONTAP locale diverso.</block>
+  <block id="7580e90069a8f15fc27aabfe1ca9e800" category="list-text">Nel menu visualizzato, seleziona *Ripristina macchina virtuale*.</block>
+  <block id="17f7a448c0fdbce6c9a45d289bcf9e83" category="list-text">*Datastore*: dall'elenco a discesa, seleziona il nome del datastore in cui desideri ripristinare lo snapshot.</block>
+  <block id="92ef4bdfd24483ff1f89cbc83ac91ce5" category="list-text">È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.</block>
 </blocks>

@@ -20,8 +20,6 @@ Le seguenti azioni non sono supportate nella versione di anteprima dei carichi d
 
 * Montare
 * Smonta
-* Ripristina in posizione alternativa
-* Ripristina VMDK
 * Allega VMDK
 * Stacca VMDK
 * Supporto vVol

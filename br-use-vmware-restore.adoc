@@ -43,8 +43,8 @@ TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere a
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
 
-* Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
-* Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema originale o su un sistema ONTAP locale.
+* Quando si ripristina un carico di lavoro da uno snapshot locale o da un backup remoto, NetApp Backup and Recovery sovrascrive la VM originale se si esegue il ripristino nella posizione originale e crea una _nuova_ risorsa se si esegue il ripristino in una posizione alternativa.
+* Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema ONTAP locale originale o su un sistema ONTAP locale diverso.
 +
 image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flusso per ripristinare una risorsa"]
 
@@ -68,11 +68,15 @@ Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possi
 +
 Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.
 
-. Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante *Ripristina macchina virtuale* per quella macchina virtuale.
+. Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante del menu delle opzioni per quella macchina virtuale.
+. Nel menu visualizzato, seleziona *Ripristina macchina virtuale*.
 +
-Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale.
+Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale. Per impostazione predefinita, vengono mostrati gli snapshot più recenti per l'intervallo di tempo selezionato nel menu a discesa *Intervallo di tempo*.
 
-. Seleziona la casella di controllo per lo snapshot che desideri ripristinare.
++
+Per ogni snapshot, le icone illuminate nella colonna *Posizione* indicano le posizioni di archiviazione in cui è disponibile lo snapshot (archiviazione primaria, secondaria o di oggetti).
+
+. Abilita il pulsante di opzione per lo snapshot che desideri ripristinare.
 . Selezionare *Avanti*.
 +
 Vengono visualizzate le opzioni per la posizione dello snapshot.
@@ -81,12 +85,13 @@ Vengono visualizzate le opzioni per la posizione dello snapshot.
 +
 ** *Locale*: ripristina lo snapshot dalla posizione locale.
 ** *Secondario*: ripristina lo snapshot da una posizione di archiviazione remota.
+** *Archivio oggetti*: ripristina lo snapshot dall'archivio oggetti.
 +
-Se si sceglie l'archiviazione secondaria, immettere le posizioni di origine e di destinazione sia per i dati che per i registri.
+Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazione dall'elenco a discesa.
 
 
 
-. Selezionare *Avanti* per procedere alla pagina Impostazioni di destinazione del ripristino.
+. Selezionare *Avanti*.
 . Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino.
 
 
@@ -131,7 +136,7 @@ Quando si esegue il ripristino in una posizione alternativa, è possibile modifi
 *** *FQDN o indirizzo IP vCenter*: seleziona il server vCenter in cui desideri ripristinare lo snapshot.
 *** *Host ESXi*: seleziona l'host in cui desideri ripristinare lo snapshot.
 *** *Rete*: seleziona la rete in cui desideri ripristinare lo snapshot.
-*** *Datastore*: immettere il nome del datastore in cui si desidera ripristinare lo snapshot.
+*** *Datastore*: dall'elenco a discesa, seleziona il nome del datastore in cui desideri ripristinare lo snapshot.
 *** *Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.
 
 

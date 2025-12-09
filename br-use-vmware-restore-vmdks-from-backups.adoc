@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-vmdks-from-backups.html 
+keywords:  
+summary: È possibile ripristinare i VMDK esistenti, oppure quelli eliminati o scollegati, da un backup primario o secondario di VM tradizionali o VM vVol. 
+---
+= Ripristina dischi virtuali specifici dai backup
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare dischi virtuali esistenti (VMDK) oppure dischi virtuali eliminati o scollegati da backup primari o secondari di VM tradizionali. Ciò consente di ripristinare solo dati o applicazioni specifici della VM, in modo da non dover ripristinare l'intera VM e tutti i dischi virtuali associati in situazioni in cui sono interessati solo dati specifici. Dopo il ripristino, il disco virtuale viene collegato alla sua VM originale ed è pronto per l'uso.
+
+È possibile ripristinare uno o più dischi di macchine virtuali (VMDK) su una VM nello stesso datastore o in datastore diversi.
+
+
+TIP: Per migliorare le prestazioni delle operazioni di ripristino negli ambienti NFS, abilitare l'API vStorage dell'applicazione VMware per l'integrazione di array (VAAI).
+
+.Prima di iniziare
+* Deve esistere un backup.
+* La VM non deve essere in transito.
++
+La VM che si desidera ripristinare non deve essere in stato vMotion o Storage vMotion.
+
+
+
+.Informazioni su questo compito
+* Se il VMDK viene eliminato o scollegato dalla VM, l'operazione di ripristino collega il VMDK alla VM.
+* Un'operazione di ripristino potrebbe non riuscire se il livello di archiviazione del FabricPool in cui si trova la VM non è disponibile.
+* Le operazioni di collegamento e ripristino collegano i VMDK utilizzando il controller SCSi predefinito. Tuttavia, quando si esegue il backup dei VMDK collegati a una VM con un disco NVMe, le operazioni di collegamento e ripristino utilizzano il controller NVMe, se disponibile.
+
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
+. Dall'elenco a discesa a destra del campo di ricerca del nome, seleziona *VMware*.
+. Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al vCenter, al datacenter o al datastore in cui si trova la risorsa da ripristinare.
++
+Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.
+
+. Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante del menu delle opzioni per quella macchina virtuale.
+. Nel menu visualizzato, seleziona *Ripristina dischi virtuali*.
++
+Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale. Per impostazione predefinita, vengono mostrati gli snapshot più recenti per l'intervallo di tempo selezionato nel menu a discesa *Intervallo di tempo*.
+
++
+Per ogni snapshot, le icone illuminate nella colonna *Posizione* indicano le posizioni di archiviazione in cui è disponibile lo snapshot (archiviazione primaria, secondaria o di oggetti).
+
+. Abilita il pulsante di opzione per lo snapshot che desideri ripristinare.
+. Selezionare *Avanti*.
++
+Vengono visualizzate le opzioni per la posizione dello snapshot.
+
+. Selezionare la destinazione di ripristino per lo snapshot:
++
+** *Locale*: ripristina lo snapshot dalla posizione locale.
+** *Secondario*: ripristina lo snapshot da una posizione di archiviazione remota.
+** *Archivio oggetti*: ripristina lo snapshot dall'archivio oggetti.
++
+Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazione dall'elenco a discesa.
+
+
+
+. Selezionare *Avanti*.
+. Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino:
+
+
+[discrete]
+===== Selezione della destinazione
+
+[role="tabbed-block"]
+====
+.Ripristina nella posizione originale
+--
+Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome del disco virtuale. Il disco virtuale originale viene sovrascritto.
+
+. Selezionare il riquadro *Posizione originale*.
+. Nella sezione *Impostazioni di destinazione*, seleziona la casella di controllo per tutti i dischi virtuali che desideri ripristinare.
+. Scegli tra le seguenti opzioni:
++
+** Sezione *Opzioni pre-ripristino*:
++
+*** *Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+** Sezione *Opzioni post-ripristino*:
++
+*** *Postscript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato al termine del ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Ripristina*.
+
+
+--
+.Ripristina in posizione alternativa
+--
+Quando si esegue il ripristino in una posizione alternativa, è possibile modificare il datastore di destinazione. Dopo l'operazione di ripristino, il disco virtuale viene collegato alla VM originale, indipendentemente dal datastore scelto.
+
+. Selezionare il riquadro *Posizione alternativa*.
+. Nella sezione *Impostazioni di destinazione*, seleziona la casella di controllo per tutti i dischi virtuali che desideri ripristinare.
+. Per tutti i dischi virtuali selezionati:
++
+.. Selezionare *Seleziona datastore* per scegliere una destinazione di ripristino del datastore diversa per il disco virtuale.
+.. Selezionare *Seleziona* per confermare la scelta e chiudere la finestra di selezione.
+
+
+. Scegli tra le seguenti opzioni:
++
+** Sezione *Opzioni pre-ripristino*:
++
+*** *Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+** Sezione *Opzioni post-ripristino*:
++
+*** *Postscript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato al termine del ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Ripristina*.
+
+
+--
+====

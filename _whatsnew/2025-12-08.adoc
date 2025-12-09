@@ -9,7 +9,11 @@
 La versione di anteprima dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:
 
 * Ora puoi ripristinare backup e snapshot in una posizione alternativa. Questa funzionalità è utile se si desidera gestire le versioni di una VM su diverse distribuzioni VMware vCenter, host VMware ESXi o datastore VMware.
+
+
+link:br-use-vmware-restore.html["Scopri di più sul ripristino delle VM VMware con NetApp Backup and Recovery"].
+
 * Ora è possibile ripristinare specifici dischi virtuali VMware (immagini VMDK) da una posizione primaria o secondaria, consentendo un controllo più granulare sul ripristino dei dati della VM.
 
 
-link:br-use-vmware-restore.html["Scopri di più sul ripristino dei carichi di lavoro VMware con NetApp Backup and Recovery"].
+link:br-use-vmware-restore-vmdks-from-backups.html["Scopri di più sul ripristino dei dischi virtuali VMware con NetApp Backup and Recovery"].

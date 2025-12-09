@@ -49,6 +49,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Proteggi le tue VM VMware e i tuoi datastore con NetApp Backup and Recovery.
 ** Esegui il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID (per l'anteprima).
 ** Ripristina i dati VMware dal cloud al vCenter locale.
+** È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.
 ** Utilizzare NetApp Backup and Recovery senza il SnapCenter Plug-in for VMware vSphere.
 ** Fare riferimento alink:br-use-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
 
