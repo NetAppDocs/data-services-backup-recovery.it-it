@@ -12,7 +12,7 @@ summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato d
 
 
 [role="lead"]
-In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft SQL Server per visualizzare lo stato dei backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l'ora del backup.
+In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft SQL Server per visualizzare lo stato e i dettagli del backup, inclusi i conteggi dei backup riusciti e non riusciti, i tipi di backup, i sistemi di archiviazione e i timestamp.
 
 
 
