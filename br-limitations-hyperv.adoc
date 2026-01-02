@@ -29,23 +29,3 @@ Le seguenti azioni non sono supportate nella versione di anteprima privata dei c
 * Modifica gruppi di protezione
 * Proteggere gli host Hyper-V in cluster tramite System Center Virtual Machine Manager (SCVMM)
 
-
-
-
-== Account NetApp Console legacy non supportati
-
-Gli account legacy NetApp Console non supportano le funzionalità richieste per proteggere i carichi di lavoro Hyper-V.  Controlla se stai utilizzando un account legacy nell'interfaccia utente web della console.  Se si dispone di un account Console legacy, creare un nuovo account prima di proteggere i carichi di lavoro Hyper-V.
-
-.Passi
-. Dal menu NetApp Console , selezionare *Amministrazione > Identità e accesso*.
-. In *Organizzazione*, controlla se accanto all'ID organizzazione è visualizzato un *ID account*.
-+
-Se viene visualizzato un *ID account*, significa che stai utilizzando un account legacy.
-
-. Se stai utilizzando un account legacy, procedi come segue:
-+
-.. Disconnettersi dalla Console e quindi accedere a https://console.netapp.com/["Pagina di accesso alla console"^] .
-.. Seleziona *Iscriviti* per creare un nuovo account.
-
-
-
