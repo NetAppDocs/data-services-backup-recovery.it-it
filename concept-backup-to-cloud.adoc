@@ -215,31 +215,31 @@ link:br-start-licensing.html["Scopri come impostare le licenze"].
 
 
 
-== Origini dati, sistemi e destinazioni di backup supportati
+== Carichi di lavoro, sistemi e destinazioni di backup supportati
 
-.Fonti di dati del carico di lavoro supportate
-NetApp Backup and Recovery protegge i seguenti carichi di lavoro:
+.Carichi di lavoro supportati
+NetApp Backup and Recovery protegge i seguenti tipi di carichi di lavoro:
 
 * Volumi ONTAP
-* Istanze e database di Microsoft SQL Server per NFS fisico, VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK)
+* Istanze e database di Microsoft SQL Server archiviati su disco fisico e VMware Virtual Machine Disk (VMDK) su VMFS o NFS
 * VM e datastore VMware
 * Carichi di lavoro KVM (anteprima)
 * Carichi di lavoro Hyper-V (anteprima)
-* Carichi di lavoro Oracle (anteprima)
+* Carichi di lavoro di Oracle Database (anteprima)
 * Carichi di lavoro Kubernetes (anteprima)
 
 
 .Sistemi supportati
-* SAN ONTAP on-premise (protocollo iSCSI) e NAS (utilizzando protocolli NFS e CIFS) con ONTAP versione 9.8 e successive
+* SAN ONTAP on-premise (protocollo iSCSI) e NAS (utilizzando protocolli NFS e CIFS) con ONTAP versione 9.8 o successiva
 * Cloud Volumes ONTAP 9.8 o versione successiva per AWS (utilizzando SAN e NAS)
-
-
+* Cloud Volumes ONTAP 9.8 o versione successiva per Google Cloud Platform (utilizzando i protocolli NFS e CIFS)
 * Cloud Volumes ONTAP 9.8 o versione successiva per Microsoft Azure (utilizzando SAN e NAS)
-* Amazon FSx for NetApp ONTAP
+* Amazon FSx for NetApp ONTAP (solo carichi di lavoro Microsoft SQL Server)
 
 
 .Destinazioni di backup supportate
 * Servizi Web Amazon (AWS) S3
+* Google Cloud Storage
 * Microsoft Azure Blob (non disponibile per i carichi di lavoro VMware in anteprima)
 * StorageGRID
 * ONTAP S3 (non disponibile per carichi di lavoro VMware in anteprima)
