@@ -30,23 +30,7 @@ Le capacità di ripristino dipendono dalla versione ONTAP :
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
 
 
 NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'archiviazione di Azure ai sistemi StorageGRID .
@@ -61,43 +45,25 @@ NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'ar
 
 [cols="25,25,25,25"]
 |===
-| *Da Object Store (Backup)* | *Da Primario (Snapshot)* | *Dal sistema secondario (replicazione)* | Al sistema di destinazione ifdef::aws[] 
+| *Da Object Store (Backup)* | *Da Primario (Snapshot)* | *Dal sistema secondario (replicazione)* | Al sistema di destinazione 
 
 
-| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale AWS endif::aws[] ifdef::azure[] | Blob azzurro 
+| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Blob azzurro 
 
 
-| Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure endif::azure[] ifdef::gcp[] | Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
+| Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
 
 
-| Cloud Volumes ONTAP nel sistema Google On-premises ONTAP endif::gcp[] | NetApp StorageGRID | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
+| Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | NetApp StorageGRID | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
 
 
 | Al sistema ONTAP locale | ONTAP S3 | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
 |===
 Per Sfoglia e Ripristina, l'agente Console può essere installato nei seguenti percorsi:
 
-ifdef::aws[]
-
 * Per Amazon S3, l'agente della console può essere distribuito in AWS o nei tuoi locali
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Per Azure Blob, l'agente Console può essere distribuito in Azure o nei tuoi locali
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Per Google Cloud Storage, l'agente della console deve essere distribuito nella VPC di Google Cloud Platform
-
-
-endif::gcp[]
-
 * Per StorageGRID, l'agente della console deve essere distribuito nei tuoi locali, con o senza accesso a Internet
 * Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
 
@@ -139,34 +105,14 @@ Tieni presente che se selezioni un file di backup nell'archiviazione oggetti e R
 . Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare il volume.
 . Quando si ripristina un file di backup da un archivio oggetti, se si seleziona un sistema ONTAP locale e non è ancora stata configurata la connessione del cluster all'archivio oggetti, vengono richieste informazioni aggiuntive:
 +
-ifdef::aws[]
-
-+
 ** Durante il ripristino da Amazon S3, seleziona lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, immetti la chiave di accesso e la chiave segreta per l'utente creato per concedere al cluster ONTAP l'accesso al bucket S3 e, facoltativamente, scegli un endpoint VPC privato per il trasferimento sicuro dei dati.
+** Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, selezionare la sottoscrizione di Azure per accedere all'archiviazione degli oggetti e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet.
+** Durante il ripristino da Google Cloud Storage, seleziona il progetto Google Cloud, la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti, alla regione in cui sono archiviati i backup e allo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
+** Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
+** Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, selezionare la sottoscrizione di Azure per accedere all'archiviazione degli oggetti e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Durante il ripristino da Google Cloud Storage, seleziona il progetto Google Cloud, la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti, alla regione in cui sono archiviati i backup e allo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
-
-
-endif::gcp[]
-
-* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
-* Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione.
-+
-.. Immettere il nome che si desidera utilizzare per il volume ripristinato e selezionare la VM di archiviazione e l'aggregato in cui risiederà il volume.  Quando si ripristina un volume FlexGroup , è necessario selezionare più aggregati.  Per impostazione predefinita, come nome del volume viene utilizzato *<source_volume_name>_restore*.
+. Immettere il nome che si desidera utilizzare per il volume ripristinato e selezionare la VM di archiviazione e l'aggregato in cui risiederà il volume.  Quando si ripristina un volume FlexGroup , è necessario selezionare più aggregati.  Per impostazione predefinita, come nome del volume viene utilizzato *<source_volume_name>_restore*.
 +
 Quando si ripristina un backup da un archivio di oggetti a un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva oppure a un sistema ONTAP locale che esegue ONTAP 9.14.1, sarà possibile eseguire un'operazione di _ripristino rapido_.
 
@@ -174,27 +120,7 @@ Quando si ripristina un backup da un archivio di oggetti a un sistema Cloud Volu
 Se si ripristina il volume da un file di backup che risiede in un livello di archiviazione (disponibile a partire da ONTAP 9.10.1), è possibile selezionare la priorità di ripristino.
 
 +
-ifdef::aws[]
-
-
-
-
-
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"] .  I file di backup nel livello di archiviazione di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
 
 . Selezionare *Avanti* per scegliere se si desidera eseguire un ripristino normale o un ripristino rapido:
 +
@@ -278,47 +204,25 @@ Man mano che selezioni i file, questi vengono aggiunti al lato sinistro della pa
 Se selezioni un cluster locale e non hai ancora configurato la connessione del cluster all'archiviazione di oggetti, ti verranno richieste informazioni aggiuntive:
 
 +
-ifdef::aws[]
-
-+
 ** Quando si esegue il ripristino da Amazon S3, immettere lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione, nonché la chiave di accesso AWS e la chiave segreta necessarie per accedere allo storage degli oggetti.  È anche possibile selezionare una configurazione di collegamento privato per la connessione al cluster.
+** Quando si esegue il ripristino da Azure Blob, immettere lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.  È anche possibile selezionare una configurazione endpoint privata per la connessione al cluster.
+** Quando si esegue il ripristino da Google Cloud Storage, immettere lo spazio IP nel cluster ONTAP in cui risiedono i volumi di destinazione, nonché la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti.
+** Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Quando si esegue il ripristino da Azure Blob, immettere lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.  È anche possibile selezionare una configurazione endpoint privata per la connessione al cluster.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Quando si esegue il ripristino da Google Cloud Storage, immettere lo spazio IP nel cluster ONTAP in cui risiedono i volumi di destinazione, nonché la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti.
-
-
-endif::gcp[]
-
-* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione.
-+
-.. Quindi seleziona il *Volume* e la *Cartella* in cui desideri ripristinare la cartella o il/i file.
+. Quindi seleziona il *Volume* e la *Cartella* in cui desideri ripristinare la cartella o il/i file.
 +
 Sono disponibili alcune opzioni per la posizione durante il ripristino di cartelle e file.
 
-
-
-* Dopo aver scelto *Seleziona cartella di destinazione*, come mostrato sopra:
 +
-** Puoi selezionare qualsiasi cartella.
-** È possibile passare il mouse su una cartella e fare clic alla fine della riga per visualizzare in dettaglio le sottocartelle, quindi selezionare una cartella.
-
-
-* Se hai selezionato lo stesso sistema di destinazione e lo stesso volume in cui si trovava la cartella/il file di origine, puoi selezionare *Mantieni percorso cartella di origine* per ripristinare la cartella o i file nella stessa cartella in cui si trovavano nella struttura di origine.  Tutte le cartelle e sottocartelle devono già esistere; non vengono create cartelle.  Quando si ripristinano i file nella loro posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
+** Dopo aver scelto *Seleziona cartella di destinazione*, come mostrato sopra:
 +
-.. Selezionare *Ripristina* per tornare alla Dashboard di ripristino e rivedere l'avanzamento dell'operazione di ripristino.
+*** Puoi selezionare qualsiasi cartella.
+*** È possibile passare il mouse su una cartella e fare clic alla fine della riga per visualizzare in dettaglio le sottocartelle, quindi selezionare una cartella.
 
 
+** Se hai selezionato lo stesso sistema di destinazione e lo stesso volume in cui si trovava la cartella/il file di origine, puoi selezionare *Mantieni percorso cartella di origine* per ripristinare la cartella o i file nella stessa cartella in cui si trovavano nella struttura di origine.  Tutte le cartelle e sottocartelle devono già esistere; non vengono create cartelle.  Quando si ripristinano i file nella loro posizione originale, è possibile scegliere di sovrascrivere i file di origine o di crearne di nuovi.
+
+
+. Selezionare *Ripristina* per tornare alla Dashboard di ripristino e rivedere l'avanzamento dell'operazione di ripristino.
 

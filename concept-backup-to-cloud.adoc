@@ -136,35 +136,13 @@ Poiché NetApp Backup and Recovery preserva l'efficienza di archiviazione del vo
 
 * Per ripristinare i dati tramite Search & Restore, alcune risorse vengono fornite dal tuo provider cloud e vi è un costo per TiB associato alla quantità di dati scansionati dalle tue richieste di ricerca.  (Queste risorse non sono necessarie per Sfoglia e ripristina.)
 +
-ifdef::aws[]
-
-+
 ** In AWS, https://aws.amazon.com/athena/faqs/["Amazzone Atena"^] E https://aws.amazon.com/glue/faqs/["AWS Glue"^] le risorse vengono distribuite in un nuovo bucket S3.
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** In Azure, un https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Area di lavoro di Azure Synapse"^] E https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Archiviazione di Azure Data Lake"^] sono predisposti nel tuo account di archiviazione per archiviare e analizzare i tuoi dati.
-+
-endif::azure[]
+** In Google, viene distribuito un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto.
 
 
-
-
-
-ifdef::gcp[]
-
-* In Google, viene distribuito un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto. endif::gcp[]
-+
-** Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
-** Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Resilience per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
-
-
+* Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
+* Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Resilience per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
 
 
 *Spese di servizio*

@@ -24,11 +24,7 @@ Il servizio Amazon Web Services (AWS) Identity and access Roles Anywhere consent
 
 Con questa versione, il supporto per il servizio AWS IAM Roles Anywhere è un'anteprima tecnologica.
 
-ifdef::aws[]
-
 Questo vale perlink:prev-ontap-backup-cvo-aws.html["backup di Cloud Volumes ONTAP su AWS"] .
-
-endif::aws[]
 
 Fare riferimento a https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog sulla versione NetApp Backup and Recovery di luglio 2024"] .
 

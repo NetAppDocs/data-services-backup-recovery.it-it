@@ -34,23 +34,7 @@ Le capacità di ripristino dipendono dalla versione ONTAP :
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sul ripristino dall'archiviazione di Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sul ripristino dall'archivio di Google"].
 
 [NOTE]
 ====
@@ -76,16 +60,16 @@ Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume 
 2+| Posizione del file di backup | Sistema di destinazione 
 
 
-| *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* | ifdef::aws[] 
+| *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale AWS endif::aws[] ifdef::azure[] 
+| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS 
 
 
-| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure endif::azure[] ifdef::gcp[] 
+| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure 
 
 
-| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP endif::gcp[] 
+| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
 
 
 | NetApp StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
@@ -95,27 +79,9 @@ Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume 
 |===
 Per Search & Restore, l'agente Console può essere installato nei seguenti percorsi:
 
-ifdef::aws[]
-
 * Per Amazon S3, l'agente della console può essere distribuito in AWS o nei tuoi locali
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Per Azure Blob, l'agente Console può essere distribuito in Azure o nei tuoi locali
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Per Google Cloud Storage, l'agente della console deve essere distribuito nella VPC di Google Cloud Platform
-
-
-endif::gcp[]
-
 * Per StorageGRID, l'agente della console deve essere distribuito nei tuoi locali, con o senza accesso a Internet
 * Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
 
@@ -147,8 +113,6 @@ Di seguito sono riportati i requisiti per Search & Restore quando si utilizza l'
 
 [%collapsible]
 ====
-ifdef::aws[]
-
 * Requisiti AWS:
 +
 ** È necessario aggiungere autorizzazioni specifiche per Amazon Athena, AWS Glue e AWS S3 al ruolo utente che fornisce le autorizzazioni alla Console. link:prev-ontap-backup-onprem-aws.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
@@ -158,10 +122,6 @@ Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un a
 
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * Requisiti di Azure:
 +
@@ -175,10 +135,6 @@ Tieni presente che se utilizzavi già NetApp Backup and Recovery con un agente C
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * Requisiti di Google Cloud:
 +
 ** È necessario aggiungere autorizzazioni specifiche di Google BigQuery al ruolo utente che fornisce le autorizzazioni alla NetApp Console . link:prev-ontap-backup-onprem-gcp.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
@@ -186,10 +142,6 @@ ifdef::gcp[]
 Se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni BigQuery al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
 
 
-
-
-
-endif::gcp[]
 
 * Requisiti StorageGRID e ONTAP S3:
 +
@@ -336,34 +288,15 @@ Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi r
 Se selezioni un sistema ONTAP locale e non hai ancora configurato la connessione del cluster all'archiviazione degli oggetti, ti verrà richiesto di immettere informazioni aggiuntive:
 
 +
-ifdef::aws[]
-
-+
 *** Durante il ripristino da Amazon S3, seleziona lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, immetti la chiave di accesso e la chiave segreta per l'utente creato per concedere al cluster ONTAP l'accesso al bucket S3 e, facoltativamente, scegli un endpoint VPC privato per il trasferimento sicuro dei dati. link:prev-ontap-backup-onprem-aws.html["Vedi i dettagli su questi requisiti"] .
+*** Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet. link:prev-ontap-backup-onprem-azure.html["Vedi i dettagli su questi requisiti"] .
+*** Quando si esegue il ripristino da Google Cloud Storage, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, nonché la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti. link:prev-ontap-backup-onprem-gcp.html["Vedi i dettagli su questi requisiti"] .
+*** Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione. link:prev-ontap-backup-onprem-storagegrid.html["Vedi i dettagli su questi requisiti"] .
+*** Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione. link:prev-ontap-backup-onprem-ontaps3.html["Vedi i dettagli su questi requisiti"] .
 
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Durante il ripristino da Azure Blob, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione e, facoltativamente, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando la rete virtuale e la subnet. link:prev-ontap-backup-onprem-azure.html["Vedi i dettagli su questi requisiti"] .
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Quando si esegue il ripristino da Google Cloud Storage, selezionare lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione, nonché la chiave di accesso e la chiave segreta per accedere all'archiviazione degli oggetti. link:prev-ontap-backup-onprem-gcp.html["Vedi i dettagli su questi requisiti"] .
-
-
-endif::gcp[]
-
-* Durante il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiede il volume di destinazione. link:prev-ontap-backup-onprem-storagegrid.html["Vedi i dettagli su questi requisiti"] .
-* Durante il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archiviazione degli oggetti e lo spazio IP nel cluster ONTAP in cui risiederà il volume di destinazione. link:prev-ontap-backup-onprem-ontaps3.html["Vedi i dettagli su questi requisiti"] .
 
 
 .Risultati

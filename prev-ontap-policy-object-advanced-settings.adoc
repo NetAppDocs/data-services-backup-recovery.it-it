@@ -24,11 +24,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 Nella pagina Impostazioni avanzate è possibile modificare le seguenti opzioni:
 
-* Modifica della larghezza di banda di rete assegnata per caricare i backup nell'archivio oggetti utilizzando l'opzione Velocità di trasferimento massima ifdef::aws[]
-
-
-endif::aws[]
-
+* Modifica della larghezza di banda di rete assegnata per caricare i backup nell'archiviazione degli oggetti utilizzando l'opzione Velocità di trasferimento massima
 * Modificare se gli snapshot storici vengono esportati come file di backup e inclusi nei file di backup di base iniziali per i volumi futuri
 * Modificare se gli snapshot "annuali" vengono rimossi dal sistema sorgente
 * Abilitazione o disabilitazione delle scansioni ransomware per un sistema, incluse le scansioni pianificate
@@ -70,10 +66,6 @@ Quando si attiva NetApp Backup and Recovery per un sistema, per impostazione pre
 
 
 Questa impostazione non influisce sulla larghezza di banda assegnata ad altre relazioni di replicazione che potrebbero essere configurate per i volumi nel sistema.
-
-ifdef::aws[]
-
-endif::aws[]
 
 
 

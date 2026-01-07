@@ -72,7 +72,7 @@ Questa funzionalità non fornisce protezione per i volumi di origine, ma solo pe
 
 === Che cos'è DataLock
 
-Con questa funzionalità, è possibile bloccare gli snapshot cloud replicati tramite SnapMirror su Cloud e abilitare la funzionalità per rilevare un attacco ransomware e recuperare una copia coerente dello snapshot nell'archivio oggetti.  Questa funzionalità è supportata su AWS, Azure e StorageGRID.
+Con questa funzionalità, è possibile bloccare gli snapshot cloud replicati tramite SnapMirror su Cloud e abilitare la funzionalità per rilevare un attacco ransomware e recuperare una copia coerente dello snapshot nell'archivio oggetti. Questa funzionalità è supportata su AWS, Azure, Google Cloud Platform e StorageGRID.
 
 DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, noto anche come _archiviazione immutabile_.  Questa funzionalità utilizza la tecnologia del provider di archiviazione oggetti per il "blocco degli oggetti".
 
@@ -165,25 +165,23 @@ Vediamo come funziona:
 
 [cols="55,45"]
 |===
-| Sistema sorgente | Destinazione del file di backup ifdef::aws[] 
+| Sistema sorgente | Destinazione del file di backup 
 
 
-| Cloud Volumes ONTAP in AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+| Cloud Volumes ONTAP in AWS | Amazon S3 
 
 
-| Cloud Volumes ONTAP in Azure | Blob di Azure endif::azure[] ifdef::gcp[] 
+| Cloud Volumes ONTAP in Azure | Blob azzurro 
 
 
-| Cloud Volumes ONTAP in Google Cloud | Google Cloud endif::gcp[] 
+| Cloud Volumes ONTAP in Google Cloud | Google Cloud 
 
 
-| Sistema ONTAP in sede | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob di Azure endif::azure[] ifdef::gcp[] Google Cloud endif::gcp[] NetApp StorageGRID 
+| Sistema ONTAP in sede | Blob di Azure Amazon S3 Google Cloud NetApp StorageGRID 
 |===
 
 
 === Requisiti
-
-ifdef::aws[]
 
 * Per AWS:
 +
@@ -228,33 +226,17 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Per Azure:
 +
 ** I tuoi cluster devono eseguire ONTAP 9.12.1 o versione successiva
 ** L'agente della console può essere distribuito nel cloud o in sede
 
 
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Per Google Cloud:
 +
 ** I cluster devono eseguire ONTAP 9.17.1 o versione successiva
 ** L'agente della console può essere distribuito nel cloud o in sede
 
-
-
-
-endif::gcp[]
 
 * Per StorageGRID:
 +
@@ -355,8 +337,6 @@ I dati nei livelli di archiviazione non sono accessibili immediatamente quando n
 ====
 Ogni criterio di backup fornisce una sezione per i _Criteri di archiviazione_ che è possibile applicare ai file di backup.
 
-ifdef::aws[]
-
 * In AWS, i backup iniziano nella classe di archiviazione _Standard_ e passano alla classe di archiviazione _Standard-Infrequent Access_ dopo 30 giorni.
 +
 Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile suddividere i backup più vecchi in storage _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sullo storage di archiviazione AWS"] .
@@ -369,42 +349,23 @@ Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile suddivid
 
 
 
-endif::aws[]
-
-ifdef::azure[]
-
 * In Azure, i backup sono associati al livello di accesso _Cool_.
 +
 Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile suddividere i backup più vecchi nell'archiviazione _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'archiviazione di Azure"] .
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * In GCP, i backup sono associati alla classe di archiviazione _Standard_.
 +
 Se il cluster locale utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di suddividere i backup più vecchi nello storage _Archive_ nell'interfaccia utente NetApp Backup and Recovery dopo un certo numero di giorni per un'ulteriore ottimizzazione dei costi. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'archiviazione di Google"] .
-
-
-
-endif::gcp[]
 
 * In StorageGRID, i backup sono associati alla classe di archiviazione _Standard_.
 +
 Se il cluster locale utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza la versione 11.4 o versione successiva, è possibile archiviare i file di backup più vecchi nell'archiviazione cloud pubblica.
 
++
+** Per AWS, è possibile suddividere i backup in livelli nello storage AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sullo storage di archiviazione AWS"^].
+** Per Azure, è possibile suddividere i backup più vecchi nell'archiviazione _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'archiviazione di Azure"^].
 
 
-ifdef::aws[]
 
-+ ** Per AWS, è possibile suddividere i backup in livelli nello storage AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sullo storage di archiviazione AWS"^] .
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** Per Azure, è possibile suddividere i backup più vecchi nell'archiviazione _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Scopri di più sull'archiviazione di Azure"^] .
-
-endif::azure[]

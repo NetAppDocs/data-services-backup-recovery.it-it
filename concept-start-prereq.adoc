@@ -287,24 +287,8 @@ Per creare un agente Console nella NetApp Console prima di utilizzare il servizi
 .Dove installare l'agente Console
 Per completare un'operazione di ripristino, l'agente Console può essere installato nei seguenti percorsi:
 
-ifdef::aws[]
-
 * Per Amazon S3, l'agente della console può essere distribuito in sede.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Per Azure Blob, l'agente Console può essere distribuito in locale.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 * Per StorageGRID, l'agente Console deve essere distribuito presso la tua sede, con o senza accesso a Internet.
 * Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
 

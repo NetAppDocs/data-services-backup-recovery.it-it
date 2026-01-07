@@ -107,19 +107,19 @@ NetApp Backup and Recovery consente di eseguire il backup di volumi ONTAP dai se
 
 [cols="33,33,33"]
 |===
-| Sistema sorgente | Sistema secondario (Replicazione) | Archivio oggetti di destinazione (backup) ifdef::aws[] 
+| Sistema sorgente | Sistema secondario (Replicazione) | Archivio oggetti di destinazione (backup) 
 
 
-| Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Amazon S3 endif::aws[] ifdef::azure[] 
+| Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Amazon S3 
 
 
-| Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Blob di Azure endif::azure[] ifdef::gcp[] 
+| Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Blob azzurro 
 
 
-| Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Google Cloud Storage endif::gcp[] 
+| Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Google Cloud Storage 
 
 
-| Sistema ONTAP in sede | Cloud Volumes ONTAP Sistema ONTAP locale | ifdef::aws[] Amazon S3 endif::aws[] ifdef::azure[] Blob di Azure endif::azure[] ifdef::gcp[] Google Cloud Storage endif::gcp[] NetApp StorageGRID ONTAP S3 
+| Sistema ONTAP in sede | Cloud Volumes ONTAP Sistema ONTAP locale | Amazon S3 Azure Blob Google Cloud Storage NetApp StorageGRID ONTAP S3 
 |===
 
 
@@ -132,16 +132,16 @@ NetApp Backup and Recovery consente di eseguire il backup di volumi ONTAP dai se
 2+| Posizione del file di backup | Sistema di destinazione 
 
 
-| *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* | ifdef::aws[] 
+| *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale AWS endif::aws[] ifdef::azure[] 
+| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS 
 
 
-| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure endif::azure[] ifdef::gcp[] 
+| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure 
 
 
-| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP endif::gcp[] 
+| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
 
 
 | NetApp StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
@@ -187,33 +187,10 @@ Poiché NetApp Backup and Recovery preserva l'efficienza di archiviazione del vo
 
 * Per ripristinare i dati tramite Search & Restore, alcune risorse vengono fornite dal tuo provider cloud e vi è un costo per TiB associato alla quantità di dati scansionati dalle tue richieste di ricerca.  (Queste risorse non sono necessarie per Sfoglia e ripristina.)
 +
-ifdef::aws[]
-
-+
 ** In AWS, https://aws.amazon.com/athena/faqs/["Amazzone Atena"^] E https://aws.amazon.com/glue/faqs/["AWS Glue"^] le risorse vengono distribuite in un nuovo bucket S3.
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** In Azure, un https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Area di lavoro di Azure Synapse"^] E https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Archiviazione di Azure Data Lake"^] sono predisposti nel tuo account di archiviazione per archiviare e analizzare i tuoi dati.
-+
-endif::azure[]
+** In Google, viene distribuito un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto.
 
-
-
-
-
-ifdef::gcp[]
-
-* In Google, viene distribuito un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto.
-
-
-endif::gcp[]
 
 * Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
 * Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Resilience per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
@@ -262,17 +239,11 @@ Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti regi
 
 === Contratto annuale
 
-ifdef::aws[]
-
 Quando utilizzi AWS, sono disponibili due contratti annuali della durata di 1, 2 o 3 anni:
 
 * Un piano "Cloud Backup" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP locali.
 * Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Sono inclusi backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza).
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 Quando si utilizza Azure, sono disponibili due contratti annuali della durata di 1, 2 o 3 anni:
 
@@ -280,13 +251,7 @@ Quando si utilizza Azure, sono disponibili due contratti annuali della durata di
 * Un piano "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Sono inclusi backup illimitati per i Cloud Volumes ONTAP addebitati su questa licenza (la capacità di backup non viene conteggiata sulla licenza).
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di NetApp Backup and Recovery .
-
-endif::gcp[]
 
 link:br-start-licensing.html["Scopri come impostare contratti annuali"].
 
@@ -314,29 +279,15 @@ I backup risiedono in posizioni diverse in base al tipo di backup:
 * Gli _snapshot_ risiedono sul volume di origine nel sistema di origine.
 * I _volumi replicati_ risiedono sul sistema di archiviazione secondario: un sistema Cloud Volumes ONTAP o ONTAP locale.
 * Le _copie di backup_ vengono archiviate in un archivio oggetti creato dalla Console nel tuo account cloud.  Esiste un archivio oggetti per cluster/sistema e la Console assegna a tale archivio il seguente nome: "netapp-backup-clusteruuid".  Assicurarsi di non eliminare questo archivio oggetti.
++
+** In AWS, la Console abilita la https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3.
+** In Azure, la console utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB. La console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita.
+** In GCP, la Console utilizza un progetto nuovo o esistente con un account di archiviazione per il bucket Google Cloud Storage.
+** In StorageGRID, la console utilizza un account tenant esistente per il bucket S3.
+** In ONTAP S3, la console utilizza un account utente esistente per il bucket S3.
 
 
-ifdef::aws[]
 
-+ ** In AWS, la Console abilita la https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Funzionalità di blocco dell'accesso pubblico di Amazon S3"^] sul bucket S3.
-
-endif::aws[]
-
-ifdef::azure[]
-
-+ ** In Azure, la console utilizza un gruppo di risorse nuovo o esistente con un account di archiviazione per il contenitore BLOB.  La console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["blocca l'accesso pubblico ai dati del tuo blob"] per impostazione predefinita.
-
-endif::azure[]
-
-ifdef::gcp[]
-
-+ ** In GCP, la Console utilizza un progetto nuovo o esistente con un account di archiviazione per il bucket Google Cloud Storage.
-
-endif::gcp[]
-
-+ ** In StorageGRID, la console utilizza un account tenant esistente per il bucket S3.
-
-+ ** In ONTAP S3, la console utilizza un account utente esistente per il bucket S3.
 
 Se in futuro si desidera modificare l'archivio oggetti di destinazione per un cluster, sarà necessariolink:prev-ontap-backup-manage.html["annullare la registrazione NetApp Backup and Recovery per il sistema"] e quindi abilitare NetApp Backup and Recovery utilizzando le informazioni del nuovo provider cloud.
 
@@ -387,17 +338,11 @@ TIP: DataLock non può essere abilitato se si suddividono i backup in livelli di
 
 Quando si utilizza un determinato tipo di archiviazione cloud, è possibile spostare i file di backup più vecchi in una classe di archiviazione/livello di accesso meno costoso dopo un certo numero di giorni.  Puoi anche scegliere di inviare immediatamente i tuoi file di backup all'archivio, senza che vengano salvati nell'archiviazione cloud standard.  Tieni presente che l'archiviazione non può essere utilizzata se hai abilitato DataLock.
 
-ifdef::aws[]
-
 * In AWS, i backup iniziano nella classe di archiviazione _Standard_ e passano alla classe di archiviazione _Standard-Infrequent Access_ dopo 30 giorni.
 +
 Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile scegliere di suddividere i backup più vecchi in storage _S3 Glacier_ o _S3 Glacier Deep Archive_ nell'interfaccia utente NetApp Backup and Recovery dopo un certo numero di giorni per un'ulteriore ottimizzazione dei costi. link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sullo storage di archiviazione AWS"] .
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * In Azure, i backup sono associati al livello di accesso _Cool_.
 +
@@ -405,17 +350,9 @@ Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile sceglier
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * In GCP, i backup sono associati alla classe di archiviazione _Standard_.
 +
 Se il cluster utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di suddividere i backup più vecchi in livelli di storage _Archive_ nell'interfaccia utente NetApp Backup and Recovery dopo un certo numero di giorni per un'ulteriore ottimizzazione dei costi. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'archiviazione di Google"] .
-
-
-
-endif::gcp[]
 
 * In StorageGRID, i backup sono associati alla classe di archiviazione _Standard_.
 +

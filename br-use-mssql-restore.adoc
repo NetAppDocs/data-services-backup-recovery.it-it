@@ -219,27 +219,3 @@ Vengono visualizzate le stesse tre opzioni presenti quando si esegue il ripristi
 
 . Continuare con gli stessi passaggi per l'opzione di ripristino dalla pagina Ripristina
 
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
