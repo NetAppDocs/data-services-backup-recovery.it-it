@@ -91,8 +91,8 @@ Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazio
 
 
 
-. Selezionare *Avanti*.
-. Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino.
+. Selezionare *Avanti* per continuare.
+. Scegli la destinazione e le impostazioni di ripristino:
 
 
 [discrete]

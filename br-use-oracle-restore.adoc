@@ -108,17 +108,12 @@ Vengono visualizzate le istantanee corrispondenti.
 --
 ====
 . Selezionare una posizione di origine dello snapshot.
-. Selezionare *Avanti* per procedere alla pagina Impostazioni di destinazione del ripristino.
-+
-Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
-
+. Selezionare *Avanti* per continuare.
+. Scegli la destinazione e le impostazioni di ripristino:
 
 
 [discrete]
 ===== Selezione della destinazione
-
-. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
-
 
 [role="tabbed-block"]
 ====

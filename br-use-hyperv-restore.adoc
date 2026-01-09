@@ -69,34 +69,22 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 
 . Seleziona il punto di ripristino che desideri utilizzare.
 . Selezionare una posizione di origine dello snapshot.
-. Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.
-+
-Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
-
+. Selezionare *Avanti* per continuare.
+. Scegli la destinazione e le impostazioni di ripristino:
 
 
 [discrete]
 ===== Selezione della destinazione
 
-. Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.
-
-
 [role="tabbed-block"]
 ====
 .Ripristina nella posizione originale
 --
-. *Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. I volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
-. *Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
-. *Opzioni post-ripristino*:
+Quando si ripristina la posizione originale, è possibile visualizzare le impostazioni di destinazione espandendo la sezione *Impostazioni di destinazione*, ma non è possibile modificarle.
+
+. Nella sezione *Opzioni post-ripristino*, prendere in considerazione la seguente opzione:
 +
-** *Riavvia VM*: selezionare questa opzione per riavviare la VM al termine dell'operazione di ripristino e dopo l'applicazione dello script post-ripristino.
-** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
-
-
-. Sezione *Notifiche*:
-+
-** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
-
+*Riavvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il suo ripristino.
 
 . Selezionare *Ripristina*.
 

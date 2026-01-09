@@ -1013,10 +1013,7 @@
   <block id="47d76616568defc7344e2cfbcdf92653" category="paragraph">Viene visualizzato un elenco di possibili punti di ripristino.</block>
   <block id="effade56c0dfab07db57229c5b4e6e4e" category="list-text">Seleziona il punto di ripristino che desideri utilizzare.</block>
   <block id="6f012e8e8abed5b3c7ee277d331469f3" category="list-text">Selezionare una posizione di origine dello snapshot.</block>
-  <block id="39e791cd576f013480b8ac3c88fcd655" category="list-text">Selezionare *Fine* o *Avanti* per procedere alla pagina delle impostazioni di destinazione del ripristino.</block>
-  <block id="94697b58b65e2562f9eac2c0fef08c35" category="paragraph">Successivamente, puoi scegliere le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.</block>
   <block id="23de539bf06cfaf2cd9dc515802272ce" category="floating-title">Selezione della destinazione</block>
-  <block id="5dd0bd8435aec915fe085d771534ba47" category="list-text">Selezionare le impostazioni di destinazione e le opzioni pre-ripristino e post-ripristino.</block>
   <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">Ripristina nella posizione originale</block>
   <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*Abilita ripristino rapido*: seleziona questa opzione per eseguire un'operazione di ripristino rapido. I volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.</block>
   <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*Opzioni pre-ripristino*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.</block>
@@ -1590,7 +1587,6 @@
   <block id="e778183067d12c261c4b71b0ccc4eaad" category="open-title">Ripristina da snapshot senza recupero</block>
   <block id="e9bde7b168cf5fbb3d9d5b297ca8bfb2" category="list-text">Seleziona *Ripristina da snapshot senza ripristino*.</block>
   <block id="002b8c566162a2cd02c4e355805ac3f6" category="paragraph">Vengono visualizzate le istantanee corrispondenti.</block>
-  <block id="ae0355b3acbc8735275d2415050e631f" category="list-text">Selezionare *Avanti* per procedere alla pagina Impostazioni di destinazione del ripristino.</block>
   <block id="98b2af096c36f02920b21c788a2a0dc6" category="list-text">*Impostazioni di destinazione*:</block>
   <block id="12c0707880528cef62d0f97d7a498d1a" category="list-text">Scegliere se ripristinare l'intero database o solo i tablespace del database.</block>
   <block id="78847577cebd91850d891ed95fe6bce3" category="list-text">*File di controllo*: facoltativamente, abilitare questa opzione per ripristinare anche i file di controllo del database.</block>
@@ -4698,7 +4694,6 @@
   <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Selezionare la destinazione di ripristino per lo snapshot:</block>
   <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Locale*: ripristina lo snapshot dalla posizione locale.</block>
   <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*Secondario*: ripristina lo snapshot da una posizione di archiviazione remota.</block>
-  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino.</block>
   <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome della VM. La VM originale viene sovrascritta con l'operazione di ripristino.</block>
   <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">Selezionare il riquadro *Posizione originale*.</block>
   <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">Scegli tra le seguenti opzioni:</block>
@@ -4737,7 +4732,6 @@
   <block id="cd1f1a4a4415e09f2c3fc9ab17aff625" category="list-text">Abilita il pulsante di opzione per lo snapshot che desideri ripristinare.</block>
   <block id="57385260ec48afcc58eb70dc9059c8c0" category="list-text">*Archivio oggetti*: ripristina lo snapshot dall'archivio oggetti.</block>
   <block id="c1389ae5f188f85d79b6e1088e21576d" category="paragraph">Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazione dall'elenco a discesa.</block>
-  <block id="a1ff6993d36232fbd0d0471769216a69" category="list-text">Selezionare le impostazioni di destinazione e le opzioni pre e post ripristino:</block>
   <block id="21ba1fcc630eae9c060829f621ac7124" category="paragraph">Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome del disco virtuale. Il disco virtuale originale viene sovrascritto.</block>
   <block id="9f63eee4b169a6ac1fce2d2e6ec65d64" category="list-text">Nella sezione *Impostazioni di destinazione*, seleziona la casella di controllo per tutti i dischi virtuali che desideri ripristinare.</block>
   <block id="e3926503d87ede09d428d2ca5fc4abf5" category="paragraph">Quando si esegue il ripristino in una posizione alternativa, è possibile modificare il datastore di destinazione. Dopo l'operazione di ripristino, il disco virtuale viene collegato alla VM originale, indipendentemente dal datastore scelto.</block>
@@ -4811,4 +4805,9 @@
   <block id="fc2c90af4df4de3a15611b7cf431a683" category="list-text">In GCP, la Console utilizza un progetto nuovo o esistente con un account di archiviazione per il bucket Google Cloud Storage.</block>
   <block id="96e895b3970ec91a00e97afd2eb59250" category="list-text">In StorageGRID, la console utilizza un account tenant esistente per il bucket S3.</block>
   <block id="836b4aa41fc8e9938df6b2350419d4f6" category="paragraph"><block ref="ee2d4c64a4d42f71a3357c6cd2b7b94b" category="inline-link-macro-rx"></block>. <block ref="bf09a0f29ffa1dc0ee63da51e58f16ef" category="inline-link-macro-rx"></block>. <block ref="9220ac6939e2eccbf843225c6d0eb5f6" category="inline-link-macro-rx"></block>.</block>
+  <block id="ab042cf6b82a1ca2824a55aecccf0f72" category="list-text">Selezionare *Avanti* per continuare.</block>
+  <block id="38cf859695687379726e3ea14b05ddc1" category="list-text">Scegli la destinazione e le impostazioni di ripristino:</block>
+  <block id="a30b9d9cd5fcd792454de596b4a70bbf" category="paragraph">Quando si ripristina la posizione originale, è possibile visualizzare le impostazioni di destinazione espandendo la sezione *Impostazioni di destinazione*, ma non è possibile modificarle.</block>
+  <block id="6ae1e8b4e49e0eb340bfe865ab9bf2be" category="list-text">Nella sezione *Opzioni post-ripristino*, prendere in considerazione la seguente opzione:</block>
+  <block id="549fac1df4ed1f1a9ecf014524bf6245" category="paragraph">*Riavvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il suo ripristino.</block>
 </blocks>
