@@ -16,9 +16,10 @@ summary: Completare alcuni passaggi per configurare NetApp Backup and Recovery.
 [role="lead"]
 Dopo aver configurato NetApp Console, configurare le impostazioni di backup e ripristino.  Aggiungere credenziali per le risorse host, importare risorse SnapCenter , configurare directory di registro e impostare le impostazioni VMware vCenter.  Completare questi passaggi prima di eseguire il backup o il ripristino dei dati.
 
-* <<Aggiungere credenziali per le risorse host>>per gli host Windows e SQL Server importati da SnapCenter e aggiungere le credenziali.  (Solo carichi di lavoro di Microsoft SQL Server)
+* <<Aggiungere credenziali per le risorse host>> per qualsiasi host Windows, Microsoft SQL Server, Oracle Database o Linux con cui NetApp Backup and Recovery deve autenticarsi. Sono incluse le credenziali del sistema operativo guest Windows utilizzate durante il ripristino di file o cartelle guest.
 * <<Gestire le impostazioni di VMware vCenter>>.
 * <<Importa e gestisci le risorse host SnapCenter>>.  (Solo carichi di lavoro di Microsoft SQL Server)
+* <<Aggiungere una piattaforma di gestione KVM>>. (Solo carichi di lavoro KVM)
 * <<Configurare le directory di registro negli snapshot per gli host Windows>>.
 
 
@@ -28,7 +29,7 @@ Dopo aver configurato NetApp Console, configurare le impostazioni di backup e ri
 
 == Aggiungere credenziali per le risorse host
 
-Aggiungere le credenziali per le risorse host da importare da SnapCenter.  NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro e applicare policy di backup.
+Aggiungere credenziali per le risorse host. NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro e applicare policy di backup.
 
 Se non si dispone di credenziali, crearle con le autorizzazioni per accedere e gestire i carichi di lavoro dell'host.
 
@@ -36,33 +37,76 @@ Se non si dispone di credenziali, crearle con le autorizzazioni per accedere e g
 
 * Credenziali di Microsoft SQL Server
 * Credenziali host Windows SnapCenter
+* Credenziali del sistema operativo guest Windows utilizzate durante il ripristino di file o cartelle guest
+* Credenziali del database Oracle
+* Credenziali host Linux
 
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
 . Selezionare la freccia rivolta verso il basso per *Credenziali*.
 . Seleziona *Aggiungi nuove credenziali*.
-. Inserisci le informazioni per le credenziali.  A seconda della modalità di autenticazione selezionata, vengono visualizzati campi diversi.  Selezionare Informazioni *i* per maggiori informazioni sui campi.
+. Inserisci le informazioni per le credenziali. A seconda della modalità di autenticazione selezionata, vengono visualizzati campi diversi. Passa il mouse sull'icona Informazioni *i* per maggiori informazioni sui campi.
 +
 ** *Nome credenziali*: immettere un nome per le credenziali.
-** *Modalità di autenticazione*: selezionare *Windows* o *Microsoft SQL*.
+** *Modalità di autenticazione*: selezionare *Windows*, *Microsoft SQL*, *Oracle Database* o *Linux*.
 +
 
-TIP: È necessario immettere le credenziali sia per Windows che per Microsoft SQL Server, quindi sarà necessario aggiungere due set di credenziali.
+TIP: Per i carichi di lavoro di Microsoft SQL Server, è necessario immettere le credenziali sia per Windows che per Microsoft SQL Server, quindi sarà necessario aggiungere due set di credenziali.
 
-
-
-. Se hai selezionato *Windows*:
 +
-** *Agente console*: immettere l'indirizzo IP dell'agente console.
-** *Dominio e nome utente*: immettere il NetBIOS o il nome di dominio completo (FQDN) e il nome utente per le credenziali.
-** *Password*: Inserisci la password per le credenziali.
-
-
-. Se hai selezionato *Microsoft SQL*:
+[role="tabbed-block"]
+====
+.Finestre
+--
+... Se hai selezionato *Windows*:
 +
-** *Host*: seleziona un indirizzo host di SQL Server rilevato.
-** *Istanza di SQL Server*: seleziona un'istanza di SQL Server rilevata.
+**** *Agenti*: seleziona un agente della console dall'elenco.
+**** *Dominio e nome utente*: immettere il NetBIOS o il nome di dominio completo (FQDN) e il nome utente per le credenziali.
+**** *Password*: Inserisci la password per le credenziali.
+
+
+
+
+--
+.Microsoft SQL Server
+--
+... Se hai selezionato *Microsoft SQL Server*:
++
+**** *Dominio e nome utente*: immettere il NetBIOS o il nome di dominio completo (FQDN) e il nome utente per le credenziali.
+**** *Password*: Inserisci la password per le credenziali.
+**** *Host*: seleziona un indirizzo host di SQL Server scoperto.
+**** *Istanza di SQL Server*: seleziona un'istanza di SQL Server rilevata.
+
+
+
+
+--
+.Database Oracle
+--
+... Se hai selezionato *Oracle Database*:
++
+**** *Agenti*: seleziona un agente della console dall'elenco.
+**** *Nome utente*: immettere il nome utente per le credenziali.
+**** *Password*: Inserisci la password per le credenziali.
+
+
+
+
+--
+.Linux
+--
+... Se hai selezionato *Linux*:
++
+**** *Agenti*: seleziona un agente della console dall'elenco.
+**** *Nome utente*: immettere il nome utente per le credenziali.
+**** *Password*: Inserisci la password per le credenziali.
+
+
+
+
+--
+====
 
 
 . Selezionare *Aggiungi*.
@@ -72,7 +116,7 @@ TIP: È necessario immettere le credenziali sia per Windows che per Microsoft SQ
 
 === Modifica le credenziali per le risorse host
 
-Successivamente potrai modificare la password per le risorse host importate da SnapCenter.
+In seguito potrai modificare la password per tutte le credenziali che hai creato.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
@@ -187,6 +231,28 @@ La pagina Importa da SnapCenter mostra tutte le importazioni precedenti.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Modifica* per aggiornare le risorse.
 . Aggiornare la password e i dettagli della porta di SnapCenter , se necessario.
 . Selezionare *Importa*.
+
+
+
+
+== Aggiungere una piattaforma di gestione KVM
+
+Se si utilizza la piattaforma di gestione Apache CloudStack per gestire le risorse KVM, è necessario integrarla con NetApp Backup and Recovery in modo che Backup and Recovery possa individuare e proteggere gli host KVM e le VM gestiti.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
+. Selezionare la freccia rivolta verso il basso per espandere la sezione *Piattaforma di gestione*.
+. Seleziona *Aggiungi credenziali della piattaforma di gestione*.
+. Inserisci le seguenti informazioni:
++
+** *Indirizzo IP o FQDN della piattaforma di gestione*: immettere l'indirizzo IP o il nome di dominio completo della piattaforma di gestione.
+** *Chiave API*: inserisci la chiave API da utilizzare per autenticare le richieste API.
+** *Chiave segreta*: inserisci la chiave segreta da utilizzare per autenticare le richieste API.
+** *Porta*: immettere la porta da utilizzare per la comunicazione tra Backup and Recovery e la piattaforma di gestione.
+** *Agenti*: selezionare un agente della console da utilizzare per facilitare la comunicazione tra Backup and Recovery e la piattaforma di gestione.
+
+
+. Al termine, seleziona *Aggiungi*.
 
 
 

@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
+keywords:  
+summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un sistema operativo guest Windows. 
+---
+= Ripristinare file e cartelle guest da VMDK
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare uno o più file o cartelle da un VMDK su un sistema operativo guest Windows.
+
+.Prima di iniziare
+
+NOTE: È necessario creare le credenziali per la VM guest in NetApp Backup and Recovery prima di poter ripristinare file e cartelle da essa. NetApp Backup and Recovery utilizza queste credenziali per l'autenticazione con la VM guest quando si collega il disco virtuale.
+
+.Informazioni su questo compito
+Per impostazione predefinita, NetApp Backup and Recovery rende disponibile il disco virtuale collegato per 24 ore, per poi scollegarlo automaticamente. Nella procedura guidata è possibile scegliere di eliminare automaticamente la sessione di ripristino del file guest dopo l'operazione di ripristino oppure di eliminarla manualmente.
+
+Le prestazioni del ripristino di file o cartelle guest dipendono da due fattori: la dimensione dei file o delle cartelle da ripristinare e il numero di file o cartelle da ripristinare. Il ripristino di un gran numero di file di piccole dimensioni potrebbe richiedere più tempo del previsto rispetto al ripristino di un piccolo numero di file di grandi dimensioni, se il set di dati da ripristinare ha le stesse dimensioni.
+
+
+IMPORTANT: Su una VM è possibile eseguire solo un'operazione di collegamento o ripristino alla volta. Non è possibile eseguire operazioni di collegamento o ripristino parallele sulla stessa VM.
+
+
+IMPORTANT: Grazie alla funzionalità di ripristino guest, è possibile visualizzare e ripristinare i file di sistema e nascosti, nonché visualizzare i file crittografati. Non sovrascrivere un file di sistema esistente né ripristinare i file crittografati in una cartella crittografata. Durante l'operazione di ripristino, gli attributi nascosti, di sistema e crittografati dei file guest non vengono mantenuti nel file ripristinato. La visualizzazione o l'esplorazione delle partizioni riservate potrebbe causare un errore.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Selezionare il menu *Macchine virtuali*.
+. Selezionare dall'elenco una macchina virtuale contenente i file che si desidera ripristinare.
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] per quella VM.
+. Seleziona *Ripristina file e cartelle*.
+. Selezionare uno snapshot da cui effettuare il ripristino, quindi selezionare *Avanti*.
+. Selezionare la posizione dello snapshot da cui effettuare il ripristino. Se si sceglie una posizione secondaria, selezionare lo snapshot secondario dall'elenco.
+. Selezionare *Avanti*.
+. Selezionare il disco virtuale dall'elenco da collegare alla VM, quindi selezionare *Avanti*.
+. Nella pagina _Seleziona credenziali macchina virtuale_, se non hai ancora memorizzato le credenziali per la VM guest, seleziona *Aggiungi credenziali* ed esegui le seguenti operazioni:
++
+.. *Nome credenziali*: immettere un nome per le credenziali.
+.. *Modalità di autenticazione*: selezionare *Windows*.
+.. *Agenti*: selezionare dall'elenco un agente della console che gestirà la comunicazione tra NetApp Backup and Recovery e questo host.
+.. *Dominio e nome utente*: immettere il NetBIOS o il nome di dominio completo (FQDN) e il nome utente per le credenziali.
+.. *Password*: Inserisci una password per le credenziali.
+.. Selezionare *Aggiungi*.
+
+
+. Scegliere le credenziali della macchina virtuale da utilizzare per l'autenticazione con la VM guest.
++
+NetApp Backup and Recovery collega il disco virtuale alla VM e visualizza tutti i file e le cartelle, compresi quelli nascosti. Assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
+
++
+I file e le cartelle selezionati vengono elencati nel riquadro destro dello schermo.
+
+. Selezionare *Avanti*.
+. Immettere il percorso di condivisione UNC per l'ospite in cui verranno ripristinati i file selezionati.
++
+** Esempio di indirizzo IPv4: `\\10.60.136.65\c$`
+** Esempio di indirizzo IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
++
+Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli o ignorarli.
+
+. Selezionare *Ripristina*.
++
+È possibile visualizzare l'avanzamento del ripristino nella pagina Monitoraggio processi.
+
+

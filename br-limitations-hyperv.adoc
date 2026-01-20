@@ -26,6 +26,8 @@ Le seguenti azioni non sono supportate nella versione di anteprima privata dei c
 * Ripristinare le VM in una posizione alternativa
 * Spanning dei dischi (su più condivisioni CIFS)
 * Proteggere le VM su SAN
-* Modifica gruppi di protezione
-* Proteggere gli host Hyper-V in cluster tramite System Center Virtual Machine Manager (SCVMM)
+* Non è possibile ripristinare VM o dati di VM tra sistemi con CPU di fornitori diversi (da Intel ad AMD o viceversa), indipendentemente dall'impostazione "Compatibilità processore" in Hyper-V. Questa impostazione supporta solo la compatibilità tra generazioni diverse dello stesso fornitore (ad esempio, da Intel a Intel o da AMD ad AMD).
 
+
+
+NOTE: Nella versione del 19 gennaio 2026, non è possibile aggiornare i plugin NetApp per Hyper-V o Windows utilizzando l'opzione *Aggiorna* nel menu Azioni. In alternativa, rimuovere ciascun host Hyper-V e aggiungerlo nuovamente per aggiornare i plugin.

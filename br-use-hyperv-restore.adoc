@@ -28,6 +28,7 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 È possibile ripristinare i dati in questi punti:
 
 * Ripristina la posizione originale
+* Ripristina in una posizione alternativa
 
 
 .Considerazioni sul ripristino da storage di oggetti
@@ -46,7 +47,7 @@ Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
 * Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema originale o su un sistema ONTAP locale.
 
 
-Dalla pagina Ripristina (nota anche come Cerca e ripristina)*, puoi ripristinare una risorsa anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. È possibile cercare l'istantanea utilizzando i filtri.
+Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare una risorsa anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. È possibile cercare l'istantanea utilizzando i filtri.
 
 
 
@@ -84,7 +85,8 @@ Quando si ripristina la posizione originale, è possibile visualizzare le impost
 
 . Nella sezione *Opzioni post-ripristino*, prendere in considerazione la seguente opzione:
 +
-*Riavvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il suo ripristino.
+** *Avvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il ripristino.
+
 
 . Selezionare *Ripristina*.
 
@@ -92,7 +94,26 @@ Quando si ripristina la posizione originale, è possibile visualizzare le impost
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima dei carichi di lavoro Hyper-V.
+. Nella sezione *Impostazioni destinazione*: inserisci le seguenti informazioni:
++
+** *FQDN o indirizzo IP Hyper-V*: immettere il nome di dominio completo o l'indirizzo IP dell'host Hyper-V di destinazione.
+** *Rete*: seleziona la rete di destinazione in cui desideri ripristinare lo snapshot.
+** *Nome macchina virtuale*: immettere il nome della VM che si desidera ripristinare.
+** *Posizione di destinazione*: immettere la cartella di destinazione o la condivisione CIFS che deve contenere i dati ripristinati.
+
+
+. Nella sezione *Opzioni pre-ripristino*, prendi in considerazione le seguenti opzioni:
++
+** *Ripristino rapido*: abilita questa opzione per rendere immediatamente disponibile la VM ripristinata. Dall'archivio oggetti vengono ripristinati solo i file necessari per eseguire la macchina virtuale, anziché l'intero volume.
+
+
+. Nella sezione *Opzioni di ripristino post*, prendi in considerazione le seguenti opzioni:
++
+** *Avvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il ripristino.
+
+
+. Selezionare *Ripristina*.
+
 
 --
 ====

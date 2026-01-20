@@ -34,7 +34,7 @@ Esegui un backup su richiesta prima di apportare modifiche al sistema per garant
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
-. Nel riquadro Oracle, seleziona *Scopri e gestisci*.
+. In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
 . Selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
@@ -59,7 +59,7 @@ NOTE: NetApp Backup and Recovery utilizza la stessa policy sia per il gruppo di 
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
-. Nel riquadro Oracle, seleziona *Scopri e gestisci*.
+. In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
 . Selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.

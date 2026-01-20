@@ -34,8 +34,8 @@ Viene visualizzata la pagina di accesso NetApp Console .
 . Accedi alla Console.
 . Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.
 +
-** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, Backup and Recovery visualizza la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" e offre un'opzione per aggiungere un sistema.  Per i dettagli sull'aggiunta di un sistema alla pagina *Sistemi*, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard NetApp Console"^] .
-** Se è la prima volta che accedi a Backup and Recovery e hai già aggiunto un sistema alla pagina *Sistemi*, ma non hai ancora scoperto alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" che mostra un'opzione per *Scoprire risorse*.
+** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, Backup and Recovery visualizza la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" con un'opzione per aggiungere un sistema. Per i dettagli sull'aggiunta di un sistema alla pagina *Sistemi*, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard NetApp Console"^].
+** Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella Console ma non sono state rilevate risorse, viene visualizzata la pagina _Benvenuti nel nuovo NetApp Backup and Recovery_ con l'opzione *Rileva risorse*.
 
 
 . Se non lo hai ancora fatto, seleziona l'opzione *Scopri e gestisci*.

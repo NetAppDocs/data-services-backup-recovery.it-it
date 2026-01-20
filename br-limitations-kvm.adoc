@@ -45,3 +45,14 @@ Le seguenti configurazioni non sono supportate:
 * Formato disco RAW
 * Tipi di pool di archiviazione diversi da NetFS (è supportato solo NetFS)
 
+
+
+
+== Note sulla risoluzione dei problemi
+
+Quando si utilizza l'anteprima privata dei carichi di lavoro KVM con NetApp Backup and Recovery, tenere presente quanto segue:
+
+* Per garantire che i ripristini del carico di lavoro KVM vengano completati correttamente, accertarsi che l'impostazione *Abilita snapshot coerente con la VM* sia attiva nel criterio di protezione utilizzato per i backup KVM.
+* Non è possibile eseguire il backup di un pool di archiviazione con host KVM gestiti da Apache CloudStack a meno che non si aggiungano tutti gli host gestiti a NetApp Backup and Recovery. Come soluzione alternativa, aggiungi ogni host KVM gestito da CloudStack a NetApp Backup and Recovery.
+* Non è possibile eseguire il backup di una macchina virtuale arrestata che appartiene a un gruppo di protezione. Come soluzione alternativa, rimuovere la macchina virtuale arrestata dal gruppo di protezione prima di avviare il backup.
+

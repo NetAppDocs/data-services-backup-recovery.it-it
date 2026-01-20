@@ -1,0 +1,51 @@
+= Miglioramenti dei carichi di lavoro del volume ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti dei carichi di lavoro del volume ONTAP
+
+Questa versione dei carichi di lavoro del volume ONTAP introduce le seguenti funzionalità migliorate:
+
+*Supporto per più bucket*: (Anteprima privata) A partire da ONTAP 9.17.1 e versioni successive, è possibile proteggere i volumi all'interno di un sistema con un massimo di 6 bucket per sistema su diversi provider cloud.
+
+link:prev-ontap-backup-manage.html["Scopri di più sul backup dei dati del volume ONTAP utilizzando NetApp Backup and Recovery"].
+
+
+
+=== Miglioramenti dei carichi di lavoro VMware
+
+Questa versione dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:
+
+* Il supporto per i carichi di lavoro VMware è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
+* Ora puoi ripristinare i file e le cartelle del sistema operativo guest.
+
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Scopri di più sul ripristino delle VM VMware con NetApp Backup and Recovery"].
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Scopri di più sul ripristino di file e cartelle guest"].
+
+
+
+=== Miglioramenti dell'anteprima dei carichi di lavoro Hyper-V
+
+Questa versione dei carichi di lavoro Hyper-V introduce le seguenti funzionalità avanzate:
+
+* Ora è possibile ripristinare i backup e gli snapshot delle VM Hyper-V in una posizione alternativa. Questa funzionalità è utile se si desidera gestire le versioni di una VM su host Hyper-V diversi.
+* Le macchine virtuali Hyper-V fornite da System Center Virtual Machine Manager (SCVMM) e ospitate su una condivisione CIFS sono ora supportate da NetApp Backup and Recovery.
+* Ora puoi modificare i gruppi di protezione.
+
+
+
+NOTE: Solo in questa versione non è possibile aggiornare i plugin NetApp per Hyper-V o Windows utilizzando l'opzione *Aggiorna* nel menu Azioni. In alternativa, rimuovere ciascun host Hyper-V e aggiungerlo nuovamente per aggiornare i plugin.
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restore.html["Scopri di più sul ripristino delle VM Hyper-V con NetApp Backup and Recovery"].
+
+
+
+=== Miglioramenti dell'anteprima dei carichi di lavoro KVM
+
+L'anteprima dei carichi di lavoro KVM ora supporta l'integrazione con la piattaforma di gestione Apache CloudStack, consentendo di proteggere gli host KVM e le macchine virtuali gestite da Apache CloudStack.
+
+Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .

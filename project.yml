@@ -133,9 +133,19 @@ sidebar:
       - title: Eseguire il backup dei carichi di lavoro VMware
         url: "/br-use-vmware-backup.html"
       - title: Ripristinare i carichi di lavoro VMware
-        url: "/br-use-vmware-restore.html"
-      - title: Ripristina dischi virtuali specifici dai backup
-        url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        entries:
+        - title: Ripristinare le macchine virtuali VMware
+          url: "/br-use-vmware-restore.html"
+        - title: Ripristina dischi virtuali specifici
+          url: "/br-use-vmware-restore-vmdks-from-backups.html"
+        - title: Ripristina file e cartelle degli ospiti
+          entries:
+          - title: Flusso di lavoro, prerequisiti e limitazioni
+            url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
+          - title: Ripristinare file e cartelle guest da VMDK
+            url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
+          - title: Risoluzione dei problemi di ripristino dei file guest
+            url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: Proteggi i carichi di lavoro VMware (con il plug-in SnapCenter per VMware)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali

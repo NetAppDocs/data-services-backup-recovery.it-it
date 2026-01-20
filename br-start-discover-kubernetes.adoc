@@ -27,7 +27,7 @@ Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes ne
 .Passi
 . Eseguire una delle seguenti operazioni:
 +
-** Se stai rilevando carichi di lavoro Kubernetes per la prima volta, in NetApp Backup and Recovery, seleziona *Discover and Manage* nel tipo di carico di lavoro Kubernetes.
+** Se stai rilevando carichi di lavoro Kubernetes per la prima volta, in NetApp Backup and Recovery, in *Carichi di lavoro*, seleziona il riquadro *Kubernetes*.
 ** Se hai già individuato i carichi di lavoro Kubernetes, in NetApp Backup and Recovery seleziona *Inventario* > *Carichi di lavoro* e quindi seleziona *Individuazione risorse*.
 
 

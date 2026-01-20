@@ -37,7 +37,7 @@ Per visualizzare colonne aggiuntive (aggregati, stile di sicurezza (Windows o UN
 
 . Controllare lo stato delle opzioni di protezione nella colonna "Protezione esistente". Le 3 icone stanno per "Snapshot locali", "Volumi replicati" e "Backup nell'archiviazione di oggetti".
 +
-Ogni icona è blu quando il tipo di backup è attivato, mentre è grigia quando il tipo di backup è inattivo.  È possibile passare il cursore su ciascuna icona per visualizzare la policy di backup utilizzata e altre informazioni pertinenti per ciascun tipo di backup.
+Ogni icona è illuminata quando il tipo di backup è attivato, mentre è grigia quando il tipo di backup è inattivo. È possibile passare il cursore su ciascuna icona per visualizzare la policy di backup utilizzata e altre informazioni pertinenti per ciascun tipo di backup.
 
 
 
@@ -48,7 +48,7 @@ Ogni icona è blu quando il tipo di backup è attivato, mentre è grigia quando 
 Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilitato per la prima volta NetApp Backup and Recovery, puoi attivare i backup su volumi aggiuntivi in ​​un secondo momento.
 
 .Passi
-. Dalla scheda *Volumi*, identifica il volume su cui desideri attivare i backup, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Attiva backup*.
+. Dalla scheda *Volumi*, identifica il volume su cui desideri attivare i backup, seleziona il menu Azioni image:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Attiva protezione 3-2-1*.
 . Nella pagina _Definisci strategia di backup_, seleziona l'architettura di backup, quindi definisci i criteri e altri dettagli per snapshot locali, volumi replicati e file di backup. Consulta i dettagli per le opzioni di backup dai volumi iniziali attivati in questo sistema. Quindi seleziona *Avanti*.
 . Rivedere le impostazioni di backup per questo volume, quindi selezionare *Attiva backup*.
 
@@ -64,7 +64,7 @@ Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilita
 === Modifica le impostazioni di backup su un singolo volume
 
 .Passi
-. Dalla scheda *Volumi*, identifica il volume su cui vuoi apportare modifiche ai criteri, seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Modifica strategia di backup*.
+. Dal menu *Volumi*, individuare il volume per il quale si desidera modificare le impostazioni dei criteri, selezionare il menu Azioni image:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Modifica strategia di backup*.
 . Nella pagina _Modifica strategia di backup_, apportare modifiche ai criteri di backup esistenti per snapshot locali, volumi replicati e file di backup e selezionare *Avanti*.
 +
 Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella policy di backup iniziale durante l'attivazione NetApp Backup and Recovery per questo cluster, vedrai solo le altre policy configurate con DataLock.  Se non hai abilitato _DataLock e Ransomware Resilience_ durante l'attivazione NetApp Backup and Recovery, vedrai solo altri criteri di backup cloud che non hanno DataLock configurato.
@@ -85,7 +85,7 @@ Quando si lavora con più volumi, tutti i volumi devono avere le seguenti caratt
 * stesso tipo (volume di lettura-scrittura o di protezione dati)
 
 
-Se sono abilitati più di cinque volumi per il backup, NetApp Backup and Recovery inizializza solo cinque volumi alla volta.  Una volta completati, crea il batch successivo di cinque sotto-processi per avviare il set successivo e continua finché tutti i volumi non vengono inizializzati.
+Se sono abilitati più di cinque volumi per il backup, NetApp Backup and Recovery inizializza solo cinque volumi alla volta. Una volta completati, si continua in gruppi di 5 finché tutti i volumi non vengono inizializzati.
 
 .Passi
 . Dalla scheda *Volumi*, filtrare in base al sistema su cui risiedono i volumi.
@@ -120,7 +120,7 @@ Se hai abilitato _DataLock e Ransomware Resilience_ per i backup cloud nella pol
 
 È possibile creare un backup su richiesta in qualsiasi momento per acquisire lo stato corrente del volume.  Questa opzione può essere utile se sono state apportate modifiche molto importanti a un volume e non si desidera attendere il successivo backup pianificato per proteggere i dati.  È possibile utilizzare questa funzionalità anche per creare un backup di un volume di cui non è attualmente in corso il backup e di cui si desidera acquisire lo stato attuale.
 
-È possibile creare uno snapshot ad hoc o un backup dell'oggetto di un volume. Non è possibile creare un volume replicato ad hoc.
+È possibile creare uno snapshot ad hoc o un backup nell'archivio oggetti di un volume. Non è possibile creare un volume replicato ad hoc.
 
 Il nome del backup include la marca temporale, in modo da poter distinguere il backup su richiesta da altri backup pianificati.
 
