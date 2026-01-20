@@ -24,7 +24,7 @@ Le operazioni di ripristino del sistema operativo guest includono i seguenti pas
 
 . Allegare
 +
-Collegare un disco virtuale a una macchina virtuale guest o a una macchina virtuale proxy e avviare una sessione di ripristino dei file guest.
+Collegare un disco virtuale a una macchina virtuale guest e avviare una sessione di ripristino dei file guest.
 
 . Aspettare
 +
@@ -82,8 +82,9 @@ Il disco virtuale che contiene il file o la cartella che si desidera ripristinar
 Prima di ripristinare un file o una cartella da un sistema operativo guest, è necessario essere a conoscenza delle limitazioni della funzionalità.
 
 * Non è possibile ripristinare tipi di dischi dinamici all'interno di un sistema operativo guest.
-* Se si ripristina un file o una cartella crittografati, l'attributo di crittografia non viene mantenuto. Non è possibile ripristinare file o cartelle in una cartella crittografata.
-* La pagina Esplora file ospite visualizza i file e le cartelle nascosti, che non è possibile filtrare.
+* Se si ripristina un file o una cartella crittografati, l'attributo di crittografia non viene mantenuto.
+* Non è possibile ripristinare file o cartelle in una cartella crittografata.
+* I file e le cartelle nascosti vengono visualizzati nella pagina di esplorazione dei file e non è possibile filtrarli.
 * Non è possibile effettuare il ripristino da un sistema operativo guest Linux.
 +
 Non è possibile ripristinare file e cartelle da una macchina virtuale che esegue il sistema operativo guest Linux. Tuttavia, è possibile allegare un VMDK e quindi ripristinare manualmente i file e le cartelle. Per le informazioni più recenti sui sistemi operativi guest supportati, fare riferimento a https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Strumento matrice di interoperabilità NetApp (IMT)"^] .

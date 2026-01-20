@@ -17,12 +17,9 @@ summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un s
 È possibile ripristinare uno o più file o cartelle da un VMDK su un sistema operativo guest Windows.
 
 .Prima di iniziare
-
-NOTE: È necessario creare le credenziali per la VM guest in NetApp Backup and Recovery prima di poter ripristinare file e cartelle da essa. NetApp Backup and Recovery utilizza queste credenziali per l'autenticazione con la VM guest quando si collega il disco virtuale.
+È necessario creare le credenziali per la VM guest in NetApp Backup and Recovery prima di poter ripristinare file e cartelle da essa. NetApp Backup and Recovery utilizza queste credenziali per l'autenticazione con la VM guest quando si collega il disco virtuale.
 
 .Informazioni su questo compito
-Per impostazione predefinita, NetApp Backup and Recovery rende disponibile il disco virtuale collegato per 24 ore, per poi scollegarlo automaticamente. Nella procedura guidata è possibile scegliere di eliminare automaticamente la sessione di ripristino del file guest dopo l'operazione di ripristino oppure di eliminarla manualmente.
-
 Le prestazioni del ripristino di file o cartelle guest dipendono da due fattori: la dimensione dei file o delle cartelle da ripristinare e il numero di file o cartelle da ripristinare. Il ripristino di un gran numero di file di piccole dimensioni potrebbe richiedere più tempo del previsto rispetto al ripristino di un piccolo numero di file di grandi dimensioni, se il set di dati da ripristinare ha le stesse dimensioni.
 
 
