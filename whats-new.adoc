@@ -38,11 +38,9 @@ link:prev-ontap-backup-manage.html["Scopri di più sul backup dei dati del volum
 
 Questa versione dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:
 
-* Il supporto per i carichi di lavoro VMware è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
+* Il supporto dei carichi di lavoro VMware è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
 * Ora puoi ripristinare i file e le cartelle del sistema operativo guest.
 
-
-https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Scopri di più sul ripristino delle VM VMware con NetApp Backup and Recovery"].
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Scopri di più sul ripristino di file e cartelle guest"].
 
@@ -52,8 +50,8 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 Questa versione dei carichi di lavoro Hyper-V introduce le seguenti funzionalità avanzate:
 
-* Ora è possibile ripristinare i backup e gli snapshot delle VM Hyper-V in una posizione alternativa. Questa funzionalità è utile se si desidera gestire le versioni di una VM su host Hyper-V diversi.
-* Le macchine virtuali Hyper-V fornite da System Center Virtual Machine Manager (SCVMM) e ospitate su una condivisione CIFS sono ora supportate da NetApp Backup and Recovery.
+* Ora puoi ripristinare backup e snapshot delle VM Hyper-V in una posizione alternativa. Utilizza questa funzionalità per gestire le versioni delle VM su diversi host Hyper-V.
+* NetApp Backup and Recovery ora supporta le macchine virtuali Hyper-V fornite da System Center Virtual Machine Manager (SCVMM) e ospitate su una CIFS share.
 * Ora puoi modificare i gruppi di protezione.
 
 
@@ -66,7 +64,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 === Miglioramenti dell'anteprima dei carichi di lavoro KVM
 
-L'anteprima dei carichi di lavoro KVM ora supporta l'integrazione con la piattaforma di gestione Apache CloudStack, consentendo di proteggere gli host KVM e le macchine virtuali gestite da Apache CloudStack.
+L'anteprima dei carichi di lavoro KVM ora protegge gli host KVM e le macchine virtuali gestite da Apache CloudStack.
 
 Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
 
