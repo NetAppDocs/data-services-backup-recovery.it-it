@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Proteggi i tuoi carichi di lavoro Oracle con il backup e il ripristino NetApp . 
+summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp backup e ripristino. 
 ---
-= Eseguire il backup dei carichi di lavoro Oracle utilizzando NetApp Backup and Recovery
+= Esegui il backup dei carichi di lavoro di Oracle Database utilizzando NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ Utilizza NetApp Backup and Recovery per eseguire il backup di gruppi di protezio
 
 NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 
-* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vederelink:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Oracle con NetApp Backup and Recovery"] per maggiori informazioni.
+* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedi link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle Database con NetApp Backup and Recovery"] per ulteriori informazioni.
 * Esegui subito il backup di un gruppo di protezione (crea subito un backup su richiesta).
 * Esegui subito il backup di un database.
 

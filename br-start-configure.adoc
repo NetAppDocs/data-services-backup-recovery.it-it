@@ -21,6 +21,7 @@ Dopo aver configurato NetApp Console, configurare le impostazioni di backup e ri
 * <<Importa e gestisci le risorse host SnapCenter>>.  (Solo carichi di lavoro di Microsoft SQL Server)
 * <<Aggiungere una piattaforma di gestione KVM>>. (Solo carichi di lavoro KVM)
 * <<Configurare le directory di registro negli snapshot per gli host Windows>>.
+* <<Creare un modello di hook di esecuzione>> per eseguire script prima e dopo i processi di backup. (Solo carichi di lavoro Kubernetes)
 
 
 *Ruolo richiesto NetApp Console * Super amministratore di Backup e ripristino, amministratore di backup di Backup e ripristino, amministratore di ripristino di Backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
@@ -268,4 +269,27 @@ Prima di creare policy per gli host Windows, è necessario configurare le direct
 . Dalla pagina dei dettagli dell'inventario, seleziona un host e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Configura directory registro*.
 . Sfogliare o immettere il percorso della directory del registro.
 . Seleziona *Salva*.
+
+
+
+
+== Creare un modello di hook di esecuzione
+
+È possibile creare un modello di hook di esecuzione personalizzato da utilizzare per eseguire azioni prima o dopo un'operazione di protezione dei dati su un'applicazione.
+
+
+NOTE: I modelli che crei qui sono utilizzabili solo quando proteggi i carichi di lavoro Kubernetes.
+
+.Passi
+. Nella Console, vai a *Protezione* > *Backup e ripristino*.
+. Selezionare la scheda *Impostazioni*.
+. Espandi la sezione *Modello di hook di esecuzione*.
+. Selezionare *Crea modello di hook di esecuzione*.
+. Immettere un nome per l'hook di esecuzione.
+. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-restore viene eseguito al termine dell'operazione di ripristino.
+. Nella casella di testo *Script*, immettere lo script shell eseguibile che si desidera eseguire come parte del modello di hook di esecuzione.  Facoltativamente, puoi selezionare *Carica script* per caricare un file di script.
+. Seleziona *Crea*.
++
+Dopo aver creato il modello, questo viene visualizzato nell'elenco dei modelli nella sezione *Modello di hook di esecuzione*.
+
 

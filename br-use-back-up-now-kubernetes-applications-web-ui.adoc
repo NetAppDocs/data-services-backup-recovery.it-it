@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-web-ui.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: 'NetApp Backup and Recovery consente di gestire le informazioni sull"host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze.  Puoi visualizzare, modificare ed eliminare le impostazioni di protezione per il tuo inventario.' 
+---
+= Esegui ora il backup delle applicazioni Kubernetes utilizzando l'interfaccia utente Web di Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery consente di eseguire manualmente il backup delle applicazioni Kubernetes utilizzando l'interfaccia web.
+
+.Ruolo richiesto NetApp Console
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+
+
+
+== Esegui subito il backup di un'applicazione Kubernetes utilizzando la web UI
+
+Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.
+
+.Passi
+. In NetApp Backup and Recovery, seleziona *Inventario*.
+. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. Selezionare la scheda *Applicazioni*.
+. Nell'elenco delle applicazioni, seleziona l'applicazione di cui vuoi eseguire il backup e seleziona il menu Azioni associato.
+. Seleziona *Esegui backup ora*.
+. Assicurarsi che sia selezionato il nome corretto dell'applicazione.
+. Selezionare *Backup*.
+
+
+.Risultato
+La Console crea un backup dell'applicazione e visualizza l'avanzamento nell'area *Monitoraggio* di Backup e Ripristino. Il backup viene creato in base ai criteri di protezione associati all'applicazione.

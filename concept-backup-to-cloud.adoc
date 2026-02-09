@@ -77,7 +77,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Fare riferimento alink:br-use-hyperv-protect-overview.html["Proteggere i carichi di lavoro Hyper-V"] .
 
 
-* *Carichi di lavoro Oracle (anteprima)*:
+* *Carichi di lavoro Oracle Database (anteprima)*:
 +
 ** Eseguire il backup e il ripristino di database e registri
 ** Utilizzare gruppi di protezione per gestire le attività di backup
@@ -85,7 +85,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Proteggere un database con un'architettura di backup 3-2-1
 ** Configurare la conservazione del backup
 ** Montare e smontare i backup ARCHIVELOG
-** Fare riferimento alink:br-use-oracle-protect-overview.html["Proteggi i carichi di lavoro Oracle"] .
+** Fare riferimento a link:br-use-oracle-protect-overview.html["Proteggi i carichi di lavoro Oracle Database"].
 
 
 * *Carichi di lavoro Kubernetes (anteprima)*:
@@ -148,6 +148,8 @@ Poiché NetApp Backup and Recovery preserva l'efficienza di archiviazione del vo
 *Spese di servizio*
 
 Per i carichi di lavoro dei volumi ONTAP , vengono addebitati solo i volumi protetti nell'archiviazione degli oggetti. I costi si basano sulla capacità logica utilizzata dei volumi ONTAP di origine prima dell'applicazione delle efficienze, nota anche come Front-End Terabyte (FETB).
+
+Per i carichi di lavoro Kubernetes, l'addebito avviene in base alle dimensioni combinate di tutti i volumi persistenti.
 
 Per tutti gli altri carichi di lavoro, ti verranno addebitate le risorse protette su almeno una destinazione di archiviazione secondaria o di oggetti. I costi vengono calcolati in base alla dimensione logica del carico di lavoro di origine. Per i database, questo significa la dimensione del database; per le VM, la dimensione della VM.
 

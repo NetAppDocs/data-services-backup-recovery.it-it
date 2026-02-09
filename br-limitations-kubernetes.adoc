@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: br-limitations-kubernetes.html 
+keywords: limitations, known, NetApp Backup and Recovery, Kubernetes 
+summary: Esaminare queste NetApp limitazioni di backup e ripristino prima di utilizzare backup e ripristino nel proprio ambiente. 
+---
+= Limitazioni note con NetApp Backup e ripristino per carichi di lavoro Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
+
+
+
+== Modifica della policy di protezione per un'applicazione
+
+Quando si modifica la policy di protezione associata a un'applicazione per utilizzare un bucket diverso o una destinazione di replica secondaria, la policy di protezione può non riuscire.
+
+*Soluzione alternativa*: rimuovere e aggiungere nuovamente l'applicazione.
+
+
+
+== Limitazione della configurazione della policy di protezione 3-2-1
+
+Quando si crea una policy di protezione 3-2-1 in cui non vengono eseguiti backup su storage a oggetti contemporaneamente alla replica su storage secondario, la policy di protezione si blocca durante la protezione dell'applicazione.
+
+*Soluzione alternativa*: rimuovere e aggiungere nuovamente l'applicazione e proteggerla con una policy di protezione diversa.

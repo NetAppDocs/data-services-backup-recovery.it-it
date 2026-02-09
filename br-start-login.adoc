@@ -43,7 +43,7 @@ Viene visualizzata la pagina di accesso NetApp Console .
 ** Per i carichi di lavoro di Microsoft SQL Server, fare riferimento alink:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server"] .
 ** Per i carichi di lavoro VMware, fare riferimento alink:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"] .
 ** Per i carichi di lavoro KVM, fare riferimento alink:br-start-discover-kvm.html["Scopri i carichi di lavoro KVM"] .
-** Per i carichi di lavoro Oracle, fare riferimento alink:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle"] .
+** Per i carichi di lavoro di Oracle Database, fare riferimento a link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle Database"].
 ** Per i carichi di lavoro Hyper-V, fare riferimento alink:br-start-discover-hyperv.html["Scopri i carichi di lavoro Hyper-V"] .
 ** Per i carichi di lavoro Kubernetes, fare riferimento alink:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"] .
 

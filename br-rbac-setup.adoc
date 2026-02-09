@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: br-rbac-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: 'Per una maggiore sicurezza, configura l"accesso per ruoli specifici in NetApp Backup and Recovery.' 
+---
+= Imposta il controllo degli accessi in base al ruolo in NetApp Backup e ripristino
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per aumentare la sicurezza e controllare l'accesso alle risorse, configura l'accesso in base al ruolo per NetApp Backup and Recovery. La NetApp Console supporta il controllo degli accessi in base al ruolo (RBAC) per alcuni carichi di lavoro di Backup and Recovery. Puoi assegnare ruoli amministrativi o di visualizzazione specifici per questi carichi di lavoro. Altri carichi di lavoro che non supportano ancora il controllo degli accessi in base al ruolo rimangono accessibili a tutti gli utenti con ruoli di Backup and Recovery finché non viene supportata l'associazione a livello di progetto.
+
+Segui questi passaggi per controllare l'accesso alle risorse nella tua organizzazione. Apporta le modifiche nella pagina *Amministrazione > Identità e accesso* nel menu NetApp Console.
+
+
+NOTE: Questi passaggi presuppongono che ti sia stato assegnato il ruolo di Organization Admin nella Console.
+
+.Passi
+. Crea la struttura del progetto di identità e accesso.
++
+In qualità di amministratore dell'organizzazione, configura la cartella Identity and access e la struttura del progetto in cui risiederanno i carichi di lavoro.
+
+. Assegna ruoli utente.
++
+.. Opzione primaria:
++
+Aggiungi utenti a ciascun progetto designato per i carichi di lavoro e assegna loro il ruolo appropriato. Ad esempio:
+
++
+*** *Organization admin* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare tutte le risorse in tutte le organizzazioni, individuare i workload di Backup and Recovery e assegnarli ai progetti (ad esempio, US East o US West).
+*** *Amministratore di cartelle o progetti* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare solo le risorse nella cartella o nel progetto per cui dispone delle autorizzazioni, ma può individuare i workload di Backup and Recovery e assegnarli a tale progetto.
+
+
+.. Opzione alternativa:
++
+Invece di concedere a un utente l'accesso completo come amministratore di Backup and Recovery, puoi assegnarti il ruolo di super admin di Backup and Recovery e scoprire direttamente i workload.
+
+
+
+. Scopri i carichi di lavoro in Backup and Recovery.
++
+Gli amministratori dell'organizzazione o gli amministratori di cartelle o progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio, US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato.
+
+. Aggiungi utenti ai progetti.
++
+Gli amministratori dell'organizzazione o gli amministratori di cartelle/progetti aggiungono utenti della Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di Organization viewer e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo di Backup and Recovery corretto otterranno automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.
+
+
+
+
+
+== Informazioni correlate
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Scopri la gestione dell'identità e dell'accesso della NetApp Console"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^].
+

@@ -104,7 +104,7 @@ Questa versione di NetApp Backup and Recovery introduce il supporto per l'indivi
 * Supporto dashboard Oracle
 
 
-Per i dettagli sulla protezione dei carichi di lavoro di Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Oracle"] .
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro del database Oracle"].
 
 
 

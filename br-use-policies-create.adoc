@@ -36,7 +36,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 . Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
 . Esaminare i dettagli di questa politica.
 +
-** *Carico di lavoro*: alcuni esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.
+** *Carico di lavoro*: esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
 ** *Tipo di backup*: alcuni esempi includono il backup completo e il backup del registro.
 ** *Architettura*: Alcuni esempi includono snapshot locale, fan-out, cascading, disco su disco e disco su archivio oggetti.
 ** *Risorse protette*: mostra quante risorse sul totale delle risorse di quel carico di lavoro sono protette.
@@ -78,7 +78,7 @@ TIP: Per un elenco dei personaggi da evitare, vedere il suggerimento.
 
 ** Sezione *Architettura di backup*: selezionare la freccia rivolta verso il basso e scegliere il flusso di dati per il backup, ad esempio fan-out 3-2-1, cascata 3-2-1 o disco su disco.
 +
-*** *Fanout 3-2-1*: da storage primario (disco) a storage secondario (disco) a cloud (archivio oggetti). Crea più copie di dati su diversi sistemi di archiviazione, ad esempio configurazioni ONTAP su ONTAP e ONTAP su object-store. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID. Queste configurazioni aiutano a ottenere una protezione ottimale dei dati e un ripristino in caso di emergenza.
+*** *Fanout 3-2-1*: da storage primario (disco) a storage secondario (disco) a cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi di storage, come configurazioni ONTAP a ONTAP e ONTAP a archivio di oggetti. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato. Queste configurazioni aiutano a ottenere una protezione dei dati e un disaster recovery ottimali.
 +
 
 NOTE: Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.

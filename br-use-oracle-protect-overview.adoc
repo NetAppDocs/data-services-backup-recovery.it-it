@@ -14,7 +14,7 @@ summary: È possibile proteggere le macchine virtuali Oracle dai sistemi ONTAP l
 
 
 [role="lead"]
-Proteggi i database e i registri Oracle utilizzando NetApp Backup and Recovery.  Ottieni backup e ripristini rapidi, efficienti in termini di spazio, coerenti con gli arresti anomali e con il database.  Esegui il backup dei carichi di lavoro Oracle su AWS S3, NetApp StorageGRID, Azure Blob Storage o ONTAP S3.  Ripristinare i backup su un host Oracle locale.
+Proteggi i database e i log Oracle utilizzando NetApp Backup and Recovery. Ottieni backup e ripristini rapidi, efficienti in termini di spazio, coerenti con gli arresti anomali e coerenti con il database. Esegui il backup dei carichi di lavoro di Oracle Database su AWS S3, NetApp StorageGRID, Azure Blob Storage o ONTAP S3. Ripristina i backup su un host Oracle on-premises.
 
 Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 
@@ -26,10 +26,10 @@ Utilizza NetApp Backup and Recovery per implementare una strategia di protezione
 
 NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
 
-È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro Oracle:
+È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro di Oracle Database:
 
-* link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle"]
-* link:br-use-oracle-protection-groups.html["Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle"]
-* link:br-use-oracle-backup.html["Eseguire il backup dei carichi di lavoro Oracle"]
-* link:br-use-oracle-restore.html["Ripristinare i carichi di lavoro Oracle"]
+* link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle Database"]
+* link:br-use-oracle-protection-groups.html["Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle Database"]
+* link:br-use-oracle-backup.html["Esegui il backup dei carichi di lavoro Oracle Database"]
+* link:br-use-oracle-restore.html["Ripristina i carichi di lavoro del database Oracle"]
 

@@ -166,7 +166,7 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 ====
 
 
-== Requisiti per la protezione dei carichi di lavoro Oracle
+== Requisiti per la protezione dei carichi di lavoro Oracle Database
 
 Assicurati che il tuo ambiente soddisfi requisiti specifici per scoprire e proteggere le risorse Oracle.
 
@@ -174,6 +174,7 @@ Assicurati che il tuo ambiente soddisfi requisiti specifici per scoprire e prote
 +
 ** Oracle 19C e 21C sono supportati in una distribuzione autonoma.
 ** Oracle Database deve essere distribuito nello storage NetApp ONTAP primario o secondario.
+** Supporto del sistema operativo host: Red Hat Enterprise Linux 8 e 9
 
 
 * Supporto per l'archiviazione di oggetti:
@@ -205,10 +206,10 @@ Per i requisiti NetApp Console , fare riferimento a<<Nella NetApp Console>> .
 
 
 * NetApp Trident 24.10 o successivo
-* NetApp Trident Protect 25.07 o versione successiva (installato durante la scoperta del carico di lavoro di Kubernetes)
-* NetApp Trident Protect Connector 25.07 o versione successiva (installato durante l'individuazione del carico di lavoro di Kubernetes)
+* NetApp Trident Protect 25.07 o versioni successive (installato durante la scoperta del carico di lavoro Kubernetes)
+* NetApp Trident Protect Connector 25.07 o versioni successive (installato durante la scoperta del carico di lavoro Kubernetes)
 +
-** Assicurarsi che la porta TCP 443 non sia filtrata in uscita tra il cluster Kubernetes, il connettore Trident Protect e il proxy Trident Protect.
+** Assicurarsi che la porta TCP 443 non sia filtrata in direzione outbound tra il cluster Kubernetes, il Trident Protect Connector e il Trident Protect proxy.
 
 
 

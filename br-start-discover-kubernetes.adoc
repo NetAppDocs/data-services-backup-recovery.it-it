@@ -24,6 +24,11 @@ NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di
 
 Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes nel tuo ambiente.  L'aggiunta di un carico di lavoro aggiunge un cluster Kubernetes a NetApp Backup and Recovery.  È quindi possibile aggiungere applicazioni e proteggere le risorse del cluster.
 
+[NOTE]
+====
+Quando si rileva un cluster attualmente protetto con Trident Protect, tutte le pianificazioni di backup utilizzate con Trident Protect vengono disabilitate durante il processo di rilevamento (le pianificazioni di backup di Trident Protect non sono compatibili con Backup and Recovery). Per proteggere le applicazioni del cluster, link:br-use-policies-create.html["crea una nuova policy di protezione"] oppure associare le applicazioni a una policy esistente. È quindi possibile rimuovere le pianificazioni di backup di Trident Protect, se necessario.
+
+====
 .Passi
 . Eseguire una delle seguenti operazioni:
 +
@@ -38,7 +43,7 @@ Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes ne
 ** Crea uno spazio dei nomi Trident Protect
 ** Crea un segreto Kubernetes
 ** Aggiungi un repository Helm
-** Installare Trident Protect e il connettore Trident Protect
+** Installa o aggiorna Trident Protect e il connettore Trident Protect
 +
 Questi passaggi garantiscono che NetApp Backup and Recovery possa interagire con il cluster.
 

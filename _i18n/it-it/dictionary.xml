@@ -302,8 +302,6 @@
   <block id="290536edae9da601f8170c5b55f24416" category="list-text">Database virtualizzati</block>
   <block id="fa13bdfd9eed88794d8035a9e287804f" category="list-text">Cerca e ripristina i backup del database</block>
   <block id="50f97ccd9c70c1fad84f646a4f0a7844" category="list-text">Supporto dashboard Oracle</block>
-  <block id="51d8503c0e8b0708c3068080f066d721" category="inline-link">Panoramica sulla protezione dei carichi di lavoro Oracle</block>
-  <block id="834f349029c5bc6715f25a9eac82f171" category="paragraph">Per i dettagli sulla protezione dei carichi di lavoro di Oracle Database, fare riferimento a<block ref="aa11c9ead0c1847dba5fa900ff49219a" category="inline-link-rx"></block> .</block>
   <block id="8d799f5cd163dd189424382fcbc55641" category="summary">Le funzionalità NetApp Backup and Recovery disponibili tramite l'interfaccia utente Web sono disponibili anche tramite le API RESTful.</block>
   <block id="3273eb60c717ba9173100472fd580bfa" category="doc">Automatizza con le API REST di NetApp Backup and Recovery</block>
   <block id="c50c9f52d92103a492abf38f4b5325e0" category="paragraph">Le funzionalità NetApp Backup and Recovery disponibili tramite l'interfaccia utente Web sono disponibili anche tramite l'API REST di backup e ripristino.</block>
@@ -365,14 +363,7 @@
   <block id="5131ec6f366fecc1e6e217f1cd4771d5" category="list-text">Dischi distribuiti su più punti di montaggio o condivisioni NFS</block>
   <block id="60cb90015b7d70207c84b5b4c09b1c4a" category="list-text">Formato disco RAW</block>
   <block id="def5bb1c4fff047ce52153ac1f2ef9b5" category="list-text">Tipi di pool di archiviazione diversi da NetFS (è supportato solo NetFS)</block>
-  <block id="43250e477f245ad8251ae2cf9a6044b5" category="doc">Limitazioni note con NetApp Backup and Recovery per carichi di lavoro Oracle</block>
-  <block id="d905e8ea866675c3cf4643035604b776" category="paragraph">Le seguenti azioni non sono supportate nella versione di anteprima privata dei carichi di lavoro di Oracle Database in NetApp Backup and Recovery:</block>
   <block id="203b3a4b594fb28b853f0cb7e5561c26" category="list-text">Backup offline</block>
-  <block id="ff24590464659ee8cdec688128c35f89" category="list-text">Clone</block>
-  <block id="2f42226f79de76630de2401fec50f917" category="list-text">Configurazione ASM</block>
-  <block id="79df96f2a2c49c67db8b8abedacd66da" category="list-text">Protezione dei database archiviati su SAN</block>
-  <block id="ed1c3b4d6aee5defa8827a5cd00e2e81" category="paragraph">Oracle Database è supportato solo come distribuzione autonoma tramite NFS nella versione di anteprima privata dei carichi di lavoro Oracle.</block>
-  <block id="3af84d3004e466ae586915e19ffb662b" category="summary">Per poter utilizzare il servizio NetApp Backup and Recovery è necessario prima rilevare i dati.  Durante l'individuazione, NetApp Backup and Recovery analizza tutti i volumi e i file nei sistemi all'interno della tua organizzazione.</block>
   <block id="11750133b5aeccdb05ec0c5b1027ace4" category="doc">Limitazioni note con NetApp Backup and Recovery per carichi di lavoro VMware</block>
   <block id="bd24e6cbfe24fff0710652a52a0736b5" category="paragraph">Le seguenti azioni non sono supportate nella versione di anteprima dei carichi di lavoro VMware in NetApp Backup and Recovery:</block>
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">Montare</block>
@@ -669,10 +660,8 @@
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">Selezionare il tipo di carico di lavoro *Kubernetes*.</block>
   <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">Inserisci un nome per il cluster e scegli un connettore da utilizzare con il cluster.</block>
   <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">Seguire le istruzioni della riga di comando che appaiono:</block>
-  <block id="3b47301a2201ba1175e2a109a103127b" category="list-text">Crea uno spazio dei nomi Trident Protect</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="list-text">Crea un segreto Kubernetes</block>
   <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">Aggiungi un repository Helm</block>
-  <block id="c1a343fd7e28cea1253758e1b64a4d0d" category="list-text">Installare Trident Protect e il connettore Trident Protect</block>
   <block id="efa5307bfad4cbe53b6ae3c88baa522e" category="paragraph">Questi passaggi garantiscono che NetApp Backup and Recovery possa interagire con il cluster.</block>
   <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">Dopo aver completato i passaggi, seleziona *Scopri*.</block>
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">Il cluster viene aggiunto all'inventario.</block>
@@ -686,7 +675,6 @@
   <block id="acaaf9de0e4071fe117da04dbbe9565d" category="list-text">Nel riquadro KVM, seleziona *Scopri e gestisci*.</block>
   <block id="12d8eeba7e97739f6035cbec50bd2369" category="list-text">*Tipo di carico di lavoro*: selezionare *KVM*.</block>
   <block id="238fb750ebdea9faf36668536aaa8b42" category="paragraph">Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventario.</block>
-  <block id="0a6dc8ac33152480a18098d8eb98ccb6" category="doc">Scopri i carichi di lavoro Oracle in NetApp Backup and Recovery</block>
   <block id="945f74309f719db5d0fb0d1bb5a31781" category="paragraph">NetApp Backup and Recovery deve prima rilevare i database Oracle per poterli proteggere.</block>
   <block id="bf36d800e1bbaf0ef44cd361867e4e09" category="section-title">Aggiungi un host Oracle e scopri le risorse</block>
   <block id="8160dc72c9473d18119ea3e52fe65572" category="paragraph">Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.</block>
@@ -832,8 +820,6 @@
   <block id="8eec52ebd7892b36424f0c784c1a70dc" category="list-text">Per i carichi di lavoro VMware, fare riferimento a<block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block> .</block>
   <block id="cbc99816ef9ba154c39b76f904359040" category="inline-link-macro">Scopri i carichi di lavoro KVM</block>
   <block id="f8e001546fd93d61022ff713e03298f8" category="list-text">Per i carichi di lavoro KVM, fare riferimento a<block ref="6343f6c391fb966ad325d76211a59524" category="inline-link-macro-rx"></block> .</block>
-  <block id="73e8c7525f434c946114ba1e9477bb6e" category="inline-link-macro">Scopri i carichi di lavoro Oracle</block>
-  <block id="76b4ef756320e6f6ca5d1c225439f7f5" category="list-text">Per i carichi di lavoro Oracle, fare riferimento a<block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block> .</block>
   <block id="8ea9fd29df4eb58092d8258c6ccf3ad8" category="inline-link-macro">Scopri i carichi di lavoro Hyper-V</block>
   <block id="3b97616ae538f454d8812a77c84392d1" category="list-text">Per i carichi di lavoro Hyper-V, fare riferimento a<block ref="e853aa4eb98908dd4b95a8cc80d9972f" category="inline-link-macro-rx"></block> .</block>
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">Per i carichi di lavoro Kubernetes, fare riferimento a<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> .</block>
@@ -1491,15 +1477,11 @@
   <block id="f467c6231a57911e62401cfb0159d95b" category="paragraph">Vengono visualizzate le stesse tre opzioni presenti quando si esegue il ripristino dalla pagina Ripristina:</block>
   <block id="3cc2b93a80a97a7cacb8c0d4f5da6c20" category="list-text">Ripristinare un punto specifico nel tempo</block>
   <block id="d25e9ce84a1050d163d601d4bd2fa073" category="list-text">Continuare con gli stessi passaggi per l'opzione di ripristino dalla pagina Ripristina</block>
-  <block id="7b588dfa65a0573a51e5ab0e2d3023e9" category="summary">Proteggi i tuoi carichi di lavoro Oracle con il backup e il ripristino NetApp .</block>
-  <block id="2fb29b6c97ac2109b4c3d3537ae25b9d" category="inline-link-macro">Crea e gestisci gruppi di protezione per carichi di lavoro Oracle con NetApp Backup and Recovery</block>
-  <block id="02cdaf324b33a661330ff286d04c61aa" category="list-text">Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere<block ref="c9c15450fe1a04e77c0be05f7471779a" category="inline-link-macro-rx"></block> per maggiori informazioni.</block>
   <block id="5a232101cd6b911084269b39726e0f05" category="list-text">Esegui subito il backup di un gruppo di protezione (crea subito un backup su richiesta).</block>
   <block id="99a4d620d348de03a46767ad6dd1a27c" category="list-text">Esegui subito il backup di un database.</block>
   <block id="0e3dfc8aecedae71e6c1e03c52c544ec" category="section-title">Esegui subito il backup di un database con un backup su richiesta</block>
   <block id="4875f551855c5d20449df9a7a54edc8a" category="paragraph">È possibile eseguire un backup su richiesta di un singolo database.</block>
   <block id="d8e3db119b7cf9c31602a2121bfa4365" category="list-text">Selezionare il database di cui si desidera eseguire il backup.</block>
-  <block id="630481ffe08dcea3b2119a33662f9d29" category="summary">Proteggi i tuoi carichi di lavoro Oracle con NetApp Backup and Recovery.</block>
   <block id="77b7ee08ed330c77cd76797cc7019357" category="doc">Montare e smontare i punti di ripristino del database Oracle con NetApp Backup and Recovery</block>
   <block id="797c8d8b5a0f5a880bd15fd855682db6" category="paragraph">Potrebbe essere necessario montare un punto di ripristino di Oracle Database se è necessario accedere al database in uno stato controllato per eseguire operazioni di ripristino.</block>
   <block id="079a3f8ec0bb95d8f0ae5d36f04de7c4" category="section-title">Montare un punto di ripristino del database Oracle</block>
@@ -1523,18 +1505,7 @@
   <block id="504b4d4156c8604edbbda8b908e689cf" category="list-text">Confermare l'azione selezionando *Smonta*.</block>
   <block id="bb205d6469d1d38895fc74e5fe58b024" category="summary">È possibile proteggere le macchine virtuali Oracle dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati.</block>
   <block id="3e4addf457cac6e6f2f337996275bb1f" category="doc">Panoramica sulla protezione dei carichi di lavoro del database Oracle</block>
-  <block id="e58749f44abd3f2817fad6c2ae87fb45" category="paragraph">È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro Oracle:</block>
-  <block id="0ef9d15a5323698b079164a26f451715" category="list-text"><block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block></block>
-  <block id="f7f66fefaac908c86a635d80ae33c9ef" category="inline-link-macro">Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle</block>
-  <block id="f647111ef4b009cd2203e0e63adc9ed6" category="list-text"><block ref="f647111ef4b009cd2203e0e63adc9ed6" category="inline-link-macro-rx"></block></block>
-  <block id="4480911dc79312ba167f517766049321" category="inline-link-macro">Eseguire il backup dei carichi di lavoro Oracle</block>
-  <block id="e7a6be28bd48e7e2231639888ee15d80" category="list-text"><block ref="e7a6be28bd48e7e2231639888ee15d80" category="inline-link-macro-rx"></block></block>
-  <block id="9a5fb46f313add6fc79aea102dcbaeb7" category="inline-link-macro">Ripristinare i carichi di lavoro Oracle</block>
-  <block id="1cb9d10dd89115a71445adf4d5cf89fd" category="list-text"><block ref="1cb9d10dd89115a71445adf4d5cf89fd" category="inline-link-macro-rx"></block></block>
-  <block id="3fa704a0aa0f3e1205c4156e0affab68" category="summary">Crea e gestisci gruppi di protezione per carichi di lavoro Oracle in NetApp Backup and Recovery.</block>
   <block id="e935651dcc727466a56b42d180db281c" category="paragraph">Creare gruppi di protezione per gestire le operazioni di backup per un set di risorse di Oracle Database.  Un gruppo di protezione è un raggruppamento logico di risorse, ad esempio database, che si desidera proteggere insieme.  È necessario creare un gruppo di protezione per eseguire il backup dei database Oracle.</block>
-  <block id="30549a9efedf2c08f7e3c1070d0ec4a4" category="inline-link-macro">Esegui subito il backup dei carichi di lavoro Oracle</block>
-  <block id="9d2eb7298d6b079511014afa9fcf74b8" category="list-text">Crea subito un gruppo di protezione. Vedere<block ref="6391799ae7a331a8ab5f8579820481db" category="inline-link-macro-rx"></block> .</block>
   <block id="4d11952e83e906d7c1c3bb7b8d814881" category="doc">Ripristina i database Oracle con NetApp Backup and Recovery</block>
   <block id="79f77d8cbb1beb81481eb9b45d453a34" category="paragraph">È possibile ripristinare i database da diverse posizioni di partenza:</block>
   <block id="d69f96cdc13d3a1e25929628b856adfc" category="section-title">Come funziona il ripristino dei database Oracle</block>
@@ -1569,7 +1540,6 @@
   <block id="a4aa2f0da5fe920e49b4efa7582a1089" category="list-text">Scegliere un valore di timeout per lo script.  Se lo script non riesce a essere eseguito entro questo periodo di tempo, il ripristino verrà comunque eseguito.</block>
   <block id="f3d19f008b19feab896904cb50b1a321" category="list-text">*Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.</block>
   <block id="f8b53e55e8c6663dd48cecfd73eac0aa" category="list-text">*Aprire il database o il database contenitore in modalità LETTURA-SCRITTURA dopo il ripristino*: una volta completata l'operazione di ripristino, Backup and Recovery abiliterà la modalità LETTURA-SCRITTURA per il database.</block>
-  <block id="edbf5d4d98db112afa4f80b2be7e4681" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro Oracle.</block>
   <block id="b82be1f9be4e926901513f5106f48a87" category="summary">In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l'ora in cui viene eseguito e il numero di file di backup conservati.</block>
   <block id="94b302da41c06e07da50582e09e11a6f" category="doc">Crea e gestisci policy per gestire i backup in NetApp Backup and Recovery</block>
   <block id="014eafc4485f15b25db30025cd8b8df2" category="paragraph">In NetApp Backup and Recovery, puoi creare policy personalizzate che stabiliscono la frequenza dei backup, l'ora in cui vengono eseguiti e il numero di file di backup conservati.</block>
@@ -1586,7 +1556,6 @@
   <block id="b7e23f2fbc84fffbedf563f644b8df93" category="section-title">Visualizza le politiche</block>
   <block id="9a23580d7344d92df6d39880be8984ee" category="list-text">Dal menu NetApp Backup and Recovery , selezionare *Criteri*.</block>
   <block id="1acb02454e9197d4580e47cc314bafcc" category="list-text">Esaminare i dettagli di questa politica.</block>
-  <block id="6c3c2610bdd335f75a90c7ddab40a182" category="list-text">*Carico di lavoro*: alcuni esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V o Kubernetes.</block>
   <block id="c0d97b31eeb845274929b3f74cfce135" category="list-text">*Tipo di backup*: alcuni esempi includono il backup completo e il backup del registro.</block>
   <block id="eacf7361c754b5087b6ade2e010c1a1f" category="list-text">*Architettura*: Alcuni esempi includono snapshot locale, fan-out, cascading, disco su disco e disco su archivio oggetti.</block>
   <block id="292fca252d0ac5aa32931919e05e3331" category="list-text">*Risorse protette*: mostra quante risorse sul totale delle risorse di quel carico di lavoro sono protette.</block>
@@ -1605,7 +1574,6 @@
   <block id="b2ba8b5a519744f308bb1fe099fca96c" category="admonition">Per un elenco dei personaggi da evitare, vedere il suggerimento.</block>
   <block id="6fd5c80899312e5732b24f0d6a48f05a" category="list-text">Selezionare un agente della console dall'elenco *Agente*.</block>
   <block id="35acdaad091c35b1b0b01e1b4dfa1cae" category="list-text">Sezione *Architettura di backup*: selezionare la freccia rivolta verso il basso e scegliere il flusso di dati per il backup, ad esempio fan-out 3-2-1, cascata 3-2-1 o disco su disco.</block>
-  <block id="404347b12f0f61e72da6a2792d7aabdc" category="list-text">*Fanout 3-2-1*: da storage primario (disco) a storage secondario (disco) a cloud (archivio oggetti). Crea più copie di dati su diversi sistemi di archiviazione, ad esempio configurazioni ONTAP su ONTAP e ONTAP su object-store. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID. Queste configurazioni aiutano a ottenere una protezione ottimale dei dati e un ripristino in caso di emergenza.</block>
   <block id="6cf0d5d70bb7be2a62ce45235fdc5421" category="admonition">Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.</block>
   <block id="dd3964688f448cf4c53372241aa29860" category="paragraph">Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o sulle VM sul primario e lo replica dall'archiviazione su disco primaria all'archiviazione su disco secondaria, nonché dallo storage primario allo storage di oggetti cloud.</block>
   <block id="786fc46f790a4c1a43af79907a835e9f" category="list-text">*Cascata 3-2-1*: (non disponibile per i carichi di lavoro Kubernetes) Da storage primario (disco) a storage secondario (disco) e da storage primario (disco) a storage cloud (archivio oggetti). Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato: StorageGRID. Ciò crea una catena di replicazione dei dati su più sistemi per garantire ridondanza e affidabilità.</block>
@@ -1724,14 +1692,6 @@
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">modello di gancio di esecuzione</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">Nell'area *Prescript e postscript*, abilitare e configurare tutti gli hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup.  Per abilitare prescript o postscript, devi averne già creato almeno uno<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block> .</block>
   <block id="9f77aac915c7dddb04d022bff72e881d" category="paragraph">L'applicazione viene creata e appare nell'elenco delle applicazioni nella scheda *Applicazioni* dell'inventario Kubernetes.  La NetApp Console consente la protezione dell'applicazione in base alle impostazioni e puoi monitorare l'avanzamento nell'area *Monitoraggio* del backup e del ripristino.</block>
-  <block id="d34e75e1972332b08f5260e29a3eb456" category="section-title">Proteggere un'applicazione Kubernetes esistente</block>
-  <block id="bcd7e935fe0f91f433516ff86415dcd4" category="paragraph">Abilita un criterio di protezione su un'applicazione Kubernetes che hai già aggiunto.</block>
-  <block id="104d1a34e290d2de5a494845fa1be7b8" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione che desideri proteggere e seleziona il menu Azioni associato.</block>
-  <block id="20d541172ecc7e2d477ce2738120938c" category="list-text">Seleziona *Proteggi*.</block>
-  <block id="f58eabeb108df6c5973f0ece276c562f" category="list-text">Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo. Fare riferimento a<block ref="3739f9f9696bd133d77df1c4736a8480" category="inline-link-macro-rx"></block> per maggiori informazioni sulla creazione di policy di protezione.</block>
-  <block id="6eeabb5a1fdc64db00294aa16e2efc65" category="list-text">Nell'area *Prescript e postscript*, abilitare e configurare tutti gli hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup.  È possibile configurare il tipo di hook di esecuzione, il modello utilizzato, gli argomenti e i selettori di etichetta.</block>
-  <block id="1c5ac4940b53e1922d936ca78379e63f" category="paragraph">La Console abilita la protezione dell'applicazione in base alle impostazioni e puoi monitorare l'avanzamento nell'area *Monitoraggio* del backup e del ripristino.  Non appena si attiva la protezione per un'applicazione, la Console crea un backup completo dell'applicazione. Eventuali backup incrementali futuri vengono creati in base alla pianificazione definita nella policy di protezione associata all'applicazione.</block>
-  <block id="53932eb694521eb34987ea9c43f0a292" category="section-title">Esegui subito il backup di un'applicazione Kubernetes</block>
   <block id="4b6c3c6a317300967177891eec6ba8fd" category="paragraph">Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.</block>
   <block id="ef4da1dbc592e89fff8af00102b37ff3" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione di cui vuoi eseguire il backup e seleziona il menu Azioni associato.</block>
   <block id="46b6ecff43461a732d3eda912df73a42" category="list-text">Seleziona *Esegui backup ora*.</block>
@@ -1906,12 +1866,9 @@
   <block id="492fd59c461c682062524e7444f188c1" category="list-text">*Carichi di lavoro Hyper-V (anteprima)*:</block>
   <block id="bcd52013d4bab273c97ec6049c73eb19" category="inline-link-macro">Proteggere i carichi di lavoro Hyper-V</block>
   <block id="6a88dd8d1df81c216e94864f62adb181" category="list-text">Fare riferimento a<block ref="5ad55f158503485706ea0446a924f3eb" category="inline-link-macro-rx"></block> .</block>
-  <block id="543cf4a1253e720b7d0efccfee564ef5" category="list-text">*Carichi di lavoro Oracle (anteprima)*:</block>
   <block id="9ccb39720e55d973803af308a46b7f9d" category="list-text">Eseguire il backup e il ripristino di database e registri</block>
   <block id="b9f9fe4773f2a73086e819aa78413e31" category="list-text">Creare policy per gestire i backup del database e del registro</block>
   <block id="1aced3c59920e62aa237af558421e7bc" category="list-text">Proteggere un database con un'architettura di backup 3-2-1</block>
-  <block id="a0150835683a46b302509d38f9c83e9f" category="inline-link-macro">Proteggi i carichi di lavoro Oracle</block>
-  <block id="f09a108fc13868756069afcfa8a6c090" category="list-text">Fare riferimento a<block ref="5b41776fecc34d5acf699b1f80f8e0f5" category="inline-link-macro-rx"></block> .</block>
   <block id="3066f1ebade966cf5d09fd225d9c82df" category="list-text">*Carichi di lavoro Kubernetes (anteprima)*:</block>
   <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">Gestisci e proteggi le tue applicazioni e risorse Kubernetes, tutto in un unico posto.</block>
   <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">Utilizza criteri di protezione per strutturare i tuoi backup incrementali.</block>
@@ -2098,7 +2055,6 @@
   <block id="0e41245837200bd6043f82d33b20190c" category="list-text">Una moderna distribuzione Linux che esegue la versione del kernel 5.14.0-503.22.1.el9_5.x86_64 (a lungo termine) o successiva</block>
   <block id="c970c11004fdd5ce2f1cc065c0a6ad6b" category="list-text">QEMU Guest Agent versione 9.0.0 o successiva</block>
   <block id="1264706b848dd57765cb327cb40961af" category="list-text">libvirt versione 10.5.0 o successiva</block>
-  <block id="a006e7e12c4a49555c6da7767f1640f2" category="section-title">Requisiti per la protezione dei carichi di lavoro Oracle</block>
   <block id="bd1f903de615a0961eab2be934f825c0" category="paragraph">Assicurati che il tuo ambiente soddisfi requisiti specifici per scoprire e proteggere le risorse Oracle.</block>
   <block id="7509d7baf822c07a0ff0cabeada1f21a" category="list-text">Database Oracle:</block>
   <block id="d4e3176f0ba3c81be4e51425c09b9e73" category="list-text">Oracle 19C e 21C sono supportati in una distribuzione autonoma.</block>
@@ -2119,9 +2075,6 @@
   <block id="42113cf11e30b764619d3a98db65262d" category="list-text">Motore Kubernetes Rancher 2 (RKE2) v1.26.7+rke2r1, v1.28.5+rke2r1</block>
   <block id="3c230289b9e480de28e2d616db466bc7" category="list-text">Suse Rancher</block>
   <block id="59aaea4a07522d3cb111c0d446b7e7e3" category="list-text">NetApp Trident 24.10 o successivo</block>
-  <block id="f186f228bc71cb57a140bcc20f23c216" category="list-text">NetApp Trident Protect 25.07 o versione successiva (installato durante la scoperta del carico di lavoro di Kubernetes)</block>
-  <block id="2c2fbc0a1685b20c95a5f489ce3868b3" category="list-text">NetApp Trident Protect Connector 25.07 o versione successiva (installato durante l'individuazione del carico di lavoro di Kubernetes)</block>
-  <block id="362363dccd2cc68b02c87c4b9e577f91" category="list-text">Assicurarsi che la porta TCP 443 non sia filtrata in uscita tra il cluster Kubernetes, il connettore Trident Protect e il proxy Trident Protect.</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">Requisiti per la protezione dei carichi di lavoro Hyper-V</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">Assicurati che la tua istanza Hyper-V soddisfi requisiti specifici per individuare e proteggere le macchine virtuali.</block>
   <block id="99fcf7547e608c33c370f1d5fe54e0a9" category="list-text">Edizioni Microsoft Hyper-V 2019, 2022 e 2025</block>
@@ -4266,7 +4219,6 @@
   <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Proteggi i carichi di lavoro VMware (anteprima)</block>
   <block id="6a3bb59ab6ca7e1af58c7f804a58a47c" category="sidebar">Protezione dei carichi di lavoro KVM (anteprima privata)</block>
   <block id="d800ef02fd04e0bcce643b8bacdfd33e" category="sidebar">Proteggi i carichi di lavoro Hyper-V (anteprima privata)</block>
-  <block id="0b4d495603c5e5fa389805d34bdd9a7f" category="sidebar">Proteggi i carichi di lavoro Oracle (anteprima privata)</block>
   <block id="8f12fe2d1611902de146ad61b89b8295" category="sidebar">Proteggi i carichi di lavoro di Kubernetes (anteprima)</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blog e comunità</block>
   <block id="cc58d3a9b2264c4fd8cb1d3f61b90bdc" category="sidebar">NetApp Data Services</block>
@@ -4278,7 +4230,6 @@
   <block id="fe5216e8c6ca199aaa9802985fb31c17" category="sidebar">Limitazioni note per i carichi di lavoro VMware</block>
   <block id="006d31cf1f539a7e450614470546345c" category="sidebar">Limitazioni note per i carichi di lavoro Hyper-V</block>
   <block id="c97a0e572b66db226b5bead553a18a21" category="sidebar">Limitazioni note per i carichi di lavoro KVM</block>
-  <block id="3feb49183384fc17fa972d94a86ad3c6" category="sidebar">Limitazioni note per i carichi di lavoro Oracle</block>
   <block id="af63af72a4851d67644aa944a5b730df" category="sidebar">Prerequisiti per NetApp Backup and Recovery</block>
   <block id="ad4016cac47a83a6e1446b1b38d42180" category="sidebar">Impostare i certificati di sicurezza per ONTAP e StorageGRID</block>
   <block id="302152c28a081827c4d7c5eeb2372c70" category="sidebar">Configurare le impostazioni generali NetApp Backup and Recovery</block>
@@ -4316,7 +4267,6 @@
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Ripristinare i dati e gli archivi dati delle macchine virtuali</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">Protezione dei carichi di lavoro KVM (anteprima)</block>
   <block id="1db561ecd535caff5b4a1e7b87668d89" category="sidebar">Protezione dei carichi di lavoro Hyper-V (anteprima)</block>
-  <block id="d9f824c8f622071705d9d0322fc719f8" category="sidebar">Proteggi i carichi di lavoro Oracle (anteprima)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Montare e smontare i punti di ripristino</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteggi i carichi di lavoro di Kubernetes (anteprima)</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes</block>
@@ -4338,7 +4288,6 @@
   <block id="96804f828cf944ce68e80e74ae8d7cc0" category="list-text">Supporto per la distribuzione Kubernetes di SUSE Rancher</block>
   <block id="7d6928dd953d625f33fbfd89243bf778" category="paragraph">Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro di Oracle Database:</block>
   <block id="d2ce5b8a55f10a315816f6647894815f" category="paragraph">Un hook di esecuzione è un'azione personalizzata che viene eseguita con un'operazione di protezione dei dati in un'applicazione Kubernetes gestita.  Ad esempio, è possibile creare snapshot coerenti con l'applicazione utilizzando un hook di esecuzione per mettere in pausa le transazioni del database prima di uno snapshot e riprenderle dopo.  Quando si crea un modello di hook di esecuzione, specificare il tipo di hook, lo script da eseguire e i filtri per i contenitori di destinazione.  Utilizza il modello per collegare gli hook di esecuzione alle tue applicazioni.</block>
-  <block id="404af526c79edf2284a92604e83b4a45" category="paragraph">NetApp Backup and Recovery blocca e sblocca i file system per applicazioni come KubeVirt durante la protezione dei dati.  È possibile disattivare questo comportamento a livello globale o per applicazioni specifiche utilizzando la documentazione di Trident Protect:</block>
   <block id="d77282c03df8b10c2c7ca1ca7deb9f52" category="list-text">Tutti gli hook di esecuzione pre-operazione personalizzati applicabili vengono eseguiti sui contenitori appropriati. È possibile creare più hook pre-operativi personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.</block>
   <block id="8ae86463dd99c66d5a9ac9fadaa7dbd9" category="list-text">NetApp Backup and Recovery esegue tutti gli hook di esecuzione pre-operazione personalizzati applicabili sui contenitori appropriati.  È possibile creare più hook post-operazione personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.</block>
   <block id="fa277bc4215bc063ac5d9134fd68a383" category="paragraph">Se si creano più hook dello stesso tipo, il loro ordine di esecuzione non è garantito.  I ganci di tipo diverso vengono sempre eseguiti nell'ordine specificato. Ad esempio, ecco l'ordine di esecuzione di una configurazione che presenta tutti i diversi tipi di hook:</block>
@@ -4429,13 +4378,11 @@
   <block id="3d1e74249acc11e215f68c784ae29e1f" category="list-text">*Dalla pagina Ripristina*: usa questa opzione per ripristinare una risorsa quando non ne conosci il nome, la posizione o l'ultima data valida.  Cerca l'istantanea utilizzando i filtri.</block>
   <block id="925339af26e35afc6f5984d691aa25af" category="list-text">*Dalla pagina Inventario*: usa questa opzione per ripristinare una risorsa specifica quando ne conosci il nome, la posizione e l'ultima data di validità.  Sfoglia l'elenco per trovare la risorsa.</block>
   <block id="bf094c6c5fccca6c427a43080edf5833" category="list-text">Nel menu Database, seleziona un database con stato "Protetto".</block>
-  <block id="ce2efe5d519e4c1242177b404520665a" category="doc">Eseguire il backup dei carichi di lavoro Oracle utilizzando NetApp Backup and Recovery</block>
   <block id="b3b9d779c6c22d1258ffcbda438336c1" category="paragraph">Utilizza NetApp Backup and Recovery per eseguire il backup di gruppi di protezione o database Oracle Database da sistemi ONTAP locali a storage cloud, tra cui Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3.  NetApp Backup and Recovery esegue il backup dei database e dei dati di registro in ciascun gruppo di protezione.</block>
   <block id="fe390808083985de8172887380a80c5e" category="admonition">Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare policy che gestiscano le operazioni di backup e ripristino. Vedere<block ref="08bf6451e8be54326517c755d3e4cd23" category="inline-link-macro-rx"></block> per istruzioni.</block>
   <block id="26bbb7b442740e80ed850d884bef0605" category="paragraph">Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.</block>
   <block id="0dd484dd2e82385c156b95d98fd2f3fa" category="admonition">NetApp Backup and Recovery utilizza la stessa policy sia per il gruppo di backup che per quello di protezione.</block>
   <block id="b5ba243769c03b5476a2b6c06b8c5b5a" category="paragraph">Se si configura il criterio di protezione per un database in modo che conservi i log di archivio, è possibile montare punti di ripristino per visualizzare la cronologia delle modifiche del database.</block>
-  <block id="d038c8bfa872280d5c1a567bff169d05" category="paragraph">Proteggi i database e i registri Oracle utilizzando NetApp Backup and Recovery.  Ottieni backup e ripristini rapidi, efficienti in termini di spazio, coerenti con gli arresti anomali e con il database.  Esegui il backup dei carichi di lavoro Oracle su AWS S3, NetApp StorageGRID, Azure Blob Storage o ONTAP S3.  Ripristinare i backup su un host Oracle locale.</block>
   <block id="21214671e7222d24ea30444729853d36" category="paragraph">Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione per eseguirne il backup e il ripristino insieme.</block>
   <block id="e1a8b67cb61fcb0e0a3b88e66f93f4cd" category="paragraph">Sospendere un gruppo di protezione per sospendere i backup pianificati.</block>
   <block id="2efbc86f2f62c8819af426f268c543d5" category="paragraph">Quando si elimina un gruppo di protezione, si rimuovono sia il gruppo stesso che tutte le pianificazioni di backup per il gruppo.  Elimina un gruppo di protezione se non ti serve più.</block>
@@ -4765,7 +4712,6 @@
   <block id="48ddddb06a7cca979a8b0eb4de198113" category="doc">Miglioramenti dei carichi di lavoro del volume ONTAP</block>
   <block id="cbab7e5b614b876bebcce0c29fd1afb6" category="paragraph">*Supporto per più bucket*: (Anteprima privata) A partire da ONTAP 9.17.1 e versioni successive, è possibile proteggere i volumi all'interno di un sistema con un massimo di 6 bucket per sistema su diversi provider cloud.</block>
   <block id="695e42eb94aa8a143b557dc75e4cc65e" category="inline-link-macro">Scopri di più sul backup dei dati del volume ONTAP utilizzando NetApp Backup and Recovery</block>
-  <block id="c380d2c239579706adcab966ccded39a" category="paragraph"><block ref="040f925aac1483fc9f3f6e8bd68d3888" category="inline-link-macro-rx"></block>.</block>
   <block id="558e5aec99d772eb277c493188d3c607" category="section-title">Miglioramenti dei carichi di lavoro VMware</block>
   <block id="d8cf45a94e57901a57764525baf2f9bf" category="paragraph">Questa versione dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:</block>
   <block id="3b2cdba7e0b9954f4d9e79b310fdbccd" category="list-text">Ora puoi ripristinare i file e le cartelle del sistema operativo guest.</block>
@@ -4974,4 +4920,329 @@
   <block id="83de53928b74eea738d883969ca231fa" category="list-text">NetApp Backup and Recovery ora supporta le macchine virtuali Hyper-V fornite da System Center Virtual Machine Manager (SCVMM) e ospitate su una CIFS share.</block>
   <block id="fe3a06f4a23ebd296fcaecd751b29ac6" category="paragraph">L'anteprima dei carichi di lavoro KVM ora protegge gli host KVM e le macchine virtuali gestite da Apache CloudStack.</block>
   <block id="e82f8585939ff44aeed4d4c863058cee" category="list-text">A partire da ONTAP 9.18.1, i backup dei volumi FlexGroup sono supportati nelle configurazioni MetroCluster.</block>
+  <block id="09b3e69fece0c8fed98cbfa4f60560d0" category="paragraph">Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di backup s3 di lunga durata. Se il token scade durante l'operazione di backup, l'operazione può fallire.</block>
+  <block id="5eb831e0d78e65bcd3dba1b12bc07037" category="inline-link">Documentazione API AWS</block>
+  <block id="acc296a904bd0d4d976a52cfe9fe9b8c" category="list-text">Fare riferimento a<block ref="718365c4473e4015a2556ceb49bc6d0e" category="inline-link-rx"></block> per ulteriori informazioni sulla verifica della scadenza del token della sessione corrente.</block>
+  <block id="47700faecc8b055ea48413402a7add11" category="inline-link">Documentazione AWS IAM</block>
+  <block id="40a9530583ad3747ca30675858b0a6cd" category="list-text">Fare riferimento a<block ref="101809cc7793764f39e2d5fc223ea04c" category="inline-link-rx"></block> per ulteriori informazioni sulle credenziali con le risorse AWS.</block>
+  <block id="40a81a4873df306bd0d241dc6c5f81ba" category="admonition">I modelli che crei qui sono utilizzabili solo quando proteggi i carichi di lavoro Kubernetes.</block>
+  <block id="782b4a6bf31d7d564f002ed80e56a970" category="doc">Annotazione del timeout dello spostamento dei dati</block>
+  <block id="2cf4114566459ea3b3a5ac507cb86fd9" category="paragraph">Durante le operazioni di backup e ripristino, è possibile utilizzare l'annotazione <block ref="f49fa3f76b2a4fcdf04dff369d417d84" prefix=" " category="inline-code"></block> per configurare il timeout per le operazioni di spostamento dei dati. Questa annotazione specifica il tempo massimo, in secondi, che un data mover deve attendere per il completamento di una specifica operazione prima di andare in timeout. È particolarmente utile in situazioni in cui problemi di rete o altri fattori potrebbero causare lo stallo delle operazioni di spostamento dei dati. Aiuta a rilevare e gestire le operazioni in stallo, anziché impostare un timeout generale per l'intero processo. Ad esempio, se non si registra alcun progresso nel ripristino dei dati del volume a causa di problemi di rete, l'operazione scadrà in base alla durata specificata.</block>
+  <block id="c2b7f24f4ddbaedb4e3d9e19f77eebac" category="paragraph">Puoi utilizzare questa annotazione nel tuo file YAML come mostrato di seguito:</block>
+  <block id="14a0e26cbe187a4754f8b523ffba6073" category="paragraph">In questo esempio, l'annotazione fallisce l'operazione <block ref="ec2a2895b09b6030ec8cc1b3c43ddc4d" prefix=" " category="inline-code"></block> se non si verifica alcun progresso entro 2 secondi nell'operazione di ripristino.</block>
+  <block id="c49aaf233c16f1193a8d683c17866eea" category="admonition">Se il valore dell'annotazione è minore o uguale a 0, l'operazione fallirà immediatamente.</block>
+  <block id="94d4a30d9c79c7c0ed251e92efa4cf7e" category="paragraph">Trident Protect offre funzionalità di blocco e sblocco del file system per le macchine virtuali KubeVirt durante le operazioni di protezione dei dati, per garantire la coerenza dei dati. Il metodo di configurazione e il comportamento predefinito per le operazioni di blocco delle VM variano tra le versioni di Trident Protect, con le release più recenti che offrono una configurazione semplificata tramite i parametri del chart Helm.</block>
+  <block id="5ac5b84505fffb8149e9d0cb84ddedbe" category="admonition">Durante le operazioni di ripristino, qualsiasi <block ref="890b633d48ac6398f14ae722463da08b" prefix=" " category="inline-code"></block> creato per una macchina virtuale (VM) non viene ripristinato.</block>
+  <block id="d7a7411094ef8b2d0700b0d64c688766" category="example-title">Trident Protect 25.10 e versioni successive</block>
+  <block id="bef8e5378f20989a496a5caac68e7dc0" category="paragraph">Trident Protect blocca e sblocca automaticamente i file system di KubeVirt durante le operazioni di protezione dei dati per garantire la coerenza. A partire da Trident Protect 25.10, puoi disabilitare questo comportamento utilizzando il parametro <block ref="f9e1922095ec0e9e8b4f185586e66425" prefix=" " category="inline-code"></block> durante l'installazione del chart Helm. Il parametro è abilitato per impostazione predefinita.</block>
+  <block id="e8ac8c64b628b92773c6f939fe2b1102" category="example-title">Trident Protect 24.10.1 a 25.06</block>
+  <block id="a099f4b5b32bb2a3c98bf39fd2eada0d" category="paragraph">A partire da Trident Protect 24.10.1, Trident Protect blocca e sblocca automaticamente i file system KubeVirt durante le operazioni di protezione dei dati. Facoltativamente, puoi disabilitare questo comportamento automatico utilizzando il seguente comando:</block>
+  <block id="ea7f18044a9efb2ea47bdd370e5870f3" category="example-title">Trident Protect 24.10</block>
+  <block id="98d3ce5c789124fc9207b48d4d1e8fc7" category="paragraph">Trident Protect 24.10 non garantisce automaticamente uno stato coerente per i file system delle VM KubeVirt durante le operazioni di protezione dei dati. Se si desidera proteggere i dati delle VM KubeVirt utilizzando Trident Protect 24.10, è necessario abilitare manualmente la funzionalità di freeze/unfreeze per i file system prima dell'operazione di protezione dei dati. Ciò garantisce che i file system siano in uno stato coerente.</block>
+  <block id="acb14ba5b70eb330a1d4de9c6b7a325d" category="inline-link-macro">configurazione della virtualizzazione</block>
+  <block id="5ea5c247812e1dca5ff02ca853f05032" category="paragraph">È possibile configurare Trident Protect 24.10 per gestire il blocco e lo sblocco del file system della VM durante le operazioni di protezione dei dati <block ref="e0dd4c4b8aa16596df6c3f5cb36d3cdc" category="inline-link-macro-rx"></block> e quindi utilizzare il seguente comando:</block>
+  <block id="cedf2576eebff15fc6b30d5a7109eb6b" category="doc">Annotazioni ed etichette dello spazio dei nomi durante le operazioni di ripristino e failover</block>
+  <block id="131ff34387be167411ffda7d60b577e7" category="paragraph">Durante le operazioni di ripristino e failover, le etichette e le annotazioni nello spazio dei nomi di destinazione vengono rese corrispondenti alle etichette e alle annotazioni nello spazio dei nomi di origine. Le etichette o le annotazioni dello spazio dei nomi di origine che non esistono nello spazio dei nomi di destinazione vengono aggiunte e tutte le etichette o annotazioni già esistenti vengono sovrascritte per corrispondere al valore dello spazio dei nomi di origine. Le etichette o le annotazioni che esistono solo nello spazio dei nomi di destinazione rimangono invariate.</block>
+  <block id="20f40e0b9308901dac07ce8a8efb3350" category="inline-link-macro">Documentazione sui vincoli del contesto di sicurezza di OpenShift</block>
+  <block id="80aabc2f42a52376f3d884d3b02360f4" category="admonition">Se si utilizza Red Hat OpenShift, è importante tenere presente il ruolo fondamentale delle annotazioni dello spazio dei nomi negli ambienti OpenShift. Le annotazioni dello spazio dei nomi garantiscono che i pod ripristinati aderiscano alle autorizzazioni e alle configurazioni di sicurezza appropriate definite dai vincoli del contesto di sicurezza (SCC) di OpenShift e possano accedere ai volumi senza problemi di autorizzazione. Per ulteriori informazioni, consultare il <block ref="842acfa178c0bbf09e368bf9db0716b8" category="inline-link-macro-rx"></block>.</block>
+  <block id="6c83555d4261acb08ebbc5f24823dc7b" category="paragraph">È possibile impedire che specifiche annotazioni nello spazio dei nomi di destinazione vengano sovrascritte impostando la variabile di ambiente Kubernetes <block ref="1580ff61f204e9d56cd5324c7e9221ba" prefix=" " category="inline-code"></block> prima di eseguire l'operazione di ripristino o failover. Ad esempio:</block>
+  <block id="59f713e31282fe744caf06335d891f9a" category="inline-link-macro">Configura impostazioni aggiuntive dell'helm chart Trident Protect</block>
+  <block id="98b806d92f2e28da541021a181de980f" category="admonition">Quando si esegue un'operazione di ripristino o failover, tutte le annotazioni e le etichette dello spazio dei nomi specificate in<block ref="22416353aff9ef4322e1ee858f418ae4" prefix=" " category="inline-code"></block> e<block ref="8028cf835d9b72ff2d6f835934c25568" prefix=" " category="inline-code"></block> sono escluse dall'operazione di ripristino o failover. Assicurarsi che queste impostazioni siano configurate durante l'installazione iniziale di Helm. Per ulteriori informazioni, consultare <block ref="647ed99900e7ff1307ad7b7cec525a2c" category="inline-link-macro-rx"></block>.</block>
+  <block id="d65eac563b898cb7e41b8853a4fe1a3c" category="paragraph">Se hai installato l'applicazione sorgente utilizzando Helm con il <block ref="cc1f5c1d16e33b8463c9ee27295cd5df" prefix=" " category="inline-code"></block> flag, viene riservato un trattamento speciale alla chiave dell'etichetta <block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block>. Durante il processo di ripristino o failover, Trident Protect copia questa etichetta nello spazio dei nomi di destinazione, ma aggiorna il valore a quello dello spazio dei nomi di destinazione se il valore della sorgente corrisponde allo spazio dei nomi di origine. Se questo valore non corrisponde allo spazio dei nomi di origine, viene copiato nello spazio dei nomi di destinazione senza modifiche.</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">Esempio</block>
+  <block id="1280c48f074ec68fd2281266662c9a3f" category="paragraph">Il seguente esempio presenta uno spazio dei nomi di origine e uno di destinazione, ciascuno con annotazioni ed etichette diverse. Puoi vedere lo stato dello spazio dei nomi di destinazione prima e dopo l'operazione e come le annotazioni e le etichette vengono combinate o sovrascritte nello spazio dei nomi di destinazione.</block>
+  <block id="2cfe257f724ed59a07ab01918c828fb5" category="section-title">Prima dell'operazione di ripristino o failover</block>
+  <block id="c972cd959174c84d137520d91c011446" category="paragraph">La tabella seguente illustra lo stato degli spazi dei nomi di origine e di destinazione di esempio prima dell'operazione di ripristino o failover:</block>
+  <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">Spazio dei nomi</block>
+  <block id="933e469cb306a0ea9faabd3e4235d3be" category="cell">Annotazioni</block>
+  <block id="3ad6cb6100190c8f81e99fd52debf7ef" category="cell">Etichette</block>
+  <block id="86a2c974d76e381c7efd2206939722b7" category="cell">Namespace ns-1 (origine)</block>
+  <block id="278dbe8403d8ebf0d4ec8f723ca24aa6" category="list-text">annotation.one/key: "updatedvalue"</block>
+  <block id="7217e7166d38adddcd72b9b1c9359148" category="list-text">annotation.two/key: "true"</block>
+  <block id="a03c56a353af6ece3297a5fcad5250f2" category="list-text">ambiente=produzione</block>
+  <block id="d1642f369aa9d43205cf91975f1359d4" category="list-text">compliance=hipaa</block>
+  <block id="fc10b995e3d1c13cbae652922eba0bb6" category="list-text">name=ns-1</block>
+  <block id="58e6b4eeb688a71c985d2593769d2fda" category="cell">Namespace ns-2 (destinazione)</block>
+  <block id="f0e6f2ec2d0d1aa7012e3b32889c034c" category="list-text">annotation.one/key: "true"</block>
+  <block id="1e678090acf06eb2bf74c38dee9d3317" category="list-text">annotazione.tre/chiave: "false"</block>
+  <block id="ebbaf450aa5330e33917a8de9157e099" category="list-text">role=database</block>
+  <block id="46c40b68ab6fcc817f5134602b1985e3" category="section-title">Dopo l'operazione di ripristino</block>
+  <block id="15d6567aa33ad00e352de9164a741b8b" category="paragraph">La tabella seguente illustra lo stato dello spazio dei nomi di destinazione di esempio dopo l'operazione di ripristino o failover. Alcune chiavi sono state aggiunte, alcune sono state sovrascritte e l'<block ref="b068931cc450442b63f5b3d276ea4297" prefix=" " category="inline-code"></block>etichetta è stata aggiornata per corrispondere allo spazio dei nomi di destinazione:</block>
+  <block id="a8306d4d1af4239dba9a6bcfd799eba7" category="list-text">name=ns-2</block>
+  <block id="a5085953f7b15a312b4e12827abc66e5" category="list-text">(_Facoltativo_) Se è necessario selezionare solo determinate risorse dell'applicazione da ripristinare, aggiungere un filtro che includa o escluda le risorse contrassegnate con etichette particolari:</block>
+  <block id="2cb1c3616d5b69db8670e7040d8b858f" category="admonition">Trident Protect seleziona automaticamente alcune risorse in base alla loro relazione con le risorse che selezioni. Ad esempio, se selezioni una risorsa di richiesta di volume persistente e questa ha un pod associato, Trident Protect ripristinerà anche il pod associato.</block>
+  <block id="4a0207b6a74b63dcaaa4d58fe75ec431" category="list-text">*resourceFilter.resourceSelectionCriteria*: (Obbligatorio per il filtraggio) Utilizzare <block ref="f4d72a64acd8929c0cc9ed96a7a336cc" prefix=" " category="inline-code"></block> o <block ref="843f2812f595e7ec7c5036e89fde02d6" prefix=" " category="inline-code"></block> per includere o escludere una risorsa definita in resourceMatchers. Aggiungere i seguenti parametri resourceMatchers per definire le risorse da includere o escludere:</block>
+  <block id="1eb6c79d30a4cb086ad406cb25fec350" category="list-text">*resourceFilter.resourceMatchers*: Un array di resourceMatcher oggetti. Se si definiscono più elementi in questo array, la corrispondenza avviene tramite un'operazione OR, e i campi all'interno di ciascun elemento (group, kind, version) corrispondono tramite un'operazione AND.</block>
+  <block id="be16b6e14200639734fb9694e3c0f655" category="list-text">*resourceMatchers[].group*: (_Facoltativo_) Gruppo della risorsa da filtrare.</block>
+  <block id="2162d9f0c97d87c37f838ea27ecb393a" category="list-text">*resourceMatchers[].kind*: (_Facoltativo_) Tipo di risorsa da filtrare.</block>
+  <block id="862dca1a77422225d13abda4b7bf539b" category="list-text">*resourceMatchers[].version*: (_Facoltativo_) Versione della risorsa da filtrare.</block>
+  <block id="f5d1dcaf86934b4541162f010db1d3e1" category="list-text">*resourceMatchers[].names*: (_Facoltativo_) Nomi nel campo metadata.name di Kubernetes della risorsa da filtrare.</block>
+  <block id="19c69b04e9f9adb29979cc0ff90625b2" category="list-text">*resourceMatchers[].namespaces*: (_Facoltativo_) Namespace nel campo metadata.name di Kubernetes della risorsa da filtrare.</block>
+  <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Documentazione Kubernetes</block>
+  <block id="cb4354b08a6a88b3c12671390a85c520" category="list-text">*resourceMatchers[].labelSelectors*: (_Facoltativo_) Stringa del selettore di etichetta nel campo metadata.name dei metadati Kubernetes della risorsa come definito in <block ref="d4ce3da8407a7d8e148bb1287288e778" category="inline-link-rx"></block>. Ad esempio:<block ref="6ea45baf659f1f35e51c8dc9005eac03" prefix=" " category="inline-code"></block>.</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Ad esempio:</block>
+  <block id="00d3f03654bed141c3478449f1760762" category="paragraph">Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.</block>
+  <block id="89a7d3742e536d3e468bf485545ed9fb" category="paragraph">Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a<block ref="dca8e6f6588b72be45d0f60d74204461" category="inline-link-rx"></block>.</block>
+  <block id="37c785778d2185acbba38fa4b6624392" category="paragraph"><block ref="b49343ccc7da9738bd595bd89e3d39db" category="inline-link-macro-rx"></block>.</block>
+  <block id="27f6ebf60d74cce9ba572615629e4416" category="doc">Miglioramenti dei carichi di lavoro Kubernetes</block>
+  <block id="de8616724d177017abdd720d7365feff" category="paragraph">Questa versione dei carichi di lavoro Kubernetes introduce le seguenti funzionalità migliorate:</block>
+  <block id="e83849cb5376223ea17f24fcaf9756e4" category="list-text">*Supporto del flusso di lavoro CR*: ora è possibile eseguire attività di protezione comuni utilizzando i CR e l'interfaccia utente web di NetApp Backup and Recovery.</block>
+  <block id="e572a091207dcc253fde964cd9d716cb" category="list-text">*Migrazione cluster*: ora puoi aggiungere i cluster Kubernetes esistenti protetti con Trident Protect a NetApp Backup and Recovery.</block>
+  <block id="9674b909ef82dfe8331f77d84e878c04" category="list-text">*Supporto del framework di alerting*: ora puoi ricevere avvisi tramite e-mail e interfaccia utente per determinati eventi del carico di lavoro Kubernetes.</block>
+  <block id="ea6aa972206a8b460e06b79e84a9211b" category="list-text">*Integrazione della scheda Ripristina*: ora puoi accedere alle azioni di ripristino del workload Kubernetes dal menu Ripristina.</block>
+  <block id="bf72fb868ac644263293cb0c5ccc59c1" category="list-text">*Supporto per l'architettura di backup fanout 3-2-1*: ora puoi utilizzare un'architettura fanout 3-2-1 nella tua policy di protezione quando proteggi i workload Kubernetes.</block>
+  <block id="3338619eac8377287ea3a8f33c958b54" category="section-title">Miglioramenti dei carichi di lavoro Oracle Database</block>
+  <block id="b663bfd2f714b44e458d15bb1e6002bc" category="paragraph">Questa versione dei carichi di lavoro Oracle Database introduce le seguenti funzionalità migliorate:</block>
+  <block id="c1cb9a739430571a50b81bf3a48a1ab8" category="list-text">*Supporto per utenti non root*: Gli utenti non root possono ora eseguire operazioni di backup, ripristino e clonazione, migliorando la sicurezza e la conformità.</block>
+  <block id="2b8a690a9b9248405fb6bba05b997f16" category="list-text">*Supporto clone*: le funzionalità di clonazione sono ora supportate negli ambienti NAS, SAN e ASM primari e secondari utilizzando ASM library v2, consentendo flussi di lavoro di protezione coordinati.</block>
+  <block id="8ff8833aaf25d3ffbe1942bc11221a77" category="list-text">*Supporto per la suddivisione dei cloni*: ora puoi suddividere gli snapshot scrivibili (cloni) dai volumi padre, liberando spazio di storage e consentendo operazioni indipendenti.</block>
+  <block id="de315feba3cc97f871a801444cebe8a8" category="list-text">*Backup e ripristino per archivio di oggetti*: Le funzionalità native di backup e ripristino sono ora supportate per le destinazioni di storage a oggetti compatibili con S3.</block>
+  <block id="ffb4de355aa6d4aa7e8805128e9c2860" category="list-text">*Clone Lifecycle Management (CLM)*: le operazioni di aggiornamento dei cloni sono supportate sullo storage primario.</block>
+  <block id="bb34df9f9d35ad561edcc8780a11b63c" category="list-text">*Clona su host alternativo*: ora puoi clonare i database su un host diverso (a scopo di test o analisi) sia dallo storage primario che dallo storage secondario.</block>
+  <block id="ec76c85c764d367b1028b426d5aaa897" category="list-text">*Supporto per i gruppi di coerenza ONTAP*: Ora sono supportati i gruppi di coerenza ONTAP, garantendo snapshot coerenti con l'applicazione su più volumi.</block>
+  <block id="07bac542633034a121251f74bf3c7880" category="list-text">NetApp Backup and Recovery ora supporta le seguenti architetture di policy di protezione per i carichi di lavoro di Oracle Database:</block>
+  <block id="8f8f2fbe982fd62b69f6aa2faf0d46da" category="list-text">Fanout 3-2-1</block>
+  <block id="55cf8812c6c22803ddfa5fd41279187d" category="list-text">Da disco a disco</block>
+  <block id="0f6d38819f95da81f8bc80258fee7071" category="list-text">Da disco a storage a oggetti</block>
+  <block id="e3b858c29172bddae0dbb7e461b2f7df" category="list-text">A cascata</block>
+  <block id="cc5d8c9d6668803b438b03567e08b611" category="section-title">Altri miglioramenti</block>
+  <block id="6ec61dc6a9b7787975d159ba164424f9" category="paragraph">I carichi di lavoro Hyper-V, KVM e VMware sono ora generalmente disponibili (GA) in NetApp Backup e ripristino.</block>
+  <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">Esaminare queste NetApp limitazioni di backup e ripristino prima di utilizzare backup e ripristino nel proprio ambiente.</block>
+  <block id="36f1a2626b3ec6834b4eb361bac96c37" category="doc">Limitazioni note con NetApp Backup e ripristino per carichi di lavoro Kubernetes</block>
+  <block id="36c070b302c08836d912ffb6841bb46e" category="section-title">Modifica della policy di protezione per un'applicazione</block>
+  <block id="ad4e872c3df8cab19a9d649f27b25605" category="paragraph">Quando si modifica la policy di protezione associata a un'applicazione per utilizzare un bucket diverso o una destinazione di replica secondaria, la policy di protezione può non riuscire.</block>
+  <block id="c21b208a187eea104dc2c97a887a8d44" category="paragraph">*Soluzione alternativa*: rimuovere e aggiungere nuovamente l'applicazione.</block>
+  <block id="bbe3b273a032bd3c8a5d28ca2ed8a114" category="section-title">Limitazione della configurazione della policy di protezione 3-2-1</block>
+  <block id="9f0dc4af8fb867cc1d90bc96a3df9976" category="paragraph">Quando si crea una policy di protezione 3-2-1 in cui non vengono eseguiti backup su storage a oggetti contemporaneamente alla replica su storage secondario, la policy di protezione si blocca durante la protezione dell'applicazione.</block>
+  <block id="7a9541e3e0859a3bc7198878ae12b9bd" category="paragraph">*Soluzione alternativa*: rimuovere e aggiungere nuovamente l'applicazione e proteggerla con una policy di protezione diversa.</block>
+  <block id="3f21300a12c48d2767fb3e5b7f83112b" category="doc">Limitazioni note con NetApp Backup e ripristino per carichi di lavoro di Oracle Database</block>
+  <block id="b295452d4036457162f0388dddf070da" category="paragraph">La seguente azione non è supportata nella versione di anteprima privata dei carichi di lavoro di Oracle Database in NetApp Backup and Recovery:</block>
+  <block id="bc757dcd5d14a5f50685dfc481e61eb9" category="paragraph">Oracle Database è supportato solo come distribuzione autonoma utilizzando NFS, SAN o ASM SAN nella versione di anteprima privata dei carichi di lavoro di Oracle Database.</block>
+  <block id="92342f1ac80ff519b37da9a3148cbbd9" category="summary">Per una maggiore sicurezza, configura l'accesso per ruoli specifici in NetApp Backup and Recovery.</block>
+  <block id="42481383ace46d9a4716cce3ab760979" category="doc">Imposta il controllo degli accessi in base al ruolo in NetApp Backup e ripristino</block>
+  <block id="c43786d5855026fcdf77809fb14618c9" category="paragraph">Per aumentare la sicurezza e controllare l'accesso alle risorse, configura l'accesso in base al ruolo per NetApp Backup and Recovery. La NetApp Console supporta il controllo degli accessi in base al ruolo (RBAC) per alcuni carichi di lavoro di Backup and Recovery. Puoi assegnare ruoli amministrativi o di visualizzazione specifici per questi carichi di lavoro. Altri carichi di lavoro che non supportano ancora il controllo degli accessi in base al ruolo rimangono accessibili a tutti gli utenti con ruoli di Backup and Recovery finché non viene supportata l'associazione a livello di progetto.</block>
+  <block id="0095575f49738915ec4332a4cab3f770" category="paragraph">Segui questi passaggi per controllare l'accesso alle risorse nella tua organizzazione. Apporta le modifiche nella pagina *Amministrazione &gt; Identità e accesso* nel menu NetApp Console.</block>
+  <block id="4ce081445a8183fac4f9d6fc6a51691e" category="admonition">Questi passaggi presuppongono che ti sia stato assegnato il ruolo di Organization Admin nella Console.</block>
+  <block id="c9b674f0a38b83f43d155669dc9e1dae" category="list-text">Crea la struttura del progetto di identità e accesso.</block>
+  <block id="4b146c004809dfbb48c225acceabf595" category="paragraph">In qualità di amministratore dell'organizzazione, configura la cartella Identity and access e la struttura del progetto in cui risiederanno i carichi di lavoro.</block>
+  <block id="26564786bd7b3b623f0d304e50e4b2c4" category="list-text">Assegna ruoli utente.</block>
+  <block id="bc84f44819baf4c2067c740895559760" category="list-text">Opzione primaria:</block>
+  <block id="5bbec3994efca5a72e64608daaa37c96" category="paragraph">Aggiungi utenti a ciascun progetto designato per i carichi di lavoro e assegna loro il ruolo appropriato. Ad esempio:</block>
+  <block id="a69e66fc51befba55c7c820be12ca0f1" category="list-text">*Organization admin* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare tutte le risorse in tutte le organizzazioni, individuare i workload di Backup and Recovery e assegnarli ai progetti (ad esempio, US East o US West).</block>
+  <block id="44ed33b9e7e797c038285a37d20e899a" category="list-text">*Amministratore di cartelle o progetti* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare solo le risorse nella cartella o nel progetto per cui dispone delle autorizzazioni, ma può individuare i workload di Backup and Recovery e assegnarli a tale progetto.</block>
+  <block id="67703f80cd44bf597b333f1cc2a34901" category="list-text">Opzione alternativa:</block>
+  <block id="6d2d1e1d6a9a3cf3960bdb349373c649" category="paragraph">Invece di concedere a un utente l'accesso completo come amministratore di Backup and Recovery, puoi assegnarti il ruolo di super admin di Backup and Recovery e scoprire direttamente i workload.</block>
+  <block id="da57866549888e8bceaf30a4db33bfc5" category="list-text">Scopri i carichi di lavoro in Backup and Recovery.</block>
+  <block id="63e4e660d97fd26bbffa7cb3968c22c4" category="paragraph">Gli amministratori dell'organizzazione o gli amministratori di cartelle o progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio, US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato.</block>
+  <block id="0e8d553f80f80eac9e99c265bf9f4d72" category="list-text">Aggiungi utenti ai progetti.</block>
+  <block id="0da282e170c520798099314d27620ed4" category="paragraph">Gli amministratori dell'organizzazione o gli amministratori di cartelle/progetti aggiungono utenti della Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di Organization viewer e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo di Backup and Recovery corretto otterranno automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="section-title">Informazioni correlate</block>
+  <block id="728d17e7146dcd6218a24c46a1de8943" category="inline-link-macro">Scopri la gestione dell'identità e dell'accesso della NetApp Console</block>
+  <block id="d612358528f4a89a703f161a8c3e4a9e" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block>.</block>
+  <block id="aedba1ff218d6d25f9aefebf5dfdff4f" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>.</block>
+  <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> per eseguire script prima e dopo i processi di backup. (Solo carichi di lavoro Kubernetes)</block>
+  <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">crea una nuova policy di protezione</block>
+  <block id="c7a4eea6d62999931e3442bac0f23c29" category="paragraph">Quando si rileva un cluster attualmente protetto con Trident Protect, tutte le pianificazioni di backup utilizzate con Trident Protect vengono disabilitate durante il processo di rilevamento (le pianificazioni di backup di Trident Protect non sono compatibili con Backup and Recovery). Per proteggere le applicazioni del cluster, <block ref="f0814d3538b9ea88d5e27855ca8d3a8e" category="inline-link-macro-rx"></block> oppure associare le applicazioni a una policy esistente. È quindi possibile rimuovere le pianificazioni di backup di Trident Protect, se necessario.</block>
+  <block id="a44ad7bb8f2123fa1919c8eb91adac29" category="list-text">Crea uno spazio dei nomi Trident Protect</block>
+  <block id="75457b35c4c6b70a7664a43e080563ca" category="list-text">Installa o aggiorna Trident Protect e il connettore Trident Protect</block>
+  <block id="dff3994b6daee1be81638e1c4964af92" category="doc">Scopri i carichi di lavoro di Oracle Database in NetApp Backup and Recovery</block>
+  <block id="e242e6f8581d6d11d04b2c80d7a16519" category="inline-link-macro">Scopri i carichi di lavoro Oracle Database</block>
+  <block id="ec9157f5af288c671e8006da3677d9c3" category="list-text">Per i carichi di lavoro di Oracle Database, fare riferimento a <block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block>.</block>
+  <block id="72581b2d72c5eaf924f3612a1d930c1f" category="summary">NetApp Backup and Recovery consente di eseguire manualmente il backup delle applicazioni Kubernetes utilizzando risorse personalizzate (CR).</block>
+  <block id="81c6902865980301c496fb545daf563f" category="doc">Esegui ora il backup delle applicazioni Kubernetes utilizzando risorse personalizzate in Backup and Recovery</block>
+  <block id="98059fcd3ca40facbefb17e9841439ff" category="section-title">Esegui subito il backup di un'applicazione Kubernetes utilizzando risorse personalizzate</block>
+  <block id="c2c21ce64dd4770c44c8642d322a5424" category="admonition">Le risorse con ambito cluster vengono incluse in un backup, snapshot o clone se sono esplicitamente referenziate nella definizione dell'applicazione o se hanno riferimenti a uno qualsiasi degli spazi dei nomi dell'applicazione.</block>
+  <block id="fe52ac2568977e4c3fd2c94c3daa5a5a" category="section-title">Crea uno snapshot locale utilizzando una risorsa personalizzata</block>
+  <block id="27c1841c409fd90a4c17d9725071d73b" category="paragraph">Per creare uno snapshot della tua applicazione Kubernetes e archiviarlo localmente, usa la risorsa personalizzata Snapshot con attributi specifici.</block>
+  <block id="dde7632642eb239d814cdb58f6e7c1a7" category="list-text">Crea il file di risorsa personalizzata (CR) e assegnagli il nome <block ref="f2a957d477f28333fe5340abcdba5f6d" prefix=" " category="inline-code"></block>.</block>
+  <block id="3585700696abe40ccc0973202ddace0a" category="list-text">Nel file che hai creato, configura i seguenti attributi:</block>
+  <block id="3dbbdf39618ebec771728a10e75c52f9" category="list-text">*metadata.name*: (_Obbligatorio_) Il nome di questa risorsa personalizzata; scegli un nome univoco e sensato per il tuo ambiente.</block>
+  <block id="14c5017706ef7ba38dbfced0b670f7e4" category="list-text">*spec.applicationRef*: Nome Kubernetes dell'applicazione di cui eseguire lo Snapshot.</block>
+  <block id="92c5bebe15e018e9b60ed9fa2a5d7736" category="list-text">*spec.appVaultRef*: (_Obbligatorio_) Il nome del AppVault in cui i contenuti dello snapshot (metadati) devono essere archiviati.</block>
+  <block id="a9860c462819471295facd0a13fc4275" category="list-text">*spec.reclaimPolicy*: (_Facoltativo_) Definisce cosa succede all'AppArchive di uno snapshot quando il CR dello snapshot viene eliminato. Ciò significa che anche quando impostato su<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>, lo snapshot verrà eliminato. Opzioni valide:</block>
+  <block id="ff5ca6a0665c8d286d507fe36b867e1c" category="list-text"><block ref="afece4245269582cb2f1009d4fb52047" prefix="" category="inline-code"></block> (predefinito)</block>
+  <block id="c009f85498c5a7a2db78e1874e6dd4b1" category="list-text"><block ref="f2a6c498fb90ee345d997f888fce3b18" prefix="" category="inline-code"></block></block>
+  <block id="7e1f6887e34df6926f4857dbe55cd426" category="list-text">Dopo aver popolato il <block ref="f2a957d477f28333fe5340abcdba5f6d" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="094b4f1f6b9b3e907c7b81b6cb1aa90b" category="section-title">Eseguire il backup di un'applicazione in un archivio di oggetti utilizzando una risorsa personalizzata</block>
+  <block id="e66dcb518f5eed46d29f1bce6d1165b8" category="paragraph">Crea un CR di backup con attributi specifici per eseguire il backup della tua applicazione su un archivio di oggetti.</block>
+  <block id="b8bcd9ef37f1224eaa43c22793dbfc80" category="list-text">Crea il file custom resource (CR) e assegnagli il nome <block ref="3cc60d6081fbcccb7d8da4092a47553e" prefix=" " category="inline-code"></block>.</block>
+  <block id="888ea90f9844794ae90f13cbee8b341f" category="list-text">*spec.applicationRef*: (_Obbligatorio_) Il nome Kubernetes dell'applicazione di cui eseguire il backup.</block>
+  <block id="e2092d1675b7aaf32ee37c20adf69a32" category="list-text">*spec.appVaultRef*: (_Obbligatorio, mutuamente esclusivo con spec.appVaultTargetsRef_) Se si utilizza lo stesso bucket per archiviare lo snapshot e il backup, questo è il nome del AppVault in cui devono essere archiviati i contenuti del backup.</block>
+  <block id="90acb6b1767d94f7c9ad46c817f6a296" category="list-text">*spec.appVaultTargetsRef*: (_Obbligatorio, mutuamente esclusivo con spec.appVaultRef_) Se si utilizzano bucket diversi per archiviare lo snapshot e il backup, questo è il nome del AppVault dove devono essere archiviati i contenuti del backup.</block>
+  <block id="c3556f7361ca71ac227ebd903de664ed" category="list-text">*spec.dataMover*: (_Facoltativo_) Una stringa che indica quale strumento di backup utilizzare per l'operazione di backup. Il valore distingue tra maiuscole e minuscole e deve essere<block ref="250c51527f347066847969f002be67a2" prefix=" " category="inline-code"></block>.</block>
+  <block id="300fad6a76be12ae227fb48393c4df0c" category="list-text">*spec.reclaimPolicy*: (_Facoltativo_) Definisce cosa succede al contenuto del backup (metadati/dati del volume) quando il Backup CR viene eliminato. Valori possibili:</block>
+  <block id="0353a7a44a8c62ed98420560f469ae63" category="list-text">*spec.cleanupSnapshot*: (_Obbligatorio_) Garantisce che lo snapshot temporaneo creato dal Backup CR non venga eliminato al termine dell'operazione di backup. Valore consigliato:<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
+  <block id="c4c1ca05ef023287f122a753e2bf09e2" category="paragraph">Esempio di YAML quando si utilizza lo stesso bucket per archiviare la Snapshot e il backup:</block>
+  <block id="4955d31336096d0bf7fe94f34e2ec86b" category="paragraph">Esempio di YAML quando si utilizzano bucket diversi per archiviare lo snapshot e il backup:</block>
+  <block id="49fca1eefbaadffc82d25ddcf6f70227" category="list-text">Dopo aver popolato il <block ref="3cc60d6081fbcccb7d8da4092a47553e" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="5ecfe1f399971241c89c85a832e8eb34" category="section-title">Crea un backup 3-2-1 fanout utilizzando una risorsa personalizzata</block>
+  <block id="5062f68e28a097921937f2397947ef97" category="paragraph">Il backup con architettura fanout 3-2-1 copia un backup sia su storage secondario che su un archivio di oggetti. Per creare un backup fanout 3-2-1, crea un Backup CR con attributi specifici.</block>
+  <block id="a4f79e3a595e7199f93e7fc4eee66aad" category="list-text">Crea il file custom resource (CR) e assegnagli il nome <block ref="5d14f6fbcd2faed4273ed95afe88d782" prefix=" " category="inline-code"></block>.</block>
+  <block id="8a1eea1b8ed14b7d1a7a0f6ac5a52124" category="list-text">*spec.appVaultTargetsRef*: (_Obbligatorio_) Il nome del AppVault in cui devono essere archiviati i contenuti del backup.</block>
+  <block id="f13a97e3ca838cd3b17d6f7d093dac64" category="list-text">*spec.replicateSnapshot*: (_Obbligatorio_) Indica a Backup and Recovery di replicare lo snapshot nello storage secondario. Valore obbligatorio:<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
+  <block id="8b59df0e684df8c88e38a7fccd0b3e1c" category="list-text">*spec.replicateSnapshotReclaimPolicy*: (_Facoltativo_) Definisce cosa succede allo snapshot replicato quando viene eliminato. Valori possibili:</block>
+  <block id="139f344cca23a89c521bc7cc6c7100b8" category="paragraph">Esempio YAML:</block>
+  <block id="743d24f676c4a718096faa6e2308b198" category="list-text">Dopo aver popolato il <block ref="5d14f6fbcd2faed4273ed95afe88d782" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="3f09cbddd61fbee1ddfdf268eb77431c" category="section-title">Annotazioni di backup supportate</block>
+  <block id="7f2c724042753cc2a998724f90cd367b" category="paragraph">La tabella seguente descrive le annotazioni che è possibile utilizzare quando si crea un CR di backup.</block>
+  <block id="55f6611cb342565cf0f5002400f53a95" category="cell">Annotazione</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Tipo</block>
+  <block id="31ce3cdcd67850870b616f75b555bbc5" category="cell">Valore predefinito</block>
+  <block id="27f412d00b6f20d8bd151bc0355eae9a" category="cell">protect.trident.netapp.io/full-backup</block>
+  <block id="b45cffe084dd3d20d928bee85e7b0f21" category="cell">stringa</block>
+  <block id="ff6493b4c08e9896ced760eabb2513ed" category="cell">Specifica se un backup deve essere non incrementale. Impostare su <block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> per creare un backup non incrementale. È best practice eseguire periodicamente un backup completo e poi eseguire backup incrementali tra un backup completo e l'altro per ridurre al minimo il rischio associato ai ripristini.</block>
+  <block id="c07fbc0b2a1a865fe9e3a55c05b4f690" category="cell">"false"</block>
+  <block id="59177e9fd24a996fe7acc348af54e912" category="cell">protect.trident.netapp.io/snapshot-completion-timeout</block>
+  <block id="c464fe04226687fa8c814ba8a8690384" category="cell">Il tempo massimo consentito per il completamento dell'operazione di snapshot complessiva.</block>
+  <block id="435bbfd1496ab991e2a7530d2c7273b1" category="cell">"60m"</block>
+  <block id="a3f0891bded2c705ab3b29833481ffcf" category="cell">protect.trident.netapp.io/volume-snapshots-ready-to-use-timeout</block>
+  <block id="67c844e70c6f5fd7910ea8f4358464b6" category="cell">Tempo massimo consentito affinché gli snapshot del volume raggiungano lo stato pronto all'uso.</block>
+  <block id="38986de1c1221cb10e5c108c3ad55e0e" category="cell">"30m"</block>
+  <block id="af978cfba15392673bcd27f4c22e2926" category="cell">protect.trident.netapp.io/volume-snapshots-created-timeout</block>
+  <block id="c748817d9411064cf0b0b7cc203fc5be" category="cell">Il tempo massimo consentito per la creazione di snapshot del volume.</block>
+  <block id="e36568406cce6542af248eed6ec657e2" category="cell">"5m"</block>
+  <block id="728633ade1403bcbcd881fc22ec19596" category="cell">protect.trident.netapp.io/pvc-bind-timeout-sec</block>
+  <block id="fc7da248a2f7c60cc6dde87d2093c48e" category="cell">Tempo massimo (in secondi) di attesa affinché i nuovi PersistentVolumeClaims (PVC) creati raggiungano la <block ref="685d1f2146dd079015e81918414e8971" prefix=" " category="inline-code"></block> fase prima che l'operazione fallisca.</block>
+  <block id="d396afb1bbf01f546690ad93f3524626" category="cell">"1200" (20 minuti)</block>
+  <block id="4255dda5f5998cbad65847ed764b4130" category="doc">Esegui ora il backup delle applicazioni Kubernetes utilizzando l'interfaccia utente Web di Backup and Recovery</block>
+  <block id="55ebd262da946bfda89bdb99e1367f0f" category="paragraph">NetApp Backup and Recovery consente di eseguire manualmente il backup delle applicazioni Kubernetes utilizzando l'interfaccia web.</block>
+  <block id="8b9e73cb622150ff43b7f7777e74619a" category="section-title">Esegui subito il backup di un'applicazione Kubernetes utilizzando la web UI</block>
+  <block id="b7d8dcf9545dd644dca99859290097ab" category="summary">È possibile personalizzare le operazioni di ripristino CR utilizzando annotazioni, impostazioni del namespace e opzioni di storage.</block>
+  <block id="a38e36651b4997072578f6107bf75c77" category="doc">Utilizza impostazioni avanzate di ripristino delle risorse personalizzate</block>
+  <block id="3fbccf21ba46fe754417d45e7396e0e4" category="paragraph">È possibile personalizzare le operazioni di ripristino utilizzando impostazioni avanzate come annotazioni, impostazioni dello spazio dei nomi e opzioni di storage per soddisfare i requisiti specifici.</block>
+  <block id="52391deb129507aac52d6fb22aaf137c" category="section-title">Campi supportati</block>
+  <block id="c87f7398b288400e3d2c984a3d997d7b" category="paragraph">Questa sezione descrive i campi aggiuntivi disponibili per le operazioni di ripristino.</block>
+  <block id="11162de38772a3876602bb4d9d213f43" category="section-title">Mappatura delle storage class</block>
+  <block id="b48c8c7ca3eb5e63afdfe6bbd74a35c9" category="paragraph">L'<block ref="b57d666629acffb30cc697faadc136b5" prefix=" " category="inline-code"></block>attributo definisce una mappatura da una classe di storage presente nell'applicazione di origine a una nuova classe di storage nel cluster di destinazione. Puoi utilizzare questa opzione quando migri applicazioni tra cluster con classi di storage diverse o quando cambi il backend di storage per le operazioni di BackupRestore.</block>
+  <block id="c26fe677a830587ef1c141567a86c86a" category="paragraph">*Esempio:*</block>
+  <block id="ffbfa7c1456b1cb991affd8a76d54fd1" category="section-title">Annotazioni supportate</block>
+  <block id="738d4e5947ef1239f584cd47619cf356" category="paragraph">Questa sezione elenca le annotazioni supportate per la configurazione di vari comportamenti nel sistema. Se un'annotazione non viene impostata esplicitamente dall'utente, il sistema utilizzerà il valore predefinito.</block>
+  <block id="f49fa3f76b2a4fcdf04dff369d417d84" category="cell">protect.trident.netapp.io/data-mover-timeout-sec</block>
+  <block id="a666ad37acca2b6a0ee400d7b2acf088" category="cell">Il tempo massimo (in secondi) consentito per l'operazione di spostamento dei dati che può essere bloccata.</block>
+  <block id="aff5adfa33a9913ad2ab5d578c3f08c8" category="cell">"300"</block>
+  <block id="3b2f6f0bb673ee02e8aafe624e2e971f" category="cell">protect.trident.netapp.io/kopia-content-cache-size-limit-mb</block>
+  <block id="f044e4dc5e5fdde631180451c25a973c" category="cell">Limite massimo di dimensione (in megabyte) per la cache dei contenuti Kopia.</block>
+  <block id="9d397fb20eca1ebda087637e32a30a7b" category="cell">"1000"</block>
+  <block id="b5e51a86f312c3ccd69b085ad9c3dbe0" category="cell">Tempo massimo (in secondi) di attesa affinché eventuali nuove PersistentVolumeClaims (PVC) raggiungano la fase <block ref="685d1f2146dd079015e81918414e8971" prefix=" " category="inline-code"></block> prima che l'operazione fallisca. Si applica a tutti i tipi di restore CR (BackupRestore, BackupInplaceRestore, SnapshotRestore, SnapshotInplaceRestore). Utilizzare un valore più alto se il backend di storage o il cluster richiede spesso più tempo.</block>
+  <block id="2151f194894ed39bed85837028624418" category="paragraph">NetApp Backup and Recovery blocca e sblocca i filesystem per applicazioni come KubeVirt durante la protezione dei dati. Puoi disabilitare questo comportamento a livello globale o per applicazioni specifiche utilizzando la documentazione di Trident Protect:</block>
+  <block id="3dcec4402177c92a041652b5ddf0e042" category="inline-xref">rimuovere il punto di ripristino</block>
+  <block id="87cab9bb9101d164be91b209013585fb" category="admonition">Non è possibile rimuovere la protezione di un'applicazione mentre sono ancora in esecuzione operazioni di protezione. Attendere il completamento dell'operazione oppure, come soluzione alternativa, <block ref="d905f53d4bafd83a40adfdb447e3be41" category="inline-xref-macro-rx"></block> che l'operazione di protezione in esecuzione sta utilizzando. A questo punto, è possibile rimuovere la protezione dell'applicazione.</block>
+  <block id="03b9ad9ea568f0b46cb903165e845c91" category="section-title">Rimuovi un punto di ripristino per un'applicazione Kubernetes</block>
+  <block id="dd9c36f28cc9f5f12040d95ba4f5de93" category="paragraph">Potrebbe essere necessario rimuovere un punto di ripristino per un'applicazione se è necessario rimuoverne la protezione e sono attualmente in esecuzione operazioni di protezione.</block>
+  <block id="2b1b69f5a5491f8a48a1c6b1ab95e069" category="list-text">Nel menu NetApp Backup e ripristino, seleziona *Ripristina*.</block>
+  <block id="c37993406f0db941d92735ab7dd5749d" category="list-text">Scegli un'applicazione Kubernetes dall'elenco e seleziona *Visualizza e ripristina* per quell'applicazione.</block>
+  <block id="be2e1ce690d729ac69efe2ac639971e5" category="list-text">Scegli il punto di ripristino che desideri eliminare e seleziona l'icona Azioni <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Elimina punto di ripristino* per eliminarlo.</block>
+  <block id="a4f1667d52f920bc11608f8119eb8eaa" category="summary">Proteggi i carichi di lavoro del tuo database Oracle con NetApp backup e ripristino.</block>
+  <block id="9081ff61e0c05d14dc1b7c6045823a83" category="doc">Esegui il backup dei carichi di lavoro di Oracle Database utilizzando NetApp Backup and Recovery</block>
+  <block id="3b395fe1694016ad90a832d1d28d54a9" category="inline-link-macro">Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle Database con NetApp Backup and Recovery</block>
+  <block id="3c8155ed06e836b39ff46c4fa1cc3c91" category="list-text">Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedi <block ref="11b8e0fbdcb5cec8e8ac558aea655522" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
+  <block id="6fe6342988793dfab1cd728ba40b7b6d" category="summary">Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery.</block>
+  <block id="172dcc67f8b871ecd3a6df9cfe1f753f" category="paragraph">Proteggi i database e i log Oracle utilizzando NetApp Backup and Recovery. Ottieni backup e ripristini rapidi, efficienti in termini di spazio, coerenti con gli arresti anomali e coerenti con il database. Esegui il backup dei carichi di lavoro di Oracle Database su AWS S3, NetApp StorageGRID, Azure Blob Storage o ONTAP S3. Ripristina i backup su un host Oracle on-premises.</block>
+  <block id="62a3e51100215ef17a24383d5729e00e" category="paragraph">È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro di Oracle Database:</block>
+  <block id="c9b387ac576fa007292bb17c9c97e163" category="list-text"><block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block></block>
+  <block id="0c455356b172e0f15e2d62ca94bfa5c6" category="inline-link-macro">Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle Database</block>
+  <block id="ce4ef45ffb0bf8da9fa1877ae859c0e3" category="list-text"><block ref="ce4ef45ffb0bf8da9fa1877ae859c0e3" category="inline-link-macro-rx"></block></block>
+  <block id="88ed72683238588c2440ec4dd0ab3eca" category="inline-link-macro">Esegui il backup dei carichi di lavoro Oracle Database</block>
+  <block id="0d34b4ba574939ced489d0243500c926" category="list-text"><block ref="0d34b4ba574939ced489d0243500c926" category="inline-link-macro-rx"></block></block>
+  <block id="7e96e8e02dab57292bff1e9f31e0c7df" category="inline-link-macro">Ripristina i carichi di lavoro del database Oracle</block>
+  <block id="ce74d754b7d458e8a3f95ad96eaea826" category="list-text"><block ref="ce74d754b7d458e8a3f95ad96eaea826" category="inline-link-macro-rx"></block></block>
+  <block id="90549b69fb71fa7637e6a760ce45293c" category="summary">Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle Database in NetApp Backup e ripristino.</block>
+  <block id="d07e8f6398c66f7d79a80768d3aa858b" category="inline-link-macro">Esegui subito il backup dei carichi di lavoro Oracle Database</block>
+  <block id="5361440c8196cc52ba89e8281bc2ef22" category="list-text">Esegui subito il backup di un gruppo di protezione. Vedi <block ref="0b07e2abdc1829709878f1d54c90a7ab" category="inline-link-macro-rx"></block>.</block>
+  <block id="ecd7b1e39a181dfd260b4d2201a85373" category="paragraph">Non disponibile per l'anteprima dei carichi di lavoro Oracle Database.</block>
+  <block id="930da9bc61f880bd2f19e2938c5376f6" category="list-text">*Carico di lavoro*: esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.</block>
+  <block id="a1b57f3367efea5ba168ebc1b00dfb09" category="list-text">*Fanout 3-2-1*: da storage primario (disco) a storage secondario (disco) a cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi di storage, come configurazioni ONTAP a ONTAP e ONTAP a archivio di oggetti. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato. Queste configurazioni aiutano a ottenere una protezione dei dati e un disaster recovery ottimali.</block>
+  <block id="7257ebd350ec9dc53fbb407575e942c9" category="open-title">Aggiungi un'applicazione utilizzando l'interfaccia utente web</block>
+  <block id="7eb786201a1068df31c2a8d7805c50bf" category="open-title">Aggiungi un'applicazione utilizzando un CR</block>
+  <block id="b4b10aa7102ef4de9ba1d5672445c895" category="list-text">Crea il file CR dell'applicazione di destinazione:</block>
+  <block id="17131e6f435088e2e03c7280ff7da690" category="list-text">Creare il file custom resource (CR) e assegnargli un nome (ad esempio <block ref="52c90dc70fe5cbabbc6872aba835befa" prefix=" " category="inline-code"></block>).</block>
+  <block id="18924d9e76d2dc9a88bddb772904461d" category="list-text">Configura i seguenti attributi:</block>
+  <block id="3b96edf2a12486fc5d9dfaf7e692cdfc" category="list-text">*metadata.name*: (_Obbligatorio_) Il nome della risorsa personalizzata dell'applicazione. Nota il nome che scegli perché altri file CR necessari per le operazioni di protezione fanno riferimento a questo valore.</block>
+  <block id="244fede3edf8f2ab57f281d777777961" category="list-text">*spec.includedNamespaces*: (_Obbligatorio_) Utilizzare il selettore di namespace e di etichetta per specificare i namespace e le risorse che l'applicazione utilizza. Il namespace dell'applicazione deve essere parte di questo elenco. Il selettore di etichetta è facoltativo e può essere utilizzato per filtrare le risorse all'interno di ciascun namespace specificato.</block>
+  <block id="cc8aa03bb88101c1901ab425b29a1901" category="list-text">*spec.includedClusterScopedResources*: (_Facoltativo_) Utilizzare questo attributo per specificare le risorse con ambito cluster da includere nella definizione dell'applicazione. Questo attributo consente di selezionare queste risorse in base al gruppo, alla versione, al tipo e alle etichette.</block>
+  <block id="eba6898a839f426c3106a97f94614eb9" category="list-text">*groupVersionKind*: (_Obbligatorio_) Specifica il gruppo API, la versione e il tipo di risorsa con ambito cluster.</block>
+  <block id="8d8a8010684a930aa7760c829cad4141" category="list-text">*labelSelector*: (_Facoltativo_) Filtra le risorse con ambito cluster in base alle loro etichette.</block>
+  <block id="5f47e505a6f61f7f97fe140353dc6594" category="list-text">Configurare le seguenti annotazioni, se necessario:</block>
+  <block id="57320d49ea044bfa493c42beb1df6cfe" category="inline-link-macro">impostazione di congelamento del filesystem globale</block>
+  <block id="2d4560ac7467fc580503e1a2ec64edbc" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*: (_Facoltativo_) Questa annotazione è applicabile solo alle applicazioni definite da macchine virtuali, ad esempio in ambienti KubeVirt, in cui si verificano blocchi del file system prima degli snapshot. Specificare se l'applicazione può scrivere sul file system durante uno snapshot. Se impostato su true, l'applicazione ignora l'impostazione globale e può scrivere sul file system durante uno snapshot. Se impostato su false, l'applicazione ignora l'impostazione globale e il file system viene bloccato durante uno snapshot. Se specificato ma l'applicazione non ha macchine virtuali nella definizione dell'applicazione, l'annotazione viene ignorata. Se non specificato, l'applicazione segue <block ref="a6fb49ce3deb125e56649f63b2a21282" category="inline-link-macro-rx"></block>.</block>
+  <block id="8f13f2f073acc52149f6e8567d13e534" category="list-text">*protect.trident.netapp.io/protection-command*: (_Facoltativo_) Utilizzare questa annotazione per indicare a NetApp Backup and Recovery di proteggere o interrompere la protezione dell'applicazione. I valori possibili sono <block ref="124c16e5bae30d956b37ef14c9a00ab4" prefix=" " category="inline-code"></block> o <block ref="354492320803067b5a2cd287e209154d" prefix=" " category="inline-code"></block>.</block>
+  <block id="f0d0a63fd9731679f5ea79603dba4d1f" category="list-text">*protect.trident.netapp.io/protection-policy-name*: (_Facoltativo_) Utilizzare questa annotazione per specificare il nome della policy di protezione di NetApp Backup and Recovery che si desidera utilizzare per proteggere questa applicazione. Questa policy di protezione deve essere già presente in NetApp Backup and Recovery.</block>
+  <block id="1fdb8b98325df025bfd256fc475c0986" category="paragraph">Se è necessario applicare questa annotazione dopo che un'applicazione è già stata creata, è possibile utilizzare il seguente comando:</block>
+  <block id="2508b93e69f47b3a094284dbdc9a09de" category="list-text">(_Facoltativo_) Aggiungi il filtraggio che include o esclude le risorse contrassegnate con etichette particolari:</block>
+  <block id="b4d332d25d8164d8387707934254781d" category="admonition">Quando sia <block ref="a25777d0a6883efb33950a7cd7a8f9b9" prefix=" " category="inline-code"></block> che <block ref="2021b5ec814a388ca04af6c6d6c2d16f" prefix=" " category="inline-code"></block> vengono utilizzati, <block ref="a25777d0a6883efb33950a7cd7a8f9b9" prefix=" " category="inline-code"></block> viene eseguito per primo e poi <block ref="2021b5ec814a388ca04af6c6d6c2d16f" prefix=" " category="inline-code"></block> viene applicato alle risorse risultanti.</block>
+  <block id="964ba319e15e38c5b0f3ee2a3dd4a8f8" category="list-text">Dopo aver creato la CR dell'applicazione adatta al tuo ambiente, applica la CR. Ad esempio:</block>
+  <block id="a23759db2139aa9e17de9cb47110d6d5" category="doc">Ripristina le applicazioni Kubernetes utilizzando una risorsa personalizzata</block>
+  <block id="415a07ca472058e76674945c8c1ccdb3" category="paragraph">È possibile utilizzare risorse personalizzate per ripristinare le applicazioni da uno snapshot o da un backup. Il ripristino da uno snapshot esistente sarà più rapido quando si ripristina l'applicazione nello stesso cluster.</block>
+  <block id="f346d32ba5d9c332bf8577bf1bacda07" category="list-text">Quando si ripristina un'applicazione, tutti gli hook di esecuzione configurati per l'applicazione vengono ripristinati con l'app. Se è presente un hook di esecuzione post-ripristino, viene eseguito automaticamente come parte dell'operazione di ripristino.</block>
+  <block id="961ce5b35a999d2dc3f7e386f74eb614" category="list-text">Il ripristino da un backup a un namespace diverso o al namespace originale è supportato per i volumi qtree. Tuttavia, il ripristino da uno snapshot a un namespace diverso o al namespace originale non è supportato per i volumi qtree.</block>
+  <block id="57367d979fb9d476b127b8b1c0e64004" category="list-text">È possibile utilizzare le impostazioni avanzate per personalizzare le operazioni di ripristino. Per ulteriori informazioni, consultare <block ref="de6b60e125121f4190b8e2b41a7ccad4" category="inline-link-macro-rx"></block>.</block>
+  <block id="d46abb8b08b9cabb804a375e086762ef" category="section-title">Ripristina un backup in un namespace diverso</block>
+  <block id="6b76c2e4af7a396193495c80e698179e" category="paragraph">Quando si ripristina un backup in un namespace diverso utilizzando una BackupRestore CR, NetApp Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea una application CR per l'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot on-demand oppure stabilisci una policy di protezione.</block>
+  <block id="cff063350a0daf1b0ee4c6c97eb2e2de" category="list-text">Il ripristino di un backup in un namespace diverso con risorse esistenti non modificherà le risorse che condividono i nomi con quelle nel backup. Per ripristinare tutte le risorse nel backup, eliminare e ricreare il namespace di destinazione o ripristinare il backup in un nuovo namespace.</block>
+  <block id="8220f502d7a1609266e7dd4c63b34dc3" category="list-text">Quando si utilizza una CR per ripristinare in un nuovo namespace, è necessario creare manualmente il namespace di destinazione prima di applicare la CR. NetApp Backup and Recovery crea automaticamente i namespace solo quando si utilizza la CLI.</block>
+  <block id="d110d36251c4dd04b7da5ef237ac6063" category="inline-link">Documentazione Kopia</block>
+  <block id="3a5aee390b39f0e0c8e4c0cc152c72f6" category="admonition">Quando si ripristinano i backup utilizzando Kopia come data mover, è possibile specificare facoltativamente annotazioni nella CR per controllare il comportamento dello storage temporaneo utilizzato da Kopia. Consultare il <block ref="08f67cdc0555f043586a8a4182d9187b" category="inline-link-rx"></block> per ulteriori informazioni sulle opzioni che è possibile configurare.</block>
+  <block id="0334c5d881452d9144d4edf93d44ff85" category="list-text">Crea il file custom resource (CR) e assegnagli il nome<block ref="aa3356b96c40153ef83fe9854ede7a70" prefix=" " category="inline-code"></block>.</block>
+  <block id="8ebefb3e84a05b2e3bf54824870d776d" category="list-text">*spec.appArchivePath*: Il percorso all'interno di AppVault in cui sono archiviati i contenuti del backup. È possibile utilizzare il seguente comando per trovare questo percorso:</block>
+  <block id="3f1db1c30ba33e5d04499f000ed77f97" category="list-text">*spec.appVaultRef*: (_Obbligatorio_) Il nome del AppVault in cui sono archiviati i contenuti del backup.</block>
+  <block id="33dc1feba43183f93ade318576611f4a" category="list-text">*spec.namespaceMapping*: Il mapping dello spazio dei nomi di origine dell'operazione di ripristino allo spazio dei nomi di destinazione. Sostituisci <block ref="a6f7f0a873c27a67ee3194949076866b" prefix=" " category="inline-code"></block> e <block ref="2cfb071d6be7d4cf9e297100f62858fe" prefix=" " category="inline-code"></block> con le informazioni del tuo ambiente.</block>
+  <block id="18ad656f28db1ef6b2d76d21959ca243" category="list-text">Dopo aver popolato il <block ref="aa3356b96c40153ef83fe9854ede7a70" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="6d5b0033591078b013b5aae0aa8c41df" category="section-title">Ripristina un backup nello spazio dei nomi originale</block>
+  <block id="7260bc412b6c22c2589f01098c1f4430" category="paragraph">È possibile ripristinare un backup nello spazio dei nomi originale in qualsiasi momento.</block>
+  <block id="34653be4af07bad31b9a3775f18b1b5f" category="list-text">Crea il file custom resource (CR) e assegnagli il nome <block ref="59a09233aaa2a2c9e25fc46650bd6dee" prefix=" " category="inline-code"></block>.</block>
+  <block id="349d4c53fe9d2e740d60f7ce8094c294" category="list-text">Dopo aver popolato il <block ref="59a09233aaa2a2c9e25fc46650bd6dee" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="6b38457a21195fb9cff9562291b07742" category="section-title">Ripristinare un backup su un cluster diverso</block>
+  <block id="7fa8874b1f645ca2af9d81b51985b8fb" category="paragraph">È possibile ripristinare un backup su un cluster diverso se si verifica un problema con il cluster originale.</block>
+  <block id="ea67012b60407e642c3e4bbb13486738" category="list-text">Quando si utilizza una CR per ripristinare in un nuovo namespace, è necessario creare manualmente il namespace di destinazione prima di applicare la CR.</block>
+  <block id="dd4ee610bd1d035c73bc0cbcd80e46da" category="paragraph">Assicurarsi che siano soddisfatti i seguenti prerequisiti:</block>
+  <block id="e23fef665fca7137c4d6ee6b9a9ec06a" category="list-text">Il cluster di destinazione ha Trident Protect installato.</block>
+  <block id="b20f8883edb9068c67a2faeb3c083d38" category="list-text">Il cluster di destinazione ha accesso al percorso del bucket dello stesso AppVault del cluster di origine, dove è archiviato il backup.</block>
+  <block id="2358fb4006fff416413cb9bfc04e4b73" category="list-text">Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può fallire.</block>
+  <block id="df710f89ebb9e663bd3d66607a0bf413" category="inline-link">Documentazione AWS</block>
+  <block id="f3aa7db516c38030a276a5895520407a" category="list-text">Fare riferimento a<block ref="968595e57d50a64e3fbe0f06bc16cb91" category="inline-link-rx"></block> per ulteriori informazioni sulle credenziali con le risorse AWS.</block>
+  <block id="cfb3749b52f4ce0c21dcdc3a9fce80f2" category="list-text">Verificare la disponibilità del AppVault CR sul cluster di destinazione utilizzando il plug-in Trident Protect CLI:</block>
+  <block id="1ff83a5266e9e025c2984e0c10dea90e" category="admonition">Assicurarsi che lo spazio dei nomi destinato al ripristino dell'applicazione esista nel cluster di destinazione.</block>
+  <block id="8d433ae9a21c49e9e5433ebd408605c0" category="list-text">Visualizza il contenuto del backup disponibile di AppVault dal cluster di destinazione:</block>
+  <block id="378e6f0ba7080535a4462b5311befb40" category="paragraph">L'esecuzione di questo comando visualizza i backup disponibili in AppVault, inclusi i cluster di origine, i nomi delle applicazioni corrispondenti, i timestamp e i percorsi di archivio.</block>
+  <block id="52b5830420efb96c3a91beb52bac3b23" category="paragraph">*Esempio di output:*</block>
+  <block id="053aba80de03f3fdf626d1c858342330" category="list-text">Ripristina l'applicazione nel cluster di destinazione utilizzando il nome AppVault e il percorso di archivio:</block>
+  <block id="fceebbe32c1f7b24c54d6a4e8a0fa776" category="admonition">Se BackupRestore CR non è disponibile, è possibile utilizzare il comando menzionato nel passaggio 2 per visualizzare il contenuto del backup.</block>
+  <block id="c4ffbcd8e0c029dda531491d6bee1c78" category="section-title">Ripristina uno snapshot in un namespace diverso</block>
+  <block id="ce7cf7554a5476a82205e8d69fb3706e" category="paragraph">È possibile ripristinare i dati da uno snapshot utilizzando un file di risorsa personalizzata (CR) sia in un namespace diverso che nel namespace di origine. Quando si ripristina uno snapshot in un namespace diverso utilizzando una SnapshotRestore CR, NetApp Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea una CR dell'applicazione per l'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot su richiesta oppure stabilisci una policy di protezione.</block>
+  <block id="15910dd29963e5df5f2b5879472bcc00" category="list-text">SnapshotRestore supporta l'<block ref="b57d666629acffb30cc697faadc136b5" prefix=" " category="inline-code"></block> attributo, ma solo quando le classi di archiviazione di origine e destinazione utilizzano lo stesso backend di archiviazione. Se si tenta di eseguire il ripristino su una <block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> che utilizza un backend di archiviazione diverso, l'operazione di ripristino non riuscirà.</block>
+  <block id="a35b06511e032bee46bbed064afa12dc" category="list-text">Crea il file di risorsa personalizzata (CR) e assegnagli il nome <block ref="fac6dff7f801a4983f4a536dbcbd40d7" prefix=" " category="inline-code"></block>.</block>
+  <block id="d2e7f59eea5f95f37b023a243745727d" category="list-text">*spec.appVaultRef*: (_Obbligatorio_) Il nome del AppVault in cui sono archiviati i contenuti dello snapshot.</block>
+  <block id="ac6cdb13ccdd5d0ac3195b3301db572c" category="list-text">*spec.appArchivePath*: Il percorso all'interno di AppVault in cui sono archiviati i contenuti dello snapshot. È possibile utilizzare il seguente comando per trovare questo percorso:</block>
+  <block id="bca1b1b2b1a229dc37dffa4f7012c02d" category="list-text">Dopo aver popolato il <block ref="fac6dff7f801a4983f4a536dbcbd40d7" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="c4c7c0b8d390ffc1225601169810e0ae" category="section-title">Ripristina uno snapshot nello spazio dei nomi originale</block>
+  <block id="a392e5395f0751460dc460cd6ec5e89d" category="paragraph">È possibile ripristinare uno snapshot nel namespace originale in qualsiasi momento.</block>
+  <block id="4d18dba9a79fbe92e2bb99f0a9300df3" category="list-text">Crea il file custom resource (CR) e assegnagli il nome <block ref="620b0dae36dbe6aeaae5d993f961c634" prefix=" " category="inline-code"></block>.</block>
+  <block id="54625166c25afd8a6a484aaf2f346fbb" category="list-text">Dopo aver popolato il <block ref="620b0dae36dbe6aeaae5d993f961c634" prefix=" " category="inline-code"></block> file con i valori corretti, applica la CR:</block>
+  <block id="a81b2faa73385ff60c0791d7006409d9" category="doc">Ripristina le applicazioni Kubernetes utilizzando l'interfaccia utente web</block>
+  <block id="51621b374731a256fcdaa7e17b724680" category="paragraph">Se si sta ripristinando un'applicazione di cui è stato eseguito il backup utilizzando Trident Protect, assicurarsi che Trident Protect sia installato sia sul cluster di origine che sul cluster di destinazione.</block>
+  <block id="fb5dbc581e0b5b523350175d27ea83c0" category="list-text">Seleziona il pulsante *Ripristina* per il punto di ripristino che si desidera utilizzare.</block>
+  <block id="98c52679a9ed385c5482f74fe44c97ae" category="list-text">Scegli la posizione di origine da cui eseguire il ripristino.</block>
+  <block id="d30d07971f43ce3280b143ce31154411" category="admonition">Al momento non è supportato il ripristino di uno snapshot locale creato da Trident Protect su un cluster diverso.</block>
+  <block id="6d99ca24de4c4c5c0b932cbcc18fdbbe" category="list-text">Scegli se ripristinare negli spazi dei nomi originali o in nuovi spazi dei nomi.</block>
+  <block id="41af3e90c2d7ebbd0ddd4e36e78220b5" category="list-text">Se si sceglie di ripristinare su nuovi namespace, immettere il namespace di destinazione o i namespace di destinazione da utilizzare.</block>
+  <block id="a2552d8c6714f46cdb5bfe28dbdc9b87" category="list-text">Espandi la sezione *Impostazioni di destinazione* e scegli se ripristinare sulla classe di archiviazione predefinita, su una classe di archiviazione diversa oppure, se stai eseguendo il ripristino su un cluster diverso, di mappare le classi di archiviazione sul cluster di destinazione.</block>
+  <block id="a5e9d16a9cc07839a654d90f3a7a4b97" category="list-text">Se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine.</block>
+  <block id="7a19603af554b25cd8b2df54b3b90a02" category="list-text">Facoltativamente, se si sta ripristinando un backup o uno snapshot creato con Trident Protect, visualizzare i dettagli del AppVault utilizzato come bucket di archiviazione per l'operazione di ripristino. Se vi è una modifica nell'ambiente o nello stato di AppVault, selezionare *Sync App Vault* per aggiornare i dettagli.</block>
+  <block id="36232457f4c28ae76f2c98b665ead40c" category="inline-link">Utilizzare gli oggetti Trident Protect AppVault per gestire i bucket</block>
+  <block id="8cce25f9f8aead82fb847fec859b60d7" category="admonition">Se è necessario creare un AppVault su un cluster Kubernetes per facilitare il ripristino di un backup o di uno snapshot creato utilizzando Trident Protect, fare riferimento a <block ref="c0135beaf775585a3c544dba5d035e47" category="inline-link-rx"></block>.</block>
+  <block id="833959b645e98d6a80a20300bfd003a1" category="list-text">Facoltativamente, espandi la sezione *Script di ripristino* e abilita l'opzione *Postscript* per scegliere un modello di hook di esecuzione che verrà eseguito al termine dell'operazione di ripristino. Se necessario, inserisci gli argomenti di cui lo script ha bisogno e aggiungi selettori di etichetta per filtrare le risorse in base alle etichette delle risorse.</block>
+  <block id="ecd47ecc902c53d5808953e54e89b94f" category="list-text">*Carichi di lavoro Oracle Database (anteprima)*:</block>
+  <block id="0e8ecb4e7677fd2e4d2af938fc466bff" category="inline-link-macro">Proteggi i carichi di lavoro Oracle Database</block>
+  <block id="95815b21a64646ca02a4d958d053cef7" category="list-text">Fare riferimento a <block ref="840bb935154607a5be4199a217b0bf56" category="inline-link-macro-rx"></block>.</block>
+  <block id="4a6440cf633ba5f9e68b3e722f3a2bdd" category="paragraph">Per i carichi di lavoro Kubernetes, l'addebito avviene in base alle dimensioni combinate di tutti i volumi persistenti.</block>
+  <block id="ac48592f4b6ad81597a3d86209bce635" category="section-title">Requisiti per la protezione dei carichi di lavoro Oracle Database</block>
+  <block id="6b4dd2a26d258b058101055118ed2560" category="list-text">Supporto del sistema operativo host: Red Hat Enterprise Linux 8 e 9</block>
+  <block id="cd992a76d620e6cac42ca61d20f93f1d" category="list-text">NetApp Trident Protect 25.07 o versioni successive (installato durante la scoperta del carico di lavoro Kubernetes)</block>
+  <block id="8c703f00b817f5c9121d74efc33cdde9" category="list-text">NetApp Trident Protect Connector 25.07 o versioni successive (installato durante la scoperta del carico di lavoro Kubernetes)</block>
+  <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">Assicurarsi che la porta TCP 443 non sia filtrata in direzione outbound tra il cluster Kubernetes, il Trident Protect Connector e il Trident Protect proxy.</block>
+  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09 febbraio 2026</block>
+  <block id="f3effb5ce493101e0cf4cbc9e93014e1" category="sidebar">Proteggi i carichi di lavoro Oracle Database (anteprima privata)</block>
+  <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Limitazioni note per i carichi di lavoro di Oracle Database</block>
+  <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">Proteggi i carichi di lavoro Oracle Database (Preview)</block>
+  <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Ripristina le applicazioni Kubernetes utilizzando risorse personalizzate</block>
 </blocks>

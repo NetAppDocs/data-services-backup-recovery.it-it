@@ -85,17 +85,17 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: Ripristinare i carichi di lavoro Hyper-V
       url: "/br-use-hyperv-restore.html"
-  - title: Proteggi i carichi di lavoro Oracle (anteprima privata)
+  - title: Proteggi i carichi di lavoro Oracle Database (anteprima privata)
     links:
-    - title: Panoramica sulla protezione dei carichi di lavoro Oracle
+    - title: Panoramica sulla protezione dei carichi di lavoro del database Oracle
       url: "/br-use-oracle-protect-overview.html"
-    - title: Scopri i carichi di lavoro Oracle
+    - title: Scopri i carichi di lavoro Oracle Database
       url: "/br-start-discover-oracle.html"
-    - title: Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle
+    - title: Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle Database
       url: "/br-use-oracle-protection-groups.html"
-    - title: Eseguire il backup dei carichi di lavoro Oracle
+    - title: Esegui il backup dei carichi di lavoro Oracle Database
       url: "/br-use-oracle-backup.html"
-    - title: Ripristinare i carichi di lavoro Oracle
+    - title: Ripristina i carichi di lavoro del database Oracle
       url: "/br-use-oracle-restore.html"
   - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
     links:
