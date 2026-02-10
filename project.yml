@@ -124,8 +124,7 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Creare report di Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Protezione dei carichi di lavoro VMware (anteprima senza plug-in SnapCenter
-        per VMware)
+    - title: Proteggere i carichi di lavoro VMware (senza SnapCenter Plug-in per VMware)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro VMware
         url: "/br-use-vmware-protect-overview.html"
@@ -156,8 +155,6 @@ sidebar:
       - title: Prerequisiti per la protezione dei carichi di lavoro delle macchine
           virtuali
         url: "/prev-vmware-prereqs.html"
-      - title: Registra il SnapCenter Plug-in for VMware vSphere
-        url: "/prev-vmware-register-snapcenter.html"
       - title: Creare una policy per eseguire il backup dei dati della macchina virtuale
         url: "/prev-vmware-policy-create.html"
       - title: Eseguire il backup degli archivi dati su Amazon Web Services
@@ -185,7 +182,7 @@ sidebar:
         url: "/br-use-kvm-backup.html"
       - title: Ripristinare i carichi di lavoro KVM
         url: "/br-use-kvm-restore.html"
-    - title: Protezione dei carichi di lavoro Hyper-V (anteprima)
+    - title: Proteggere i carichi di lavoro Hyper-V
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro Hyper-V
         url: "/br-use-hyperv-protect-overview.html"
