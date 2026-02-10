@@ -148,28 +148,6 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Risoluzione dei problemi di ripristino dei file guest
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: Proteggi i carichi di lavoro VMware (con il plug-in SnapCenter per VMware)
-      entries:
-      - title: Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali
-        url: "/prev-vmware-protect-overview.html"
-      - title: Prerequisiti per la protezione dei carichi di lavoro delle macchine
-          virtuali
-        url: "/prev-vmware-prereqs.html"
-      - title: Creare una policy per eseguire il backup dei dati della macchina virtuale
-        url: "/prev-vmware-policy-create.html"
-      - title: Eseguire il backup degli archivi dati su Amazon Web Services
-        url: "/prev-vmware-backup-aws.html"
-      - title: Eseguire il backup degli archivi dati su Microsoft Azure
-        url: "/prev-vmware-backup-azure.html"
-      - title: Eseguire il backup degli archivi dati su Google Cloud Platform
-        url: "/prev-vmware-backup-gcp.html"
-      - title: Eseguire il backup degli archivi dati su StorageGRID
-        url: "/prev-vmware-backup-storagegrid.html"
-      - title: Gestire la protezione dei dati degli archivi dati e delle macchine
-          virtuali
-        url: "/prev-vmware-manage.html"
-      - title: Ripristinare i dati e gli archivi dati delle macchine virtuali
-        url: "/prev-vmware-restore.html"
     - title: Protezione dei carichi di lavoro KVM (anteprima)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro KVM
