@@ -378,10 +378,6 @@ Crea il tuo gruppo di risorse che gestisce il contenitore BLOB oppure seleziona 
 
 TIP: Se vuoi proteggere i tuoi file di backup da modifiche o eliminazioni, assicurati che l'account di archiviazione sia stato creato con l'archiviazione immutabile abilitata utilizzando un periodo di conservazione di 30 giorni.
 
-+
-
-TIP: Se si desidera suddividere i file di backup più vecchi in Azure Archive Storage per un'ulteriore ottimizzazione dei costi, assicurarsi che l'account di archiviazione disponga della regola del ciclo di vita appropriata.
-
 ** *Chiave di crittografia*: se hai creato un nuovo account di archiviazione di Azure, immetti le informazioni sulla chiave di crittografia fornite dal provider.  Scegli se utilizzare le chiavi di crittografia predefinite di Azure oppure scegliere le chiavi gestite dal cliente dal tuo account Azure per gestire la crittografia dei tuoi dati.
 +
 Se si sceglie di utilizzare le chiavi gestite dal cliente, immettere il vault delle chiavi e le informazioni sulla chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Impara a usare le tue chiavi"^] .

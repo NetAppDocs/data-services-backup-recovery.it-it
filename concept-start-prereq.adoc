@@ -88,7 +88,7 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 
 *Supporto software*
 
-* Sono supportati i datastore NFS e VMFS. I vVols non sono supportati.
+* Sono supportati i datastore NFS e VMFS.
 * Versioni NFS supportate: NFS 3 e NFS 4.1
 * Versioni di VMware ESXi Server supportate: 7.0U1 e successive
 * Versioni di VMware vCenter vSphere supportate: 7.0U1 e successive
@@ -106,11 +106,6 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 
 | Porta del server VMware ESXi  a| 
 443 (HTTPS), bidirezionale. La funzionalità di ripristino dei file guest utilizza questa porta.
-
-
-
-| Porta del server VMware vSphere vCenter  a| 
-Se si proteggono VM vVol, è necessario utilizzare la porta 443.
 
 
 
