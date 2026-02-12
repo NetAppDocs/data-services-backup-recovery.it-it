@@ -124,7 +124,7 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Creare report di Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteggere i carichi di lavoro VMware (senza SnapCenter Plug-in per VMware)
+    - title: Proteggi i carichi di lavoro VMware
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro VMware
         url: "/br-use-vmware-protect-overview.html"
