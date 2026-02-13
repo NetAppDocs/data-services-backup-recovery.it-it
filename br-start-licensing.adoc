@@ -137,3 +137,9 @@ Facoltativamente, se disponi di una licenza basata su nodi non assegnata per Clo
 Per gestire le licenze BYOL è possibile utilizzare la NetApp Console .  È possibile aggiungere nuove licenze, aggiornare quelle esistenti e visualizzare lo stato delle licenze dalla Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Scopri come aggiungere licenze"^].
+
+
+
+== Superamento della capacità della licenza
+
+Il superamento della capacità concessa dalla licenza attiva le tariffe PAYGO; senza un abbonamento PAYGO, non è possibile creare nuovi backup, anche se i backup esistenti rimangono ripristinabili senza garanzia di servizio. Assicurati di rinnovare la licenza prima che scada; una licenza scaduta impedisce la creazione di nuovi backup e interrompe il servizio.
