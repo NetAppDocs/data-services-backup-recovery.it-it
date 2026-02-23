@@ -21,6 +21,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ri
 * Crea un gruppo di protezione.
 * Visualizza i dettagli della protezione.
 * Crea subito un gruppo di protezione. Vederelink:br-use-kvm-backup.html["Esegui subito il backup dei carichi di lavoro KVM"] .
+* Modifica un gruppo di protezione.
 * Elimina un gruppo di protezione.
 
 
@@ -39,15 +40,39 @@ Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo d
 . Selezionare la scheda *Gruppi di protezione*.
 . Selezionare *Crea gruppo di protezione*.
 . Fornire un nome per il gruppo di protezione.
-. Selezionare le VM o i pool di archiviazione che si desidera includere nel gruppo di protezione.
+. Seleziona un host per elencare le VM disponibili su quell'host. Per includere le VM di tutti gli host rilevati, seleziona *All* nell'elenco degli host.
+. Seleziona le singole VM che desideri includere nel gruppo di protezione, oppure seleziona *All* per includere tutte le VM nell'elenco.
++
+Le VM che selezioni vengono visualizzate nell'area *Macchine virtuali aggiunte*. Puoi rimuovere singole VM dall'elenco o svuotare completamente l'elenco. Puoi aggiungere VM da più host KVM all'elenco.
+
 . Selezionare *Avanti*.
-. Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
+. Selezionare la policy di protezione che si desidera applicare al gruppo di protezione oppure creare una nuova policy selezionando *Create new policy*.
 +
 Per ulteriori informazioni sulla creazione di una policy di backup, fare riferimento alink:br-use-policies-create.html["Creare e gestire policy"] .
 
 . Selezionare *Avanti*.
 . Rivedere la configurazione.
 . Selezionare *Crea* per creare il gruppo di protezione.
+
+
+
+
+== Modifica un gruppo di protezione
+
+Modifica un gruppo di protezione se devi cambiare i dettagli del gruppo di protezione senza eliminarlo e ricrearlo.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare il gruppo di protezione che si desidera modificare.
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Modifica*.
+. Apporta le modifiche necessarie ai dettagli generali e alle VM nel protection group.
+. Selezionare *Avanti*.
+. Se necessario, modificare la policy associata al protection group.
+. Selezionare *Avanti*.
+. Rivedi la configurazione e seleziona *Invia*.
 
 
 

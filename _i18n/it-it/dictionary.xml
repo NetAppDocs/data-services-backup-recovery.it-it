@@ -354,7 +354,6 @@
   <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">Ripristinare le VM in una posizione alternativa</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">Proteggere le VM archiviate su SAN</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">Proteggere le applicazioni</block>
-  <block id="d5598f128bb28f962fcd8574013f2a43" category="list-text">Creare gruppi di protezione utilizzando VM da più host KVM</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">Crea backup definiti dall'utente (sono supportati solo i backup avviati dalla NetApp Console )</block>
   <block id="b26873df0260bdc332a7511f6823cf63" category="section-title">Configurazioni non supportate</block>
   <block id="f19c49e2c5af4fdef9d76da8243928b8" category="paragraph">Le seguenti configurazioni non sono supportate:</block>
@@ -1698,8 +1697,6 @@
   <block id="793c79d603a2a6eb42272304c6135f12" category="list-text">Assicurarsi che sia selezionato il nome corretto dell'applicazione.</block>
   <block id="408156cb89b56d3b746dba5ade40b0e4" category="paragraph">La Console crea un backup dell'applicazione e visualizza l'avanzamento nell'area *Monitoraggio* di Backup e Ripristino. Il backup viene creato in base ai criteri di protezione associati all'applicazione.</block>
   <block id="2f2fda22f167ad6c7dcc0ac3f92cd945" category="summary">In NetApp Backup and Recovery, crea report per visualizzare lo stato dei tuoi backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l'ora del backup.</block>
-  <block id="8e6f4a9d7c64e35859548854a52b145a" category="doc">Crea report per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery</block>
-  <block id="df63e1970b7cb20512cb62b542bcd3f8" category="section-title">Crea un report</block>
   <block id="391ccda3039974f5c4561d91d157e4be" category="paragraph">*Ruolo richiesto NetApp Console * Visualizzatore di storage, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clone di Backup e ripristino.  Scopri di più<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="a75db1c6ad7a6018f4076429dcb47fd8" category="list-text">Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">Seleziona *Crea report*.</block>
@@ -4525,10 +4522,7 @@
   <block id="432d122bca6b826d0ff8b770008cb6da" category="list-text">Non è possibile ripristinare VM o dati di VM tra sistemi con CPU di fornitori diversi (da Intel ad AMD o viceversa), indipendentemente dall'impostazione "Compatibilità processore" in Hyper-V. Questa impostazione supporta solo la compatibilità tra generazioni diverse dello stesso fornitore (ad esempio, da Intel a Intel o da AMD ad AMD).</block>
   <block id="cbf60595828cc0c9aea61a13478c0526" category="admonition">Nella versione del 19 gennaio 2026, non è possibile aggiornare i plugin NetApp per Hyper-V o Windows utilizzando l'opzione *Aggiorna* nel menu Azioni. In alternativa, rimuovere ciascun host Hyper-V e aggiungerlo nuovamente per aggiornare i plugin.</block>
   <block id="fa1b7fd0ad5ec372cdf9f907c6fbf709" category="section-title">Note sulla risoluzione dei problemi</block>
-  <block id="9bd2877d70202ee3498597fbe9e5cc2f" category="paragraph">Quando si utilizza l'anteprima privata dei carichi di lavoro KVM con NetApp Backup and Recovery, tenere presente quanto segue:</block>
   <block id="ac034a836e482984e927ce7aef3a7bcc" category="list-text">Per garantire che i ripristini del carico di lavoro KVM vengano completati correttamente, accertarsi che l'impostazione *Abilita snapshot coerente con la VM* sia attiva nel criterio di protezione utilizzato per i backup KVM.</block>
-  <block id="a9f8d95d40be1c757e5dddec176f49aa" category="list-text">Non è possibile eseguire il backup di un pool di archiviazione con host KVM gestiti da Apache CloudStack a meno che non si aggiungano tutti gli host gestiti a NetApp Backup and Recovery. Come soluzione alternativa, aggiungi ogni host KVM gestito da CloudStack a NetApp Backup and Recovery.</block>
-  <block id="a08807a7feb533e9af18670f44dd0184" category="list-text">Non è possibile eseguire il backup di una macchina virtuale arrestata che appartiene a un gruppo di protezione. Come soluzione alternativa, rimuovere la macchina virtuale arrestata dal gruppo di protezione prima di avviare il backup.</block>
   <block id="caf127224717f7d5605f4155b3a36376" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block> per qualsiasi host Windows, Microsoft SQL Server, Oracle Database o Linux con cui NetApp Backup and Recovery deve autenticarsi. Sono incluse le credenziali del sistema operativo guest Windows utilizzate durante il ripristino di file o cartelle guest.</block>
   <block id="a22707a596fa8306e8d6a5944e2eda1e" category="list-text"><block ref="89ad28258fc3723b5b08e269206e91aa" category="inline-xref-macro-rx"></block>. (Solo carichi di lavoro KVM)</block>
   <block id="e0981966cb393b67a49dfbe74acbcaa9" category="paragraph">Aggiungere credenziali per le risorse host. NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro e applicare policy di backup.</block>
@@ -5052,4 +5046,46 @@
   <block id="b9c809d8faa35e3cecf28c39b12a0890" category="list-text">ASP.NET Core Runtime 8.0.23 Hosting Bundle (e tutte le patch 8.0.x successive)</block>
   <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
   <block id="6d379457554ecca51ab298da606eeb2d" category="list-text">PowerShell 7.4.13 o successivo</block>
+  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">Carichi di lavoro KVM supportati in General Availability (GA)</block>
+  <block id="e58f3c7a76cad4e6c2c7f515b3171f76" category="section-title">Kubernetes supportato in General Availability (GA)</block>
+  <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">Il supporto per i carichi di lavoro Kubernetes è ora generalmente disponibile (GA) in NetApp Backup and Recovery. Questa versione dei carichi di lavoro Kubernetes introduce anche le seguenti funzionalità avanzate:</block>
+  <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*Supporto per la creazione di report*: ora è possibile generare report sulle attività di protezione per i cluster Kubernetes e le applicazioni protette da NetApp Backup and Recovery.</block>
+  <block id="2b9a71c68fa2528dcd54a63d6e7b908d" category="paragraph">Prendere nota di quanto segue quando si utilizza l'anteprima privata dei carichi di lavoro KVM con NetApp Backup and Recovery.</block>
+  <block id="bc077e67c7216de25b87f90d5ec28ac0" category="list-text">I backup possono fallire se l'agente guest QEMU non è in esecuzione in una VM protetta. Come soluzione alternativa, assicurarsi che il<block ref="c17d9742912ea08e0cfecda90a08c954" prefix=" " category="inline-code"></block> demone sia in esecuzione sulla VM prima di avviare il backup.</block>
+  <block id="66330fd6b5a015d85e0b01e96c040005" category="summary">Crea report di protezione per i carichi di lavoro Kubernetes per visualizzare lo stato e i dettagli della protezione, inclusi il conteggio dei backup riusciti e non riusciti, i tipi di backup, le informazioni sullo stato del cluster e altro ancora.</block>
+  <block id="7e9944e42087b52e398e40511794ab10" category="doc">Crea e gestisci report di protezione per i carichi di lavoro Kubernetes in NetApp Backup and Recovery</block>
+  <block id="59db8c9d0215fa2a51b2a35609aa5bbd" category="paragraph">In NetApp Backup and Recovery, crea report di protezione per i carichi di lavoro Kubernetes per visualizzare lo stato e i dettagli della protezione, inclusi il conteggio dei backup riusciti e non riusciti, i tipi di backup, le informazioni sullo stato del cluster e altro ancora.</block>
+  <block id="6f0eb8b8a8ac47dbe395a0547f6dba8d" category="paragraph">*Ruolo NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Scopri di più su <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="d45ba014e75a2424453d999d1ec1584d" category="section-title">Crea un report di protezione</block>
+  <block id="cf9569ff04e8697d933d86bb055b6753" category="paragraph">Crea un report di protezione per visualizzare lo stato di protezione dei tuoi cluster.</block>
+  <block id="764cb0718c60ad28fec23c72e06cd3eb" category="list-text">*Tipo di report*: scegli se desideri un report per account o per workload (seleziona Kubernetes dall'elenco).</block>
+  <block id="32e7d2bef37709329417fce15d4ef70a" category="list-text">*Seleziona cluster*: se hai selezionato in base al carico di lavoro, scegli il cluster dall'elenco per il quale desideri generare il report e seleziona *Accetta*. Scegli *Seleziona tutto* per generare un report per tutti i cluster.</block>
+  <block id="4aa69b04f720d9cf28bddc129bdda982" category="list-text">Inserisci l'intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.</block>
+  <block id="8b1d3f0d4147e569670599b2074a9453" category="list-text">Inserisci i dettagli di configurazione del report: scegli se eseguire il report una sola volta o pianificare una generazione ricorrente. Per i report pianificati, scegli la frequenza di ricorrenza e seleziona una data di inizio.</block>
+  <block id="cf5d0c81e1ff395be07be7ab39b273a2" category="list-text">Inserisci i dettagli di consegna tramite e-mail: (solo per i report programmati) Se desideri che il report venga consegnato tramite e-mail, inserisci uno o più indirizzi e-mail che devono ricevere il report programmato.</block>
+  <block id="6966f88ce9330f288d2ff468e8f1bf31" category="section-title">Scarica un report di protezione</block>
+  <block id="ca0fab6dece474777af6f27a9ab6f7bf" category="paragraph">Scarica un report di protezione generato come file JSON o come documento PDF, così puoi visualizzarlo e condividerlo.</block>
+  <block id="16d046f9df08fac82032019de67dd111" category="list-text">Nella pagina *Reports*, seleziona il menu *Reports* per visualizzare l'elenco dei report di protezione generati.</block>
+  <block id="46d0b33f9602910da192296aa16047c8" category="list-text">Per il report che desideri scaricare, seleziona l'icona Actions <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Download*.</block>
+  <block id="3e67afef1e2a25129f8131a465c1f233" category="list-text">Seleziona *Download JSON* per scaricare il report in formato JSON.</block>
+  <block id="6a6e83b2656cc80c95ff1d51721fdfdf" category="list-text">Seleziona *Download PDF* per scaricare il report come documento PDF.</block>
+  <block id="907ad6bf80ead0c498e1b96eeac0931b" category="section-title">Visualizza un report di protezione</block>
+  <block id="5ec71cd773423bccb3eb37e7ca0de834" category="paragraph">Visualizza rapidamente i dettagli interattivi di un report di protezione all'interno di NetApp Backup and Recovery. Puoi visualizzare informazioni di riepilogo del job, lo stato di protezione dei dati, i dettagli di configurazione e altro ancora.</block>
+  <block id="4282f8fe4c83ccf233576c6529acd9cf" category="list-text">Per il report che desideri visualizzare, seleziona l'icona Azioni <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Visualizza report*.</block>
+  <block id="ba033453bbd04ac2ce08fa3e831d97b0" category="paragraph">Vengono visualizzati i dettagli del report.</block>
+  <block id="a1c5f902308b29e3dc37ca9471a1016c" category="section-title">Elimina un report di protezione</block>
+  <block id="ba71a8f948ce2ac60c238f470758a980" category="paragraph">Elimina un report di protezione quando non ne hai più bisogno.</block>
+  <block id="583b019e08073df7e3a4598861ee7567" category="list-text">Per il report che desideri eliminare, seleziona l'icona Azioni <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Elimina*.</block>
+  <block id="ea78509096df982db8c5234ed6ea3e7c" category="list-text">Conferma l'azione selezionando *Elimina*.</block>
+  <block id="9c7a2480e98d69e7a466d0b0fd60ac07" category="list-text">Modifica un gruppo di protezione.</block>
+  <block id="3b8d8ee10228976bdc630252832886f7" category="list-text">Seleziona un host per elencare le VM disponibili su quell'host. Per includere le VM di tutti gli host rilevati, seleziona *All* nell'elenco degli host.</block>
+  <block id="fc20073811aa1e335ccc2bd9d99eebc7" category="list-text">Seleziona le singole VM che desideri includere nel gruppo di protezione, oppure seleziona *All* per includere tutte le VM nell'elenco.</block>
+  <block id="b40b521f6bdf32a177d77954a599ae27" category="paragraph">Le VM che selezioni vengono visualizzate nell'area *Macchine virtuali aggiunte*. Puoi rimuovere singole VM dall'elenco o svuotare completamente l'elenco. Puoi aggiungere VM da più host KVM all'elenco.</block>
+  <block id="a9e57cec2c8ac57d718acff237fa31e8" category="list-text">Selezionare la policy di protezione che si desidera applicare al gruppo di protezione oppure creare una nuova policy selezionando *Create new policy*.</block>
+  <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">Modifica un gruppo di protezione se devi cambiare i dettagli del gruppo di protezione senza eliminarlo e ricrearlo.</block>
+  <block id="78fa67c28bf09a9555618080f725243c" category="list-text">Apporta le modifiche necessarie ai dettagli generali e alle VM nel protection group.</block>
+  <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">Se necessario, modificare la policy associata al protection group.</block>
+  <block id="64599804111c69e57052c204fb880b42" category="doc">Crea report di protezione per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery</block>
+  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">23 febbraio 2026</block>
+  <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">Crea e gestisci report di protezione</block>
 </blocks>
