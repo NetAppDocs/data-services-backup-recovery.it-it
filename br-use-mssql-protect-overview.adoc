@@ -78,9 +78,6 @@ NetApp Backup and Recovery consente di eseguire il backup di istanze e database 
 
 
 | StorageGRID | Cloud Volumes ONTAP Sistema ONTAP locale | Sistema ONTAP on-premise ONTAP S3 
-
-
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / A 
 |===
 
 NOTE: I riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS e AFF .
