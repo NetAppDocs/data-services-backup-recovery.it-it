@@ -26,13 +26,13 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 === Carichi di lavoro KVM supportati in General Availability (GA)
 
-Il supporto per i carichi di lavoro Microsoft Hyper-V è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
+Il supporto del carico di lavoro KVM è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
 
 Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
 
 
 
-=== Kubernetes supportato in General Availability (GA)
+=== Carichi di lavoro Kubernetes supportati in General Availability (GA)
 
 Il supporto per i carichi di lavoro Kubernetes è ora generalmente disponibile (GA) in NetApp Backup and Recovery. Questa versione dei carichi di lavoro Kubernetes introduce anche le seguenti funzionalità avanzate:
 
