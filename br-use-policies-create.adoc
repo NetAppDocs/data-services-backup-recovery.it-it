@@ -25,7 +25,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 * Creare una policy per la replica su storage secondario
 * Creare una policy per le impostazioni di archiviazione degli oggetti
 * Configurare le impostazioni avanzate dei criteri
-* Modifica policy (non disponibile per i carichi di lavoro di anteprima VMware)
+* Modifica policy (non disponibile per carichi di lavoro VMware)
 * Elimina le policy
 
 

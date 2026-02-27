@@ -61,7 +61,7 @@ indexpage:
       url: br-use-vmware-backup.html
     - title: Ripristinare i carichi di lavoro VMware
       url: br-use-vmware-restore.html
-  - title: Proteggi i carichi di lavoro KVM (anteprima)
+  - title: Proteggere i carichi di lavoro KVM
     links:
     - title: Panoramica sulla protezione dei carichi di lavoro KVM
       url: "/br-use-kvm-protect-overview.html"
@@ -97,7 +97,7 @@ indexpage:
       url: "/br-use-oracle-backup.html"
     - title: Ripristina i carichi di lavoro del database Oracle
       url: "/br-use-oracle-restore.html"
-  - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
+  - title: Proteggere i carichi di lavoro di Kubernetes
     links:
     - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
       url: br-use-kubernetes-protect-overview.html

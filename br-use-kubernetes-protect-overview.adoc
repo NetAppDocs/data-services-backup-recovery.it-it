@@ -27,9 +27,6 @@ NetApp Backup and Recovery offre i seguenti vantaggi per la gestione dei carichi
 * Backup incrementali permanenti per le applicazioni Kubernetes, che si traducono in Recovery Point Objectives (RPO) e Recovery Time Objectives (RTO) inferiori.
 
 
-
-NOTE: La presente documentazione viene fornita come anteprima tecnologica.  Durante l'anteprima, la funzionalità Kubernetes non è consigliata per i carichi di lavoro di produzione. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
-
 È possibile svolgere le seguenti attività relative alla gestione dei carichi di lavoro Kubernetes:
 
 * link:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"].

@@ -103,7 +103,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima dei carichi di lavoro KVM.
+Non disponibile per carichi di lavoro KVM.
 
 --
 ====

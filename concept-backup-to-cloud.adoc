@@ -19,9 +19,6 @@ NetApp Backup and Recovery è un servizio dati che fornisce una protezione dati 
 Il supporto per il backup e il ripristino è già integrato in tutti i sistemi ONTAP , quindi non sono necessari hardware, licenze software o gateway multimediali aggiuntivi. Ciò rende le operazioni di backup semplici ed economiche. NetApp Console semplifica l'implementazione di qualsiasi strategia di backup, inclusa l'intera gamma di varianti di backup 3-2-1, senza la necessità di più gestori di risorse o personale specializzato.
 
 
-NOTE: La documentazione sulla protezione dei carichi di lavoro VMware, KVM, Hyper-V e Kubernetes viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
-
-
 
 == Cosa puoi fare con NetApp Backup and Recovery
 
@@ -44,25 +41,17 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Fare riferimento alink:br-use-mssql-protect-overview.html["Proteggere i carichi di lavoro di Microsoft SQL Server"] .
 
 
-* *Carichi di lavoro VMware (anteprima con nuova interfaccia utente senza SnapCenter Plug-in for VMware vSphere)*:
+* *Carichi di lavoro VMware (con nuova interfaccia utente senza SnapCenter Plug-in per VMware vSphere)*:
 +
 ** Proteggi le tue VM VMware e i tuoi datastore con NetApp Backup and Recovery.
-** Esegui il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID (per l'anteprima).
+** Esegui il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID.
 ** Ripristina i dati VMware dal cloud al vCenter locale.
 ** È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.
 ** Utilizzare NetApp Backup and Recovery senza il SnapCenter Plug-in for VMware vSphere.
 ** Fare riferimento alink:br-use-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
 
 
-* *Carichi di lavoro VMware (con SnapCenter Plug-in for VMware vSphere)*:
-+
-** Esegui il backup di VM e datastore su Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e ripristina le VM sul SnapCenter Plug-in for VMware vSphere .
-** Ripristina i dati della VM dal cloud al vCenter locale con NetApp Backup and Recovery. È possibile ripristinare la macchina virtuale esattamente nella stessa posizione da cui è stato eseguito il backup oppure in una posizione alternativa.
-** Utilizzare NetApp Backup and Recovery insieme al SnapCenter Plug-in for VMware vSphere.
-** Fare riferimento alink:prev-vmware-protect-overview.html["Proteggi i carichi di lavoro VMware"] .
-
-
-* *Carichi di lavoro KVM (anteprima)*:
+* *Carichi di lavoro KVM*:
 +
 ** Eseguire il backup e il ripristino delle macchine virtuali
 ** Eseguire il backup dei pool di archiviazione KVM
@@ -70,7 +59,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Fare riferimento alink:br-use-kvm-protect-overview.html["Proteggere i carichi di lavoro KVM"] .
 
 
-* *Carichi di lavoro Hyper-V (anteprima)*:
+* *Carichi di lavoro Hyper-V*:
 +
 ** Eseguire il backup e il ripristino delle macchine virtuali
 ** Utilizzare gruppi di protezione per gestire le attività di backup
@@ -88,7 +77,7 @@ Utilizza NetApp Backup and Recovery per raggiungere i seguenti obiettivi:
 ** Fare riferimento a link:br-use-oracle-protect-overview.html["Proteggi i carichi di lavoro Oracle Database"].
 
 
-* *Carichi di lavoro Kubernetes (anteprima)*:
+* *Carichi di lavoro Kubernetes*:
 +
 ** Gestisci e proteggi le tue applicazioni e risorse Kubernetes, tutto in un unico posto.
 ** Utilizza criteri di protezione per strutturare i tuoi backup incrementali.
@@ -203,10 +192,10 @@ NetApp Backup and Recovery protegge i seguenti tipi di carichi di lavoro:
 * Volumi ONTAP
 * Istanze e database di Microsoft SQL Server archiviati su disco fisico e VMware Virtual Machine Disk (VMDK) su VMFS o NFS
 * VM e datastore VMware
-* Carichi di lavoro KVM (anteprima)
-* Carichi di lavoro Hyper-V (anteprima)
+* Carichi di lavoro KVM
+* Carichi di lavoro Hyper-V
 * Carichi di lavoro di Oracle Database (anteprima)
-* Carichi di lavoro Kubernetes (anteprima)
+* Carichi di lavoro Kubernetes
 
 
 .Sistemi supportati
@@ -220,9 +209,9 @@ NetApp Backup and Recovery protegge i seguenti tipi di carichi di lavoro:
 .Destinazioni di backup supportate
 * Servizi Web Amazon (AWS) S3
 * Google Cloud Storage
-* Microsoft Azure Blob (non disponibile per i carichi di lavoro VMware in anteprima)
+* Microsoft Azure Blob (non disponibile per carichi di lavoro VMware)
 * StorageGRID
-* ONTAP S3 (non disponibile per carichi di lavoro VMware in anteprima)
+* ONTAP S3 (Non disponibile per i carichi di lavoro VMware)
 
 
 

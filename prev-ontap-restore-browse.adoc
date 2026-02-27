@@ -153,7 +153,7 @@ Se si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una
 ====
 * Se il file di backup è stato configurato con la protezione DataLock e Ransomware, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e quindi accedere alla cartella e ai file necessari.
 * Se il file di backup risiede in un archivio, il ripristino a livello di cartella è supportato solo se la versione ONTAP è 9.13.1 o successiva.  Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
-* Con ONTAP 9.15.1 è possibile ripristinare le cartelle FlexGroup utilizzando l'opzione "Sfoglia e ripristina".  Questa funzionalità è in modalità Anteprima tecnologica.
+* Con ONTAP 9.15.1, puoi ripristinare le cartelle FlexGroup utilizzando l'opzione "Sfoglia e ripristina".
 +
 È possibile testarlo utilizzando un flag speciale descritto in https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog sulla versione NetApp Backup and Recovery di luglio 2024"^] .
 

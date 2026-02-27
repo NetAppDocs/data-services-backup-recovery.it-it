@@ -16,7 +16,7 @@ summary: Esaminare queste NetApp limitazioni di backup e ripristino prima di uti
 [role="lead"]
 Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
 
-Le seguenti azioni non sono supportate nella versione di anteprima dei carichi di lavoro VMware in NetApp Backup and Recovery:
+Le seguenti azioni non sono supportate nei carichi di lavoro VMware in NetApp Backup and Recovery:
 
 * Montare
 * Smonta

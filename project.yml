@@ -148,7 +148,7 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Risoluzione dei problemi di ripristino dei file guest
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: Protezione dei carichi di lavoro KVM (anteprima)
+    - title: Proteggere i carichi di lavoro KVM
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro KVM
         url: "/br-use-kvm-protect-overview.html"
@@ -187,7 +187,7 @@ sidebar:
         url: "/br-use-oracle-restore.html"
       - title: Montare e smontare i punti di ripristino
         url: "/br-use-oracle-mount-unmount.html"
-    - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
+    - title: Proteggere i carichi di lavoro di Kubernetes
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
         url: "/br-use-kubernetes-protect-overview.html"

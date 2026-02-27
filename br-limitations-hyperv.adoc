@@ -20,7 +20,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 == Azioni non supportate
 
-Le seguenti azioni non sono supportate nella versione di anteprima privata dei carichi di lavoro Hyper-V in NetApp Backup and Recovery:
+Le seguenti azioni non sono supportate nei carichi di lavoro Hyper-V in NetApp Backup and Recovery:
 
 * Crea gruppi di risorse utilizzando VM da più host Hyper-V
 * Ripristinare le VM in una posizione alternativa
