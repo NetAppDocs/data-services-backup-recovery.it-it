@@ -183,6 +183,8 @@ sidebar:
         url: "/br-use-oracle-protection-groups.html"
       - title: Esegui il backup dei carichi di lavoro Oracle Database
         url: "/br-use-oracle-backup.html"
+      - title: Clona i carichi di lavoro del database Oracle
+        url: "/br-use-oracle-clone.html"
       - title: Ripristina i carichi di lavoro del database Oracle
         url: "/br-use-oracle-restore.html"
       - title: Montare e smontare i punti di ripristino

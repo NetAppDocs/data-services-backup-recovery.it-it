@@ -14,13 +14,13 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 
 
 [role="lead"]
-NetApp Backup and Recovery deve prima rilevare i database Oracle per poterli proteggere.
+L'individuazione dei database Oracle consente a NetApp Backup and Recovery di proteggerli creando e ripristinando backup e snapshot.
 
 *Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 
 
-== Aggiungi un host Oracle e scopri le risorse
+== Aggiungi un host database Oracle e scopri le risorse
 
 Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
 
@@ -31,18 +31,27 @@ Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recover
 Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella Console ma non sono state rilevate risorse, viene visualizzata la pagina _Benvenuti nel nuovo NetApp Backup and Recovery_ con l'opzione *Rileva risorse*.
 
 . Seleziona *Scopri risorse*.
-. Inserisci le seguenti informazioni:
+. Selezionare *Oracle* per il campo *Workload type*.
+. Se non hai ancora memorizzato le credenziali per questo host di database Oracle, seleziona *Aggiungi credenziali*.
 +
-.. *Tipo di carico di lavoro*: seleziona *Oracle*.
-.. Se non hai ancora memorizzato le credenziali per questo host Oracle, seleziona *Aggiungi credenziali*.
-+
-... Selezionare l'agente della console da utilizzare con questo host.
-... Inserisci un nome per questa credenziale.
-... Inserisci il nome utente e la password per l'account.
-... Selezionare *Fatto*.
+.. Selezionare l'agente della console da utilizzare con questo host.
+.. Inserisci un nome per questa credenziale.
+.. Inserisci il nome utente e la password per l'account.
+.. Selezionare *Fatto*.
 
 
-.. *Registrazione host*: aggiungi un nuovo host Oracle.  Immettere l'FQDN o l'indirizzo IP dell'host, le credenziali, l'agente della console e il numero di porta.
+. *Registrazione host*: aggiungi un nuovo host Oracle database. Inserisci l'FQDN o l'indirizzo IP dell'host, le credenziali, il Console agent e il numero di porta.
+. (Facoltativo) Se si scelgono le credenziali per un utente non root, eseguire le seguenti operazioni:
++
+.. Per istruzioni su come aggiungere l'utente non root selezionato al file sudoers sull'host del database Oracle, selezionare *Configure sudoers*.
+.. Seguire le istruzioni nella finestra di dialogo, abilitare la casella di controllo al termine e selezionare *Fine*.
+
+
+. *Impostazioni avanzate*: Eseguire le seguenti operazioni:
++
+.. Inserisci la porta e il percorso di installazione da utilizzare per il NetApp plug-in. Il plug-in consente la comunicazione tra l'host del database Oracle e NetApp Backup and Recovery.
+.. Scegli se consentire a NetApp Backup and Recovery di installare automaticamente il plug-in o di saltare l'installazione (sarà necessario installare manualmente il plug-in sull'host).
+.. Scegli se eseguire i controlli pre-installazione o saltarli.
 
 
 . Seleziona *Scopri*.
@@ -53,7 +62,7 @@ TIP: Questo processo potrebbe richiedere alcuni minuti.
 
 
 .Risultato
-Il carico di lavoro Oracle viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventario.
+Il carico di lavoro del database Oracle viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventory.
 
 
 

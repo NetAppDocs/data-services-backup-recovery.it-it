@@ -36,7 +36,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 . Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
 . Esaminare i dettagli di questa politica.
 +
-** *Carico di lavoro*: esempi includono Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database o Kubernetes.
+** *Carico di lavoro*: alcuni esempi includono Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, database Oracle o Kubernetes.
 ** *Tipo di backup*: alcuni esempi includono il backup completo e il backup del registro.
 ** *Architettura*: Alcuni esempi includono snapshot locale, fan-out, cascading, disco su disco e disco su archivio oggetti.
 ** *Risorse protette*: mostra quante risorse sul totale delle risorse di quel carico di lavoro sono protette.

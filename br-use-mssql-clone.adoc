@@ -159,7 +159,7 @@ Salta l'aggiornamento del clone per mantenerlo invariato.
 
 È possibile scegliere di dividere un clone in cloni indipendenti o a lungo termine.  Una procedura guidata mostra l'elenco degli aggregati che fanno parte dell'SVM, le loro dimensioni e dove risiede il volume clonato.  NetApp Backup and Recovery indica anche se c'è abbastanza spazio per dividere il clone.  Dopo essere stato diviso, il clone diventa un database indipendente a scopo di protezione.
 
-Il lavoro di clonazione non può essere rimosso e può essere riutilizzato per altri cloni.
+Il clone job non viene rimosso e può essere riutilizzato per altri cloni.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Clona*.

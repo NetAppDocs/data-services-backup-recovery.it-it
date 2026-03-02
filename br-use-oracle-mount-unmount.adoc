@@ -50,7 +50,7 @@ Il punto di ripristino è montato sull'host Oracle.
 
 
 
-== Smontare un punto di ripristino del database Oracle
+== Smonta un punto di ripristino del database Oracle
 
 Smontare il punto di ripristino quando non è più necessario visualizzare le modifiche apportate al database.
 
