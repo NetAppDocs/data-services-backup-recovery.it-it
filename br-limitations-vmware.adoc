@@ -20,8 +20,6 @@ Le seguenti azioni non sono supportate nei carichi di lavoro VMware in NetApp Ba
 
 * Montare
 * Smonta
-* Allega VMDK
-* Stacca VMDK
 * Supporto vVol
 * Supporto NVMe
 * Integrazione e-mail

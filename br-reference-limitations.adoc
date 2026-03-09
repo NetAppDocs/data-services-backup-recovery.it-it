@@ -46,18 +46,13 @@ Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi F
 
 
 * Quando si creano repliche da sistemi ONTAP locali, se la versione ONTAP sul sistema Cloud Volumes ONTAP di destinazione è 9.8, 9.9 o 9.11, sono consentiti solo criteri mirror-vault.
-* NetApp Backup & Recovery non supporta la conversione di un FlexVol volume con una relazione di backup cloud attiva in un volume FlexGroup mantenendo la funzionalità di backup cloud.
+* Quando si converte un volume FlexVol in un volume FlexGroup o viceversa, il volume convertito viene considerato un nuovo volume; è necessario impostare la protezione per il volume convertito dopo la conversione. È possibile ripristinare i backup creati prima della conversione in un volume diverso.
 
 
 
 
 == Limitazioni del backup su oggetto per i volumi ONTAP
 
-* Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
-+
-Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
-
-* Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
 * Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
@@ -89,7 +84,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 * Il backup di volumi ad hoc tramite il pulsante *Esegui backup ora* non è supportato sui volumi di protezione dati.
 * Le configurazioni SM-BC non sono supportate.
 * ONTAP non supporta il fan-out delle relazioni SnapMirror da un singolo volume a più archivi di oggetti; pertanto, questa configurazione non è supportata da NetApp Backup and Recovery.
-* Al momento, la modalità WORM/Compliance su un archivio oggetti è supportata su Amazon S3, Azure e StorageGRID .  Questa funzionalità è nota come DataLock e deve essere gestita tramite le impostazioni NetApp Backup and Recovery , non tramite l'interfaccia del provider cloud.
+* La modalità WORM/Compliance su un archivio di oggetti è supportata su Amazon S3, Google Cloud Platform (GCP), Azure e StorageGRID in questo momento. Questa è nota come funzionalità DataLock e deve essere gestita utilizzando le impostazioni di NetApp Backup and Recovery, non tramite l'interfaccia del cloud provider.
 
 
 
@@ -109,8 +104,6 @@ Se si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino delle
 
 * Il ripristino di directory/cartelle è supportato per i dati che risiedono nell'archiviazione solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
 * Il ripristino di directory/cartelle è supportato per i dati protetti tramite DataLock solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
-* Il ripristino di directory/cartelle non è attualmente supportato da repliche e/o snapshot locali.
-* Il ripristino da volumi FlexGroup a volumi FlexVol o da volumi FlexVol a volumi FlexGroup non è supportato.
 * Il file da ripristinare deve utilizzare la stessa lingua del volume di destinazione.  Se le lingue non sono le stesse, verrà visualizzato un messaggio di errore.
 * La priorità di ripristino _Alta_ non è supportata durante il ripristino dei dati dall'archiviazione di Azure ai sistemi StorageGRID .
 * Se si esegue il backup di un volume DP e poi si decide di interrompere la relazione SnapMirror con quel volume, non sarà possibile ripristinare i file su quel volume a meno che non si elimini anche la relazione SnapMirror o si inverta la direzione SnapMirror .

@@ -142,6 +142,7 @@ Quando si esegue il ripristino in una posizione alternativa, è possibile modifi
 
 ** Sezione *Opzioni pre-ripristino*:
 +
+*** *Ripristino rapido*: abilita questa opzione per indicare a Backup and Recovery di ripristinare solo i metadati (file, LUN e namespace) dall'archivio di oggetti. In questo modo i volumi saranno disponibili più velocemente rispetto a un ripristino completo.
 *** *Prescript*: abilita questa opzione per automatizzare attività aggiuntive eseguendo uno script personalizzato prima dell'inizio dell'operazione di ripristino. Immettere il percorso completo dello script da eseguire e tutti gli argomenti accettati dallo script.
 
 
