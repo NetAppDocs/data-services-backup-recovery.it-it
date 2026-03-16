@@ -91,8 +91,6 @@ sidebar:
         url: "/prev-ontap-backup-onprem-storagegrid.html"
       - title: Migrare i volumi utilizzando SnapMirror su Cloud Resync
         url: "/prev-ontap-migrate-resync.html"
-      - title: Ripristinare i dati di configurazione in un sito oscuro
-        url: "/reference-backup-cbs-db-in-dark-site.html"
       - title: Gestire i backup ONTAP
         url: "/prev-ontap-backup-manage.html"
       - title: Ripristina dai backup ONTAP
@@ -242,6 +240,8 @@ sidebar:
       url: "/prev-reference-azure-archive-storage-tiers.html"
     - title: Livelli di archiviazione supportati da Google Cloud
       url: "/prev-reference-gcp-archive-storage-tiers.html"
+    - title: Ripristinare i dati di configurazione in un sito oscuro
+      url: "/reference-backup-cbs-db-in-dark-site.html"
   - title: Note legali
     url: "/legal-notices.html"
 product-family:

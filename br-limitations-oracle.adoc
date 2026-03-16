@@ -20,5 +20,3 @@ La seguente azione non è supportata nella versione di anteprima dei carichi di 
 
 * Backup offline
 
-
-Oracle Database è supportato solo come distribuzione autonoma utilizzando NFS, SAN o ASM SAN nella versione di anteprima privata dei carichi di lavoro di Oracle Database.
