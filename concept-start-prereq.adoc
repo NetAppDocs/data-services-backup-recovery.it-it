@@ -188,11 +188,7 @@ Assicurati che il tuo ambiente soddisfi requisiti specifici per individuare e pr
 | Requisito | Supportato 
 
 
-| Topologia di distribuzione  a| 
-* Autonomo (NFS, SAN, ASM SAN)
-* RAC su ASM (VMDK su VMFS)
-
-
+| Topologia di distribuzione | Autonomo (NFS, SAN, ASM SAN) 
 
 
 | Versioni di Oracle Database  a| 
