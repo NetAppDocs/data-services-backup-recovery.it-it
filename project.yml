@@ -176,6 +176,8 @@ sidebar:
         url: "/br-use-oracle-protect-overview.html"
       - title: Scopri i carichi di lavoro Oracle Database
         url: "/br-start-discover-oracle.html"
+      - title: Configurare un database Oracle
+        url: "/br-start-configure-oracle-database.html"
       - title: Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle
           Database
         url: "/br-use-oracle-protection-groups.html"
@@ -185,7 +187,7 @@ sidebar:
         url: "/br-use-oracle-clone.html"
       - title: Ripristina i carichi di lavoro del database Oracle
         url: "/br-use-oracle-restore.html"
-      - title: Montare e smontare i punti di ripristino
+      - title: Montare, smontare e catalogare i punti di ripristino
         url: "/br-use-oracle-mount-unmount.html"
     - title: Proteggere i carichi di lavoro di Kubernetes
       entries:

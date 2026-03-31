@@ -1464,8 +1464,6 @@
   <block id="0e3dfc8aecedae71e6c1e03c52c544ec" category="section-title">Esegui subito il backup di un database con un backup su richiesta</block>
   <block id="4875f551855c5d20449df9a7a54edc8a" category="paragraph">È possibile eseguire un backup su richiesta di un singolo database.</block>
   <block id="d8e3db119b7cf9c31602a2121bfa4365" category="list-text">Selezionare il database di cui si desidera eseguire il backup.</block>
-  <block id="77b7ee08ed330c77cd76797cc7019357" category="doc">Montare e smontare i punti di ripristino del database Oracle con NetApp Backup and Recovery</block>
-  <block id="797c8d8b5a0f5a880bd15fd855682db6" category="paragraph">Potrebbe essere necessario montare un punto di ripristino di Oracle Database se è necessario accedere al database in uno stato controllato per eseguire operazioni di ripristino.</block>
   <block id="027d1aa00ef27e7ff911f7a3ecb49c5d" category="list-text">Seleziona la tessera Oracle.</block>
   <block id="3fe9c6f0345265378a65d07de3e0456f" category="list-text">Nel menu Backup e ripristino, selezionare *Inventario*.</block>
   <block id="872dd4524336673d42ecaa46bc8eb4a9" category="list-text">Per il carico di lavoro Oracle Database nell'elenco, selezionare *Visualizza*.</block>
@@ -1994,12 +1992,8 @@
   <block id="3672cca688eb0474cd3fee2add1a2067" category="cell">Tipo di porto</block>
   <block id="99ddf0e823c1be51589f68696f62cf56" category="cell">Porta preconfigurata</block>
   <block id="2cb2843b629d315325aac076907ec4b9" category="cell">Porta del server VMware ESXi</block>
-  <block id="62e8cb73d81843582e583ccefca95a44" category="paragraph">443 (HTTPS), bidirezionale. La funzionalità di ripristino dei file guest utilizza questa porta.</block>
   <block id="131b9f1c14d26ba7a0cce7389e7679a9" category="cell">Cluster di archiviazione o porta VM di archiviazione</block>
   <block id="6def2be93b1fef441b3ca8a2641cc837" category="paragraph">*Requisiti di controllo degli accessi basato sui ruoli (RBAC) per la protezione dei carichi di lavoro VMware*</block>
-  <block id="5a87933ace950bfd22e0597a2e342c27" category="paragraph">L'account amministratore vCenter deve disporre dei privilegi vCenter richiesti.</block>
-  <block id="444268068dcfb1a62c19cda69301e76f" category="inline-link">SnapCenter Plug-in for VMware vSphere Privilegi vCenter necessari</block>
-  <block id="2c5eb2a50ef564fa05d6cc4a6c86af8f" category="paragraph">Per un elenco dei privilegi vCenter necessari, vedere<block ref="9044a834d03d45a613d887c1c4d3ddd1" category="inline-link-rx"></block> .</block>
   <block id="82ede2f1cf5c1f154c5f0ccbd08838b2" category="section-title">Requisiti per la protezione dei carichi di lavoro KVM</block>
   <block id="64bef292bab71a21d8b1fdfdc5e220aa" category="paragraph">Per individuare e proteggere le macchine virtuali KVM sono necessari requisiti specifici.</block>
   <block id="0e41245837200bd6043f82d33b20190c" category="list-text">Una moderna distribuzione Linux che esegue la versione del kernel 5.14.0-503.22.1.el9_5.x86_64 (a lungo termine) o successiva</block>
@@ -4009,7 +4003,6 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Gestire l'inventario di Microsoft SQL Server</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Gestire gli snapshot di Microsoft SQL Server</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Creare report di Microsoft SQL Server</block>
-  <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Montare e smontare i punti di ripristino</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">Monitorare i lavori</block>
   <block id="68b1e52936c426875b2780e91e195546" category="sidebar">Automatizza con l'API REST</block>
@@ -5038,13 +5031,11 @@
   <block id="e82e6b5a702d1fc223d9ea698359376e" category="section-title">Aggiungi un host database Oracle e scopri le risorse</block>
   <block id="b5476a384252538238d37795b3f8f5a1" category="list-text">Selezionare *Oracle* per il campo *Workload type*.</block>
   <block id="3dcf508963e6fe907e0ca3a4c9693fd9" category="list-text">Se non hai ancora memorizzato le credenziali per questo host di database Oracle, seleziona *Aggiungi credenziali*.</block>
-  <block id="19c33f5bda8d2b67e3f14b642d95e9ec" category="list-text">*Registrazione host*: aggiungi un nuovo host Oracle database. Inserisci l'FQDN o l'indirizzo IP dell'host, le credenziali, il Console agent e il numero di porta.</block>
   <block id="2e9227201c87c406d2477a129cc51bf0" category="list-text">(Facoltativo) Se si scelgono le credenziali per un utente non root, eseguire le seguenti operazioni:</block>
   <block id="a70d5c13d6b7f41208490c29f59e3063" category="list-text">Per istruzioni su come aggiungere l'utente non root selezionato al file sudoers sull'host del database Oracle, selezionare *Configure sudoers*.</block>
   <block id="bf8e3c6752e8047e150b1ede213faaf5" category="list-text">Seguire le istruzioni nella finestra di dialogo, abilitare la casella di controllo al termine e selezionare *Fine*.</block>
   <block id="4388b2b0f034ea64ddb691069cae7e62" category="list-text">*Impostazioni avanzate*: Eseguire le seguenti operazioni:</block>
   <block id="c9bc8bea020f64d04a5acca88723ddfd" category="list-text">Inserisci la porta e il percorso di installazione da utilizzare per il NetApp plug-in. Il plug-in consente la comunicazione tra l'host del database Oracle e NetApp Backup and Recovery.</block>
-  <block id="7ed97ae916d37ed8443606f5c8ac4fbb" category="list-text">Scegli se eseguire i controlli pre-installazione o saltarli.</block>
   <block id="25f9ab167417178f57bb91f475e3b1b1" category="paragraph">Il carico di lavoro del database Oracle viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventory.</block>
   <block id="30000add7aaf9253676b4000b4de34d5" category="paragraph">Il clone job non viene rimosso e può essere riutilizzato per altri cloni.</block>
   <block id="cd988024594d1879c00a0562b6e05d11" category="summary">Clona i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery.</block>
@@ -5100,7 +5091,6 @@
   <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">09 marzo 2026</block>
   <block id="e0ec2dc076093e707f6f4a129c330a5e" category="paragraph">In questa versione, VMware workloads introduce i seguenti miglioramenti:</block>
   <block id="c951c234678bc7ac8d60ec274364552c" category="paragraph">*Supporto per la coerenza delle VM per livello di pianificazione*: ora puoi abilitare backup coerenti con le VM e con le applicazioni per livelli di pianificazione specifici durante la configurazione delle policy di protezione per i carichi di lavoro VMware. I livelli annuale, mensile e settimanale sono supportati.</block>
-  <block id="b2dce04db788f63b4bd7ca87afaedbeb" category="list-text">Scegli se consentire a NetApp Backup and Recovery di installare automaticamente il plug-in oppure saltare l'installazione automatica del plug-in (se abiliti *Usa installazione manuale*, dovrai installare manualmente il plug-in sull'host).</block>
   <block id="3cee314942b4a72ed68541a1f11363e7" category="admonition">L'aggiunta delle risorse può richiedere diversi minuti. Per visualizzare l'avanzamento, seleziona *Track progress* nella finestra di dialogo di stato in fondo alla pagina Inventario oppure seleziona *Monitoring* dal menu a sinistra.</block>
   <block id="9ed79b14b5dd7fad46b63a16e128743e" category="list-text">*Abilita snapshot coerenti con la VM*: Seleziona se desideri abilitare gli snapshot coerenti con la VM. Ciò garantisce che gli snapshot appena creati siano coerenti con lo stato della macchina virtuale al momento dello snapshot. Questo è utile per garantire che i backup possano essere ripristinati correttamente e che i dati siano in uno stato coerente. Questo non si applica agli snapshot esistenti. Per i carichi di lavoro VMware, puoi abilitare questa opzione per frequenze di criteri specifiche, tranne quella oraria.</block>
   <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">Requisito</block>
@@ -5147,4 +5137,55 @@
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Eseguire il comando *ls* per verificare che la cartella "catalogdb1" sia stata creata e che contenga le sottocartelle<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block> e<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 marzo 2026</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 o versioni successive</block>
+  <block id="0fd3e1f73fc71151c33e67909039dd88" category="paragraph">In questa versione, Oracle Database workloads introduce il seguente miglioramento:</block>
+  <block id="b77d45fa1e71e6bf913df1f7680aa70c" category="list-text">*Supporto per host cluster*: ora è possibile individuare e proteggere i database Oracle Real Application Clusters (RAC) che utilizzano Oracle Automatic Storage Management (ASM) e sono distribuiti tramite VMDK su file system VMFS. Per ulteriori informazioni, consultare <block ref="d0dab0542f96585a18cc2e536da75fd6" category="inline-link-rx"></block>.</block>
+  <block id="cb7dc55d43e841bfb3cf4e114d10c93d" category="inline-link">Configurare un database Oracle</block>
+  <block id="11bf1aa4a1c990ba08edcb69e7bd16a5" category="list-text">*Supporto del catalogo RMAN*: Ora è possibile configurare Backup and Recovery per archiviare i metadati di protezione nel catalogo di ripristino RMAN, che garantisce ridondanza e conservazione a lungo termine nel caso in cui il file di controllo di destinazione venga perso. Per ulteriori informazioni, consultare <block ref="c357671575c77250cb0b189fb7b1b3b4" category="inline-link-rx"></block>.</block>
+  <block id="1336b537734375879229275580e44691" category="inline-link">Panoramica sulla protezione dei carichi di lavoro del database Oracle</block>
+  <block id="1862dacb480058987868f9ba0ecb7166" category="paragraph">Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a<block ref="a1bc2d91e29f35544fc66a9a951bc0f5" category="inline-link-rx"></block>.</block>
+  <block id="f2e80d71f106d051f3936857dd104cec" category="summary">Configura il tuo database Oracle in NetApp Backup and Recovery.</block>
+  <block id="a8926a2556cafdec73bce23cdd25f47b" category="doc">Configurare un database Oracle in NetApp Backup and Recovery</block>
+  <block id="7b0a807dfc43b9f12f43aed88675eb15" category="paragraph">È possibile modificare le impostazioni di autenticazione e dei nodi per un nuovo database Oracle standalone o in cluster. NetApp Backup and Recovery protegge i database senza queste modifiche. Se l'ambiente cambia dopo il rilevamento, potrebbe essere necessario aggiornare le impostazioni del database.</block>
+  <block id="b67dfdd35ec8a688793fa8df3ac7a3cf" category="paragraph">Modificare la configurazione di un database Oracle standalone o in cluster.</block>
+  <block id="6030936be17716e99ea49dd7fbd07797" category="list-text">Nell'inventario di Oracle, selezionare il menu *Database*.</block>
+  <block id="883cbacf8db43b0881a193c4d47d530a" category="list-text">Nell'elenco dei database, selezionare *Configura database* (database standalone) o *Configura RAC database* (database cluster) per il database che si desidera configurare.</block>
+  <block id="844712c0c4fa9ea8ff44ee293d026a72" category="list-text">*Configura le impostazioni del database*: Configura le impostazioni di autenticazione per il database standalone o in cluster.</block>
+  <block id="0c83cacfba83bada618e0ec18557f95d" category="list-text">Seleziona *autenticazione OS* per autenticarti solo con il sistema operativo host. Backup and Recovery utilizza le credenziali host che hai specificato durante la fase di rilevamento.</block>
+  <block id="32406e7fb2703343d11c0001373270cd" category="list-text">Seleziona *Autenticazione database* quando il database richiede le credenziali. Quindi scegli le credenziali esistenti o aggiungine di nuove e seleziona la porta da utilizzare per la connessione.</block>
+  <block id="b454e69c64fcc7b2bd2fbfca17404d2f" category="list-text">*Configura il catalogo RMAN*: Scegli dove vengono archiviati i metadati per le operazioni di backup e ripristino per questo database o cluster quando la catalogazione automatica è abilitata nella policy di protezione o quando si cataloga manualmente un punto di ripristino:</block>
+  <block id="3ce44f2405f558a86185711aa7817454" category="list-text">Seleziona *file di controllo di destinazione* per memorizzare i metadati nel file di controllo di destinazione del database.</block>
+  <block id="64856894b15bab18945be173f251b08d" category="list-text">Seleziona *Catalog database* per memorizzare i metadati nel catalogo di ripristino RMAN. Scegli le credenziali e il nome del Transparent Network Substrate (TNS) per connetterti al catalogo di ripristino.</block>
+  <block id="368bfea96a2dbb524c41a8373bac24eb" category="paragraph">Il catalogo di ripristino di RMAN è uno schema di database separato utilizzato dall'utility RMAN per memorizzare metadati relativi ai backup e alle operazioni di ripristino dei database registrati. Offre ridondanza e conservazione a lungo termine nel caso in cui il file di controllo venga perso o quando siano necessari dati storici. Abilitare questa opzione per registrare i file di dati e le copie dei log di archivio nel repository RMAN, in modo che RMAN possa tracciare e gestire tali copie per la creazione di report e il ripristino.</block>
+  <block id="09392a65d131d6cda50efbcbf1859b83" category="list-text">*Configura i nodi* (solo per database clusterizzati): aggiungi o rimuovi nodi dalla protezione oppure modifica la priorità dei nodi utilizzando i pulsanti freccia.</block>
+  <block id="ee9a7b793b54e3861d3aa7e68e1bfd55" category="paragraph">I nodi con priorità più alta vengono protetti per primi. I nodi con priorità inferiore vengono protetti solo se i nodi con priorità più alta sono irraggiungibili o non funzionanti.</block>
+  <block id="91a8fa3f6989d0babb6d08cdbd5720cd" category="list-text">Al termine, selezionare *Fatto*.</block>
+  <block id="4924894d8ebf3e50b09092d15ac74cf5" category="paragraph">Backup and Recovery si connette al database utilizzando le nuove impostazioni.</block>
+  <block id="676f5f057b9a7bfdec60f96e05f53d88" category="list-text">*Registrazione host*: Aggiungere un nuovo host Oracle Database. Nel campo *FQDN o indirizzo IP dell'host*, immettere l'FQDN o l'indirizzo IP dell'host - per i database clusterizzati è possibile immettere l'FQDN o l'IP di qualsiasi nodo del cluster. Quindi fornire le credenziali, l'agente della Console e il numero di porta.</block>
+  <block id="be23ea32b7bfdd906aa3256b808f153e" category="list-text">Scegli se consentire a NetApp Backup and Recovery di installare automaticamente il plug-in su ciascun host oppure se saltare l'installazione automatica del plug-in per tutti gli host. Seleziona *Mostrami come* per le istruzioni di installazione manuale.</block>
+  <block id="f66cf22bc5dcc2ec3f5e9ac32fb89646" category="paragraph">Backup and Recovery si connette a ciascun host tramite SSH per installare automaticamente il plug-in. Abilita *Usa installazione manuale* quando si verifica una delle seguenti condizioni:</block>
+  <block id="d95584ac80f6e19dfd0cd055def83823" category="list-text">Uno o più host non eseguono il servizio SSH.</block>
+  <block id="c2001a00184e6351f6be08c1126d2354" category="list-text">Qualsiasi host dispone già del NetApp plug-in (anche se solo alcuni membri del cluster lo possiedono).</block>
+  <block id="27ac64420df3b10e4c1bcf9f4a5c14e6" category="list-text">Preferisci installare il plug-in su ciascun host manualmente.</block>
+  <block id="ed1ed940aa8203650aff6fef27150796" category="list-text">Se l'host del database è in cluster, abilita l'opzione *Aggiungi tutti gli host del cluster* per individuare tutti gli host presenti nel cluster.</block>
+  <block id="a5eb084a1322f9be24762b38a4fc5229" category="list-text">Scegli se eseguire i controlli preliminari su ciascun host prima di installare automaticamente il plug-in. Se i controlli falliscono, l'installazione automatica del plug-in si interrompe. Per ignorare i controlli e installare comunque, abilita *Salta i controlli preliminari facoltativi* (attivata automaticamente se scegli l'installazione manuale).</block>
+  <block id="f3134e2a4c43c6b44aa4740e858e4d46" category="doc">Montare, smontare e catalogare i punti di ripristino del database Oracle con NetApp Backup and Recovery</block>
+  <block id="001f29f112c466574ddd6d160c1aab7b" category="paragraph">Potrebbe essere necessario montare un punto di ripristino di Oracle Database se si ha bisogno di accedere al database in uno stato controllato per eseguire operazioni di ripristino. Catalogare manualmente il punto di ripristino quando è necessario archiviare i metadati delle operazioni di backup e ripristino nel catalogo di ripristino RMAN e l'opzione per la catalogazione automatica dei metadati non è abilitata.</block>
+  <block id="1c00e610b491586395395476dbf8c162" category="section-title">Cataloga un punto di ripristino del database Oracle</block>
+  <block id="e5e6317c83585d62864b24ca930be15e" category="paragraph">Cataloga manualmente un punto di ripristino quando devi conservarne i metadati di backup e di ripristino delle operazioni. I metadati vengono memorizzati in base alle impostazioni di *Configura catalogo RMAN* scelte per il database (nel file di controllo per impostazione predefinita). Devi catalogare manualmente solo se la catalogazione automatica è disabilitata nella policy di protezione associata.</block>
+  <block id="022a8430e553de21aa98279f3f834824" category="list-text">Scegli un punto di ripristino dall'elenco e seleziona l'icona Azioni <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Catalogo*.</block>
+  <block id="c11c35cc7a1e267ff6b33d9873e74d29" category="list-text">Conferma l'azione selezionando *Catalog*.</block>
+  <block id="7d138ec0174da03337ca77a53e9b93da" category="list-text">*Impostazioni del catalogo RMAN*: (Si applica solo ai carichi di lavoro di database Oracle) Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino del database Oracle. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo per impostazione predefinita). Consulta <block ref="a332d34c6239f7cac0220ece667896af" category="inline-link-macro-rx"></block> per modificare queste impostazioni per un database.</block>
+  <block id="37fa73b86d98c87a23aa1c4614e46436" category="list-text">*SnapMirror formato del volume e dell'istantanea*: Scegliere tra le seguenti opzioni:</block>
+  <block id="219160b0f165dc42c8baf48fef44eff1" category="list-text">*Utilizza un formato di nome personalizzato per la copia snapshot*: scegli uno schema di denominazione per gli snapshot. Se lasciato vuoto, un timestamp viene aggiunto alla fine del nome di ogni snapshot.</block>
+  <block id="80c4384169191d80244c3f0757ddce7a" category="list-text">*Fornire il formato del volume SnapMirror*: specificare un prefisso, un suffisso o entrambi per modificare il nome predefinito del volume SnapMirror. Per impostazione predefinita, un volume SnapMirror eredita il nome del volume di origine.</block>
+  <block id="7ebcad2b4e076ec222a6821f777426e5" category="cell">VMware Tools</block>
+  <block id="de0a644491dbcf8afb745eaa3757ebaa" category="inline-link">Informazioni sulla mappatura delle versioni di VMware</block>
+  <block id="058a089cc89d6787b049bbda92f07310" category="cell">VMware Tools è necessario quando si utilizza la funzionalità di ripristino di file e cartelle e i backup coerenti con la macchina virtuale. Per assicurarsi che la versione di VMware Tools corrisponda alla versione di ESXi Server in uso, fare riferimento a <block ref="ee048a8bc5959e5e47cd9a1e25d270bd" category="inline-link-rx"></block>.</block>
+  <block id="2b31df63a742e08291e56cec2dd644ae" category="paragraph">443 (HTTPS), bidirezionale. La funzione di ripristino di file e cartelle utilizza questa porta.</block>
+  <block id="1db417bf673f82a6c8ca189db7008e5e" category="paragraph">Il tuo account utente della Console deve disporre del ruolo di super amministratore di NetApp Backup and Recovery per poter lavorare con i carichi di lavoro VMware.</block>
+  <block id="019fba30868c655ee8cc940ae99cd3cd" category="inline-link">Ruoli di backup e ripristino nella NetApp Console</block>
+  <block id="80afdb34bdd1565998c40515197f31b9" category="paragraph">Per ulteriori informazioni sui ruoli di Backup e Recovery, fare riferimento a<block ref="6de1818932cff795152c5395660d33a2" category="inline-link-rx"></block>.</block>
+  <block id="40462b3520e204c56d496704b2197731" category="list-text">RAC su ASM (VMDK su VMFS)</block>
+  <block id="d8fdc2681cdec613a02ac551c44a6e8c" category="section-title">31 marzo 2026</block>
+  <block id="e2ff2fbe928113326186485b8655d712" category="sidebar">Montare, smontare e catalogare i punti di ripristino</block>
 </blocks>

@@ -231,6 +231,13 @@ Facoltativamente, è possibile configurare le impostazioni avanzate nel criterio
 . Abilita le impostazioni che desideri visualizzare o modificare, quindi seleziona *Accetta*.
 . Fornire le seguenti informazioni:
 +
+** *Impostazioni del catalogo RMAN*: (Si applica solo ai carichi di lavoro di database Oracle) Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino del database Oracle. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo per impostazione predefinita). Consulta link:br-start-configure-oracle-database.html["Configurare un database Oracle"] per modificare queste impostazioni per un database.
+** *SnapMirror formato del volume e dell'istantanea*: Scegliere tra le seguenti opzioni:
++
+*** *Utilizza un formato di nome personalizzato per la copia snapshot*: scegli uno schema di denominazione per gli snapshot. Se lasciato vuoto, un timestamp viene aggiunto alla fine del nome di ogni snapshot.
+*** *Fornire il formato del volume SnapMirror*: specificare un prefisso, un suffisso o entrambi per modificare il nome predefinito del volume SnapMirror. Per impostazione predefinita, un volume SnapMirror eredita il nome del volume di origine.
+
+
 ** *Backup di sola copia*: (si applica solo ai carichi di lavoro di Microsoft SQL Server) Scegli il backup di sola copia (un tipo di backup di Microsoft SQL Server) se devi eseguire il backup delle tue risorse utilizzando un'altra applicazione di backup.
 ** *Impostazioni del gruppo di disponibilità*: (si applica solo ai carichi di lavoro di Microsoft SQL Server) Seleziona le repliche di backup preferite o specifica una replica specifica.  Questa impostazione è utile se si dispone di un gruppo di disponibilità di SQL Server e si desidera controllare quale replica viene utilizzata per i backup.
 ** *Velocità di trasferimento massima*: per non impostare un limite all'utilizzo della larghezza di banda, selezionare *Illimitato*.  Se si desidera limitare la velocità di trasferimento, selezionare *Limitata* e selezionare la larghezza di banda di rete tra 1 e 1.000 Mbps assegnata per caricare i backup nell'archiviazione degli oggetti.  Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi del sistema all'archiviazione degli oggetti.  Se noti che il traffico di backup influisce sui normali carichi di lavoro degli utenti, valuta la possibilità di ridurre la quantità di larghezza di banda di rete utilizzata durante il trasferimento.

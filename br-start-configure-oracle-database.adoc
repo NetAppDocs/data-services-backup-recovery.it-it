@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure-oracle-database.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle, configure 
+summary: Configura il tuo database Oracle in NetApp Backup and Recovery. 
+---
+= Configurare un database Oracle in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile modificare le impostazioni di autenticazione e dei nodi per un nuovo database Oracle standalone o in cluster. NetApp Backup and Recovery protegge i database senza queste modifiche. Se l'ambiente cambia dopo il rilevamento, potrebbe essere necessario aggiornare le impostazioni del database.
+
+*Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+
+
+
+== Configurare un database Oracle
+
+Modificare la configurazione di un database Oracle standalone o in cluster.
+
+.Passi
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
+. Nell'inventario di Oracle, selezionare il menu *Database*.
+. Nell'elenco dei database, selezionare *Configura database* (database standalone) o *Configura RAC database* (database cluster) per il database che si desidera configurare.
+. *Configura le impostazioni del database*: Configura le impostazioni di autenticazione per il database standalone o in cluster.
++
+** Seleziona *autenticazione OS* per autenticarti solo con il sistema operativo host. Backup and Recovery utilizza le credenziali host che hai specificato durante la fase di rilevamento.
+** Seleziona *Autenticazione database* quando il database richiede le credenziali. Quindi scegli le credenziali esistenti o aggiungine di nuove e seleziona la porta da utilizzare per la connessione.
+
+
+. *Configura il catalogo RMAN*: Scegli dove vengono archiviati i metadati per le operazioni di backup e ripristino per questo database o cluster quando la catalogazione automatica è abilitata nella policy di protezione o quando si cataloga manualmente un punto di ripristino:
++
+** Seleziona *file di controllo di destinazione* per memorizzare i metadati nel file di controllo di destinazione del database.
+** Seleziona *Catalog database* per memorizzare i metadati nel catalogo di ripristino RMAN. Scegli le credenziali e il nome del Transparent Network Substrate (TNS) per connetterti al catalogo di ripristino.
++
+Il catalogo di ripristino di RMAN è uno schema di database separato utilizzato dall'utility RMAN per memorizzare metadati relativi ai backup e alle operazioni di ripristino dei database registrati. Offre ridondanza e conservazione a lungo termine nel caso in cui il file di controllo venga perso o quando siano necessari dati storici. Abilitare questa opzione per registrare i file di dati e le copie dei log di archivio nel repository RMAN, in modo che RMAN possa tracciare e gestire tali copie per la creazione di report e il ripristino.
+
+
+
+. *Configura i nodi* (solo per database clusterizzati): aggiungi o rimuovi nodi dalla protezione oppure modifica la priorità dei nodi utilizzando i pulsanti freccia.
++
+I nodi con priorità più alta vengono protetti per primi. I nodi con priorità inferiore vengono protetti solo se i nodi con priorità più alta sono irraggiungibili o non funzionanti.
+
+. Al termine, selezionare *Fatto*.
+
+
+.Risultato
+Backup and Recovery si connette al database utilizzando le nuove impostazioni.

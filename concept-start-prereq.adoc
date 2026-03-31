@@ -101,6 +101,9 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 | Versioni VMware vCenter vSphere | 7.0U1 e versioni successive 
 
 
+| VMware Tools | VMware Tools è necessario quando si utilizza la funzionalità di ripristino di file e cartelle e i backup coerenti con la macchina virtuale. Per assicurarsi che la versione di VMware Tools corrisponda alla versione di ESXi Server in uso, fare riferimento a  https://packages.vmware.com/tools/versions["Informazioni sulla mappatura delle versioni di VMware"]. 
+
+
 | Tipi di indirizzo IP | IPv4, IPv6 
 
 
@@ -121,7 +124,7 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 
 
 | Porta del server VMware ESXi  a| 
-443 (HTTPS), bidirezionale. La funzionalità di ripristino dei file guest utilizza questa porta.
+443 (HTTPS), bidirezionale. La funzione di ripristino di file e cartelle utilizza questa porta.
 
 
 
@@ -133,9 +136,9 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 |===
 *Requisiti di controllo degli accessi basato sui ruoli (RBAC) per la protezione dei carichi di lavoro VMware*
 
-L'account amministratore vCenter deve disporre dei privilegi vCenter richiesti.
+Il tuo account utente della Console deve disporre del ruolo di super amministratore di NetApp Backup and Recovery per poter lavorare con i carichi di lavoro VMware.
 
-Per un elenco dei privilegi vCenter necessari, vedere https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere Privilegi vCenter necessari"^] .
+Per ulteriori informazioni sui ruoli di Backup e Recovery, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli di backup e ripristino nella NetApp Console"].
 
 
 
@@ -188,7 +191,11 @@ Assicurati che il tuo ambiente soddisfi requisiti specifici per individuare e pr
 | Requisito | Supportato 
 
 
-| Topologia di distribuzione | Autonomo (NFS, SAN, ASM SAN) 
+| Topologia di distribuzione  a| 
+* Autonomo (NFS, SAN, ASM SAN)
+* RAC su ASM (VMDK su VMFS)
+
+
 
 
 | Versioni di Oracle Database  a| 

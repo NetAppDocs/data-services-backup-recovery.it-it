@@ -27,9 +27,6 @@ Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recover
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
-+
-Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella Console ma non sono state rilevate risorse, viene visualizzata la pagina _Benvenuti nel nuovo NetApp Backup and Recovery_ con l'opzione *Rileva risorse*.
-
 . Seleziona *Scopri risorse*.
 . Selezionare *Oracle* per il campo *Workload type*.
 . Se non hai ancora memorizzato le credenziali per questo host di database Oracle, seleziona *Aggiungi credenziali*.
@@ -40,7 +37,7 @@ Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella C
 .. Selezionare *Fatto*.
 
 
-. *Registrazione host*: aggiungi un nuovo host Oracle database. Inserisci l'FQDN o l'indirizzo IP dell'host, le credenziali, il Console agent e il numero di porta.
+. *Registrazione host*: Aggiungere un nuovo host Oracle Database. Nel campo *FQDN o indirizzo IP dell'host*, immettere l'FQDN o l'indirizzo IP dell'host - per i database clusterizzati è possibile immettere l'FQDN o l'IP di qualsiasi nodo del cluster. Quindi fornire le credenziali, l'agente della Console e il numero di porta.
 . (Facoltativo) Se si scelgono le credenziali per un utente non root, eseguire le seguenti operazioni:
 +
 .. Per istruzioni su come aggiungere l'utente non root selezionato al file sudoers sull'host del database Oracle, selezionare *Configure sudoers*.
@@ -50,8 +47,20 @@ Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella C
 . *Impostazioni avanzate*: Eseguire le seguenti operazioni:
 +
 .. Inserisci la porta e il percorso di installazione da utilizzare per il NetApp plug-in. Il plug-in consente la comunicazione tra l'host del database Oracle e NetApp Backup and Recovery.
-.. Scegli se consentire a NetApp Backup and Recovery di installare automaticamente il plug-in oppure saltare l'installazione automatica del plug-in (se abiliti *Usa installazione manuale*, dovrai installare manualmente il plug-in sull'host).
-.. Scegli se eseguire i controlli pre-installazione o saltarli.
+.. Scegli se consentire a NetApp Backup and Recovery di installare automaticamente il plug-in su ciascun host oppure se saltare l'installazione automatica del plug-in per tutti gli host. Seleziona *Mostrami come* per le istruzioni di installazione manuale.
++
+[NOTE]
+====
+Backup and Recovery si connette a ciascun host tramite SSH per installare automaticamente il plug-in. Abilita *Usa installazione manuale* quando si verifica una delle seguenti condizioni:
+
+*** Uno o più host non eseguono il servizio SSH.
+*** Qualsiasi host dispone già del NetApp plug-in (anche se solo alcuni membri del cluster lo possiedono).
+*** Preferisci installare il plug-in su ciascun host manualmente.
+
+
+====
+.. Se l'host del database è in cluster, abilita l'opzione *Aggiungi tutti gli host del cluster* per individuare tutti gli host presenti nel cluster.
+.. Scegli se eseguire i controlli preliminari su ciascun host prima di installare automaticamente il plug-in. Se i controlli falliscono, l'installazione automatica del plug-in si interrompe. Per ignorare i controlli e installare comunque, abilita *Salta i controlli preliminari facoltativi* (attivata automaticamente se scegli l'installazione manuale).
 
 
 . Seleziona *Scopri*.

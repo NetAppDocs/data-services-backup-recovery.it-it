@@ -4,7 +4,7 @@ permalink: br-use-oracle-mount-unmount.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery. 
 ---
-= Montare e smontare i punti di ripristino del database Oracle con NetApp Backup and Recovery
+= Montare, smontare e catalogare i punti di ripristino del database Oracle con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup 
 
 
 [role="lead"]
-Potrebbe essere necessario montare un punto di ripristino di Oracle Database se è necessario accedere al database in uno stato controllato per eseguire operazioni di ripristino.
+Potrebbe essere necessario montare un punto di ripristino di Oracle Database se si ha bisogno di accedere al database in uno stato controllato per eseguire operazioni di ripristino. Catalogare manualmente il punto di ripristino quando è necessario archiviare i metadati delle operazioni di backup e ripristino nel catalogo di ripristino RMAN e l'opzione per la catalogazione automatica dei metadati non è abilitata.
 
 
 
@@ -66,4 +66,24 @@ Viene visualizzato un elenco di punti di ripristino per quel database.
 
 . Scegli un punto di ripristino dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Smonta*.
 . Confermare l'azione selezionando *Smonta*.
+
+
+
+
+== Cataloga un punto di ripristino del database Oracle
+
+Cataloga manualmente un punto di ripristino quando devi conservarne i metadati di backup e di ripristino delle operazioni. I metadati vengono memorizzati in base alle impostazioni di *Configura catalogo RMAN* scelte per il database (nel file di controllo per impostazione predefinita). Devi catalogare manualmente solo se la catalogazione automatica è disabilitata nella policy di protezione associata.
+
+.Passi
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Seleziona la tessera Oracle.
+. Nel menu Backup e ripristino, selezionare *Inventario*.
+. Per il carico di lavoro Oracle nell'elenco, selezionare *Visualizza*.
+. Selezionare il menu *Database*.
+. Scegli un database dall'elenco e seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza i dettagli della protezione*.
++
+Viene visualizzato un elenco di punti di ripristino per quel database.
+
+. Scegli un punto di ripristino dall'elenco e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Catalogo*.
+. Conferma l'azione selezionando *Catalog*.
 
