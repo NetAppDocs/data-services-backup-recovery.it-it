@@ -140,6 +140,11 @@ Quando si esegue il ripristino in una posizione alternativa, è possibile modifi
 *** *Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.
 
 
+** Sezione *storage di destinazione* (visibile solo durante il ripristino da archivio di oggetti):
++
+*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una macchina virtuale di archiviazione diversa nel caso in cui la posizione di archiviazione di origine non sia raggiungibile o sia piena. Scegli un cluster, una macchina virtuale di archiviazione o un aggregate diverso da utilizzare.
+
+
 ** Sezione *Opzioni pre-ripristino*:
 +
 *** *Ripristino rapido*: abilita questa opzione per indicare a Backup and Recovery di ripristinare solo i metadati (file, LUN e namespace) dall'archivio di oggetti. In questo modo i volumi saranno disponibili più velocemente rispetto a un ripristino completo.

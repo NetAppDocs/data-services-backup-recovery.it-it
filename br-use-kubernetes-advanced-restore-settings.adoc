@@ -10,7 +10,7 @@ summary: È possibile personalizzare le operazioni di ripristino CR utilizzando 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

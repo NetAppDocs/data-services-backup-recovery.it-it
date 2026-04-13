@@ -43,8 +43,6 @@ sidebar:
     - title: Configurare le destinazioni di backup prima di utilizzare NetApp Backup
         and Recovery
       url: "/br-start-setup.html"
-    - title: Accedi a NetApp Backup and Recovery
-      url: "/br-start-login.html"
     - title: Scopri le destinazioni di backup
       url: "/br-start-discover-backup-targets.html"
     - title: Passa a diversi carichi di lavoro NetApp Backup and Recovery
@@ -56,6 +54,8 @@ sidebar:
       url: "/br-rbac-setup.html"
   - title: Utilizzare NetApp Backup and Recovery
     entries:
+    - title: Accedi a NetApp Backup and Recovery
+      url: "/br-start-login.html"
     - title: Visualizza lo stato di protezione nella Dashboard
       url: "/br-use-dashboard.html"
     - title: Creare policy per gestire backup e ripristini
@@ -138,13 +138,13 @@ sidebar:
           url: "/br-use-vmware-restore.html"
         - title: Ripristina dischi virtuali specifici
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: Ripristina file e cartelle degli ospiti
+        - title: Ripristina file e cartelle
           entries:
           - title: Flusso di lavoro, prerequisiti e limitazioni
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: Ripristinare file e cartelle guest da VMDK
+          - title: Ripristina file e cartelle da VMDK
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
-          - title: Risoluzione dei problemi di ripristino dei file guest
+          - title: Risoluzione dei problemi relativi al ripristino di file e cartelle
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
     - title: Proteggere i carichi di lavoro KVM
       entries:

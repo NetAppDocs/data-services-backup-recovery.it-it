@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-search.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: È possibile utilizzare Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup ONTAP . 
+summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. 
 ---
-= Ripristina dai backup ONTAP utilizzando Cerca e ripristina
+= Ripristina dai backup ONTAP utilizzando Ricerca e Ripristino
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: È possibile utilizzare Cerca e ripristina per recuperare volumi, carte
 
 
 [role="lead"]
-È possibile utilizzare Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup ONTAP .  Search & Restore consente di effettuare ricerche in tutti i backup (inclusi snapshot locali, volumi replicati e storage di oggetti) senza dover specificare i nomi esatti di sistema, volume o file.
+È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. La funzione Cerca e ripristina consente di effettuare ricerche in tutti i backup (inclusi snapshot locali, volumi replicati e storage a oggetti) senza dover specificare il nome esatto del sistema, del volume o del file.
 
 Il ripristino da snapshot locali o volumi replicati è in genere più rapido e meno costoso rispetto al ripristino da storage di oggetti.
 
@@ -121,8 +121,6 @@ Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un a
 
 
 
-
-
 * Requisiti di Azure:
 +
 ** È necessario registrare il provider di risorse di Azure Synapse Analytics (denominato "Microsoft.Synapse") con la sottoscrizione. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] .  Per registrare il fornitore di risorse, devi essere il *Proprietario* o il *Collaboratore* dell'abbonamento.
@@ -131,8 +129,6 @@ Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un a
 Tieni presente che se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni Azure Synapse Workspace e Data Lake Storage Account al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
 
 ** L'agente Console deve essere configurato *senza* un server proxy per la comunicazione HTTP con Internet.  Se hai configurato un server proxy HTTP per il tuo agente Console, non puoi utilizzare la funzionalità Cerca e ripristina.
-
-
 
 
 * Requisiti di Google Cloud:
@@ -169,6 +165,10 @@ Anche se si utilizza un agente Console locale, è necessario soddisfare i requis
 Il processo è il seguente:
 
 . Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema sorgente da cui si desidera ripristinare i dati del volume.  Ciò consente al catalogo indicizzato di tenere traccia dei file di backup per ogni volume.
++
+
+NOTE: Backup and Recovery non indicizza gli snapshot il cui timestamp di creazione corrisponde esattamente a quello di un altro snapshot dello stesso volume.
+
 . Quando si desidera ripristinare un volume o dei file da un backup del volume, in _Cerca e ripristina_, selezionare *Cerca e ripristina*.
 . Immettere i criteri di ricerca per un volume, una cartella o un file in base al nome parziale o completo del volume, al nome parziale o completo del file, alla posizione del backup, all'intervallo di dimensioni, all'intervallo di date di creazione, ad altri filtri di ricerca e selezionare *Cerca*.
 +

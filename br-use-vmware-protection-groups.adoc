@@ -18,9 +18,9 @@ Creare gruppi di protezione per gestire le operazioni di backup e ripristino per
 
 È possibile eseguire le seguenti attività relative ai gruppi di protezione:
 
-* Crea un gruppo di protezione.
+* Crea un gruppo di protezione aggiungendo manualmente le macchine virtuali al gruppo oppure utilizzando i tag VMware vSphere.
 * Visualizza i dettagli della protezione.
-* Crea subito un gruppo di protezione. Vederelink:br-use-vmware-backup.html["Esegui subito il backup dei carichi di lavoro VMware"] .
+* Esegui subito il backup di un gruppo di protezione. Fare riferimento a link:br-use-vmware-backup.html["Esegui subito il backup dei carichi di lavoro VMware"].
 * Sospendere e riprendere la pianificazione del backup di un gruppo di protezione.
 * Elimina un gruppo di protezione.
 
@@ -42,13 +42,74 @@ Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione
 . Fornire un nome per il gruppo di protezione.
 . Selezionare le VM o i database che si desidera includere nel gruppo di protezione.
 . Selezionare *Avanti*.
-. Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
+. Seleziona la policy di protezione che desideri applicare al gruppo di protezione.
 +
 Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le istruzioni per creare una policy.  Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
 
 . Selezionare *Avanti*.
 . Rivedere la configurazione.
 . Selezionare *Crea* per creare il gruppo di protezione.
+
+
+
+
+== Crea un gruppo di protezione utilizzando i tag vSphere
+
+Utilizza la protezione basata su tag per semplificare l'amministrazione dei gruppi di protezione in Backup and Recovery.
+
+Ecco i vantaggi dell'utilizzo della protezione basata su tag:
+
+* Quando aggiungi un tag vSphere a una VM o a un datastore in vCenter, tale oggetto viene automaticamente incluso nel backup successivo per qualsiasi gruppo di protezione NetApp Backup and Recovery che faccia riferimento a quel tag.
+* Quando si rimuove un vSphere tag da una macchina virtuale o da un datastore, tale oggetto viene automaticamente escluso dai backup successivi per quel gruppo di protezione basato su tag.
+* Se un tag vSphere viene eliminato in vCenter, i backup successivi ignoreranno quel tag e segnaleranno un avviso.
+* Se una macchina virtuale viene migrata a un datastore diverso, rimane protetta finché conserva il tag che fa parte di un gruppo di protezione basato su tag.
+
+
+
+IMPORTANT: Non è supportata la combinazione di tipi di risorse diversi (ad esempio, la combinazione di tag con singole VM o datastore nello stesso gruppo di protezione).
+
+.Prima di iniziare
+* Assicurati che il tuo ambiente utilizzi versioni supportate di VMware vSphere.
+* In vCenter, assicurati che le macchine virtuali e i datastore che desideri proteggere siano già associati a uno o più vSphere tag.
+
+
+
+NOTE: L'appartenenza ai tag viene risolta da vCenter al tempo di backup. Qualsiasi modifica apportata ai tag in vCenter (aggiunta/rimozione di tag, eliminazione di tag, aggiunta/rimozione di VM) si rifletterà automaticamente nel backup successivo.
+
+.Passi
+. Sign in a NetApp Backup e ripristino.
+. Accedere alla vista *Gruppi di protezione*.
+. Seleziona *Crea gruppo di protezione*.
+. Nella sezione *Dettagli generali > Nome del gruppo di protezione*, immettere un nome per il gruppo di protezione.
+. Nella sezione *Dettagli generali > Risorse del gruppo di protezione*, selezionare *Tag*.
+. Se sono configurati più vCenters, seleziona il vCenter appropriato dall'elenco per visualizzare i tag disponibili per quel vCenter.
+. Nella sezione *Seleziona tag*:
++
+.. Sul lato sinistro:
++
+... Seleziona un vCenter dall'elenco.
+... Seleziona le caselle di controllo per uno o più tag all'interno di quel vCenter.
+
+
+.. Sul lato destro:
++
+... Esamina l'elenco dei tag selezionati, raggruppati per vCenter.
+... Rimuovi tutti i tag che non desideri nel gruppo di protezione.
+
+
+
+
+. Selezionare *Avanti*.
+. Seleziona la policy di protezione che desideri applicare al gruppo di protezione.
++
+Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le istruzioni per creare una policy.  Vederelink:br-use-policies-create.html["Creare politiche"] per maggiori informazioni.
+
+. Selezionare *Avanti*.
+. Rivedi le impostazioni del tag nella fase *Review*.
+. Selezionare *Crea* per creare il gruppo di protezione.
++
+Il nuovo gruppo di protezione basato su tag compare nell'elenco, indicato da un'icona a forma di tag.
+
 
 
 

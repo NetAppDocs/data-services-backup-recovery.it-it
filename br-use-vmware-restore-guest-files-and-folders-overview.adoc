@@ -14,7 +14,7 @@ summary: 'È possibile ripristinare file o cartelle da un disco di macchina virt
 
 
 [role="lead"]
-È possibile ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows.
+È possibile ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows o Linux.
 
 
 
@@ -44,25 +44,13 @@ Ripristina i file o le cartelle selezionati in una posizione specificata.
 
 == Prerequisiti per il ripristino di file e cartelle guest
 
-Esaminare tutti i requisiti prima di ripristinare file o cartelle da un VMDK su un sistema operativo guest Windows.
+Verifica tutti i requisiti prima di ripristinare file o cartelle da un VMDK.
 
 * Gli strumenti VMware devono essere installati e in esecuzione.
 +
-NetApp Backup and Recovery utilizza le informazioni degli strumenti VMware per stabilire una connessione al sistema operativo guest VMware.
-
-* Il sistema operativo guest Windows deve eseguire Windows Server 2008 R2 o versione successiva.
-+
-Per le informazioni più recenti sulle versioni supportate, fare riferimento a https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Strumento matrice di interoperabilità NetApp (IMT)"^] .
-
-* Le credenziali per la macchina virtuale di destinazione utilizzano il dominio predefinito o l'account amministratore locale con nome utente "Amministratore". Prima di avviare l'operazione di ripristino, configurare le credenziali per la macchina virtuale a cui si desidera collegare il disco virtuale. Le credenziali sono necessarie sia per le operazioni di collegamento che di ripristino. Gli utenti del gruppo di lavoro possono utilizzare l'account amministratore locale integrato.
-+
-
-IMPORTANT: Se è necessario utilizzare un account che non è l'account amministratore predefinito, ma dispone di privilegi amministrativi all'interno della VM, è necessario disabilitare UAC sulla VM guest.
+NetApp Backup and Recovery utilizza le informazioni provenienti dagli strumenti VMware per stabilire una connessione al sistema operativo guest VMware.
 
 * È necessario conoscere lo snapshot di backup e il VMDK da cui eseguire il ripristino.
-+
-NetApp Backup and Recovery non supporta la ricerca di file o cartelle da ripristinare. Prima di iniziare è necessario sapere dove si trovano i file o le cartelle nello snapshot e il VMDK corrispondente.
-
 * Il disco virtuale da collegare deve trovarsi in un backup NetApp Backup and Recovery .
 +
 Il disco virtuale che contiene il file o la cartella che si desidera ripristinare deve trovarsi in un backup della VM eseguito tramite NetApp Backup and Recovery.
@@ -75,6 +63,38 @@ Il disco virtuale che contiene il file o la cartella che si desidera ripristinar
 
 
 
+Per le informazioni più recenti sul supporto dei sistemi operativi guest, fare riferimento a https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Strumento matrice di interoperabilità NetApp (IMT)"^].
+
+
+
+=== Guest Windows
+
+* Il sistema operativo guest Windows deve eseguire Windows Server 2008 R2 o versione successiva.
++
+Per le informazioni più recenti sulle versioni supportate, fare riferimento a https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Strumento matrice di interoperabilità NetApp (IMT)"^] .
+
+* Le credenziali per la macchina virtuale di destinazione utilizzano il dominio predefinito o l'account amministratore locale con nome utente "Amministratore". Prima di avviare l'operazione di ripristino, configurare le credenziali per la macchina virtuale a cui si desidera collegare il disco virtuale. Le credenziali sono necessarie sia per le operazioni di collegamento che di ripristino. Gli utenti del gruppo di lavoro possono utilizzare l'account amministratore locale integrato.
++
+
+IMPORTANT: Se è necessario utilizzare un account che non è l'account amministratore predefinito, ma dispone di privilegi amministrativi all'interno della VM, è necessario disabilitare UAC sulla VM guest.
+
+
+
+
+
+=== guest Linux
+
+* Sono supportate le seguenti distribuzioni di sistemi operativi guest:
++
+** Red Hat Enterprise Linux
+** Ubuntu
+** Debian
+
+
+* L'account Run-As necessita dei permessi di root o sudo.
+* Per il ripristino tra macchine virtuali (ripristino su una macchina virtuale Linux diversa), SSH deve essere in esecuzione sulla macchina virtuale di destinazione.
+
+
 
 
 == Limitazioni del ripristino dei file guest
@@ -85,10 +105,7 @@ Prima di ripristinare un file o una cartella da un sistema operativo guest, è n
 * Se si ripristina un file o una cartella crittografati, l'attributo di crittografia non viene mantenuto.
 * Non è possibile ripristinare file o cartelle in una cartella crittografata.
 * I file e le cartelle nascosti vengono visualizzati nella pagina di esplorazione dei file e non è possibile filtrarli.
-* Non è possibile effettuare il ripristino da un sistema operativo guest Linux.
-+
-Non è possibile ripristinare file e cartelle da una macchina virtuale che esegue il sistema operativo guest Linux. Tuttavia, è possibile allegare un VMDK e quindi ripristinare manualmente i file e le cartelle. Per le informazioni più recenti sui sistemi operativi guest supportati, fare riferimento a https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Strumento matrice di interoperabilità NetApp (IMT)"^] .
-
+* Non è possibile ripristinare file o cartelle tra macchine virtuali con sistemi operativi diversi (quando si esegue il ripristino su una macchina virtuale diversa, il tipo di sistema operativo di destinazione deve essere uguale al tipo di sistema operativo di origine).
 * Non è possibile ripristinare da un file system NTFS a un file system FAT.
 +
 Quando si tenta di ripristinare dal formato NTFS al formato FAT, il descrittore di sicurezza NTFS non viene copiato perché il file system FAT non supporta gli attributi di sicurezza di Windows.

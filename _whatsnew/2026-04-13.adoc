@@ -1,0 +1,68 @@
+= Miglioramenti dei carichi di lavoro di ONTAP Volumes
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti dei carichi di lavoro di ONTAP Volumes
+
+In questa versione, i carichi di lavoro ONTAP Volumes introducono il seguente miglioramento:
+
+*NetApp MetroCluster configurazioni attivo/attivo supportate*: NetApp Backup e ripristino per i carichi di lavoro dei volumi ora supporta MetroCluster nella configurazione attivo-attivo.
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Volumes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Panoramica dei carichi di lavoro di Protect ONTAP Volumes"].
+
+
+
+=== Miglioramenti dei carichi di lavoro Kubernetes
+
+In questa versione, Kubernetes workloads introduce i seguenti miglioramenti alle policy di protezione:
+
+* *Modifica le policy di protezione*: Ora puoi modificare le policy di protezione dei carichi di lavoro Kubernetes se hai bisogno di cambiare
+* *Supporto da disco a disco*: ora è possibile configurare le policy di protezione di Kubernetes con un'architettura di backup da disco a disco.
+* *Supporto per i bucket di storage di Google Cloud Platform*: ora è possibile configurare le policy di protezione di Kubernetes per eseguire il backup nei bucket di storage di Google Cloud Platform.
+
+
+Per ulteriori informazioni sulle policy di protezione, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Creare e gestire le policy di protezione in NetApp Backup e ripristino"].
+
+Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+
+
+
+=== Miglioramenti ai carichi di lavoro Hyper-V
+
+In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
+
+* *Gestione dei job migliorata*: NetApp Backup and Recovery ora gestisce più job simultanei in modo più efficiente.
+* *Supporto SAN (anteprima)*: Backup e ripristino ora supporta la protezione delle macchine virtuali Hyper-V archiviate su storage SAN.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+
+
+
+=== Miglioramenti ai carichi di lavoro KVM
+
+In questa versione, i carichi di lavoro KVM introducono i seguenti miglioramenti:
+
+* *Gestione dei job migliorata*: NetApp Backup and Recovery ora gestisce più job simultanei in modo più efficiente.
+* *Ripristino in una posizione alternativa (anteprima)*: Ora è possibile ripristinare le VM KVM in una destinazione alternativa. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Ripristinare le macchine virtuali KVM con NetApp Backup and Recovery"].
+
+
+Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
+
+
+
+=== Miglioramenti dei carichi di lavoro VMware
+
+In questa versione, VMware workloads introduce i seguenti miglioramenti:
+
+* *Protezione basata su tag*: Backup e ripristino per i carichi di lavoro VMware ora supporta la protezione basata su tag per le VM archiviate su volumi NFS e VMFS, consentendo di creare gruppi di protezione dai tag di vCenter invece che da singole VM o datastore. Quando si assegnano tag a VM e datastore in vCenter, Backup e ripristino li rileva e li include automaticamente nei backup futuri senza alcuna manutenzione manuale dei gruppi. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Creare e gestire gruppi di protezione"].
+* *Ripristino su sistema storage alternativo*: Ora è possibile ripristinare le macchine virtuali su un sistema storage alternativo anche quando il sistema storage originale (primario) non è completamente disponibile. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Ripristinare i carichi di lavoro VMware"].
+* *Ripristino dei file nelle macchine virtuali Linux*: Ora è possibile ripristinare file e cartelle delle macchine virtuali nelle macchine virtuali Linux. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html["Ripristina file e cartelle"].
+* *Supporto per VM proxy durante il ripristino di file e cartelle* - Ora è possibile ripristinare file e cartelle su altre VM ospitate sulla sorgente vCenter. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Ripristinare i carichi di lavoro VMware"].
+* *Ricerca ricorsiva di file e cartelle* - Ora è possibile cercare un file o una cartella specifici all'interno di un intero file VMDK. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore.html["Ripristinare i carichi di lavoro VMware"].
+* *Gestione dei job migliorata*: NetApp Backup and Recovery ora gestisce più job simultanei in modo più efficiente.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro VMware"] .

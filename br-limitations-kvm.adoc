@@ -25,7 +25,6 @@ Le seguenti azioni e configurazioni non sono supportate nei carichi di lavoro KV
 Le seguenti azioni non sono supportate:
 
 * Clona, monta o smonta le VM
-* Ripristinare le VM in una posizione alternativa
 * Proteggere le VM archiviate su SAN
 * Proteggere le applicazioni
 * Crea backup definiti dall'utente (sono supportati solo i backup avviati dalla NetApp Console )

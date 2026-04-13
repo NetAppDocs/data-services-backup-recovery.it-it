@@ -16,8 +16,8 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and R
 [role="lead"]
 Esegui il backup delle VM VMware e degli archivi dati dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
 
-* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
-* Creare gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vederelink:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware con NetApp Backup and Recovery"] per maggiori informazioni.
+* Per eseguire il backup dei carichi di lavoro in base a una pianificazione, crea policy che regolano le operazioni di backup e ripristino. Vedere link:br-use-policies-create.html["Creare policy di protezione"] per le istruzioni.
+* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-vmware-protection-groups.html["Creare e gestire gruppi di protezione"] per ulteriori informazioni.
 * Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
 
 
@@ -33,12 +33,12 @@ Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sist
 . Dal menu Backup e ripristino, selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
-. Selezionare il gruppo di protezione, gli archivi dati o le macchine virtuali di cui si desidera eseguire il backup.
+. Seleziona la voce di menu *Gruppi di protezione*, *Archivi dati*, *Macchine virtuali* o *Tag*.
+. Seleziona il gruppo di protezione, i datastore, le macchine virtuali o le risorse con tag di cui desideri eseguire il backup.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
 
-NOTE: Il criterio applicato al backup è lo stesso criterio assegnato al gruppo di protezione, al datastore o alla macchina virtuale.
+NOTE: La policy applicata al backup è la stessa policy assegnata al gruppo di protezione, al datastore, alla macchina virtuale o alle risorse con tag.
 
 . Selezionare il livello di pianificazione.
 . Seleziona *Esegui backup ora*.
