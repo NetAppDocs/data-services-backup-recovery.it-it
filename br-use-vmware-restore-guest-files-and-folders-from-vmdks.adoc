@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords:  
 summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un sistema operativo guest Windows. 
 ---
-= Ripristina file e cartelle da VMDK
+= Ripristinare file e cartelle da dischi virtuali
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,12 @@ summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un s
 
 
 [role="lead"]
-È possibile ripristinare uno o più file o cartelle da un file VMDK alla macchina virtuale originale o a una macchina virtuale diversa sullo stesso server VMware vCenter. Sono supportati i sistemi operativi guest Windows e Linux.
+Ripristina file o cartelle da un disco virtuale alla macchina virtuale originale o a un'altra macchina virtuale. Se preferisci non collegare il disco virtuale alla macchina virtuale originale, puoi collegarlo invece a una macchina virtuale proxy.
 
 .Prima di iniziare
 * Esamina i prerequisiti e le limitazioni in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisiti e limitazioni durante il ripristino di file e cartelle guest"].
-* È necessario creare le credenziali per la VM guest in NetApp Backup and Recovery prima di poter ripristinare file e cartelle da essa. NetApp Backup and Recovery utilizza queste credenziali per l'autenticazione con la VM guest quando si collega il disco virtuale.
+* Per ripristinare file e cartelle utilizzando una VM proxy, assicurarsi che la VM proxy sia già configurata prima di avviare il processo di ripristino di file e cartelle.
+* È necessario creare le credenziali per il disco virtuale di origine e la macchina virtuale di destinazione in NetApp Backup and Recovery prima di poter ripristinare file e cartelle. NetApp Backup and Recovery utilizza queste credenziali per autenticarsi con il disco virtuale e la macchina virtuale di destinazione durante il ripristino di file e cartelle.
 
 
 .Informazioni su questo compito
@@ -34,27 +35,31 @@ IMPORTANT: Con la funzione di ripristino di file e cartelle, è possibile visual
 
 [role="tabbed-block"]
 ====
-.Ripristina file e cartelle nella macchina virtuale originale
+.Collega il file VMDK alla macchina virtuale originale per ripristinare file e cartelle
 --
 Ripristina i file e le cartelle guest da un disco virtuale alla macchina virtuale originale (source).
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare il menu *Macchine virtuali*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
+. Seleziona *VMware* dall'elenco dei carichi di lavoro in alto a destra della pagina.
 . Nell'elenco delle macchine virtuali, seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] per una VM che contiene i file che desideri ripristinare.
 . Seleziona *Ripristina file e cartelle*.
 . Selezionare uno snapshot da cui effettuare il ripristino, quindi selezionare *Avanti*.
 . Selezionare la posizione dello snapshot da cui effettuare il ripristino. Se si sceglie una posizione secondaria, selezionare lo snapshot secondario dall'elenco.
 . Selezionare *Avanti*.
-. Seleziona un disco virtuale dall'elenco da collegare alla VM e poi seleziona *Avanti*.
+. Dall'elenco, scegli un disco virtuale che contenga i file e le cartelle da ripristinare e poi seleziona *Avanti*.
 . Nella pagina _Dettagli della macchina virtuale guest_, procedi come segue:
 +
 .. Nella sezione *Dettagli della macchina virtuale guest*, collega il disco virtuale alla VM originale selezionando *Original virtual machine*.
-.. Nella sezione *Credenziali della macchina virtuale guest*, se non hai ancora memorizzato una credenziale per la macchina virtuale guest, seleziona *Aggiungi credenziali*, inserisci le informazioni sulle credenziali per l'host Windows o Linux e seleziona *Aggiungi*.
-.. Scegliere le credenziali della macchina virtuale da utilizzare per l'autenticazione con la VM guest.
+.. Nella sezione *Credenziali della macchina virtuale guest*, se non hai ancora memorizzato una credenziale per il disco virtuale di origine e la macchina virtuale di destinazione, seleziona *Aggiungi credenziali*, inserisci le informazioni sulle credenziali di Windows o Linux e seleziona *Aggiungi*.
++
+
+NOTE: Le macchine virtuali di origine e di destinazione devono utilizzare la stessa famiglia di sistemi operativi; le versioni del sistema operativo possono essere diverse.
+
+.. Dall'elenco, scegli una credenziale di macchina virtuale da utilizzare.
 .. Selezionare *Avanti*.
 +
-NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale e visualizza tutti i file e le cartelle, inclusi quelli nascosti. Per i sistemi guest Windows, assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
+NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale originale e visualizza tutti i file e le cartelle, inclusi quelli nascosti. Per i sistemi guest Windows, assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
 
 +
 È possibile utilizzare l'icona della lente d'ingrandimento (ricerca) vicino al riquadro di esplorazione file per cercare file e cartelle. La corrispondenza di pattern non è supportata, ma è possibile cercare file o cartelle in base a un sottoinsieme del nome o dell'estensione.
@@ -66,7 +71,7 @@ NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale e vi
 I file e le cartelle selezionati per il ripristino sono elencati nel riquadro destro dello schermo.
 
 . Selezionare *Avanti*.
-. Nella sezione "Ripristina nel percorso", immettere il percorso dell'host guest in cui verranno ripristinati i file selezionati:
+. Nella sezione "Ripristina nel percorso", immettere il percorso della destinazione VM e la posizione del file system in cui verranno ripristinati i file selezionati:
 +
 ** Per i guest Windows, immettere il percorso di condivisione UNC:
 +
@@ -86,7 +91,7 @@ I file e le cartelle selezionati per il ripristino sono elencati nel riquadro de
 +
 Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli o ignorarli.
 
-. Nella sezione "Opzioni post-ripristino", è possibile disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il VMDK e smonta il datastore. Ciò significa che sarà necessario riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
+. Nella sezione "Opzioni post-ripristino", è possibile disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il disco virtuale e smonta il datastore. Ciò significa che sarà necessario riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
 . Selezionare *Ripristina*.
 +
 È possibile visualizzare l'avanzamento del ripristino nella pagina Monitoraggio processi.
@@ -94,33 +99,37 @@ Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli 
 
 
 --
-.Ripristinare file e cartelle su una macchina virtuale diversa
+.Collega il VMDK a una VM proxy per ripristinare file e cartelle
 --
-Utilizza una VM proxy (una VM diversa sullo stesso vCenter di quella originale) per ripristinare file e cartelle guest da un disco virtuale a un'altra macchina virtuale.
+Utilizza una VM proxy (una VM diversa sullo stesso vCenter dell'originale) per ripristinare file e cartelle guest quando non desideri collegare il disco virtuale alla VM originale.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare il menu *Macchine virtuali*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
+. Seleziona *VMware* dall'elenco dei carichi di lavoro in alto a destra della pagina.
 . Nell'elenco delle macchine virtuali, seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] per una VM che contiene i file che desideri ripristinare.
 . Seleziona *Ripristina file e cartelle*.
 . Selezionare uno snapshot da cui effettuare il ripristino, quindi selezionare *Avanti*.
 . Selezionare la posizione dello snapshot da cui effettuare il ripristino. Se si sceglie una posizione secondaria, selezionare lo snapshot secondario dall'elenco.
 . Selezionare *Avanti*.
-. Seleziona un disco virtuale dall'elenco da collegare alla VM e poi seleziona *Avanti*.
+. Dall'elenco, scegli un disco virtuale che contenga i file e le cartelle da ripristinare e poi seleziona *Avanti*.
 . Nella pagina _Dettagli della macchina virtuale guest_, procedi come segue:
 +
 .. Nella sezione *Dettagli della macchina virtuale guest*:
 +
 ... Collega il disco virtuale a una VM proxy selezionando *Macchina virtuale proxy*.
-... Seleziona l'origine vCenter, il datacenter e il datastore dagli elenchi.
-... Seleziona una macchina virtuale su cui eseguire il ripristino. La macchina virtuale selezionata viene visualizzata nel riquadro di destra.
+... Scegliere un vCenter, data center e datastore in cui si trova la VM proxy dagli elenchi.
+... Seleziona una VM dall'elenco da utilizzare come VM proxy. Il disco virtuale verrà collegato a questa VM. La VM proxy selezionata viene visualizzata nel riquadro di destra.
 
 
-.. Nella sezione *Credenziali della macchina virtuale guest*, se non hai ancora memorizzato una credenziale per la macchina virtuale guest, seleziona *Aggiungi credenziali*, inserisci le informazioni sulle credenziali per l'host Windows o Linux e seleziona *Aggiungi*.
-.. Scegliere le credenziali della macchina virtuale da utilizzare per l'autenticazione con la VM guest.
+.. Nella sezione *Credenziali della macchina virtuale guest*, se non hai ancora memorizzato una credenziale per il disco virtuale di origine e la macchina virtuale di destinazione, seleziona *Aggiungi credenziali*, inserisci le informazioni sulle credenziali di Windows o Linux e seleziona *Aggiungi*.
++
+
+NOTE: Le macchine virtuali di origine e di destinazione devono utilizzare la stessa famiglia di sistemi operativi; le versioni del sistema operativo possono essere diverse.
+
+.. Dall'elenco, scegli una credenziale di macchina virtuale da utilizzare.
 .. Selezionare *Avanti*.
 +
-NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale e visualizza tutti i file e le cartelle, inclusi quelli nascosti. Per i sistemi guest Windows, assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
+NetApp Backup and Recovery collega il disco virtuale alla VM proxy e visualizza tutti i file e le cartelle, inclusi quelli nascosti. Per i guest Windows, assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
 
 +
 È possibile utilizzare l'icona della lente d'ingrandimento (ricerca) vicino al riquadro di esplorazione file per cercare file e cartelle. La corrispondenza di pattern non è supportata, ma è possibile cercare file o cartelle in base a un sottoinsieme del nome o dell'estensione.
@@ -132,7 +141,7 @@ NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale e vi
 I file e le cartelle selezionati per il ripristino sono elencati nel riquadro destro dello schermo.
 
 . Selezionare *Avanti*.
-. Nella sezione "Ripristina nel percorso", immettere il percorso dell'host guest in cui verranno ripristinati i file selezionati:
+. Nella sezione "Ripristina nel percorso", immettere il percorso della destinazione VM e la posizione del file system in cui verranno ripristinati i file selezionati:
 +
 ** Per i guest Windows, immettere il percorso di condivisione UNC:
 +
@@ -152,7 +161,7 @@ I file e le cartelle selezionati per il ripristino sono elencati nel riquadro de
 +
 Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli o ignorarli.
 
-. Nella sezione "Opzioni post-ripristino", è possibile disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il VMDK e smonta il datastore. Ciò significa che sarà necessario riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
+. Nella sezione "Opzioni post-ripristino", è possibile disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il disco virtuale e smonta il datastore. Ciò significa che sarà necessario riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
 . Selezionare *Ripristina*.
 +
 È possibile visualizzare l'avanzamento del ripristino nella pagina Monitoraggio processi.
