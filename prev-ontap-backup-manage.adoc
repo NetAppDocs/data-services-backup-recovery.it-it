@@ -312,21 +312,24 @@ CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessi
 
 L'eliminazione di tutti i backup di un volume disabilita anche i backup futuri per quel volume.
 
+
+NOTE: Non è possibile eliminare i singoli file di backup di un volume una volta eliminata la relazione di backup. Eliminare i file di backup di un volume prima di eliminare la relazione di backup del volume.
+
 .Passi
-. Dalla scheda *Volumi*, fare clic suimage:icon-actions-horizontal.gif["Più icona"] per il volume di origine e selezionare *Dettagli e elenco di backup*.
+. Dal menu *Volumi*, fai clic su image:icon-actions-horizontal.gif["Più icona"] per il volume di origine e seleziona *Gestisci backup > Visualizza backup*.
 +
 Viene visualizzato l'elenco di tutti i file di backup.
 
-. Selezionare *Azioni* > *Elimina tutti i backup*.
-. Immettere il nome del volume.
-. Selezionare *Impostazioni avanzate*.
-. *Forza eliminazione backup*: indica se desideri o meno forzare l'eliminazione di tutti i backup.
+. Seleziona un backup dall'elenco e scegli *Azioni > Elimina tutti i backup*.
+. Conferma l'eliminazione inserendo il nome del volume.
+. Espandere l'area *Impostazioni avanzate*.
+. In *Elimina forzatamente i backup*, seleziona se eliminare forzatamente tutti i backup.
 +
-In alcuni casi estremi, potresti voler impedire a NetApp Backup and Recovery di accedere più ai backup. Ciò potrebbe accadere, ad esempio, se il servizio non ha più accesso al bucket di backup o se i backup sono protetti da DataLock ma non si desidera più utilizzarli. In precedenza non era possibile eliminarli autonomamente, ma era necessario contattare l'assistenza NetApp . Con questa versione è possibile utilizzare l'opzione per forzare l'eliminazione dei backup (a livello di volume e di sistema).
+In rari casi potrebbe essere necessario revocare l'accesso di NetApp Backup and Recovery ai backup; ad esempio, se Backup and Recovery perde l'accesso al bucket di backup o se i backup sono DataLock-protetti ma non si desidera più conservarli. Utilizzare questa opzione per eliminare forzatamente i backup a livello di volume e di sistema.
 
 +
 
-CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessità di pulizia. NetApp Backup and Recovery non avrà più accesso a questi backup, anche se non vengono eliminati dall'archiviazione degli oggetti. Sarà necessario rivolgersi al proprio provider cloud ed eliminare manualmente i backup.
+CAUTION: Utilizzate questa opzione solo per una pulizia approfondita. Una volta attivata, NetApp Backup and Recovery non accederà più a questi backup (anche se gli oggetti rimangono in cloud storage). Dovrete eliminarli manualmente dal vostro cloud provider.
 
 . Seleziona *Elimina*.
 
@@ -335,9 +338,10 @@ CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessi
 
 === Elimina un singolo file di backup per un volume
 
-È possibile eliminare un singolo file di backup se non ne hai più bisogno. Ciò include l'eliminazione di un singolo backup di uno snapshot del volume o di un backup nell'archiviazione degli oggetti.
+Elimina un singolo backup quando non è più necessario. Non è possibile eliminare i volumi replicati (volumi di protezione dei dati).
 
-Non è possibile eliminare i volumi replicati (volumi di protezione dei dati).
+
+NOTE: Non è possibile eliminare i singoli file di backup del volume una volta eliminata la relazione di backup. È tuttavia possibile <<Elimina tutti i file di backup per un volume,eliminare tutti i file di backup per il volume>>.
 
 .Passi
 . Dalla scheda *Volumi*, selezionaimage:icon-actions-horizontal.gif["Più icona"] per il volume sorgente e seleziona *Visualizza dettagli volume*.
@@ -362,7 +366,7 @@ Questa funzionalità è disponibile solo se il sistema esegue ONTAP 9.12.1 o ver
 Non è possibile eliminare il volume di origine dall'interfaccia utente NetApp Backup and Recovery .  Tuttavia, è possibile aprire la pagina Dettagli volume nella pagina *Sistemi* della console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["elimina il volume da lì"] .
 
 
-NOTE: Non è possibile eliminare singoli file di backup del volume una volta eliminata la relazione.  Tuttavia, è possibile eliminare tutti i backup del volume.
+NOTE: Non è possibile eliminare i singoli file di backup del volume una volta eliminata la relazione di backup. Tuttavia, è possibile <<Elimina tutti i file di backup per un volume,eliminare tutti i file di backup per il volume>>. Se è necessario eliminare una relazione di backup per un volume, assicurarsi di eliminare prima i backup per il volume, quindi eliminare la relazione di backup.
 
 .Passi
 . Dalla scheda *Volumi*, selezionaimage:icon-actions-horizontal.gif["Icona Azioni"] per il volume di origine e selezionare *Backup* > *Elimina relazione*.
@@ -372,7 +376,7 @@ NOTE: Non è possibile eliminare singoli file di backup del volume una volta eli
 
 == Disattivare NetApp Backup and Recovery per un sistema
 
-La disattivazione di NetApp Backup and Recovery per un sistema disabilita i backup di ciascun volume sul sistema e disabilita anche la possibilità di ripristinare un volume.  Tutti i backup esistenti non verranno eliminati.  Ciò non annulla la registrazione del servizio di backup da questo sistema: in pratica consente di sospendere tutte le attività di backup e ripristino per un periodo di tempo.
+Disattivando NetApp Backup and Recovery per un sistema, le operazioni di backup e ripristino vengono sospese per tutti i suoi volumi senza eliminare i backup esistenti. Questo consente di sospendere tutte le attività di backup e ripristino per un determinato periodo di tempo senza annullare la registrazione del servizio di backup da questo sistema.
 
 Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di archiviazione degli oggetti per la capacità utilizzata dai tuoi backup, a meno che tu non<<Elimina i backup,eliminare i backup>> .
 
