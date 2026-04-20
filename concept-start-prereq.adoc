@@ -113,6 +113,7 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 | Archiviazione connessa  a| 
 * ONTAP 9.13.1 o successivo
 * Amazon FSx for NetApp ONTAP storage systems che eseguono la versione 9.13.1 o successiva
+* ASA r2 sistemi solo SAN (ONTAP 9.17.1 o versioni successive richieste)
 
 
 |===
