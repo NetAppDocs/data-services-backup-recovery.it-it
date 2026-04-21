@@ -16,6 +16,8 @@ summary: NetApp Backup and Recovery è un servizio dati che fornisce una protezi
 [role="lead"]
 NetApp Backup and Recovery è un servizio dati che fornisce una protezione dati efficiente, sicura e conveniente per tutti i carichi di lavoro ONTAP , inclusi volumi, database, macchine virtuali e carichi di lavoro Kubernetes.
 
+Un carico di lavoro è un raggruppamento logico di risorse all'interno di un sistema, gestito come un'unica unità per la protezione, la governance, il rilevamento e il ripristino. In Backup and Recovery, un carico di lavoro è l'unità che si protegge. Il suo significato dipende dall'origine dei dati: per Kubernetes un carico di lavoro è un'applicazione, per gli ambienti VM è una macchina virtuale e per gli ambienti database è un database.
+
 Il supporto per il backup e il ripristino è già integrato in tutti i sistemi ONTAP , quindi non sono necessari hardware, licenze software o gateway multimediali aggiuntivi. Ciò rende le operazioni di backup semplici ed economiche. NetApp Console semplifica l'implementazione di qualsiasi strategia di backup, inclusa l'intera gamma di varianti di backup 3-2-1, senza la necessità di più gestori di risorse o personale specializzato.
 
 
@@ -127,7 +129,7 @@ Poiché NetApp Backup and Recovery preserva l'efficienza di archiviazione del vo
 +
 ** In AWS, https://aws.amazon.com/athena/faqs/["Amazzone Atena"^] E https://aws.amazon.com/glue/faqs/["AWS Glue"^] le risorse vengono distribuite in un nuovo bucket S3.
 ** In Azure, un https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Area di lavoro di Azure Synapse"^] E https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Archiviazione di Azure Data Lake"^] sono predisposti nel tuo account di archiviazione per archiviare e analizzare i tuoi dati.
-** In Google, viene distribuito un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto.
+** In Google Cloud, viene distribuito un nuovo bucket e le https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono fornite a livello di account/progetto.
 
 
 * Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
@@ -146,7 +148,7 @@ Esistono tre modi per pagare Backup e Ripristino:
 
 * La prima opzione è quella di abbonarsi al tuo provider cloud, che ti consente di pagare mensilmente.
 * La seconda opzione è quella di acquistare un contratto annuale.
-* La terza opzione è quella di acquistare le licenze direttamente da NetApp. Fare riferimento al <<Licenza,Licenza>> sezione per i dettagli.
+* La terza opzione è quella di acquistare le licenze direttamente da NetApp. Consultare la <<Licenza>> sezione per i dettagli.
 
 
 
@@ -211,7 +213,7 @@ NetApp Backup and Recovery protegge i seguenti tipi di carichi di lavoro:
 * Google Cloud Storage
 * Microsoft Azure Blob (non disponibile per carichi di lavoro VMware)
 * StorageGRID
-* ONTAP S3 (Non disponibile per i carichi di lavoro VMware)
+* ONTAP S3 (non disponibile per carichi di lavoro VMware)
 
 
 
