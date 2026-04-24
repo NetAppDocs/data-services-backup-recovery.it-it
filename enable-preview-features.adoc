@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: enable-preview-features.html 
+keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
+summary: 'Abilita l"anteprima e le funzionalità nascoste per NetApp Backup and Recovery.' 
+---
+= Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery.
+
+*Ruolo richiesto NetApp Console * Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+
+
+
+== Funzionalità di anteprima disponibili
+
+È possibile abilitare le seguenti funzionalità di anteprima per NetApp Backup and Recovery.
+
+[cols="50,50"]
+|===
+| Flag di funzionalità | Descrizione della funzionalità 
+
+
+| `"folder-restore-from-local": true` | Consente il ripristino a livello di cartella da snapshot di volumi ONTAP locali. Per impostazione predefinita, ONTAP supporta solo il ripristino di cartelle da backup su storage a oggetti. Con questa opzione abilitata, è possibile ripristinare anche intere directory da snapshot locali e replicati. 
+
+
+| `"prioritize-restore": true` | Consente di selezionare l'opzione *Dai priorità al ripristino rispetto alla coda di processi esistente* durante il flusso di lavoro di ripristino nell'interfaccia web di NetApp Backup and Recovery. Quando si seleziona questa opzione durante il flusso di lavoro di ripristino, le operazioni di ripristino vengono eseguite con priorità rispetto ad altri processi in coda, in modo da essere eseguite anche quando la coda è occupata. 
+|===
+
+
+== Abilita le funzionalità di anteprima
+
+Abilita le opzioni del flag di anteprima per utilizzare funzionalità non ancora generalmente disponibili. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
+
+.Passi
+. Utilizza SSH per accedere all'agente della console.
+. Passa all'utente root:
++
+[source, console]
+----
+sudo su
+----
+. Individua il volume di Backup and Recovery in Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+L'output dovrebbe essere simile al seguente:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Individua il punto di montaggio del volume:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Il punto di montaggio differisce tra le implementazioni cloud e quelle private. Questo esempio di output mostra un'implementazione cloud:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Passare alla directory di configurazione del volume docker, che si trova all'interno della directory del punto di montaggio. Ad esempio:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+----
+. Crea un file che contenga la seguente struttura JSON e una coppia chiave/valore per ogni flag di funzionalità che desideri abilitare. Assegna al file un nome in base al tipo di distribuzione:
++
+** Implementazione nel cloud: `production-customer.json`
+** Implementazione su sito privato/oscuro: `darksite-customer.json`
++
+Consultare la documentazione <<anchor-flags,flag disponibili>> per informazioni sui flag delle funzionalità. Ad esempio:
+
++
+[source, json]
+----
+{
+  "feature-flags": {
+    "folder-restore-from-local": true,
+    "prioritize-restore": true
+  }
+}
+----
+
+
+. Riavvia il container NetApp Backup and Recovery:
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+. Ricarica l'interfaccia utente di NetApp Backup and Recovery nel tuo browser web.
++
+
+NOTE: Per disabilitare una funzione di anteprima, segui gli stessi passaggi ma imposta il valore del flag della funzione su  `false`.
+
+
+
+
+
+== Disabilita l'indicizzazione per tutti i volumi che appartengono a una storage VM
+
+Segui questi passaggi per disabilitare l'indicizzazione per tutti i volumi appartenenti a una specifica storage VM, anziché disabilitare l'indicizzazione per ogni singolo volume.
+
+.Passi
+. Utilizza SSH per accedere all'agente della console.
+. Passa all'utente root:
++
+[source, console]
+----
+sudo su
+----
+. Individua il volume di Backup and Recovery in Docker:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+L'output dovrebbe essere simile al seguente:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Individua il punto di montaggio del volume:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Il punto di montaggio differisce tra le implementazioni cloud e quelle private. Questo esempio di output mostra un'implementazione cloud:
+
++
+[listing]
+----
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Passare alla directory di configurazione del volume docker, che si trova all'interno della directory del punto di montaggio. Ad esempio:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
+----
+. Crea un file denominato  `production-customer.json` con il seguente contenuto. Sostituisci i nomi delle VM di storage nell'esempio con i nomi delle VM di storage presenti nel tuo ambiente:
++
+[source, json]
+----
+{
+  "indexing": {
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+  }
+}
+----
+. Riavviare il container del catalogo di indicizzazione di Backup and Recovery:
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+

@@ -8,7 +8,6 @@
 
 In questa versione, VMware workloads introduce il seguente miglioramento:
 
-* *Supporto SAN per ASA r2*: VMware workloads ora supporta la protezione delle VM su datastore VMFS ospitati da ambienti NetApp ASA r2 esclusivamente SAN.
-
+*Supporto SAN per ASA r2*: VMware workloads ora supporta la protezione delle VM su datastore VMFS ospitati da ambienti NetApp ASA r2 esclusivamente SAN.
 
 Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro VMware"] .
