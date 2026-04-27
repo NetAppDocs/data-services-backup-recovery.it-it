@@ -102,7 +102,7 @@ Quando si seleziona l'etichetta di backup "annuale" per un criterio di backup pe
 
 Le scansioni di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è 7 giorni. La scansione avviene solo sull'ultimo snapshot.
 
-Per i dettagli sulle opzioni DataLock e Ransomware Resilience, fare riferimento alink:prev-ontap-policy-object-options.html["Opzioni di resilienza DataLock e Ransomware"] .
+Per informazioni dettagliate sulle opzioni di protezione da Datalock e ransomware, consultare link:prev-ontap-policy-object-options.html["Opzioni di protezione Datalock e ransomware"].
 
 È possibile modificare la programmazione in giorni o settimane oppure disattivarla, risparmiando sui costi.
 

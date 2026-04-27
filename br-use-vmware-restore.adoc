@@ -32,7 +32,7 @@ Ripristina i carichi di lavoro VMware da snapshot, da un backup del carico di la
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se Ransomware Resilience è abilitato per un file di backup nell'archiviazione di oggetti, ti verrà chiesto di eseguire un controllo aggiuntivo prima del ripristino.  Si consiglia di eseguire la scansione.
+Se la protezione anti-ransomware è abilitata per un file di backup in storage a oggetti, viene richiesto di eseguire un controllo aggiuntivo prima del ripristino. Si consiglia di eseguire la scansione.
 
 
 TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere al file di backup.

@@ -133,7 +133,7 @@ Poiché NetApp Backup and Recovery preserva l'efficienza di archiviazione del vo
 
 
 * Se si prevede di ripristinare i dati del volume da un file di backup che è stato spostato in un archivio di oggetti, il provider cloud applicherà una tariffa aggiuntiva per il recupero per GiB e una tariffa per richiesta.
-* Se intendi analizzare un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se hai abilitato DataLock e Ransomware Resilience per i tuoi backup cloud), dovrai sostenere anche costi di uscita aggiuntivi dal tuo provider cloud.
+* Se si prevede di eseguire una scansione di un file di backup alla ricerca di ransomware durante il processo di ripristino dei dati del volume (se è stata abilitata la protezione Datalock e Ransomware per i backup nel cloud), si dovranno sostenere costi aggiuntivi per il traffico in uscita dal proprio cloud provider.
 
 
 *Spese di servizio*

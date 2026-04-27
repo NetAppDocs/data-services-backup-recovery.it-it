@@ -414,7 +414,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 +
 ** Inserisci il nome della policy.
 ** Selezionare fino a cinque pianificazioni, in genere con frequenze diverse.
-** Per i criteri di backup su oggetto, configurare Datalock e Ransomware Resilience.  Per i dettagli su Datalock e Ransomware Resilience, fare riferimento alink:prev-ontap-policy-object-options.html["Impostazioni dei criteri di backup su oggetto"] .
+** Per le policy di backup su oggetto, configura Datalock e la protezione contro i ransomware. Per ulteriori dettagli su Datalock e la protezione contro i ransomware, consulta link:prev-ontap-policy-object-options.html["Impostazioni dei criteri di backup su oggetto"].
 ** Seleziona *Crea*.
 
 
