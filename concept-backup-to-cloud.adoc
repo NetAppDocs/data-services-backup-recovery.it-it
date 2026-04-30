@@ -18,7 +18,7 @@ NetApp Backup and Recovery è un servizio dati che fornisce una protezione dati 
 
 Un carico di lavoro è un raggruppamento logico di risorse all'interno di un sistema, gestito come un'unica unità per la protezione, la governance, il rilevamento e il ripristino. In Backup and Recovery, un carico di lavoro è l'unità che si protegge. Il suo significato dipende dall'origine dei dati: per Kubernetes un carico di lavoro è un'applicazione, per gli ambienti VM è una macchina virtuale e per gli ambienti database è un database.
 
-Il supporto per il backup e il ripristino è già integrato in tutti i sistemi ONTAP , quindi non sono necessari hardware, licenze software o gateway multimediali aggiuntivi. Ciò rende le operazioni di backup semplici ed economiche. NetApp Console semplifica l'implementazione di qualsiasi strategia di backup, inclusa l'intera gamma di varianti di backup 3-2-1, senza la necessità di più gestori di risorse o personale specializzato.
+Il supporto per il backup e il ripristino è già integrato in tutti i sistemi ONTAP, quindi non sono necessari hardware o gateway multimediali aggiuntivi. Ciò rende le operazioni di backup semplici ed economicamente vantaggiose. La NetApp Console semplifica l'implementazione di qualsiasi strategia di backup, inclusa l'intera gamma di varianti di backup 3-2-1, senza la necessità di più gestori di risorse o personale specializzato.
 
 
 
