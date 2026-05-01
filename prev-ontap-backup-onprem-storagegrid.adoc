@@ -151,7 +151,7 @@ Quando si configura NetApp Backup and Recovery, viene richiesto di specificare l
 
 * I LIF intercluster dei nodi sono in grado di accedere all'archivio oggetti (non necessario quando l'agente Console è installato in un sito "dark").
 * I server DNS sono stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
-* Se si utilizza uno spazio IP diverso da quello predefinito, potrebbe essere necessario creare un percorso statico per accedere all'archiviazione degli oggetti.
+* Se si utilizza uno spazio IP diverso da quello predefinito, potrebbe essere necessario creare una route statica per accedere allo storage a oggetti.
 * Se necessario, aggiornare le regole del firewall per consentire le connessioni del servizio NetApp Backup and Recovery da ONTAP all'archiviazione degli oggetti tramite la porta specificata (in genere la porta 443) e il traffico di risoluzione dei nomi dalla VM di archiviazione al server DNS tramite la porta 53 (TCP/UDP).
 
 
@@ -194,7 +194,7 @@ Per utilizzare DataLock & la protezione ransomware per i backup, i sistemi Stora
 
 Per suddividere i backup più vecchi in archivi cloud, i sistemi StorageGRID devono eseguire la versione 11.3 o successiva.  Inoltre, i sistemi StorageGRID devono essere rilevati nella pagina *Sistemi* della console.
 
-Per l'archiviazione degli utenti è necessario l'accesso IP del nodo amministratore.
+Per utilizzare lo storage di archiviazione, è necessario l'accesso all'indirizzo IP del nodo amministratore.
 
 L'accesso IP al gateway è sempre necessario.
 

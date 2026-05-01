@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
 = Opzioni della policy di backup su oggetto in NetApp Backup and Recovery
 :hardbreaks:
@@ -185,7 +185,7 @@ Vediamo come funziona:
 
 * Per AWS:
 +
-** I tuoi cluster devono eseguire ONTAP 9.11.1 o versione successiva
+** I cluster devono eseguire ONTAP 9.11.1 o versioni successive
 ** L'agente della console può essere distribuito nel cloud o in sede
 ** Le seguenti autorizzazioni S3 devono far parte del ruolo IAM che fornisce le autorizzazioni all'agente della console.  Si trovano nella sezione "backupS3Policy" per la risorsa "arn:aws:s3:::netapp-backup-*":
 +
@@ -228,7 +228,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 * Per Azure:
 +
-** I tuoi cluster devono eseguire ONTAP 9.12.1 o versione successiva
+** I cluster devono eseguire ONTAP 9.12.1 o versioni successive
 ** L'agente della console può essere distribuito nel cloud o in sede
 
 
@@ -240,7 +240,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html
 
 * Per StorageGRID:
 +
-** I tuoi cluster devono eseguire ONTAP 9.11.1 o versione successiva
+** I cluster devono eseguire ONTAP 9.11.1 o versioni successive
 ** I sistemi StorageGRID devono eseguire la versione 11.6.0.3 o successiva
 ** L'agente Console deve essere distribuito presso la tua sede (può essere installato in un sito con o senza accesso a Internet)
 ** Le seguenti autorizzazioni S3 devono far parte del ruolo IAM che fornisce le autorizzazioni all'agente della console:

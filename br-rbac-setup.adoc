@@ -47,7 +47,7 @@ Gli amministratori dell'organizzazione o gli amministratori di cartelle o proget
 
 . Aggiungi utenti ai progetti.
 +
-Gli amministratori dell'organizzazione o gli amministratori di cartelle/progetti aggiungono utenti della Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di Organization viewer e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo di Backup and Recovery corretto otterranno automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.
+Gli amministratori dell'organizzazione o gli amministratori di cartelle/progetti aggiungono utenti della Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di visualizzatore dell'organizzazione e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo appropriato di Backup and Recovery otterranno automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.
 
 
 

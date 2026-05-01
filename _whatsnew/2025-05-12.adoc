@@ -39,4 +39,4 @@ Sebbene questa funzionalità sia in anteprima, presenta alcune limitazioni:
 
 *Iniziare*
 
-Per iniziare a utilizzare questa funzionalità di anteprima, è necessario abilitare un flag sull'agente della console.  È quindi possibile immettere i dettagli di connessione dell'archivio oggetti di terze parti MinIO nel flusso di lavoro di protezione selezionando l'archivio oggetti *Compatibile con terze parti* nella sezione di backup.
+Per iniziare a utilizzare questa funzionalità di anteprima, è necessario abilitare un flag sul Console agent. Successivamente, è possibile inserire i dettagli di connessione del proprio archivio di oggetti MinIO di terze parti nel flusso di lavoro di protezione selezionando *Third party Compatible* object store nella sezione di backup.

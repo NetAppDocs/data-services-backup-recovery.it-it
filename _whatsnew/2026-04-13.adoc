@@ -18,7 +18,7 @@ Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Vol
 
 In questa versione, Kubernetes workloads introduce i seguenti miglioramenti alle policy di protezione:
 
-* *Modifica le policy di protezione*: Ora puoi modificare le policy di protezione dei carichi di lavoro Kubernetes se hai bisogno di cambiare
+* *Modifica le policy di protezione*: Ora puoi modificare le policy di protezione dei carichi di lavoro Kubernetes, se necessario.
 * *Supporto da disco a disco*: ora è possibile configurare le policy di protezione di Kubernetes con un'architettura di backup da disco a disco.
 * *Supporto per i bucket di storage di Google Cloud Platform*: ora è possibile configurare le policy di protezione di Kubernetes per eseguire il backup nei bucket di storage di Google Cloud Platform.
 

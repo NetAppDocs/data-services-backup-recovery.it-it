@@ -38,4 +38,4 @@ Con questa versione, il supporto per il ripristino delle cartelle FlexGroup è u
 
 Per i dettagli, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Ripristina cartelle e file utilizzando Sfoglia e Ripristina"] .
 
-Per i dettagli su come abilitarlo manualmente, fare riferimento a https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog sulla versione NetApp Backup and Recovery di luglio 2024"] .
+Per i dettagli su come abilitarlo manualmente, fare riferimento a https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog sulla versione NetApp Backup and Recovery di luglio 2024"].

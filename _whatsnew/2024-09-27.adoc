@@ -8,7 +8,7 @@
 
 NetApp Backup and Recovery ora supporta il ripristino di file e cartelle su Red Hat Enterprise Linux (RHEL) versioni 8 e 9 utilizzando il motore Podman.  Ciò si applica al metodo Sfoglia e Ripristina NetApp Backup and Recovery .
 
-La versione 3.9.40 dell'agente console supporta determinate versioni di Red Hat Enterprise Linux versioni 8 e 9 per qualsiasi installazione manuale del software dell'agente console su un host RHEL 8 o 9, indipendentemente dalla posizione, oltre ai sistemi operativi menzionati nel https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisiti dell'host"^] .  Queste versioni più recenti di RHEL richiedono il motore Podman anziché il motore Docker.  In precedenza, NetApp Backup and Recovery presentava due limitazioni quando si utilizzava il motore Podman.  Queste limitazioni sono state rimosse.
+La versione 3.9.40 dell'agente Console supporta alcune versioni di Red Hat Enterprise Linux 8 e 9 per le installazioni manuali dell'agente Console su host RHEL, oltre ai sistemi operativi elencati nel  https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisiti dell'host"^]. Queste versioni più recenti di RHEL richiedono il motore Podman anziché il motore Docker. In precedenza, NetApp Backup and Recovery presentava due limitazioni quando si utilizzava il motore Podman; tali limitazioni sono state rimosse.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Scopri di più sul ripristino dei dati ONTAP dai file di backup"].
 

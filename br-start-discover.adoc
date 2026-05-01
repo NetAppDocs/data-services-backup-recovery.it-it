@@ -59,7 +59,7 @@ Si tratta di un processo in due fasi:
 
 ==== Importa l'applicazione SnapCenter Server e le risorse host
 
-Questo primo passaggio importa le risorse host da SnapCenter e visualizza tali risorse nella pagina Inventario NetApp Backup and Recovery . A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
+Questo primo passaggio importa le risorse host da SnapCenter e le visualizza nella pagina Inventario NetApp Backup and Recovery .  A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
 
 
 TIP: Dopo aver importato le risorse host SnapCenter , NetApp Backup and Recovery non assume automaticamente la gestione della protezione.  Per farlo, è necessario selezionare esplicitamente la gestione delle risorse importate in NetApp Backup and Recovery.  In questo modo sarai pronto a sottoporre tali risorse a backup tramite NetApp Backup and Recovery.
@@ -86,7 +86,7 @@ TIP: Dopo aver importato le risorse host SnapCenter , NetApp Backup and Recovery
 . Selezionare *Importa* per convalidare le voci e registrare SnapCenter Server.
 +
 
-NOTE: Se SnapCenter Server è già registrato, è possibile aggiornare i dettagli di registrazione esistenti.
+NOTE: Se il SnapCenter Server è già registrato, è possibile aggiornare i dati di registrazione esistenti.
 
 
 

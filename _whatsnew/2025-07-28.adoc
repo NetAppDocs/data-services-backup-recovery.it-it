@@ -6,7 +6,7 @@
 
 === Supporto del carico di lavoro Kubernetes in anteprima
 
-Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Kubernetes:
+Questa versione di NetApp Backup and Recovery introduce il supporto per il rilevamento e la gestione dei carichi di lavoro Kubernetes:
 
 * Scopri i cluster Red Hat OpenShift e Kubernetes open source, supportati da NetApp ONTAP, senza condividere i file kubeconfig.
 * Scopri, gestisci e proteggi le applicazioni su più cluster Kubernetes utilizzando un piano di controllo unificato.

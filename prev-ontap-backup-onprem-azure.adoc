@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp NetApp Backup and Recovery. 
+summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
 = Esegui il backup dei dati ONTAP locali nell'archiviazione BLOB di Azure con NetApp Backup and Recovery
 :hardbreaks:
@@ -244,7 +244,7 @@ Quando si configura NetApp Backup and Recovery, viene richiesto di specificare l
 
 * I LIF dei nodi e degli intercluster sono in grado di accedere all'archivio oggetti.
 * I server DNS sono stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
-* Se si utilizza uno spazio IP diverso da quello predefinito, potrebbe essere necessario creare un percorso statico per accedere all'archiviazione degli oggetti.
+* Se si utilizza uno spazio IP diverso da quello predefinito, potrebbe essere necessario creare una route statica per accedere allo storage a oggetti.
 * Se necessario, aggiornare le regole del firewall per consentire le connessioni del servizio NetApp Backup and Recovery da ONTAP all'archiviazione degli oggetti tramite la porta 443 e il traffico di risoluzione dei nomi dalla VM di archiviazione al server DNS tramite la porta 53 (TCP/UDP).
 
 

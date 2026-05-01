@@ -20,7 +20,7 @@ Creare un certificato di sicurezza per abilitare la comunicazione tra NetApp Bac
 
 == Creare un certificato di sicurezza per StorageGRID
 
-Se la comunicazione tra i contenitori NetApp Backup and Recovery e StorageGRID deve verificare il certificato StorageGRID , completare i seguenti passaggi.
+Se la comunicazione tra i container di NetApp Backup and Recovery e StorageGRID deve verificare il certificato StorageGRID, completa i seguenti passaggi.
 
 Il certificato generato deve avere CN e Subject Alternative Name come nome fornito in NetApp Backup and Recovery al momento dell'attivazione del backup.
 
@@ -72,7 +72,7 @@ Esempio di output:
 
 NOTE: Il punto di montaggio varia tra le modalità di distribuzione Standard, Privata e Limitata. Questo esempio mostra una distribuzione cloud standard. Fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modalità di distribuzione NetApp Console"] .
 
-. Passare alla directory MountPoint. Correre:
+. Passare alla directory del punto di montaggio. Eseguire:
 +
 [source, console]
 ----
@@ -265,7 +265,7 @@ Utilizzare la documentazione di System Manager per creare un nuovo certificato C
 
 
 .Passi
-. Accedi all'agente della console come root. Correre:
+. Accedi all'agente Console come root. Esegui:
 +
 [source, console]
 ----

@@ -54,7 +54,7 @@ Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Vol
 
 In questa versione, Kubernetes workloads introduce i seguenti miglioramenti alle policy di protezione:
 
-* *Modifica le policy di protezione*: Ora puoi modificare le policy di protezione dei carichi di lavoro Kubernetes se hai bisogno di cambiare
+* *Modifica le policy di protezione*: Ora puoi modificare le policy di protezione dei carichi di lavoro Kubernetes, se necessario.
 * *Supporto da disco a disco*: ora è possibile configurare le policy di protezione di Kubernetes con un'architettura di backup da disco a disco.
 * *Supporto per i bucket di storage di Google Cloud Platform*: ora è possibile configurare le policy di protezione di Kubernetes per eseguire il backup nei bucket di storage di Google Cloud Platform.
 
@@ -353,7 +353,7 @@ Per i dettagli su cosa è cambiato, vederelink:https://docs.netapp.com/us-en/con
 
 === Supporto del carico di lavoro Hyper-V come anteprima privata
 
-Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Hyper-V:
+Questa versione di NetApp Backup and Recovery introduce il supporto per il rilevamento e la gestione dei carichi di lavoro Hyper-V:
 
 * Backup e ripristino di VM su istanze autonome e istanze di cluster di failover (FCI)
 * Proteggere le VM archiviate su condivisioni SMB3
@@ -369,7 +369,7 @@ Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento 
 
 === Supporto del carico di lavoro KVM come anteprima privata
 
-Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro KVM:
+Questa versione di NetApp Backup and Recovery introduce il supporto per il rilevamento e la gestione dei carichi di lavoro KVM:
 
 * Eseguire il backup e il ripristino delle immagini VM qcow2 archiviate su condivisioni NFS
 * Backup dei pool di archiviazione
@@ -546,7 +546,7 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 === Supporto del carico di lavoro Kubernetes in anteprima
 
-Questa versione di NetApp Backup and Recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Kubernetes:
+Questa versione di NetApp Backup and Recovery introduce il supporto per il rilevamento e la gestione dei carichi di lavoro Kubernetes:
 
 * Scopri i cluster Red Hat OpenShift e Kubernetes open source, supportati da NetApp ONTAP, senza condividere i file kubeconfig.
 * Scopri, gestisci e proteggi le applicazioni su più cluster Kubernetes utilizzando un piano di controllo unificato.
@@ -637,7 +637,7 @@ Se si disabilita questa impostazione, è necessario creare manualmente l'endpoin
 
 === Supporto per SnapMirror su Cloud Resync su ONTAP S3
 
-La versione precedente ha introdotto il supporto per SnapMirror su Cloud Resync (SM-C Resync). La funzionalità semplifica la protezione dei dati durante la migrazione dei volumi negli ambienti NetApp . Questa versione aggiunge il supporto per SM-C Resync su ONTAP S3 e altri provider compatibili con S3 come Wasabi e MinIO.
+La versione precedente ha introdotto il supporto per SnapMirror to Cloud Resync (SM-C Resync). La funzionalità semplifica la protezione dei dati durante la migrazione dei volumi negli ambienti NetApp. Questa versione aggiunge il supporto per SM-C Resync su ONTAP S3, nonché su altri provider compatibili con S3 come Wasabi e MinIO.
 
 
 
@@ -690,7 +690,7 @@ Sebbene questa funzionalità sia in anteprima, presenta alcune limitazioni:
 
 *Iniziare*
 
-Per iniziare a utilizzare questa funzionalità di anteprima, è necessario abilitare un flag sull'agente della console.  È quindi possibile immettere i dettagli di connessione dell'archivio oggetti di terze parti MinIO nel flusso di lavoro di protezione selezionando l'archivio oggetti *Compatibile con terze parti* nella sezione di backup.
+Per iniziare a utilizzare questa funzionalità di anteprima, è necessario abilitare un flag sul Console agent. Successivamente, è possibile inserire i dettagli di connessione del proprio archivio di oggetti MinIO di terze parti nel flusso di lavoro di protezione selezionando *Third party Compatible* object store nella sezione di backup.
 
 
 
@@ -885,9 +885,9 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 === Modalità di protezione SnapLock Compliance e SnapLock Enterprise
 
-NetApp Backup and Recovery ora può eseguire il backup dei volumi locali FlexVol e FlexGroup configurati utilizzando le modalità di protezione SnapLock Compliance o SnapLock Enterprise . Per usufruire di questo supporto, i cluster devono eseguire ONTAP 9.14 o versione successiva. Il backup dei volumi FlexVol mediante la modalità SnapLock Enterprise è supportato a partire dalla versione 9.11.1 ONTAP . Le versioni precedenti ONTAP non forniscono alcun supporto per il backup dei volumi di protezione SnapLock .
+NetApp Backup and Recovery ora può eseguire il backup sia dei volumi FlexVol che FlexGroup on-premises configurati utilizzando le modalità di protezione SnapLock Compliance o SnapLock Enterprise. I cluster devono eseguire ONTAP 9.14 o versioni successive per questo supporto. Il backup dei volumi FlexVol in modalità SnapLock Enterprise è supportato da ONTAP 9.11.1. Le versioni precedenti di ONTAP non supportano il backup dei volumi protetti da SnapLock.
 
-Consulta l'elenco completo dei volumi supportati in https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"] .
+Vedi l'elenco completo dei volumi supportati in  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"].
 
 
 
@@ -896,11 +896,11 @@ Consulta l'elenco completo dei volumi supportati in https://docs.netapp.com/us-e
 Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema sorgente da cui si desidera ripristinare i dati del volume.  Ciò consente al catalogo indicizzato di tenere traccia dei file di backup per ogni volume.  La pagina Volumi ora mostra lo stato di indicizzazione:
 
 * Indicizzato: i volumi sono stati indicizzati.
-* In corso
-* Non indicizzato
-* Indicizzazione sospesa
-* Errore
-* Non abilitato
+* In corso: L'indicizzazione è in corso.
+* Non indicizzato: l'indicizzazione non è ancora iniziata.
+* Indicizzazione sospesa: L'indicizzazione è sospesa.
+* Errore: si è verificato un errore di indicizzazione.
+* Non abilitato: l'indicizzazione non è abilitata per questa origine.
 
 
 
@@ -915,7 +915,7 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 NetApp Backup and Recovery ora supporta il ripristino di file e cartelle su Red Hat Enterprise Linux (RHEL) versioni 8 e 9 utilizzando il motore Podman.  Ciò si applica al metodo Sfoglia e Ripristina NetApp Backup and Recovery .
 
-La versione 3.9.40 dell'agente console supporta determinate versioni di Red Hat Enterprise Linux versioni 8 e 9 per qualsiasi installazione manuale del software dell'agente console su un host RHEL 8 o 9, indipendentemente dalla posizione, oltre ai sistemi operativi menzionati nel https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisiti dell'host"^] .  Queste versioni più recenti di RHEL richiedono il motore Podman anziché il motore Docker.  In precedenza, NetApp Backup and Recovery presentava due limitazioni quando si utilizzava il motore Podman.  Queste limitazioni sono state rimosse.
+La versione 3.9.40 dell'agente Console supporta alcune versioni di Red Hat Enterprise Linux 8 e 9 per le installazioni manuali dell'agente Console su host RHEL, oltre ai sistemi operativi elencati nel  https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisiti dell'host"^]. Queste versioni più recenti di RHEL richiedono il motore Podman anziché il motore Docker. In precedenza, NetApp Backup and Recovery presentava due limitazioni quando si utilizzava il motore Podman; tali limitazioni sono state rimosse.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Scopri di più sul ripristino dei dati ONTAP dai file di backup"].
 
