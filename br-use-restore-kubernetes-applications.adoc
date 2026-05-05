@@ -16,11 +16,36 @@ summary: NetApp Backup and Recovery consente di ripristinare le applicazioni pro
 [role="lead"]
 NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che quest'ultima disponga di almeno un punto di ripristino. Un punto di ripristino può essere costituito dallo snapshot locale o dal backup nell'archivio oggetti (o da entrambi). È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
 
+
+
+== Visualizza le risorse protette per un punto di ripristino dell'applicazione
+
+Per ogni applicazione protetta con Backup and Recovery, è possibile visualizzare le risorse di cui è stato eseguito il backup per uno specifico punto di ripristino.
+
+.Ruolo richiesto NetApp Console
+Visualizzatore di backup e ripristino. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
+.Passi
+. In NetApp Backup and Recovery, seleziona *Inventario* > *Applicazioni*.
+. Dall'elenco delle applicazioni, scegli un'applicazione e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Visualizza e ripristina*.
+. Dall'elenco dei punti di ripristino, scegli un punto di ripristino e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Visualizza risorse*.
++
+Viene visualizzato un elenco di risorse e i relativi dettagli. È possibile visualizzare le risorse per namespace o ambito cluster e scaricare l'elenco come file JSON per future verifiche.
+
+. Al termine, selezionare *Chiudi*.
+
+
+
+
+== Ripristina le applicazioni Kubernetes
+
+È possibile ripristinare applicazioni basate su namespace o su macchine virtuali da un punto di ripristino, ripristinando tutte le risorse oppure selezionando un sottoinsieme di risorse da ripristinare.
+
 .Prima di iniziare
 Se si sta ripristinando un'applicazione di cui è stato eseguito il backup utilizzando Trident Protect, assicurarsi che Trident Protect sia installato sia sul cluster di origine che sul cluster di destinazione.
 
 .Ruolo richiesto NetApp Console
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+Super amministratore di Backup and Recovery o amministratore di ripristino di Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Nel menu NetApp Backup e ripristino, seleziona *Ripristina*.
@@ -29,58 +54,88 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 Viene visualizzato l'elenco dei punti di ripristino.
 
 . Seleziona il pulsante *Ripristina* per il punto di ripristino che si desidera utilizzare.
-
-
-[discrete]
-===== Impostazioni generali
++
+Si avvia la procedura guidata di ripristino dei dati e viene visualizzata la pagina _Impostazioni generali_.
 
 . Scegli la posizione di origine da cui eseguire il ripristino.
 . Selezionare il cluster di destinazione dall'elenco *Cluster*.
+. Scegli se ripristinare negli spazi dei nomi originali o in nuovi spazi dei nomi.
 +
 
-NOTE: Al momento non è supportato il ripristino di uno snapshot locale creato da Trident Protect su un cluster diverso.
+NOTE: Il ripristino in loco (ripristino nello spazio dei nomi originale e nel cluster originale) delle app basate su macchine virtuali da snapshot locali non è attualmente supportato.
 
-. Scegli se ripristinare negli spazi dei nomi originali o in nuovi spazi dei nomi.
 . Se si sceglie di ripristinare su nuovi namespace, immettere il namespace di destinazione o i namespace di destinazione da utilizzare.
 . Selezionare *Avanti*.
-
-
-[discrete]
-===== Selezione delle risorse
++
+Viene visualizzata la pagina _Selezione delle risorse_.
 
 . Scegli se desideri ripristinare tutte le risorse associate all'applicazione oppure utilizzare un filtro per selezionare risorse specifiche da ripristinare:
-
-
++
 [role="tabbed-block"]
 ====
-.Ripristina tutte le risorse
+.Tutte le risorse
 --
-. Seleziona *Ripristina tutte le risorse*.
-. Selezionare *Avanti*.
+.. Seleziona *Ripristina tutte le risorse*.
++
+Quando si ripristina un'applicazione basata su macchine virtuali, Backup and Recovery elenca tutte le macchine virtuali presenti nel punto di ripristino.
+
+.. Selezionare *Avanti*.
 
 
 --
-.Ripristina risorse specifiche
+.Risorse dell'app specifiche basate su namespace
 --
-. Seleziona *Risorse selettive*.
-. Scegli il comportamento del filtro delle risorse.  Se scegli *Includi*, le risorse selezionate verranno ripristinate.  Se si sceglie *Escludi*, le risorse selezionate non verranno ripristinate.
-. Selezionare *Aggiungi regole* per aggiungere regole che definiscono i filtri per la selezione delle risorse.  Per filtrare le risorse è necessaria almeno una regola.
+.. Seleziona *Risorse selettive* e scegli se filtrare le risorse selezionate in base a regole o in base al namespace.
++
+[cols="1,1"]
+|===
+| Metodo di selezione delle risorse | Passi 
+
+
+| Filtra le risorse utilizzando le regole  a| 
+... Seleziona la scheda *Regole*.
+... Scegli il comportamento del filtro delle risorse.  Se scegli *Includi*, le risorse selezionate verranno ripristinate.  Se si sceglie *Escludi*, le risorse selezionate non verranno ripristinate.
+... Selezionare *Aggiungi regole* per aggiungere regole che definiscono i filtri per la selezione delle risorse.  Per filtrare le risorse è necessaria almeno una regola.
 +
 Ogni regola può filtrare in base a criteri quali lo spazio dei nomi della risorsa, le etichette, il gruppo, la versione e il tipo.
 
-. Selezionare *Salva* per salvare ciascuna regola.
-. Dopo aver aggiunto tutte le regole necessarie, seleziona *Cerca* per visualizzare le risorse disponibili nell'archivio di backup che corrispondono ai criteri di filtro.
+... Selezionare *Salva* per salvare ciascuna regola.
+... Dopo aver aggiunto tutte le regole necessarie, seleziona *Mostra risorse* per visualizzare le risorse disponibili nell'archivio di backup che corrispondono ai criteri di filtro.
+
+
+
+
+| Selezionare manualmente le risorse da un elenco  a| 
+... Seleziona la scheda *Personalizzata*.
+... Seleziona *Namespace-Scoped* o *Cluster-Scoped* per visualizzare le risorse corrispondenti.
++
+Backup e ripristino elenca tutte le risorse presenti nel punto di ripristino.
+
+... Selezionare le risorse da includere nell'operazione di ripristino.
+
+
+|===
 +
 
 NOTE: Le risorse mostrate sono le risorse attualmente presenti nel cluster.
 
-. Una volta soddisfatti dei risultati, selezionare *Avanti*.
+.. Al termine, selezionare *Avanti*.
+
+
+--
+.Risorse specifiche dell'app basata su VM
+--
+.. Seleziona *Risorse selettive*.
++
+Backup e ripristino elenca tutte le macchine virtuali presenti nel punto di ripristino. È possibile selezionare quali macchine virtuali includere nell'operazione di ripristino.
+
+.. Al termine, selezionare *Avanti*.
 
 
 --
 ====
-[discrete]
-===== Impostazioni di destinazione
++
+Viene visualizzata la pagina _Impostazioni destinazione_.
 
 . Espandi la sezione *Impostazioni di destinazione* e scegli se ripristinare sulla classe di archiviazione predefinita, su una classe di archiviazione diversa oppure, se stai eseguendo il ripristino su un cluster diverso, di mappare le classi di archiviazione sul cluster di destinazione.
 . Se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine.
@@ -90,5 +145,24 @@ NOTE: Le risorse mostrate sono le risorse attualmente presenti nel cluster.
 NOTE: Se è necessario creare un AppVault su un cluster Kubernetes per facilitare il ripristino di un backup o di uno snapshot creato utilizzando Trident Protect, fare riferimento a  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Utilizzare gli oggetti Trident Protect AppVault per gestire i bucket"].
 
 . Facoltativamente, espandi la sezione *Script di ripristino* e abilita l'opzione *Postscript* per scegliere un modello di hook di esecuzione che verrà eseguito al termine dell'operazione di ripristino. Se necessario, inserisci gli argomenti di cui lo script ha bisogno e aggiungi selettori di etichetta per filtrare le risorse in base alle etichette delle risorse.
-. Selezionare *Ripristina*.
+. Facoltativamente, è possibile espandere la sezione *Trasformazioni delle risorse* per aggiungere, rimuovere o modificare gli attributi delle risorse durante il processo di ripristino. Quindi, procedere come segue:
++
+
+NOTE: La modifica di PersistentVolumeClaims e degli spazi dei nomi non è attualmente supportata.
+
++
+.. Abilita l'opzione *Trasformazione risorsa* per apportare modifiche al modificatore.
+.. Seleziona un modello dall'elenco *Modello* per applicare rapidamente le impostazioni dei modificatori che utilizzi più frequentemente. Questo elenco include modelli predefiniti per scenari comuni, nonché modelli personalizzati che hai creato.
++
+
+NOTE: Crea modelli di trasformazione delle risorse nell'area globale link:br-start-configure.html#create-a-resource-modifier-template["Impostazioni"^].
+
+.. Specifica quale risorsa desideri modificare inserendo il gruppo di risorse, la versione, il tipo e il nome.
+.. Specifica l'operazione che desideri eseguire sulla risorsa selezionando un'operazione dall'elenco *Operation*.
+.. Inserisci un percorso JSON per la chiave specifica che desideri modificare.
+.. Se necessario, immettere un nuovo valore da utilizzare. Il campo *Valore* viene visualizzato solo per determinate operazioni (come *Aggiungi* o *Sostituisci*).
+.. Facoltativamente, aggiungi altre trasformazioni delle risorse secondo necessità.
+
+
+. Al termine, selezionare *Ripristina*.
 

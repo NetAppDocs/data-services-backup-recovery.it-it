@@ -440,6 +440,9 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 
 È possibile ripristinare uno snapshot nel namespace originale in qualsiasi momento.
 
+
+NOTE: Il ripristino in loco (ripristino nello spazio dei nomi originale e nel cluster originale) delle app basate su macchine virtuali da snapshot locali non è attualmente supportato.
+
 .Prima di iniziare
 Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
 
