@@ -5323,7 +5323,6 @@
   <block id="0d4860fe632e2ecc84a5e441d9141855" category="list-text">Per aggiungere un'altra operazione a questo modello, seleziona *Aggiungi operazione*.</block>
   <block id="fb016800c976cb584670a469fb67aa08" category="paragraph">La gestione dei carichi di lavoro Kubernetes in NetApp Backup and Recovery consente di individuare, gestire e proteggere i cluster e le applicazioni Kubernetes, tutto in un unico posto. È possibile gestire risorse e applicazioni ospitate sui cluster Kubernetes. È inoltre possibile creare e associare policy di protezione alle applicazioni Kubernetes, il tutto tramite un'unica interfaccia.</block>
   <block id="516ee22feede3bac94e552d7d7d47c7a" category="section-title">Aggiorna Trident Protect</block>
-  <block id="8f81884d10e6a9d5bed6dc6c7f7e7ad7" category="paragraph">Per i cluster Kubernetes che eseguono Trident Protect 26.04 o versioni successive, è possibile aggiornare Trident Protect direttamente da NetApp Backup and Recovery. L'opzione di aggiornamento viene visualizzata solo se è disponibile una versione più recente.</block>
   <block id="5bcc55e1f344c64b73b8980050b81310" category="list-text">Scegli un cluster Kubernetes da aggiornare e seleziona l'icona Azioni <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Aggiorna cluster*.</block>
   <block id="51e9423c87c0e6f2111dce27096c87eb" category="list-text">Nella finestra di dialogo di aggiornamento, procedere come segue:</block>
   <block id="50382ab9fb7cc5b5cb9eb0c9d8ba6663" category="list-text">Dall'elenco, seleziona la versione a cui desideri eseguire l'aggiornamento.</block>
@@ -5431,4 +5430,5 @@
   <block id="d02c2883bbfa212e02daa2b45bd11760" category="list-text">Un cluster Kubernetes - Le distribuzioni e le versioni di Kubernetes supportate includono quelle supportate da <block ref="f56ec4bb79bf67d191baea2a353be3ab" category="inline-link-rx"></block>.</block>
   <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">05 maggio 2026</block>
   <block id="bfddb9cc303489a14cbf9520a59e6d1b" category="sidebar">Modifica le risorse durante le operazioni di ripristino utilizzando risorse personalizzate</block>
+  <block id="dd95d3f26c14232d5637a6e4d3472711" category="paragraph">Per i cluster Kubernetes che eseguono Trident Protect 26.05 o versioni successive, è possibile aggiornare Trident Protect direttamente da NetApp Backup and Recovery. L'opzione di aggiornamento viene visualizzata solo se è disponibile una versione più recente.</block>
 </blocks>
