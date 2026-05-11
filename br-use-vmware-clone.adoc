@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-clone.html 
+keywords: clone, clone application data, NetApp backup and recovery, VMware 
+summary: Clona i carichi di lavoro delle tue macchine virtuali VMware con NetApp Backup and Recovery. 
+---
+= Clonare i carichi di lavoro VMware utilizzando NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utilizza NetApp Backup and Recovery per creare cloni scrivibili di macchine virtuali VMware da snapshot primari o secondari. Con i cloni di VM, puoi creare e gestire macchine virtuali per test, integrazione e formazione senza impattare i dati di produzione.
+
+*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+
+.Prima di iniziare
+Assicurati che tutte le macchine virtuali di cui desideri clonare gli snapshot siano state aggiunte a un gruppo di protezione e sottoposte a backup.
+
+
+
+== Creare un clone di una macchina virtuale VMware
+
+Crea immediatamente un clone da uno snapshot esistente.
+
+
+NOTE: Dopo aver creato un clone di una macchina virtuale, è necessario aggiornare l'indirizzo IP della macchina virtuale clonata per evitare conflitti di indirizzo IP con la macchina virtuale originale.
+
+.Passi
+. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Nella sezione *Carichi di lavoro*, selezionare il riquadro *VMware*.
+. Seleziona *Clone*.
+. Seleziona *Crea nuovo clone*.
+. Nella sezione *Seleziona macchine virtuali*, scegli un gruppo di protezione. Le macchine virtuali nel gruppo di protezione vengono visualizzate nell'elenco di selezione.
+. Seleziona una o più VM dall'elenco per clonarle. Le VM selezionate vengono visualizzate nell'elenco delle VM selezionate a destra.
+. Al termine, selezionare *Avanti*.
+. Nella sezione *Istantanee* della pagina *Seleziona un'istantanea*, seleziona un intervallo di tempo per filtrare le istantanee in base alla data di creazione.
+. Seleziona un'istantanea esistente dall'elenco da utilizzare come base per la clonazione e seleziona *Avanti*.
++
+La voce *Seleziona posizione snapshot* viene visualizzata se lo snapshot è archiviato in più posizioni.
+
+. Scegli la posizione dello snapshot da utilizzare e seleziona *Avanti*.
+. Nella pagina *Impostazioni destinazione*, procedi come segue:
++
+.. Scegli il FQDN o l'indirizzo IP della destinazione vCenter server in cui deve essere creato il clone della VM.
+.. Seleziona l'host ESXi che ospiterà il clone.
+.. Scegli l'ambiente di rete per il clone.
+.. Nel campo *Nome macchina virtuale*, immettere un suffisso per la macchina virtuale appena clonata.
+
+
+. Seleziona *Clone*.
+
+
+
+
+== Dividi un clone
+
+È possibile suddividere un clone di una macchina virtuale VMware per scollegarlo dal volume d'origine. Una volta suddiviso, il clone diventa un volume indipendente che non dipende più dal volume d'origine.
+
+Dopo la separazione, i datastore associati alla VM clonata diventano un nuovo datastore indipendente. La VM clonata stessa viene conservata.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
+. Seleziona un clone.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Clonazione divisa*.
+. Esamina i dettagli nella finestra di dialogo e seleziona *Dividi*.
+. Una volta creata la nuova macchina virtuale indipendente, è possibile visualizzarla nella pagina *Inventory*.
+
+
+
+
+== Rimuovere un clone
+
+È possibile rimuovere un clone di una macchina virtuale VMware. Quando si rimuove un clone di una macchina virtuale, il clone viene rimosso da vCenter, e i datastore associati alla macchina virtuale vengono smontati ed eliminati dal sistema storage.
+
+Se una policy protegge il clone, sia il clone che il suo job vengono rimossi.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
+. Seleziona un clone.
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Rimuovi*.
+. Nella finestra di dialogo di conferma della rimozione, rivedi i dettagli dell'eliminazione.
+. Seleziona *Rimuovi*.
+. Quando il clone viene eliminato, viene rimosso dalla pagina *Inventario*.
+

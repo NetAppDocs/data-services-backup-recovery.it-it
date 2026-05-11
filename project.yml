@@ -58,8 +58,6 @@ sidebar:
       url: "/br-start-login.html"
     - title: Visualizza lo stato di protezione nella Dashboard
       url: "/br-use-dashboard.html"
-    - title: Creare policy per gestire backup e ripristini
-      url: "/br-use-policies-create.html"
     - title: Proteggere i carichi di lavoro del volume ONTAP
       entries:
       - title: Panoramica dei carichi di lavoro del volume Protect ONTAP
@@ -110,6 +108,9 @@ sidebar:
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: Scopri i carichi di lavoro di Microsoft SQL Server
         url: "/br-start-discover.html"
+      - title: Creare e gestire criteri di backup dei carichi di lavoro di Microsoft
+          SQL Server
+        url: "/br-use-policies-mssql-create.html"
       - title: Eseguire il backup dei carichi di lavoro di Microsoft SQL Server
         url: "/br-use-mssql-backup.html"
       - title: Ripristinare i carichi di lavoro di Microsoft SQL Server
@@ -130,8 +131,12 @@ sidebar:
         url: "/br-use-vmware-discovery.html"
       - title: Crea e gestisci gruppi di protezione per carichi di lavoro VMware
         url: "/br-use-vmware-protection-groups.html"
+      - title: Creare e gestire le policy di backup dei carichi di lavoro VMware
+        url: "/br-use-policies-vmware-create.html"
       - title: Eseguire il backup dei carichi di lavoro VMware
         url: "/br-use-vmware-backup.html"
+      - title: Clonare i carichi di lavoro VMware
+        url: "/br-use-vmware-clone.html"
       - title: Ripristinare i carichi di lavoro VMware
         entries:
         - title: Ripristinare le macchine virtuali VMware
@@ -154,6 +159,8 @@ sidebar:
         url: "/br-start-discover-kvm.html"
       - title: Crea e gestisci gruppi di protezione per carichi di lavoro KVM
         url: "/br-use-kvm-protection-groups.html"
+      - title: Crea e gestisci le policy di backup dei carichi di lavoro KVM
+        url: "/br-use-policies-kvm-create.html"
       - title: Eseguire il backup dei carichi di lavoro KVM
         url: "/br-use-kvm-backup.html"
       - title: Ripristinare i carichi di lavoro KVM
@@ -166,10 +173,16 @@ sidebar:
         url: "/br-start-discover-hyperv.html"
       - title: Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V
         url: "/br-use-hyperv-protection-groups.html"
+      - title: Creare e gestire le policy di backup dei carichi di lavoro Hyper-V
+        url: "/br-use-policies-hyper-v-create.html"
       - title: Eseguire il backup dei carichi di lavoro Hyper-V
         url: "/br-use-hyperv-backup.html"
       - title: Ripristinare i carichi di lavoro Hyper-V
-        url: "/br-use-hyperv-restore.html"
+        entries:
+        - title: Ripristinare i carichi di lavoro Hyper-V
+          url: "/br-use-hyperv-restore.html"
+        - title: Ripristina file e cartelle
+          url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Proteggi i carichi di lavoro Oracle Database (Preview)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro del database Oracle
@@ -181,6 +194,9 @@ sidebar:
       - title: Crea e gestisci gruppi di protezione per i carichi di lavoro Oracle
           Database
         url: "/br-use-oracle-protection-groups.html"
+      - title: Creare e gestire le policy di backup dei carichi di lavoro di Oracle
+          Database
+        url: "/br-use-policies-oracle-create.html"
       - title: Esegui il backup dei carichi di lavoro Oracle Database
         url: "/br-use-oracle-backup.html"
       - title: Clona i carichi di lavoro del database Oracle
@@ -199,6 +215,8 @@ sidebar:
         entries:
         - title: Aggiungi e proteggi le applicazioni Kubernetes
           url: "/br-use-protect-kubernetes-applications.html"
+        - title: Creare e gestire le policy di backup dei carichi di lavoro Kubernetes
+          url: "/br-use-policies-kubernetes-create.html"
         - title: Esegui subito il backup di un'applicazione Kubernetes utilizzando
             la web UI
           url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"

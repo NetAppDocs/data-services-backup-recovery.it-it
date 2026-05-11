@@ -21,14 +21,17 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 
 * Ripristina da una posizione primaria (snapshot locale)
 * Ripristina da una risorsa replicata su un archivio secondario
-* Ripristina da un backup di archiviazione di oggetti
+* Ripristina da un backup di storage a oggetti (solo nella posizione originale)
 
+
+
+NOTE: Il ripristino da backup dell'archivio di oggetti non è supportato per le macchine virtuali che risiedono su storage SAN.
 
 .Ripristinare questi punti
 È possibile ripristinare i dati in questi punti:
 
-* Ripristina la posizione originale
-* Ripristina in una posizione alternativa
+* Ripristina nella posizione originale (da storage primario, secondario e storage a oggetti)
+* Ripristina in una posizione alternativa (dallo storage primario e secondario)
 
 
 .Considerazioni sul ripristino da storage di oggetti

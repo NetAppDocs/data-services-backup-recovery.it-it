@@ -1,0 +1,50 @@
+= Miglioramenti ai carichi di lavoro Hyper-V
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti ai carichi di lavoro Hyper-V
+
+In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
+
+* *Proteggi le macchine virtuali su storage SAN*: Ora puoi proteggere le macchine virtuali su storage SAN a oggetti.
+* *Miglioramenti al ripristino in posizione alternativa*: ora è possibile ripristinare in una posizione alternativa dalle posizioni primaria e secondaria le VM su storage SAN.
+* *Ripristino di file e cartelle in una macchina virtuale guest*: Ora è possibile ripristinare file e cartelle da uno Snapshot su storage primario in una macchina virtuale Windows guest. Questa funzionalità è supportata solo per le macchine virtuali CIFS.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+
+
+
+=== Miglioramenti ai carichi di lavoro KVM
+
+In questa versione, i carichi di lavoro KVM introducono il seguente miglioramento:
+
+*Ripristino in una posizione alternativa*: Ora è possibile ripristinare le macchine virtuali KVM in una destinazione alternativa (questa funzionalità è ora disponibile a livello generale).
+
+Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
+
+
+
+=== Miglioramenti dei carichi di lavoro Oracle Database
+
+In questa versione, Oracle Database workloads introduce i seguenti miglioramenti:
+
+* *Supporto per Oracle AI Database 26ai*: NetApp Backup and Recovery ora supporta Oracle AI Database 26ai.
+* *Supporto per la verifica dei backup*: ora è possibile configurare le policy di backup per verificare automaticamente l'integrità dei backup del database Oracle.
+
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro del database Oracle"].
+
+
+
+=== Miglioramenti dei carichi di lavoro VMware
+
+In questa versione, VMware workloads introduce i seguenti miglioramenti:
+
+* *Supporto per datastore estesi per i gruppi di protezione*: Ora è possibile scegliere il comportamento dei gruppi di protezione quando si proteggono macchine virtuali i cui dischi virtuali si estendono su più datastore.
+* *Supporto per la clonazione*: ora è possibile creare cloni di snapshot di macchine virtuali da storage primario e secondario.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro VMware"] .

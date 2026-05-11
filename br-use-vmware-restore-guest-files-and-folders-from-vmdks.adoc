@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html 
-keywords:  
-summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un sistema operativo guest Windows. 
+keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
+summary: È possibile ripristinare uno o più file o cartelle da un VMDK a una macchina virtuale guest. 
 ---
 = Ripristinare file e cartelle da dischi virtuali
 :hardbreaks:
@@ -14,6 +14,12 @@ summary: È possibile ripristinare uno o più file o cartelle da un VMDK su un s
 
 
 [role="lead"]
+Consente di ripristinare singoli file o cartelle da un disco virtuale alla macchina virtuale originale o a un'altra macchina virtuale. Questa operazione è utile quando non è necessario ripristinare un'intera macchina virtuale, ma solo file o cartelle specifici.
+
+
+
+== Ripristinare file e cartelle da dischi virtuali
+
 Ripristina file o cartelle da un disco virtuale alla macchina virtuale originale o a un'altra macchina virtuale. Se preferisci non collegare il disco virtuale alla macchina virtuale originale, puoi collegarlo invece a una macchina virtuale proxy.
 
 .Prima di iniziare
@@ -170,3 +176,17 @@ Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli 
 
 --
 ====
+
+
+== Visualizza le sessioni di montaggio VMDK attive
+
+Visualizza le sessioni guest attive durante il ripristino di file o cartelle. Questa opzione mostra i VMDK attualmente collegati con sessioni aperte.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Clona*.
+. Seleziona *VMware* dall'elenco dei carichi di lavoro in alto a destra della pagina.
+. Selezionare il menu *Sessioni di montaggio disco live*.
++
+Viene visualizzato un elenco delle sessioni di montaggio VMDK aperte. È possibile visualizzare il backup associato, la VM di origine, il percorso di montaggio e altre informazioni.
+
+
