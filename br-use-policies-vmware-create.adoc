@@ -86,7 +86,7 @@ Per i carichi di lavoro VMware, questo configura lo snapshot locale sui datastor
 +
 Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o VMware sul sistema di storage primario e quindi replica i dati dal sistema di storage su disco primario al sistema di storage su disco secondario.
 
-** *Archiviazione da disco a oggetto*: storage primario (disco) su cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema storage a oggetti. Può trattarsi di un archivio di oggetti cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione dei dati a lungo termine e l'archiviazione.
+** *Archiviazione da disco a oggetto*: storage primario (disco) su cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione dei dati a lungo termine e l'archiviazione. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
 +
 Per i carichi di lavoro VMWare, questa opzione configura lo snapshot locale sui datastore o sulle VM sul server primario e la replica dall'archiviazione su disco primario all'archiviazione di oggetti cloud.
 
