@@ -205,6 +205,9 @@ Puoi creare il bucket dalla Console o dal tuo provider cloud.
 
 Se si prevede di utilizzare un prefisso bucket diverso da "netapp-backup-xxxxxx", sarà necessario modificare le autorizzazioni S3 per il ruolo IAM dell'agente della console.
 
+
+NOTE: Quando si crea un container da utilizzare come destinazione di backup in Azure, assicurarsi che il container creato abbia lo stesso nome dell'account di storage di Azure.
+
 *Impostazioni avanzate del bucket*
 
 Se intendi spostare i vecchi file di backup in un archivio o se intendi abilitare la protezione DataLock e Ransomware per bloccare i file di backup ed eseguirne la scansione alla ricerca di possibili ransomware, dovrai creare il contenitore con determinate impostazioni di configurazione:

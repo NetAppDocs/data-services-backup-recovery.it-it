@@ -57,7 +57,7 @@ Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi F
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .
 
-* Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.
+* Non eseguire il backup dei volumi di destinazione di SnapMirror per i quali sono abilitati gli snapshot con conservazione a lungo termine. Questi snapshot vengono creati direttamente sulla destinazione e non verranno spostati nello storage a oggetti. Questa restrizione si applica anche se la policy di SnapMirror viene successivamente modificata per disabilitare la conservazione a lungo termine.
 * Quando si crea o si modifica un criterio di backup senza che vi siano volumi assegnati, il numero massimo di backup conservati può essere 1018.  Dopo aver assegnato i volumi al criterio, è possibile modificarlo per creare fino a 4000 backup.
 * Durante il backup dei volumi di protezione dei dati (DP):
 +

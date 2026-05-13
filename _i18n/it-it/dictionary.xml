@@ -415,7 +415,6 @@
   <block id="baab0bf328a764b384d4ecab2375f4fa" category="list-text">Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.</block>
   <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">Panoramica sulla configurazione della crittografia del volume NetApp</block>
   <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">Per una spiegazione su questi tipi di crittografia, fare riferimento a<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block> .</block>
-  <block id="d13da1ef1c5dbdc58b74265b9363e815" category="list-text">Se gli snapshot di conservazione a lungo termine sono abilitati su un volume di destinazione SnapMirror utilizzando la pianificazione nella policy SnapMirror , gli snapshot vengono creati direttamente sul volume di destinazione.  In questo caso, non dovresti eseguire il backup di quei volumi utilizzando NetApp Backup and Recovery perché quegli snapshot non verranno spostati nell'archiviazione degli oggetti.</block>
   <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">Quando si crea o si modifica un criterio di backup senza che vi siano volumi assegnati, il numero massimo di backup conservati può essere 1018.  Dopo aver assegnato i volumi al criterio, è possibile modificarlo per creare fino a 4000 backup.</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">Durante il backup dei volumi di protezione dei dati (DP):</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">Relazioni con le etichette SnapMirror<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block> E<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block> non verrà eseguito il backup sul cloud.</block>
@@ -4434,7 +4433,6 @@
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">Espandi la sezione *Scansione ransomware*.</block>
   <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">19 gennaio 2026</block>
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">Ripristinare le macchine virtuali VMware</block>
-  <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Ripristina dischi virtuali specifici</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Flusso di lavoro, prerequisiti e limitazioni</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">Il sistema operativo guest Windows deve eseguire Windows Server 2008 R2 o versione successiva.</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Se si ripristina un file o una cartella crittografati, l'attributo di crittografia non viene mantenuto.</block>
@@ -5053,7 +5051,6 @@
   <block id="6cbd33d5e36fc1cca8f70b65396de2b0" category="admonition">Non è supportata la combinazione di tipi di risorse diversi (ad esempio, la combinazione di tag con singole VM o datastore nello stesso gruppo di protezione).</block>
   <block id="6ad4cf5fcdb7c67f52ade5e3f8eeb6ad" category="list-text">Assicurati che il tuo ambiente utilizzi versioni supportate di VMware vSphere.</block>
   <block id="735df7f2e37c9dd264e94c878ea7d619" category="admonition">L'appartenenza ai tag viene risolta da vCenter al tempo di backup. Qualsiasi modifica apportata ai tag in vCenter (aggiunta/rimozione di tag, eliminazione di tag, aggiunta/rimozione di VM) si rifletterà automaticamente nel backup successivo.</block>
-  <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">Ripristina file e cartelle da VMDK</block>
   <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">Esamina i prerequisiti e le limitazioni in <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block>.</block>
   <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">Le prestazioni del ripristino di file o cartelle dipendono da due fattori: le dimensioni dei file o delle cartelle da ripristinare e il numero di file o cartelle da ripristinare. Il ripristino di un gran numero di file di piccole dimensioni potrebbe richiedere più tempo del previsto rispetto al ripristino di un numero ridotto di file di grandi dimensioni, a parità di dimensioni complessive del set di dati da ripristinare.</block>
   <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">È possibile eseguire un ripristino su una macchina virtuale remota (noto come ripristino tra macchine virtuali), ma i sistemi operativi di origine e di destinazione devono essere identici.</block>
@@ -5549,4 +5546,10 @@
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">Creare e gestire le policy di backup dei carichi di lavoro Hyper-V</block>
   <block id="4cd8801cdee679bb024e188753022546" category="sidebar">Creare e gestire le policy di backup dei carichi di lavoro di Oracle Database</block>
   <block id="9bb7a57e0f15167076e59ed085570cb6" category="sidebar">Creare e gestire le policy di backup dei carichi di lavoro Kubernetes</block>
+  <block id="2a09eaa4306f964591fbfdee1bad3329" category="list-text">Non eseguire il backup dei volumi di destinazione di SnapMirror per i quali sono abilitati gli snapshot con conservazione a lungo termine. Questi snapshot vengono creati direttamente sulla destinazione e non verranno spostati nello storage a oggetti. Questa restrizione si applica anche se la policy di SnapMirror viene successivamente modificata per disabilitare la conservazione a lungo termine.</block>
+  <block id="cb7e1594adc03f9d88413ab9198e9c43" category="admonition">Quando si crea un container da utilizzare come destinazione di backup in Azure, assicurarsi che il container creato abbia lo stesso nome dell'account di storage di Azure.</block>
+  <block id="76382b5bdb7a0a65db2779738439703c" category="sidebar">Ripristina i dischi virtuali VMware</block>
+  <block id="160bf2703f3a2319b3965b541340256a" category="sidebar">Ripristinare file e cartelle VMware</block>
+  <block id="b5c91904decad9b84ae436053f327229" category="sidebar">Ripristina file e cartelle VMware da VMDK</block>
+  <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">Ripristinare file e cartelle di Hyper-V</block>
 </blocks>

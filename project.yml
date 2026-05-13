@@ -141,13 +141,13 @@ sidebar:
         entries:
         - title: Ripristinare le macchine virtuali VMware
           url: "/br-use-vmware-restore.html"
-        - title: Ripristina dischi virtuali specifici
+        - title: Ripristina i dischi virtuali VMware
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: Ripristina file e cartelle
+        - title: Ripristinare file e cartelle VMware
           entries:
           - title: Flusso di lavoro, prerequisiti e limitazioni
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: Ripristina file e cartelle da VMDK
+          - title: Ripristina file e cartelle VMware da VMDK
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Risoluzione dei problemi relativi al ripristino di file e cartelle
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
@@ -181,7 +181,7 @@ sidebar:
         entries:
         - title: Ripristinare i carichi di lavoro Hyper-V
           url: "/br-use-hyperv-restore.html"
-        - title: Ripristina file e cartelle
+        - title: Ripristinare file e cartelle di Hyper-V
           url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Proteggi i carichi di lavoro Oracle Database (Preview)
       entries:
