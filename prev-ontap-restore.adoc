@@ -20,7 +20,7 @@ I backup dei dati del volume ONTAP vengono archiviati come snapshot, su volumi r
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
 * È possibile ripristinare un *volume* (come nuovo volume) sul sistema originale, su un sistema diverso che utilizza lo stesso account cloud o su un sistema ONTAP locale.
-* È possibile ripristinare una *cartella* su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud o su un volume in un sistema ONTAP locale.
+* È possibile ripristinare una *cartella* da snapshot di storage replicato o storage a oggetti in un volume del sistema originale, in un volume di un sistema diverso che utilizza lo stesso account cloud oppure in un volume su un sistema ONTAP locale. Il ripristino di cartelle da snapshot locali non è supportato.
 * È possibile ripristinare *file* su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud o su un volume in un sistema ONTAP locale.
 
 

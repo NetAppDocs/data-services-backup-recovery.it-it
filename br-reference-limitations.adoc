@@ -93,6 +93,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 
 Queste limitazioni si applicano sia ai metodi Cerca e ripristina che Sfoglia e ripristina per il ripristino di file e cartelle, a meno che non siano espressamente indicate.
 
+* Il ripristino delle cartelle da snapshot locali non è supportato.
 * Browse & Restore può ripristinare fino a 100 file singoli alla volta.
 * Search & Restore può ripristinare 1 file alla volta.
 * Se si utilizza ONTAP 9.13.0 o versione successiva, Browse & Restore e Search & Restore possono ripristinare una cartella insieme a tutti i file e le sottocartelle in essa contenuti.
