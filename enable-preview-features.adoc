@@ -116,9 +116,13 @@ NOTE: Per disabilitare una funzione di anteprima, segui gli stessi passaggi ma i
 
 
 
-== Disabilita l'indicizzazione per tutti i volumi che appartengono a una storage VM
+== Disabilita indicizzazione per i volumi
 
-Segui questi passaggi per disabilitare l'indicizzazione per tutti i volumi appartenenti a una specifica storage VM, anziché disabilitare l'indicizzazione per ogni singolo volume.
+Disabilita indicizzazione per volumi specifici o per tutti i volumi appartenenti a una o più storage VM utilizzando i seguenti flag di opzione:
+
+* `svms-not-to-index`: Un elenco separato da virgole di storage VM i cui volumi non devono essere indicizzati
+* `volumes-not-to-index`: Un elenco separato da virgole di singoli volumi che non devono essere indicizzati
+
 
 .Passi
 . Utilizza SSH per accedere all'agente della console.
@@ -162,13 +166,14 @@ Il punto di montaggio differisce tra le implementazioni cloud e quelle private. 
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Crea un file denominato  `production-customer.json` con il seguente contenuto. Sostituisci i nomi delle VM di storage nell'esempio con i nomi delle VM di storage presenti nel tuo ambiente:
+. Crea un file denominato  `production-customer.json` e personalizza i nomi della macchina virtuale di archiviazione e del volume in modo che corrispondano al tuo ambiente:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
+    "volumes-not-to-index": "volume_1,volume_2,volume_3"
   }
 }
 ----
