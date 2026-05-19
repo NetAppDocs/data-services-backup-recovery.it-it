@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, noto come "modalità privata", i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  Se in futuro si verifica un problema con il sistema host dell"agente Console, è possibile distribuire un nuovo agente Console e ripristinare i dati critici NetApp Backup and Recovery .' 
+summary: 'In modalità privata (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell"agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.' 
 ---
 = Ripristinare i dati di configurazione di NetApp Backup and Recovery in un sito oscuro
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Quando si utilizza NetApp Backup and Recovery in un sito senza accesso
 
 
 [role="lead"]
-Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, noto come _modalità privata_, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  In caso di problemi con il sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare i dati critici NetApp Backup and Recovery .
+In  (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.
 
 È inoltre possibile seguire questi passaggi per sostituire l'agente della Console e ripristinare i dati di configurazione archiviati su di esso quando si utilizza Backup and Recovery in  on-premises senza account cloud (ad esempio, quando si utilizza NetApp StorageGrid come destinazione di backup).
 

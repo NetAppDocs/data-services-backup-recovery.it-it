@@ -3604,9 +3604,7 @@
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">Quanto tempo ci vorrà per ripristinare i miei oggetti archiviati in Google Archive?</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*Tempo di recupero*: tempo necessario per recuperare il file di backup dall'archivio e posizionarlo nell'archiviazione standard.  Questo è talvolta chiamato il periodo di "reidratazione".  A differenza delle soluzioni di archiviazione "più fredde" offerte da altri provider cloud, i tuoi dati sono accessibili in pochi millisecondi.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Informazioni su questo compito</block>
-  <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, noto come "modalità privata", i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  Se in futuro si verifica un problema con il sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare i dati critici NetApp Backup and Recovery .</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Ripristinare i dati di configurazione di NetApp Backup and Recovery in un sito oscuro</block>
-  <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Quando si utilizza NetApp Backup and Recovery in un sito senza accesso a Internet, noto come _modalità privata_, i dati di configurazione di NetApp Backup and Recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  In caso di problemi con il sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare i dati critici NetApp Backup and Recovery .</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">Questa procedura si applica solo ai dati di volume ONTAP .</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">Esistono due tipi di dati sottoposti a backup:</block>
   <block id="8ad7c680cb0d9e95e7294cf3e192be1f" category="list-text">Database NetApp Backup and Recovery : contiene un elenco di tutti i volumi, file di backup, policy di backup e informazioni di configurazione.</block>
@@ -3841,7 +3839,6 @@
   <block id="f5b61ddaf24256f9a32421bae22a1e21" category="sidebar">Eseguire il backup ONTAP locale su Azure Blob</block>
   <block id="e8f201c141a8ad9fbe4ea92510b4ca30" category="sidebar">Esegui il backup ONTAP on-premise su Google Cloud</block>
   <block id="6a2941303bd6f981e2724af76bf3da2e" category="sidebar">Backup di ONTAP in locale su StorageGRID</block>
-  <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">Ripristinare i dati di configurazione in un sito oscuro</block>
   <block id="5ee1bd11e1cae9e48854c491affa72a6" category="sidebar">Gestire i backup ONTAP</block>
   <block id="0f18ca4c27c34246c6bc09d2bbf775c6" category="sidebar">Ripristina dai backup ONTAP</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Gestire l'inventario di Microsoft SQL Server</block>
@@ -5557,4 +5554,6 @@
   <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">Crea un file denominato <block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> e personalizza i nomi della macchina virtuale di archiviazione e del volume in modo che corrispondano al tuo ambiente:</block>
   <block id="48be46e5153e88189d804da13793e42d" category="list-text">Il ripristino delle cartelle da snapshot locali non è supportato.</block>
   <block id="dfad9bc0d0d8b9068168d9197cc59866" category="list-text">È possibile ripristinare una *cartella* da snapshot di storage replicato o storage a oggetti in un volume del sistema originale, in un volume di un sistema diverso che utilizza lo stesso account cloud oppure in un volume su un sistema ONTAP locale. Il ripristino di cartelle da snapshot locali non è supportato.</block>
+  <block id="637d209786fc6476ac3ed36c800de343" category="summary">In modalità privata (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.</block>
+  <block id="7bc0231d1aacc728e66087d46a205aab" category="paragraph">In  (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.</block>
 </blocks>
