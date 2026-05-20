@@ -31,9 +31,3 @@ Quando si modifica la policy di protezione associata a un'applicazione per utili
 Quando si crea una policy di protezione 3-2-1 in cui non vengono eseguiti backup su storage a oggetti contemporaneamente alla replica su storage secondario, la policy di protezione si blocca durante la protezione dell'applicazione.
 
 *Soluzione alternativa*: rimuovere e aggiungere nuovamente l'applicazione e proteggerla con una policy di protezione diversa.
-
-
-
-== Il ripristino in-place di app basate su VM da snapshot locali non è supportato
-
-Il ripristino in loco (ripristino nello spazio dei nomi originale e nel cluster originale) delle app basate su macchine virtuali da snapshot locali non è attualmente supportato.

@@ -71,6 +71,18 @@ Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a
 
 
 
+=== Miglioramenti dei carichi di lavoro Kubernetes
+
+In questa versione, Kubernetes workloads introduce i seguenti miglioramenti:
+
+* *Trident Protect 26.05.1*: Questa versione include Trident Protect 26.05.1.
+* *Ripristino in loco per le app basate su VM*: ora è possibile ripristinare le applicazioni basate su VM nello spazio dei nomi originale e nel cluster originale.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+
+
+
 == 05 maggio 2026
 
 Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
@@ -81,9 +93,10 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 In questa versione, Kubernetes workloads introduce i seguenti miglioramenti:
 
+* *Trident Protect 26.05*: Questa versione include Trident Protect 26.05.
+* *Aggiorna Trident Protect da Backup e Ripristino*: Se il tuo cluster Kubernetes utilizza Trident Protect 26.05 o versioni successive, ora puoi aggiornare Trident Protect direttamente da Backup e Ripristino.
 * *Supporto nativo per la protezione delle macchine virtuali*: ora è possibile creare applicazioni basate su macchine virtuali, consentendo di proteggere le macchine virtuali nello stesso modo in cui si protegge qualsiasi altra applicazione.
 * *Trasformazioni delle risorse*: Ora è possibile utilizzare le trasformazioni delle risorse e i modelli di trasformazione delle risorse per aggiungere, rimuovere e modificare gli attributi delle risorse durante il processo di ripristino.
-* *Aggiorna Trident Protect da Backup and Recovery*: Ora puoi aggiornare Trident Protect per un cluster Kubernetes direttamente da Backup and Recovery.
 * *Visualizza le risorse protette*: Ora puoi visualizzare le risorse incluse in ogni punto di ripristino di un'applicazione e scaricare un report JSON dettagliato. Questo ti offre una visibilità completa sui tuoi punti di ripristino e semplifica la conformità alle verifiche.
 
 

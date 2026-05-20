@@ -60,10 +60,6 @@ Si avvia la procedura guidata di ripristino dei dati e viene visualizzata la pag
 . Scegli la posizione di origine da cui eseguire il ripristino.
 . Selezionare il cluster di destinazione dall'elenco *Cluster*.
 . Scegli se ripristinare negli spazi dei nomi originali o in nuovi spazi dei nomi.
-+
-
-NOTE: Il ripristino in loco (ripristino nello spazio dei nomi originale e nel cluster originale) delle app basate su macchine virtuali da snapshot locali non è attualmente supportato.
-
 . Se si sceglie di ripristinare su nuovi namespace, immettere il namespace di destinazione o i namespace di destinazione da utilizzare.
 . Selezionare *Avanti*.
 +
