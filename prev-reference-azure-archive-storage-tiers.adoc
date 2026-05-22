@@ -16,12 +16,6 @@ summary: 'NetApp Backup and Recovery supporta un livello di accesso all"archivio
 [role="lead"]
 NetApp Backup and Recovery supporta un livello di accesso all'archivio di Azure e la maggior parte delle regioni.
 
-[]
-====
-
-NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
-
-====
 
 
 == Livelli di accesso Azure Blob supportati per NetApp Backup and Recovery

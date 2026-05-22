@@ -16,12 +16,6 @@ summary: NetApp Backup and Recovery supporta due classi di archiviazione S3 e la
 [role="lead"]
 NetApp Backup and Recovery supporta due classi di archiviazione S3 e la maggior parte delle regioni.
 
-[]
-====
-
-NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
-
-====
 
 
 == Classi di archiviazione S3 supportate per NetApp Backup and Recovery

@@ -23,9 +23,6 @@ Utilizza NetApp Backup and Recovery per implementare una strategia di protezione
 * È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-
-NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
-
 È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro di Oracle Database:
 
 * link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle Database"]

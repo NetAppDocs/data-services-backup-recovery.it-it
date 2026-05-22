@@ -26,9 +26,6 @@ Utilizza NetApp Backup and Recovery per implementare una strategia 3-2-1, in cui
 * È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-
-NOTE: Per passare da una versione all'altra dell'interfaccia utente NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa alla precedente interfaccia utente NetApp Backup and Recovery"] .
-
 È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro VMware:
 
 * link:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"]
