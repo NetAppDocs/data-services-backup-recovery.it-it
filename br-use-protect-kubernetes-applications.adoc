@@ -58,7 +58,7 @@ NOTE: NetApp Backup and Recovery non memorizza i parametri di ricerca o i risult
 
 . Backup and Recovery visualizza un elenco di risorse che corrispondono ai criteri di ricerca.
 . Se l'elenco contiene le risorse che si desidera proteggere, selezionare *Avanti*.
-. Facoltativamente, nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione o creane uno nuovo. Se non selezioni un criterio, l'applicazione verrà creata senza criterio di protezione. Puoilink:br-use-policies-create.html#create-a-policy["aggiungere una politica di protezione"] Dopo.
+. Facoltativamente, nell'area *Policy*, scegli una policy di protezione esistente per proteggere l'applicazione oppure creane una nuova. Se non selezioni una policy, l'applicazione viene creata senza una policy di protezione. Puoi link:br-use-policies-kubernetes-create.html#create-a-policy["aggiungere una politica di protezione"] in seguito.
 . Nell'area *Prescript e postscript*, abilitare e configurare tutti gli hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup.  Per abilitare prescript o postscript, devi averne già creato almeno unolink:br-use-manage-execution-hook-templates.html["modello di gancio di esecuzione"] .
 . Seleziona *Crea*.
 
@@ -86,7 +86,7 @@ NOTE: Se si selezionano le VM dall'elenco, la definizione dell'applicazione è s
 Le macchine virtuali selezionate vengono visualizzate nell'elenco a destra.
 
 . Se l'elenco contiene le macchine virtuali che si desidera proteggere, selezionare *Avanti*.
-. Facoltativamente, nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione o creane uno nuovo. Se non selezioni un criterio, l'applicazione verrà creata senza criterio di protezione. Puoilink:br-use-policies-create.html#create-a-policy["aggiungere una politica di protezione"] Dopo.
+. Facoltativamente, nell'area *Policy*, scegli una policy di protezione esistente per proteggere l'applicazione oppure creane una nuova. Se non selezioni una policy, l'applicazione viene creata senza una policy di protezione. Puoi link:br-use-policies-kubernetes-create.html#create-a-policy["aggiungere una politica di protezione"] in seguito.
 . Nell'area *Prescript e postscript*, abilitare e configurare tutti gli hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup.  Per abilitare prescript o postscript, devi averne già creato almeno unolink:br-use-manage-execution-hook-templates.html["modello di gancio di esecuzione"] .
 . Seleziona *Crea*.
 

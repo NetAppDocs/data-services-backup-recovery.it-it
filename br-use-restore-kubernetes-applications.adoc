@@ -151,7 +151,7 @@ NOTE: La modifica di PersistentVolumeClaims e degli spazi dei nomi non è attual
 .. Seleziona un modello dall'elenco *Modello* per applicare rapidamente le impostazioni dei modificatori che utilizzi più frequentemente. Questo elenco include modelli predefiniti per scenari comuni, nonché modelli personalizzati che hai creato.
 +
 
-NOTE: Crea modelli di trasformazione delle risorse nell'area globale link:br-start-configure.html#create-a-resource-modifier-template["Impostazioni"^].
+NOTE: Crea modelli di trasformazione delle risorse nell'area globale link:br-start-configure.html#create-a-resource-transformation-template["Impostazioni"^].
 
 .. Specifica quale risorsa desideri modificare inserendo il gruppo di risorse, la versione, il tipo e il nome.
 .. Specifica l'operazione che desideri eseguire sulla risorsa selezionando un'operazione dall'elenco *Operation*.
