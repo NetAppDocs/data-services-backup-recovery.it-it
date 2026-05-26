@@ -18,12 +18,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 Le seguenti azioni non sono supportate nei carichi di lavoro VMware in NetApp Backup and Recovery:
 
-* Montare
-* Smonta
 * Supporto vVol
-* Supporto NVMe
 * Integrazione e-mail
-* Modifica la politica
-* Modifica gruppo di protezione
 * Supporto per il controllo degli accessi basato sui ruoli (RBAC)
 
