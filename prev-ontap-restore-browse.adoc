@@ -79,6 +79,9 @@ NOTE: Se la versione ONTAP sul sistema è precedente alla 9.13.1, non sarà poss
 
 Quando si ripristina un volume da un file di backup, NetApp Backup and Recovery crea un _nuovo_ volume utilizzando i dati del backup.  Quando si utilizza un backup da un archivio di oggetti, è possibile ripristinare i dati su un volume nel sistema originale, su un sistema diverso situato nello stesso account cloud del sistema di origine o su un sistema ONTAP locale.
 
+
+NOTE: Quando si ripristina un volume abilitato SnapLock, il volume ripristinato mantiene la protezione SnapLock solo se la destinazione di storage è abilitata WORM. Se si ripristina su una destinazione non-WORM, lo stato SnapLock viene rimosso dal volume ripristinato.
+
 Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva oppure su un sistema ONTAP locale che esegue ONTAP 9.14.1, sarà possibile eseguire un'operazione di _ripristino rapido_. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire l'accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume anziché ripristinare l'intero file di backup.  Il ripristino rapido non è consigliato per applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup in storage archiviati.
 
 
