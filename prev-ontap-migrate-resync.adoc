@@ -112,6 +112,9 @@ Prima della migrazione, il team NetApp Tech Refresh verifica questi prerequisiti
 
 Dopo la migrazione, un team NetApp Tech Refresh verifica che vengano completati i seguenti passaggi per stabilire la protezione e preparare la risincronizzazione.
 
+
+NOTE: Non utilizzare una policy SnapMirror di tipo "Vault" per clonare un volume da un vecchio cluster ONTAP a un nuovo cluster ONTAP o in una configurazione con architettura a cascata. Le policy Vault modificano l'UUID della versione dello snapshot durante il trasferimento. L'UUID della versione dello snapshot viene utilizzato per determinare se esiste uno snapshot comune tra l'origine e la destinazione.
+
 . Registra i nuovi UUID delle istanze di volume di tutti i volumi migrati nel cluster ONTAP di destinazione.
 . Verificare che tutti i criteri SnapMirror richiesti disponibili nel vecchio cluster ONTAP siano configurati correttamente nel nuovo cluster ONTAP .
 . Aggiungere il nuovo cluster ONTAP come sistema nella pagina *Sistemi* della Console.
@@ -156,10 +159,10 @@ NOTE: Deve essere utilizzato l'UUID dell'istanza del volume, non l'ID del volume
 . Immettere le informazioni di configurazione del provider e della rete necessarie per l'operazione di risincronizzazione.
 . Selezionare *Invia* per avviare il processo di convalida.
 +
-NetApp Backup and Recovery verifica che ogni volume selezionato per la risincronizzazione sia lo snapshot più recente e disponga di almeno uno snapshot comune. Ciò garantisce che i volumi siano pronti per l'operazione SnapMirror to Cloud Resync.
+NetApp Backup and Recovery verifica che ogni volume selezionato per la risincronizzazione condivida uno snapshot comune con l'archivio di oggetti. In particolare, lo snapshot più recente memorizzato nell'archivio di oggetti deve essere presente anche nello snapshot locale del nuovo volume clonato. Questo controllo garantisce che i volumi siano pronti per l'operazione di SnapMirror to Cloud Resync.
 
 . Esaminare i risultati della convalida, inclusi i nuovi nomi dei volumi di origine e lo stato di risincronizzazione per ciascun volume.
-. Verificare l'idoneità del volume. Il sistema verifica se i volumi sono idonei per la risincronizzazione. Se un volume non è idoneo, significa che non si tratta dell'ultimo snapshot oppure non è stato trovato alcun snapshot comune.
+. Verifica l'idoneità dei volumi. Il sistema controlla se i volumi sono idonei per la risincronizzazione. Se un volume non è idoneo, significa che non sono stati definiti i criteri comuni per gli snapshot.
 +
 
 IMPORTANT: Per garantire che i volumi rimangano idonei per l'operazione SnapMirror su Cloud Resync, eseguire uno snapshot finale di ciascun volume prima di eliminare qualsiasi relazione SnapMirror durante la fase di pre-migrazione.  In questo modo si preserva lo stato più recente dei dati.
