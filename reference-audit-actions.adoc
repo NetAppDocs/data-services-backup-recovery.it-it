@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reference-audit-actions.html 
+keywords: audit, audit actions, NetApp Console, Backup and Recovery, audit log 
+summary: 'Riferimento alle azioni di backup e ripristino supportate dall"auditing della NetApp Console.' 
+---
+= Azioni di backup e ripristino verificate
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La pagina Controllo della NetApp Console registra le seguenti azioni eseguite dagli utenti in Backup e ripristino nell'ambito della funzionalità di controllo. Per informazioni dettagliate su come visualizzare e filtrare gli eventi di controllo, consultare  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Verifica l'attività degli utenti dalla pagina Audit"^] nella documentazione della Console.
+
+Per ogni azione sottoposta a controllo, la Console registra il nome del servizio, l'agente, la risorsa, l'utente e lo stato dell'azione.
+
+.Azioni di backup e ripristino verificate
+* Ripristinare il volume o i file dal backup
+* Ripristina volume a snapshot
+* Avvia Esplora file
+* Ripristina i file dallo snapshot
+* Registra credenziali cloud
+* Aggiorna credenziali cloud
+* Elimina credenziali cloud
+* Crea bucket di storage a oggetti
+* Modifica bucket di storage a oggetti
+* Convalida la migrazione del backup
+* Migrare i backup tra sistemi ONTAP
+* Inizializza la protezione della sorgente
+* Cluster peer per la protezione
+* Inizializza la protezione della destinazione
+* Avvia la replica del volume
+* Crea sistema Cyber Vault
+* Eliminare il sistema Cyber Vault
+* Abilita l'accesso a Cyber Vault
+* Disabilita l'accesso a Cyber Vault
+* Crea snapshot ad hoc
+* Scopri volumi e relazioni
+* Aggiorna la configurazione dell'applicazione
+* Abilita la protezione panoramica per i volumi
+* Modificare la protezione panoramica per i volumi
+* Modificare storage a oggetti per il sistema
+* Crea backup cloud ad hoc
+* Inizializza la protezione per il sistema
+* Abilita la protezione panoramica per i volumi
+* Modificare la protezione panoramica per i volumi
+* Aggiorna i metadati di backup del volume (pianificato)
+* Abilita il backup in un volume
+* Modificare la protezione panoramica per i volumi
+* Eliminare il criterio dello snapshot ANF
+* Attivare la protezione panoramica in un sistema
+* Modificare la protezione panoramica in un sistema
+
+
+
+
+== Ulteriori informazioni
+
+* https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Verifica l'attività degli utenti dalla pagina Audit"^]
+

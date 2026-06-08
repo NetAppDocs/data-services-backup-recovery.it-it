@@ -24,9 +24,6 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 * Ripristina da un backup di storage a oggetti (solo nella posizione originale)
 
 
-
-NOTE: Il ripristino da backup dell'archivio di oggetti non è supportato per le macchine virtuali che risiedono su storage SAN.
-
 .Ripristinare questi punti
 È possibile ripristinare i dati in questi punti:
 

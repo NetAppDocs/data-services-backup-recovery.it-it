@@ -105,27 +105,64 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Scopri di più utilizzan
 
 NetApp Backup and Recovery consente di eseguire il backup di volumi ONTAP dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati. Gli snapshot risiedono sul sistema di origine.
 
+
+NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualificato al momento. Gli altri provider compatibili con S3 non sono stati convalidati.
+
 [cols="33,33,33"]
 |===
 | Sistema sorgente | Sistema secondario (Replicazione) | Archivio oggetti di destinazione (backup) 
 
 
-| Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Amazon S3 
+| Cloud Volumes ONTAP in AWS  a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+
+| Amazon S3 
 
 
-| Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Blob azzurro 
+| Cloud Volumes ONTAP in Azure  a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+| Blob azzurro 
 
 
-| Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Google Cloud Storage 
+| Cloud Volumes ONTAP in Google  a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+| Google Cloud Storage 
 
 
-| Sistema ONTAP in sede | Cloud Volumes ONTAP Sistema ONTAP locale | Amazon S3 Azure Blob Google Cloud Storage NetApp StorageGRID ONTAP S3 
+| Sistema ONTAP in sede  a| 
+* Cloud Volumes ONTAP
+* Sistema ONTAP in sede
+
+ a| 
+* Amazon S3
+* archiviazione compatibile con S3
+* Blob azzurro
+* Google Cloud Storage
+* NetApp StorageGRID
+* ONTAP S3
+
+
+
+
+| Cloud Volumes ONTAP in storage a oggetti compatibile S3  a| 
+* Cloud Volumes ONTAP in storage a oggetti compatibile S3
+* Sistema ONTAP in sede
+
+| storage a oggetti compatibile S3 
 |===
 
 
 === Destinazioni di ripristino supportate
 
 È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono nel sistema di origine e possono essere ripristinati solo sullo stesso sistema.
+
+
+NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualificato al momento. Gli altri provider compatibili con S3 non sono stati convalidati.
 
 [cols="33,33,33"]
 |===
@@ -135,19 +172,62 @@ NetApp Backup and Recovery consente di eseguire il backup di volumi ONTAP dai se
 | *Archivio oggetti (backup)* | *Sistema secondario (replicazione)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
 
 
-| Blob azzurro | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure 
 
 
-| Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
+| Blob azzurro  a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
 
 
-| NetApp StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
 
 
-| ONTAP S3 | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
+| Google Cloud Storage  a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+
+
+
+| NetApp StorageGRID  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| ONTAP S3  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| storage a oggetti compatibile S3  a| 
+* Cloud Volumes ONTAP in storage a oggetti compatibile S3
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in storage a oggetti compatibile S3
+* Sistema ONTAP in sede
+
+
 |===
 Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF e ONTAP Select .
 

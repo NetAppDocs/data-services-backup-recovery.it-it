@@ -14,7 +14,7 @@ summary: È possibile ripristinare uno o più file o cartelle da uno snapshot di
 
 
 [role="lead"]
-Ripristina file e cartelle dai backup delle macchine virtuali Hyper-V su storage primario in una macchina virtuale guest Windows.
+Ripristina file e cartelle dai backup di macchine virtuali Hyper-V su storage primario o secondario in una macchina virtuale guest Windows.
 
 
 
@@ -35,8 +35,7 @@ Nota quanto segue durante il ripristino di file e cartelle:
 [NOTE]
 ====
 * Al momento non è possibile ripristinare file e cartelle su macchine virtuali guest Linux.
-* Il ripristino di file e cartelle non è supportato da backup archiviati su storage secondario o su storage a oggetti.
-* Non è possibile ripristinare file o cartelle su macchine virtuali residenti su storage SAN.
+* Il ripristino di file e cartelle da backup archiviati su storage a oggetti non è supportato.
 * Su una VM è possibile eseguire solo un'operazione di collegamento o ripristino alla volta. Non è possibile eseguire operazioni di collegamento o ripristino parallele sulla stessa VM.
 * La visualizzazione o l'esplorazione di partizioni riservate potrebbe causare un errore.
 * Durante l'operazione di ripristino, gli attributi nascosto, di sistema e crittografato dei file guest non vengono mantenuti nel file ripristinato.
@@ -53,7 +52,7 @@ Nota quanto segue durante il ripristino di file e cartelle:
 . Nella pagina *Ripristina da snapshot*, procedi come segue:
 +
 .. Facoltativamente, è possibile selezionare un intervallo di tempo per filtrare l'elenco delle Snapshot in base all'ora di creazione.
-.. Seleziona una Snapshot sullo storage primario da cui eseguire il ripristino, quindi seleziona *Avanti*.
+.. Seleziona un'istantanea sullo storage primario o secondario da cui eseguire il ripristino, quindi seleziona *Avanti*.
 
 
 . Dall'elenco, scegli un disco virtuale che contenga i file e le cartelle da ripristinare e poi seleziona *Avanti*.

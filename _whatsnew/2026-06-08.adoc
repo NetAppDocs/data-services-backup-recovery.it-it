@@ -1,0 +1,24 @@
+= Miglioramenti dei carichi di lavoro di ONTAP Volumes
+:allow-uri-read: 
+
+
+
+
+=== Miglioramenti dei carichi di lavoro di ONTAP Volumes
+
+In questa versione, i carichi di lavoro ONTAP Volumes introducono il seguente miglioramento:
+
+*Supporto per cloud storage compatibile S3*: NetApp Backup e ripristino per i carichi di lavoro di Volumes ora supporta il backup su cloud storage compatibile S3.
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Volumes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Panoramica dei carichi di lavoro di Protect ONTAP Volumes"].
+
+
+
+=== Miglioramenti ai carichi di lavoro Hyper-V
+
+In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
+
+* *Miglioramenti al ripristino di file e cartelle su una macchina virtuale guest*: ora è possibile ripristinare file e cartelle da uno snapshot su storage primario o secondario su una macchina virtuale Windows guest. Questa funzionalità è ora supportata per CIFS e per le macchine virtuali SAN.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
