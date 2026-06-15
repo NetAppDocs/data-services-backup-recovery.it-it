@@ -1869,7 +1869,6 @@
   <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
   <block id="d3cbd09d6a0974ee6a694826a8598eb6" category="section-title">Requisiti per la protezione delle applicazioni Kubernetes</block>
   <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">Per scoprire le risorse di Kubernetes e proteggere le applicazioni Kubernetes, sono necessari requisiti specifici.</block>
-  <block id="b4223a9285b846e8b6c959752c4aef73" category="paragraph">Per i requisiti NetApp Console , fare riferimento a<block ref="7a97fc65ea04291b3564618ee6e90325" category="inline-xref-macro-rx"></block> .</block>
   <block id="e33a9836e18ab4c7f01ac49f666c4e33" category="section-title">Requisiti per la protezione dei carichi di lavoro Hyper-V</block>
   <block id="7e75f7658d8e69b52e07a066a4510af5" category="paragraph">Assicurati che la tua istanza Hyper-V soddisfi requisiti specifici per individuare e proteggere le macchine virtuali.</block>
   <block id="e8ab74a683c73fd7edd0ea5adc16b2b6" category="list-text">Sono supportati host autonomi e in cluster FCI</block>
@@ -5551,7 +5550,6 @@
   <block id="9a6bb04c2b277b55faab469f2d04692b" category="paragraph">Di seguito sono elencate le azioni supportate durante il backup su storage compatibile con S3:</block>
   <block id="1588002f4465aee8a1e35fc95dbebabd" category="list-text">Backup di snapshot crash-consistent e app-consistent da ONTAP on-premises a object store compatibili S3 di terze parti</block>
   <block id="00de0e91b8bfb37d4831f3333b8df9fa" category="list-text">Flussi di lavoro fondamentali per la protezione dei dati: backup, ripristino ed eliminazione del backup</block>
-  <block id="0a7a61be3bd51e21631c884f7d8de9ef" category="list-text">Convalidato rispetto a provider compatibili con S3, tra cui Wasabi, MinIO, IBM Object Store e Apple Object Store</block>
   <block id="21e1cea657da329388848ff59f3eea5d" category="list-text">NetApp Support accetta e gestisce tutte le richieste di assistenza relative a object store compatibili S3 di terze parti</block>
   <block id="a368c9277e64abd2f91bd6fdc8cafbda" category="section-title">Funzionalità e configurazioni non supportate</block>
   <block id="ad8f08e5de0a588e08fde1c710915292" category="paragraph">Le seguenti funzionalità e configurazioni non sono supportate durante il backup su storage compatibile con S3:</block>
@@ -5626,4 +5624,6 @@
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">Per ripristinare i singoli persistent volume claim, seleziona la scheda *Persistent volume claims*.</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup e ripristino elenca tutte le persistent volume claim nel punto di ripristino. Puoi selezionare quali persistent volume claim includere nell'operazione di ripristino.</block>
   <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">15 giugno 2026</block>
+  <block id="eb985c23c2b4157b8059d99e50538799" category="paragraph">Per i requisiti di NetApp Console, fai riferimento a <block ref="a1e048c2b33797bd5e09f13ddaff6fff" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d1a5a28bec1ce98df5bea6fe830a4f31" category="list-text">Testato e convalidato con Wasabi storage a oggetti; i clienti hanno inoltre segnalato implementazioni riuscite con MinIO, IBM Cloud Object Storage e Apple Object Store</block>
 </blocks>
