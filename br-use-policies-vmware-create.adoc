@@ -29,6 +29,9 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 
 
+NOTE: Per i carichi di lavoro VMware, le pianificazioni di backup utilizzano il fuso orario del server VMware vCenter, non UTC o l'ora locale del browser. Questo fuso orario viene impostato quando crei la pianificazione. Se il fuso orario dell'host cambia, devi aggiornare l'host e ricreare la pianificazione perché il nuovo fuso orario abbia effetto. Consulta link:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware"] per ulteriori informazioni.
+
+
 
 == Visualizza le politiche
 

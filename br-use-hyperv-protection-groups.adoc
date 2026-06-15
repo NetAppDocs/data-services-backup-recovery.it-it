@@ -32,6 +32,10 @@ Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
+.Prima di iniziare
+* Tieni presente che per i carichi di lavoro Hyper-V, i tempi di backup vengono interpretati nel fuso orario dell'host di gestione. Consulta link:br-use-policies-hyper-v-create.html["Creare e gestire i criteri di backup di Hyper-V in NetApp Backup and Recovery"] per ulteriori informazioni.
+
+
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
@@ -60,10 +64,25 @@ Modifica un gruppo di protezione per cambiarne il nome o le impostazioni. Potreb
 . Selezionare la scheda *Gruppi di protezione*.
 . Selezionare il gruppo di protezione che si desidera modificare.
 . Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Modifica*.
-. Modificare le impostazioni del gruppo di protezione, ad esempio il nome o le macchine virtuali presenti nel gruppo.
-. Selezionare *Avanti*.
-. Se necessario, modificare la politica di protezione. Al termine, seleziona *Avanti*.
-. Rivedi la configurazione e seleziona *Invia*.
++
+La procedura guidata Modifica gruppo di protezione ti guida attraverso le impostazioni del gruppo di protezione.
+
+. Apporta le modifiche necessarie in ogni schermata della procedura guidata.
+. Quando hai finito, seleziona *Invia*.
+
+
+
+
+=== Applica un fuso orario host aggiornato a un gruppo di protezione esistente
+
+I backup pianificati utilizzano il fuso orario dell'host Hyper-V, registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario dell'host, i gruppi di protezione esistenti continuano a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
+
+
+NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Il salvataggio senza apportare modifiche non aggiorna le pianificazioni. Questo aggiornamento della pianificazione è un'azione una tantum per ciascun gruppo di protezione e non avvia immediatamente un backup.
+
+.Passi
+. Aggiorna l'host Hyper-V così viene recuperato il fuso orario corrente.
+. Modifica il gruppo di protezione e cambia il suo nome con un valore diverso, quindi salva.
 
 
 

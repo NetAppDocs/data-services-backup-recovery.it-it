@@ -54,6 +54,7 @@ Crea un gruppo di protezione per organizzare le risorse di cui desideri eseguire
 .Prima di iniziare
 * Assicurati che il tuo ambiente utilizzi versioni supportate di VMware vSphere.
 * Quando si crea un gruppo di protezione basato su tag, assicurarsi che le macchine virtuali e i datastore che si desidera proteggere siano già associati a uno o più vSphere tag in vCenter.
+* Tieni presente che per i carichi di lavoro VMware, i tempi di backup programmati vengono interpretati nel fuso orario dell'host di gestione. Consulta link:br-use-policies-vmware-create.html["Creare e gestire le policy di backup VMware in NetApp Backup and Recovery"] per maggiori informazioni.
 
 
 .Passi
@@ -125,6 +126,40 @@ Lo stato di protezione cambia da "In manutenzione" quando si sospende un gruppo 
 
 .Risultato
 Il sistema convalida le pianificazioni e modifica lo stato di protezione in "Protetto" se le pianificazioni sono valide. Se le pianificazioni non sono valide, il sistema visualizza un messaggio di errore e non riprende il gruppo di protezione.
+
+
+
+== Modifica un gruppo di protezione
+
+Modifica un gruppo di protezione per cambiarne il nome o le impostazioni. Potrebbe essere necessario modificare un gruppo di protezione se le risorse al suo interno sono cambiate.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
+. Selezionare la scheda *Gruppi di protezione*.
+. Selezionare il gruppo di protezione che si desidera modificare.
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Modifica*.
++
+La procedura guidata Modifica gruppo di protezione ti guida attraverso le impostazioni del gruppo di protezione.
+
+. Apporta le modifiche necessarie in ogni schermata della procedura guidata.
+. Quando hai finito, seleziona *Invia*.
+
+
+
+
+=== Applica un fuso orario vCenter aggiornato a un gruppo di protezione esistente
+
+I backup pianificati utilizzano il fuso orario del server vCenter registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario del server vCenter, i gruppi di protezione esistenti continueranno a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
+
+
+NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Il salvataggio senza apportare modifiche non aggiorna le pianificazioni. Questo aggiornamento della pianificazione è un'azione una tantum per ciascun gruppo di protezione e non avvia immediatamente un backup.
+
+.Passi
+. Aggiorna il vCenter server in modo che venga recuperato il fuso orario corrente.
+. Modifica il gruppo di protezione e cambia il suo nome con un valore diverso, quindi salva.
+
 
 
 

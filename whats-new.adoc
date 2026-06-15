@@ -59,9 +59,21 @@ Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Vol
 In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
 
 * *Miglioramenti al ripristino di file e cartelle su una macchina virtuale guest*: ora è possibile ripristinare file e cartelle da uno snapshot su storage primario o secondario su una macchina virtuale Windows guest. Questa funzionalità è ora supportata per CIFS e per le macchine virtuali SAN.
+* *I gruppi di protezione ora utilizzano la pianificazione del fuso orario dell'host*: I gruppi di protezione ora utilizzano il fuso orario dell'host Hyper-V. I gruppi di protezione creati prima dell'introduzione della pianificazione del fuso orario dell'host continuano a utilizzare l'ora configurata in precedenza (in genere UTC). Per aggiornare questi gruppi di protezione in modo che utilizzino il fuso orario dell'host Hyper-V, devi ricreare le pianificazioni. Consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V"] per ulteriori informazioni.
 
 
 Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+
+
+
+=== Miglioramenti dei carichi di lavoro VMware
+
+In questa versione, VMware workloads introduce il seguente miglioramento:
+
+* *I gruppi di protezione ora utilizzano la pianificazione del fuso orario dell'host*: I gruppi di protezione ora utilizzano il fuso orario del server VMware vCenter host. I gruppi di protezione creati prima dell'introduzione della pianificazione del fuso orario dell'host continuano a essere eseguiti nel fuso orario configurato in precedenza (in genere UTC). Per utilizzare il fuso orario di vCenter, devi ricreare le pianificazioni. Consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware"] per ulteriori informazioni.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro VMware"] .
 
 
 
