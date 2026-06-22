@@ -101,6 +101,9 @@ NOTE: Se si aggiunge un filtro namespace a un hook di esecuzione eseguito dopo u
 Visita il https://github.com/NetApp/Verda["Progetto GitHub NetApp Verda"] per scaricare veri e propri hook di esecuzione per app popolari come Apache Cassandra ed Elasticsearch.  Puoi anche vedere esempi e trarre spunti per strutturare i tuoi hook di esecuzione personalizzati.
 
 
+NOTE: Gli script presenti nel GitHub repository vengono forniti così come sono e non sono ufficialmente supportati da NetApp. Solo il framework degli execution hook all'interno di Trident Protect e Backup and Recovery è ufficialmente supportato da NetApp.
+
+
 
 == Creare un modello di hook di esecuzione
 

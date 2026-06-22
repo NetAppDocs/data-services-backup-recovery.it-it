@@ -5641,4 +5641,5 @@
   <block id="ee19d16e1df2ea16cdf0906f9c62e70b" category="paragraph">I backup pianificati utilizzano il fuso orario del server vCenter registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario del server vCenter, i gruppi di protezione esistenti continueranno a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.</block>
   <block id="2b33678c8eba4dacaa294cad350a79f8" category="list-text">Aggiorna il vCenter server in modo che venga recuperato il fuso orario corrente.</block>
   <block id="746c4e9758e4e986d2c5f289c1d7e4ed" category="list-text">Testato e convalidato con Wasabi storage a oggetti; i clienti hanno inoltre segnalato implementazioni riuscite con MinIO e IBM Cloud Object Storage</block>
+  <block id="9044dfb75ff38841e5c3112d327e52cf" category="admonition">Gli script presenti nel GitHub repository vengono forniti così come sono e non sono ufficialmente supportati da NetApp. Solo il framework degli execution hook all'interno di Trident Protect e Backup and Recovery è ufficialmente supportato da NetApp.</block>
 </blocks>
