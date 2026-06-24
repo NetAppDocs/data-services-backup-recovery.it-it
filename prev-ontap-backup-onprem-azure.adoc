@@ -342,7 +342,7 @@ Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che pre
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* I volumi selezionati devono avere la stessa impostazione SnapLock .  Tutti i volumi devono avere SnapLock Enterprise abilitato o SnapLock disabilitato.
+* Quando selezioni i volumi sorgente che vuoi proteggere, puoi selezionare solo i volumi che hanno impostazioni SnapLock corrispondenti. I volumi che selezioni devono avere tutti la funzionalità SnapLock abilitata oppure tutti la funzionalità SnapLock disabilitata.
 
 
 ====

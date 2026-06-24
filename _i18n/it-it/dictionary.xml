@@ -1988,7 +1988,6 @@
   <block id="bade104de773419f0c559bd71478cc40" category="inline-link-macro">attiva il backup per volumi aggiuntivi nel sistema</block>
   <block id="7b58ae9806fd4e9bf78fdc8568395ab6" category="paragraph">È possibile scegliere di proteggere i volumi FlexVol o FlexGroup ; tuttavia, non è possibile selezionare una combinazione di questi volumi quando si attiva il backup per un sistema.  Scopri come<block ref="7239f8ae1ce8c5a40d4003de7480554a" category="inline-link-macro-rx"></block> (FlexVol o FlexGroup) dopo aver configurato il backup per i volumi iniziali.</block>
   <block id="e9dfd7a5bc1d9c55d3cafeb50c863440" category="list-text">È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.</block>
-  <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">I volumi selezionati devono avere la stessa impostazione SnapLock .  Tutti i volumi devono avere SnapLock Enterprise abilitato o SnapLock disabilitato.</block>
   <block id="8a6e28d635ac6cca84e8efc5d0dd4b54" category="paragraph">Se ai volumi scelti sono già applicati criteri di snapshot o replica, i criteri selezionati in seguito sovrascriveranno quelli esistenti.</block>
   <block id="60956fee8c3d9f3ef0f2f7652f27143f" category="list-text">Nella pagina Seleziona volumi, seleziona il volume o i volumi che desideri proteggere.</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">Facoltativamente, filtra le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora, per semplificare la selezione.</block>
@@ -5518,7 +5517,6 @@
   <block id="0b0bee32bf0c7158fbba14e4b17f1e23" category="paragraph">Per utilizzare NetApp Backup e ripristino per i carichi di lavoro dei volumi ONTAP, sono necessari i seguenti prerequisiti relativi al sistema host, allo spazio e alle dimensioni.</block>
   <block id="f17da14a026a5974537cf1303ac53974" category="list-text">È richiesto ONTAP 9.8 o versioni successive.</block>
   <block id="45b096193f4470968c1063df19d1c253" category="list-text">Sull'istanza ONTAP locale deve essere abilitata una licenza ONTAP One.</block>
-  <block id="9cf387a6f708f4467810768eb8e4d31f" category="list-text">Per eseguire il backup o il ripristino su storage a oggetti compatibile con S3 è necessario ONTAP 9.17.1 o versioni successive.</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">Per informazioni sulle funzionalità supportate, i tipi di volume, le destinazioni di backup e ripristino e altro ancora, fare riferimento a <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>.</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">Host del database</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">Storage supportati</block>
@@ -5642,4 +5640,7 @@
   <block id="9a6733678bfc1a6a630c61271f174949" category="paragraph">Proteggi le tue VM e i tuoi datastore VMware con NetApp Backup and Recovery. NetApp Backup and Recovery offre operazioni di backup e ripristino rapide, efficienti in termini di spazio, crash-consistent e VM-consistent. Puoi eseguire il backup dei carichi di lavoro VMware verso destinazioni di backup supportate e ripristinare i carichi di lavoro VMware su un host VMware on-premises.</block>
   <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">Archiviazione compatibile con S3 (solo per carichi di lavoro ONTAP Volumes)</block>
   <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Microsoft Azure Blob storage</block>
+  <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">ONTAP 9.12.1 o versioni successive è richiesto per la protezione dei volumi FlexGroup. Consulta <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> per maggiori informazioni.</block>
+  <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">ONTAP 9.17.1 o versioni successive sono necessarie per eseguire il backup o il ripristino su storage a oggetti compatibile con S3.</block>
+  <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Quando selezioni i volumi sorgente che vuoi proteggere, puoi selezionare solo i volumi che hanno impostazioni SnapLock corrispondenti. I volumi che selezioni devono avere tutti la funzionalità SnapLock abilitata oppure tutti la funzionalità SnapLock disabilitata.</block>
 </blocks>
