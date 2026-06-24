@@ -109,9 +109,3 @@ SnapCenter non dispone di cluster di archiviazione delle mappe o SVM per le riso
 Se si dispone di una pianificazione di policy SnapCenter che inizia a una determinata ora e si ripete a intervalli diversi da 15 minuti, NetApp Backup and Recovery non importerà la pianificazione.
 
 *Soluzione alternativa*: utilizzare SnapCenter per modificare il criterio in modo che venga ripetuto a intervalli di 15 minuti.
-
-
-
-== Supporto limitato per il software di gestione della virtualizzazione
-
-Quando si proteggono i carichi di lavoro KVM, NetApp Backup and Recovery non supporta l'individuazione dei carichi di lavoro KVM quando è in uso un software di gestione della virtualizzazione come Apache CloudStack o Red Hat OpenShift Virtualization.

@@ -210,10 +210,11 @@ NetApp Backup and Recovery protegge i seguenti tipi di carichi di lavoro:
 
 .Destinazioni di backup supportate
 * Servizi Web Amazon (AWS) S3
+* Archiviazione compatibile con S3 (solo per carichi di lavoro ONTAP Volumes)
 * Google Cloud Storage
-* Microsoft Azure Blob (non disponibile per carichi di lavoro VMware)
+* Microsoft Azure Blob storage
 * StorageGRID
-* ONTAP S3 (non disponibile per carichi di lavoro VMware)
+* ONTAP S3
 
 
 

@@ -94,15 +94,6 @@ Viene visualizzata la pagina delle Policy.
 ** *Backup*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.
 ** *Destinazione backup*: seleziona il sistema di destinazione sull'archiviazione secondaria per il backup.
 ** *Conservazione*: immettere il numero di snapshot da conservare.
-** *Abilita blocco snapshot*: seleziona se desideri abilitare gli snapshot antimanomissione.
-** *Periodo di blocco dello snapshot*: immettere il numero di giorni, mesi o anni per i quali si desidera bloccare lo snapshot.
-** *Trasferimento alla secondaria*:
-+
-*** L'opzione * Pianificazione trasferimento ONTAP - Inline* è selezionata per impostazione predefinita e indica che gli snapshot vengono trasferiti immediatamente al sistema di archiviazione secondario.  Non è necessario pianificare il backup.
-*** Altre opzioni: se si sceglie un trasferimento differito, i trasferimenti non sono immediati e si può impostare una pianificazione.
-
-
-** * Relazione secondaria SMAS tra SnapMirror e SnapVault *: utilizzare le relazioni secondarie SMAS tra SnapMirror e SnapVault per i carichi di lavoro di SQL Server.
 ** *Provider*: Seleziona il provider di storage che ospita le risorse dell'applicazione Kubernetes e inserisci le credenziali per autenticarti con il provider.
 
 

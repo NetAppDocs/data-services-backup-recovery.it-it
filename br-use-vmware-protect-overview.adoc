@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Proteggi le tue VM VMware e i tuoi datastore con NetApp Backup and Recovery.  NetApp Backup and Recovery offre operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con la VM. È possibile eseguire il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID e ripristinarli su un host VMware locale.
+Proteggi le tue VM e i tuoi datastore VMware con NetApp Backup and Recovery. NetApp Backup and Recovery offre operazioni di backup e ripristino rapide, efficienti in termini di spazio, crash-consistent e VM-consistent. Puoi eseguire il backup dei carichi di lavoro VMware verso destinazioni di backup supportate e ripristinare i carichi di lavoro VMware su un host VMware on-premises.
 
 
 NOTE: Questa versione di NetApp Backup and Recovery supporta solo VMware vCenter e non rileva vVols o VM su vVols.

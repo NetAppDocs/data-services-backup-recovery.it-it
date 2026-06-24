@@ -34,7 +34,8 @@ Prima di poter aggiungere e proteggere un'applicazione Kubernetes, è necessario
 --
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. In alto a destra della pagina, assicurati che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
+. Seleziona *Visualizza* per la voce di riga del workload per visualizzare le risorse Kubernetes.
 . Selezionare la scheda *Applicazioni*.
 . Seleziona *Crea applicazione*.
 . Inserisci un nome per l'applicazione.
@@ -71,7 +72,8 @@ L'applicazione viene creata e compare nell'elenco delle applicazioni nella sched
 --
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. In alto a destra della pagina, assicurati che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
+. Seleziona *Visualizza* per la voce di riga del workload per visualizzare le risorse Kubernetes.
 . Selezionare la scheda *Applicazioni*.
 . Seleziona *Crea applicazione*.
 . Inserisci un nome per l'applicazione.
