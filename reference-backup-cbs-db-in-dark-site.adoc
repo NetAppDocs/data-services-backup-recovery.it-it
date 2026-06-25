@@ -16,7 +16,7 @@ summary: 'In modalità privata (senza accesso a Internet), NetApp Backup and Rec
 [role="lead"]
 In  (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.
 
-È inoltre possibile seguire questi passaggi per sostituire l'agente della Console e ripristinare i dati di configurazione archiviati su di esso quando si utilizza Backup and Recovery in  on-premises senza account cloud (ad esempio, quando si utilizza NetApp StorageGrid come destinazione di backup).
+Puoi anche seguire questi passaggi per sostituire l'agente della Console e ripristinare i dati di configurazione che erano memorizzati su di esso quando usi Backup e Recovery in modalità standard on-premises, senza account cloud (ad esempio, quando usi NetApp StorageGRID come destinazione di backup).
 
 
 NOTE: Questa procedura si applica solo ai dati di volume ONTAP .

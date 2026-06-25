@@ -123,7 +123,7 @@ Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale s
 *** Altre opzioni: se si sceglie un trasferimento differito, i trasferimenti non sono immediati e si può impostare una pianificazione.
 
 
-** * Relazione secondaria SMAS tra SnapMirror e SnapVault *: utilizzare le relazioni secondarie SMAS tra SnapMirror e SnapVault per i carichi di lavoro di SQL Server.
+** *Usa la relazione secondaria esistente SnapMirror e SyncMirror*: Abilita questa opzione per usare la relazione esistente SnapMirror o SyncMirror per trasferire gli snapshot al cluster di destinazione.
 
 
 . Fornire le informazioni per la sezione *Impostazioni archivio oggetti* (backup su storage a oggetti):
