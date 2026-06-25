@@ -170,7 +170,7 @@ NOTE: Questa opzione viene disabilitata automaticamente se questa policy utilizz
 +
 **** Assicurati che il NetApp plug-in sia installato
 **** Assicurarsi che i file binari del database Oracle siano installati
-**** Utilizzare la stessa versione di Oracle Database del database di origine
+**** Avere la stessa versione di Oracle Database del database di origine
 **** Disporre dell'accesso di rete allo storage che contiene la Snapshot (primario o secondario)
 **** Essere in grado di montare il volume clonato ed eseguire l'utilità DBVERIFY di Oracle Database.
 

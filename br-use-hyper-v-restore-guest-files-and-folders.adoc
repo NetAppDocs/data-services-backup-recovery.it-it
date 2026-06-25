@@ -23,7 +23,7 @@ Ripristina file e cartelle dai backup di macchine virtuali Hyper-V su storage pr
 Monta un disco virtuale da uno Snapshot e ripristina file e cartelle da esso nella macchina virtuale Windows originale (di origine).
 
 .Prima di iniziare
-Prima di poter ripristinare file e cartelle, è necessario creare una credenziale per la macchina virtuale di origine in NetApp Backup and Recovery. Questa credenziale viene utilizzata per autenticarsi con la macchina virtuale durante il processo di ripristino.
+Prima di poter ripristinare file e cartelle, devi creare una credenziale per la VM di origine in NetApp Backup and Recovery. Questa credenziale viene utilizzata per autenticarti con la VM durante il processo di ripristino.
 
 .Informazioni su questo compito
 Quando si apre una sessione di ripristino di file e cartelle montando un disco virtuale, la sessione rimane attiva per 48 ore.
