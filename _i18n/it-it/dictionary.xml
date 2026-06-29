@@ -2424,10 +2424,6 @@
   <block id="868fb9c55d4ddac7523d9c4697eb9d9f" category="section-title">Imposta le chiavi AWS gestite dal cliente per la crittografia dei dati</block>
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">Se desideri utilizzare le chiavi di crittografia Amazon S3 predefinite per crittografare i dati trasmessi tra il cluster locale e il bucket S3, sei a posto perché l'installazione predefinita utilizza quel tipo di crittografia.</block>
   <block id="aa9f769e3ac07b6605a7c510f6467b0d" category="paragraph">Se invece si desidera utilizzare le chiavi gestite dal cliente per la crittografia dei dati anziché le chiavi predefinite, sarà necessario che le chiavi di crittografia gestite siano già configurate prima di avviare la procedura guidata NetApp Backup and Recovery .</block>
-  <block id="81d60e20c02d2dc4f1f049ef17d9c0f3" category="inline-link">Scopri come utilizzare le tue chiavi di crittografia Amazon con Cloud Volumes ONTAP</block>
-  <block id="eb3f4e9630751efd3957882fa3339f53" category="paragraph"><block ref="a7e77aaf059fb9a4b638710225357142" category="inline-link-rx"></block>.</block>
-  <block id="8ceec43667de81f25c5ddfbde5549946" category="inline-link">Scopri come utilizzare le tue chiavi di crittografia Amazon con NetApp Backup and Recovery</block>
-  <block id="3869dda903236d84654e6efafcb9d188" category="paragraph"><block ref="8fe101e295f009741416862cf90e3f6c" category="inline-link-rx"></block>.</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">Configura il tuo sistema per una connessione privata utilizzando un'interfaccia endpoint VPC</block>
   <block id="f50abdb59982020e158a4a180050f908" category="paragraph">Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dall'agente Console e non è necessario fare altro.</block>
   <block id="26dcafbb92de47e3c098da4f6dfb38ae" category="paragraph">Se desideri una connessione Internet più sicura dal tuo data center locale alla VPC, puoi selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup.  È obbligatorio se si prevede di utilizzare una VPN o AWS Direct Connect per connettere il sistema locale tramite un'interfaccia VPC Endpoint che utilizza un indirizzo IP privato.</block>
@@ -5643,4 +5639,7 @@
   <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">Puoi anche seguire questi passaggi per sostituire l'agente della Console e ripristinare i dati di configurazione che erano memorizzati su di esso quando usi Backup e Recovery in modalità standard on-premises, senza account cloud (ad esempio, quando usi NetApp StorageGRID come destinazione di backup).</block>
   <block id="2be7e1093c386d54e43c7fc0e8de4a1f" category="paragraph">Prima di poter ripristinare file e cartelle, devi creare una credenziale per la VM di origine in NetApp Backup and Recovery. Questa credenziale viene utilizzata per autenticarti con la VM durante il processo di ripristino.</block>
   <block id="9f5917bbc05d835882ed9022aa56ac20" category="list-text">Avere la stessa versione di Oracle Database del database di origine</block>
+  <block id="6b181f9b8f3365a62a308265f446f30b" category="admonition">La crittografia delle chiavi gestita dal cliente è supportata solo per Amazon FSx for NetApp ONTAP. Non è supportata per Cloud Volumes ONTAP for AWS.</block>
+  <block id="e46ce594d7f94f0d680627c5f9150ad6" category="inline-link">Configura la crittografia con chiave gestita dal cliente in AWS</block>
+  <block id="fe921914a3a58bce833cfd4d4785fb2b" category="paragraph">Consulta <block ref="445e5997f02f6fbbedcd2ff2bda158c4" category="inline-link-rx"></block>.</block>
 </blocks>

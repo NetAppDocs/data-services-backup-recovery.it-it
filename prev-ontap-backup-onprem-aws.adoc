@@ -336,9 +336,10 @@ Se desideri utilizzare le chiavi di crittografia Amazon S3 predefinite per critt
 
 Se invece si desidera utilizzare le chiavi gestite dal cliente per la crittografia dei dati anziché le chiavi predefinite, sarà necessario che le chiavi di crittografia gestite siano già configurate prima di avviare la procedura guidata NetApp Backup and Recovery .
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Scopri come utilizzare le tue chiavi di crittografia Amazon con Cloud Volumes ONTAP"^].
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Scopri come utilizzare le tue chiavi di crittografia Amazon con NetApp Backup and Recovery"^].
+NOTE: La crittografia delle chiavi gestita dal cliente è supportata solo per Amazon FSx for NetApp ONTAP. Non è supportata per Cloud Volumes ONTAP for AWS.
+
+Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Configura la crittografia con chiave gestita dal cliente in AWS"^].
 
 
 
