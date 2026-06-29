@@ -146,6 +146,9 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 | Attivazione | Attivazione del backup e del ripristino non riuscita per il sistema | SÌ | SÌ 
 
 
+| Attivazione | Attivazione del backup e del ripristino riuscita per il sistema | SÌ | SÌ 
+
+
 | Attivazione | Modifica di backup e ripristino non riuscita per il sistema | SÌ | SÌ 
 
 
@@ -153,9 +156,6 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 
 
 | Attivazione | Backup del volume o stato modificato | SÌ | SÌ 
-
-
-| Attivazione | Attivazione del backup e del ripristino riuscita per il sistema | SÌ | SÌ 
 
 
 | Attivazione | Backup del volume ad hoc non riuscito | SÌ | SÌ 
@@ -167,10 +167,10 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 | Attivazione | Backup multivolume non riuscito | SÌ | SÌ 
 
 
-| Operazioni Cron | Controllo delle etichette snapshot mancanti | SÌ | SÌ 
+| Operazioni Cron | Mancata corrispondenza tra l'etichetta della policy di Snapshot e quella della policy di backup | SÌ | SÌ 
 
 
-| Operazioni Cron | Impossibile inviare il token di sicurezza a ONTAP per questo sistema | SÌ | SÌ 
+| Operazioni Cron | Impossibile aggiornare le credenziali dell'archivio di oggetti in ONTAP per questo sistema | SÌ | SÌ 
 
 
 | Eventi Pub/Sub | Errore di connessione | SÌ | NO 
@@ -203,22 +203,22 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 | Replicazione | Errore del processo di replica ad hoc NetApp Backup and Recovery | SÌ | SÌ 
 
 
-| Replicazione | Errore durante la pausa della replica NetApp Backup and Recovery | SÌ | NO 
+| Replicazione | NetApp Backup and Recovery errore durante la pausa del processo di replica della relazione | SÌ | NO 
 
 
-| Replicazione | Errore durante l'interruzione della replica NetApp Backup and Recovery | SÌ | NO 
+| Replicazione | NetApp Errore del processo di interruzione della relazione di replica di Backup and Recovery | SÌ | NO 
 
 
-| Replicazione | Errore durante il processo di risincronizzazione della replica NetApp Backup and Recovery | SÌ | NO 
+| Replicazione | NetApp Backup and Recovery errore nel processo di risincronizzazione della relazione di replica | SÌ | NO 
 
 
 | Replicazione | Errore di interruzione del processo di replica NetApp Backup and Recovery | SÌ | NO 
 
 
-| Replicazione | Errore nel processo di risincronizzazione inversa della replica NetApp Backup and Recovery | SÌ | SÌ 
+| Replicazione | NetApp Backup and Recovery errore del processo di risincronizzazione inversa della relazione di replica | SÌ | SÌ 
 
 
-| Replicazione | Errore di eliminazione della replica NetApp Backup and Recovery | SÌ | SÌ 
+| Replicazione | NetApp Backup and Recovery errore nell'eliminazione della relazione di replica | SÌ | SÌ 
 
 
 | Operazioni mirate | Errore di ripristino nella destinazione locale o cloud | SÌ | SÌ 
@@ -228,6 +228,9 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 
 
 | Operazioni di sistema | Errore nella creazione dello snapshot del volume ad hoc | SÌ | SÌ 
+
+
+| Operazioni di sistema | L'indicizzazione del backup del volume non è riuscita | SÌ | SÌ 
 |===
 
 NOTE: A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi Cloud Volumes ONTAP e ONTAP locali.  Per i sistemi con Cloud Volumes ONTAP 9.13.0 e ONTAP on-premises, viene visualizzato solo l'avviso relativo a "Ripristino attività completato, ma con avvisi".
