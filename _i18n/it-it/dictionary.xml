@@ -1867,7 +1867,6 @@
   <block id="523f5e6af5276c06e274c9d76b2d4467" category="admonition">Assicurarsi di allocare spazio su disco sufficiente sull'host Hyper-V per la cartella dei registri e monitorarne regolarmente l'utilizzo.  Lo spazio necessario dipende dalla frequenza con cui si verificano i backup e le operazioni di protezione dei dati.  Se lo spazio non è sufficiente, i registri non verranno generati.</block>
   <block id="1498907a7069094c1a1b679e2a53087a" category="list-text">Un sistema ONTAP primario (ONTAP 9.14.1 o successivo)</block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">Documentazione ONTAP</block>
-  <block id="0a2b6c395fc07f332dac7e7046c239c4" category="list-text">Per le distribuzioni Hyper-V che utilizzano condivisioni CIFS per archiviare i dati delle macchine virtuali, assicurarsi che la proprietà di condivisione della disponibilità continua sia abilitata sul sistema ONTAP .  Fare riferimento al<block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> per istruzioni.</block>
   <block id="f6e9a28cc6109da66451b7ed0caaea35" category="list-text">Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Note legali</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Le note legali forniscono accesso a dichiarazioni di copyright, marchi commerciali, brevetti e altro ancora.</block>
@@ -5423,7 +5422,6 @@
   <block id="e77e2a03d88f40058869e1cc3d680930" category="list-text">ASP.NET Core Runtime 8.0.24 Hosting Bundle (e tutte le patch 8.0.x successive)</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Oracle AI Database 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">8.0.24 Hosting Bundle (e tutte le successive patch 8.0.x)</block>
-  <block id="55c7dc18349be92e97f9965c696cb850" category="list-text">Archiviazione SAN (supportata per backup e per il ripristino nella posizione originale sia da storage primario che da storage secondario)</block>
   <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 maggio 2026</block>
   <block id="a37ef823bf93d8b834512d7ddfdf36cd" category="sidebar">Creare e gestire criteri di backup dei carichi di lavoro di Microsoft SQL Server</block>
   <block id="2287427b367a426395bab449f1e777dc" category="sidebar">Creare e gestire le policy di backup dei carichi di lavoro VMware</block>
@@ -5643,4 +5641,7 @@
   <block id="633255f387c732126e8cdceb4ac9fceb" category="cell">NetApp Backup and Recovery errore del processo di risincronizzazione inversa della relazione di replica</block>
   <block id="d59074181d2dab51d18ca27cb4fc47d8" category="cell">NetApp Backup and Recovery errore nell'eliminazione della relazione di replica</block>
   <block id="5df069a4ec3b3f8731b57ed05f942930" category="cell">L'indicizzazione del backup del volume non è riuscita</block>
+  <block id="9823593ea29f31b6d988e92cd15483f6" category="list-text">Condivisioni SMB</block>
+  <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">Archiviazione SAN connessa tramite iSCSI o Fibre Channel</block>
+  <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">Per le distribuzioni Hyper-V che utilizzano condivisioni SMB per archiviare i dati delle macchine virtuali, assicurati che la proprietà di disponibilità continua della condivisione sia abilitata sul sistema ONTAP. Consulta la <block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> per le istruzioni.</block>
 </blocks>
