@@ -4,6 +4,7 @@
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Annotazioni ed etichette dello spazio dei nomi durante le operazioni di ripristino e failover
 
 Durante il ripristino e il failover, le etichette e le annotazioni dello spazio dei nomi di destinazione vengono aggiornate in modo da corrispondere a quelle di origine: le chiavi di origine vengono aggiunte o sovrascritte alle chiavi di destinazione, mentre le chiavi presenti solo nella destinazione rimangono invariate.
@@ -32,6 +33,7 @@ Se hai utilizzato Helm con il  `--create-namespace` flag per installare l'applic
 
 
 
+[[example]]
 === Esempio
 
 Il seguente esempio mostra gli spazi dei nomi di origine e di destinazione con etichette e annotazioni diverse e visualizza lo spazio dei nomi di destinazione prima e dopo l'operazione per illustrare come le chiavi vengono aggiunte, unite o sovrascritte.

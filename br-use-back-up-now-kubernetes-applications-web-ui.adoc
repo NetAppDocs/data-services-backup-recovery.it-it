@@ -21,6 +21,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 
 
 
+[[back-up-a-kubernetes-application-now-using-the-web-ui]]
 == Esegui subito il backup di un'applicazione Kubernetes utilizzando la web UI
 
 Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.

@@ -20,6 +20,7 @@ summary: Configura il tuo database Oracle in NetApp Backup and Recovery.
 
 
 
+[[configure-an-oracle-database]]
 == Configurare un database Oracle
 
 Modificare la configurazione di un database Oracle standalone o in cluster.

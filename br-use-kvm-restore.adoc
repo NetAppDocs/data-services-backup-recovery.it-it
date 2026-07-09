@@ -39,6 +39,7 @@ TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di usc
 
 
 
+[[how-restoring-virtual-machines-works]]
 == Come funziona il ripristino delle macchine virtuali
 
 Quando si ripristinano macchine virtuali, si verifica quanto segue:
@@ -52,6 +53,7 @@ Dalla pagina Ripristina, puoi ripristinare una macchina virtuale anche se non ri
 
 
 
+[[restore-kvm-virtual-machines]]
 == Ripristinare le macchine virtuali KVM
 
 Ripristina le macchine virtuali KVM utilizzando il menu Ripristina. Puoi cercare lo snapshot per nome o utilizzando i filtri.

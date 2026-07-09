@@ -37,6 +37,7 @@ Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali probl
 
 
 
+[[view-the-protection-summary]]
 == Visualizza il riepilogo della protezione
 
 Esaminare le seguenti informazioni nel Riepilogo della protezione:
@@ -52,6 +53,7 @@ TIP: Un database protetto è un database a cui è assegnata una policy di backup
 
 
 
+[[view-the-job-summary]]
 == Visualizza il riepilogo del lavoro
 
 Esamina il totale dei lavori completati, in esecuzione o non riusciti nel Riepilogo lavori.
@@ -63,6 +65,7 @@ Esamina il totale dei lavori completati, in esecuzione o non riusciti nel Riepil
 
 
 
+[[view-the-restore-summary]]
 == Visualizza il riepilogo del ripristino
 
 Esaminare le seguenti informazioni nel riepilogo del ripristino:

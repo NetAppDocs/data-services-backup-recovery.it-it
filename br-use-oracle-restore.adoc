@@ -32,6 +32,7 @@ Ripristina i database Oracle da snapshot, da un backup replicato su un archivio 
 
 
 
+[[how-restoring-oracle-databases-works]]
 == Come funziona il ripristino dei database Oracle
 
 Quando si ripristinano i database Oracle, si verifica quanto segue:
@@ -45,6 +46,7 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 
 
 
+[[restore-an-oracle-database]]
 == Ripristinare un database Oracle
 
 A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile effettuare la ricerca nel database tramite il nome oppure tramite filtri specifici.

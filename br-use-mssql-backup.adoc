@@ -23,6 +23,7 @@ Eseguire il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi 
 
 
 
+[[view-workload-protection-status]]
 == Visualizza lo stato di protezione del carico di lavoro
 
 Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi di lavoro.
@@ -38,6 +39,7 @@ Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi d
 
 
 
+[[configure-the-log-directory-for-discovered-hosts]]
 == Configurare la directory dei registri per gli host rilevati
 
 Imposta il percorso del registro attività per gli host rilevati per monitorare lo stato delle operazioni prima di eseguire il backup dei carichi di lavoro.
@@ -61,6 +63,7 @@ NOTE: I campi visualizzati variano a seconda del modello di distribuzione selezi
 
 
 
+[[create-a-protection-group]]
 == Crea un gruppo di protezione
 
 Crea un gruppo di protezione per gestire le operazioni di backup e ripristino per più carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro.
@@ -87,6 +90,7 @@ Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le i
 
 
 
+[[back-up-workloads-now-with-an-on-demand-backup]]
 == Esegui subito il backup dei carichi di lavoro con un backup on-demand
 
 Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
@@ -107,6 +111,7 @@ Esegui un backup su richiesta prima di apportare modifiche al sistema per garant
 
 
 
+[[suspend-the-backup-schedule]]
 == Sospendi la pianificazione del backup
 
 Sospendi la pianificazione per interrompere temporaneamente i backup durante la manutenzione o la risoluzione dei problemi.
@@ -124,6 +129,7 @@ Sospendi la pianificazione per interrompere temporaneamente i backup durante la 
 
 
 
+[[delete-a-protection-group]]
 == Elimina un gruppo di protezione
 
 L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
@@ -140,6 +146,7 @@ L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stess
 
 
 
+[[remove-protection-from-a-workload]]
 == Rimuovere la protezione da un carico di lavoro
 
 È possibile rimuovere la protezione da un carico di lavoro se non si desidera più eseguirne il backup o se si desidera interromperne la gestione in NetApp Backup and Recovery.

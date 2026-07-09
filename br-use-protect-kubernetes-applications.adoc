@@ -21,6 +21,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 
 
 
+[[add-and-protect-a-new-kubernetes-application]]
 == Aggiungi e proteggi una nuova applicazione Kubernetes
 
 Il primo passo per proteggere le applicazioni Kubernetes è creare un'applicazione all'interno di NetApp Backup and Recovery. Quando si crea un'applicazione, si informa NetApp Backup and Recovery dell'applicazione in esecuzione sul cluster Kubernetes.

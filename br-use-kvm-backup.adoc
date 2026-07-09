@@ -24,6 +24,7 @@ NOTE: Per eseguire il backup dei gruppi di protezione in base a una pianificazio
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Esegui subito il backup dei gruppi di protezione con un backup su richiesta
 
 È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.

@@ -41,6 +41,7 @@ Se necessario, è possibile ripristinare un intero _volume_, una _cartella_ o un
 
 
 
+[[features]]
 == Caratteristiche
 
 *Caratteristiche di replicazione:*
@@ -87,12 +88,14 @@ Vederelink:br-reference-limitations.html["Limitazioni di replica per i volumi ON
 
 
 
+[[supported-systems-for-backup-and-restore-operations]]
 == Sistemi supportati per operazioni di backup e ripristino
 
 NetApp Backup and Recovery supporta i sistemi ONTAP e i provider di cloud pubblici e privati.
 
 
 
+[[supported-regions]]
 === Regioni supportate
 
 NetApp Backup and Recovery è supportato con Cloud Volumes ONTAP in molte regioni di Amazon Web Services, Microsoft Azure e Google Cloud.
@@ -101,6 +104,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Scopri di più utilizzan
 
 
 
+[[supported-backup-destinations]]
 === Destinazioni di backup supportate
 
 NetApp Backup and Recovery consente di eseguire il backup di volumi ONTAP dai seguenti sistemi di origine ai seguenti sistemi secondari e storage di oggetti nei provider di cloud pubblici e privati. Gli snapshot risiedono sul sistema di origine.
@@ -150,6 +154,7 @@ NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualifi
 |===
 
 
+[[supported-restore-destinations]]
 === Destinazioni di ripristino supportate
 
 È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono nel sistema di origine e possono essere ripristinati solo sullo stesso sistema.
@@ -219,6 +224,7 @@ NOTE: I riferimenti a "on-premises ONTAP system" includono i sistemi FAS, AFF e 
 
 
 
+[[supported-volumes]]
 == Volumi supportati
 
 NetApp Backup and Recovery supporta i seguenti tipi di volumi:
@@ -237,6 +243,7 @@ Vedi le sezioni sulink:br-reference-limitations.html["Limitazioni di backup e ri
 
 
 
+[[cost]]
 == Costo
 
 L'utilizzo di NetApp Backup and Recovery con i sistemi ONTAP comporta due tipi di costi: costi delle risorse e costi dei servizi.  Entrambi gli addebiti riguardano la parte di backup dell'oggetto del servizio.
@@ -270,6 +277,7 @@ Esistono tre modi per pagare il servizio Backup.  La prima opzione è quella di 
 
 
 
+[[licensing]]
 == Licenza
 
 NetApp Backup and Recovery è disponibile con i seguenti modelli di consumo:
@@ -283,6 +291,7 @@ Una licenza di backup è richiesta solo per il backup e il ripristino da un arch
 
 
 
+[[bring-your-own-license]]
 === Porta la tua patente
 
 BYOL è basato sulla durata (1, 2 o 3 anni) e sulla capacità, con incrementi di 1 TiB.  Si paga NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TiB.
@@ -293,6 +302,7 @@ link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"].
 
 
 
+[[pay-as-you-go-subscription]]
 === Abbonamento a consumo
 
 NetApp Backup and Recovery offre licenze basate sul consumo con un modello di pagamento a consumo.  Dopo aver sottoscritto l'abbonamento tramite il marketplace del tuo provider cloud, paghi per GiB per i dati sottoposti a backup, senza alcun pagamento anticipato.  La fatturazione avviene tramite la bolletta mensile del tuo provider cloud.
@@ -303,6 +313,7 @@ Tieni presente che è disponibile una prova gratuita di 30 giorni quando ti regi
 
 
 
+[[annual-contract]]
 === Contratto annuale
 
 Quando utilizzi AWS, sono disponibili due contratti annuali della durata di 1, 2 o 3 anni:
@@ -323,6 +334,7 @@ link:br-start-licensing.html["Scopri come impostare contratti annuali"].
 
 
 
+[[how-netapp-backup-and-recovery-works]]
 == Come funziona NetApp Backup and Recovery
 
 Quando si abilita NetApp Backup and Recovery su un sistema Cloud Volumes ONTAP o ONTAP locale, il servizio esegue un backup completo dei dati.  Dopo il backup iniziale, tutti i backup aggiuntivi sono incrementali, ovvero vengono sottoposti a backup solo i blocchi modificati e quelli nuovi.  In questo modo il traffico di rete viene ridotto al minimo.  Il backup su storage di oggetti è costruito sulla base di https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Tecnologia NetApp SnapMirror Cloud"^] .
@@ -338,6 +350,7 @@ Questo diagramma mostra i volumi replicati su un sistema Cloud Volumes ONTAP , m
 
 
 
+[[where-backups-reside]]
 === Dove risiedono i backup
 
 I backup risiedono in posizioni diverse in base al tipo di backup:
@@ -359,6 +372,7 @@ Se in futuro si desidera modificare l'archivio oggetti di destinazione per un cl
 
 
 
+[[customizable-backup-schedule-and-retention-settings]]
 === Pianificazione di backup e impostazioni di conservazione personalizzabili
 
 Quando si abilita NetApp Backup and Recovery per un sistema, tutti i volumi inizialmente selezionati vengono sottoposti a backup utilizzando i criteri selezionati. È possibile selezionare policy separate per snapshot, volumi replicati e file di backup. Se si desidera assegnare policy di backup diverse a determinati volumi con obiettivi di punto di ripristino (RPO) diversi, è possibile creare policy aggiuntive per quel cluster e assegnarle agli altri volumi dopo l'attivazione di NetApp Backup and Recovery .
@@ -375,6 +389,7 @@ TIP: Il periodo di conservazione per i backup dei volumi di protezione dei dati 
 
 
 
+[[backup-file-protection-settings]]
 === Impostazioni di protezione dei file di backup
 
 Se il cluster utilizza ONTAP 9.11.1 o versioni successive, puoi proteggere i backup nello storage a oggetti da eliminazione e attacchi ransomware. Ogni policy di backup prevede una sezione per _Datalock and Ransomware protection_ che può essere applicata ai file di backup per un periodo di tempo specifico, ovvero il _periodo di conservazione_.
@@ -400,6 +415,7 @@ TIP: DataLock non può essere abilitato se si suddividono i backup in livelli di
 
 
 
+[[archival-storage-for-older-backup-files]]
 === Archiviazione per vecchi file di backup
 
 Quando si utilizza un determinato tipo di archiviazione cloud, è possibile spostare i file di backup più vecchi in una classe di archiviazione/livello di accesso meno costoso dopo un certo numero di giorni.  Puoi anche scegliere di inviare immediatamente i tuoi file di backup all'archivio, senza che vengano salvati nell'archiviazione cloud standard.  Tieni presente che l'archiviazione non può essere utilizzata se hai abilitato DataLock.
@@ -430,6 +446,7 @@ Per maggiori dettagli sull'archiviazione dei file di backup più vecchi, vedere 
 
 
 
+[[fabricpool-tiering-policy-considerations]]
 == Considerazioni sulla politica di tiering FabricPool
 
 Ci sono alcune cose di cui devi essere a conoscenza quando il volume di cui stai eseguendo il backup risiede su un aggregato FabricPool e ha una politica di suddivisione in livelli assegnata diversa da `none` :

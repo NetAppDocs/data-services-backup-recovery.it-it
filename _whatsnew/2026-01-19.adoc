@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volume-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro del volume ONTAP
 
 Questa versione dei carichi di lavoro del volume ONTAP introduce le seguenti funzionalità migliorate:
@@ -14,6 +15,7 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 
 
+[[vmware-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro VMware
 
 Questa versione dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:
@@ -26,6 +28,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 
 
+[[hyper-v-workloads-preview-enhancements]]
 === Miglioramenti dell'anteprima dei carichi di lavoro Hyper-V
 
 Questa versione dei carichi di lavoro Hyper-V introduce le seguenti funzionalità avanzate:
@@ -42,6 +45,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 
 
+[[kvm-workloads-preview-enhancements]]
 === Miglioramenti dell'anteprima dei carichi di lavoro KVM
 
 L'anteprima dei carichi di lavoro KVM ora protegge gli host KVM e le macchine virtuali gestite da Apache CloudStack.

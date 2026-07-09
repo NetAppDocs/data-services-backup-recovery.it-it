@@ -29,6 +29,7 @@ Dopo aver configurato NetApp Console, configurare le impostazioni di backup e ri
 
 
 
+[[add-credentials-for-host-resources]]
 == Aggiungere credenziali per le risorse host
 
 Aggiungere credenziali per le risorse host. NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro e applicare policy di backup.
@@ -116,6 +117,7 @@ TIP: Per i carichi di lavoro di Microsoft SQL Server, è necessario immettere le
 
 
 
+[[edit-credentials-for-host-resources]]
 === Modifica le credenziali per le risorse host
 
 In seguito potrai modificare la password per tutte le credenziali che hai creato.
@@ -133,6 +135,7 @@ In seguito potrai modificare la password per tutte le credenziali che hai creato
 
 
 
+[[maintain-vmware-vcenter-settings]]
 == Gestire le impostazioni di VMware vCenter
 
 Fornire le credenziali VMware vCenter per individuare i carichi di lavoro per il backup.  Se non si dispone di credenziali, crearle con le autorizzazioni per accedere e gestire i carichi di lavoro di VMware vCenter Server.
@@ -154,6 +157,7 @@ Fornire le credenziali VMware vCenter per individuare i carichi di lavoro per il
 
 
 
+[[import-and-manage-snapcenter-host-resources]]
 == Importa e gestisci le risorse host SnapCenter
 
 Se in precedenza hai utilizzato SnapCenter per eseguire il backup delle tue risorse, puoi importare e gestire tali risorse in NetApp Backup and Recovery. Questa opzione consente di importare le informazioni del server SnapCenter per registrare più server SnapCenter e individuare i carichi di lavoro del database.
@@ -166,6 +170,7 @@ Si tratta di un processo in due fasi:
 
 
 
+[[import-snapcenter-server-application-and-host-resources]]
 === Importa l'applicazione SnapCenter Server e le risorse host
 
 Questo primo passaggio importa le risorse host da SnapCenter e le visualizza nella pagina Inventario NetApp Backup and Recovery .  A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
@@ -203,6 +208,7 @@ La pagina Inventario mostra le risorse SnapCenter importate.
 
 
 
+[[manage-snapcenter-host-resources]]
 === Gestire le risorse host SnapCenter
 
 Dopo aver importato le risorse SnapCenter , gestisci tali risorse host in NetApp Backup and Recovery.  Dopo aver scelto di gestire le risorse importate, NetApp Backup and Recovery può eseguire il backup e il ripristino delle risorse che stai importando da SnapCenter.  Non è più necessario gestire tali risorse in SnapCenter Server.
@@ -218,6 +224,7 @@ Nella pagina Inventario viene visualizzato *Gestito* sotto il nome host per indi
 
 
 
+[[edit-imported-snapcenter-resources]]
 === Modifica le risorse SnapCenter importate
 
 Successivamente, puoi reimportare le risorse SnapCenter o modificare le risorse SnapCenter importate per aggiornare i dettagli di registrazione.
@@ -237,6 +244,7 @@ La pagina Importa da SnapCenter mostra tutte le importazioni precedenti.
 
 
 
+[[add-a-kvm-management-platform]]
 == Aggiungere una piattaforma di gestione KVM
 
 Se si utilizza la piattaforma di gestione Apache CloudStack per gestire le risorse KVM, è necessario integrarla con NetApp Backup and Recovery in modo che Backup and Recovery possa individuare e proteggere gli host KVM e le VM gestiti.
@@ -259,6 +267,7 @@ Se si utilizza la piattaforma di gestione Apache CloudStack per gestire le risor
 
 
 
+[[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Configurare le directory di registro negli snapshot per gli host Windows
 
 Prima di creare policy per gli host Windows, è necessario configurare le directory di registro negli snapshot per gli host Windows.  Le directory di registro vengono utilizzate per archiviare i registri generati durante il processo di backup.
@@ -274,6 +283,7 @@ Prima di creare policy per gli host Windows, è necessario configurare le direct
 
 
 
+[[create-an-execution-hook-template]]
 == Creare un modello di hook di esecuzione
 
 È possibile creare un modello di hook di esecuzione personalizzato da utilizzare per eseguire azioni prima o dopo un'operazione di protezione dei dati su un'applicazione.
@@ -297,6 +307,7 @@ Dopo aver creato il modello, questo viene visualizzato nell'elenco dei modelli n
 
 
 
+[[create-a-resource-transformation-template]]
 == Crea un modello di trasformazione delle risorse
 
 Crea modelli di trasformazione delle risorse per memorizzare le trasformazioni comuni che apporti alle risorse durante il loro ripristino.

@@ -50,6 +50,7 @@ Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume 
 
 
 
+[[search-restore-supported-systems-and-object-storage-providers]]
 == Sistemi supportati da Search & Restore e provider di archiviazione di oggetti
 
 È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
@@ -91,6 +92,7 @@ Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF
 
 
 
+[[search-restore-prerequisites]]
 == Prerequisiti per la ricerca e il ripristino
 
 Prima di abilitare Ricerca e ripristino, assicurati che il tuo ambiente soddisfi questi requisiti:
@@ -107,6 +109,7 @@ Prima di abilitare Ricerca e ripristino, assicurati che il tuo ambiente soddisfi
 
 
 
+[[legacy-search-restore-prerequisites-using-indexed-catalog-v1]]
 === Prerequisiti per Legacy Search & Restore (utilizzando Indexed Catalog v1)
 
 Di seguito sono riportati i requisiti per Search & Restore quando si utilizza l'indicizzazione legacy:
@@ -160,6 +163,7 @@ Anche se si utilizza un agente Console locale, è necessario soddisfare i requis
 ====
 
 
+[[search-restore-process]]
 == Processo di ricerca e ripristino
 
 Il processo è il seguente:
@@ -185,6 +189,7 @@ Basta conoscere un nome parziale e NetApp Backup and Recovery cercherà in tutti
 
 
 
+[[enable-the-indexed-catalog-for-each-system]]
 == Abilita il catalogo indicizzato per ogni sistema
 
 Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema di origine da cui si prevede di ripristinare volumi o file.  Ciò consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.
@@ -257,6 +262,7 @@ A seconda delle dimensioni dei volumi nel sistema e del numero di file di backup
 
 
 
+[[restore-volumes-folders-and-files-using-search-restore]]
 == Ripristina volumi, cartelle e file utilizzando Cerca e ripristina
 
 Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata per il tuo sistema>> , puoi ripristinare volumi, cartelle e file utilizzando Cerca e ripristina. Ciò consente di utilizzare un'ampia gamma di filtri per trovare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.

@@ -26,6 +26,7 @@ summary: NetApp Backup and Recovery consente di ripristinare le applicazioni pro
 ====
 
 
+[[restore-a-backup-to-a-different-namespace]]
 == Ripristina un backup in un namespace diverso
 
 Quando si ripristina un backup in un namespace diverso utilizzando una BackupRestore CR, NetApp Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea una application CR per l'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot on-demand oppure stabilisci una policy di protezione.
@@ -130,6 +131,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 
 
 
+[[restore-a-backup-to-the-original-namespace]]
 == Ripristina un backup nello spazio dei nomi originale
 
 È possibile ripristinare un backup nello spazio dei nomi originale in qualsiasi momento.
@@ -228,6 +230,7 @@ kubectl apply -f trident-protect-backup-ipr-cr.yaml
 
 
 
+[[restore-a-backup-to-a-different-cluster]]
 == Ripristinare un backup su un cluster diverso
 
 È possibile ripristinare un backup su un cluster diverso se si verifica un problema con il cluster originale.
@@ -335,6 +338,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 
 
 
+[[restore-a-snapshot-to-a-different-namespace]]
 == Ripristina uno snapshot in un namespace diverso
 
 È possibile ripristinare i dati da uno snapshot utilizzando un file di risorsa personalizzata (CR) sia in un namespace diverso che nel namespace di origine. Quando si ripristina uno snapshot in un namespace diverso utilizzando una SnapshotRestore CR, NetApp Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea una CR dell'applicazione per l'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot su richiesta oppure stabilisci una policy di protezione.
@@ -436,6 +440,7 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 
 
 
+[[restore-a-snapshot-to-the-original-namespace]]
 == Ripristina uno snapshot nello spazio dei nomi originale
 
 È possibile ripristinare uno snapshot nel namespace originale in qualsiasi momento.

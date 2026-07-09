@@ -26,6 +26,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ma
 
 
 
+[[create-a-protection-group]]
 == Crea un gruppo di protezione
 
 Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. Crea un gruppo di protezione per eseguire il backup e il ripristino dei carichi di lavoro insieme.
@@ -53,6 +54,7 @@ Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione
 
 
 
+[[edit-a-protection-group]]
 == Modifica un gruppo di protezione
 
 Modifica un gruppo di protezione per cambiarne il nome o le impostazioni. Potrebbe essere necessario modificare un gruppo di protezione se le risorse al suo interno sono cambiate.
@@ -73,6 +75,7 @@ La procedura guidata Modifica gruppo di protezione ti guida attraverso le impost
 
 
 
+[[apply-an-updated-host-time-zone-to-an-existing-protection-group]]
 === Applica un fuso orario host aggiornato a un gruppo di protezione esistente
 
 I backup pianificati utilizzano il fuso orario dell'host Hyper-V, registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario dell'host, i gruppi di protezione esistenti continuano a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
@@ -87,6 +90,7 @@ NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del grupp
 
 
 
+[[delete-a-protection-group]]
 == Elimina un gruppo di protezione
 
 L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.

@@ -58,6 +58,7 @@ Per ogni azione sottoposta a controllo, la Console registra il nome del servizio
 
 
 
+[[more-information]]
 == Ulteriori informazioni
 
 * https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Verifica l'attività degli utenti dalla pagina Audit"^]

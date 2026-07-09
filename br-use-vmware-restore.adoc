@@ -39,6 +39,7 @@ TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere a
 
 
 
+[[how-restoring-workloads-works]]
 == Come funziona il ripristino dei carichi di lavoro
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
@@ -55,6 +56,7 @@ Dalla pagina Ripristina (Cerca e ripristina), puoi ripristinare una risorsa cerc
 
 
 
+[[restore-workload-data-from-the-restore-option-search-restore]]
 == Ripristina i dati del carico di lavoro dall'opzione Ripristina (Cerca e ripristina)
 
 Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.

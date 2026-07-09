@@ -24,6 +24,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 
 
+[[identify-the-connection-method]]
 == Identificare il metodo di connessione
 
 Scegli quale dei due metodi di connessione utilizzerai durante la configurazione dei backup dai sistemi ONTAP locali ad AWS S3.
@@ -44,12 +45,14 @@ image:diagram_cloud_backup_onprem_aws_private.png["Un diagramma che mostra come 
 
 
 
+[[prepare-your-console-agent]]
 == Prepara il tuo agente Console
 
 L'agente Console è il software principale per la funzionalità NetApp Console .  Per eseguire il backup e il ripristino dei dati ONTAP è necessario un agente Console.
 
 
 
+[[create-or-switch-console-agents]]
 === Crea o cambia agenti della console
 
 Se hai già un agente Console distribuito nella tua AWS VPC o in sede, sei a posto.
@@ -67,6 +70,7 @@ NetApp Backup and Recovery è supportato nelle regioni GovCloud quando l'agente 
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Preparare i requisiti di rete dell'agente della console
 
 Assicurarsi che siano soddisfatti i seguenti requisiti di rete:
@@ -83,6 +87,7 @@ Assicurarsi che siano soddisfatti i seguenti requisiti di rete:
 
 
 
+[[verify-license-requirements]]
 == Verificare i requisiti della licenza
 
 Sarà necessario verificare i requisiti di licenza sia per AWS che per la NetApp Console:
@@ -102,6 +107,7 @@ Sarà necessario verificare i requisiti di licenza sia per AWS che per la NetApp
 
 
 
+[[prepare-your-ontap-clusters]]
 == Prepara i tuoi cluster ONTAP
 
 Preparare il sistema ONTAP locale di origine e tutti i sistemi ONTAP locali secondari o Cloud Volumes ONTAP .
@@ -116,6 +122,7 @@ La preparazione dei cluster ONTAP prevede i seguenti passaggi:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Scopri i tuoi sistemi ONTAP nella NetApp Console
 
 Sia il sistema ONTAP locale di origine che eventuali sistemi ONTAP locali secondari o Cloud Volumes ONTAP devono essere disponibili nella pagina *Sistemi* della NetApp Console .
@@ -124,6 +131,7 @@ Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione de
 
 
 
+[[verify-ontap-system-requirements]]
 === Verificare i requisiti di sistema ONTAP
 
 Assicurati che il tuo sistema ONTAP soddisfi i seguenti requisiti:
@@ -145,6 +153,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verificare i requisiti di rete ONTAP per il backup dei dati su storage di oggetti
 
 È necessario configurare i seguenti requisiti sul sistema che si connette all'archiviazione di oggetti.
@@ -178,6 +187,7 @@ Tutti i LIF intercluster all'interno dell'IPspace devono avere accesso all'archi
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Verificare i requisiti di rete ONTAP per la replica dei volumi
 
 Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizzando NetApp Backup and Recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino i seguenti requisiti di rete.
@@ -202,6 +212,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 
 
+[[prepare-amazon-s3-as-your-backup-target]]
 == Prepara Amazon S3 come destinazione di backup
 
 Per preparare Amazon S3 come destinazione di backup, sono necessari i seguenti passaggi:
@@ -214,6 +225,7 @@ Per preparare Amazon S3 come destinazione di backup, sono necessari i seguenti p
 
 
 
+[[set-up-s3-permissions]]
 === Imposta le autorizzazioni S3
 
 Sarà necessario configurare due set di autorizzazioni:
@@ -287,6 +299,7 @@ Fare riferimento al https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_cr
 
 
 
+[[create-your-own-buckets]]
 === Crea i tuoi bucket
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
@@ -330,6 +343,7 @@ Se si creano bucket personalizzati, è consigliabile utilizzare il nome "netapp-
 ====
 
 
+[[set-up-customer-managed-aws-keys-for-data-encryption]]
 === Imposta le chiavi AWS gestite dal cliente per la crittografia dei dati
 
 Se desideri utilizzare le chiavi di crittografia Amazon S3 predefinite per crittografare i dati trasmessi tra il cluster locale e il bucket S3, sei a posto perché l'installazione predefinita utilizza quel tipo di crittografia.
@@ -343,6 +357,7 @@ Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/t
 
 
 
+[[configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface]]
 === Configura il tuo sistema per una connessione privata utilizzando un'interfaccia endpoint VPC
 
 Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dall'agente Console e non è necessario fare altro.
@@ -390,6 +405,7 @@ Please enter Certificate: Press <Enter> when done
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
 Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
@@ -405,6 +421,7 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 
 
 
+[[start-the-wizard]]
 === Avvia la procedura guidata
 
 .Passi
@@ -430,6 +447,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleziona i volumi di cui vuoi eseguire il backup
 
 Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che presenta una o più delle seguenti caratteristiche: criterio di snapshot, criterio di replica, criterio di backup su oggetto.
@@ -458,6 +476,7 @@ Se ai volumi scelti sono già applicati criteri di snapshot o replica, i criteri
 
 
 
+[[define-the-backup-strategy]]
 === Definire la strategia di backup
 
 Per definire la strategia di backup è necessario impostare le seguenti opzioni:
@@ -569,6 +588,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 
 
 
+[[review-your-selections]]
 === Rivedi le tue selezioni
 
 Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se necessario.
@@ -590,6 +610,7 @@ Il bucket S3 viene creato nell'account di servizio indicato dalla chiave di acce
 
 
 
+[[show-the-api-commands]]
 === Mostra i comandi API
 
 Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.

@@ -20,6 +20,7 @@ Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima rilevare
 
 
 
+[[discover-microsoft-sql-server-workloads-and-optionally-import-snapcenter-resources]]
 == Scopri i carichi di lavoro di Microsoft SQL Server e, facoltativamente, importa le risorse SnapCenter
 
 Durante la fase di individuazione, NetApp Backup and Recovery analizza le istanze e i database di Microsoft SQL Server nei sistemi all'interno dell'organizzazione.
@@ -38,6 +39,7 @@ NOTE: Se hai già SnapCenter, verifica innanzitutto di aver soddisfatto i prereq
 
 
 
+[[if-snapcenter-is-already-installed-import-snapcenter-resources-into-netapp-backup-and-recovery]]
 === Se SnapCenter è già installato, importare le risorse SnapCenter in NetApp Backup and Recovery
 
 Se SnapCenter è già installato, importare le risorse SnapCenter in NetApp Backup and Recovery seguendo questi passaggi.  NetApp Console rileva risorse, host, credenziali e pianificazioni da SnapCenter; non è necessario ricreare tutte queste informazioni.
@@ -131,6 +133,7 @@ Se hai già scoperto delle risorse, puoi importare le risorse SnapCenter dalla p
 
 
 
+[[if-you-dont-have-snapcenter-installed-add-a-vcenter-and-discover-resources]]
 === Se SnapCenter non è installato, aggiungi un vCenter e scopri le risorse
 
 Se SnapCenter non è ancora installato, è possibile aggiungere informazioni su vCenter e fare in modo che il backup e il ripristino NetApp rilevino i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.

@@ -20,6 +20,7 @@ Le trasformazioni delle risorse consentono di modificare una risorsa durante il 
 
 
 
+[[how-resource-modification-works]]
 == Come funziona la modifica delle risorse
 
 Il  `transformations` campo in  `SnapshotRestore`,  `BackupRestore`,  `AppMirrorRelationship`, e altre risorse di ripristino consente di modificare le risorse Kubernetes durante il processo di ripristino. Ciò è utile per adattare applicazioni o macchine virtuali a un nuovo cluster modificando nomi host, URL del registro, limiti delle risorse o variabili d'ambiente.
@@ -54,6 +55,7 @@ spec:
 ----
 
 
+[[supported-resources]]
 === Risorse supportate
 
 È possibile utilizzare le trasformazioni delle risorse con risorse che corrispondono ai seguenti criteri:
@@ -69,6 +71,7 @@ NOTE: La modifica di PersistentVolumeClaims e degli spazi dei nomi non è attual
 
 
 
+[[supported-operations]]
 === Operazioni supportate
 
 È possibile utilizzare le seguenti operazioni per modificare le risorse:
@@ -83,6 +86,7 @@ NOTE: La modifica di PersistentVolumeClaims e degli spazi dei nomi non è attual
 
 
 
+[[add-a-value-to-a-resource]]
 == Aggiungere un valore a una risorsa
 
 Utilizza l'operazione  `add` per aggiungere un nuovo campo o valore al percorso specificato. Puoi aggiungere dati a oggetti o array. Il seguente esempio aggiunge un selettore di nodi a una risorsa Deployment:
@@ -107,6 +111,7 @@ tridentctl-protect --transformation 'apps,v1,Deployment:add{"path":"/spec/templa
 ----
 
 
+[[copy-a-value-within-a-resource]]
 == Copia un valore all'interno di una risorsa
 
 Utilizzare l'operazione  `copy` per copiare un valore da un percorso a un altro all'interno della stessa risorsa. L'origine non viene modificata. Il seguente esempio duplica una chiave dati per un oggetto ConfigMap:
@@ -129,6 +134,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:copy{"from":"/data/source-key
 ----
 
 
+[[move-a-value-within-a-resource]]
 == Spostare un valore all'interno di una risorsa
 
 Utilizzare l'operazione  `move` per spostare un valore da un percorso a un altro all'interno della stessa risorsa. L'origine viene rimossa e il valore viene inserito nella destinazione. Il seguente esempio rinomina una chiave dati per un oggetto ConfigMap:
@@ -151,6 +157,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:move{"from":"/data/OLD_KEY","
 ----
 
 
+[[remove-a-value-from-a-resource]]
 == Rimuovere un valore da una risorsa
 
 Utilizzare l'operazione  `remove` per rimuovere un campo o un valore nel percorso specificato. Il seguente esempio rimuove un'annotazione da una risorsa ConfigMap:
@@ -175,6 +182,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:remove{"path":"/metadata/anno
 ----
 
 
+[[replace-a-value-within-a-resource]]
 == Sostituire un valore all'interno di una risorsa
 
 Utilizzare l' `replace`operazione per sostituire un valore esistente all'interno di una risorsa al percorso specificato. Il percorso JSON deve già esistere. L'esempio seguente modifica un hostname per un oggetto Route:
@@ -198,6 +206,7 @@ tridentctl-protect --transformation 'route.openshift.io,v1,Route:replace{"path":
 ----
 
 
+[[test-the-resource-modification]]
 == Verifica la modifica della risorsa
 
 Utilizzare l' `test`operazione per verificare se il valore in un percorso corrisponde al valore previsto. Se il test fallisce, l'intera modifica viene annullata. L'esempio seguente aggiorna solo `database-host` se `environment` è `staging`:

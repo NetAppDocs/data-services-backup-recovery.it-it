@@ -31,6 +31,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 
 
+[[view-policies]]
 == Visualizza le politiche
 
 . Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
@@ -47,6 +48,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 
 
+[[create-a-policy]]
 == Crea una politica
 
 È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti. Una parte della strategia 3-2-1 prevede la creazione di uno snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
@@ -123,6 +125,7 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 
 
+[[configure-advanced-settings-in-the-policy]]
 === Configurare le impostazioni avanzate nella policy
 
 [%collapsible]
@@ -172,6 +175,7 @@ TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, i
 ====
 
 
+[[edit-a-policy]]
 == Modifica una policy
 
 Per una policy è possibile modificare l'architettura di backup, la frequenza di backup, la policy di protezione e altre impostazioni. Per le policy dei carichi di lavoro Kubernetes, è possibile modificare solo le impostazioni di pianificazione e conservazione.
@@ -194,6 +198,7 @@ Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/conso
 
 
 
+[[delete-a-policy]]
 == Elimina una policy
 
 Puoi eliminare una policy se non ti serve più.

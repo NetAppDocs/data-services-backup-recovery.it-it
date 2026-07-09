@@ -4,6 +4,7 @@
 
 
 
+[[vmware-workloads-preview-enhancements]]
 === Miglioramenti dell'anteprima dei carichi di lavoro VMware
 
 La versione di anteprima dei carichi di lavoro VMware introduce le seguenti funzionalità avanzate:

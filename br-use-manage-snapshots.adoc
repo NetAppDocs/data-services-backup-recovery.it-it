@@ -18,6 +18,7 @@ summary: È possibile gestire gli snapshot di Microsoft SQL Server eliminandoli 
 
 
 
+[[delete-a-snapshot]]
 == Elimina uno snapshot
 
 È possibile eliminare solo gli snapshot locali.

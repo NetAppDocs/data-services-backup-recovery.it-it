@@ -33,6 +33,7 @@ NOTE: Per i carichi di lavoro VMware, le pianificazioni di backup utilizzano il 
 
 
 
+[[view-policies]]
 == Visualizza le politiche
 
 . Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
@@ -49,6 +50,7 @@ NOTE: Per i carichi di lavoro VMware, le pianificazioni di backup utilizzano il 
 
 
 
+[[create-a-policy]]
 == Crea una politica
 
 È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti. Una parte della strategia 3-2-1 prevede la creazione di uno snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
@@ -146,6 +148,7 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 
 
+[[configure-advanced-settings-in-the-policy]]
 === Configurare le impostazioni avanzate nella policy
 
 [%collapsible]
@@ -185,6 +188,7 @@ TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, i
 ====
 
 
+[[delete-a-policy]]
 == Elimina una policy
 
 Puoi eliminare una policy se non ti serve più.

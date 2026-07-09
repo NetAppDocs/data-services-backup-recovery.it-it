@@ -4,6 +4,7 @@
 
 
 
+[[vmware-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro VMware
 
 In questa versione, VMware workloads introduce il seguente miglioramento:

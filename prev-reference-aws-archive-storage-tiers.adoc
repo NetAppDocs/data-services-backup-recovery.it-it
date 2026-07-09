@@ -18,6 +18,7 @@ NetApp Backup and Recovery supporta due classi di archiviazione S3 e la maggior 
 
 
 
+[[supported-s3-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Classi di archiviazione S3 supportate per NetApp Backup and Recovery
 
 Quando vengono creati inizialmente i file di backup, questi vengono archiviati nell'archiviazione S3 _Standard_.  Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma consente anche di accedervi immediatamente.  Dopo 30 giorni i backup passano alla classe di archiviazione S3 _Standard-Infrequent Access_ per risparmiare sui costi.
@@ -37,6 +38,7 @@ https://aws.amazon.com/s3/storage-classes/["Scopri di più sulle classi di archi
 
 
 
+[[restore-data-from-archival-storage]]
 == Ripristinare i dati dall'archivio
 
 Sebbene l'archiviazione di file di backup più vecchi in un archivio sia molto meno costosa rispetto all'archiviazione Standard o Standard-IA, l'accesso ai dati da un file di backup in un archivio per le operazioni di ripristino richiederà più tempo e costi maggiori.

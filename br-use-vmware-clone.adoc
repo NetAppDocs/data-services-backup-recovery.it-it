@@ -23,6 +23,7 @@ Assicurati che tutte le macchine virtuali di cui desideri clonare gli snapshot s
 
 
 
+[[create-a-clone-of-a-vmware-vm]]
 == Creare un clone di una macchina virtuale VMware
 
 Crea immediatamente un clone da uno snapshot esistente.
@@ -57,6 +58,7 @@ La voce *Seleziona posizione snapshot* viene visualizzata se lo snapshot è arch
 
 
 
+[[split-a-clone]]
 == Dividi un clone
 
 È possibile suddividere un clone di una macchina virtuale VMware per scollegarlo dal volume d'origine. Una volta suddiviso, il clone diventa un volume indipendente che non dipende più dal volume d'origine.
@@ -73,6 +75,7 @@ Dopo la separazione, i datastore associati alla VM clonata diventano un nuovo da
 
 
 
+[[remove-a-clone]]
 == Rimuovere un clone
 
 È possibile rimuovere un clone di una macchina virtuale VMware. Quando si rimuove un clone di una macchina virtuale, il clone viene rimosso da vCenter, e i datastore associati alla macchina virtuale vengono smontati ed eliminati dal sistema storage.

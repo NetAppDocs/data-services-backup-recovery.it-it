@@ -20,6 +20,7 @@ NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di
 
 
 
+[[discover-kubernetes-workloads]]
 == Scopri i carichi di lavoro di Kubernetes
 
 Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes nel tuo ambiente.  L'aggiunta di un carico di lavoro aggiunge un cluster Kubernetes a NetApp Backup and Recovery.  È quindi possibile aggiungere applicazioni e proteggere le risorse del cluster.
@@ -58,6 +59,7 @@ Il cluster viene aggiunto all'inventario.
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continua alla dashboard NetApp Backup and Recovery
 
 Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.

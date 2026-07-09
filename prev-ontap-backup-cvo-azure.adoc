@@ -21,6 +21,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 
 
+[[verify-support-for-your-configuration]]
 == Verifica il supporto per la tua configurazione
 
 Leggere i requisiti seguenti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup dei volumi nell'archiviazione BLOB di Azure.
@@ -43,6 +44,7 @@ Configurazione richiesta per la creazione di backup in una sottoscrizione Azure 
 
 
 
+[[verify-license-requirements]]
 == Verificare i requisiti della licenza
 
 Per le licenze NetApp Backup and Recovery PAYGO, è necessario un abbonamento tramite Azure Marketplace prima di abilitare NetApp Backup and Recovery.  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Puoi iscriverti dalla pagina Dettagli e credenziali della procedura guidata di sistema"^] .
@@ -53,6 +55,7 @@ Inoltre, è necessario disporre di un abbonamento a Microsoft Azure per lo spazi
 
 
 
+[[prepare-your-console-agent]]
 == Prepara il tuo agente Console
 
 L'agente Console può essere installato in un'area di Azure con accesso a Internet completo o limitato (modalità "standard" o "limitata"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Per i dettagli, vedere le modalità di distribuzione NetApp Console"^] .
@@ -64,6 +67,7 @@ L'agente Console può essere installato in un'area di Azure con accesso a Intern
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verificare o aggiungere autorizzazioni all'agente della console
 
 Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
@@ -142,6 +146,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[required-information-for-using-customer-managed-keys-for-data-encryption]]
 === Informazioni richieste per l'utilizzo di chiavi gestite dal cliente per la crittografia dei dati
 
 È possibile utilizzare le chiavi gestite dal cliente per la crittografia dei dati nella procedura guidata di attivazione anziché utilizzare le chiavi di crittografia predefinite gestite da Microsoft.  In questo caso, sarà necessario disporre della sottoscrizione di Azure, del nome del Key Vault e della chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Scopri come usare le tue chiavi"^] .
@@ -150,6 +155,7 @@ NetApp Backup and Recovery supporta i _criteri di accesso di Azure_, il modello 
 
 
 
+[[create-your-azure-blob-storage-account]]
 === Crea il tuo account di archiviazione BLOB di Azure
 
 Per impostazione predefinita, il servizio crea account di archiviazione per te.  Se si desidera utilizzare account di archiviazione personali, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali account di archiviazione nella procedura guidata.
@@ -158,6 +164,7 @@ link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi ac
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Verificare i requisiti di rete ONTAP per la replica dei volumi
 
 Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizzando NetApp Backup and Recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino i seguenti requisiti di rete.
@@ -185,6 +192,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Abilita NetApp Backup and Recovery su Cloud Volumes ONTAP
 
 Abilitare NetApp Backup and Recovery è semplice.  I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o di uno nuovo.
@@ -225,6 +233,7 @@ Se la destinazione di Azure Blob per i backup esiste come sistema nella pagina *
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
 Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
@@ -240,6 +249,7 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 
 
 
+[[start-the-wizard]]
 === Avvia la procedura guidata
 
 .Passi
@@ -265,6 +275,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleziona i volumi di cui vuoi eseguire il backup
 
 Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che presenta una o più delle seguenti caratteristiche: criterio di snapshot, criterio di replica, criterio di backup su oggetto.
@@ -293,6 +304,7 @@ Se ai volumi scelti sono già applicati criteri di snapshot o replica, i criteri
 
 
 
+[[define-the-backup-strategy]]
 === Definire la strategia di backup
 
 Per definire la strategia di backup è necessario impostare le seguenti opzioni:
@@ -418,6 +430,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 
 
 
+[[review-your-selections]]
 === Rivedi le tue selezioni
 
 Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se necessario.
@@ -443,6 +456,7 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 
 
 
+[[show-the-api-commands]]
 === Mostra i comandi API
 
 Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
@@ -454,6 +468,7 @@ Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi A
 
 
 
+[[whats-next]]
 == Cosa succederà ora?
 
 * Puoilink:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] .  Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.

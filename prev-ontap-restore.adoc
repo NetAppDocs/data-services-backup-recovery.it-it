@@ -41,6 +41,7 @@ NOTE: Per le limitazioni relative al ripristino dei dati ONTAP , vederelink:br-r
 
 
 
+[[the-restore-dashboard]]
 == La dashboard di ripristino
 
 Utilizzare la dashboard di ripristino per eseguire operazioni di ripristino di volumi, cartelle e file. Per accedere alla Dashboard di ripristino, selezionare *Backup e ripristino* dal menu Console, quindi selezionare la scheda *Ripristina*.  Puoi anche selezionareimage:icon-options-vertical.gif["Pulsante Altro"] > *Visualizza la dashboard di ripristino* dal servizio Backup e ripristino dal pannello Servizi.
@@ -52,6 +53,7 @@ La dashboard di ripristino offre due modi diversi per ripristinare i dati dai fi
 
 
 
+[[comparing-browse-restore-and-search-restore]]
 == Confronto tra Sfoglia e Ripristina e Cerca e Ripristina
 
 In termini generali, _Sfoglia e ripristina_ è in genere più indicato quando è necessario ripristinare un volume, una cartella o un file specifico dell'ultima settimana o dell'ultimo mese, e si conoscono il nome e la posizione del file, nonché la data dell'ultima volta in cui era in buone condizioni.  _Cerca e ripristina_ è in genere la soluzione migliore quando è necessario ripristinare un volume, una cartella o un file, ma non si ricorda il nome esatto, il volume in cui si trova o la data dell'ultima volta in cui è stato in buone condizioni.

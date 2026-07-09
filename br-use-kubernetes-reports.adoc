@@ -18,6 +18,7 @@ In NetApp Backup and Recovery, crea report di protezione per i carichi di lavoro
 
 
 
+[[create-a-protection-report]]
 == Crea un report di protezione
 
 Crea un report di protezione per visualizzare lo stato di protezione dei tuoi cluster.
@@ -46,6 +47,7 @@ Configura le notifiche e-mail nella pagina Impostazioni. Per i dettagli sulla co
 
 
 
+[[download-a-protection-report]]
 == Scarica un report di protezione
 
 Scarica un report di protezione generato come file JSON o come documento PDF, così puoi visualizzarlo e condividerlo.
@@ -63,6 +65,7 @@ Scarica un report di protezione generato come file JSON o come documento PDF, co
 
 
 
+[[view-a-protection-report]]
 == Visualizza un report di protezione
 
 Visualizza rapidamente i dettagli interattivi di un report di protezione all'interno di NetApp Backup and Recovery. Puoi visualizzare informazioni di riepilogo del job, lo stato di protezione dei dati, i dettagli di configurazione e altro ancora.
@@ -78,6 +81,7 @@ Vengono visualizzati i dettagli del report.
 
 
 
+[[delete-a-protection-report]]
 == Elimina un report di protezione
 
 Elimina un report di protezione quando non ne hai più bisogno.

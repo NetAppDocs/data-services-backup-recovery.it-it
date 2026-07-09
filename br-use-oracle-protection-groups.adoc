@@ -26,6 +26,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ri
 
 
 
+[[create-a-protection-group]]
 == Crea un gruppo di protezione
 
 Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo di protezione.
@@ -52,6 +53,7 @@ Se si desidera creare una policy, selezionare *Crea nuova policy* e seguire le i
 
 
 
+[[delete-a-protection-group]]
 == Elimina un gruppo di protezione
 
 L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.

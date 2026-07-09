@@ -4,18 +4,21 @@
 
 
 
+[[microsoft-hyper-v-workloads-supported-in-general-availability-ga]]
 === Carichi di lavoro Microsoft Hyper-V supportati in General Availability (GA)
 
 Il supporto per i carichi di lavoro Microsoft Hyper-V è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
 
 
 
+[[vmware-workloads-supported-in-general-availability-ga]]
 === Carichi di lavoro VMware supportati in General Availability (GA)
 
 Il supporto dei carichi di lavoro VMware è ora generalmente disponibile (GA) in NetApp Backup and Recovery.
 
 
 
+[[kubernetes-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro Kubernetes
 
 Questa versione dei carichi di lavoro Kubernetes introduce le seguenti funzionalità migliorate:
@@ -31,6 +34,7 @@ Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimen
 
 
 
+[[oracle-database-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro Oracle Database
 
 Questa versione dei carichi di lavoro Oracle Database introduce le seguenti funzionalità migliorate:

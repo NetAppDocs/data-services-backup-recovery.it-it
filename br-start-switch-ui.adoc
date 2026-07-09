@@ -18,6 +18,7 @@ summary: 'È possibile passare da un carico di lavoro all"altro NetApp Backup an
 
 
 
+[[switch-to-a-different-workload]]
 == Passa a un carico di lavoro diverso
 
 È possibile passare a un carico di lavoro diverso nell'interfaccia utente NetApp Backup and Recovery .

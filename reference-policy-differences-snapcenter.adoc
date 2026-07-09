@@ -16,6 +16,7 @@ Esistono alcune differenze tra i criteri utilizzati in SnapCenter e quelli utili
 
 
 
+[[schedule-tiers]]
 == Pianifica i livelli
 
 SnapCenter utilizza i seguenti livelli di pianificazione:
@@ -37,6 +38,7 @@ NetApp Backup and Recovery utilizza i seguenti livelli di pianificazione, legger
 
 
 
+[[multiple-policies-in-snapcenter-with-the-same-schedule-tier]]
 == Più policy in SnapCenter con lo stesso livello di pianificazione
 
 È possibile assegnare più policy con lo stesso livello di pianificazione a una risorsa in SnapCenter.  Tuttavia, NetApp Backup and Recovery non supporta più policy su una risorsa che utilizza lo stesso livello di pianificazione.
@@ -45,6 +47,7 @@ NetApp Backup and Recovery utilizza i seguenti livelli di pianificazione, legger
 
 
 
+[[imported-snapcenter-daily-schedules]]
 == Pianificazioni giornaliere SnapCenter importate
 
 NetApp Backup and Recovery regola le pianificazioni SnapCenter come segue:
@@ -61,6 +64,7 @@ NetApp Backup and Recovery regola le pianificazioni SnapCenter come segue:
 
 
 
+[[imported-snapcenter-hourly-schedules]]
 == Pianificazioni orarie SnapCenter importate
 
 I criteri orari SnapCenter con intervalli ripetuti superiori a un'ora vengono convertiti in criteri giornalieri in NetApp Backup and Recovery.
@@ -71,6 +75,7 @@ Qualsiasi politica oraria con intervalli ripetuti che non siano un fattore di 24
 
 
 
+[[log-retention-from-snapcenter-policies]]
 == Conservazione dei registri dalle policy SnapCenter
 
 Se si dispone di una risorsa in SnapCenter con più policy, NetApp Backup and Recovery utilizza il seguente ordine di priorità per assegnare il valore di conservazione del registro:
@@ -83,12 +88,14 @@ Se si dispone di una risorsa in SnapCenter con più policy, NetApp Backup and Re
 
 
 
+[[log-backup-retention]]
 == Conservazione del backup del registro
 
 SnapCenter supporta più valori di conservazione per i criteri su una risorsa.  NetApp Backup and Recovery supporta un solo valore di conservazione per risorsa.
 
 
 
+[[retention-count-from-snapcenter-policies]]
 == Conteggio della conservazione dai criteri di SnapCenter
 
 Se si dispone di una risorsa con protezione secondaria abilitata in SnapCenter con più volumi di origine, più volumi di destinazione e più relazioni SnapMirror , NetApp Backup and Recovery utilizza solo il conteggio di conservazione del primo criterio.
@@ -97,6 +104,7 @@ Se si dispone di una risorsa con protezione secondaria abilitata in SnapCenter c
 
 
 
+[[snapmirror-labels-from-snapcenter-policies]]
 == Etichette SnapMirror dalle policy SnapCenter
 
 SnapCenter conserva le etichette SnapMirror per ogni policy dopo la migrazione, anche se cambia il livello.

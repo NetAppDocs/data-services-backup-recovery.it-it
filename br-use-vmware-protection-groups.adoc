@@ -27,6 +27,7 @@ Creare gruppi di protezione per gestire le operazioni di backup e ripristino per
 
 
 
+[[tag-based-protection-groups]]
 == Gruppi di protezione basati su tag
 
 Quando si selezionano le risorse da aggiungere a un gruppo di protezione, è possibile organizzarle per datastore, macchine virtuali o per vSphere tag.
@@ -45,6 +46,7 @@ L'appartenenza ai tag viene risolta da vCenter al tempo di backup. Qualsiasi mod
 
 
 
+[[create-a-protection-group]]
 == Crea un gruppo di protezione
 
 Crea un gruppo di protezione per organizzare le risorse di cui desideri eseguire il backup e il ripristino insieme.
@@ -92,6 +94,7 @@ Per creare una nuova policy, seleziona *Crea nuova policy* e segui le istruzioni
 
 
 
+[[suspend-a-protection-groups-backup-schedule]]
 == Sospendere la pianificazione del backup di un gruppo di protezione
 
 Sospendere un gruppo di protezione per sospendere i backup pianificati.
@@ -109,6 +112,7 @@ Quando si sospende un gruppo di protezione, lo stato di protezione cambia in "In
 
 
 
+[[resume-a-protection-groups-backup-schedule]]
 == Riprendi la pianificazione del backup di un gruppo di protezione
 
 La ripresa di un gruppo di protezione sospeso riavvia i backup pianificati per il gruppo di protezione.
@@ -129,6 +133,7 @@ Il sistema convalida le pianificazioni e modifica lo stato di protezione in "Pro
 
 
 
+[[edit-a-protection-group]]
 == Modifica un gruppo di protezione
 
 Modifica un gruppo di protezione per cambiarne il nome o le impostazioni. Potrebbe essere necessario modificare un gruppo di protezione se le risorse al suo interno sono cambiate.
@@ -149,6 +154,7 @@ La procedura guidata Modifica gruppo di protezione ti guida attraverso le impost
 
 
 
+[[apply-an-updated-vcenter-time-zone-to-an-existing-protection-group]]
 === Applica un fuso orario vCenter aggiornato a un gruppo di protezione esistente
 
 I backup pianificati utilizzano il fuso orario del server vCenter registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario del server vCenter, i gruppi di protezione esistenti continueranno a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
@@ -163,6 +169,7 @@ NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del grupp
 
 
 
+[[delete-a-protection-group]]
 == Elimina un gruppo di protezione
 
 Quando si elimina un gruppo di protezione, si rimuovono sia il gruppo stesso che tutte le pianificazioni di backup per il gruppo.  Elimina un gruppo di protezione se non ti serve più.

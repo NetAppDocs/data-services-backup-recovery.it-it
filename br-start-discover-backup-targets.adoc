@@ -18,6 +18,7 @@ Completa alcuni passaggi per scoprire o aggiungere manualmente destinazioni di b
 
 
 
+[[discover-a-backup-target]]
 == Scopri un target di backup
 
 Configurare le destinazioni di backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di utilizzare NetApp Backup and Recovery.
@@ -86,6 +87,7 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 
 
 
+[[add-a-bucket-for-a-backup-target]]
 == Aggiungi un bucket per una destinazione di backup
 
 Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucket, puoi aggiungere manualmente un bucket a una destinazione di backup fuori sede.
@@ -160,6 +162,7 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 
 
 
+[[change-credentials-for-a-backup-target]]
 == Modificare le credenziali per una destinazione di backup
 
 Immettere le credenziali necessarie per accedere alla destinazione di backup.

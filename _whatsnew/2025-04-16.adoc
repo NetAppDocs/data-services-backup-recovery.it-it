@@ -4,6 +4,7 @@
 
 
 
+[[ui-improvements]]
 === Miglioramenti dell'interfaccia utente
 
 Questa versione migliora la tua esperienza semplificando l'interfaccia:
@@ -17,12 +18,14 @@ Questa versione migliora la tua esperienza semplificando l'interfaccia:
 
 
 
+[[enhanced-volume-dashboard-preview]]
 === Dashboard del volume migliorata (anteprima)
 
 La dashboard del volume ora si carica in meno di 10 secondi, offrendo un'interfaccia molto più veloce ed efficiente.  Questa versione di anteprima è disponibile per clienti selezionati, offrendo loro un'anteprima di questi miglioramenti.
 
 
 
+[[support-for-third-party-wasabi-object-store-preview]]
 === Supporto per l'archivio oggetti Wasabi di terze parti (anteprima)
 
 NetApp Backup and Recovery estende ora il supporto agli archivi di oggetti di terze parti, concentrandosi principalmente su Wasabi.  Questa nuova funzionalità di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e ripristino.

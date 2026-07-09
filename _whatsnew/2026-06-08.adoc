@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volumes-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro di ONTAP Volumes
 
 In questa versione, i carichi di lavoro ONTAP Volumes introducono il seguente miglioramento:
@@ -14,6 +15,7 @@ Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Vol
 
 
 
+[[hyper-v-workloads-enhancements]]
 === Miglioramenti ai carichi di lavoro Hyper-V
 
 In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
@@ -26,6 +28,7 @@ Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento 
 
 
 
+[[vmware-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro VMware
 
 In questa versione, VMware workloads introduce il seguente miglioramento:

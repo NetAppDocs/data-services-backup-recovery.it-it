@@ -4,6 +4,7 @@
 
 
 
+[[create-an-execution-hook-template]]
 == Creare un modello di hook di esecuzione
 
 È possibile creare un modello di hook di esecuzione personalizzato da utilizzare per eseguire azioni prima o dopo un'operazione di protezione dei dati su un'applicazione.

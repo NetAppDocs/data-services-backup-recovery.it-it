@@ -18,6 +18,7 @@ Creare un certificato di sicurezza per abilitare la comunicazione tra NetApp Bac
 
 
 
+[[create-a-security-certificate-for-storagegrid]]
 == Creare un certificato di sicurezza per StorageGRID
 
 Se la comunicazione tra i container di NetApp Backup and Recovery e StorageGRID deve verificare il certificato StorageGRID, completa i seguenti passaggi.
@@ -83,6 +84,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 
 
 
+[[steps-for-cloudmanagercbs-container]]
 === Passaggi per il contenitore cloudmanager_cbs
 
 Sarà necessario abilitare la verifica del certificato del server StorageGRID in NetApp Backup and Recovery (Cloud Backup Service).
@@ -141,6 +143,7 @@ docker restart cloudmanager_cbs
 
 
 
+[[steps-for-cloudmanagercbscatalog-container]]
 === Passaggi per il contenitore cloudmanager_cbs_catalog
 
 Successivamente, sarà necessario abilitare la verifica del certificato del server StorageGRID per il servizio di catalogazione.
@@ -193,6 +196,7 @@ docker restart cloudmanager_cbs_catalog
 
 
 
+[[update-the-console-agent-certificate-with-the-storagegrid-certificate-based-on-the-agent-operating-system]]
 === Aggiornare il certificato dell'agente della console con il certificato StorageGRID in base al sistema operativo dell'agente
 
 
@@ -252,6 +256,7 @@ openssl crl2pkcs7 -nocrl -certfile /etc/pki/tls/certs/ca-bundle.crt | openssl pk
 
 
 
+[[create-a-security-certificate-for-ontap]]
 == Creare un certificato di sicurezza per ONTAP
 
 Se la comunicazione tra i contenitori NetApp Backup and Recovery e ONTAP deve convalidare il certificato ONTAP , completare i seguenti passaggi.
@@ -323,6 +328,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 
 
 
+[[steps-for-cloudmanagercbs-container]]
 === Passaggi per il contenitore cloudmanager_cbs
 
 Successivamente, abilitare la verifica del certificato del server ONTAP in NetApp Backup and Recovery (Cloud Backup Service).
@@ -379,6 +385,7 @@ docker restart cloudmanager_cbs
 
 
 
+[[steps-for-cloudmanagercbscatalog-container]]
 === Passaggi per il contenitore cloudmanager_cbs_catalog
 
 Abilitare la verifica del certificato del server ONTAP per il servizio di catalogazione.
@@ -429,6 +436,7 @@ docker restart cloudmanager_cbs_catalog
 
 
 
+[[create-a-certificate-for-both-ontap-and-storagegrid]]
 == Creare un certificato sia per ONTAP che per StorageGRID
 
 Se è necessario abilitare il certificato sia per ONTAP che per StorageGRID, il file di configurazione apparirà come segue:

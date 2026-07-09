@@ -28,6 +28,7 @@ link:concept-backup-to-cloud.html["Scopri di più sui costi associati all'utiliz
 
 
 
+[[30-day-free-trial]]
 == Prova gratuita di 30 giorni
 
 È disponibile una prova gratuita di 30 giorni NetApp Backup and Recovery se sottoscrivi un abbonamento pay-as-you-go nel marketplace del tuo provider cloud a * NetApp Intelligent Services*.  La prova gratuita inizia nel momento in cui ti iscrivi all'elenco del marketplace.  Tieni presente che se paghi l'abbonamento al marketplace quando distribuisci un sistema Cloud Volumes ONTAP e poi avvii la prova gratuita NetApp Backup and Recovery 10 giorni dopo, avrai 20 giorni rimanenti per utilizzare la prova gratuita.
@@ -36,6 +37,7 @@ Al termine del periodo di prova gratuito, passerai automaticamente all'abbonamen
 
 
 
+[[end-the-free-trial]]
 === Termina la prova gratuita
 
 Se desideri continuare a utilizzare NetApp Backup and Recovery dopo la scadenza del periodo di prova gratuito, devi sottoscrivere un abbonamento a pagamento.  Puoi farlo dall'interfaccia della NetApp Console andando alla sezione fatturazione e selezionando un piano di abbonamento adatto alle tue esigenze.  Se non desideri continuare a utilizzare NetApp Backup and Recovery, puoi interrompere la prova gratuita.
@@ -52,6 +54,7 @@ Se termini il periodo di prova gratuito senza sottoscrivere un piano a pagamento
 
 
 
+[[use-a-netapp-backup-and-recovery-paygo-subscription]]
 == Utilizzare un abbonamento NetApp Backup and Recovery PAYGO
 
 Con il pagamento in base al consumo, pagherai al tuo provider cloud i costi di archiviazione degli oggetti e i costi di licenza del backup NetApp su base oraria in un unico abbonamento.  Dovresti abbonarti a * NetApp Intelligent Services* nel Marketplace anche se hai una prova gratuita o se porti la tua licenza (BYOL):
@@ -82,6 +85,7 @@ Utilizza questi link per abbonarti a NetApp Backup and Recovery dal marketplace 
 
 
 
+[[use-an-annual-contract]]
 == Utilizzare un contratto annuale
 
 Paga annualmente NetApp Backup and Recovery acquistando un contratto annuale.  Sono disponibili con durata di 1, 2 o 3 anni.
@@ -124,6 +128,7 @@ Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il 
 
 
 
+[[use-a-netapp-backup-and-recovery-byol-license]]
 == Utilizzare una licenza BYOL NetApp Backup and Recovery
 
 Le licenze Bring-your-own di NetApp sono disponibili con durata di 1, 2 o 3 anni.  Si paga solo per i dati che si proteggono, calcolati in base alla capacità logica utilizzata (prima di qualsiasi efficienza) dei volumi ONTAP di origine sottoposti a backup.  Questa capacità è nota anche come Front-End Terabyte (FETB).
@@ -140,6 +145,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 
 
 
+[[exceeding-license-capacity]]
 == Superamento della capacità della licenza
 
 Il superamento della capacità concessa dalla licenza attiva le tariffe PAYGO; senza un abbonamento PAYGO, non è possibile creare nuovi backup, anche se i backup esistenti rimangono ripristinabili senza garanzia di servizio. Assicurati di rinnovare la licenza prima che scada; una licenza scaduta impedisce la creazione di nuovi backup e interrompe il servizio.

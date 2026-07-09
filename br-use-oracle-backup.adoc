@@ -26,6 +26,7 @@ NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base 
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Esegui subito il backup dei gruppi di protezione con un backup su richiesta
 
 Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
@@ -51,6 +52,7 @@ NOTE: NetApp Backup and Recovery utilizza la stessa policy sia per il gruppo di 
 
 
 
+[[back-up-a-database-now-with-an-on-demand-backup]]
 == Esegui subito il backup di un database con un backup su richiesta
 
 È possibile eseguire un backup su richiesta di un singolo database.

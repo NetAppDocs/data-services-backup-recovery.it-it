@@ -40,6 +40,7 @@ TIP: Per accedere al file di backup dovrai pagare delle commissioni aggiuntive a
 
 
 
+[[how-restoring-workloads-works]]
 == Come funziona il ripristino dei carichi di lavoro
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
@@ -54,6 +55,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 
 
 
+[[restore-methods]]
 == Metodi di ripristino
 
 Ripristinare i carichi di lavoro utilizzando uno di questi metodi:
@@ -66,6 +68,7 @@ Ripristinare i carichi di lavoro utilizzando uno di questi metodi:
 
 
 
+[[restore-workload-data-from-the-restore-option]]
 == Ripristina i dati del carico di lavoro dall'opzione Ripristina
 
 Ripristinare i carichi di lavoro del database utilizzando l'opzione Ripristina.
@@ -84,6 +87,7 @@ Ripristinare i carichi di lavoro del database utilizzando l'opzione Ripristina.
 
 
 
+[[restore-workloads-from-snapshots]]
 === Ripristinare i carichi di lavoro dagli snapshot
 
 . Proseguendo dalla pagina Opzioni di ripristino, seleziona *Ripristina da snapshot*.
@@ -121,6 +125,7 @@ Successivamente vedrai le opzioni di destinazione.
 
 
 
+[[restore-to-specific-point-in-time]]
 === Ripristinare un punto specifico nel tempo
 
 NetApp Backup and Recovery utilizza i log e gli snapshot più recenti per creare un ripristino puntuale dei dati.
@@ -160,6 +165,7 @@ NetApp Backup and Recovery utilizza i log e gli snapshot più recenti per creare
 
 
 
+[[restore-to-the-latest-backup]]
 === Ripristina l'ultimo backup
 
 Questa opzione utilizza gli ultimi backup completi e di registro per ripristinare i dati all'ultimo stato valido.  Il sistema esegue la scansione dei registri dall'ultimo snapshot fino al presente.  Il processo tiene traccia delle modifiche e delle attività per ripristinare la versione più recente e accurata dei dati.
@@ -197,6 +203,7 @@ NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di r
 
 
 
+[[restore-workload-data-from-the-inventory-option]]
 == Ripristina i dati del carico di lavoro dall'opzione Inventario
 
 Ripristina i carichi di lavoro del database dalla pagina Inventario.  Utilizzando l'opzione Inventario, è possibile ripristinare solo i database, non le istanze.

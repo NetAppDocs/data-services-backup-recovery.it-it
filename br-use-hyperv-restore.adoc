@@ -39,6 +39,7 @@ TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di usc
 
 
 
+[[how-restoring-workloads-works]]
 == Come funziona il ripristino dei carichi di lavoro
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
@@ -51,6 +52,7 @@ Dalla pagina Ripristina, puoi ripristinare una risorsa, anche se non ricordi il 
 
 
 
+[[restore-hyper-v-workloads]]
 == Ripristinare i carichi di lavoro Hyper-V
 
 Ripristina i carichi di lavoro Hyper-V utilizzando il menu Ripristina. Puoi cercare lo snapshot per nome o utilizzando i filtri.

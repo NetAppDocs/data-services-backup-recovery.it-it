@@ -18,6 +18,7 @@ summary: 'È possibile ripristinare file o cartelle da un disco di macchina virt
 
 
 
+[[guest-restore-workflow]]
 == Flusso di lavoro di ripristino degli ospiti
 
 Le operazioni di ripristino del sistema operativo guest includono i seguenti passaggi:
@@ -42,6 +43,7 @@ Ripristina i file o le cartelle selezionati in una posizione specificata.
 
 
 
+[[prerequisites-for-restoring-guest-files-and-folders]]
 == Prerequisiti per il ripristino di file e cartelle guest
 
 Verifica tutti i requisiti prima di ripristinare file o cartelle da un VMDK.
@@ -69,6 +71,7 @@ Per le informazioni più recenti sul supporto dei sistemi operativi guest, fare 
 
 
 
+[[windows-guests]]
 === Guest Windows
 
 * Il sistema operativo guest Windows deve eseguire Windows Server 2008 R2 o versione successiva.
@@ -84,6 +87,7 @@ IMPORTANT: Se è necessario utilizzare un account che non è l'account amministr
 
 
 
+[[linux-guests]]
 === guest Linux
 
 * Sono supportate le seguenti distribuzioni di sistemi operativi guest:
@@ -99,6 +103,7 @@ IMPORTANT: Se è necessario utilizzare un account che non è l'account amministr
 
 
 
+[[guest-file-restore-limitations]]
 == Limitazioni del ripristino dei file guest
 
 Prima di ripristinare un file o una cartella da un sistema operativo guest, è necessario essere a conoscenza delle limitazioni della funzionalità.

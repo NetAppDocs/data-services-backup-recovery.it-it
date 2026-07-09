@@ -18,6 +18,7 @@ Ripristina file e cartelle dai backup di macchine virtuali Hyper-V su storage pr
 
 
 
+[[restore-files-and-folders]]
 == Ripristina file e cartelle
 
 Monta un disco virtuale da uno Snapshot e ripristina file e cartelle da esso nella macchina virtuale Windows originale (di origine).
@@ -101,6 +102,7 @@ Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli 
 
 
 
+[[manage-active-live-disk-mount-sessions]]
 == Gestire le sessioni di montaggio del disco live attive
 
 Visualizza, utilizza ed elimina le sessioni attive di ripristino di file e cartelle Hyper-V direttamente da NetApp Backup and Recovery.

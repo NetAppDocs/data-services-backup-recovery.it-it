@@ -21,6 +21,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 
 
+[[verify-support-for-your-configuration]]
 == Verifica il supporto per la tua configurazione
 
 Leggi i seguenti requisiti per assicurarti di disporre di una configurazione supportata prima di iniziare il backup dei volumi su Google Cloud Storage.
@@ -37,10 +38,8 @@ Account di servizio GCP:: Devi disporre di un account di servizio nel tuo proget
 
 
 
-NOTE: Il ruolo di amministratore di archiviazione non è più necessario per l'account di servizio che consente a NetApp Backup and Recovery di accedere ai bucket di Google Cloud Storage.
 
-
-
+[[verify-license-requirements]]
 == Verificare i requisiti della licenza
 
 Per le licenze NetApp Backup and Recovery PAYGO, è disponibile un abbonamento alla console in Google Marketplace che consente le distribuzioni di Cloud Volumes ONTAP e NetApp Backup and Recovery.  Devi https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["iscriviti a questo abbonamento alla Console"^] prima di abilitare NetApp Backup and Recovery.  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Puoi iscriverti dalla pagina Dettagli e credenziali della procedura guidata di sistema"^] .
@@ -51,6 +50,7 @@ Inoltre, è necessario disporre di un abbonamento Google per lo spazio di archiv
 
 
 
+[[prepare-your-console-agent]]
 == Prepara il tuo agente Console
 
 L'agente Console deve essere installato in una regione Google con accesso a Internet.
@@ -61,6 +61,7 @@ L'agente Console deve essere installato in una regione Google con accesso a Inte
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verificare o aggiungere autorizzazioni all'agente della console
 
 Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
@@ -90,6 +91,7 @@ bigquery.tables.create
 
 
 
+[[required-information-for-using-customer-managed-encryption-keys-cmek]]
 === Informazioni richieste per l'utilizzo delle chiavi di crittografia gestite dal cliente (CMEK)
 
 Puoi utilizzare le tue chiavi gestite dal cliente per la crittografia dei dati anziché le chiavi di crittografia predefinite gestite da Google.  Sono supportate sia le chiavi interregionali che quelle interprogetto, quindi è possibile scegliere un progetto per un bucket diverso dal progetto della chiave CMEK.  Se intendi utilizzare le tue chiavi gestite dal cliente:
@@ -123,6 +125,7 @@ cloudkms.keyRings.setIamPolicy
 
 
 
+[[create-your-own-buckets]]
 === Crea i tuoi bucket
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  Se desideri utilizzare i tuoi bucket, puoi crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
@@ -131,6 +134,7 @@ link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bu
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Verificare i requisiti di rete ONTAP per la replica dei volumi
 
 Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizzando NetApp Backup and Recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino i seguenti requisiti di rete.
@@ -158,6 +162,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Abilita NetApp Backup and Recovery su Cloud Volumes ONTAP
 
 I passaggi per abilitare NetApp Backup and Recovery variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o di uno nuovo.
@@ -205,6 +210,7 @@ Se la destinazione di Google Cloud Storage per i backup esiste come sistema nell
 
 
 
+[[prepare-google-cloud-storage-as-your-backup-target]]
 == Prepara Google Cloud Storage come destinazione di backup
 
 Per preparare Google Cloud Storage come destinazione di backup, sono necessari i seguenti passaggi:
@@ -216,6 +222,7 @@ Per preparare Google Cloud Storage come destinazione di backup, sono necessari i
 
 
 
+[[set-up-permissions]]
 === Imposta i permessi
 
 È necessario fornire le chiavi di accesso all'archiviazione per un account di servizio che dispone di autorizzazioni specifiche utilizzando un ruolo personalizzato.  Un account di servizio consente a NetApp Backup and Recovery di autenticare e accedere ai bucket di Cloud Storage utilizzati per archiviare i backup.  Le chiavi sono necessarie affinché Google Cloud Storage sappia chi sta effettuando la richiesta.
@@ -261,6 +268,7 @@ Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un s
 
 
 
+[[create-your-own-buckets]]
 === Crea i tuoi bucket
 
 Per impostazione predefinita, il servizio crea dei bucket per te.  In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e quindi selezionare tali bucket nella procedura guidata.
@@ -269,6 +277,7 @@ link:prev-ontap-protect-journey.html["Scopri di più sulla creazione dei tuoi bu
 
 
 
+[[set-up-customer-managed-encryption-keys-cmek-for-data-encryption]]
 === Impostare le chiavi di crittografia gestite dal cliente (CMEK) per la crittografia dei dati
 
 Puoi utilizzare le tue chiavi gestite dal cliente per la crittografia dei dati anziché le chiavi di crittografia predefinite gestite da Google.  Sono supportate sia le chiavi interregionali che quelle interprogetto, quindi è possibile scegliere un progetto per un bucket diverso dal progetto della chiave CMEK.
@@ -303,6 +312,7 @@ cloudkms.keyRings.setIamPolicy
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
 Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
@@ -318,6 +328,7 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 
 
 
+[[start-the-wizard]]
 === Avvia la procedura guidata
 
 .Passi
@@ -343,6 +354,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Seleziona i volumi di cui vuoi eseguire il backup
 
 Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che presenta una o più delle seguenti caratteristiche: criterio di snapshot, criterio di replica, criterio di backup su oggetto.
@@ -371,6 +383,7 @@ Tieni presente che se ai volumi scelti sono già applicati criteri di snapshot o
 
 
 
+[[define-the-backup-strategy]]
 === Definire la strategia di backup
 
 Per definire la strategia di backup è necessario impostare le seguenti opzioni:
@@ -477,6 +490,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 
 
 
+[[review-your-selections]]
 === Rivedi le tue selezioni
 
 Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se necessario.
@@ -502,6 +516,7 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 
 
 
+[[show-the-api-commands]]
 === Mostra i comandi API
 
 Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
@@ -513,6 +528,7 @@ Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi A
 
 
 
+[[whats-next]]
 == Cosa succederà ora?
 
 * Puoilink:prev-ontap-backup-manage.html["gestire i file di backup e le policy di backup"] .  Ciò include l'avvio e l'interruzione dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione dei backup e altro ancora.

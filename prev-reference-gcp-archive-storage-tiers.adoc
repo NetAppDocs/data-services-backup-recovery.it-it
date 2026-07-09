@@ -18,6 +18,7 @@ NetApp Backup and Recovery supporta una classe di archiviazione Google e la magg
 
 
 
+[[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Classi di archiviazione Google supportate per NetApp Backup and Recovery
 
 Quando vengono creati inizialmente i file di backup, questi vengono archiviati nella memoria _Standard_.  Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma consente anche di accedervi immediatamente.
@@ -30,6 +31,7 @@ https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle clas
 
 
 
+[[restore-data-from-archival-storage]]
 == Ripristinare i dati dall'archivio
 
 Sebbene l'archiviazione di file di backup più vecchi in un archivio sia molto meno costosa rispetto all'archiviazione standard, l'accesso ai dati da un file di backup in un archivio per le operazioni di ripristino richiederà un tempo leggermente più lungo e avrà un costo maggiore.

@@ -18,12 +18,14 @@ Se si desidera importare risorse dal servizio plug-in SnapCenter per Microsoft S
 
 
 
+[[create-systems-in-netapp-console-first]]
 == Crea prima i sistemi nella NetApp Console
 
 Se si desidera importare risorse da SnapCenter, è necessario aggiungere prima tutto lo storage del cluster SnapCenter locale alla pagina *Sistemi* della console prima di importare da SnapCenter.  Ciò garantisce che le risorse host possano essere scoperte e importate correttamente.
 
 
 
+[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
 == Verificare i requisiti dell'host per installare il plug-in SnapCenter
 
 Per importare risorse dal plug-in SnapCenter per Microsoft SQL Server, assicurarsi che siano soddisfatti i requisiti host per l'installazione del plug-in SnapCenter per Microsoft SQL Server.
@@ -32,6 +34,7 @@ Verificare specificamente i requisiti SnapCenter inlink:concept-start-prereq.htm
 
 
 
+[[disable-user-account-control-remote-restrictions]]
 == Disabilitare le restrizioni remote del Controllo account utente
 
 Prima di importare risorse da SnapCenter, disabilitare le restrizioni remote del Controllo account utente (UAC) sull'host Windows SnapCenter .  Disattivare UAC se si utilizza un account amministrativo locale per connettersi in remoto all'host del server SnapCenter o all'host SQL.
@@ -69,6 +72,7 @@ Per farlo, utilizza uno dei seguenti metodi, di seguito le istruzioni:
 
 
 
+[[method-1-disable-user-account-control-by-using-the-registry-editor]]
 === Metodo 1: disabilitare il controllo dell'account utente utilizzando l'editor del Registro di sistema
 
 Questo è uno dei metodi che puoi utilizzare per disattivare il Controllo dell'account utente.
@@ -112,6 +116,7 @@ In questo esempio LocalAccountTokenFilterPolicy viene impostato su "1", disabili
 ----
 
 
+[[method-2-disable-user-account-control-by-using-a-powershell-script]]
 === Metodo 2: disabilitare il controllo dell'account utente utilizzando uno script di PowerShell
 
 Questo è un altro metodo che puoi utilizzare per disattivare il Controllo dell'account utente.

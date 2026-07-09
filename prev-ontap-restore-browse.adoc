@@ -37,6 +37,7 @@ NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'ar
 
 
 
+[[browse-restore-supported-systems-and-object-storage-providers]]
 == Esplora e ripristina i sistemi supportati e i provider di archiviazione di oggetti
 
 È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
@@ -75,6 +76,7 @@ NOTE: Se la versione ONTAP sul sistema è precedente alla 9.13.1, non sarà poss
 
 
 
+[[restore-volumes-using-browse-restore]]
 == Ripristina i volumi utilizzando Sfoglia e ripristina
 
 Quando si ripristina un volume da un file di backup, NetApp Backup and Recovery crea un _nuovo_ volume utilizzando i dati del backup.  Quando si utilizza un backup da un archivio di oggetti, è possibile ripristinare i dati su un volume nel sistema originale, su un sistema diverso situato nello stesso account cloud del sistema di origine o su un sistema ONTAP locale.
@@ -141,6 +143,7 @@ Si noti che il ripristino di un volume da un file di backup residente in un arch
 
 
 
+[[restore-folders-and-files-using-browse-restore]]
 == Ripristina cartelle e file utilizzando Sfoglia e ripristina
 
 Se è necessario ripristinare solo alcuni file da un backup del volume ONTAP , è possibile scegliere di ripristinare una cartella o singoli file anziché ripristinare l'intero volume.  È possibile ripristinare cartelle e file su un volume esistente nel sistema originale oppure su un sistema diverso che utilizza lo stesso account cloud.  È anche possibile ripristinare cartelle e file su un volume su un sistema ONTAP locale.
@@ -165,6 +168,7 @@ Se si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una
 ====
 
 
+[[restore-folders-and-files]]
 === Ripristina cartelle e file
 
 Per ripristinare cartelle o file su un volume da un backup del volume ONTAP , seguire questi passaggi.  Dovresti conoscere il nome del volume e la data del file di backup che vuoi utilizzare per ripristinare la cartella o il/i file.  Questa funzionalità utilizza la navigazione in tempo reale per consentirti di visualizzare l'elenco delle directory e dei file all'interno di ciascun file di backup.

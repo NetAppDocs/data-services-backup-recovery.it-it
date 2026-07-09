@@ -18,6 +18,7 @@ summary: È possibile personalizzare le operazioni di ripristino CR utilizzando 
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Annotazioni ed etichette dello spazio dei nomi durante le operazioni di ripristino e failover
 
 Durante il ripristino e il failover, le etichette e le annotazioni dello spazio dei nomi di destinazione vengono aggiornate in modo da corrispondere a quelle di origine: le chiavi di origine vengono aggiunte o sovrascritte alle chiavi di destinazione, mentre le chiavi presenti solo nella destinazione rimangono invariate.
@@ -46,6 +47,7 @@ Se hai utilizzato Helm con il  `--create-namespace` flag per installare l'applic
 
 
 
+[[example]]
 === Esempio
 
 Il seguente esempio mostra gli spazi dei nomi di origine e di destinazione con etichette e annotazioni diverse e visualizza lo spazio dei nomi di destinazione prima e dopo l'operazione per illustrare come le chiavi vengono aggiunte, unite o sovrascritte.
@@ -108,12 +110,14 @@ La tabella seguente illustra lo stato dello spazio dei nomi di destinazione di e
 |===
 
 
+[[supported-fields]]
 == Campi supportati
 
 Questa sezione descrive i campi aggiuntivi disponibili per le operazioni di ripristino.
 
 
 
+[[storage-class-mapping]]
 === Mappatura delle storage class
 
 L' `spec.storageClassMapping`attributo definisce una mappatura da una classe di storage presente nell'applicazione di origine a una nuova classe di storage nel cluster di destinazione. Puoi utilizzare questa opzione quando migri applicazioni tra cluster con classi di storage diverse o quando cambi il backend di storage per le operazioni di BackupRestore.
@@ -130,6 +134,7 @@ storageClassMapping:
 ----
 
 
+[[supported-annotations]]
 == Annotazioni supportate
 
 Questa sezione elenca le annotazioni supportate per la configurazione di vari comportamenti nel sistema. Se un'annotazione non viene impostata esplicitamente dall'utente, il sistema utilizzerà il valore predefinito.

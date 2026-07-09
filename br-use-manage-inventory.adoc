@@ -44,6 +44,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 
 
 
+[[manage-host-information]]
 == Gestisci le informazioni dell'host
 
 È possibile gestire le informazioni sull'host per garantire che vengano protetti gli host giusti.  È possibile visualizzare, modificare ed eliminare le informazioni sull'host.
@@ -58,6 +59,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 
 
 
+[[manage-hosts]]
 === Gestisci gli host
 
 Puoi gestire gli host rilevati nel tuo sistema.  È possibile gestirli separatamente o in gruppo.
@@ -88,6 +90,7 @@ Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisc
 
 
 
+[[suspend-schedules]]
 === Sospendere gli orari
 
 Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino durante la manutenzione dell'host.
@@ -101,6 +104,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 
 
 
+[[edit-a-host]]
 === Modifica un host
 
 È possibile modificare le informazioni del server vCenter, le credenziali di registrazione dell'host e le opzioni delle impostazioni avanzate.
@@ -115,6 +119,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 
 
 
+[[delete-a-host]]
 === Elimina un host
 
 È possibile eliminare le informazioni dell'host per interrompere i costi del servizio.
@@ -128,6 +133,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 
 
 
+[[manage-instances-information]]
 == Gestisci le informazioni sulle istanze
 
 È possibile gestire le informazioni sulle istanze per assegnare le credenziali appropriate per la protezione delle risorse ed eseguire il backup delle risorse nei seguenti modi:
@@ -143,6 +149,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 
 
 
+[[protect-database-instances]]
 === Proteggere le istanze del database
 
 È possibile assegnare una policy a un'istanza di database utilizzando policy che regolano le pianificazioni e la conservazione della protezione delle risorse.
@@ -174,6 +181,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 
 
+[[associate-credentials-with-a-resource]]
 === Associare le credenziali a una risorsa
 
 È possibile associare le credenziali a una risorsa in modo che possa essere garantita la protezione.
@@ -191,6 +199,7 @@ Per i dettagli, vederelink:br-start-configure.html["Configurare le impostazioni 
 
 
 
+[[edit-protection-settings]]
 === Modifica le impostazioni di protezione
 
 È possibile modificare la policy, crearne una nuova, impostare una pianificazione e definire le impostazioni di conservazione.
@@ -208,6 +217,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 
 
+[[back-up-now]]
 === Esegui il backup ora
 
 Esegui subito il backup dei tuoi dati per proteggerli immediatamente.
@@ -226,6 +236,7 @@ Per i dettagli sulla creazione di un backup ad hoc, fare riferimento alink:br-us
 
 
 
+[[manage-database-information]]
 == Gestire le informazioni del database
 
 È possibile gestire le informazioni del database nei seguenti modi:
@@ -239,6 +250,7 @@ Per i dettagli sulla creazione di un backup ad hoc, fare riferimento alink:br-us
 
 
 
+[[protect-databases]]
 === Proteggere i database
 
 È possibile modificare la policy, crearne una nuova, impostare una pianificazione e definire le impostazioni di conservazione.
@@ -258,6 +270,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 
 
+[[restore-databases]]
 === Ripristinare i database
 
 Ripristina un database per proteggere i tuoi dati.
@@ -274,6 +287,7 @@ Per informazioni sul ripristino dei carichi di lavoro, fare riferimento alink:br
 
 
 
+[[edit-protection-settings]]
 === Modifica le impostazioni di protezione
 
 È possibile modificare la policy, crearne una nuova, impostare una pianificazione e definire le impostazioni di conservazione.
@@ -293,6 +307,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 
 
 
+[[back-up-now]]
 === Esegui il backup ora
 
 Puoi eseguire subito il backup delle istanze e dei database di Microsoft SQL Server per proteggere immediatamente i tuoi dati.

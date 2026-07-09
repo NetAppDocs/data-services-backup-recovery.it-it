@@ -4,6 +4,7 @@
 
 
 
+[[high-performance-indexing]]
 === Indicizzazione ad alte prestazioni
 
 NetApp Backup and Recovery introduce una funzionalità di indicizzazione aggiornata che rende più efficiente l'indicizzazione dei dati sul sistema di origine.  La nuova funzionalità di indicizzazione include aggiornamenti all'interfaccia utente, prestazioni migliorate del metodo Cerca e ripristina per il ripristino dei dati, aggiornamenti alle funzionalità di ricerca globale e una migliore scalabilità.
@@ -40,6 +41,7 @@ La nuova funzionalità di indicizzazione supporta quanto segue:
 
 
 
+[[global-search-performance-improvements]]
 === Miglioramenti delle prestazioni di ricerca globale
 
 Questa versione include anche miglioramenti alle prestazioni della ricerca globale.  Ora vedrai indicatori di avanzamento e risultati di ricerca più dettagliati, tra cui il numero di file e il tempo impiegato per la ricerca.  Contenitori dedicati per la ricerca e l'indicizzazione garantiscono che le ricerche globali vengano completate in meno di cinque minuti.

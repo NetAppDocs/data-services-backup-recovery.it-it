@@ -47,6 +47,7 @@ TIP: Quando si utilizza System Manager, selezionare *Asincrono* come tipo di pol
 
 
 
+[[view-policies-for-a-system]]
 == Visualizza le policy per un sistema
 
 . Nell'interfaccia utente della console, seleziona *Volumi* > *Impostazioni di backup*.
@@ -59,6 +60,7 @@ Viene visualizzata la pagina di gestione delle policy.  Per impostazione predefi
 
 
 
+[[create-policies]]
 == Creare politiche
 
 È possibile creare policy che regolano gli snapshot, le repliche e i backup nell'archiviazione degli oggetti:
@@ -70,6 +72,7 @@ Viene visualizzata la pagina di gestione delle policy.  Per impostazione predefi
 
 
 
+[[create-a-snapshot-policy-before-initiating-the-snapshot]]
 === Creare un criterio di snapshot prima di avviare lo snapshot
 
 Una parte della strategia 3-2-1 prevede la creazione di uno snapshot del volume sul sistema di archiviazione *primario*.
@@ -118,6 +121,7 @@ Questo esempio crea un criterio snapshot con due cluster:
 
 
 
+[[create-a-replication-policy-before-initiating-the-replication]]
 === Creare una politica di replicazione prima di avviare la replica
 
 La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di archiviazione diverso.  La politica di replica risiede sul sistema di archiviazione *secondario*.
@@ -132,6 +136,7 @@ La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di a
 
 
 
+[[create-a-backup-to-object-storage-policy-before-initiating-the-backup]]
 === Creare una policy di backup su storage di oggetti prima di avviare il backup
 
 La strategia 3-2-1 potrebbe includere il backup di un volume su un archivio di oggetti.
@@ -163,6 +168,7 @@ link:prev-ontap-policy-object-options.html["Scopri di più sulle impostazioni Da
 
 
 
+[[edit-a-policy]]
 == Modifica una policy
 
 È possibile modificare uno snapshot personalizzato, una replica o un criterio di backup.
@@ -181,6 +187,7 @@ NOTE: Il processo è lo stesso per le policy di replica e backup.
 
 
 
+[[delete-a-policy]]
 == Elimina una policy
 
 È possibile eliminare i criteri che non sono associati ad alcun volume.
@@ -194,6 +201,7 @@ Se una policy è associata a un volume e si desidera eliminarla, è necessario p
 
 
 
+[[find-more-information]]
 == Trova maggiori informazioni
 
 Per istruzioni sulla creazione di policy tramite System Manager o ONTAP CLI, vedere quanto segue:

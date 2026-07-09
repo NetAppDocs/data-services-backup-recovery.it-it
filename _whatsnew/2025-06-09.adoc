@@ -4,6 +4,7 @@
 
 
 
+[[indexed-catalog-support-updates]]
 === Aggiornamenti del supporto del catalogo indicizzato
 
 Nel febbraio 2025 abbiamo introdotto la funzionalità di indicizzazione aggiornata (Catalogo indicizzato v2) da utilizzare durante il metodo di ricerca e ripristino dei dati. La versione precedente ha migliorato significativamente le prestazioni di indicizzazione dei dati negli ambienti on-premise. Con questa versione, il catalogo di indicizzazione è ora disponibile negli ambienti Amazon Web Services, Microsoft Azure e Google Cloud Platform (GCP).
@@ -19,6 +20,7 @@ Per maggiori informazioni, fare riferimento a https://docs.netapp.com/us-en/data
 
 
 
+[[azure-private-link-endpoints-and-service-endpoints]]
 === Endpoint di collegamento privato di Azure ed endpoint di servizio
 
 In genere, NetApp Backup and Recovery stabilisce un endpoint privato con il provider cloud per gestire le attività di protezione. Questa versione introduce un'impostazione facoltativa che consente di abilitare o disabilitare la creazione automatica di un endpoint privato da parte NetApp Backup and Recovery . Potrebbe esserti utile se desideri un maggiore controllo sul processo di creazione dell'endpoint privato.
@@ -29,12 +31,14 @@ Se si disabilita questa impostazione, è necessario creare manualmente l'endpoin
 
 
 
+[[support-for-snapmirror-to-cloud-resync-on-ontap-s3]]
 === Supporto per SnapMirror su Cloud Resync su ONTAP S3
 
 La versione precedente ha introdotto il supporto per SnapMirror to Cloud Resync (SM-C Resync). La funzionalità semplifica la protezione dei dati durante la migrazione dei volumi negli ambienti NetApp. Questa versione aggiunge il supporto per SM-C Resync su ONTAP S3, nonché su altri provider compatibili con S3 come Wasabi e MinIO.
 
 
 
+[[bring-your-own-bucket-for-storagegrid]]
 === Porta il tuo bucket per StorageGRID
 
 Quando si creano file di backup nell'archiviazione di oggetti per un ambiente di lavoro, per impostazione predefinita NetApp Backup and Recovery crea il contenitore (bucket o account di archiviazione) per i file di backup nell'account di archiviazione di oggetti configurato. In precedenza, era possibile ignorare questa impostazione e specificare un contenitore personalizzato per Amazon S3, Azure Blob Storage e Google Cloud Storage. Con questa versione, ora puoi utilizzare il tuo contenitore di archiviazione oggetti StorageGRID .

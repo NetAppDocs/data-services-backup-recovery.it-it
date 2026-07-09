@@ -20,6 +20,7 @@ Le seguenti azioni e configurazioni non sono supportate nei carichi di lavoro KV
 
 
 
+[[unsupported-actions]]
 == Azioni non supportate
 
 Le seguenti azioni non sono supportate:
@@ -32,6 +33,7 @@ Le seguenti azioni non sono supportate:
 
 
 
+[[unsupported-configurations]]
 == Configurazioni non supportate
 
 Le seguenti configurazioni non sono supportate:
@@ -45,6 +47,7 @@ Le seguenti configurazioni non sono supportate:
 
 
 
+[[troubleshooting-notes]]
 == Note sulla risoluzione dei problemi
 
 Tenere presente quanto segue quando si utilizzano carichi di lavoro KVM con NetApp Backup and Recovery.

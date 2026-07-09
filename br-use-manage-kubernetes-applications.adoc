@@ -21,6 +21,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 
 
 
+[[unprotect-a-kubernetes-application]]
 == Rimuovere la protezione di un'applicazione Kubernetes
 
 È possibile rimuovere la protezione da un'applicazione se non si desidera più proteggerla. Quando si rimuove la protezione di un'applicazione, NetApp Backup and Recovery interrompe la protezione dell'applicazione ma conserva tutti i backup e gli snapshot associati.
@@ -39,6 +40,7 @@ NOTE: Non è possibile rimuovere la protezione di un'applicazione mentre sono an
 
 
 
+[[delete-a-kubernetes-application]]
 == Eliminare un'applicazione Kubernetes
 
 Elimina un'applicazione di cui non hai più bisogno.  NetApp Backup and Recovery interrompe la protezione e rimuove tutti i backup e gli snapshot delle applicazioni eliminate.
@@ -59,6 +61,7 @@ CAUTION: Non sarà più possibile ripristinare l'applicazione utilizzando questi
 
 
 
+[[remove-a-restore-point-for-a-kubernetes-application]]
 == Rimuovi un punto di ripristino per un'applicazione Kubernetes
 
 Potrebbe essere necessario rimuovere un punto di ripristino per un'applicazione se è necessario rimuoverne la protezione e sono attualmente in esecuzione operazioni di protezione.

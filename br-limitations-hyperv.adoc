@@ -18,6 +18,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 
 
+[[unsupported-actions]]
 == Azioni non supportate
 
 Le seguenti azioni non sono supportate nei carichi di lavoro Hyper-V in NetApp Backup and Recovery:

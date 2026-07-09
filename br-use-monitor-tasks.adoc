@@ -22,6 +22,7 @@ NetApp Backup and Recovery conserva le informazioni sui processi per 15 giorni, 
 
 
 
+[[view-job-status-on-the-job-monitor]]
 == Visualizza lo stato del lavoro sul Job Monitor
 
 È possibile visualizzare un elenco di tutte le operazioni di snapshot, replica, backup su storage di oggetti e ripristino, nonché il relativo stato corrente nella scheda *Monitoraggio processi*.  Ciò include le operazioni da Cloud Volumes ONTAP, ONTAP locale, applicazioni e macchine virtuali.  Ogni operazione o lavoro ha un ID univoco e uno stato.
@@ -47,6 +48,7 @@ NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi ope
 
 
 
+[[search-and-filter-the-list-of-jobs]]
 === Cerca e filtra l'elenco dei lavori
 
 È possibile filtrare le operazioni nella pagina Monitoraggio processi utilizzando diversi filtri, ad esempio criteri, etichetta snapshot, tipo di operazione (protezione, ripristino, conservazione o altro) e tipo di protezione (snapshot locale, replica o backup sul cloud).
@@ -83,6 +85,7 @@ La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavor
 
 
 
+[[view-job-details]]
 === Visualizza i dettagli del lavoro
 
 È possibile visualizzare i dettagli corrispondenti a uno specifico lavoro completato.  È possibile esportare i dettagli di un determinato lavoro in formato JSON.
@@ -100,6 +103,7 @@ I processi di ripristino mostrano dettagli quali il provider di destinazione del
 
 
 
+[[download-job-monitoring-results-as-a-report]]
 === Scarica i risultati del monitoraggio dei lavori come report
 
 È possibile scaricare il contenuto della pagina principale di Monitoraggio lavori come report dopo aver filtrato o ordinato i risultati. NetApp Backup and Recovery genera e scarica un file .CSV che puoi esaminare e inviare ad altri gruppi, se necessario. Il file .CSV include fino a 10.000 righe di dati.
@@ -114,6 +118,7 @@ Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaric
 
 
 
+[[review-retention-backup-lifecycle-jobs]]
 == Lavori di conservazione delle revisioni (ciclo di vita del backup)
 
 Monitorare i flussi di conservazione (_ciclo di vita del backup_) per controllare i backup, mantenerli al sicuro e supportare gli audit.  Identificare la scadenza delle copie di backup per monitorarne il ciclo di vita.
@@ -130,6 +135,7 @@ Il tipo di processo "Conservazione" acquisisce tutti i processi di eliminazione 
 
 
 
+[[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Esaminare gli avvisi di backup e ripristino nel Centro notifiche NetApp Console
 
 Il Centro notifiche NetApp Console tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, consentendoti di verificare se l'operazione è riuscita o meno.
@@ -248,6 +254,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 
 
+[[review-operation-activity-in-console-timeline]]
 == Esaminare l'attività operativa nella cronologia della console
 
 È possibile visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori indagini nella cronologia della console.  La cronologia della console fornisce dettagli su ciascun evento, sia esso avviato dall'utente o dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.

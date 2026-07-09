@@ -18,6 +18,7 @@ Potrebbe essere necessario montare un punto di ripristino di Oracle Database se 
 
 
 
+[[mount-an-oracle-database-recovery-point]]
 == Montare un punto di ripristino del database Oracle
 
 Se si configura il criterio di protezione per un database in modo che conservi i log di archivio, è possibile montare punti di ripristino per visualizzare la cronologia delle modifiche del database.
@@ -50,6 +51,7 @@ Il punto di ripristino è montato sull'host Oracle.
 
 
 
+[[unmount-an-oracle-database-recovery-point]]
 == Smonta un punto di ripristino del database Oracle
 
 Smontare il punto di ripristino quando non è più necessario visualizzare le modifiche apportate al database.
@@ -70,6 +72,7 @@ Viene visualizzato un elenco di punti di ripristino per quel database.
 
 
 
+[[catalog-an-oracle-database-recovery-point]]
 == Cataloga un punto di ripristino del database Oracle
 
 Cataloga manualmente un punto di ripristino quando devi conservarne i metadati di backup e di ripristino delle operazioni. I metadati vengono memorizzati in base alle impostazioni di *Configura catalogo RMAN* scelte per il database (nel file di controllo per impostazione predefinita). Devi catalogare manualmente solo se la catalogazione automatica è disabilitata nella policy di protezione associata.

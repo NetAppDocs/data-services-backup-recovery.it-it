@@ -18,6 +18,7 @@ NetApp Backup and Recovery consente di eseguire manualmente il backup delle appl
 
 
 
+[[back-up-a-kubernetes-application-now-using-custom-resources]]
 == Esegui subito il backup di un'applicazione Kubernetes utilizzando risorse personalizzate
 
 Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.
@@ -34,6 +35,7 @@ Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsi
 
 
 
+[[create-a-local-snapshot-using-a-custom-resource]]
 === Crea uno snapshot locale utilizzando una risorsa personalizzata
 
 Per creare uno snapshot della tua applicazione Kubernetes e archiviarlo localmente, usa la risorsa personalizzata Snapshot con attributi specifici.
@@ -76,6 +78,7 @@ kubectl apply -f local-snapshot-cr.yaml
 
 
 
+[[back-up-an-application-to-an-object-store-using-a-custom-resource]]
 === Eseguire il backup di un'applicazione in un archivio di oggetti utilizzando una risorsa personalizzata
 
 Crea un CR di backup con attributi specifici per eseguire il backup della tua applicazione su un archivio di oggetti.
@@ -144,6 +147,7 @@ kubectl apply -f object-store-backup-cr.yaml
 
 
 
+[[create-a-3-2-1-fanout-backup-using-a-custom-resource]]
 === Crea un backup 3-2-1 fanout utilizzando una risorsa personalizzata
 
 Il backup con architettura fanout 3-2-1 copia un backup sia su storage secondario che su un archivio di oggetti. Per creare un backup fanout 3-2-1, crea un Backup CR con attributi specifici.
@@ -202,6 +206,7 @@ kubectl apply -f 3-2-1-fanout-backup-cr.yaml
 
 
 
+[[supported-backup-annotations]]
 == Annotazioni di backup supportate
 
 La tabella seguente descrive le annotazioni che è possibile utilizzare quando si crea un CR di backup.

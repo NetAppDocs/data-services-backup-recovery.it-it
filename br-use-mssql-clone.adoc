@@ -34,6 +34,7 @@ Scegli tra i seguenti tipi di cloni:
 
 
 
+[[create-a-clone]]
 == Crea un clone
 
 È possibile creare un clone dei carichi di lavoro di Microsoft SQL Server.  Un clone è una copia dei dati di origine creata da un backup.  Il clone viene archiviato in un archivio oggetti nel tuo account cloud pubblico o privato.  È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
@@ -105,6 +106,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 
 
 
+[[refresh-a-clone]]
 == Aggiorna un clone
 
 È possibile aggiornare un clone dei carichi di lavoro di Microsoft SQL Server.  L'aggiornamento di un clone comporta l'aggiornamento del clone con i dati più recenti dal carico di lavoro di origine.  Questa opzione è utile se si desidera mantenere il clone aggiornato con il carico di lavoro di origine.
@@ -135,6 +137,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 
 
 
+[[skip-a-clone-refresh]]
 == Salta un aggiornamento clone
 
 Salta l'aggiornamento del clone per mantenerlo invariato.
@@ -153,6 +156,7 @@ Salta l'aggiornamento del clone per mantenerlo invariato.
 
 
 
+[[split-a-clone]]
 == Dividi un clone
 
 È possibile suddividere un clone dei carichi di lavoro di Microsoft SQL Server.  La divisione di un clone crea un nuovo backup dal clone.  Il nuovo backup può essere utilizzato per ripristinare i carichi di lavoro.
@@ -171,6 +175,7 @@ Il clone job non viene rimosso e può essere riutilizzato per altri cloni.
 
 
 
+[[delete-a-clone]]
 == Elimina un clone
 
 È possibile eliminare un clone dei carichi di lavoro di Microsoft SQL Server.  L'eliminazione di un clone rimuove il clone dall'archivio oggetti e libera spazio di archiviazione.

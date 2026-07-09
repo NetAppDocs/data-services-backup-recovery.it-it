@@ -20,10 +20,12 @@ Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery.
 
 
 
+[[available-preview-features]]
 == Funzionalità di anteprima disponibili
 
 È possibile abilitare le seguenti funzionalità di anteprima per NetApp Backup and Recovery.
 
+[[anchor-flags]]
 [cols="50,50"]
 |===
 | Flag di funzionalità | Descrizione della funzionalità 
@@ -36,6 +38,7 @@ Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery.
 |===
 
 
+[[enable-preview-features]]
 == Abilita le funzionalità di anteprima
 
 Abilita le opzioni del flag di anteprima per utilizzare funzionalità non ancora generalmente disponibili. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
@@ -116,6 +119,7 @@ NOTE: Per disabilitare una funzione di anteprima, segui gli stessi passaggi ma i
 
 
 
+[[disable-indexing-for-volumes]]
 == Disabilita indicizzazione per i volumi
 
 Disabilita indicizzazione per volumi specifici o per tutti i volumi appartenenti a una o più storage VM utilizzando i seguenti flag di opzione:
