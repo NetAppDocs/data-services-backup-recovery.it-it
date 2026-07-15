@@ -23,7 +23,7 @@ summary: È possibile gestire gli snapshot di Microsoft SQL Server eliminandoli 
 
 È possibile eliminare solo gli snapshot locali.
 
-*Ruolo NetApp Console obbligatorio* Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery, admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.

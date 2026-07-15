@@ -22,7 +22,7 @@ Per i dettagli sulle azioni che ogni ruolo può eseguire, vederelink:reference-r
 
 Per accedere alla NetApp Console, puoi utilizzare le credenziali del sito di supporto NetApp oppure registrarti per accedere alla NetApp Console utilizzando il tuo indirizzo email e una password. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^] .
 
-*Ruolo NetApp Console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di ripristino di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto nella NetApp Console* Ruolo di super amministratore di Backup e Recovery o ruolo di amministratore di ripristino di Backup e Recovery. Se proteggi dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
 
 Per aggiungere un agente Console, è necessario disporre del ruolo di super amministratore di Backup e ripristino.
 

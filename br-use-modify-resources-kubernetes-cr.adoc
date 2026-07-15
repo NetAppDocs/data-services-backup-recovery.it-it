@@ -16,7 +16,7 @@ summary: Modifica le risorse durante le operazioni di ripristino in NetApp Backu
 [role="lead"]
 Le trasformazioni delle risorse consentono di modificare una risorsa durante il ripristino. Ciò è utile quando la versione ripristinata deve essere diversa dall'originale, ad esempio modificando l'indirizzo IP di una macchina virtuale durante il ripristino in una rete diversa. È inoltre possibile link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["modifica le risorse durante il ripristino tramite l'interfaccia utente web"^].
 
-*Ruolo richiesto NetApp Console* Super amministratore di Backup and Recovery o amministratore di ripristino di Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo richiesto nella NetApp Console* Super admin di Backup and Recovery o admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

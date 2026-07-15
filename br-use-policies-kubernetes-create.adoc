@@ -53,7 +53,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 
 È possibile creare policy che regolano gli snapshot locali, le repliche su storage secondario e i backup su storage di oggetti. Una parte della strategia 3-2-1 prevede la creazione di uno snapshot delle istanze, dei database, delle applicazioni o delle VM sul sistema di archiviazione *primario*.
 
-*Ruolo richiesto NetApp Console * Visualizzatore di storage, super amministratore di backup e ripristino, amministratore di backup di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo della console NetApp richiesto* Visualizzatore di storage, Super admin di Backup and Recovery, Admin di backup di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
 Se si prevede di replicare su un archivio secondario e si desidera utilizzare il blocco degli snapshot sugli snapshot locali o sull'archivio secondario ONTAP remoto, è necessario innanzitutto inizializzare il clock di conformità ONTAP a livello di cluster.  Questo è un requisito per abilitare il blocco degli snapshot nella policy.
@@ -130,7 +130,7 @@ Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti
 Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
 
 .Ruolo richiesto NetApp Console
-Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+Super amministratore di backup e ripristino. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è necessario anche il ruolo di Cloud Volumes ONTAP Admin https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Nella NetApp Console, vai su *Protezione* > *Backup e ripristino*.

@@ -14,7 +14,7 @@ summary: Crea report di protezione per i carichi di lavoro Kubernetes per visual
 [role="lead"]
 In NetApp Backup and Recovery, crea report di protezione per i carichi di lavoro Kubernetes per visualizzare lo stato e i dettagli della protezione, inclusi il conteggio dei backup riusciti e non riusciti, i tipi di backup, le informazioni sullo stato del cluster e altro ancora.
 
-*Ruolo NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

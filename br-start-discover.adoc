@@ -16,7 +16,7 @@ summary: Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima
 [role="lead"]
 Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima rilevare i carichi di lavoro di Microsoft SQL Server.  Se lo hai già SnapCenter , puoi facoltativamente importare dati di backup e policy da SnapCenter .
 
-*Ruolo richiesto NetApp Console * Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
