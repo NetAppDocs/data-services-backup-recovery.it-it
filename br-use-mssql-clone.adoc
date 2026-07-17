@@ -161,7 +161,7 @@ Salta l'aggiornamento del clone per mantenerlo invariato.
 
 È possibile suddividere un clone dei carichi di lavoro di Microsoft SQL Server.  La divisione di un clone crea un nuovo backup dal clone.  Il nuovo backup può essere utilizzato per ripristinare i carichi di lavoro.
 
-È possibile scegliere di dividere un clone in cloni indipendenti o a lungo termine.  Una procedura guidata mostra l'elenco degli aggregati che fanno parte dell'SVM, le loro dimensioni e dove risiede il volume clonato.  NetApp Backup and Recovery indica anche se c'è abbastanza spazio per dividere il clone.  Dopo essere stato diviso, il clone diventa un database indipendente a scopo di protezione.
+Puoi scegliere di suddividere un clone come clone indipendente o a lungo termine. Una procedura guidata mostra l'elenco degli aggregati che fanno parte della storage VM, le loro dimensioni e dove si trova il volume clonato. NetApp Backup and Recovery indica anche se c'è spazio sufficiente per suddividere il clone. Dopo che il clone è stato suddiviso, il clone diventa un database indipendente per la protezione.
 
 Il clone job non viene rimosso e può essere riutilizzato per altri cloni.
 

@@ -14,7 +14,7 @@ summary: Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Sfo
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Browse & Restore. Prima di effettuare il ripristino, annotare il nome del volume di origine, il sistema di origine e l'SVM, nonché la data del file di backup. È possibile ripristinare i dati ONTAP da uno snapshot, da un volume replicato o da backup archiviati nell'archiviazione di oggetti.
+Con NetApp Backup and Recovery, puoi ripristinare i dati ONTAP utilizzando Sfoglia e Ripristina. Prima di ripristinare, annota il nome del volume di origine, il sistema di origine, la storage VM e la data del file di backup. Puoi ripristinare i dati ONTAP da una Snapshot, da un volume replicato o da backup archiviati nello storage a oggetti.
 
 Le capacità di ripristino dipendono dalla versione ONTAP :
 

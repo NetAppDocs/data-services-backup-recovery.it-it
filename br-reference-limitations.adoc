@@ -73,7 +73,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 +
 ** I backup sono supportati solo dal dispositivo secondario ONTAP .
 ** La policy Snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, tra cui giornaliera, settimanale, mensile, ecc. La policy predefinita "sm_created" (utilizzata per *Mirror All Snapshots*) non viene riconosciuta e il volume DP non verrà visualizzato nell'elenco dei volumi di cui è possibile eseguire il backup.
-** Il backup e il ripristino di SVM-DR e del volume funzionano in modo completamente indipendente quando il backup viene eseguito dall'origine o dalla destinazione.  L'unica limitazione è che SVM-DR non replica la relazione cloud SnapMirror .  Nello scenario DR, quando l'SVM va online nella posizione secondaria, è necessario aggiornare manualmente la relazione cloud SnapMirror .
+** SVM-DR e il backup e ripristino dei volumi funzionano in modo completamente indipendente quando il backup viene eseguito sia dal sistema di origine che dalla destinazione. L'unica limitazione è che SVM-DR non replica la relazione SnapMirror cloud. Nello scenario di disaster recovery, quando la storage VM viene attivata nella posizione secondaria, devi aggiornare manualmente la relazione SnapMirror cloud.
 
 
 * Supporto MetroCluster :

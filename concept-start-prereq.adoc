@@ -87,6 +87,7 @@ Per utilizzare NetApp Backup e ripristino per i carichi di lavoro dei volumi ONT
 * È richiesto ONTAP 9.8 o versioni successive.
 * ONTAP 9.12.1 o versioni successive è richiesto per la protezione dei volumi FlexGroup. Consulta link:br-reference-limitations.html["Limitazioni note con NetApp Backup and Recovery per volumi ONTAP"] per maggiori informazioni.
 * ONTAP 9.17.1 o versioni successive sono necessarie per eseguire il backup o il ripristino su storage a oggetti compatibile con S3.
+* Per utilizzare più di 6 bucket per sistema su diversi provider cloud (fino a 100 bucket supportati), è necessario ONTAP 9.19.1 o versioni successive.
 * Sull'istanza ONTAP locale deve essere abilitata una licenza ONTAP One.
 
 

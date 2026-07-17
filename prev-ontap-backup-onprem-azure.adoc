@@ -426,7 +426,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 
 . *Replica*: Imposta le seguenti opzioni:
 +
-** *Destinazione di replica*: selezionare il sistema di destinazione e l'SVM.  Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o il suffisso che verranno aggiunti al nome del volume replicato.
+** *Destinazione di replica*: selezionare il sistema di destinazione e la VM di archiviazione. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o il suffisso che verranno aggiunti al nome del volume replicato.
 ** *Criterio di replicazione*: scegli un criterio di replicazione esistente o creane uno nuovo.
 +
 

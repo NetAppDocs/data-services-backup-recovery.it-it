@@ -43,7 +43,7 @@ NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi ope
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
-. Per visualizzare colonne aggiuntive (Sistema, SVM, Nome utente, Carico di lavoro, Nome policy, Etichetta snapshot), selezionare il segno più.
+. Per visualizzare colonne aggiuntive (Sistema, storage VM, Nome utente, Carico di lavoro, Nome criterio, Etichetta Snapshot), seleziona il segno più.
 
 
 
@@ -75,7 +75,7 @@ La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavor
 +
 [TIP]
 ====
-** È possibile cercare dati all'interno di uno specifico "SVM" solo se prima è stato selezionato un sistema.
+** Puoi cercare dati all'interno di una specifica macchina virtuale di storage solo se hai prima selezionato un sistema.
 ** È possibile effettuare la ricerca utilizzando il filtro "Tipo di protezione" solo se è stato selezionato il "Tipo" di "Protezione".
 
 
@@ -92,7 +92,7 @@ La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavor
 
 È possibile visualizzare dettagli quali tipo di processo (pianificato o su richiesta), tipo di backup SnapMirror (iniziale o periodico), orari di inizio e fine, durata, quantità di dati trasferiti dal sistema all'archiviazione degli oggetti, velocità di trasferimento media, nome della policy, blocco di conservazione abilitato, scansione ransomware eseguita, dettagli sull'origine della protezione e dettagli sulla destinazione della protezione.
 
-I processi di ripristino mostrano dettagli quali il provider di destinazione del backup (Amazon Web Services, Microsoft Azure, Google Cloud, locale), il nome del bucket S3, il nome della SVM, il nome del volume di origine, il volume di destinazione, l'etichetta dello snapshot, il conteggio degli oggetti recuperati, i nomi dei file, le dimensioni dei file, la data dell'ultima modifica e il percorso completo del file.
+I dettagli relativi ai processi di ripristino includono il provider di destinazione del backup (Amazon Web Services, Microsoft Azure, Google Cloud, on-premises), il nome del bucket S3, il nome della storage VM, il nome del volume di origine, volume di destinazione, l'etichetta dello Snapshot, il numero di oggetti recuperati, i nomi dei file, le dimensioni dei file, la data dell'ultima modifica e il percorso completo del file.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.

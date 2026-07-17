@@ -18,7 +18,6 @@ Puoi ottenere la licenza NetApp Backup and Recovery acquistando un abbonamento a
 
 Alcune note prima di proseguire nella lettura:
 
-* Se hai già sottoscritto un abbonamento pay-as-you-go (PAYGO) nel marketplace del tuo provider cloud per un sistema Cloud Volumes ONTAP , sarai automaticamente abbonato anche a NetApp Backup and Recovery .  Non sarà necessario abbonarsi nuovamente.
 * La licenza BYOL (Bring Your Own License) NetApp Backup and Recovery è una licenza mobile che puoi utilizzare su tutti i sistemi associati alla tua organizzazione o al tuo account NetApp Console .  Pertanto, se si dispone di una capacità di backup sufficiente da una licenza BYOL esistente, non sarà necessario acquistare un'altra licenza BYOL.
 * Se si utilizza una licenza BYOL, si consiglia di sottoscrivere anche un abbonamento PAYGO.  Se esegui il backup di più dati di quelli consentiti dalla tua licenza BYOL o se scade il termine della tua licenza, il backup continua tramite l'abbonamento a consumo, senza alcuna interruzione del servizio.
 * Quando si esegue il backup dei dati ONTAP on-premise su StorageGRID, è necessaria una licenza BYOL, ma non vi sono costi per lo spazio di archiviazione del provider cloud.

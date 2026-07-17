@@ -25,14 +25,12 @@ Questa versione NetApp Backup and Recovery include i seguenti aggiornamenti.
 
 
 
-[[ontap-volumes-workloads-enhancements]]
-=== Miglioramenti dei carichi di lavoro di ONTAP Volumes
+[[enhanced-multi-bucket-support-for-all-workloads]]
+=== Supporto multi-bucket migliorato per tutti i carichi di lavoro
 
-In questa versione, i carichi di lavoro ONTAP Volumes introducono il seguente miglioramento:
+In questa versione di backup e ripristino, puoi ora proteggere i carichi di lavoro all'interno di un sistema con fino a 100 bucket per sistema, su diversi provider cloud.
 
-*Supporto multi-bucket migliorato*: a partire da ONTAP 9.19.1 e versioni successive, ora puoi proteggere i volumi all'interno di un sistema con un massimo di 100 bucket per sistema su diversi cloud provider.
-
-Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Volumes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Panoramica dei carichi di lavoro di Protect ONTAP Volumes"].
+Per dettagli su NetApp Backup e ripristino, consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"].
 
 
 

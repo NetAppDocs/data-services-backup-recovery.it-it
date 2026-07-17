@@ -73,9 +73,6 @@ sidebar:
         url: "/prev-ontap-policy-object-advanced-settings.html"
       - title: Backup Cloud Volumes ONTAP su Amazon S3
         url: "/prev-ontap-backup-cvo-aws.html"
-      - title: Eseguire il backup di Cloud Volumes ONTAP su storage compatibile con
-          S3
-        url: "/prev-ontap-backup-cvo-s3-compatible.html"
       - title: Eseguire il backup Cloud Volumes ONTAP su Azure Blob
         url: "/prev-ontap-backup-cvo-azure.html"
       - title: Esegui il backup Cloud Volumes ONTAP su Google Cloud
@@ -88,6 +85,9 @@ sidebar:
         url: "/prev-ontap-backup-onprem-gcp.html"
       - title: Eseguire il backup ONTAP in sede su ONTAP S3
         url: "/prev-ontap-backup-onprem-ontaps3.html"
+      - title: Esegui il backup di ONTAP on-premises su uno storage compatibile con
+          S3
+        url: "/prev-ontap-backup-onprem-s3-compatible.html"
       - title: Backup di ONTAP in locale su StorageGRID
         url: "/prev-ontap-backup-onprem-storagegrid.html"
       - title: Migrare i volumi utilizzando SnapMirror su Cloud Resync
