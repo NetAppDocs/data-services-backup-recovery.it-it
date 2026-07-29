@@ -36,7 +36,6 @@ Nota quanto segue durante il ripristino di file e cartelle:
 [NOTE]
 ====
 * Al momento non è possibile ripristinare file e cartelle su macchine virtuali guest Linux.
-* Il ripristino di file e cartelle da backup archiviati su storage a oggetti non è supportato.
 * Su una VM è possibile eseguire solo un'operazione di collegamento o ripristino alla volta. Non è possibile eseguire operazioni di collegamento o ripristino parallele sulla stessa VM.
 * La visualizzazione o l'esplorazione di partizioni riservate potrebbe causare un errore.
 * Durante l'operazione di ripristino, gli attributi nascosto, di sistema e crittografato dei file guest non vengono mantenuti nel file ripristinato.
