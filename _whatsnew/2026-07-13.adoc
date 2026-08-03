@@ -7,6 +7,6 @@
 [[enhanced-multi-bucket-support-for-all-workloads]]
 === Supporto multi-bucket migliorato per tutti i carichi di lavoro
 
-In questa versione di backup e ripristino, puoi ora proteggere i carichi di lavoro all'interno di un sistema con fino a 100 bucket per sistema, su diversi provider cloud.
+NetApp Backup and Recovery ora supporta la protezione dei carichi di lavoro all'interno di un sistema con un massimo di 100 bucket distribuiti su diversi provider cloud. Per supportare più di 6 bucket per sistema è necessario ONTAP 9.19.1 o versioni successive.
 
 Per dettagli su NetApp Backup e ripristino, consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"].
