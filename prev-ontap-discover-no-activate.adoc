@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-discover-no-activate.html 
+keywords: activate, backup and recovery, volumes, back up, discover 
+summary: Scopri sistemi e volumi senza attivare NetApp Backup and Recovery. 
+---
+= Scopri sistemi e volumi ONTAP senza attivazione
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi individuare sistemi e volumi sia quando attivi NetApp Backup and Recovery per i volumi, sia prima di attivare NetApp Backup and Recovery. Se individui volumi senza attivazione, non puoi proteggerli finché non attivi Backup and Recovery per loro.
+
+.Passi
+. Vai su *Protezione > Backup and Recovery*.
+. Seleziona il riquadro *Volumi*.
++
+Viene visualizzata la dashboard dei volumi.
+
+. Seleziona *Discover systems*.
+. Nell'elenco, seleziona tutti i sistemi di cui vuoi scoprire i volumi.
+. Seleziona *Scopri*.
+. In NetApp Backup and Recovery, seleziona *Inventario*.
++
+Il processo di rilevamento ha inizio. Puoi vedere lo stato e il risultato del rilevamento nel Job Monitor.
+
+

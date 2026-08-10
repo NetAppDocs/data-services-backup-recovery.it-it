@@ -18,6 +18,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 Le seguenti azioni non sono supportate nei carichi di lavoro VMware in NetApp Backup and Recovery:
 
+* Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Supporto vVol
 * Integrazione e-mail
 * Supporto per il controllo degli accessi basato sui ruoli (RBAC)

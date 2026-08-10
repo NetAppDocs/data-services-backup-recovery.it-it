@@ -14,10 +14,12 @@ summary: Puoi ottenere la licenza NetApp Backup and Recovery acquistando un abbo
 
 
 [role="lead"]
-Puoi ottenere la licenza NetApp Backup and Recovery acquistando un abbonamento annuale o pay-as-you-go (PAYGO) a * NetApp Intelligent Services* dal tuo provider cloud oppure acquistando una licenza bring-your-own (BYOL) da NetApp.  Per attivare NetApp Backup and Recovery su un sistema, creare backup dei dati di produzione e ripristinare i dati di backup su un sistema di produzione è necessaria una licenza valida.
+A seconda che tu stia usando NetApp Console o NetApp Console (deployement locale), puoi ottenere la licenza per NetApp Backup and Recovery acquistando un abbonamento pay-as-you-go (PAYGO) o annuale al marketplace per *NetApp Intelligent Services* dal tuo cloud provider, oppure acquistando una bring-your-own-license (BYOL) da NetApp. È necessaria una licenza valida per attivare NetApp Backup and Recovery su un sistema, per creare backup dei tuoi dati di produzione e per ripristinare i dati di backup su un sistema di produzione.
 
 Alcune note prima di proseguire nella lettura:
 
+* Se usi Backup and Recovery con NetApp Console, puoi abbonarti alla licenza pay-as-you-go (PAYGO) oppure acquistare una licenza bring-your-own-license (BYOL).
+* Se usi Backup and Recovery con la distribuzione locale di NetApp Console, puoi acquistare solo una licenza bring-your-own-license (BYOL).
 * La licenza BYOL (Bring Your Own License) NetApp Backup and Recovery è una licenza mobile che puoi utilizzare su tutti i sistemi associati alla tua organizzazione o al tuo account NetApp Console .  Pertanto, se si dispone di una capacità di backup sufficiente da una licenza BYOL esistente, non sarà necessario acquistare un'altra licenza BYOL.
 * Se si utilizza una licenza BYOL, si consiglia di sottoscrivere anche un abbonamento PAYGO.  Se esegui il backup di più dati di quelli consentiti dalla tua licenza BYOL o se scade il termine della tua licenza, il backup continua tramite l'abbonamento a consumo, senza alcuna interruzione del servizio.
 * Quando si esegue il backup dei dati ONTAP on-premise su StorageGRID, è necessaria una licenza BYOL, ma non vi sono costi per lo spazio di archiviazione del provider cloud.
@@ -27,8 +29,15 @@ link:concept-backup-to-cloud.html["Scopri di più sui costi associati all'utiliz
 
 
 
+[[set-up-licensing-for-netapp-backup-and-recovery]]
+== Impostare la licenza per NetApp Backup and Recovery
+
+Configura le licenze per NetApp Backup and Recovery.
+
+
+
 [[30-day-free-trial]]
-== Prova gratuita di 30 giorni
+=== Prova gratuita di 30 giorni
 
 È disponibile una prova gratuita di 30 giorni NetApp Backup and Recovery se sottoscrivi un abbonamento pay-as-you-go nel marketplace del tuo provider cloud a * NetApp Intelligent Services*.  La prova gratuita inizia nel momento in cui ti iscrivi all'elenco del marketplace.  Tieni presente che se paghi l'abbonamento al marketplace quando distribuisci un sistema Cloud Volumes ONTAP e poi avvii la prova gratuita NetApp Backup and Recovery 10 giorni dopo, avrai 20 giorni rimanenti per utilizzare la prova gratuita.
 
@@ -36,8 +45,7 @@ Al termine del periodo di prova gratuito, passerai automaticamente all'abbonamen
 
 
 
-[[end-the-free-trial]]
-=== Termina la prova gratuita
+==== Termina la prova gratuita
 
 Se desideri continuare a utilizzare NetApp Backup and Recovery dopo la scadenza del periodo di prova gratuito, devi sottoscrivere un abbonamento a pagamento.  Puoi farlo dall'interfaccia della NetApp Console andando alla sezione fatturazione e selezionando un piano di abbonamento adatto alle tue esigenze.  Se non desideri continuare a utilizzare NetApp Backup and Recovery, puoi interrompere la prova gratuita.
 
@@ -54,7 +62,7 @@ Se termini il periodo di prova gratuito senza sottoscrivere un piano a pagamento
 
 
 [[use-a-netapp-backup-and-recovery-paygo-subscription]]
-== Utilizzare un abbonamento NetApp Backup and Recovery PAYGO
+=== Utilizzare un abbonamento NetApp Backup and Recovery PAYGO
 
 Con il pagamento in base al consumo, pagherai al tuo provider cloud i costi di archiviazione degli oggetti e i costi di licenza del backup NetApp su base oraria in un unico abbonamento.  Dovresti abbonarti a * NetApp Intelligent Services* nel Marketplace anche se hai una prova gratuita o se porti la tua licenza (BYOL):
 
@@ -84,8 +92,8 @@ Utilizza questi link per abbonarti a NetApp Backup and Recovery dal marketplace 
 
 
 
-[[use-an-annual-contract]]
-== Utilizzare un contratto annuale
+[[use-an-annual-contract-with-marketplace-or-byol-licenses]]
+=== Utilizza un contratto annuale con licenze marketplace o BYOL
 
 Paga annualmente NetApp Backup and Recovery acquistando un contratto annuale.  Sono disponibili con durata di 1, 2 o 3 anni.
 
@@ -128,7 +136,7 @@ Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il 
 
 
 [[use-a-netapp-backup-and-recovery-byol-license]]
-== Utilizzare una licenza BYOL NetApp Backup and Recovery
+=== Utilizzare una licenza BYOL NetApp Backup and Recovery
 
 Le licenze Bring-your-own di NetApp sono disponibili con durata di 1, 2 o 3 anni.  Si paga solo per i dati che si proteggono, calcolati in base alla capacità logica utilizzata (prima di qualsiasi efficienza) dei volumi ONTAP di origine sottoposti a backup.  Questa capacità è nota anche come Front-End Terabyte (FETB).
 
@@ -139,6 +147,30 @@ Se non si dispone di una licenza BYOL NetApp Backup and Recovery , fare clic sul
 Facoltativamente, se disponi di una licenza basata su nodi non assegnata per Cloud Volumes ONTAP che non utilizzerai, puoi convertirla in una licenza NetApp Backup and Recovery con lo stesso equivalente in dollari e la stessa data di scadenza. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vai qui per i dettagli"^] .
 
 Per gestire le licenze BYOL è possibile utilizzare la NetApp Console .  È possibile aggiungere nuove licenze, aggiornare quelle esistenti e visualizzare lo stato delle licenze dalla Console.
+
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Scopri come aggiungere licenze"^].
+
+
+
+[[set-up-licensing-for-for-netapp-backup-and-recovery-local-deployment]]
+== Configura le licenze per la distribuzione locale di NetApp Backup and Recovery
+
+Configura le licenze per la versione locale di NetApp Console.
+
+
+
+[[use-a-netapp-backup-and-recovery-byol-license]]
+=== Utilizzare una licenza BYOL NetApp Backup and Recovery
+
+Le licenze Bring-your-own di NetApp sono disponibili con durata di 1, 2 o 3 anni.  Si paga solo per i dati che si proteggono, calcolati in base alla capacità logica utilizzata (prima di qualsiasi efficienza) dei volumi ONTAP di origine sottoposti a backup.  Questa capacità è nota anche come Front-End Terabyte (FETB).
+
+La licenza BYOL NetApp Backup and Recovery è una licenza mobile in cui la capacità totale è condivisa tra tutti i sistemi associati all'organizzazione o all'account NetApp Console .  Per i sistemi ONTAP , è possibile ottenere una stima approssimativa della capacità necessaria eseguendo il comando CLI `volume show -fields logical-used-by-afs` per i volumi di cui si intende eseguire il backup.
+
+Se non si dispone di una licenza BYOL NetApp Backup and Recovery , fare clic sull'icona della chat in basso a destra della Console per acquistarne una.
+
+Facoltativamente, se disponi di una licenza basata su nodi non assegnata per Cloud Volumes ONTAP che non utilizzerai, puoi convertirla in una licenza NetApp Backup and Recovery con lo stesso equivalente in dollari e la stessa data di scadenza. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vai qui per i dettagli"^] .
+
+Usi la distribuzione locale della NetApp Console per gestire le licenze BYOL. Puoi aggiungere nuove licenze, aggiornare quelle esistenti e visualizzare lo stato delle licenze dalla Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Scopri come aggiungere licenze"^].
 

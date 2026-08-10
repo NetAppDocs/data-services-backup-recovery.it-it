@@ -18,5 +18,6 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 La seguente azione non è supportata nella versione di anteprima dei carichi di lavoro di Oracle Database in NetApp Backup and Recovery:
 
+* Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Backup offline
 

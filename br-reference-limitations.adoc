@@ -55,6 +55,7 @@ Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi F
 [[backup-to-object-limitations-for-ontap-volumes]]
 == Limitazioni del backup su oggetto per i volumi ONTAP
 
+* Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Durante il backup dei dati, NetApp Backup and Recovery non manterrà la crittografia NetApp Volume Encryption (NVE).  Ciò significa che i dati crittografati sul volume NVE verranno decrittografati durante il trasferimento dei dati alla destinazione e la crittografia non verrà mantenuta.
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione della crittografia del volume NetApp"^] .

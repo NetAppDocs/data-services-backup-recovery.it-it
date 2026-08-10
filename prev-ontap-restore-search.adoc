@@ -229,7 +229,7 @@ Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
 ** `volume name` è il volume sul cluster in cui verranno archiviati i file di catalogo
 ** `/opt/application/netapp/cbs` è il percorso in cui viene montato
 +
-[source, console]
+[source, shell]
 ----
 mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 ----
@@ -237,7 +237,7 @@ mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
 Esempio:
 
 +
-[source, console]
+[source, shell]
 ----
 mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
 ----

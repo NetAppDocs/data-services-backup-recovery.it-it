@@ -47,13 +47,13 @@ Abilita le opzioni del flag di anteprima per utilizzare funzionalità non ancora
 . Utilizza SSH per accedere all'agente della console.
 . Passa all'utente root:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Individua il volume di Backup and Recovery in Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -67,7 +67,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Individua il punto di montaggio del volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -81,7 +81,7 @@ Il punto di montaggio differisce tra le implementazioni cloud e quelle private. 
 ----
 . Passare alla directory di configurazione del volume docker, che si trova all'interno della directory del punto di montaggio. Ad esempio:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
 ----
@@ -106,7 +106,7 @@ Consultare la documentazione <<anchor-flags,flag disponibili>> per informazioni 
 
 . Riavvia il container NetApp Backup and Recovery:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -132,13 +132,13 @@ Disabilita indicizzazione per volumi specifici o per tutti i volumi appartenenti
 . Utilizza SSH per accedere all'agente della console.
 . Passa all'utente root:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Individua il volume di Backup and Recovery in Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -152,7 +152,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Individua il punto di montaggio del volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -166,7 +166,7 @@ Il punto di montaggio differisce tra le implementazioni cloud e quelle private. 
 ----
 . Passare alla directory di configurazione del volume docker, che si trova all'interno della directory del punto di montaggio. Ad esempio:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
@@ -183,7 +183,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 ----
 . Riavviare il container del catalogo di indicizzazione di Backup and Recovery:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

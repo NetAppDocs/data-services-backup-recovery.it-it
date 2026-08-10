@@ -247,6 +247,8 @@ Per ricevere gli avvisi e-mail NetApp Backup and Recovery , è necessario selezi
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri come inviare email di avviso per i processi di backup e ripristino"^].
 
+https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Configura le regole di notifica per gli avvisi nella distribuzione locale di NetApp Console"^].
+
 .Passi
 . Dal menu Console, selezionare (image:icon_bell.png["campanello di notifica"] ).
 . Controlla le notifiche.

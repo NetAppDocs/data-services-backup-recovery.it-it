@@ -23,7 +23,7 @@ NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di
 [[discover-kubernetes-workloads]]
 == Scopri i carichi di lavoro di Kubernetes
 
-Nell'inventario di backup e ripristino, scopri i carichi di lavoro Kubernetes nel tuo ambiente.  L'aggiunta di un carico di lavoro aggiunge un cluster Kubernetes a NetApp Backup and Recovery.  È quindi possibile aggiungere applicazioni e proteggere le risorse del cluster.
+Nell'inventario di Backup and Recovery, scopri i carichi di lavoro Kubernetes nel tuo ambiente. Aggiungendo un carico di lavoro aggiungi un cluster Kubernetes a NetApp Backup and Recovery. Puoi quindi aggiungere applicazioni e proteggere le risorse del cluster. Puoi anche scoprire risorse Kubernetes locali isolate (air-gapped) usando la distribuzione locale di NetApp Console.
 
 [NOTE]
 ====
@@ -39,18 +39,45 @@ Quando si rileva un cluster attualmente protetto con Trident Protect, tutte le p
 
 . Selezionare il tipo di carico di lavoro *Kubernetes*.
 . Inserisci un nome cluster e scegli un agente Console da usare con il cluster.
-. Seguire le istruzioni della riga di comando che appaiono:
 +
-** Crea uno spazio dei nomi Trident Protect
-** Crea un segreto Kubernetes
-** Aggiungi un repository Helm
-** Installa o aggiorna Trident Protect e il connettore Trident Protect
+Backup and Recovery fornisce istruzioni che cambiano a seconda del tipo di installazione che scegli. Se usi la distribuzione locale di NetApp Console, puoi scegliere istruzioni che ti permettono di individuare risorse air-gapped senza connettività di rete esterna.
+
+. Scegli un tipo di installazione per visualizzare le istruzioni per installare Trident Protect sul tuo cluster Kubernetes:
 +
-Questi passaggi garantiscono che NetApp Backup and Recovery possa interagire con il cluster.
+** Seleziona *Connesso* per individuare i cluster che hanno connettività di rete esterna.
+** Seleziona *Air-gapped* per individuare i cluster privi di connettività di rete esterna.
++
+[role="tabbed-block"]
+====
+.Scoperta connessa
+--
+... Segui le istruzioni della riga di comando visualizzate in Backup and Recovery. Questi passaggi garantiscono che Backup and Recovery possa interagire con il cluster.
 
 
+--
+.Scoperta air-gapped
+--
+... Inserisci l'URL del tuo registro di container Docker privato. Questo registro viene utilizzato per scaricare le immagini di Trident Protect e Trident Protect Connector durante l'installazione.
+... Se il tuo container registry privato richiede l'autenticazione, usa uno dei seguenti metodi per configurare le credenziali del registry:
++
+**** *Autenticazione a livello di nodo*: configura le credenziali del registro nel runtime del container su ciascun nodo. Una volta configurato, tutti i pod possono scaricare le immagini senza richiedere ulteriori impostazioni Helm.
+**** *Segreto per il pull dell'immagine Kubernetes*: Crea un segreto per il pull dell'immagine Kubernetes nel  `trident-protect` namespace, quindi fai riferimento ad esso durante la fase di upgrade di Helm nelle istruzioni di installazione di Trident Protect:
++
+[source, console]
+----
+--set trident-protect.imagePullSecrets[0].name=<pull-secret-name>
+--set connector.imagePullSecrets[0].name=<pull-secret-name>
+----
 
-. Dopo aver completato i passaggi, seleziona *Scopri*.
+
+... Segui le istruzioni della riga di comando visualizzate in NetApp Backup and Recovery, aggiungendo le informazioni dell'image pull secret durante la fase Helm (se necessario). Questi passaggi garantiscono che NetApp Backup and Recovery possa interagire con il cluster.
+
+
+--
+====
+
+
+. Dopo aver completato i passaggi di installazione di Trident Protect, seleziona *Scopri*.
 +
 Il cluster viene aggiunto all'inventario.
 
@@ -65,7 +92,7 @@ Il cluster viene aggiunto all'inventario.
 Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.
 
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
-. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Seleziona il riquadro del carico di lavoro Kubernetes.
 . Dal menu Backup e ripristino, seleziona *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 +

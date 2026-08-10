@@ -18,13 +18,22 @@ Prima di iniziare a utilizzare NetApp Backup and Recovery, assicurati che la Net
 
 
 
-[[prepare-netapp-console]]
-== Preparare NetApp Console
+[[prepare-to-use-netapp-backup-and-recovery]]
+== Preparati a utilizzare NetApp Backup and Recovery
 
-È possibile accedere a NetApp Backup e Ripristino tramite NetApp Console. Per preparare la Console per Backup e Ripristino, è necessario:
+Accedi a NetApp Backup and Recovery tramite NetApp Console. Esegui queste operazioni per preparare la Console per Backup and Recovery, a seconda che tu stia usando NetApp Console o NetApp Console distribuzione locale.
 
+
+
+[[prepare-to-use-backup-and-recovery-on-netapp-console]]
+=== Preparati a utilizzare Backup and Recovery su NetApp Console
+
+Per preparare la NetApp Console per Backup and Recovery, devi:
+
+* Completa la configurazione iniziale
 * Aggiungi un agente della console
 * Aggiungere almeno un sistema storage
+* Abilita Backup and Recovery
 * Configurare un'organizzazione Console e i ruoli utente
 
 
@@ -34,17 +43,15 @@ Per ulteriori informazioni su NetApp Console, fare riferimento a  https://docs.n
 
 
 
-[[complete-initial-netapp-console-setup]]
-=== Completa la configurazione iniziale della NetApp Console
+==== Completa la configurazione iniziale della NetApp Console
 
 Completa la configurazione iniziale di NetApp Console se non l'hai già fatto.
 
-https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Flusso di lavoro introduttivo per NetApp Console (applicazione SaaS)"^]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Flusso di lavoro iniziale per NetApp Console"^]
 
 
 
-[[deploy-a-console-agent]]
-=== Distribuisci un agente della Console
+==== Distribuisci un agente della Console
 
 Un agente Console è un componente software leggero che si installa nella rete per connettere l'infrastruttura di storage a NetApp Console. Consente l'orchestrazione avanzata dello storage, i servizi dati e l'integrazione sicura con il cloud.
 
@@ -52,8 +59,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html["Scopri di
 
 
 
-[[add-a-storage-system]]
-=== Aggiungi un sistema storage
+==== Aggiungi un sistema storage
 
 Prima di poter proteggere i carichi di lavoro in NetApp Backup and Recovery, è necessario aggiungere un sistema storage ONTAP alla NetApp Console.
 
@@ -61,12 +67,79 @@ https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-o
 
 
 
-[[configure-an-organization-and-user-roles]]
-=== Configurare un'organizzazione e i ruoli utente
+==== Abilita backup e ripristino nella NetApp Console
 
-Acquisisci informazioni su organizzazioni, progetti e ruoli utente, quindi configura gli utenti con le autorizzazioni appropriate necessarie per svolgere i loro compiti.
+Puoi abilitare Backup and Recovery su un sistema quando lo aggiungi o in un secondo momento.
 
-Consultare  https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html["Aggiungere utenti a un'organizzazione NetApp Console"] per informazioni sull'utilizzo di un'organizzazione e di progetti per il controllo dell'accesso alle risorse.
+link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console["Abilita Backup and Recovery per un sistema"^].
+
+
+
+==== Configurare un'organizzazione e i ruoli utente
+
+Scopri organizzazioni, progetti, flotte e ruoli utente, poi configura gli utenti con le autorizzazioni appropriate necessarie per svolgere i loro compiti.
+
+Consulta  https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html["Aggiungere utenti a un'organizzazione NetApp Console"] per informazioni su come controllare l'accesso alle risorse.
+
+Consultare  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"] per i dettagli sui ruoli e le autorizzazioni necessari per eseguire operazioni in NetApp Backup and Recovery.
+
+
+
+[[prepare-to-use-backup-and-recovery-on-netapp-console-local-deployment]]
+=== Preparati a utilizzare Backup and Recovery su NetApp Console in una distribuzione locale
+
+Per prepararti a usare NetApp Backup and Recovery sulla distribuzione locale di NetApp Console, devi:
+
+* Completa la configurazione iniziale di distribuzione locale della NetApp Console
+* Iscriviti per partecipare all'anteprima
+* Aggiungere almeno un sistema storage
+* Abilita Backup and Recovery
+* Concedi l'accesso alle risorse agli utenti
+
+
+Per completare questa preparazione, hai bisogno del ruolo di Organization admin o Super admin nella distribuzione locale di NetApp Console.
+
+Per saperne di più sulla distribuzione locale di NetApp Console, consulta  https://docs.netapp.com/us-en/console-local/concept-netapp-console-local.html["Scopri la distribuzione locale di NetApp Console"^].
+
+
+
+==== Completa la configurazione iniziale di distribuzione locale della NetApp Console
+
+Completa la configurazione iniziale per la distribuzione locale di NetApp Console, se non l'hai già fatto. Completare la configurazione iniziale include l'aggiunta delle licenze per i servizi dati (incluso Backup and Recovery).
+
+https://docs.netapp.com/us-en/console-local/task-quick-start-console-setup.html["Guida introduttiva alla distribuzione locale di NetApp Console"^]
+
+
+
+==== Iscriviti all'anteprima di NetApp Backup and Recovery
+
+Iscriviti all'anteprima di NetApp Backup and Recovery sulla distribuzione locale di NetApp Console:
+
+https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOmNJwiQYiM5EhCH6-tDLH1hUMzBMVUY4Vk5DNDlRRzlKV1dORUlKQkUwNS4u&route=shorturl["Compila il modulo di iscrizione preliminare"^]
+
+
+
+==== Aggiungi un sistema storage
+
+Prima di poter proteggere i carichi di lavoro in NetApp Backup and Recovery, è necessario aggiungere un sistema storage ONTAP alla NetApp Console.
+
+https://docs.netapp.com/us-en/console-local/task-discover-storage.html["Aggiungi spazio di archiviazione nella distribuzione locale di NetApp Console"^]
+
+
+
+==== Abilita Backup and Recovery nella distribuzione locale di NetApp Console
+
+Puoi abilitare Backup and Recovery su un sistema quando lo aggiungi o in un secondo momento.
+
+link:br-start-enable.html#enable-backup-and-recovery-in-netapp-console-local-deployment["Abilita Backup and Recovery per un sistema"^].
+
+
+
+==== Concedi l'accesso alle risorse agli utenti
+
+Approfondisci la gestione delle identità e degli accessi, poi configura gli utenti con le autorizzazioni appropriate necessarie per svolgere i loro compiti.
+
+Consulta  https://docs.netapp.com/us-en/console-local/task-iam-fleet-mgmt-get-started.html["Inizia a utilizzare identità e accesso nella distribuzione locale di NetApp Console"] per informazioni su identità e accesso.
 
 Consultare  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"] per i dettagli sui ruoli e le autorizzazioni necessari per eseguire operazioni in NetApp Backup and Recovery.
 
@@ -139,8 +212,8 @@ Assegnare spazio su disco sufficiente e monitorare il consumo di spazio di archi
 
 
 | Pacchetti software richiesti  a| 
-* ASP.NET Core Runtime 8.0.24 Hosting Bundle (e tutte le patch 8.0.x successive)
-* PowerShell 7.4.13
+* ASP.NET Core Runtime 10.0.10 Hosting Bundle
+* PowerShell 7.6.4
 
 
 Per le informazioni più recenti sulle versioni supportate, vedere https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Strumento matrice di interoperabilità NetApp"^] .
@@ -261,13 +334,13 @@ Per abilitare la protezione delle VM KVM amministrate da utenti non root, attene
 . Montare il volume come tipo NFS3 per evitare l'uso del `nobody` utente e gruppo.
 . Utilizzare il seguente comando per aggiungere un utente non root al `qemu` gruppo pur preservando i loro gruppi esistenti:
 +
-[source, console]
+[source, shell]
 ----
 usermod -aG qemu <non-root-user>
 ----
 . Utilizzare il seguente comando per concedere la proprietà del percorso di montaggio al `qemu` utente e gruppo e modifica i permessi per il percorso di montaggio:
 +
-[source, console]
+[source, shell]
 ----
 chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 ----
@@ -329,8 +402,6 @@ NOTE: Per supportare più di 6 bucket per sistema su diversi provider cloud (fin
 
 Per scoprire le risorse di Kubernetes e proteggere le applicazioni Kubernetes, sono necessari requisiti specifici.
 
-Per i requisiti di NetApp Console, fai riferimento a <<Preparare NetApp Console>>.
-
 
 NOTE: Per supportare più di 6 bucket per sistema su diversi provider cloud (fino a un massimo di 100 bucket) è necessario ONTAP 9.19.1 o versioni successive.
 
@@ -338,8 +409,8 @@ NOTE: Per supportare più di 6 bucket per sistema su diversi provider cloud (fin
 NOTE: NetApp raccomanda vivamente di assegnare un indirizzo IP statico all'agente della Console utilizzato per i carichi di lavoro Kubernetes, per evitare problemi se l'indirizzo IP dell'agente cambia.
 
 * Un sistema ONTAP primario (i sistemi ASA r2 non sono supportati)
-* NetApp Trident 25.02 o versioni successive
-* NetApp Trident Protect 26.05 o versioni successive (installato sul cluster Kubernetes durante la fase di rilevamento)
+* NetApp Trident dalla 25.06 alla 26.02.1
+* NetApp Trident Protect 26.06 (installato sul cluster Kubernetes durante la fase di rilevamento)
 * Un cluster Kubernetes - Le distribuzioni e le versioni di Kubernetes supportate includono quelle supportate da  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect"].
 +
 ** Assicurarsi che la porta TCP 443 non sia filtrata in direzione outbound tra il cluster Kubernetes, il Trident Protect Connector e il Trident Protect proxy.

@@ -49,11 +49,7 @@ Ogni icona è illuminata quando il tipo di backup è attivato, mentre è grigia 
 
 Se hai attivato il backup solo su alcuni volumi di un sistema quando hai abilitato per la prima volta NetApp Backup and Recovery, puoi attivare i backup su volumi aggiuntivi in ​​un secondo momento.
 
-.Passi
-. Dalla scheda *Volumi*, identifica il volume su cui desideri attivare i backup, seleziona il menu Azioni image:icon-action.png["Icona Azioni"] alla fine della riga e seleziona *Attiva protezione 3-2-1*.
-. Nella pagina _Definisci strategia di backup_, seleziona l'architettura di backup, quindi definisci i criteri e altri dettagli per snapshot locali, volumi replicati e file di backup. Consulta i dettagli per le opzioni di backup dai volumi iniziali attivati in questo sistema. Quindi seleziona *Avanti*.
-. Rivedere le impostazioni di backup per questo volume, quindi selezionare *Attiva backup*.
-
+Consulta link:br-start-enable.html["Abilita il backup e il ripristino per proteggere i volumi"^] per le istruzioni.
 
 
 

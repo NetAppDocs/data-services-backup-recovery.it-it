@@ -27,9 +27,14 @@ Per accedere alla NetApp Console, puoi utilizzare le credenziali del sito di sup
 Per aggiungere un agente Console, è necessario disporre del ruolo di super amministratore di Backup e ripristino.
 
 .Passi
-. Apri un browser web e vai su https://console.netapp.com/["NetApp Console"^] .
+. Eseguire una delle seguenti operazioni:
++
+** Se stai utilizzando NetApp Console, apri un browser web e vai a  https://console.netapp.com/["NetApp Console"^].
+** Se stai usando la distribuzione locale di NetApp Console, apri un browser web e vai all'indirizzo IP dell'interfaccia web della tua distribuzione locale di Console.
 +
 Viene visualizzata la pagina di accesso NetApp Console .
+
+
 
 . Accedi alla Console.
 . Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.

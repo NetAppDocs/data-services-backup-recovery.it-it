@@ -1,0 +1,62 @@
+= Miglioramenti generali al backup e al ripristino NetApp
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancements]]
+=== Miglioramenti generali al backup e al ripristino NetApp
+
+* *Supporto per la distribuzione locale di NetApp Console*: questa versione di NetApp Backup and Recovery supporta la distribuzione locale di NetApp Console in stato di anteprima.
+* *Conservazione dei dati relativi ai job per 90 giorni*: NetApp Backup and Recovery ora conserva le informazioni sui job nel Job Monitor per 90 giorni.
+
+
+
+
+[[vmware-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro VMware
+
+In questa versione, VMware workloads introduce i seguenti miglioramenti:
+
+* *Supporto per il ripristino in una posizione alternativa per le VM SAN*: ora puoi ripristinare i backup delle VM basate su SAN in una posizione alternativa.
+* *Supporto per l'eliminazione di più backup*: Ora puoi eliminare più backup contemporaneamente.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro VMware"] .
+
+
+
+[[oracle-database-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro Oracle Database
+
+In questa versione, Oracle Database workloads introduce i seguenti miglioramenti:
+
+* *Ripristino e clonazione di database collegabili (PDB)*: Backup and Recovery per il servizio NetApp Console ora supporta il ripristino e la clonazione di database collegabili.
+
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro del database Oracle"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro Kubernetes
+
+In questa versione, Kubernetes workloads introduce i seguenti miglioramenti:
+
+* *Anteprima del supporto per risorse isolate*: se esegui NetApp Backup and Recovery in una distribuzione locale di NetApp Console, puoi individuare, proteggere e ripristinare risorse Kubernetes isolate. Questa funzionalità è in anteprima per questa versione.
+
+
+Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro di ONTAP Volumes
+
+In questa versione, i carichi di lavoro ONTAP Volumes introducono i seguenti miglioramenti:
+
+* *Dai priorità ai processi di ripristino rispetto ai backup*: Ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini macchine virtuali o file.
+* *Scopri i sistemi e i volumi ONTAP senza attivare NetApp Backup and Recovery*: Ora puoi scoprire sistemi e volumi senza attivare NetApp Backup and Recovery.
+
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Volumes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Panoramica dei carichi di lavoro di Protect ONTAP Volumes"].

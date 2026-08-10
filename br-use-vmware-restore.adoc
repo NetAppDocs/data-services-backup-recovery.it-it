@@ -52,8 +52,6 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 * Quando si ripristina un backup da un archivio di oggetti, è possibile ripristinare i dati nel sistema originale o in un sistema ONTAP locale.
 
 
-Dalla pagina Ripristina (Cerca e ripristina), puoi ripristinare una risorsa cercando lo snapshot con i filtri, anche se non ne ricordi il nome esatto, la posizione o l'ultima data nota.
-
 
 
 [[restore-workload-data-from-the-restore-option-search-restore]]

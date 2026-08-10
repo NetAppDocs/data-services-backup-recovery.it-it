@@ -32,7 +32,7 @@ Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sist
 
 .Passi
 . Dal menu Backup e ripristino, selezionare *Inventario*.
-. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona il carico di lavoro VMware.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Seleziona la voce di menu *Gruppi di protezione*, *Archivi dati*, *Macchine virtuali* o *Tag*.
 . Seleziona il gruppo di protezione, i datastore, le macchine virtuali o le risorse con tag di cui desideri eseguire il backup.
@@ -43,4 +43,39 @@ NOTE: La policy applicata al backup è la stessa policy assegnata al gruppo di p
 
 . Selezionare il livello di pianificazione.
 . Seleziona *Esegui backup ora*.
+
+
+
+
+[[delete-backups]]
+== Elimina i backup
+
+Puoi eliminare i backup locali non più necessari per liberare spazio di storage o soddisfare i requisiti di conservazione dei dati.
+
+.Passi
+. Accedi a NetApp Backup and Recovery e, dalla schermata iniziale, seleziona il riquadro del carico di lavoro VMware.
++
+Viene visualizzata la pagina Inventario VMware.
+
+. Seleziona la voce *Macchine virtuali*.
+. Nell'elenco delle macchine virtuali, scegli una macchina virtuale e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli di protezione*.
+. Seleziona un intervallo di tempo per visualizzare le istantanee pertinenti.
+. Elimina una o più istantanee:
++
+[role="tabbed-block"]
+====
+.Elimina una singola istantanea
+--
+.. Scegli un'istantanea dall'elenco che vuoi eliminare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Elimina istantanea locale*.
+
+
+--
+.Elimina più snapshot
+--
+.. Seleziona la check box a sinistra di ogni snapshot che vuoi eliminare.
+.. Seleziona *Elimina selezionato*.
+
+
+--
+====
 

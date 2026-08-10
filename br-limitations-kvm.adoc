@@ -25,6 +25,7 @@ Le seguenti azioni e configurazioni non sono supportate nei carichi di lavoro KV
 
 Le seguenti azioni non sono supportate:
 
+* Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Clona, monta o smonta le VM
 * Proteggere le VM archiviate su SAN
 * Proteggere le applicazioni
