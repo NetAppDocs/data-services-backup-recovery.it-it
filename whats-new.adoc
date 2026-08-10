@@ -47,18 +47,6 @@ Per i dettagli sulla protezione dei carichi di lavoro VMware, fare riferimento a
 
 
 
-[[oracle-database-workloads-enhancements]]
-=== Miglioramenti dei carichi di lavoro Oracle Database
-
-In questa versione, Oracle Database workloads introduce i seguenti miglioramenti:
-
-* *Ripristino e clonazione di database collegabili (PDB)*: Backup and Recovery per il servizio NetApp Console ora supporta il ripristino e la clonazione di database collegabili.
-
-
-Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro del database Oracle"].
-
-
-
 [[kubernetes-workloads-enhancements]]
 === Miglioramenti dei carichi di lavoro Kubernetes
 

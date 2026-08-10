@@ -2027,7 +2027,6 @@
   <block id="dd67539e70d93b9889e0cb5a77274b0b" category="paragraph">Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.</block>
   <block id="bf49a2af93184828c602f30985ab7b3e" category="list-title">Prima di iniziare</block>
   <block id="ad21a85e531f324768ed107500147c11" category="inline-link">Scopri come registrare questo fornitore di risorse per il tuo abbonamento</block>
-  <block id="8e735e680b7368147fd11864544dafdc" category="list-text">È necessario registrare il provider di risorse di Azure Synapse Analytics (denominato "Microsoft.Synapse") con la sottoscrizione.<block ref="66e7a06283e2f9b1945c2e3b539d5c17" category="inline-link-rx"></block> .  Per registrare il fornitore di risorse, devi essere il *Proprietario* o il *Collaboratore* dell'abbonamento.</block>
   <block id="31dc01c9493f1634e02a0b09bd5b59bd" category="list-text">La porta 1433 deve essere aperta per la comunicazione tra l'agente della console e i servizi Azure Synapse SQL.</block>
   <block id="caf1eee1629cb07ebbce66130fb04f94" category="list-text">Identificare il ruolo assegnato alla macchina virtuale dell'agente Console:</block>
   <block id="dd7dc066cb6a0b619ef397e8b37b57c3" category="list-text">Nel portale di Azure, aprire il servizio Macchine virtuali.</block>
@@ -5645,7 +5644,6 @@
   <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*Conservazione dei dati relativi ai job per 90 giorni*: NetApp Backup and Recovery ora conserva le informazioni sui job nel Job Monitor per 90 giorni.</block>
   <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*Supporto per il ripristino in una posizione alternativa per le VM SAN*: ora puoi ripristinare i backup delle VM basate su SAN in una posizione alternativa.</block>
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Supporto per l'eliminazione di più backup*: Ora puoi eliminare più backup contemporaneamente.</block>
-  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*Ripristino e clonazione di database collegabili (PDB)*: Backup and Recovery per il servizio NetApp Console ora supporta il ripristino e la clonazione di database collegabili.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Anteprima del supporto per risorse isolate*: se esegui NetApp Backup and Recovery in una distribuzione locale di NetApp Console, puoi individuare, proteggere e ripristinare risorse Kubernetes isolate. Questa funzionalità è in anteprima per questa versione.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">In questa versione, i carichi di lavoro ONTAP Volumes introducono i seguenti miglioramenti:</block>
   <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Dai priorità ai processi di ripristino rispetto ai backup*: Ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini macchine virtuali o file.</block>
@@ -5805,4 +5803,5 @@
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">Se esegui manualmente <block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block> e poi provi a reinstallare, il PV verrà installato con lo stesso nome e causerà un conflitto di nomi.</block>
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 agosto 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Aumenta le prestazioni di Search &amp; Restore dei volumi per la distribuzione locale di NetApp Console</block>
+  <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Devi registrare il provider di risorse Azure Synapse Analytics (chiamato "Microsoft.Synapse") con la tua sottoscrizione.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block> Per registrare il provider di risorse, devi essere il *proprietario* o il *contributore* della sottoscrizione.</block>
 </blocks>

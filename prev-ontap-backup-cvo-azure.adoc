@@ -73,7 +73,7 @@ L'agente Console può essere installato in un'area di Azure con accesso a Intern
 Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
 
 .Prima di iniziare
-* È necessario registrare il provider di risorse di Azure Synapse Analytics (denominato "Microsoft.Synapse") con la sottoscrizione. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] .  Per registrare il fornitore di risorse, devi essere il *Proprietario* o il *Collaboratore* dell'abbonamento.
+* Devi registrare il provider di risorse Azure Synapse Analytics (chiamato "Microsoft.Synapse") con la tua sottoscrizione. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] Per registrare il provider di risorse, devi essere il *proprietario* o il *contributore* della sottoscrizione.
 * La porta 1433 deve essere aperta per la comunicazione tra l'agente della console e i servizi Azure Synapse SQL.
 
 
