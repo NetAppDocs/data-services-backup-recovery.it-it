@@ -19,7 +19,7 @@ Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzi
 
 
 [[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-=== Anteprima di Backup and Recovery per la limitazione della distribuzione locale della NetApp Console
+== Anteprima di Backup and Recovery per la limitazione della distribuzione locale della NetApp Console
 
 Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 

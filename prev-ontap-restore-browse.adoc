@@ -40,25 +40,77 @@ NOTE: La priorità Alta non è supportata durante il ripristino dei dati dall'ar
 [[browse-restore-supported-systems-and-object-storage-providers]]
 == Esplora e ripristina i sistemi supportati e i provider di archiviazione di oggetti
 
-È possibile ripristinare i dati ONTAP da un file di backup che risiede in un sistema secondario (un volume replicato) o in un archivio oggetti (un file di backup) nei seguenti sistemi. Gli snapshot risiedono sul sistema di origine e possono essere ripristinati solo su quello stesso sistema.
-
-*Nota:* è possibile ripristinare un volume da qualsiasi tipo di file di backup, ma al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nell'archivio oggetti.
+Puoi ripristinare i dati ONTAP da un file di backup che si trova in un sistema secondario (un volume replicato) o in storage a oggetti (un file di backup) nei seguenti sistemi.
 
 [cols="25,25,25,25"]
 |===
 | *Da Object Store (Backup)* | *Da Primario (Snapshot)* | *Dal sistema secondario (replicazione)* | Al sistema di destinazione 
 
 
-| Amazon S3 | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Cloud Volumes ONTAP nel sistema ONTAP locale di AWS | Blob azzurro 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+
+ a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
 
 
-| Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure | Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
 
 
-| Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | NetApp StorageGRID | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
+| Blob azzurro  a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+ a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
 
 
-| Al sistema ONTAP locale | ONTAP S3 | Sistema ONTAP in sede | Sistema ONTAP on-premise Cloud Volumes ONTAP 
+
+
+| Google Cloud Storage  a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+ a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+
+
+
+| NetApp StorageGRID | Sistema ONTAP in sede  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| ONTAP S3 | Sistema ONTAP in sede  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| Archivi di oggetti compatibili con S3 | Sistema ONTAP in sede  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
 |===
 Per Sfoglia e Ripristina, l'agente Console può essere installato nei seguenti percorsi:
 
