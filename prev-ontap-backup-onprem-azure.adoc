@@ -173,7 +173,7 @@ Sarà necessario verificare i requisiti di licenza sia per Azure che per la cons
 
 * Prima di poter attivare NetApp Backup and Recovery per il tuo cluster, dovrai abbonarti a un'offerta di Console Marketplace con pagamento in base al consumo (PAYGO) di Azure oppure acquistare e attivare una licenza BYOL di NetApp Backup and Recovery da NetApp.  Queste licenze sono riservate al tuo account e possono essere utilizzate su più sistemi.
 +
-** Per la licenza NetApp Backup and Recovery PAYGO, è necessario un abbonamento a https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Offerta NetApp Console da Azure Marketplace"^] .  La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento.
+** Per le licenze PAYGO di NetApp Backup and Recovery, ti serve un abbonamento al  https://marketplace.microsoft.com/en-us/product/netapp.cloud-manager?tab=Overview["Offerta NetApp Console da Azure Marketplace"^]. La fatturazione per NetApp Backup and Recovery avviene tramite questo abbonamento.
 ** Per la licenza BYOL NetApp Backup and Recovery , avrai bisogno del numero di serie di NetApp che ti consentirà di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
 
 
