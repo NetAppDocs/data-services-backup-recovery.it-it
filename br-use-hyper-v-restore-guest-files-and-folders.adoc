@@ -4,7 +4,7 @@ permalink: br-use-hyper-v-restore-guest-files-and-folders.html
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
 summary: È possibile ripristinare uno o più file o cartelle da uno snapshot di una macchina virtuale Hyper-V a una macchina virtuale guest Windows. 
 ---
-= Ripristina file e cartelle dai backup delle macchine virtuali Hyper-V
+= Ripristina file e cartelle dai backup delle VM Hyper-V con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

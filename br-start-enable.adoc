@@ -4,7 +4,7 @@ permalink: br-start-enable.html
 keywords: backup, Backup and Recovery, enable backup, Console, service, local deployment 
 summary: Abilita Backup and Recovery su un sistema in NetApp Console o NetApp Console distribuito localmente. 
 ---
-= Abilita il backup e il ripristino per proteggere i volumi
+= Abilita NetApp Backup and Recovery per proteggere i volumi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

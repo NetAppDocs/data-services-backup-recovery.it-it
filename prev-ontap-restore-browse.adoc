@@ -4,7 +4,7 @@ permalink: prev-ontap-restore-browse.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Sfoglia e Ripristina. 
 ---
-= Ripristina i dati ONTAP utilizzando Sfoglia e ripristina
+= Ripristina i dati ONTAP utilizzando Sfoglia e ripristina in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

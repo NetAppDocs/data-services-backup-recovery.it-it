@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-vmdks-from-backups.html
 keywords:  
 summary: È possibile ripristinare i VMDK esistenti, oppure quelli eliminati o scollegati, da un backup primario o secondario di VM tradizionali o VM vVol. 
 ---
-= Ripristina dischi virtuali specifici dai backup
+= Ripristina i dischi virtuali VMware dai backup in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

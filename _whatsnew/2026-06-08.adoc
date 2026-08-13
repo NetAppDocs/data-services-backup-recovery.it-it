@@ -24,7 +24,7 @@ In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
 * *I gruppi di protezione ora utilizzano la pianificazione del fuso orario dell'host*: I gruppi di protezione ora utilizzano il fuso orario dell'host Hyper-V. I gruppi di protezione creati prima dell'introduzione della pianificazione del fuso orario dell'host continuano a utilizzare l'ora configurata in precedenza (in genere UTC). Per aggiornare questi gruppi di protezione in modo che utilizzino il fuso orario dell'host Hyper-V, devi ricreare le pianificazioni. Consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V"] per ulteriori informazioni.
 
 
-Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flusso di lavoro di protezione Hyper-V con NetApp Backup and Recovery"].
 
 
 

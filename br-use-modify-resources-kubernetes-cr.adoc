@@ -4,7 +4,7 @@ permalink: br-use-modify-resources-kubernetes-cr.html
 keywords: Resource modify, transform, restore, Kubernetes, custom resource, Backup and Recovery, NetApp, transformation, transformations, resource, resource transformations, modify 
 summary: Modifica le risorse durante le operazioni di ripristino in NetApp Backup and Recovery. 
 ---
-= Modifica le risorse durante il ripristino utilizzando risorse personalizzate
+= Modifica le risorse Kubernetes durante il ripristino in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

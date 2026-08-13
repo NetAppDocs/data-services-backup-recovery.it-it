@@ -40,7 +40,7 @@ In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
 * *Supporto SAN (anteprima)*: Backup e ripristino ora supporta la protezione delle macchine virtuali Hyper-V archiviate su storage SAN.
 
 
-Per i dettagli sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro Hyper-V"] .
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Flusso di lavoro di protezione Hyper-V con NetApp Backup and Recovery"].
 
 
 
@@ -53,7 +53,7 @@ In questa versione, i carichi di lavoro KVM introducono i seguenti miglioramenti
 * *Ripristino in una posizione alternativa (anteprima)*: Ora è possibile ripristinare le VM KVM in una destinazione alternativa. Per ulteriori informazioni, consultare  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Ripristinare le macchine virtuali KVM con NetApp Backup and Recovery"].
 
 
-Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
+Per informazioni dettagliate sulla protezione dei carichi di lavoro KVM, consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Scopri come proteggere i carichi di lavoro KVM con NetApp Backup and Recovery"].
 
 
 

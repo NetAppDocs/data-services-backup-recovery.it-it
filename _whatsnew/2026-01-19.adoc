@@ -50,4 +50,4 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 L'anteprima dei carichi di lavoro KVM ora protegge gli host KVM e le macchine virtuali gestite da Apache CloudStack.
 
-Per i dettagli sulla protezione dei carichi di lavoro KVM, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro KVM"] .
+Per informazioni dettagliate sulla protezione dei carichi di lavoro KVM, consulta  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Scopri come proteggere i carichi di lavoro KVM con NetApp Backup and Recovery"].

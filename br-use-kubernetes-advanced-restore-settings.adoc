@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-advanced-restore-settings.html
 keywords: cr, custom resource, restore, data, backup, advanced, settings 
 summary: È possibile personalizzare le operazioni di ripristino CR utilizzando annotazioni, impostazioni del namespace e opzioni di storage. 
 ---
-= Utilizza impostazioni avanzate di ripristino delle risorse personalizzate
+= Impostazioni di ripristino avanzate per Kubernetes in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

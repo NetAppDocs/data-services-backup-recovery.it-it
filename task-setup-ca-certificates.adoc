@@ -4,7 +4,7 @@ permalink: task-setup-ca-certificates.html
 keywords: cloud backup, backup and recovery, backup, restore, certificates, protection, security, storagegrid, backup, back up 
 summary: Creare un certificato di sicurezza per abilitare la comunicazione tra NetApp Backup and Recovery e StorageGRID o ONTAP. 
 ---
-= Impostare i certificati di sicurezza per StorageGRID e ONTAP in NetApp Backup and Recovery
+= Configura i certificati di sicurezza per NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

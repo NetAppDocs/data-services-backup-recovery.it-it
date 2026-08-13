@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords: restore, guest, files, folders, files and folders, guest VM, windows, linux, VMDK, attach 
 summary: È possibile ripristinare uno o più file o cartelle da un VMDK a una macchina virtuale guest. 
 ---
-= Ripristinare file e cartelle da dischi virtuali
+= Ripristina file e cartelle guest VMware in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ Consente di ripristinare singoli file o cartelle da un disco virtuale alla macch
 Ripristina file o cartelle da un disco virtuale alla macchina virtuale originale o a un'altra macchina virtuale. Se preferisci non collegare il disco virtuale alla macchina virtuale originale, puoi collegarlo invece a una macchina virtuale proxy.
 
 .Prima di iniziare
-* Esamina i prerequisiti e le limitazioni in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisiti e limitazioni durante il ripristino di file e cartelle guest"].
+* Esamina i prerequisiti e le limitazioni in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisiti per il ripristino dei file guest di VMware in NetApp Backup and Recovery"].
 * Per ripristinare file e cartelle utilizzando una VM proxy, assicurarsi che la VM proxy sia già configurata prima di avviare il processo di ripristino di file e cartelle.
 * È necessario creare le credenziali per il disco virtuale di origine e la macchina virtuale di destinazione in NetApp Backup and Recovery prima di poter ripristinare file e cartelle. NetApp Backup and Recovery utilizza queste credenziali per autenticarsi con il disco virtuale e la macchina virtuale di destinazione durante il ripristino di file e cartelle.
 

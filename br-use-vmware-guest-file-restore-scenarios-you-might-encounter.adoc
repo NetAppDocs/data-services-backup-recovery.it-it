@@ -4,7 +4,7 @@ permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html
 keywords:  
 summary: 'Quando si tenta di ripristinare un file guest, potrebbero verificarsi situazioni in cui la sessione di ripristino del file guest è vuota, l"operazione di collegamento del disco di ripristino del file guest non riesce o i backup non vengono scollegati dopo l"interruzione della sessione di ripristino del file guest.' 
 ---
-= Risoluzione dei problemi di ripristino dei file guest
+= Risoluzione dei problemi di ripristino dei file guest in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

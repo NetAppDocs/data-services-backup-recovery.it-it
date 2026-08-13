@@ -4,7 +4,7 @@ permalink: br-use-reports.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato dei tuoi backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l"ora del backup.' 
 ---
-= Crea report di protezione per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery
+= Crea report di protezione di Microsoft SQL Server in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

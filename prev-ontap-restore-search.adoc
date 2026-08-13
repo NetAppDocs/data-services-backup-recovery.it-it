@@ -4,7 +4,7 @@ permalink: prev-ontap-restore-search.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. 
 ---
-= Ripristina dai backup ONTAP utilizzando Ricerca e Ripristino
+= Ripristina i dati ONTAP utilizzando Cerca e ripristina in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

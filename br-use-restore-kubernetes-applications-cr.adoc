@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications-cr.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. 
 ---
-= Ripristina le applicazioni Kubernetes utilizzando una risorsa personalizzata
+= Ripristina le applicazioni Kubernetes con NetApp Backup and Recovery utilizzando una risorsa personalizzata
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ summary: NetApp Backup and Recovery consente di ripristinare le applicazioni pro
 ====
 * Quando si ripristina un'applicazione, tutti gli hook di esecuzione configurati per l'applicazione vengono ripristinati con l'app. Se è presente un hook di esecuzione post-ripristino, viene eseguito automaticamente come parte dell'operazione di ripristino.
 * Il ripristino da un backup a un namespace diverso o al namespace originale è supportato per i volumi qtree. Tuttavia, il ripristino da uno snapshot a un namespace diverso o al namespace originale non è supportato per i volumi qtree.
-* È possibile utilizzare le impostazioni avanzate per personalizzare le operazioni di ripristino. Per ulteriori informazioni, consultare link:br-use-kubernetes-advanced-restore-settings.html["Utilizza impostazioni avanzate di ripristino delle risorse personalizzate"].
+* È possibile utilizzare le impostazioni avanzate per personalizzare le operazioni di ripristino. Per saperne di più, consulta link:br-use-kubernetes-advanced-restore-settings.html["Impostazioni di ripristino avanzate per Kubernetes in NetApp Backup and Recovery"].
 
 
 ====
