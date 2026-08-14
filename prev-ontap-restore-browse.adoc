@@ -57,7 +57,7 @@ Puoi ripristinare i dati ONTAP da un file di backup che si trova in un sistema s
 
  a| 
 * Sistema ONTAP in sede
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in AWS
 
 
 
@@ -72,7 +72,7 @@ Puoi ripristinare i dati ONTAP da un file di backup che si trova in un sistema s
 
  a| 
 * Sistema ONTAP in sede
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in Azure
 
 
 
@@ -87,7 +87,7 @@ Puoi ripristinare i dati ONTAP da un file di backup che si trova in un sistema s
 
  a| 
 * Sistema ONTAP in sede
-* Cloud Volumes ONTAP
+* Cloud Volumes ONTAP in Google
 
 
 
