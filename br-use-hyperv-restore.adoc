@@ -21,7 +21,7 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 
 * Ripristina da una posizione primaria (snapshot locale)
 * Ripristina da una risorsa replicata su un archivio secondario
-* Ripristina da un backup di storage a oggetti (solo nella posizione originale)
+* Ripristina da un backup di archiviazione di oggetti
 
 
 .Ripristinare questi punti
@@ -101,6 +101,11 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 *** *Rete*: seleziona la rete di destinazione in cui desideri ripristinare lo snapshot.
 *** *Nome macchina virtuale*: immettere il nome della VM che si desidera ripristinare.
 *** *Posizione di destinazione*: immettere la cartella di destinazione o la condivisione CIFS che deve contenere i dati ripristinati.
+
+
+.. Nella sezione *Archiviazione di destinazione* (visibile solo durante il ripristino da archivio di oggetti):
++
+*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una posizione diversa nel caso in cui la posizione di archiviazione di origine non sia raggiungibile o sia piena. Scegli un cluster, una storage VM o un aggregate diverso da utilizzare.
 
 
 .. Nella sezione *Opzioni pre-ripristino*, prendi in considerazione le seguenti opzioni:

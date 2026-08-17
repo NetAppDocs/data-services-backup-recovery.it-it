@@ -142,7 +142,7 @@ Quando si esegue il ripristino in una posizione alternativa, è possibile modifi
 
 ** Sezione *storage di destinazione* (visibile solo durante il ripristino da archivio di oggetti):
 +
-*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una macchina virtuale di archiviazione diversa nel caso in cui la posizione di archiviazione di origine non sia raggiungibile o sia piena. Scegli un cluster, una macchina virtuale di archiviazione o un aggregate diverso da utilizzare.
+*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una posizione diversa nel caso in cui la posizione di archiviazione di origine non sia raggiungibile o sia piena. Scegli un cluster, una storage VM o un aggregate diverso da utilizzare.
 
 
 ** Sezione *Opzioni pre-ripristino*:
