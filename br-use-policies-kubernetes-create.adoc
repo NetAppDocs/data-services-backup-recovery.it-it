@@ -114,6 +114,27 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 ** *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
 
 
+. Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
++
+[%collapsible]
+====
+** *Tentativi di backup*: Per riprovare l'operazione un certo numero di volte in caso di errore o interruzione, espandi la sezione *Tentativi di backup* e inserisci il numero massimo di tentativi per l'operazione di snapshot e backup e l'intervallo di tempo tra i tentativi.
+
+
+
+TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, insieme al conteggio dei nuovi tentativi, non dovrebbe superare i 45 minuti.
+
+** *Risultato parziale*: Abilita questa opzione per consentire il completamento di un'operazione di backup anche se Backup and Recovery non riesce a eseguire il backup di tutte le risorse.
+** *Configurazione VM*: Seleziona il tipo di coerenza del backup di cui hai bisogno:
++
+*** *Backup crash-consistent*: Seleziona questa opzione per saltare il blocco della VM prima di creare uno snapshot o un backup. Lo snapshot o il backup sarà crash-consistent, il che significa che la memoria di sistema al momento dello snapshot o del backup non viene acquisita.
+*** *Backup coerente con la VM*: Seleziona questa opzione per bloccare le VM prima di creare uno snapshot o un backup. Questo acquisisce lo stato completo della VM (inclusa la memoria) per offrire una protezione coerente con la VM. Facoltativamente, in *Numero massimo di VM contemporaneamente*, specifica quante VM Backup and Recovery può bloccare ed eseguire il backup contemporaneamente. Se abiliti l'opzione *Blocca tutte le VM*, Backup and Recovery blocca tutte le VM contemporaneamente, avvia i backup e poi sblocca tutte le VM al termine di tutte le operazioni di backup.
+
+
+
+
+====
+. Al termine, selezionare *Fatto*.
 
 
 
@@ -137,6 +158,12 @@ Super amministratore di backup e ripristino. Se stai proteggendo dati archiviati
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi modificare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica*.
+. Quando hai finito di modificare, seleziona *Fine*.
+. Nella finestra di dialogo di conferma, digita il nome della policy per confermare le modifiche.
++
+Il salvataggio delle modifiche ha effetto su tutte le applicazioni protette da questa policy.
+
+. Seleziona *Fatto* per confermare.
 
 
 

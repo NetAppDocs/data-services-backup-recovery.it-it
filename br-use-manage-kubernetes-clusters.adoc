@@ -68,3 +68,44 @@ Per i cluster Kubernetes che eseguono Trident Protect 26.05 o versioni successiv
 
 
 
+
+
+
+[[reconnect-a-kubernetes-cluster-to-a-console-agent]]
+== Riconnetti un cluster Kubernetes a un agente della Console
+
+Se l'indirizzo IP dell'agente della Console cambia (ad esempio, dopo un riavvio), il tuo cluster Kubernetes perderà la connessione con l'agente e dovrai riconnetterti.
+
+.Passi
+. In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
+. Scegli un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Riconnetti cluster*.
+. Nella finestra di dialogo Reconnect cluster, copia le istruzioni della riga di comando ed eseguile sul tuo cluster.
++
+Al termine del comando, il cluster dovrebbe riconnettersi automaticamente.
+
+. Seleziona *Chiudi*.
+
+
+
+
+[[migrate-a-kubernetes-cluster-to-a-new-console-agent]]
+== Migra un cluster Kubernetes a un nuovo agente Console
+
+Se il tuo agente Console viene eliminato o diventa non disponibile, migra tutti i cluster che lo utilizzano su un nuovo agente per evitare di interrompere la protezione delle applicazioni.
+
+.Prima di iniziare
+* https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Distribuisci un nuovo agente Console."^]
+* Scegli una policy di protezione da utilizzare con il nuovo agente della Console, link:br-use-policies-kubernetes-create.html#edit-a-policy["modifica la policy"^] e associa la policy di protezione al nuovo agente della Console.
+
+
+.Passi
+. In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
+. Scegli un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Gestisci agente*.
+. Dall'elenco, seleziona un nuovo agente Console.
+. Esamina le informazioni dell'agente per assicurarti che il nuovo agente della Console possa accedere ai sistemi, alle destinazioni di backup e alle destinazioni secondarie utilizzate dalle applicazioni protette su questo cluster.
+. Copia le istruzioni della riga di comando per ciascuna sezione ed esegui i comandi sul cluster.
++
+Questa operazione ricrea i segreti di Kubernetes, reindirizza Trident Protect al nuovo agente Console e ricarica le impostazioni. Dopo che hai eseguito i comandi, il cluster usa il nuovo agente Console.
+
+. Seleziona *Chiudi*.
+

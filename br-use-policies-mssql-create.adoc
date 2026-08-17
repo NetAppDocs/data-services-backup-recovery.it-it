@@ -121,24 +121,10 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 ** *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurare le impostazioni avanzate nella policy
-
+. Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
++
 [%collapsible]
 ====
-È possibile configurare facoltativamente impostazioni avanzate nella policy. È possibile utilizzare queste opzioni per tutte le architetture di backup e le destinazioni di storage. Le opzioni avanzate disponibili dipendono dal workload selezionato nella parte superiore della pagina, quindi alcune opzioni descritte qui potrebbero non essere applicabili a tutti i workload.
-
-.Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
-. Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
-. Nella sezione Impostazioni *Criteri > Avanzate*, seleziona il menu *Seleziona azione avanzata* per scegliere da un elenco di impostazioni avanzate.
-. Abilita le impostazioni che desideri visualizzare o modificare, quindi seleziona *Accetta*.
-. Fornire le seguenti informazioni:
-+
 ** *SnapMirror formato del volume e dell'istantanea*: Scegliere tra le seguenti opzioni:
 +
 *** *Utilizza un formato di nome personalizzato per la copia snapshot*: scegli uno schema di denominazione per gli snapshot. Se lasciato vuoto, un timestamp viene aggiunto alla fine del nome di ogni snapshot.
@@ -170,9 +156,10 @@ TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, i
 ** *Notifica*: Scegli se abilitare le notifiche e-mail per le operazioni di backup. Puoi selezionare quali eventi attivano una notifica, ad esempio quando un backup ha esito positivo, negativo o viene completato con avvisi.
 
 
-
-
 ====
+. Al termine, seleziona *Crea*.
+
+
 
 
 [[edit-a-policy]]
@@ -194,6 +181,12 @@ Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/conso
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi modificare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica*.
+. Quando hai finito di modificare, seleziona *Fine*.
+. Nella finestra di dialogo di conferma, digita il nome della policy per confermare le modifiche.
++
+Il salvataggio delle modifiche ha effetto su tutte le applicazioni protette da questa policy.
+
+. Seleziona *Fatto* per confermare.
 
 
 

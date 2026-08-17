@@ -129,24 +129,10 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 ** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sullo storage a oggetti. Ciò garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su 7 giorni per impostazione predefinita. Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurare le impostazioni avanzate nella policy
-
+. Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
++
 [%collapsible]
 ====
-È possibile configurare facoltativamente impostazioni avanzate nella policy. È possibile utilizzare queste opzioni per tutte le architetture di backup e le destinazioni di storage. Le opzioni avanzate disponibili dipendono dal workload selezionato nella parte superiore della pagina, quindi alcune opzioni descritte qui potrebbero non essere applicabili a tutti i workload.
-
-.Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Criteri*.
-. Dalla pagina Criteri, seleziona *Crea nuovo criterio*.
-. Nella sezione Impostazioni *Criteri > Avanzate*, seleziona il menu *Seleziona azione avanzata* per scegliere da un elenco di impostazioni avanzate.
-. Abilita le impostazioni che desideri visualizzare o modificare, quindi seleziona *Accetta*.
-. Fornire le seguenti informazioni:
-+
 ** *Impostazioni del catalogo RMAN*: Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino del database Oracle. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo per impostazione predefinita). Consulta link:br-start-configure-oracle-database.html["Configurare un database Oracle"] per modificare queste impostazioni per un database.
 ** *Verifica del backup*: Seleziona se desideri abilitare la verifica del backup e se desideri eseguirla immediatamente o in un secondo momento. Questa funzione garantisce che i backup siano validi e possano essere ripristinati correttamente. Si consiglia di abilitare questa opzione per garantire l'integrità dei backup. Per impostazione predefinita, la verifica del backup viene eseguita dallo storage secondario, se lo storage secondario è configurato. Se lo storage secondario non è configurato, la verifica del backup viene eseguita dallo storage primario.
 +
@@ -196,9 +182,10 @@ TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, i
 ** *Notifica*: Scegli se abilitare le notifiche e-mail per le operazioni di backup. Puoi selezionare quali eventi attivano una notifica, ad esempio quando un backup ha esito positivo, negativo o viene completato con avvisi.
 
 
-
-
 ====
+. Al termine, seleziona *Crea*.
+
+
 
 
 [[edit-a-policy]]
@@ -220,6 +207,12 @@ Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/conso
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi modificare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica*.
+. Quando hai finito di modificare, seleziona *Fine*.
+. Nella finestra di dialogo di conferma, digita il nome della policy per confermare le modifiche.
++
+Il salvataggio delle modifiche ha effetto su tutte le applicazioni protette da questa policy.
+
+. Seleziona *Fatto* per confermare.
 
 
 
