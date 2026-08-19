@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-back-up-now-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: 'NetApp Backup and Recovery consente di eseguire manualmente il backup delle applicazioni Kubernetes utilizzando risorse personalizzate (CR).' 
+summary: 'Utilizza le risorse personalizzate (CR) per creare snapshot e backup on-demand di un"applicazione Kubernetes, stabilendo una baseline o proteggendo le modifiche più recenti ai dati.' 
 ---
 = Esegui subito il backup delle applicazioni Kubernetes utilizzando risorse personalizzate in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'NetApp Backup and Recovery consente di eseguire manualmente il backup 
 
 
 [role="lead"]
-NetApp Backup and Recovery consente di eseguire manualmente il backup delle applicazioni Kubernetes utilizzando risorse personalizzate (CR).
+Utilizza le risorse personalizzate (CR) per creare snapshot e backup on-demand di un'applicazione Kubernetes, stabilendo una baseline o proteggendo le modifiche più recenti ai dati.
 
 
 
@@ -47,7 +47,7 @@ Per creare uno snapshot della tua applicazione Kubernetes e archiviarlo localmen
 ** *metadata.name*: (_Obbligatorio_) Il nome di questa risorsa personalizzata; scegli un nome univoco e sensato per il tuo ambiente.
 ** *spec.applicationRef*: Nome Kubernetes dell'applicazione di cui eseguire lo Snapshot.
 ** *spec.appVaultRef*: (_Obbligatorio_) Il nome del AppVault in cui i contenuti dello snapshot (metadati) devono essere archiviati.
-** *spec.reclaimPolicy*: (_Facoltativo_) Definisce cosa succede all'AppArchive di uno snapshot quando il CR dello snapshot viene eliminato. Ciò significa che anche quando impostato su `Retain`, lo snapshot verrà eliminato. Opzioni valide:
+** *spec.reclaimPolicy*: (_Opzionale_) Definisce cosa succede all'AppArchive di uno snapshot quando il Snapshot CR viene eliminato. Anche se impostato su  `Retain`, il Snapshot CR viene comunque eliminato; viene conservato solo l'AppArchive. Opzioni valide:
 +
 *** `Retain` (predefinito)
 *** `Delete`
@@ -228,5 +228,5 @@ La tabella seguente descrive le annotazioni che è possibile utilizzare quando s
 | protect.trident.netapp.io/volume-snapshots-created-timeout | stringa | Il tempo massimo consentito per la creazione di snapshot del volume. | "5m" 
 
 
-| protect.trident.netapp.io/pvc-bind-timeout-sec | stringa | Tempo massimo (in secondi) di attesa affinché i nuovi PersistentVolumeClaims (PVC) creati raggiungano la  `Bound` fase prima che l'operazione fallisca. | "1200" (20 minuti) 
+| protect.trident.netapp.io/pvc-bind-timeout-sec | stringa | Tempo massimo (in secondi) di attesa affinché qualsiasi PersistentVolumeClaims (PVC) appena creato raggiunga la  `Bound` fase prima che l'operazione fallisca. | "1200" (20 minuti) 
 |===

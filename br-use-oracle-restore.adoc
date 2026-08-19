@@ -4,7 +4,7 @@ permalink: br-use-oracle-restore.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery. 
 ---
-= Ripristina i database Oracle con NetApp Backup and Recovery
+= Ripristina i carichi di lavoro del database Oracle con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup 
 
 
 [role="lead"]
-Ripristina i database Oracle da snapshot, da un backup replicato su un archivio secondario o da backup archiviati in un archivio oggetti utilizzando NetApp Backup and Recovery.
+Ripristina i carichi di lavoro di database Oracle da Snapshot, backup replicati su storage secondario o backup archiviati in storage a oggetti utilizzando NetApp Backup and Recovery.
 
 .Ripristina da queste posizioni
 È possibile ripristinare i database da diverse posizioni di partenza:
@@ -32,10 +32,10 @@ Ripristina i database Oracle da snapshot, da un backup replicato su un archivio 
 
 
 
-[[how-restoring-oracle-databases-works]]
-== Come funziona il ripristino dei database Oracle
+[[how-oracle-database-restore-works]]
+== Come funziona il ripristino del database Oracle
 
-Quando si ripristinano i database Oracle, si verifica quanto segue:
+Quando ripristini i carichi di lavoro del database Oracle, succede quanto segue:
 
 * Quando si ripristina un database da uno snapshot locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
 * Quando si esegue il ripristino da un archivio replicato, è possibile ripristinarlo nella posizione originale.
@@ -49,9 +49,9 @@ Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare 
 [[restore-an-oracle-database]]
 == Ripristinare un database Oracle
 
-A seconda delle esigenze, è possibile ripristinare un database Oracle a un punto specifico nel tempo, a un numero di modifica del sistema (SCN) specifico o all'ultimo stato valido.  È anche possibile ripristinare semplicemente il database dagli snapshot e saltare il processo di ripristino automatico.  Se si desidera eseguire il ripristino manualmente, è consigliabile saltare il processo di ripristino automatico.  È possibile effettuare la ricerca nel database tramite il nome oppure tramite filtri specifici.
+A seconda delle tue esigenze, puoi ripristinare un database Oracle a un punto specifico nel tempo, a uno specifico numero di modifica del sistema (SCN) o all'ultimo stato valido. Puoi anche ripristinare il database da Snapshot e saltare il processo di ripristino automatico, ad esempio se vuoi eseguire il ripristino manualmente. Puoi cercare il database utilizzando il suo nome o con filtri specifici.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super amministratore di Backup e ripristino o amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
@@ -130,13 +130,13 @@ Vengono visualizzate le istantanee corrispondenti.
 . *Opzioni pre-ripristino*:
 +
 ** Facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
-** Scegliere un valore di timeout per lo script.  Se lo script non riesce a essere eseguito entro questo periodo di tempo, il ripristino verrà comunque eseguito.
+** Scegli un valore di timeout per lo script. Se lo script non viene eseguito entro questo periodo di tempo, il ripristino procede comunque.
 
 
 . *Opzioni post-ripristino*:
 +
 ** *Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
-** *Aprire il database o il database contenitore in modalità LETTURA-SCRITTURA dopo il ripristino*: una volta completata l'operazione di ripristino, Backup and Recovery abiliterà la modalità LETTURA-SCRITTURA per il database.
+** *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il ripristino*: Al termine dell'operazione di ripristino, NetApp Backup and Recovery abilita la modalità LETTURA-SCRITTURA per il database.
 
 
 . Sezione *Notifiche*:
@@ -150,7 +150,7 @@ Vengono visualizzate le istantanee corrispondenti.
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per l'anteprima dei carichi di lavoro Oracle Database.
+Non disponibile per i carichi di lavoro di database Oracle in questa versione di anteprima.
 
 --
 ====

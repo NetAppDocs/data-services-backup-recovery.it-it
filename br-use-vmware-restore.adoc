@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Ripristina i carichi di lavoro VMware da snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati in un archivio di oggetti utilizzando NetApp Backup and Recovery.
+Utilizza NetApp Backup and Recovery per ripristinare i carichi di lavoro VMware da snapshot, backup replicati su storage secondario o backup archiviati in storage a oggetti.
 
 .Ripristina da queste posizioni
 È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:
@@ -39,8 +39,8 @@ TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere a
 
 
 
-[[how-restoring-workloads-works]]
-== Come funziona il ripristino dei carichi di lavoro
+[[how-vmware-workload-restore-works]]
+== Come funziona il ripristino dei workload VMware
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
 
@@ -57,7 +57,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 [[restore-workload-data-from-the-restore-option-search-restore]]
 == Ripristina i dati del carico di lavoro dall'opzione Ripristina (Cerca e ripristina)
 
-Ripristina i carichi di lavoro VMware utilizzando l'opzione Ripristina. È possibile cercare l'istantanea in base al nome o utilizzando i filtri.
+Usa l'opzione Ripristina per ripristinare i carichi di lavoro VMware. Puoi cercare uno snapshot per nome o utilizzando i filtri.
 
 *Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -102,7 +102,7 @@ Se si sceglie l'archiviazione secondaria, selezionare la posizione di destinazio
 ====
 .Ripristina nella posizione originale
 --
-Quando si esegue il ripristino nella posizione originale, non è possibile modificare il vCenter di destinazione, l'host ESXi, il datastore o il nome della VM. La VM originale viene sovrascritta con l'operazione di ripristino.
+Quando esegui il ripristino nella posizione originale, non puoi cambiare la destinazione vCenter, l'host ESXi, il datastore o il nome della VM. L'operazione di ripristino sovrascrive la VM originale.
 
 . Selezionare il riquadro *Posizione originale*.
 . Scegli tra le seguenti opzioni:
@@ -137,7 +137,7 @@ Quando si esegue il ripristino in una posizione alternativa, è possibile modifi
 *** *Host ESXi*: seleziona l'host in cui desideri ripristinare lo snapshot.
 *** *Rete*: seleziona la rete in cui desideri ripristinare lo snapshot.
 *** *Datastore*: dall'elenco a discesa, seleziona il nome del datastore in cui desideri ripristinare lo snapshot.
-*** *Nome macchina virtuale*: immettere il nome della macchina virtuale in cui si desidera ripristinare lo snapshot. Se il nome corrisponde a una VM già esistente nel datastore, Backup and Recovery rende il nome univoco aggiungendo un timestamp corrente.
+*** *Nome della macchina virtuale*: inserisci il nome della VM in cui vuoi ripristinare lo snapshot. Se il nome corrisponde a una VM già presente nel datastore, NetApp Backup and Recovery rende il nome univoco aggiungendo il timestamp corrente.
 
 
 ** Sezione *storage di destinazione* (visibile solo durante il ripristino da archivio di oggetti):

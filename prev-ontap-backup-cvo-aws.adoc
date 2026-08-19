@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-aws.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
-= Esegui il backup dei dati Cloud Volumes ONTAP su Amazon S3 con NetApp Backup and Recovery
+= Esegui il backup di Cloud Volumes ONTAP su Amazon S3 con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi Cloud Volumes ONTAP su Amazon S3.
+Utilizza NetApp Backup and Recovery per eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP su Amazon S3.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -51,7 +51,7 @@ Per un contratto annuale che consente di raggruppare Cloud Volumes ONTAP e NetAp
 
 Per la licenza BYOL NetApp Backup and Recovery , è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .  È necessario utilizzare una licenza BYOL quando l'agente Console e il sistema Cloud Volumes ONTAP vengono distribuiti in un dark site.
 
-Inoltre, è necessario disporre di un account AWS per lo spazio di archiviazione in cui verranno salvati i backup.
+Ti serve anche un account AWS per lo spazio di storage dove saranno posizionati i tuoi backup.
 
 
 
@@ -208,7 +208,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 [[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Abilita NetApp Backup and Recovery su Cloud Volumes ONTAP
 
-Abilitare NetApp Backup and Recovery è semplice.  I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o di uno nuovo.
+Puoi abilitare NetApp Backup and Recovery su un sistema Cloud Volumes ONTAP nuovo o esistente. I passaggi variano leggermente per ciascuna opzione.
 
 *Abilita NetApp Backup and Recovery su un nuovo sistema*
 
@@ -232,9 +232,9 @@ NetApp Backup and Recovery è abilitato sul sistema.  Dopo aver creato volumi su
 Abilita NetApp Backup and Recovery su un sistema esistente in qualsiasi momento direttamente dalla Console.
 
 .Passi
-. Dalla pagina *Sistemi* della console, seleziona il cluster e seleziona *Abilita* accanto a Backup e ripristino nel pannello di destra.
+. Dalla pagina *Systems* della Console, seleziona il cluster e seleziona *Enable* accanto a Backup and Recovery nel pannello di destra.
 +
-Se la destinazione Amazon S3 per i backup esiste come cluster nella pagina *Sistemi*, è possibile trascinare il cluster sul sistema Amazon S3 per avviare la procedura guidata di configurazione.
+Se la destinazione Amazon S3 per i tuoi backup esiste come sistema nella pagina *Systems*, puoi trascinare il cluster sul sistema Amazon S3 per avviare il setup wizard.
 
 
 
@@ -243,7 +243,7 @@ Se la destinazione Amazon S3 per i backup esiste come cluster nella pagina *Sist
 [[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
-Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
+Attiva i backup in qualsiasi momento direttamente dal tuo sistema Cloud Volumes ONTAP.
 
 Una procedura guidata ti guiderà attraverso i seguenti passaggi principali:
 
@@ -260,17 +260,17 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 === Avvia la procedura guidata
 
 .Passi
-. Accedere alla procedura guidata di attivazione del backup e del ripristino utilizzando uno dei seguenti metodi:
+. Accedi alla procedura guidata Attiva backup e ripristino utilizzando uno dei seguenti metodi:
 +
-** Dalla pagina *Sistemi* della console, selezionare il sistema e selezionare *Abilita > Volumi di backup* accanto a Backup e ripristino nel pannello di destra.
+** Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable > Backup Volumes* accanto a Backup and Recovery nel pannello di destra.
 +
-Se la destinazione AWS per i backup esiste come sistema nella pagina *Sistemi* della Console, è possibile trascinare il cluster ONTAP nell'archivio oggetti AWS.
+Se la destinazione Amazon S3 per i tuoi backup esiste come sistema nella pagina *Sistemi* della Console, puoi trascinare il cluster ONTAP sul sistema Amazon S3.
 
-** Selezionare *Volumi* nella barra Backup e ripristino. Dalla scheda Volumi, seleziona *Azioni* image:icon-action.png["Icona Azioni"] opzione icona e seleziona *Attiva protezione 3-2-1* per un singolo volume (che non abbia già abilitato la replica o il backup su storage di oggetti).
+** Seleziona *Volumi* nella barra Backup e ripristino. Dalla scheda Volumi, seleziona l'icona *Azioni* image:icon-action.png["Icona Azioni"] e scegli *Attiva protezione 3-2-1* per un singolo volume (che non abbia già la replica o il backup su storage a oggetti abilitati).
 
 
 +
-La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup.  Se in questo passaggio è stata scelta la seconda opzione, verrà visualizzata la pagina Definisci strategia di backup con un volume selezionato.
+La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se hai usato la seconda opzione in questo passaggio, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.
 
 . Proseguire con le seguenti opzioni:
 +
@@ -395,7 +395,7 @@ Crea un nuovo bucket oppure selezionane uno esistente.
 
 ** *Crittografia*: se hai creato un nuovo bucket, inserisci le informazioni sulla chiave di crittografia fornite dal provider. Scegli se utilizzare le chiavi di crittografia AWS predefinite oppure scegliere le chiavi gestite dal cliente dal tuo account AWS per gestire la crittografia dei tuoi dati. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Scopri come utilizzare le tue chiavi di crittografia"^]).
 +
-Se si sceglie di utilizzare le chiavi gestite dal cliente, immettere il vault delle chiavi e le informazioni sulla chiave.
+Se scegli di usare le tue chiavi gestite dal cliente, inserisci le informazioni della chiave.
 
 +
 
@@ -443,7 +443,7 @@ Nel cluster di destinazione viene creato un volume replicato che verrà sincroni
 
 Viene creato un bucket S3 nell'account di servizio indicato dalla chiave di accesso S3 e dalla chiave segreta immesse, e i file di backup vengono archiviati lì.
 
-Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
+Viene visualizzata la Volume Backup Dashboard per consentirti di monitorare lo stato dei backup.
 
 È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzandolink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .
 
@@ -452,9 +452,9 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
+Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
-. Dalla procedura guidata Attiva backup e ripristino, seleziona *Visualizza richiesta API*.
+. Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.
 . Per copiare i comandi negli appunti, selezionare l'icona *Copia*.
 

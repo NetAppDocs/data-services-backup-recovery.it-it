@@ -14,6 +14,6 @@ summary: 'NetApp Backup and Recovery utilizza i ruoli IAM per gestire l"accesso 
 
 
 [role="lead"]
-NetApp Backup and Recovery utilizza Identity and Access Management (IAM) per gestire l'accesso di ciascun utente a specifiche funzionalità e azioni.
+Utilizza Identity and Access Management (IAM) per controllare a quali funzionalità e azioni di NetApp Backup and Recovery ciascun utente può accedere.
 
-Per informazioni sui ruoli IAM specifici di NetApp Backup and Recovery, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^] .
+Per scoprire i ruoli IAM specifici per NetApp Backup and Recovery, vedi  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^].

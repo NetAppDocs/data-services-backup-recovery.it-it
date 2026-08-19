@@ -14,7 +14,7 @@ summary: È possibile ripristinare uno o più file o cartelle da un VMDK a una m
 
 
 [role="lead"]
-Consente di ripristinare singoli file o cartelle da un disco virtuale alla macchina virtuale originale o a un'altra macchina virtuale. Questa operazione è utile quando non è necessario ripristinare un'intera macchina virtuale, ma solo file o cartelle specifici.
+Ripristina singoli file o cartelle da un VMDK nella VM originale o in un'altra VM. Usa questa opzione quando hai bisogno di file o cartelle specifici invece dell'intera VM.
 
 
 
@@ -25,12 +25,12 @@ Ripristina file o cartelle da un disco virtuale alla macchina virtuale originale
 
 .Prima di iniziare
 * Esamina i prerequisiti e le limitazioni in link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisiti per il ripristino dei file guest di VMware in NetApp Backup and Recovery"].
-* Per ripristinare file e cartelle utilizzando una VM proxy, assicurarsi che la VM proxy sia già configurata prima di avviare il processo di ripristino di file e cartelle.
+* Per ripristinare file e cartelle utilizzando una VM proxy, assicurati che la VM proxy sia già configurata prima di iniziare il processo di ripristino.
 * È necessario creare le credenziali per il disco virtuale di origine e la macchina virtuale di destinazione in NetApp Backup and Recovery prima di poter ripristinare file e cartelle. NetApp Backup and Recovery utilizza queste credenziali per autenticarsi con il disco virtuale e la macchina virtuale di destinazione durante il ripristino di file e cartelle.
 
 
 .Informazioni su questo compito
-Le prestazioni del ripristino di file o cartelle dipendono da due fattori: le dimensioni dei file o delle cartelle da ripristinare e il numero di file o cartelle da ripristinare. Il ripristino di un gran numero di file di piccole dimensioni potrebbe richiedere più tempo del previsto rispetto al ripristino di un numero ridotto di file di grandi dimensioni, a parità di dimensioni complessive del set di dati da ripristinare.
+Le prestazioni del ripristino di file o cartelle dipendono dalle dimensioni e dal numero degli elementi che ripristini. Il ripristino di molti file di piccole dimensioni può richiedere più tempo rispetto al ripristino di pochi file di grandi dimensioni con la stessa dimensione totale.
 
 È possibile eseguire un ripristino su una macchina virtuale remota (noto come ripristino tra macchine virtuali), ma i sistemi operativi di origine e di destinazione devono essere identici.
 
@@ -75,7 +75,7 @@ NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale orig
 
 . Seleziona i file o le cartelle da ripristinare.
 +
-I file e le cartelle selezionati per il ripristino sono elencati nel riquadro destro dello schermo.
+I file e le cartelle che selezioni per il ripristino vengono visualizzati nel riquadro di destra.
 
 . Selezionare *Avanti*.
 . Nella sezione "Ripristina nel percorso", immettere il percorso della destinazione VM e la posizione del file system in cui verranno ripristinati i file selezionati:
@@ -108,7 +108,7 @@ Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli 
 --
 .Collega il VMDK a una VM proxy per ripristinare file e cartelle
 --
-Utilizza una VM proxy (una VM diversa sullo stesso vCenter dell'originale) per ripristinare file e cartelle guest quando non desideri collegare il disco virtuale alla VM originale.
+Utilizza una VM proxy, ovvero una VM diversa sulla stessa vCenter della VM originale, per ripristinare file e cartelle guest quando non vuoi collegare il disco virtuale alla VM originale.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
@@ -145,7 +145,7 @@ NetApp Backup and Recovery collega il disco virtuale alla VM proxy e visualizza 
 
 . Seleziona i file o le cartelle da ripristinare.
 +
-I file e le cartelle selezionati per il ripristino sono elencati nel riquadro destro dello schermo.
+I file e le cartelle che selezioni per il ripristino vengono visualizzati nel riquadro di destra.
 
 . Selezionare *Avanti*.
 . Nella sezione "Ripristina nel percorso", immettere il percorso della destinazione VM e la posizione del file system in cui verranno ripristinati i file selezionati:
@@ -182,7 +182,7 @@ Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli 
 [[view-active-vmdk-mount-sessions]]
 == Visualizza le sessioni di montaggio VMDK attive
 
-Visualizza le sessioni guest attive durante il ripristino di file o cartelle. Questa opzione mostra i VMDK attualmente collegati con sessioni aperte.
+Visualizza le sessioni guest attive quando ripristini file o cartelle. Questa visualizzazione mostra i VMDK attualmente collegati con sessioni aperte.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Clona*.

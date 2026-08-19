@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-gcp.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
-= Esegui il backup dei dati Cloud Volumes ONTAP su Google Cloud Storage con NetApp Backup and Recovery
+= Esegui il backup di Cloud Volumes ONTAP su Google Cloud Storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi Cloud Volumes ONTAP su Google Cloud Storage.
+Usa NetApp Backup and Recovery per eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP su Google Cloud Storage.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -46,7 +46,7 @@ Per le licenze NetApp Backup and Recovery PAYGO, è disponibile un abbonamento a
 
 Per la licenza BYOL NetApp Backup and Recovery , è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .
 
-Inoltre, è necessario disporre di un abbonamento Google per lo spazio di archiviazione in cui verranno salvati i backup.
+Hai anche bisogno di un account Google Cloud per lo spazio di storage dove saranno situati i tuoi backup.
 
 
 
@@ -64,7 +64,7 @@ L'agente Console deve essere installato in una regione Google con accesso a Inte
 [[verify-or-add-permissions-to-the-console-agent]]
 === Verificare o aggiungere autorizzazioni all'agente della console
 
-Per utilizzare la funzionalità "Cerca e ripristina" NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere al servizio Google Cloud BigQuery.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
+Per utilizzare la funzionalità di Search & Restore di NetApp Backup and Recovery, il ruolo dell'agente della Console deve includere autorizzazioni specifiche per poter accedere al servizio BigQuery di Google Cloud. Consulta le autorizzazioni riportate di seguito e segui i passaggi se devi modificare la policy.
 
 .Passi
 . Nel https://console.cloud.google.com["Google Cloud Console"^] , vai alla pagina *Ruoli*.
@@ -165,7 +165,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 [[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Abilita NetApp Backup and Recovery su Cloud Volumes ONTAP
 
-I passaggi per abilitare NetApp Backup and Recovery variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o di uno nuovo.
+Puoi abilitare NetApp Backup and Recovery su un sistema Cloud Volumes ONTAP nuovo o esistente. I passaggi variano leggermente per ciascuna opzione.
 
 *Abilita NetApp Backup and Recovery su un nuovo sistema*
 
@@ -181,7 +181,7 @@ Vedere https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task
 . *Scegli tipo*: seleziona * Cloud Volumes ONTAP* (nodo singolo o alta disponibilità).
 . *Dettagli e credenziali*: Inserisci le seguenti informazioni:
 +
-.. Fare clic su *Modifica progetto* e selezionare un nuovo progetto se quello che si desidera utilizzare è diverso dal progetto predefinito (in cui risiede l'agente della console).
+.. Seleziona *Modifica progetto* e scegli un nuovo progetto se quello che vuoi usare è diverso dal progetto predefinito (dove risiede l'agente della Console).
 .. Specificare il nome del cluster.
 .. Abilitare l'opzione *Account di servizio* e selezionare l'Account di servizio che ha il ruolo di Amministratore di archiviazione predefinito.  Ciò è necessario per abilitare i backup e la suddivisione in livelli.
 .. Specificare le credenziali.
@@ -190,7 +190,7 @@ Assicurati di avere un abbonamento a GCP Marketplace.
 
 
 
-. *Servizi*: Lasciare abilitato NetApp Backup and Recovery e fare clic su *Continua*.
+. *Servizi*: Lascia NetApp Backup and Recovery abilitato e seleziona *Continua*.
 . Completare le pagine della procedura guidata per distribuire il sistema come descritto in https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Avvio di Cloud Volumes ONTAP in GCP"^] .
 
 
@@ -202,7 +202,7 @@ NetApp Backup and Recovery è abilitato sul sistema.  Dopo aver creato volumi su
 È possibile abilitare NetApp Backup and Recovery in qualsiasi momento direttamente dal sistema.
 
 .Passi
-. Dalla pagina *Sistemi* della console, seleziona il sistema e seleziona *Abilita* accanto a Backup e ripristino nel pannello di destra.
+. Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable* accanto a Backup and Recovery nel pannello di destra.
 +
 Se la destinazione di Google Cloud Storage per i backup esiste come sistema nella pagina *Sistemi* della console, puoi trascinare il cluster sul sistema Google Cloud Storage per avviare la procedura guidata di configurazione.
 
@@ -258,7 +258,7 @@ storage.objects.update
 . Vai a https://console.cloud.google.com/storage/settings["Impostazioni di archiviazione GCP"^] e creare chiavi di accesso per l'account di servizio:
 +
 .. Seleziona un progetto e seleziona *Interoperabilità*.  Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
-.. In *Chiavi di accesso per gli account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e fai clic su *Crea chiave*.
+.. Nella sezione *Chiavi di accesso per account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e seleziona *Crea chiave*.
 +
 Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un secondo momento, quando si configura il servizio di backup.
 
@@ -315,7 +315,7 @@ cloudkms.keyRings.setIamPolicy
 [[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
-Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
+Attiva i backup in qualsiasi momento direttamente dal tuo sistema Cloud Volumes ONTAP.
 
 Una procedura guidata ti guiderà attraverso i seguenti passaggi principali:
 
@@ -332,17 +332,17 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 === Avvia la procedura guidata
 
 .Passi
-. Accedere alla procedura guidata di attivazione del backup e del ripristino utilizzando uno dei seguenti metodi:
+. Accedi alla procedura guidata Attiva backup e ripristino utilizzando uno dei seguenti metodi:
 +
-** Dalla pagina *Sistemi* della console, selezionare il sistema e selezionare *Abilita > Volumi di backup* accanto a Backup e ripristino nel pannello di destra.
+** Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable > Backup Volumes* accanto a Backup and Recovery nel pannello di destra.
 +
-Se la destinazione GCP per i backup esiste come sistema nella pagina *Sistemi* della console, è possibile trascinare il cluster ONTAP nell'archivio oggetti GCP.
+Se la destinazione Google Cloud Storage per i tuoi backup esiste come sistema nella pagina *Sistemi* della Console, puoi trascinare il cluster ONTAP sul sistema Google Cloud Storage.
 
 ** Selezionare *Volumi* nella barra Backup e ripristino.  Dalla scheda Volumi, seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Attiva backup* per un singolo volume (che non abbia già abilitato la replica o il backup su storage di oggetti).
 
 
 +
-La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup.  Se in questo passaggio è stata scelta la seconda opzione, verrà visualizzata la pagina Definisci strategia di backup con un volume selezionato.
+La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se hai usato la seconda opzione in questo passaggio, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.
 
 . Proseguire con le seguenti opzioni:
 +
@@ -459,7 +459,7 @@ Crea un nuovo bucket oppure selezionane uno esistente.
 
 ** *Chiave di crittografia*: se hai creato un nuovo bucket Google, inserisci le informazioni sulla chiave di crittografia fornite dal provider.  Scegli se utilizzare le chiavi di crittografia predefinite di Google Cloud oppure scegliere le chiavi gestite dal cliente dal tuo account Google per gestire la crittografia dei tuoi dati.
 +
-Se si sceglie di utilizzare le chiavi gestite dal cliente, immettere il vault delle chiavi e le informazioni sulla chiave.
+Se scegli di utilizzare le tue chiavi gestite dal cliente, inserisci le informazioni sul portachiavi e sulla chiave.
 
 
 
@@ -510,7 +510,7 @@ Viene creato un bucket di Google Cloud Storage nell'account di servizio indicato
 
 Per impostazione predefinita, i backup sono associati alla classe di archiviazione _Standard_.  È possibile utilizzare le classi di archiviazione più economiche _Nearline_, _Coldline_ o _Archive_.  Tuttavia, la classe di archiviazione viene configurata tramite Google e non tramite l'interfaccia utente NetApp Backup and Recovery .  Vedi l'argomento di Google https://cloud.google.com/storage/docs/changing-default-storage-class["Modifica della classe di archiviazione predefinita di un bucket"^] per i dettagli.
 
-Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
+Viene visualizzata la Volume Backup Dashboard per consentirti di monitorare lo stato dei backup.
 
 È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzandolink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .
 
@@ -519,10 +519,10 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
+Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
-. Dalla procedura guidata Attiva backup e ripristino, seleziona *Visualizza richiesta API*.
+. Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.
 . Per copiare i comandi negli appunti, selezionare l'icona *Copia*.
 
 

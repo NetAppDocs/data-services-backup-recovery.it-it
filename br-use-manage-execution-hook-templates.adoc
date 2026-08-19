@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery consente di gestire gli hook di esecuzione p
 
 
 [role="lead"]
-Un hook di esecuzione è un'azione personalizzata che viene eseguita con un'operazione di protezione dei dati in un'applicazione Kubernetes gestita.  Ad esempio, è possibile creare snapshot coerenti con l'applicazione utilizzando un hook di esecuzione per mettere in pausa le transazioni del database prima di uno snapshot e riprenderle dopo.  Quando si crea un modello di hook di esecuzione, specificare il tipo di hook, lo script da eseguire e i filtri per i contenitori di destinazione.  Utilizza il modello per collegare gli hook di esecuzione alle tue applicazioni.
+Crea modelli di hook di esecuzione per eseguire script personalizzati prima o dopo le operazioni di protezione per le applicazioni Kubernetes gestite.
 
 [NOTE]
 ====
@@ -33,7 +33,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 [[types-of-execution-hooks]]
 == Tipi di ganci di esecuzione
 
-NetApp Backup and Recovery supporta i seguenti tipi di hook di esecuzione, in base al momento in cui possono essere eseguiti:
+NetApp Backup e ripristino supporta i seguenti tipi di hook di esecuzione, a seconda del momento in cui vengono eseguiti:
 
 * Pre-istantanea
 * Post-istantanea
@@ -47,21 +47,21 @@ NetApp Backup and Recovery supporta i seguenti tipi di hook di esecuzione, in ba
 [[order-of-execution]]
 === Ordine di esecuzione
 
-Quando viene eseguita un'operazione di protezione dei dati, gli eventi di hook di esecuzione si verificano nel seguente ordine:
+Quando esegui un'operazione di protezione dei dati, gli eventi di hook di esecuzione si verificano nel seguente ordine:
 
 . Tutti gli hook di esecuzione pre-operazione personalizzati applicabili vengono eseguiti sui contenitori appropriati. È possibile creare più hook pre-operativi personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.
 . Se applicabile, si verificano blocchi del file system.
 . L'operazione di protezione dei dati è eseguita.
 . I file system congelati vengono sbloccati, se applicabile.
-. NetApp Backup and Recovery esegue tutti gli hook di esecuzione pre-operazione personalizzati applicabili sui contenitori appropriati.  È possibile creare più hook post-operazione personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.
+. NetApp Backup e ripristino esegue tutti gli hook di post-operazione personalizzati applicabili sui contenitori appropriati. Puoi creare più hook di post-operazione personalizzati, ma il loro ordine di esecuzione non è garantito né configurabile.
 
 
-Se si creano più hook dello stesso tipo, il loro ordine di esecuzione non è garantito.  I ganci di tipo diverso vengono sempre eseguiti nell'ordine specificato. Ad esempio, ecco l'ordine di esecuzione di una configurazione che presenta tutti i diversi tipi di hook:
+Se crei più hook dello stesso tipo, il loro ordine di esecuzione non è garantito. Gli hook di tipi diversi vengono sempre eseguiti nell'ordine specificato. Ad esempio, gli hook vengono eseguiti in questo ordine quando una configurazione include tutti i tipi di hook supportati:
 
-. Eseguiti i pre-snapshot hook
-. Eseguiti i ganci post-snapshot
-. Hook pre-backup eseguiti
-. Hook post-backup eseguiti
+. I hook pre-snapshot vengono eseguiti
+. Esecuzione degli hook post-snapshot
+. I hook di pre-backup vengono eseguiti
+. I hook post-backup vengono eseguiti
 
 
 
@@ -75,25 +75,25 @@ NOTE: Se un hook di esecuzione pre-snapshot aggiunge, modifica o rimuove risorse
 [[important-notes-about-custom-execution-hooks]]
 == Note importanti sui ganci di esecuzione personalizzati
 
-Quando pianifichi gli hook di esecuzione per le tue app, tieni presente quanto segue.
+Considera quanto segue quando pianifichi gli hook di esecuzione per le tue applicazioni.
 
 * Un hook di esecuzione deve utilizzare uno script per eseguire azioni.  Molti hook di esecuzione possono fare riferimento allo stesso script.
-* Gli hook di esecuzione devono essere scritti nel formato degli script shell eseguibili.
+* Gli hook di esecuzione devono essere script di shell eseguibili.
 * La dimensione dello script è limitata a 96 KB.
 * Le impostazioni dell'hook di esecuzione e tutti i criteri corrispondenti vengono utilizzati per determinare quali hook sono applicabili a un'operazione di snapshot, backup o ripristino.
 
 
 
-NOTE: Gli hook di esecuzione possono ridurre o disabilitare la funzionalità dell'applicazione.  Fai in modo che i tuoi hook personalizzati vengano eseguiti il più velocemente possibile. Se si avvia un'operazione di backup o snapshot con hook di esecuzione associati ma poi la si annulla, gli hook possono comunque essere eseguiti se l'operazione di backup o snapshot è già iniziata. Ciò significa che la logica utilizzata in un hook di esecuzione post-backup non può presumere che il backup sia stato completato.
+NOTE: Gli hook di esecuzione possono ridurre o disabilitare la funzionalità dell'applicazione. Fai in modo che i tuoi hook personalizzati vengano eseguiti il più rapidamente possibile. Se annulli un'operazione di backup o snapshot a cui sono associati degli hook di esecuzione, questi hook vengono comunque eseguiti se l'operazione è già iniziata. La logica di un hook di esecuzione post-backup non può presumere che il backup sia stato completato.
 
 
 
 [[execution-hook-filters]]
 == Filtri di hook di esecuzione
 
-Quando aggiungi o modifichi un hook di esecuzione per un'applicazione, puoi aggiungere filtri all'hook di esecuzione per gestire i contenitori a cui l'hook corrisponderà.  I filtri sono utili per le applicazioni che utilizzano la stessa immagine contenitore su tutti i contenitori, ma potrebbero utilizzare ciascuna immagine per uno scopo diverso (ad esempio Elasticsearch).  I filtri consentono di creare scenari in cui gli hook di esecuzione vengono eseguiti su alcuni contenitori identici, ma non necessariamente su tutti.  Se si creano più filtri per un singolo hook di esecuzione, questi vengono combinati con un operatore logico AND.  È possibile avere fino a 10 filtri attivi per ogni hook di esecuzione.
+Quando aggiungi o modifichi un hook di esecuzione per un'applicazione, puoi aggiungere filtri all'hook di esecuzione per controllare a quali container corrisponde l'hook. I filtri sono utili per le applicazioni che utilizzano la stessa immagine container su tutti i container, ma potrebbero usare ciascuna immagine per uno scopo diverso (come Elasticsearch). I filtri ti permettono di creare scenari in cui gli hook di esecuzione vengono eseguiti su alcuni, ma non necessariamente su tutti, i container identici. Se crei più filtri per un singolo hook di esecuzione, vengono combinati con un operatore logico AND. Puoi avere fino a 10 filtri attivi per ogni hook di esecuzione.
 
-Ogni filtro aggiunto a un hook di esecuzione utilizza un'espressione regolare per abbinare i contenitori nel cluster.  Quando un hook corrisponde a un contenitore, eseguirà lo script associato su quel contenitore.  Le espressioni regolari per i filtri utilizzano la sintassi Regular Expression 2 (RE2), che non supporta la creazione di un filtro che escluda i contenitori dall'elenco delle corrispondenze.  Per informazioni sulla sintassi supportata da NetApp Backup and Recovery per le espressioni regolari nei filtri di hook di esecuzione, vedere https://github.com/google/re2/wiki/Syntax["Supporto della sintassi Regular Expression 2 (RE2)"^] .
+Ogni filtro che aggiungi a un hook di esecuzione utilizza un'espressione regolare per individuare i container nel tuo cluster. Quando un hook trova una corrispondenza con un container, esegue lo script associato su quel container. Le espressioni regolari per i filtri utilizzano la sintassi Regular Expression 2 (RE2), che non supporta la creazione di un filtro che esclude i container dall'elenco delle corrispondenze. Per informazioni sulla sintassi che NetApp Backup and Recovery supporta per le espressioni regolari nei filtri degli hook di esecuzione, vedi  https://github.com/google/re2/wiki/Syntax["Supporto della sintassi Regular Expression 2 (RE2)"^].
 
 
 NOTE: Se si aggiunge un filtro namespace a un hook di esecuzione eseguito dopo un'operazione di ripristino o clonazione e l'origine e la destinazione del ripristino o della clonazione si trovano in namespace diversi, il filtro namespace viene applicato solo al namespace di destinazione.

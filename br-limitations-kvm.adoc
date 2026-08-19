@@ -14,9 +14,9 @@ summary: Questa versione di NetApp Backup and Recovery presenta le seguenti limi
 
 
 [role="lead"]
-Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
+Esamina le limitazioni attuali per i carichi di lavoro KVM in NetApp Backup e ripristino.
 
-Le seguenti azioni e configurazioni non sono supportate nei carichi di lavoro KVM in NetApp Backup and Recovery:
+Le seguenti azioni e configurazioni non supportate si applicano ai carichi di lavoro KVM in NetApp Backup e ripristino:
 
 
 
@@ -51,7 +51,7 @@ Le seguenti configurazioni non sono supportate:
 [[troubleshooting-notes]]
 == Note sulla risoluzione dei problemi
 
-Tenere presente quanto segue quando si utilizzano carichi di lavoro KVM con NetApp Backup and Recovery.
+Tieni presente quanto segue quando usi carichi di lavoro KVM con NetApp Backup e ripristino.
 
-* I backup possono fallire se l'agente guest QEMU non è in esecuzione in una VM protetta. Come soluzione alternativa, assicurarsi che il `qemu-guest-agent` demone sia in esecuzione sulla VM prima di avviare il backup.
+* I backup possono non riuscire se l'agente guest di QEMU non è in esecuzione in una macchina virtuale protetta. Per evitare questo problema, assicurati che il  `qemu-guest-agent` demone sia in esecuzione sulla macchina virtuale prima di avviare il backup.
 

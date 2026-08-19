@@ -21,7 +21,7 @@ Prima di iniziare a utilizzare NetApp Backup and Recovery, assicurati che la Net
 [[prepare-to-use-netapp-backup-and-recovery]]
 == Preparati a utilizzare NetApp Backup and Recovery
 
-Accedi a NetApp Backup and Recovery tramite NetApp Console. Esegui queste operazioni per preparare la Console per Backup and Recovery, a seconda che tu stia usando NetApp Console o NetApp Console distribuzione locale.
+Accedi a NetApp Backup and Recovery tramite NetApp Console. Esegui queste operazioni per preparare la Console per Backup and Recovery, a seconda che tu stia usando NetApp Console o la distribuzione locale di NetApp Console.
 
 
 
@@ -148,7 +148,7 @@ Consultare  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-back
 [[requirements-for-backups-to-object-storage]]
 == Requisiti per i backup su storage a oggetti
 
-Per utilizzare storage a oggetti come destinazione di backup, è necessario disporre di un account AWS S3, Google Cloud Storage, Microsoft Azure Blob, StorageGRID o ONTAP e delle autorizzazioni di accesso appropriate configurate.
+Per utilizzare lo storage a oggetti come destinazione di backup, hai bisogno di un account con AWS S3, Google Cloud Storage, Azure Blob storage, StorageGRID o ONTAP e delle autorizzazioni di accesso appropriate configurate.
 
 
 
@@ -187,7 +187,7 @@ Microsoft Windows Per le informazioni più recenti sulle versioni supportate, ve
 
 
 | Versioni di Microsoft SQL Server  a| 
-Le versioni 2012 e successive sono supportate per VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK) NFS.
+Le versioni 2012 e successive sono supportate per VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK) su NFS.
 
 
 
@@ -266,7 +266,7 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 | Versioni VMware vCenter vSphere | 7.0U1 e versioni successive 
 
 
-| VMware Tools | VMware Tools è necessario quando si utilizza la funzionalità di ripristino di file e cartelle e i backup coerenti con la macchina virtuale. Per assicurarsi che la versione di VMware Tools corrisponda alla versione di ESXi Server in uso, fare riferimento a  https://packages.vmware.com/tools/versions["Informazioni sulla mappatura delle versioni di VMware"]. 
+| VMware Tools | VMware Tools è necessario quando utilizzi la funzionalità di ripristino di file e cartelle e i backup coerenti con la macchina virtuale. Per assicurarti che la versione di VMware Tools corrisponda alla tua versione di ESXi Server, fai riferimento a  https://packages.vmware.com/tools/versions["Informazioni sulla mappatura delle versioni di VMware"]. 
 
 
 | Tipi di indirizzo IP | IPv4, IPv6 
@@ -332,7 +332,7 @@ NOTE: Per garantire che i ripristini del carico di lavoro KVM vengano completati
 Per abilitare la protezione delle VM KVM amministrate da utenti non root, attenersi alla seguente procedura:
 
 . Montare il volume come tipo NFS3 per evitare l'uso del `nobody` utente e gruppo.
-. Utilizzare il seguente comando per aggiungere un utente non root al `qemu` gruppo pur preservando i loro gruppi esistenti:
+. Usa il seguente comando per aggiungere un utente non root al gruppo  `qemu` mantenendo i suoi gruppi esistenti:
 +
 [source, shell]
 ----
@@ -388,8 +388,8 @@ NOTE: Per supportare più di 6 bucket per sistema su diversi provider cloud (fin
 
 
 | Object storage (destinazioni di backup)  a| 
-* Archiviazione oggetti di Azure
-* Amazon AWS
+* Azure Blob storage
+* AWS S3
 * NetApp StorageGRID
 * ONTAP S3
 

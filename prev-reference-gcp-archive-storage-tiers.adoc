@@ -14,16 +14,16 @@ summary: NetApp Backup and Recovery supporta una classe di archiviazione Google 
 
 
 [role="lead"]
-NetApp Backup and Recovery supporta una classe di archiviazione Google e la maggior parte delle regioni.
+Utilizza queste informazioni per comprendere il livello di archiviazione di Google Cloud Storage che NetApp Backup and Recovery supporta. Puoi anche verificare i costi di ripristino e i tempi di recupero per i backup archiviati.
 
 
 
 [[supported-google-archival-storage-classes-for-netapp-backup-and-recovery]]
 == Classi di archiviazione Google supportate per NetApp Backup and Recovery
 
-Quando vengono creati inizialmente i file di backup, questi vengono archiviati nella memoria _Standard_.  Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma consente anche di accedervi immediatamente.
+Quando i file di backup vengono creati inizialmente, vengono archiviati nello storage _Standard_. Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma consente comunque l'accesso immediato.
 
-Se il cluster on-prem utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di suddividere i backup più vecchi nello storage _Archive_ nell'interfaccia utente NetApp Backup and Recovery dopo un certo numero di giorni (in genere più di 30 giorni) per un'ulteriore ottimizzazione dei costi.  I dati in questo livello richiederanno un costo di recupero più elevato, quindi è necessario valutare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati.  Consultare la sezione di questa pagina sul ripristino dei dati dall'archivio.
+Se il tuo cluster on-premises utilizza ONTAP 9.12.1 o versioni successive, puoi scegliere di spostare i backup meno recenti nello storage _Archive_ nell'interfaccia utente di NetApp Backup and Recovery dopo un certo numero di giorni (di solito più di 30 giorni) per ottimizzare ulteriormente i costi. I dati in questo tier avranno un costo di recupero più elevato, quindi devi considerare quanto spesso potresti aver bisogno di ripristinare dati da questi file di backup archiviati. Vedi la sezione in questa pagina sul ripristino dei dati dallo storage di archiviazione.
 
 Tieni presente che quando configuri NetApp Backup and Recovery con questo tipo di regola del ciclo di vita, non devi configurare alcuna regola del ciclo di vita quando imposti il ​​bucket nel tuo account Google.
 

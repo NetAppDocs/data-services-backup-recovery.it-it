@@ -12,20 +12,20 @@ summary: 'Per una maggiore sicurezza, configura l"accesso per ruoli specifici in
 
 
 [role="lead"]
-Per aumentare la sicurezza e controllare l'accesso alle risorse, configura l'accesso in base al ruolo per NetApp Backup and Recovery. La NetApp Console supporta il controllo degli accessi in base al ruolo (RBAC) per alcuni carichi di lavoro di Backup and Recovery. Puoi assegnare ruoli amministrativi o di visualizzazione specifici per questi carichi di lavoro. Gli altri carichi di lavoro che non supportano ancora il controllo degli accessi in base al ruolo restano accessibili a tutti gli utenti con ruoli di Backup and Recovery finché non sarà supportata l'associazione a livello di progetto o di fleet.
+Configura il controllo degli accessi in base al ruolo (RBAC) in NetApp Console per controllare chi può accedere alle risorse di NetApp Backup and Recovery. Puoi assegnare ruoli amministrativi o di visualizzazione ai carichi di lavoro che supportano RBAC. I carichi di lavoro che non supportano ancora RBAC rimangono accessibili a tutti gli utenti con ruoli di Backup e Recovery finché non sarà disponibile l'associazione a livello di progetto o di fleet.
 
 
 NOTE: La NetApp Console utilizza i progetti per organizzare le risorse all'interno di cartelle, mentre la NetApp Console distribuzione locale si riferisce ai progetti come flotte.
 
-Segui questi passaggi per controllare l'accesso alle risorse nella tua organizzazione. Apporta le modifiche nella pagina *Amministrazione > Identità e accesso* nel menu NetApp Console.
+Per controllare l'accesso alle risorse nella tua organizzazione, completa questi passaggi nella pagina *Amministrazione > Identità e accesso* della NetApp Console.
 
 
-NOTE: Questi passaggi presuppongono che ti sia stato assegnato il ruolo di Organization Admin nella Console.
+NOTE: Questi passaggi presuppongono che ti sia stato assegnato il ruolo di amministratore dell'organizzazione nella NetApp Console.
 
 .Passi
 . Crea la struttura del progetto di identità e accesso.
 +
-In qualità di amministratore dell'organizzazione, configura la cartella Identity and access e la struttura del progetto in cui risiederanno i carichi di lavoro.
+Come amministratore dell'organizzazione, configura la struttura delle cartelle e dei progetti in cui risiederanno i carichi di lavoro.
 
 . Assegna ruoli utente.
 +
@@ -34,8 +34,8 @@ In qualità di amministratore dell'organizzazione, configura la cartella Identit
 Aggiungi utenti a ciascun progetto designato per i carichi di lavoro e assegna loro il ruolo appropriato. Ad esempio:
 
 +
-*** *Organization admin* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare tutte le risorse in tutte le organizzazioni, individuare i workload di Backup and Recovery e assegnarli ai progetti (ad esempio, US East o US West).
-*** *Amministratore di cartelle o progetti* e *Backup and Recovery super admin*: un utente con questi ruoli può visualizzare solo le risorse nella cartella o nel progetto per cui dispone delle autorizzazioni, ma può individuare i workload di Backup and Recovery e assegnarli a tale progetto.
+*** *Amministratore dell'organizzazione* e *Super amministratore di NetApp Backup and Recovery*: un utente con questi ruoli può visualizzare tutte le risorse tra le organizzazioni, individuare i carichi di lavoro di NetApp Backup and Recovery e assegnarli ai progetti (ad esempio, US East o US West).
+*** *Amministratore di cartella o di progetto* e *Super amministratore di NetApp Backup and Recovery*: un utente con questi ruoli può visualizzare solo le risorse nella cartella o nel progetto a cui è assegnato, ma può individuare i workload di NetApp Backup and Recovery e assegnarli a quel progetto.
 
 
 .. Opzione alternativa:
@@ -46,11 +46,11 @@ Invece di concedere a un utente l'accesso completo come amministratore di Backup
 
 . Scopri i carichi di lavoro in Backup and Recovery.
 +
-Gli amministratori dell'organizzazione o gli amministratori di cartelle o progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio, US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato.
+Gli amministratori dell'organizzazione, delle cartelle o dei progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato.
 
 . Aggiungi utenti ai progetti.
 +
-Gli amministratori dell'organizzazione o gli amministratori di cartelle/progetti aggiungono utenti della Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di visualizzatore dell'organizzazione e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo appropriato di Backup and Recovery otterranno automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.
+Gli amministratori dell'organizzazione, delle cartelle o dei progetti aggiungono utenti della NetApp Console ai progetti con carichi di lavoro. Assegna agli utenti il ruolo di visualizzatore dell'organizzazione e un ruolo di Backup and Recovery in base alle loro esigenze di accesso. Gli utenti con il ruolo appropriato di Backup and Recovery ottengono automaticamente l'accesso ai nuovi carichi di lavoro in questi progetti.
 
 
 

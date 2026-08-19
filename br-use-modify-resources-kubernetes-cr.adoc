@@ -14,7 +14,7 @@ summary: Modifica le risorse durante le operazioni di ripristino in NetApp Backu
 
 
 [role="lead"]
-Le trasformazioni delle risorse consentono di modificare una risorsa durante il ripristino. Ciò è utile quando la versione ripristinata deve essere diversa dall'originale, ad esempio modificando l'indirizzo IP di una macchina virtuale durante il ripristino in una rete diversa. È inoltre possibile link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["modifica le risorse durante il ripristino tramite l'interfaccia utente web"^].
+Utilizza le trasformazioni delle risorse per modificare le risorse Kubernetes durante le operazioni di ripristino. Per informazioni sulla modifica delle risorse nell'interfaccia utente web, consulta link:br-use-restore-kubernetes-applications.html#restore-kubernetes-applications["Modifica le risorse durante il ripristino"^].
 
 *Ruolo richiesto nella NetApp Console* Super admin di Backup and Recovery o admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -27,7 +27,7 @@ Il  `transformations` campo in  `SnapshotRestore`,  `BackupRestore`,  `AppMirror
 
 Le trasformazioni delle risorse utilizzano  https://tools.ietf.org/html/rfc6902["RFC 6902"] operazioni JSON Patch e  https://tools.ietf.org/html/rfc6901["RFC 6901"] percorsi JSON Pointer per individuare e modificare campi specifici all'interno delle risorse Kubernetes.
 
-Ecco la struttura di base di un oggetto di ripristino che contiene trasformazioni di risorse:
+Il seguente esempio mostra la struttura di base di un oggetto di ripristino che contiene trasformazioni delle risorse:
 
 [source, yaml]
 ----
@@ -61,7 +61,7 @@ spec:
 È possibile utilizzare le trasformazioni delle risorse con risorse che corrispondono ai seguenti criteri:
 
 * `kind` (obbligatorio): Il tipo di risorsa Kubernetes (ad esempio, `ConfigMap`, `Deployment`, `Pod`)
-* `group` (facoltativo): Il gruppo API (ad esempio, `apps`, `route.openshift.io`) - omettere per le risorse principali
+* `group` (facoltativo): Il gruppo API (ad esempio, `apps`, `route.openshift.io`) — ometti per le risorse core
 * `version` (facoltativo): La versione dell'API (ad esempio, `v1`, `v1beta1`)
 * `name` (facoltativo): Applica solo a una risorsa specifica tramite il suo nome
 
@@ -185,7 +185,7 @@ tridentctl-protect --transformation ',v1,ConfigMap:remove{"path":"/metadata/anno
 [[replace-a-value-within-a-resource]]
 == Sostituire un valore all'interno di una risorsa
 
-Utilizzare l' `replace`operazione per sostituire un valore esistente all'interno di una risorsa al percorso specificato. Il percorso JSON deve già esistere. L'esempio seguente modifica un hostname per un oggetto Route:
+Usa l' `replace`operazione per sostituire un valore esistente all'interno di una risorsa al percorso specificato. Il percorso JSON Pointer deve già esistere. Il seguente esempio cambia un hostname per un oggetto Route:
 
 [source, yaml]
 ----

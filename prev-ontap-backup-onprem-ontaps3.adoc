@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi ONTAP locali principali.  È possibile inviare i backup a un sistema di archiviazione ONTAP secondario (un volume replicato) o a un bucket su un sistema ONTAP configurato come server S3 (un file di backup) o a entrambi.
+In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai sistemi ONTAP locali primari su ONTAP S3 e, facoltativamente, su un sistema ONTAP secondario per la replica. Usa questa pagina per preparare l'ambiente e attivare i backup.
 
 Il sistema ONTAP principale in sede può essere un sistema FAS, AFF o ONTAP Select .  Il sistema ONTAP secondario può essere un ONTAP locale o un sistema Cloud Volumes ONTAP .  L'archiviazione degli oggetti può essere su un sistema ONTAP locale o su un sistema Cloud Volumes ONTAP su cui è stato abilitato un server di archiviazione degli oggetti Simple Storage Service (S3).
 
@@ -45,7 +45,7 @@ In questo scenario, l'agente Console dovrebbe essere distribuito nello stesso am
 [[prepare-your-console-agent]]
 == Prepara il tuo agente Console
 
-L'agente Console è il software principale per la funzionalità Console.  Per eseguire il backup e il ripristino dei dati ONTAP è necessario un agente Console.
+L'agente Console è il software principale per la funzionalità NetApp Console .  Per eseguire il backup e il ripristino dei dati ONTAP è necessario un agente Console.
 
 
 
@@ -252,14 +252,14 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 === Avvia la procedura guidata
 
 .Passi
-. Accedere alla procedura guidata di attivazione del backup e del ripristino utilizzando uno dei seguenti metodi:
+. Accedi alla procedura guidata Attiva backup e ripristino utilizzando uno dei seguenti metodi:
 +
-** Dalla pagina *Sistemi* della console, selezionare il sistema e selezionare *Abilita > Volumi di backup* accanto a Backup e ripristino nel pannello di destra.
+** Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable > Backup Volumes* accanto a Backup and Recovery nel pannello di destra.
 ** Selezionare *Volumi* nella barra Backup e ripristino.  Dalla scheda Volumi, seleziona l'opzione *Azioni (...)* e seleziona *Attiva backup* per un singolo volume (che non abbia già abilitato la replica o il backup nell'archiviazione oggetti).
 
 
 +
-La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, repliche e backup.  Se in questo passaggio è stata scelta la seconda opzione, verrà visualizzata la pagina Definisci strategia di backup con un volume selezionato.
+La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se hai scelto la seconda opzione in questo passaggio, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.
 
 . Proseguire con le seguenti opzioni:
 +
@@ -389,7 +389,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 +
 *** Inserisci il nome della policy.
 *** Selezionare fino a cinque pianificazioni, in genere con frequenze diverse.
-*** Per le policy di backup su oggetto, impostare le impostazioni di protezione Datalock e Ransomware. Per ulteriori dettagli su Datalock e protezione Ransomware, consultare link:prev-ontap-policy-object-options.html["Impostazioni dei criteri di backup su oggetto"].
+*** Per le policy di backup su oggetto, imposta le impostazioni DataLock e di protezione da ransomware. Per dettagli su DataLock e sulla protezione da ransomware, fai riferimento a link:prev-ontap-policy-object-options.html["Impostazioni dei criteri di backup su oggetto"].
 *** Seleziona *Crea*.
 
 
@@ -431,9 +431,9 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
+Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
-. Dalla procedura guidata Attiva backup e ripristino, seleziona *Visualizza richiesta API*.
+. Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.
 . Per copiare i comandi negli appunti, selezionare l'icona *Copia*.
 

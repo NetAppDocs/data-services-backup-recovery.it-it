@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-mssql-restore.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery 
 summary: 'Ripristina i carichi di lavoro del database da uno snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell"archivio oggetti.' 
 ---
 = Ripristina i carichi di lavoro di Microsoft SQL Server con NetApp Backup and Recovery
@@ -14,34 +14,34 @@ summary: 'Ripristina i carichi di lavoro del database da uno snapshot, da un bac
 
 
 [role="lead"]
-Ripristina i carichi di lavoro di Microsoft SQL Server utilizzando NetApp Backup and Recovery. Utilizzare snapshot, backup replicati su storage secondario o backup in storage di oggetti. Ripristinare i carichi di lavoro sul sistema originale, su un sistema diverso con lo stesso account cloud o su un sistema ONTAP locale.
+Ripristina i carichi di lavoro di Microsoft SQL Server da Snapshot, backup replicati su storage secondario o backup in storage a oggetti. Scegli il sistema di origine, un sistema diverso o un sistema ONTAP on-premise come destinazione.
 
-.Ripristina da queste posizioni
-È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:
+.Ripristina origini
+Puoi ripristinare i carichi di lavoro dalle seguenti posizioni:
 
-* Ripristina da una posizione primaria
-* Ripristina da una risorsa replicata
-* Ripristina da un backup dell'archivio oggetti
+* Posizione principale
+* Risorsa replicata
+* Backup dello storage a oggetti
 
 
-.Ripristinare questi punti
-È possibile ripristinare i dati all'ultimo snapshot o a questi punti:
+.Punti di ripristino
+Puoi ripristinare i dati nei seguenti modi:
 
-* Ripristina da snapshot
-* Ripristina un punto specifico nel tempo se conosci il nome del file, la posizione e l'ultima data valida
-* Ripristina l'ultimo backup
+* Da una Snapshot
+* A un preciso momento nel tempo, quando conosci il nome del file, la posizione e l'ultima data valida
+* All'ultimo backup
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup in storage a oggetti e la protezione anti-ransomware è attiva per tale backup (se hai abilitato Datalock e la protezione anti-ransomware nella policy di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nello storage a oggetti e la protezione anti-ransomware è attiva per quel backup (se hai abilitato DataLock e la protezione anti-ransomware nella policy di backup), ti viene richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al file di backup dovrai pagare delle commissioni aggiuntive al tuo provider cloud.
 
 
 
-[[how-restoring-workloads-works]]
-== Come funziona il ripristino dei carichi di lavoro
+[[how-workload-restoration-works]]
+== Come funziona il ripristino del carico di lavoro
 
 Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
 
@@ -68,10 +68,10 @@ Ripristinare i carichi di lavoro utilizzando uno di questi metodi:
 
 
 
-[[restore-workload-data-from-the-restore-option]]
-== Ripristina i dati del carico di lavoro dall'opzione Ripristina
+[[restore-workload-data-from-the-restore-page]]
+== Ripristina i dati del workload dalla pagina Ripristina
 
-Ripristinare i carichi di lavoro del database utilizzando l'opzione Ripristina.
+Usa la pagina Ripristina per ripristinare i carichi di lavoro del database.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
@@ -97,7 +97,7 @@ Viene visualizzato un elenco di istantanee.
 . Seleziona lo snapshot che vuoi ripristinare.
 . Selezionare *Avanti*.
 +
-Successivamente vedrai le opzioni di destinazione.
+Vengono visualizzate le opzioni di destinazione.
 
 . Nella pagina Dettagli destinazione, inserisci le seguenti informazioni:
 +
@@ -106,15 +106,16 @@ Successivamente vedrai le opzioni di destinazione.
 +
 *** *Sovrascrivi il database con lo stesso nome durante il ripristino*: durante il ripristino, il nome originale del database viene mantenuto.
 *** *Mantieni impostazioni di replica del database SQL*: conserva le impostazioni di replica per il database SQL dopo l'operazione di ripristino.
-*** *Crea backup del registro delle transazioni prima del ripristino*: crea un backup del registro delle transazioni prima dell'operazione di ripristino.***  *Interrompi il ripristino se il backup del registro delle transazioni prima del ripristino non riesce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni non riesce.
+*** *Crea backup del registro delle transazioni prima del ripristino*: crea un backup del registro delle transazioni prima dell'operazione di ripristino.
+*** *Interrompi il ripristino se il backup del registro delle transazioni prima del ripristino non riesce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni non riesce.
 *** *Prescript*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino, eventuali argomenti richiesti dallo script e il tempo di attesa per il completamento dello script.
 
 
 ** *Opzioni post-ripristino*:
 +
-*** *Operativo*, ma non disponibile per il ripristino di ulteriori registri delle transazioni.  In questo modo il database torna online dopo l'applicazione dei backup del registro delle transazioni.
-*** *Non operativo*, ma disponibile per il ripristino di ulteriori registri delle transazioni.  Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup del registro delle transazioni.  Questa opzione è utile per ripristinare ulteriori registri delle transazioni.
-*** *Modalità di sola lettura* e disponibile per il ripristino di registri di transazioni aggiuntivi.  Ripristina il database in modalità di sola lettura e applica i backup del registro delle transazioni.
+*** *Operativo*: Riporta online il database dopo l'applicazione dei backup del registro delle transazioni. Non puoi ripristinare ulteriori registri delle transazioni.
+*** *Non operativo*: Mantiene il database non disponibile così puoi ripristinare ulteriori log delle transazioni.
+*** *Modalità di sola lettura*: Ripristina il database in modalità di sola lettura e ti permette di ripristinare ulteriori transaction log.
 *** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
 
 
@@ -134,7 +135,7 @@ NetApp Backup and Recovery utilizza i log e gli snapshot più recenti per creare
 . Selezionare *Avanti*.
 . Nella pagina Ripristina a un punto specifico nel tempo, immettere le seguenti informazioni:
 +
-** *Data e ora del ripristino dei dati*: immettere la data e l'ora esatte dei dati che si desidera ripristinare.  Questa data e ora provengono dall'host del database Microsoft SQL Server.
+** *Data e ora per il ripristino dei dati*: Inserisci la data e l'ora esatte dei dati che vuoi ripristinare. Questa data e ora provengono dall'host del database Microsoft SQL Server.
 
 
 . Seleziona *Cerca*.
@@ -152,9 +153,9 @@ NetApp Backup and Recovery utilizza i log e gli snapshot più recenti per creare
 
 ** *Opzioni post-ripristino*:
 +
-*** *Operativo*, ma non disponibile per il ripristino di ulteriori registri delle transazioni.  In questo modo il database torna online dopo l'applicazione dei backup del registro delle transazioni.
-*** *Non operativo*, ma disponibile per il ripristino di ulteriori registri delle transazioni.  Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup del registro delle transazioni.  Questa opzione è utile per ripristinare ulteriori registri delle transazioni.
-*** *Modalità di sola lettura* e disponibile per il ripristino di registri di transazioni aggiuntivi.  Ripristina il database in modalità di sola lettura e applica i backup del registro delle transazioni.
+*** *Operativo*: Riporta online il database dopo l'applicazione dei backup del registro delle transazioni. Non puoi ripristinare ulteriori registri delle transazioni.
+*** *Non operativo*: Mantiene il database non disponibile così puoi ripristinare ulteriori log delle transazioni.
+*** *Modalità di sola lettura*: Ripristina il database in modalità di sola lettura e ti permette di ripristinare ulteriori transaction log.
 *** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
 
 
@@ -168,13 +169,13 @@ NetApp Backup and Recovery utilizza i log e gli snapshot più recenti per creare
 [[restore-to-the-latest-backup]]
 === Ripristina l'ultimo backup
 
-Questa opzione utilizza gli ultimi backup completi e di registro per ripristinare i dati all'ultimo stato valido.  Il sistema esegue la scansione dei registri dall'ultimo snapshot fino al presente.  Il processo tiene traccia delle modifiche e delle attività per ripristinare la versione più recente e accurata dei dati.
+Questa opzione utilizza i backup completi e di log più recenti per ripristinare i dati all'ultimo stato valido. NetApp Backup and Recovery analizza i log dall'ultimo Snapshot fino al presente per ripristinare la versione più recente disponibile dei dati.
 
 . Proseguendo dalla pagina Opzioni di ripristino, seleziona *Ripristina all'ultimo backup*.
 +
 NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di ripristino.
 
-. Nella pagina Ripristina allo stato più recente, seleziona la posizione dello snapshot dell'archiviazione locale, secondaria o dell'archiviazione oggetti.
+. Nella pagina *Ripristina allo stato più recente*, seleziona una posizione per lo snapshot: storage locale, storage secondario o storage a oggetti.
 . Selezionare *Avanti*.
 . Nella pagina Dettagli destinazione, inserisci le seguenti informazioni:
 +
@@ -190,9 +191,9 @@ NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di r
 
 ** *Opzioni post-ripristino*:
 +
-*** *Operativo*, ma non disponibile per il ripristino di ulteriori registri delle transazioni.  In questo modo il database torna online dopo l'applicazione dei backup del registro delle transazioni.
-*** *Non operativo*, ma disponibile per il ripristino di ulteriori registri delle transazioni.  Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup del registro delle transazioni.  Questa opzione è utile per ripristinare ulteriori registri delle transazioni.
-*** *Modalità di sola lettura* e disponibile per il ripristino di registri di transazioni aggiuntivi.  Ripristina il database in modalità di sola lettura e applica i backup del registro delle transazioni.
+*** *Operativo*: Riporta online il database dopo l'applicazione dei backup del registro delle transazioni. Non puoi ripristinare ulteriori registri delle transazioni.
+*** *Non operativo*: Mantiene il database non disponibile così puoi ripristinare ulteriori log delle transazioni.
+*** *Modalità di sola lettura*: Ripristina il database in modalità di sola lettura e ti permette di ripristinare ulteriori transaction log.
 *** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
 
 
@@ -203,10 +204,10 @@ NetApp Backup and Recovery mostra gli snapshot disponibili per l'operazione di r
 
 
 
-[[restore-workload-data-from-the-inventory-option]]
-== Ripristina i dati del carico di lavoro dall'opzione Inventario
+[[restore-workload-data-from-the-inventory-page]]
+== Ripristina i dati del workload dalla pagina Inventory
 
-Ripristina i carichi di lavoro del database dalla pagina Inventario.  Utilizzando l'opzione Inventario, è possibile ripristinare solo i database, non le istanze.
+Utilizza la pagina Inventario per ripristinare i carichi di lavoro del database. Da questa pagina puoi ripristinare i database, ma non le istanze.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -224,5 +225,5 @@ Vengono visualizzate le stesse tre opzioni presenti quando si esegue il ripristi
 ** Ripristina l'ultimo backup
 
 
-. Continuare con gli stessi passaggi per l'opzione di ripristino dalla pagina Ripristina
+. Completa i passaggi relativi all'opzione di ripristino selezionata dalla pagina Ripristina.
 

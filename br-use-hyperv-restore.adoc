@@ -14,10 +14,10 @@ summary: Proteggi i tuoi carichi di lavoro Hyper-V con NetApp Backup and Recover
 
 
 [role="lead"]
-Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell'archivio oggetti utilizzando NetApp Backup and Recovery.
+Ripristina i carichi di lavoro Hyper-V da snapshot locali, backup replicati su storage secondario o backup in storage a oggetti utilizzando NetApp Backup and Recovery.
 
 .Ripristina da queste posizioni
-È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:
+Puoi ripristinare i carichi di lavoro da queste posizioni:
 
 * Ripristina da una posizione primaria (snapshot locale)
 * Ripristina da una risorsa replicata su un archivio secondario
@@ -25,14 +25,14 @@ Ripristina i carichi di lavoro Hyper-V da snapshot, da un backup del carico di l
 
 
 .Ripristinare questi punti
-È possibile ripristinare i dati in questi punti:
+Puoi ripristinare i dati verso queste destinazioni:
 
 * Ripristina nella posizione originale (da storage primario, secondario e storage a oggetti)
 * Ripristina in una posizione alternativa (da storage primario, secondario e a oggetti)
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup in storage a oggetti e la protezione anti-ransomware è attiva per tale backup (se hai abilitato Datalock e la protezione anti-ransomware nella policy di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+Se selezioni un file di backup nello storage a oggetti e la protezione anti-ransomware è attiva per quel backup perché hai abilitato DataLock e la protezione anti-ransomware nella policy di backup, ti viene richiesto di eseguire un controllo di integrità aggiuntivo prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
@@ -42,27 +42,27 @@ TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di usc
 [[how-restoring-workloads-works]]
 == Come funziona il ripristino dei carichi di lavoro
 
-Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
+Quando ripristini un carico di lavoro, si verificano le seguenti situazioni:
 
 * Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
 * Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema originale o su un sistema ONTAP locale.
 
 
-Dalla pagina Ripristina, puoi ripristinare una risorsa, anche se non ricordi il nome esatto, la posizione in cui si trova o la data in cui era in buone condizioni l'ultima volta. Puoi cercare l'istantanea utilizzando i filtri.
+Dalla pagina Ripristina, puoi ripristinare una risorsa anche se non ricordi il nome esatto, la posizione o la data dell'ultimo backup valido. Puoi cercare l'istantanea utilizzando i filtri.
 
 
 
 [[restore-hyper-v-workloads]]
 == Ripristinare i carichi di lavoro Hyper-V
 
-Ripristina i carichi di lavoro Hyper-V utilizzando il menu Ripristina. Puoi cercare lo snapshot per nome o utilizzando i filtri.
+Ripristina i carichi di lavoro Hyper-V utilizzando il menu Ripristina. Puoi cercare uno snapshot per nome o utilizzando i filtri.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
 . Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *Hyper-V*.
-. Immettere il nome della risorsa che si desidera ripristinare oppure filtrare in base al nome della VM, all'host della VM o al pool di archiviazione in cui si trova la risorsa che si desidera ripristinare.
+. Inserisci il nome della risorsa che vuoi ripristinare oppure filtra per nome della VM, host della VM o pool di storage in cui si trova la risorsa.
 +
 Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
 
@@ -95,7 +95,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 .Ripristina in posizione alternativa
 --
 .. Selezionare il riquadro *Posizione alternativa*.
-.. Nella sezione *Impostazioni destinazione*: inserisci le seguenti informazioni:
+.. Nella sezione *Impostazioni destinazione*, inserisci le seguenti informazioni:
 +
 *** *FQDN o indirizzo IP Hyper-V*: immettere il nome di dominio completo o l'indirizzo IP dell'host Hyper-V di destinazione.
 *** *Rete*: seleziona la rete di destinazione in cui desideri ripristinare lo snapshot.
@@ -103,9 +103,9 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 *** *Posizione di destinazione*: immettere la cartella di destinazione o la condivisione CIFS che deve contenere i dati ripristinati.
 
 
-.. Nella sezione *Archiviazione di destinazione* (visibile solo durante il ripristino da archivio di oggetti):
+.. Nella sezione *Archiviazione di destinazione* (visibile solo durante il ripristino da storage a oggetti):
 +
-*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una posizione diversa nel caso in cui la posizione di archiviazione di origine non sia raggiungibile o sia piena. Scegli un cluster, una storage VM o un aggregate diverso da utilizzare.
+*** *Modifica posizione di archiviazione predefinita*: Abilita questa opzione per ripristinare un backup dell'archivio di oggetti in una posizione diversa se la posizione di archiviazione di origine non è raggiungibile o è piena. Scegli un cluster, una storage VM o un aggregate diverso da utilizzare.
 
 
 .. Nella sezione *Opzioni pre-ripristino*, prendi in considerazione le seguenti opzioni:
@@ -113,7 +113,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 *** *Ripristino rapido*: abilita questa opzione per rendere immediatamente disponibile la VM ripristinata. Dall'archivio oggetti vengono ripristinati solo i file necessari per eseguire la macchina virtuale, anziché l'intero volume.
 
 
-.. Nella sezione *Opzioni di ripristino post*, prendi in considerazione le seguenti opzioni:
+.. Nella sezione *Opzioni post-ripristino*, prendi in considerazione le seguenti opzioni:
 +
 *** *Avvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il ripristino.
 

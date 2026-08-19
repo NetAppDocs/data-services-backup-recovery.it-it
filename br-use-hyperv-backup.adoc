@@ -14,11 +14,11 @@ summary: Proteggi i tuoi carichi di lavoro Hyper-V con il backup e il ripristino
 
 
 [role="lead"]
-Esegui il backup delle VM Hyper-V dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+Esegui il backup delle macchine virtuali Hyper-V dai sistemi ONTAP locali verso destinazioni di storage a oggetti supportate per proteggere i tuoi dati. I backup pianificati e su richiesta vengono archiviati nel tuo cloud o nel tuo archivio di oggetti privato.
 
 * Per eseguire il backup dei carichi di lavoro in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
-* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedi link:br-use-hyperv-protection-groups.html["Crea e gestisci i gruppi di protezione Hyper-V in NetApp Backup and Recovery"] per maggiori informazioni.
-* Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
+* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un insieme di risorse. Vedi link:br-use-hyperv-protection-groups.html["Crea e gestisci i gruppi di protezione Hyper-V in NetApp Backup and Recovery"] per ulteriori informazioni.
+* Esegui subito il backup dei carichi di lavoro con un backup su richiesta.
 
 
 
@@ -26,16 +26,16 @@ Esegui il backup delle VM Hyper-V dai sistemi ONTAP locali ad Amazon Web Service
 [[back-up-workloads-now-with-an-on-demand-backup]]
 == Esegui subito il backup dei carichi di lavoro con un backup on-demand
 
-Utilizza il backup su richiesta in modo che i tuoi dati siano protetti prima di apportare modifiche al sistema.
+Utilizza un backup su richiesta per proteggere i tuoi dati prima di apportare modifiche al sistema.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Passi
-. Dal menu, seleziona *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
-. Selezionare il gruppo di protezione o le macchine virtuali di cui si desidera eseguire il backup.
+. Seleziona la scheda *Gruppi di protezione*, *Archivi dati* o *Macchine virtuali*.
+. Seleziona il gruppo di protezione o le macchine virtuali che vuoi sottoporre a backup.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
 

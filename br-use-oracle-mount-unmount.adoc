@@ -14,7 +14,7 @@ summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup 
 
 
 [role="lead"]
-Potrebbe essere necessario montare un punto di ripristino di Oracle Database se si ha bisogno di accedere al database in uno stato controllato per eseguire operazioni di ripristino. Catalogare manualmente il punto di ripristino quando è necessario archiviare i metadati delle operazioni di backup e ripristino nel catalogo di ripristino RMAN e l'opzione per la catalogazione automatica dei metadati non è abilitata.
+Monta un punto di ripristino del database Oracle quando hai bisogno di accedere al database in uno stato controllato per le operazioni di ripristino. Se la catalogazione automatica è disabilitata, puoi catalogare manualmente i metadati del punto di ripristino nel catalogo di ripristino RMAN.
 
 
 
@@ -52,7 +52,7 @@ Il punto di ripristino è montato sull'host Oracle.
 
 
 [[unmount-an-oracle-database-recovery-point]]
-== Smonta un punto di ripristino del database Oracle
+== Smonta un punto di ripristino di database Oracle
 
 Smontare il punto di ripristino quando non è più necessario visualizzare le modifiche apportate al database.
 

@@ -14,7 +14,7 @@ summary: 'NetApp Backup and Recovery consente di gestire le informazioni sull"ho
 
 
 [role="lead"]
-NetApp Backup and Recovery consente di aggiungere applicazioni Kubernetes tramite l'interfaccia utente web o applicando file di risorse personalizzati. Le applicazioni possono essere basate su namespace, composte da risorse Kubernetes standard, oppure basate su VM, composte da una o più macchine virtuali.
+Usa l'interfaccia utente web di NetApp Backup and Recovery o i file di risorse personalizzati per aggiungere applicazioni Kubernetes da proteggere. Puoi aggiungere applicazioni basate su namespace che utilizzano risorse Kubernetes standard o applicazioni basate su VM che utilizzano una o più macchine virtuali.
 
 .Ruolo richiesto NetApp Console
 Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
@@ -24,7 +24,7 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 [[add-and-protect-a-new-kubernetes-application]]
 == Aggiungi e proteggi una nuova applicazione Kubernetes
 
-Il primo passo per proteggere le applicazioni Kubernetes è creare un'applicazione all'interno di NetApp Backup and Recovery. Quando si crea un'applicazione, si informa NetApp Backup and Recovery dell'applicazione in esecuzione sul cluster Kubernetes.
+Per proteggere un'applicazione Kubernetes, crea prima l'applicazione in NetApp Backup and Recovery. Quando crei l'applicazione, NetApp Backup and Recovery rileva l'applicazione in esecuzione sul cluster Kubernetes.
 
 .Prima di iniziare
 Prima di poter aggiungere e proteggere un'applicazione Kubernetes, è necessariolink:br-start-discover.html["scopri i carichi di lavoro di Kubernetes"] .
@@ -83,7 +83,7 @@ L'applicazione viene creata e compare nell'elenco delle applicazioni nella sched
 . Trova le macchine virtuali da aggiungere all'applicazione scegliendo uno spazio dei nomi e includendo facoltativamente i selettori di etichette.
 +
 
-NOTE: Se si selezionano le VM dall'elenco, la definizione dell'applicazione è statica: le nuove VM non vengono aggiunte all'applicazione in un secondo momento (è necessario modificare l'app per aggiungerle e proteggerle). Se si utilizzano i selettori di etichette, non è possibile selezionare singole VM o modificare l'elenco generato, ma qualsiasi VM che corrisponda successivamente al selettore viene inclusa e protetta automaticamente.
+NOTE: Se selezioni le VM dall'elenco, la definizione dell'applicazione è statica: le nuove VM non vengono aggiunte all'applicazione in seguito (devi modificare l'applicazione per aggiungerle e proteggerle). Se usi i selettori di etichette, non puoi scegliere singole VM o modificare l'elenco generato, ma qualsiasi VM che in seguito corrisponde al selettore viene inclusa e protetta automaticamente.
 
 +
 Le macchine virtuali selezionate vengono visualizzate nell'elenco a destra.
@@ -95,7 +95,7 @@ Le macchine virtuali selezionate vengono visualizzate nell'elenco a destra.
 
 
 .Risultato
-L'applicazione viene creata e appare nell'elenco delle applicazioni nella scheda *Applicazioni* dell'inventario Kubernetes.  La NetApp Console consente la protezione dell'applicazione in base alle impostazioni e puoi monitorare l'avanzamento nell'area *Monitoraggio* del backup e del ripristino.
+L'applicazione viene creata e compare nell'elenco delle applicazioni nella scheda *Applicazioni* dell'inventario di Kubernetes. NetApp Backup and Recovery consente di proteggere l'applicazione in base alle tue impostazioni, e puoi monitorare l'avanzamento nell'area *Monitoraggio*.
 
 --
 .Aggiungi un'app basata su namespace (CR)

@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 
 
 [role="lead"]
-NetApp Backup and Recovery deve rilevare gli host KVM e le macchine virtuali prima di proteggerli. Gli host KVM e le VM devono essere gestiti da una piattaforma di gestione come Apache CloudStack prima di poterli aggiungere a Backup e ripristino.
+Individua gli host KVM e le macchine virtuali in NetApp Backup and Recovery così puoi proteggerli con criteri di protezione. Il tuo ambiente KVM deve essere gestito da una piattaforma di gestione come Apache CloudStack prima dell'individuazione.
 
 *Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -26,10 +26,10 @@ NetApp Backup and Recovery deve rilevare gli host KVM e le macchine virtuali pri
 Aggiungi informazioni sulla piattaforma di gestione e sull'host KVM e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro.
 
 .Passi
-. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . In *Carichi di lavoro*, seleziona il riquadro *KVM*.
 +
-Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella Console ma non sono state rilevate risorse, viene visualizzata la pagina _Benvenuti nel nuovo NetApp Backup and Recovery_ con l'opzione *Rileva risorse*.
+Se è la prima volta che accedi a NetApp Backup and Recovery e hai già un sistema nella Console ma nessuna risorsa rilevata, viene visualizzata la pagina "Benvenuto nel nuovo NetApp Backup and Recovery" con l'opzione *Rileva risorse*.
 
 . Seleziona *Scopri risorse*.
 . Inserisci le seguenti informazioni:
@@ -39,7 +39,7 @@ Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella C
 +
 ... Inserisci le seguenti informazioni:
 +
-**** *Indirizzo IP o FQDN della piattaforma di gestione*: immettere l'indirizzo IP o il nome di dominio completo della piattaforma di gestione.
+**** *Indirizzo IP o FQDN della piattaforma di gestione*: Inserisci l'indirizzo IP o un FQDN della piattaforma di gestione.
 **** *Chiave API*: inserisci la chiave API da utilizzare per autenticare le richieste API.
 **** *Chiave segreta*: inserisci la chiave segreta da utilizzare per autenticare le richieste API.
 **** *Porta*: immettere la porta da utilizzare per la comunicazione tra Backup and Recovery e la piattaforma di gestione.
@@ -77,7 +77,7 @@ Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nel
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
-. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Seleziona il riquadro del carico di lavoro KVM.
 . Dal menu Backup e ripristino, seleziona *Dashboard*.
 . Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

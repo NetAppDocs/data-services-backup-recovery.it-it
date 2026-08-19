@@ -4,7 +4,7 @@ permalink: br-use-oracle-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: È possibile proteggere le macchine virtuali Oracle dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati. 
 ---
-= Scopri come proteggere i carichi di lavoro di Oracle Database con NetApp Backup and Recovery
+= Proteggi i carichi di lavoro del database Oracle con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: È possibile proteggere le macchine virtuali Oracle dai sistemi ONTAP l
 
 
 [role="lead"]
-Proteggi i database e i log Oracle utilizzando NetApp Backup and Recovery. Ottieni backup e ripristini rapidi, efficienti in termini di spazio, coerenti con gli arresti anomali e coerenti con il database. Esegui il backup dei carichi di lavoro di Oracle Database su AWS S3, NetApp StorageGRID, Azure Blob Storage o ONTAP S3. Ripristina i backup su un host Oracle on-premises.
+Usa NetApp Backup and Recovery per proteggere i carichi di lavoro e i log di database Oracle con backup e ripristini rapidi, efficienti in termini di spazio, coerenti con il crash e coerenti con il database. Puoi eseguire il backup dei carichi di lavoro su Amazon S3, StorageGRID, Azure Blob o ONTAP S3 e ripristinare i backup su un host Oracle on-premises.
 
 Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 

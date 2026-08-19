@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-oracle.html 
 keywords: NetApp Backup and Recovery, Oracle Database 
-summary: Esaminare queste NetApp limitazioni di backup e ripristino prima di utilizzare backup e ripristino nel proprio ambiente. 
+summary: Esaminare queste limitazioni di NetApp Backup and Recovery prima di utilizzare Backup and Recovery nel proprio ambiente. 
 ---
 = Limitazioni note con NetApp Backup e ripristino per carichi di lavoro di Oracle Database
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Esaminare queste NetApp limitazioni di backup e ripristino prima di uti
 
 
 [role="lead"]
-Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
+Esamina le limitazioni attuali e le azioni non supportate per i carichi di lavoro di database Oracle in NetApp Backup and Recovery.
 
-La seguente azione non è supportata nella versione di anteprima dei carichi di lavoro di Oracle Database in NetApp Backup and Recovery:
+Le seguenti azioni non sono supportate per i workload di database Oracle nella versione di anteprima di NetApp Backup and Recovery:
 
 * Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Backup offline

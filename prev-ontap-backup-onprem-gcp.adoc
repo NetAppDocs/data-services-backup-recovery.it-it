@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi ONTAP primari locali a un sistema di storage secondario e a Google Cloud Storage.
+In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP locali a uno storage secondario e a Google Cloud Storage. Usa questa pagina per preparare il tuo ambiente e attivare i backup.
 
 
 NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select .
@@ -48,7 +48,7 @@ image:diagram_cloud_backup_onprem_gcp_private.png["Un diagramma che mostra come 
 [[prepare-your-console-agent]]
 == Prepara il tuo agente Console
 
-L'agente Console è il software principale per la funzionalità Console.  Per eseguire il backup e il ripristino dei dati ONTAP è necessario un agente Console.
+L'agente Console è il software principale per la funzionalità NetApp Console .  Per eseguire il backup e il ripristino dei dati ONTAP è necessario un agente Console.
 
 
 
@@ -283,7 +283,7 @@ storage.objects.update
 . Vai a https://console.cloud.google.com/storage/settings["Impostazioni di archiviazione GCP"^] e creare chiavi di accesso per l'account di servizio:
 +
 .. Seleziona un progetto e seleziona *Interoperabilità*.  Se non lo hai già fatto, seleziona *Abilita accesso interoperabilità*.
-.. In *Chiavi di accesso per gli account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e fai clic su *Crea chiave*.
+.. Nella sezione *Chiavi di accesso per account di servizio*, seleziona *Crea una chiave per un account di servizio*, seleziona l'account di servizio appena creato e seleziona *Crea chiave*.
 +
 Sarà necessario immettere le chiavi in ​​NetApp Backup and Recovery in un secondo momento, quando si configura il servizio di backup.
 
@@ -357,17 +357,17 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 === Avvia la procedura guidata
 
 .Passi
-. Accedere alla procedura guidata di attivazione del backup e del ripristino utilizzando uno dei seguenti metodi:
+. Accedi alla procedura guidata Attiva backup e ripristino utilizzando uno dei seguenti metodi:
 +
-** Dalla pagina *Sistemi* della console, selezionare il sistema e selezionare *Abilita > Volumi di backup* accanto a Backup e ripristino nel pannello di destra.
+** Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable > Backup Volumes* accanto a Backup and Recovery nel pannello di destra.
 +
-Se la destinazione di Google Cloud Storage per i backup è presente nella pagina *Sistemi* della console, è possibile trascinare il cluster ONTAP nell'archivio oggetti di Google Cloud.
+Se la destinazione Google Cloud Storage per i tuoi backup esiste nella pagina *Sistemi* della Console, puoi trascinare il cluster ONTAP su Google Cloud Storage.
 
 ** Selezionare *Volumi* nella barra Backup e ripristino.  Dalla scheda Volumi, seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Attiva backup* per un singolo volume (che non abbia già abilitato la replica o il backup su storage di oggetti).
 
 
 +
-La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup.  Se in questo passaggio è stata scelta la seconda opzione, verrà visualizzata la pagina Definisci strategia di backup con un volume selezionato.
+La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se hai scelto la seconda opzione in questo passaggio, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.
 
 . Proseguire con le seguenti opzioni:
 +
@@ -488,10 +488,10 @@ TIP: Se desideri suddividere i file di backup più vecchi nell'archiviazione di 
 +
 Inserisci la chiave di accesso e la chiave segreta di Google Cloud.
 
-** *Chiave di crittografia*: se hai creato un nuovo account di archiviazione Google Cloud, inserisci le informazioni sulla chiave di crittografia fornite dal provider.  Scegli se utilizzare le chiavi di crittografia predefinite di Google Cloud oppure scegliere le chiavi gestite dal cliente dal tuo account Google Cloud per gestire la crittografia dei tuoi dati.
+** *Chiave di crittografia*: Se hai creato un nuovo bucket di Google Cloud Storage, inserisci le informazioni relative alla chiave di crittografia che ti sono state fornite dal cloud provider. Scegli se utilizzare le chiavi di crittografia predefinite di Google Cloud oppure se scegliere le tue chiavi gestite dal cliente dal tuo account Google Cloud, per gestire la crittografia dei tuoi dati.
 +
 
-NOTE: Se hai scelto un account di archiviazione Google Cloud esistente, le informazioni sulla crittografia sono già disponibili, quindi non è necessario inserirle ora.
+NOTE: Se hai scelto un bucket di Google Cloud Storage esistente, le informazioni di crittografia sono già disponibili, quindi non devi inserirle ora.
 
 +
 Se scegli di utilizzare le tue chiavi gestite dal cliente, inserisci il portachiavi e il nome della chiave. https://cloud.google.com/kms/docs/cmek["Scopri di più sulle chiavi di crittografia gestite dal cliente"^] .
@@ -547,9 +547,9 @@ Un bucket di Google Cloud Storage viene creato automaticamente nell'account di s
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
+Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
-. Dalla procedura guidata Attiva backup e ripristino, seleziona *Visualizza richiesta API*.
+. Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.
 . Per copiare i comandi negli appunti, selezionare l'icona *Copia*.
 

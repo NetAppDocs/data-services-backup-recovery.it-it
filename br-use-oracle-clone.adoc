@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-oracle-clone.html 
-keywords: clone, clone application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+keywords: clone, clone application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
 summary: Clona i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery. 
 ---
-= Clona i carichi di lavoro del database Oracle utilizzando NetApp Backup and Recovery
+= Clona i carichi di lavoro del database Oracle con NetApp Backup e ripristino
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Clona i carichi di lavoro del tuo database Oracle con NetApp Backup and
 
 
 [role="lead"]
-Utilizza NetApp Backup and Recovery per creare cloni scrivibili di database Oracle da sistemi ONTAP on-premises a storage primario o secondario. Gestisci il ciclo di vita dei cloni in modo che vengano aggiornati periodicamente secondo una pianificazione.
+Usa NetApp Backup and Recovery per creare cloni scrivibili dei carichi di lavoro di database Oracle dai sistemi ONTAP locali su storage primario o secondario. Puoi anche programmare l'aggiornamento dei cloni in base alle tue esigenze.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -36,7 +36,7 @@ Crea immediatamente un clone da uno snapshot esistente. Utilizza questo metodo p
 . Nella sezione *Clone from* della pagina *Select restore point*, seleziona *Existing snapshots*.
 . Scegli uno snapshot esistente (punto di ripristino) dall'elenco da utilizzare come base per il clone e seleziona *Avanti*.
 +
-La voce *Seleziona posizione snapshot* viene visualizzata se lo snapshot è archiviato in più posizioni.
+La pagina *Seleziona la posizione dell'istantanea* viene visualizzata se l'istantanea è memorizzata in più di una posizione.
 
 . Scegli la posizione dello snapshot da utilizzare e seleziona *Avanti*.
 . Nella pagina *Opzioni avanzate*, esegui le seguenti operazioni:
@@ -54,7 +54,7 @@ La voce *Seleziona posizione snapshot* viene visualizzata se lo snapshot è arch
 [[schedule-a-clone-of-an-oracle-database]]
 == Pianifica una clonazione di un database Oracle
 
-Pianifica la creazione istantanea di un clone e l'aggiornamento continuo del clone. Questo crea il clone più aggiornato possibile del database. Utilizza questo metodo se desideri aggiornare continuamente il clone dallo stato più recente del database secondo una pianificazione a tua scelta.
+Crea una copia istantanea e pianifica aggiornamenti regolari per mantenerla aggiornata con lo stato più recente del database.
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
@@ -70,7 +70,7 @@ Pianifica la creazione istantanea di un clone e l'aggiornamento continuo del clo
 . Nella pagina *Opzioni avanzate*, esegui le seguenti operazioni:
 +
 .. Per personalizzare le impostazioni del database clonato, abilita l'opzione *Personalizza parametri del database di destinazione*. Se in precedenza hai salvato un file di specifiche, questa opzione consente di caricarlo per personalizzare le impostazioni del database clonato. Puoi anche scaricare il file di specifiche predefinito per il database che riflette le sue impostazioni correnti.
-.. Nella sezione *Pianificazione aggiornamento clone*, scegli quando e con quale frequenza aggiornare il clone. L'aggiornamento del clone ricrea lo snapshot istantaneo e sovrascrive il clone esistente con un nuovo clone.
+.. Nella sezione *Pianificazione aggiornamento clone*, scegli quando e con quale frequenza aggiornare il clone. L'aggiornamento aggiorna la snapshot istantanea e sovrascrive il clone esistente con una nuova copia.
 .. Nella sezione *Prescripts and postscripts*, abilitare una o entrambe le opzioni *Prescript* e *Postscript* per eseguire uno script prima che l'operazione di clonazione inizi o dopo il suo completamento. Per ciascuna opzione, immettere il percorso completo dello script e gli eventuali argomenti richiesti.
 
 
@@ -82,11 +82,9 @@ Pianifica la creazione istantanea di un clone e l'aggiornamento continuo del clo
 [[split-a-clone]]
 == Dividi un clone
 
-È possibile suddividere un clone dei carichi di lavoro di Oracle Database. La suddivisione di un clone crea un nuovo backup dal clone. È possibile utilizzare il nuovo backup per ripristinare i database.
+Puoi suddividere un clone dei carichi di lavoro del database Oracle per creare una copia indipendente o a lungo termine. La suddivisione di un clone crea un nuovo backup dal clone stesso che può essere utilizzato per operazioni di protezione e ripristino.
 
-Puoi scegliere di suddividere un clone come clone indipendente o a lungo termine. Una procedura guidata mostra l'elenco degli aggregati che fanno parte della storage VM, le loro dimensioni e dove si trova il volume clonato. NetApp Backup and Recovery indica anche se c'è spazio sufficiente per suddividere il clone. Dopo che il clone è stato suddiviso, il clone diventa un database indipendente per la protezione.
-
-Il clone job non viene rimosso e può essere riutilizzato per altri cloni.
+L'operazione di suddivisione mostra gli aggregati che fanno parte della storage VM, le loro dimensioni e la posizione del volume clonato. NetApp Backup e ripristino indica se è disponibile spazio sufficiente per completare la suddivisione. Dopo la suddivisione, il clone diventa indipendente. Il job di clonazione originale rimane disponibile per operazioni future.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Clona*.
@@ -101,15 +99,13 @@ Il clone job non viene rimosso e può essere riutilizzato per altri cloni.
 [[delete-a-clone]]
 == Elimina un clone
 
-È possibile eliminare un clone dei carichi di lavoro di Oracle Database. Quando si elimina un clone, questo viene rimosso dall'archivio di oggetti, liberando spazio di storage.
-
-Se un criterio protegge il clone, sia il clone che il suo processo vengono eliminati.
+Rimuovi i cloni dei carichi di lavoro del tuo database Oracle per liberare spazio di storage. Se una policy protegge il clone, sia il clone che il relativo job vengono eliminati.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Clona*.
 . Seleziona un clone.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina clone*.
-. Nella finestra di dialogo di conferma dell'eliminazione del clone, rivedere i dettagli dell'eliminazione.
+. Nella finestra di dialogo di conferma dell'eliminazione del clone, controlla i dettagli dell'eliminazione.
 +
 .. Per eliminare le risorse clonate da SnapCenter anche se i cloni o il loro archivio non sono accessibili, selezionare *Forza eliminazione*.
 .. Seleziona *Elimina*.

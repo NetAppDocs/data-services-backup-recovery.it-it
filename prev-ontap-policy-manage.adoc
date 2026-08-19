@@ -14,12 +14,12 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Con NetApp Backup and Recovery, puoi utilizzare le policy di backup predefinite fornite da NetApp per creare i tuoi backup oppure creare policy personalizzate.  Le policy regolano la frequenza del backup, l'ora in cui viene eseguito e il numero di file di backup conservati.
+In NetApp Backup and Recovery, puoi usare le policy di backup predefinite oppure creare policy personalizzate per i tuoi volumi ONTAP. Le policy controllano la frequenza dei backup, la loro pianificazione e il periodo di conservazione.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-Quando si utilizza la procedura guidata di attivazione per abilitare il servizio di backup e ripristino per i volumi, è possibile selezionare tra i criteri predefiniti e qualsiasi altro criterio già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP locale).  Se si desidera utilizzare una policy diversa da quelle esistenti, è possibile crearla prima o durante l'utilizzo della procedura guidata di attivazione.
+Quando usi la procedura guidata di attivazione per abilitare il servizio NetApp Backup and Recovery per i tuoi volumi, puoi scegliere tra le policy predefinite e qualsiasi altra policy già presente nel sistema (Cloud Volumes ONTAP o sistema ONTAP on-premises). Se vuoi usare una policy diversa da quelle esistenti, puoi crearla prima o mentre usi la procedura guidata di attivazione.
 
 Per informazioni sulle policy di backup predefinite fornite, fare riferimento alink:prev-ontap-protect-journey.html["Pianifica il tuo percorso di protezione"] .
 
@@ -85,7 +85,7 @@ Una parte del processo di creazione delle policy prevede l'identificazione delle
 +
 Viene visualizzata la pagina di gestione delle policy.
 
-. Nella pagina Criteri, seleziona *Crea criterio* > *Crea criterio Snapshot*.
+. Nella pagina Gestione criteri, seleziona *Crea criterio* > *Crea policy di Snapshot*.
 . Specificare il nome della policy.
 . Selezionare la pianificazione o le pianificazioni degli snapshot.  Puoi avere un massimo di 5 etichette.  Oppure crea un programma.
 . Se scegli di creare una pianificazione:
@@ -127,7 +127,7 @@ Questo esempio crea un criterio snapshot con due cluster:
 La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di archiviazione diverso.  La politica di replica risiede sul sistema di archiviazione *secondario*.
 
 .Passi
-. Nella pagina Criteri, seleziona *Crea criterio* > *Crea criterio di replicazione*.
+. Nella pagina Gestione policy, seleziona *Crea policy* > *Crea policy di replica*.
 . Nella sezione Dettagli policy, specificare il nome della policy.
 . Specificare le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
 . Specificare il programma di trasferimento.
@@ -148,7 +148,7 @@ Questa policy di archiviazione risiede in diverse posizioni del sistema di archi
 
 
 .Passi
-. Nella pagina Gestione policy, seleziona *Crea policy* > *Crea policy di backup*.
+. Nella pagina Gestione criteri, seleziona *Crea criterio* > *Crea policy di backup*.
 . Nella sezione Dettagli policy, specificare il nome della policy.
 . Specificare le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
 . Specificare le impostazioni, tra cui la pianificazione del trasferimento e quando archiviare i backup.

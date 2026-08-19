@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per consentirti di proteggerli. 
+summary: NetApp Backup and Recovery deve prima individuare i carichi di lavoro prima di poterli proteggere. 
 ---
 = Scopri i carichi di lavoro di Oracle Database in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 
 
 [role="lead"]
-L'individuazione dei database Oracle consente a NetApp Backup and Recovery di proteggerli creando e ripristinando backup e snapshot.
+Scopri i carichi di lavoro di Oracle Database in NetApp Backup and Recovery così puoi proteggerli con backup e snapshot.
 
-*Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
@@ -130,10 +130,10 @@ kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
 [[add-an-oracle-database-host-and-discover-resources]]
 == Aggiungi un host database Oracle e scopri le risorse
 
-Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro. All'interno di ciascun agente della console, seleziona i sistemi in cui desideri rilevare i carichi di lavoro.
+Aggiungi le informazioni sull'host di Oracle Database e consenti a NetApp Backup and Recovery di individuare i carichi di lavoro. Per ogni agente della Console, seleziona i sistemi da individuare.
 
 .Passi
-. Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
+. Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
 . In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
 . Seleziona *Scopri risorse*.
 . Selezionare *Oracle* per il campo *Workload type*.
@@ -145,10 +145,10 @@ Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recover
 .. Selezionare *Fatto*.
 
 
-. *Registrazione host*: Aggiungere un nuovo host Oracle Database. Nel campo *FQDN o indirizzo IP dell'host*, immettere l'FQDN o l'indirizzo IP dell'host - per i database clusterizzati è possibile immettere l'FQDN o l'IP di qualsiasi nodo del cluster. Quindi fornire le credenziali, l'agente della Console e il numero di porta.
+. *Registrazione host*: Aggiungi un nuovo host Oracle Database. Nel campo *FQDN o indirizzo IP dell'host*, inserisci l'FQDN o l'indirizzo IP dell'host. Per i database in cluster, puoi inserire l'FQDN o l'indirizzo IP di qualsiasi nodo del cluster. Poi fornisci le credenziali, l'agente Console e il numero di porta.
 . (Facoltativo) Se si scelgono le credenziali per un utente non root, eseguire le seguenti operazioni:
 +
-.. Per istruzioni su come aggiungere l'utente non root selezionato al file sudoers sull'host del database Oracle, selezionare *Configure sudoers*.
+.. Per istruzioni su come aggiungere l'utente non root selezionato al file sudoers sull'host del database Oracle, seleziona *Configura sudoers*.
 .. Seguire le istruzioni nella finestra di dialogo, abilitare la casella di controllo al termine e selezionare *Fine*.
 
 
@@ -159,7 +159,7 @@ Aggiungi le informazioni sull'host Oracle e lascia che NetApp Backup and Recover
 +
 [NOTE]
 ====
-Backup and Recovery si connette a ciascun host tramite SSH per installare automaticamente il plug-in. Abilita *Usa installazione manuale* quando si verifica una delle seguenti condizioni:
+NetApp Backup and Recovery si connette a ciascun host tramite SSH per installare automaticamente il plug-in. Abilita *Usa installazione manuale* quando si verifica una delle seguenti condizioni:
 
 *** Uno o più host non eseguono il servizio SSH.
 *** Qualsiasi host dispone già del NetApp plug-in (anche se solo alcuni membri del cluster lo possiedono).
@@ -174,20 +174,20 @@ Backup and Recovery si connette a ciascun host tramite SSH per installare automa
 . Seleziona *Scopri*.
 +
 
-TIP: L'aggiunta delle risorse può richiedere diversi minuti. Per visualizzare l'avanzamento, seleziona *Track progress* nella finestra di dialogo di stato in fondo alla pagina Inventario oppure seleziona *Monitoring* dal menu a sinistra.
+TIP: L'aggiunta delle risorse può richiedere diversi minuti. Per vedere l'avanzamento, seleziona *Traccia avanzamento* nella finestra di stato in fondo alla pagina Inventory oppure seleziona *Monitoring* dal menu di navigazione a sinistra.
 
 
 
 .Risultato
-Il carico di lavoro del database Oracle viene visualizzato nell'elenco dei carichi di lavoro nella pagina Inventory.
+Il carico di lavoro Oracle Database appare nell'elenco dei carichi di lavoro nella pagina Inventario.
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continua alla dashboard NetApp Backup and Recovery
 
-. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
-. Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
+. Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
+. Seleziona un riquadro del carico di lavoro (ad esempio, Oracle Database).
 . Dal menu Backup e ripristino, seleziona *Dashboard*.
-. Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
+. Verifica lo stato di protezione dei dati. Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

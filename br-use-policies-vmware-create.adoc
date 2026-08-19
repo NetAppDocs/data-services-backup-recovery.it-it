@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-policies-vmware-create.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
 ---
 = Creare e gestire le policy di backup VMware in NetApp Backup and Recovery
@@ -12,7 +12,7 @@ summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che r
 
 
 [role="lead"]
-In NetApp Backup and Recovery, è possibile creare criteri di backup VMware personalizzati che regolano la frequenza dei backup, i tempi di backup e il numero di file di backup conservati.
+Utilizza NetApp Backup and Recovery per creare policy di backup VMware che controllano la frequenza, la pianificazione e la conservazione dei backup.
 
 
 NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
@@ -79,21 +79,21 @@ Viene visualizzata la pagina delle Policy.
 
 . Inserisci le informazioni nella sezione *Architettura di backup*. Scegli il flusso di dati per il backup dall'elenco:
 +
-** *Distribuzione 3-2-1*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object store. Può trattarsi di un cloud hyperscaler object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
+** *3-2-1 fanout*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi di storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object-store. Può trattarsi di un cloud provider object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 +
 Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o sulle VM sul primario e lo replica dall'archiviazione su disco primaria all'archiviazione su disco secondaria, nonché dallo storage primario allo storage di oggetti cloud.
 
-** *Cascata 3-2-1*: Storage primario (disco) verso storage secondario (disco) e storage primario (disco) verso cloud storage (archivio di oggetti). Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo crea una catena di replica dei dati su più sistemi per garantire ridondanza e affidabilità. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
+** *Cascata 3-2-1*: storage primario (disco) verso storage secondario (disco) e storage primario (disco) verso cloud storage (archivio di oggetti). Questo può essere un cloud provider archivio di oggetti o un archivio di oggetti privato come StorageGRID. Questo crea una catena di replica dei dati su più sistemi per garantire ridondanza e affidabilità. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 +
 Per i carichi di lavoro VMware, questo configura lo snapshot locale sui datastore o sulle VM sullo storage primario e una cascata dallo storage su disco primario allo storage su disco secondario e quindi allo storage di oggetti cloud.
 
 ** *Da disco a disco*: Storage primario (disco) su storage secondario (disco). La strategia di protezione dei dati ONTAP to ONTAP replica i dati tra due sistemi ONTAP per garantire alta disponibilità e disaster recovery. Questo viene generalmente ottenuto utilizzando SnapMirror, che supporta sia la replica sincrona che asincrona. Questo metodo mantiene i dati aggiornati e disponibili tra le sedi per una solida protezione dei dati.
 +
-Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o VMware sul sistema di storage primario e quindi replica i dati dal sistema di storage su disco primario al sistema di storage su disco secondario.
+Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale sui datastore o sulle VM sul sistema di storage primario e quindi replica i dati dal sistema di storage su disco primario al sistema di storage su disco secondario.
 
-** *Archiviazione da disco a oggetto*: storage primario (disco) su cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione dei dati a lungo termine e l'archiviazione. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
+** *Archiviazione da disco a oggetto*: storage primario (disco) verso cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema di storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud provider o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione e l'archiviazione dei dati a lungo termine. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 +
-Per i carichi di lavoro VMWare, questa opzione configura lo snapshot locale sui datastore o sulle VM sul server primario e la replica dall'archiviazione su disco primario all'archiviazione di oggetti cloud.
+Per i carichi di lavoro VMware, questa configurazione gestisce lo snapshot locale sui datastore o sulle VM sul sistema di storage primario e la replica dallo storage su disco primario allo storage a oggetti cloud.
 
 ** *Fanout da disco a disco*: dallo storage primario (disco) allo storage secondario (disco) e dallo storage primario (disco) allo storage secondario (disco). È possibile configurare più impostazioni secondarie per l'opzione fanout da disco a disco.
 +
@@ -107,8 +107,8 @@ Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale s
 
 . Fornire le informazioni per la sezione *Impostazioni snapshot locali*:
 +
-** Selezionare l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni degli snapshot.  È possibile avere un massimo di 5 pianificazioni.
-** *Frequenza snapshot*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.  La frequenza annuale non è disponibile per i carichi di lavoro Kubernetes.
+** Seleziona l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni Snapshot. Puoi avere un massimo di cinque pianificazioni.
+** *Frequenza Snapshot*: Seleziona la frequenza tra oraria, giornaliera, settimanale, mensile o annuale.
 ** *Conservazione degli snapshot*: immettere il numero di snapshot da conservare.
 
 
@@ -121,7 +121,7 @@ Per i carichi di lavoro VMware, questa operazione configura lo snapshot locale s
 ** *Periodo di blocco dello snapshot*: immettere il numero di giorni, mesi o anni per i quali si desidera bloccare lo snapshot.
 ** *Trasferimento alla secondaria*:
 +
-*** L'opzione * Pianificazione trasferimento ONTAP - Inline* è selezionata per impostazione predefinita e indica che gli snapshot vengono trasferiti immediatamente al sistema di archiviazione secondario.  Non è necessario pianificare il backup.
+*** L'opzione *ONTAP transfer schedule - Inline* è selezionata per impostazione predefinita, il che indica che gli snapshot vengono trasferiti immediatamente allo storage secondario. Non devi pianificare il backup.
 *** Altre opzioni: se si sceglie un trasferimento differito, i trasferimenti non sono immediati e si può impostare una pianificazione.
 
 
@@ -135,13 +135,13 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 +
 ** *Provider*: Seleziona il provider per il tuo archivio di oggetti e inserisci le credenziali nei campi appropriati (i campi delle credenziali variano a seconda del provider).
-** *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+** *Destinazione di backup*: Seleziona un target di storage a oggetti registrato. Verifica che la destinazione sia accessibile all'interno dell'ambiente di backup.
 ** *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
 ** *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
 ** *Copie di conservazione*: immettere il numero di snapshot da conservare.
 ** *Esegui a*: scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archivio oggetti.
 ** *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
-** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sullo storage a oggetti. Ciò garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su 7 giorni per impostazione predefinita. Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'object storage. Questo garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su sette giorni per impostazione predefinita. Per proteggere i tuoi backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
 
 
 . Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
@@ -150,7 +150,7 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 ====
 ** *Impostazioni della macchina virtuale*:
 +
-*** *Abilita snapshot coerenti con la VM e coerenti con l'applicazione*: Abilita questa opzione per creare snapshot coerenti con la VM e coerenti con l'applicazione. Ciò richiede che VMware Tools sia in esecuzione sulla VM. Se VMware Tools non è in esecuzione, gli snapshot saranno invece crash-consistent. Tieni presente che l'abilitazione di questa opzione può aumentare i tempi di backup e utilizzare più storage. Inoltre, la RAM attiva della VM non è inclusa negli snapshot coerenti.
+*** *Abilita snapshot coerenti con la VM e coerenti con l'applicazione*: Abilita questa opzione per creare snapshot coerenti con la VM e coerenti con l'applicazione. Questo richiede che VMware Tools sia in esecuzione sulla VM. Se VMware Tools non è in esecuzione, gli snapshot saranno crash-consistent. Tieni presente che abilitare questa opzione può aumentare i tempi di backup e utilizzare più spazio di storage. Inoltre, la RAM attiva della VM non è inclusa negli snapshot coerenti.
 
 
 ** *SnapMirror formato del volume e dell'istantanea*: Scegliere tra le seguenti opzioni:
@@ -159,11 +159,11 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 *** *Fornire il formato del volume SnapMirror*: specificare un prefisso, un suffisso o entrambi per modificare il nome predefinito del volume SnapMirror. Per impostazione predefinita, un volume SnapMirror eredita il nome del volume di origine.
 
 
-** *Velocità di trasferimento massima*: per non impostare un limite all'utilizzo della larghezza di banda, selezionare *Illimitata*. Se si desidera limitare la velocità di trasferimento, selezionare *Limitata* e scegliere la larghezza di banda di rete compresa tra 1 e 1.000 Mbps allocata per il caricamento dei backup nello storage a oggetti. Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi del sistema allo storage a oggetti. Se il traffico di backup influisce sui carichi di lavoro, ridurre la larghezza di banda di rete per i trasferimenti.
-** *Tentativi di backup*: Per riprovare l'operazione in caso di errore o interruzione, selezionare *Abilita tentativi di esecuzione in caso di errore*. Immettere il numero massimo di tentativi di esecuzione per snapshot e backup e l'intervallo di tempo tra i tentativi. Il conteggio deve essere inferiore a 10.
+** *Velocità di trasferimento massima*: per lasciare l'utilizzo della larghezza di banda illimitato, seleziona *Illimitato*. Se vuoi limitare la velocità di trasferimento, seleziona *Limitato* e scegli la larghezza di banda tra 1 e 1.000 Mbps da allocare per caricare i backup nello storage a oggetti. Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi del sistema allo storage a oggetti. Se il traffico di backup influisce sui carichi di lavoro, riduci la larghezza di banda per i trasferimenti.
+** *Tentativi di backup*: Per riprovare l'operazione in caso di errore o interruzione, selezionare *Abilita tentativi di esecuzione in caso di errore*. Immettere il numero massimo di tentativi per le operazioni di snapshot e backup e l'intervallo di tempo tra i tentativi. Il numero di tentativi deve essere inferiore a 10.
 +
 
-TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, insieme al conteggio dei nuovi tentativi, non dovrebbe superare i 45 minuti.
+TIP: Se la frequenza di acquisizione degli snapshot è impostata su un'ora, il ritardo massimo e il numero di tentativi non devono superare i 45 minuti.
 
 ** *Scansione ransomware*: seleziona se desideri abilitare la scansione ransomware su ciascun bucket. Ciò richiede il blocco DataLock sull'archiviazione degli oggetti. Inserire la frequenza della scansione in giorni. Questa opzione si applica all'archiviazione di oggetti AWS e Microsoft Azure. Tieni presente che questa opzione potrebbe comportare costi aggiuntivi, a seconda del provider cloud.
 ** *Notifica*: Scegli se abilitare le notifiche e-mail per le operazioni di backup. Puoi selezionare quali eventi attivano una notifica, ad esempio quando un backup ha esito positivo, negativo o viene completato con avvisi.
@@ -184,7 +184,7 @@ Puoi eliminare una policy se non ti serve più.
 TIP: Non è possibile eliminare un criterio associato a un carico di lavoro.
 
 .Passi
-. Nella Console, vai a *Protezione* > *Backup e ripristino*.
+. Nella NetApp Console, vai su *Protezione* > *Backup e ripristino*.
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi eliminare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Elimina*.

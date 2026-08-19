@@ -14,13 +14,13 @@ summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare v
 
 
 [role="lead"]
-I backup dei dati del volume ONTAP vengono archiviati come snapshot, su volumi replicati o nell'archiviazione di oggetti.  È possibile ripristinare i dati da una qualsiasi di queste posizioni in un momento specifico.  Con NetApp Backup and Recovery puoi ripristinare un intero volume, una cartella o singoli file, a seconda delle tue esigenze.
+Usa NetApp Backup and Recovery per ripristinare i dati del tuo volume ONTAP da snapshot, volumi replicati o storage a oggetti in un momento specifico. Puoi ripristinare un intero volume, una cartella o singoli file secondo le tue necessità.
 
 
 NOTE: Quando si ripristina un volume abilitato SnapLock, il volume ripristinato mantiene la protezione SnapLock solo se la destinazione di storage è abilitata WORM. Se si ripristina su una destinazione non-WORM, lo stato SnapLock viene rimosso dal volume ripristinato.
 
 * È possibile ripristinare un *volume* (come nuovo volume) sul sistema originale, su un sistema diverso che utilizza lo stesso account cloud o su un sistema ONTAP locale.
-* È possibile ripristinare una *cartella* da snapshot di storage replicato o storage a oggetti in un volume del sistema originale, in un volume di un sistema diverso che utilizza lo stesso account cloud oppure in un volume su un sistema ONTAP locale. Il ripristino di cartelle da snapshot locali non è supportato.
+* Puoi ripristinare una *cartella* da un volume replicato o da un backup su storage a oggetti su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud oppure su un volume su un sistema ONTAP on-premises. Il ripristino di cartelle da snapshot locali non è supportato.
 * È possibile ripristinare *file* su un volume nel sistema originale, su un volume in un sistema diverso che utilizza lo stesso account cloud o su un volume in un sistema ONTAP locale.
 
 
@@ -53,10 +53,10 @@ La dashboard di ripristino offre due modi diversi per ripristinare i dati dai fi
 
 
 
-[[comparing-browse-restore-and-search-restore]]
-== Confronto tra Sfoglia e Ripristina e Cerca e Ripristina
+[[compare-browse-restore-and-search-restore]]
+== Confronta Sfoglia & Ripristina e Cerca & Ripristina
 
-In termini generali, _Sfoglia e ripristina_ è in genere più indicato quando è necessario ripristinare un volume, una cartella o un file specifico dell'ultima settimana o dell'ultimo mese, e si conoscono il nome e la posizione del file, nonché la data dell'ultima volta in cui era in buone condizioni.  _Cerca e ripristina_ è in genere la soluzione migliore quando è necessario ripristinare un volume, una cartella o un file, ma non si ricorda il nome esatto, il volume in cui si trova o la data dell'ultima volta in cui è stato in buone condizioni.
+In linea generale, _Sfoglia e ripristina_ è solitamente più indicato quando devi ripristinare un volume, una cartella o un file specifico dell'ultima settimana o dell'ultimo mese e conosci il nome e la posizione del file e la data in cui era integro l'ultima volta. _Cerca e ripristina_ è solitamente più indicato quando devi ripristinare un volume, una cartella o un file, ma non ricordi il nome esatto, il volume in cui si trova o la data in cui era integro l'ultima volta.
 
 Questa tabella fornisce un confronto delle caratteristiche dei due metodi.
 
@@ -68,7 +68,7 @@ Questa tabella fornisce un confronto delle caratteristiche dei due metodi.
 | Sfoglia una struttura in stile cartella per trovare il volume, la cartella o il file all'interno di un singolo file di backup. | Cerca un volume, una cartella o un file in *tutti i file di backup* per nome parziale o completo del volume, nome parziale o completo della cartella/file, intervallo di dimensioni e filtri di ricerca aggiuntivi. 
 
 
-| Non gestisce il recupero del file se il file è stato eliminato o rinominato e l'utente non conosce il nome originale del file | Gestisce le directory appena create/eliminate/rinominate e i file appena creati/eliminati/rinominati 
+| Non gestisce il recupero dei file se sono stati eliminati o rinominati e non conosci il nome originale del file | Gestisce le directory e i file appena creati, eliminati e rinominati 
 
 
 | È supportato il ripristino rapido. | Il ripristino rapido non è supportato. 

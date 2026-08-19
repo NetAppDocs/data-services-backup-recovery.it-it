@@ -14,12 +14,12 @@ summary: Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V in N
 
 
 [role="lead"]
-Creare gruppi di protezione per gestire le operazioni di backup per un set di macchine virtuali.  Un gruppo di protezione è un raggruppamento logico di risorse, ad esempio macchine virtuali, che si desidera proteggere insieme.
+Crea gruppi di protezione per proteggere insieme le macchine virtuali Hyper-V correlate e gestire le loro operazioni di backup in NetApp Backup and Recovery.
 
 È possibile eseguire le seguenti attività relative ai gruppi di protezione:
 
 * Crea un gruppo di protezione.
-* Visualizza i dettagli della protezione.
+* Visualizza i dettagli del gruppo di protezione.
 * Crea subito un gruppo di protezione. Vederelink:br-use-hyperv-backup.html["Esegui subito il backup dei carichi di lavoro Hyper-V"] .
 * Elimina un gruppo di protezione.
 
@@ -29,21 +29,21 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ma
 [[create-a-protection-group]]
 == Crea un gruppo di protezione
 
-Raggruppa i carichi di lavoro che desideri proteggere in un gruppo di protezione. Crea un gruppo di protezione per eseguire il backup e il ripristino dei carichi di lavoro insieme.
+Raggruppa i carichi di lavoro che vuoi proteggere insieme in un gruppo di protezione. Crea un gruppo di protezione per eseguire il backup e il ripristino di questi carichi di lavoro insieme.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
 .Prima di iniziare
-* Tieni presente che per i carichi di lavoro Hyper-V, i tempi di backup vengono interpretati nel fuso orario dell'host di gestione. Consulta link:br-use-policies-hyper-v-create.html["Creare e gestire i criteri di backup di Hyper-V in NetApp Backup and Recovery"] per ulteriori informazioni.
+* Tieni presente che per i carichi di lavoro Hyper-V, i tempi di backup vengono interpretati nel fuso orario dell'host di gestione. Vedi link:br-use-policies-hyper-v-create.html["Creare e gestire i criteri di backup di Hyper-V in NetApp Backup and Recovery"] per maggiori informazioni.
 
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona un carico di lavoro per visualizzarne i dettagli di protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Selezionare il menu *Gruppi di protezione*.
+. Selezionare la scheda *Gruppi di protezione*.
 . Selezionare *Crea gruppo di protezione*.
-. Fornire un nome per il gruppo di protezione.
+. Inserisci un nome per il gruppo di protezione.
 . Selezionare le VM che si desidera includere nel gruppo di protezione.
 . Selezionare *Avanti*.
 . Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
@@ -81,7 +81,7 @@ La procedura guidata Modifica gruppo di protezione ti guida attraverso le impost
 I backup pianificati utilizzano il fuso orario dell'host Hyper-V, registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario dell'host, i gruppi di protezione esistenti continuano a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
 
 
-NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Il salvataggio senza apportare modifiche non aggiorna le pianificazioni. Questo aggiornamento della pianificazione è un'azione una tantum per ciascun gruppo di protezione e non avvia immediatamente un backup.
+NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Il salvataggio senza apportare modifiche non aggiorna le pianificazioni. Questo aggiornamento una tantum della pianificazione non avvia un backup immediato.
 
 .Passi
 . Aggiorna l'host Hyper-V così viene recuperato il fuso orario corrente.
@@ -97,7 +97,7 @@ L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stess
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona un carico di lavoro per visualizzarne i dettagli di protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Gruppi di protezione*.
 . Selezionare il gruppo di protezione che si desidera eliminare.

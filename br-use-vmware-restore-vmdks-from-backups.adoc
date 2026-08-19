@@ -14,7 +14,7 @@ summary: È possibile ripristinare i VMDK esistenti, oppure quelli eliminati o s
 
 
 [role="lead"]
-È possibile ripristinare dischi virtuali esistenti (VMDK) oppure dischi virtuali eliminati o scollegati da backup primari o secondari di VM tradizionali. Ciò consente di ripristinare solo dati o applicazioni specifici della VM, in modo da non dover ripristinare l'intera VM e tutti i dischi virtuali associati in situazioni in cui sono interessati solo dati specifici. Dopo il ripristino, il disco virtuale viene collegato alla sua VM originale ed è pronto per l'uso.
+Ripristina dischi virtuali (VMDK) esistenti, eliminati o scollegati da backup primari o secondari di VM tradizionali. Questo ti permette di recuperare dati o applicazioni specifici della VM senza ripristinare l'intera VM. Dopo il ripristino, il disco virtuale viene collegato alla sua VM originale ed è pronto per l'uso.
 
 È possibile ripristinare uno o più dischi di macchine virtuali (VMDK) su una VM nello stesso datastore o in datastore diversi.
 
@@ -32,7 +32,7 @@ La VM che si desidera ripristinare non deve essere in stato vMotion o Storage vM
 .Informazioni su questo compito
 * Se il VMDK viene eliminato o scollegato dalla VM, l'operazione di ripristino collega il VMDK alla VM.
 * Un'operazione di ripristino potrebbe non riuscire se il livello di archiviazione del FabricPool in cui si trova la VM non è disponibile.
-* Le operazioni di collegamento e ripristino collegano i VMDK utilizzando il controller SCSi predefinito. Tuttavia, quando si esegue il backup dei VMDK collegati a una VM con un disco NVMe, le operazioni di collegamento e ripristino utilizzano il controller NVMe, se disponibile.
+* Le operazioni di collegamento e ripristino connettono i VMDK utilizzando il controller SCSI predefinito. Tuttavia, se esegui il backup di VMDK collegati a una VM con un disco NVMe, le operazioni di collegamento e ripristino utilizzano un controller NVMe, se disponibile.
 
 
 .Passi

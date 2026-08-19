@@ -14,7 +14,7 @@ summary: Per poter utilizzare il servizio, NetApp Backup and Recovery deve prima
 
 
 [role="lead"]
-NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di proteggerli.
+Scopri i cluster Kubernetes e i relativi carichi di lavoro in NetApp Backup and Recovery, così da poterli proteggere con policy di protezione.
 
 *Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -23,11 +23,11 @@ NetApp Backup and Recovery deve rilevare i carichi di lavoro Kubernetes prima di
 [[discover-kubernetes-workloads]]
 == Scopri i carichi di lavoro di Kubernetes
 
-Nell'inventario di Backup and Recovery, scopri i carichi di lavoro Kubernetes nel tuo ambiente. Aggiungendo un carico di lavoro aggiungi un cluster Kubernetes a NetApp Backup and Recovery. Puoi quindi aggiungere applicazioni e proteggere le risorse del cluster. Puoi anche scoprire risorse Kubernetes locali isolate (air-gapped) usando la distribuzione locale di NetApp Console.
+Nell'inventario di Backup and Recovery, puoi individuare i cluster e i carichi di lavoro Kubernetes nel tuo ambiente. Aggiungendo un cluster puoi registrarlo in NetApp Backup and Recovery e scoprire le sue applicazioni e risorse da proteggere. Puoi anche individuare le risorse Kubernetes locali isolate dalla rete usando la distribuzione locale di NetApp Console.
 
 [NOTE]
 ====
-Quando si rileva un cluster attualmente protetto con Trident Protect, tutte le pianificazioni di backup utilizzate con Trident Protect vengono disabilitate durante il processo di rilevamento (le pianificazioni di backup di Trident Protect non sono compatibili con Backup and Recovery). Per proteggere le applicazioni del cluster, link:br-use-policies-create.html["crea una nuova policy di protezione"] oppure associare le applicazioni a una policy esistente. È quindi possibile rimuovere le pianificazioni di backup di Trident Protect, se necessario.
+Quando scopri un cluster attualmente protetto con Trident Protect, tutte le pianificazioni di backup utilizzate con Trident Protect vengono disabilitate durante il processo di rilevamento, poiché le pianificazioni di backup di Trident Protect non sono compatibili con NetApp Backup and Recovery. Per proteggere le applicazioni del cluster, link:br-use-policies-create.html["crea una nuova policy di protezione"] oppure associa le applicazioni a una policy esistente. Puoi quindi rimuovere le pianificazioni di backup di Trident Protect, se necessario.
 
 ====
 .Passi
@@ -40,7 +40,7 @@ Quando si rileva un cluster attualmente protetto con Trident Protect, tutte le p
 . Selezionare il tipo di carico di lavoro *Kubernetes*.
 . Inserisci un nome cluster e scegli un agente Console da usare con il cluster.
 +
-Backup and Recovery fornisce istruzioni che cambiano a seconda del tipo di installazione che scegli. Se usi la distribuzione locale di NetApp Console, puoi scegliere istruzioni che ti permettono di individuare risorse air-gapped senza connettività di rete esterna.
+Backup and Recovery fornisce istruzioni che cambiano in base al tipo di installazione che scegli. Se usi la distribuzione locale di NetApp Console, puoi scegliere le istruzioni per individuare le risorse air-gapped che non hanno connettività di rete esterna.
 
 . Scegli un tipo di installazione per visualizzare le istruzioni per installare Trident Protect sul tuo cluster Kubernetes:
 +
@@ -89,7 +89,7 @@ Il cluster viene aggiunto all'inventario.
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continua alla dashboard NetApp Backup and Recovery
 
-Per visualizzare la dashboard NetApp Backup and Recovery , seguire questi passaggi.
+Segui questi passaggi per visualizzare la dashboard di NetApp Backup and Recovery e verificare le risorse rilevate.
 
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . Seleziona il riquadro del carico di lavoro Kubernetes.

@@ -14,11 +14,11 @@ summary: Con NetApp Backup and Recovery puoi monitorare gli snapshot locali, le 
 
 
 [role="lead"]
-Con NetApp Backup and Recovery puoi monitorare gli snapshot locali, le repliche e i processi di backup che avvii.  Tieni traccia dei processi di ripristino che avvii.  Visualizza i lavori completati, in corso o non riusciti per aiutare a diagnosticare i problemi.  Abilita le notifiche e-mail nel Centro notifiche NetApp Console per rimanere informato sulle attività del sistema quando non hai effettuato l'accesso. Utilizza la cronologia della console per visualizzare i dettagli di tutte le azioni avviate dall'interfaccia utente o dall'API.
+Monitora i job di Snapshot, replica, backup e ripristino. Configura le notifiche email e utilizza la Timeline della Console per analizzare l'attività.
 
-NetApp Backup and Recovery conserva le informazioni sui processi per 15 giorni, quindi le elimina e le rimuove da Job Monitor.
+NetApp Backup e ripristino conserva le informazioni sui job per 15 giorni, poi le elimina e le rimuove dal Job Monitor.
 
-*Ruolo NetApp Console richiesto* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o ruolo Backup and Recovery viewer. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery o ruolo di viewer di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
@@ -43,7 +43,7 @@ NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi ope
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
-. Per visualizzare colonne aggiuntive (Sistema, storage VM, Nome utente, Carico di lavoro, Nome criterio, Etichetta Snapshot), seleziona il segno più.
+. Per visualizzare colonne aggiuntive (Sistema, Storage VM, Nome utente, Carico di lavoro, Nome policy, Etichetta Snapshot), seleziona il segno più.
 
 
 
@@ -51,7 +51,7 @@ NOTE: Se hai aggiornato i tuoi sistemi ONTAP alla versione 9.13.x e non vedi ope
 [[search-and-filter-the-list-of-jobs]]
 === Cerca e filtra l'elenco dei lavori
 
-È possibile filtrare le operazioni nella pagina Monitoraggio processi utilizzando diversi filtri, ad esempio criteri, etichetta snapshot, tipo di operazione (protezione, ripristino, conservazione o altro) e tipo di protezione (snapshot locale, replica o backup sul cloud).
+Puoi filtrare le operazioni nella pagina Monitoraggio processi usando diversi filtri, come policy, etichetta Snapshot, tipo di operazione (protezione, ripristino, conservazione o altro) e tipo di protezione (Snapshot locale, replica o backup nel cloud).
 
 Per impostazione predefinita, la pagina Monitoraggio processi mostra i processi di protezione e ripristino delle ultime 24 ore.  È possibile modificare l'intervallo di tempo utilizzando il filtro Intervallo di tempo.
 
@@ -60,7 +60,7 @@ Per impostazione predefinita, la pagina Monitoraggio processi mostra i processi 
 . Per ordinare i risultati in modo diverso, seleziona ogni intestazione di colonna per ordinarli in base a Stato, Ora di inizio, Nome risorsa e altro ancora.
 . Se stai cercando lavori specifici, seleziona l'area *Ricerca avanzata e filtri* per aprire il pannello di ricerca.
 +
-Utilizzare questo pannello per effettuare una ricerca di testo libero per qualsiasi risorsa, ad esempio "volume 1" o "applicazione 3".  È anche possibile filtrare l'elenco dei lavori in base alle voci presenti nei menu a discesa.
+Utilizza questo pannello per inserire un testo libero per cercare qualsiasi risorsa; ad esempio, "volume 1" o "application 3". Puoi anche filtrare l'elenco dei job in base alle voci presenti nei menu a tendina.
 
 +
 La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavoro" consente di visualizzare i lavori nelle seguenti categorie:
@@ -88,16 +88,16 @@ La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavor
 [[view-job-details]]
 === Visualizza i dettagli del lavoro
 
-È possibile visualizzare i dettagli corrispondenti a uno specifico lavoro completato.  È possibile esportare i dettagli di un determinato lavoro in formato JSON.
+Puoi visualizzare i dettagli relativi a uno specifico lavoro completato. Puoi esportare i dettagli di un determinato lavoro in formato JSON.
 
-È possibile visualizzare dettagli quali tipo di processo (pianificato o su richiesta), tipo di backup SnapMirror (iniziale o periodico), orari di inizio e fine, durata, quantità di dati trasferiti dal sistema all'archiviazione degli oggetti, velocità di trasferimento media, nome della policy, blocco di conservazione abilitato, scansione ransomware eseguita, dettagli sull'origine della protezione e dettagli sulla destinazione della protezione.
+Puoi visualizzare dettagli come il tipo di lavoro (pianificato o su richiesta), il tipo di backup SnapMirror (iniziale o periodico), orari di inizio e fine, durata, quantità di dati trasferiti dal sistema allo storage a oggetti, velocità di trasferimento media, nome della policy, blocco di conservazione attivato, scansione ransomware eseguita, dettagli della fonte di protezione e dettagli della destinazione di protezione.
 
 I dettagli relativi ai processi di ripristino includono il provider di destinazione del backup (Amazon Web Services, Microsoft Azure, Google Cloud, on-premises), il nome del bucket S3, il nome della storage VM, il nome del volume di origine, volume di destinazione, l'etichetta dello Snapshot, il numero di oggetti recuperati, i nomi dei file, le dimensioni dei file, la data dell'ultima modifica e il percorso completo del file.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
 . Seleziona il nome del lavoro.
-. Seleziona il menu Azioniimage:icon-action.png["Icona Azioni"] e seleziona *Visualizza dettagli*.
+. Seleziona il menu Azioni image:icon-action.png["Icona Azioni"] e seleziona *Visualizza dettagli*.
 . Espandi ogni sezione per vedere i dettagli.
 
 
@@ -106,7 +106,7 @@ I dettagli relativi ai processi di ripristino includono il provider di destinazi
 [[download-job-monitoring-results-as-a-report]]
 === Scarica i risultati del monitoraggio dei lavori come report
 
-È possibile scaricare il contenuto della pagina principale di Monitoraggio lavori come report dopo aver filtrato o ordinato i risultati. NetApp Backup and Recovery genera e scarica un file .CSV che puoi esaminare e inviare ad altri gruppi, se necessario. Il file .CSV include fino a 10.000 righe di dati.
+Dopo aver filtrato o ordinato i risultati, puoi scaricare il contenuto della pagina principale di Monitoraggio processi come report. NetApp Backup and Recovery genera e scarica un file CSV che puoi esaminare e inviare ad altri gruppi, se necessario. Il file CSV include fino a 10.000 righe di dati.
 
 Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaricare un file JSON contenente i dettagli per un singolo lavoro.
 
@@ -121,7 +121,7 @@ Dalle informazioni sui dettagli del monitoraggio del lavoro, è possibile scaric
 [[review-retention-backup-lifecycle-jobs]]
 == Lavori di conservazione delle revisioni (ciclo di vita del backup)
 
-Monitorare i flussi di conservazione (_ciclo di vita del backup_) per controllare i backup, mantenerli al sicuro e supportare gli audit.  Identificare la scadenza delle copie di backup per monitorarne il ciclo di vita.
+Monitora i processi di conservazione (_ciclo di vita del backup_) per tenere traccia della scadenza delle copie di backup e supportare le verifiche.
 
 Un processo di backup del ciclo di vita tiene traccia di tutti gli snapshot eliminati o in coda per l'eliminazione. A partire da ONTAP 9.13, è possibile visualizzare tutti i tipi di lavoro denominati "Conservazione" nella pagina Monitoraggio lavori.
 
@@ -138,7 +138,7 @@ Il tipo di processo "Conservazione" acquisisce tutti i processi di eliminazione 
 [[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Esaminare gli avvisi di backup e ripristino nel Centro notifiche NetApp Console
 
-Il Centro notifiche NetApp Console tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, consentendoti di verificare se l'operazione è riuscita o meno.
+Il NetApp Console Notification Center tiene traccia dell'avanzamento dei job di backup e ripristino che hai avviato, così puoi verificare se l'operazione è andata a buon fine.
 
 È possibile visualizzare gli avvisi nel Centro notifiche e configurare la Console in modo che invii avvisi tramite e-mail per attività di sistema importanti, anche quando non si è effettuato l'accesso. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^] .
 
@@ -259,6 +259,6 @@ https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Config
 [[review-operation-activity-in-console-timeline]]
 == Esaminare l'attività operativa nella cronologia della console
 
-È possibile visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori indagini nella cronologia della console.  La cronologia della console fornisce dettagli su ciascun evento, sia esso avviato dall'utente o dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.
+Puoi visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori analisi nella Cronologia della Console. La Cronologia della Console fornisce dettagli su ogni evento, sia avviato dall'utente che dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri le differenze tra la Timeline e il Centro Notifiche"^].
+https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri come monitorare le operazioni della NetApp Console"^].

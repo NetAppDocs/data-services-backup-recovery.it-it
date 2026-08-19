@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: 'Aumenta le prestazioni dell"indicizzazione del catalogo negli ambienti di distribuzione locale di NetApp Console.' 
 ---
-= Migliora le prestazioni di ricerca e ripristino nelle implementazioni locali di NetApp Backup and Recovery
+= Migra l'archivio del catalogo Search and Restore su ONTAP NFS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Aumenta le prestazioni dell"indicizzazione del catalogo negli ambienti
 
 
 [role="lead"]
-Migra l'archivio dell'indice del catalogo dalla classe di storage predefinita del cluster a una condivisione NFS supportata da ONTAP per migliorare significativamente le prestazioni del catalogo nelle distribuzioni locali della NetApp Console. L'indice del catalogo viene utilizzato per la funzionalità Search & Restore. Anche se il catalogo funziona con lo storage predefinito, l'utilizzo di NFS supportato da ONTAP offre miglioramenti prestazionali misurabili per Search & Restore.
+Per migliorare le prestazioni di Search and Restore in una distribuzione locale della NetApp Console, migra lo storage dell'indice del catalogo dalla classe di storage predefinita del cluster a una condivisione NFS supportata da ONTAP. L'indice del catalogo supporta Search and Restore e una NFS supportata da ONTAP può offrire miglioramenti delle prestazioni misurabili.
 
 .Prima di iniziare
 Assicurati di avere a disposizione quanto segue prima di iniziare:
@@ -52,7 +52,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 
 
 [discrete]
-===== Monta il volume ONTAP sulla distribuzione locale di NetApp Console e copialo dal pod
+===== Monta il volume ONTAP sulla distribuzione locale di NetApp Console e copia i dati dal pod
 
 . Monta l'esportazione NFS di ONTAP su un punto di montaggio locale nella VM creata quando è stata distribuita l'OVA di distribuzione locale della NetApp Console.
 . Copia i dati dal pod del coordinatore in esecuzione nel mount ONTAP, senza directory intermedie. Il coordinatore deve essere ancora in esecuzione.
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Applica gli oggetti YAML, applicando prima il PV, poi il PVC (il PV deve esistere affinché il selettore di etichette del PVC possa essere associato). Quindi verifica che il claim del PVC sia associato:
+. Applica gli oggetti YAML applicando prima il PV e poi il PVC (il PV deve esistere perché il selettore di etichette del PVC possa associarsi). Poi verifica che la claim del PVC sia associata:
 +
 [source, shell]
 ----

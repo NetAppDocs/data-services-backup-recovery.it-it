@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-azure.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
-= Esegui il backup dei dati Cloud Volumes ONTAP nell'archiviazione BLOB di Azure con NetApp Backup and Recovery
+= Esegui il backup di Cloud Volumes ONTAP su Azure Blob storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi Cloud Volumes ONTAP allo storage BLOB di Azure.
+Usa NetApp Backup and Recovery per eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP nello storage BLOB di Azure.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -51,7 +51,7 @@ Per le licenze NetApp Backup and Recovery PAYGO, è necessario un abbonamento tr
 
 Per la licenza BYOL NetApp Backup and Recovery , è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:br-start-licensing.html["Scopri come gestire le tue licenze BYOL"] .  È necessario utilizzare una licenza BYOL quando l'agente Console e il sistema Cloud Volumes ONTAP vengono distribuiti in un sito oscuro ("modalità privata").
 
-Inoltre, è necessario disporre di un abbonamento a Microsoft Azure per lo spazio di archiviazione in cui verranno salvati i backup.
+Hai anche bisogno di un abbonamento Azure per lo spazio di storage dove saranno situati i tuoi backup.
 
 
 
@@ -70,7 +70,7 @@ L'agente Console può essere installato in un'area di Azure con accesso a Intern
 [[verify-or-add-permissions-to-the-console-agent]]
 === Verificare o aggiungere autorizzazioni all'agente della console
 
-Per utilizzare la funzionalità di ricerca e ripristino NetApp Backup and Recovery , è necessario disporre di autorizzazioni specifiche nel ruolo per l'agente della console, in modo che possa accedere ad Azure Synapse Workspace e all'account Data Lake Storage.  Consultare le autorizzazioni riportate di seguito e seguire i passaggi se è necessario modificare la policy.
+Per utilizzare la funzionalità di Backup and Recovery Search & Restore di NetApp, il ruolo dell'agente della Console deve includere autorizzazioni specifiche per consentirgli di accedere all'area di lavoro di Azure Synapse e all'account di Azure Data Lake Storage. Consulta le autorizzazioni riportate di seguito e segui i passaggi se devi modificare la policy.
 
 .Prima di iniziare
 * Devi registrare il provider di risorse Azure Synapse Analytics (chiamato "Microsoft.Synapse") con la tua sottoscrizione. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] Per registrare il provider di risorse, devi essere il *proprietario* o il *contributore* della sottoscrizione.
@@ -195,7 +195,7 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 [[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Abilita NetApp Backup and Recovery su Cloud Volumes ONTAP
 
-Abilitare NetApp Backup and Recovery è semplice.  I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o di uno nuovo.
+Puoi abilitare NetApp Backup and Recovery su un sistema Cloud Volumes ONTAP nuovo o esistente. I passaggi variano leggermente per ciascuna opzione.
 
 *Abilita NetApp Backup and Recovery su un nuovo sistema*
 
@@ -223,7 +223,7 @@ NetApp Backup and Recovery è abilitato sul sistema.  Dopo aver creato volumi su
 Abilita NetApp Backup and Recovery in qualsiasi momento direttamente dal sistema.
 
 .Passi
-. Dalla pagina *Sistemi* della console, seleziona il sistema e seleziona *Abilita* accanto a Backup e ripristino nel pannello di destra.
+. Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable* accanto a Backup and Recovery nel pannello di destra.
 +
 Se la destinazione di Azure Blob per i backup esiste come sistema nella pagina *Sistemi* della console, è possibile trascinare il cluster sul sistema Azure Blob per avviare la procedura guidata di configurazione.
 
@@ -236,7 +236,7 @@ Se la destinazione di Azure Blob per i backup esiste come sistema nella pagina *
 [[activate-backups-on-your-ontap-volumes]]
 == Attiva i backup sui tuoi volumi ONTAP
 
-Attiva i backup in qualsiasi momento direttamente dal tuo sistema locale.
+Attiva i backup in qualsiasi momento direttamente dal tuo sistema Cloud Volumes ONTAP.
 
 Una procedura guidata ti guiderà attraverso i seguenti passaggi principali:
 
@@ -253,9 +253,9 @@ Puoi anche<<Mostra i comandi API>> nella fase di revisione, in modo da poter cop
 === Avvia la procedura guidata
 
 .Passi
-. Accedere alla procedura guidata di attivazione del backup e del ripristino utilizzando uno dei seguenti metodi:
+. Accedi alla procedura guidata Attiva backup e ripristino utilizzando uno dei seguenti metodi:
 +
-** Dalla pagina *Sistemi* della console, selezionare il sistema e selezionare *Abilita > Volumi di backup* accanto a Backup e ripristino nel pannello di destra.
+** Dalla pagina *Systems* della Console, seleziona il sistema e seleziona *Enable > Backup Volumes* accanto a Backup and Recovery nel pannello di destra.
 +
 Se la destinazione di Azure per i backup esiste come sistema nella pagina *Sistemi*, è possibile trascinare il cluster ONTAP nell'archivio oggetti BLOB di Azure.
 
@@ -263,7 +263,7 @@ Se la destinazione di Azure per i backup esiste come sistema nella pagina *Siste
 
 
 +
-La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup.  Se in questo passaggio è stata scelta la seconda opzione, verrà visualizzata la pagina Definisci strategia di backup con un volume selezionato.
+La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se hai usato la seconda opzione in questo passaggio, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.
 
 . Proseguire con le seguenti opzioni:
 +
@@ -398,7 +398,7 @@ Se si sceglie di utilizzare le chiavi gestite dal cliente, immettere il vault de
 
 +
 
-NOTE: Se hai scelto un account di archiviazione Microsoft esistente, le informazioni sulla crittografia sono già disponibili, quindi non è necessario immetterle ora.
+NOTE: Se hai scelto un account di archiviazione Azure esistente, le informazioni di crittografia sono già disponibili, quindi non devi inserirle ora.
 
 +
 ** *Networking*: scegli lo spazio IP e se utilizzerai un endpoint privato.  Per impostazione predefinita, l'endpoint privato è disabilitato.
@@ -450,7 +450,7 @@ Viene creato un contenitore di archiviazione BLOB nel gruppo di risorse immesso 
 
 Per impostazione predefinita, NetApp Backup and Recovery fornisce al contenitore Blob la ridondanza locale (LRS) per ottimizzare i costi.  È possibile modificare questa impostazione in Ridondanza di zona (ZRS) se si desidera assicurarsi che i dati vengano replicati tra zone diverse.  Consultare le istruzioni Microsoft per https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["modificando il modo in cui viene replicato il tuo account di archiviazione"^] .
 
-Viene visualizzata la dashboard di backup del volume, in modo da poter monitorare lo stato dei backup.
+Viene visualizzata la Volume Backup Dashboard per consentirti di monitorare lo stato dei backup.
 
 È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzandolink:br-use-monitor-tasks.html["Pagina di monitoraggio dei lavori"] .
 
@@ -459,10 +459,10 @@ Viene visualizzata la dashboard di backup del volume, in modo da poter monitorar
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potrebbe essere necessario visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata Attiva backup e ripristino.  Potresti voler fare questo per automatizzare l'attivazione del backup nei sistemi futuri.
+Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
-. Dalla procedura guidata Attiva backup e ripristino, seleziona *Visualizza richiesta API*.
+. Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.
 . Per copiare i comandi negli appunti, selezionare l'icona *Copia*.
 
 

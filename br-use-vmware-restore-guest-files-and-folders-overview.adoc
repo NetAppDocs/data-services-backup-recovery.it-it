@@ -14,14 +14,14 @@ summary: 'È possibile ripristinare file o cartelle da un disco di macchina virt
 
 
 [role="lead"]
-È possibile ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows o Linux.
+Utilizza il ripristino dei file guest per ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows o Linux.
 
 
 
-[[guest-restore-workflow]]
-== Flusso di lavoro di ripristino degli ospiti
+[[guest-file-restore-workflow]]
+== Workflow di ripristino del file guest
 
-Le operazioni di ripristino del sistema operativo guest includono i seguenti passaggi:
+Il ripristino dei file guest include i seguenti passaggi:
 
 . Allegare
 +
@@ -48,12 +48,12 @@ Ripristina i file o le cartelle selezionati in una posizione specificata.
 
 Verifica tutti i requisiti prima di ripristinare file o cartelle da un VMDK.
 
-* Gli strumenti VMware devono essere installati e in esecuzione.
+* È necessario che VMware Tools sia installato e in esecuzione.
 +
-NetApp Backup and Recovery utilizza le informazioni provenienti dagli strumenti VMware per stabilire una connessione al sistema operativo guest VMware.
+NetApp Backup and Recovery utilizza le informazioni di VMware Tools per stabilire una connessione al sistema operativo guest VMware.
 
 * È necessario conoscere lo snapshot di backup e il VMDK da cui eseguire il ripristino.
-* Il disco virtuale da collegare deve trovarsi in un backup NetApp Backup and Recovery .
+* Il disco virtuale che colleghi deve essere in un backup di NetApp Backup and Recovery.
 +
 Il disco virtuale che contiene il file o la cartella che si desidera ripristinare deve trovarsi in un backup della VM eseguito tramite NetApp Backup and Recovery.
 
@@ -61,9 +61,9 @@ Il disco virtuale che contiene il file o la cartella che si desidera ripristinar
 +
 Se si desidera collegare un disco virtuale a una VM proxy, la VM proxy deve essere configurata prima dell'avvio dell'operazione di collegamento e ripristino.
 
-* Per i file con nomi in un alfabeto diverso dall'inglese, è necessario ripristinarli in una directory e non come un singolo file.
+* Per i file con nomi di caratteri non inglesi, devi ripristinarli in una directory, non come singolo file.
 +
-È possibile ripristinare i file con nomi non alfabetici, come i Kanji giapponesi, ripristinando la directory in cui si trovano i file.
+Puoi ripristinare i file con caratteri non inglesi, come i Kanji giapponesi, ripristinando la directory in cui si trovano i file.
 
 
 
@@ -106,14 +106,14 @@ IMPORTANT: Se è necessario utilizzare un account che non è l'account amministr
 [[guest-file-restore-limitations]]
 == Limitazioni del ripristino dei file guest
 
-Prima di ripristinare un file o una cartella da un sistema operativo guest, è necessario essere a conoscenza delle limitazioni della funzionalità.
+Prima di ripristinare un file o una cartella da un guest OS, esamina queste limitazioni.
 
 * Non è possibile ripristinare tipi di dischi dinamici all'interno di un sistema operativo guest.
 * Se si ripristina un file o una cartella crittografati, l'attributo di crittografia non viene mantenuto.
 * Non è possibile ripristinare file o cartelle in una cartella crittografata.
 * I file e le cartelle nascosti vengono visualizzati nella pagina di esplorazione dei file e non è possibile filtrarli.
 * Non è possibile ripristinare file o cartelle tra macchine virtuali con sistemi operativi diversi (quando si esegue il ripristino su una macchina virtuale diversa, il tipo di sistema operativo di destinazione deve essere uguale al tipo di sistema operativo di origine).
-* Non è possibile ripristinare da un file system NTFS a un file system FAT.
+* Non puoi ripristinare da un file system NTFS a un file system FAT.
 +
 Quando si tenta di ripristinare dal formato NTFS al formato FAT, il descrittore di sicurezza NTFS non viene copiato perché il file system FAT non supporta gli attributi di sicurezza di Windows.
 

@@ -14,15 +14,15 @@ summary: Crea e gestisci gruppi di protezione per carichi di lavoro KVM in NetAp
 
 
 [role="lead"]
-Creare gruppi di protezione per gestire le operazioni di backup per un set di risorse KVM.  Un gruppo di protezione è un raggruppamento logico di risorse, quali macchine virtuali e pool di archiviazione, che si desidera proteggere insieme.  È necessario creare un gruppo di protezione per eseguire il backup delle macchine virtuali KVM o dei pool di archiviazione.
+Crea e gestisci gruppi di protezione per poter eseguire il backup di macchine virtuali KVM e pool di storage correlati insieme.
 
-È possibile eseguire le seguenti attività relative ai gruppi di protezione:
+Puoi fare quanto segue con i gruppi di protezione:
 
-* Crea un gruppo di protezione.
-* Visualizza i dettagli della protezione.
+* Crea un gruppo di protezione
+* Visualizza i dettagli della protezione
 * Crea subito un gruppo di protezione. Vederelink:br-use-kvm-backup.html["Esegui subito il backup dei carichi di lavoro KVM"] .
-* Modifica un gruppo di protezione.
-* Elimina un gruppo di protezione.
+* Modifica un gruppo di protezione
+* Elimina un gruppo di protezione
 
 
 
@@ -30,7 +30,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ri
 [[create-a-protection-group]]
 == Crea un gruppo di protezione
 
-Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo di protezione.
+Raggruppa le macchine virtuali e i pool di storage che vuoi proteggere insieme in un gruppo di protezione.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -44,12 +44,12 @@ Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo d
 . Seleziona un host per elencare le VM disponibili su quell'host. Per includere le VM di tutti gli host rilevati, seleziona *All* nell'elenco degli host.
 . Seleziona le singole VM che desideri includere nel gruppo di protezione, oppure seleziona *All* per includere tutte le VM nell'elenco.
 +
-Le VM che selezioni vengono visualizzate nell'area *Macchine virtuali aggiunte*. Puoi rimuovere singole VM dall'elenco o svuotare completamente l'elenco. Puoi aggiungere VM da più host KVM all'elenco.
+Le macchine virtuali che selezioni vengono visualizzate nell'area *Macchine virtuali aggiunte*. Puoi rimuovere singole macchine virtuali o cancellare l'elenco. Puoi aggiungere macchine virtuali da più host KVM.
 
 . Selezionare *Avanti*.
 . Selezionare la policy di protezione che si desidera applicare al gruppo di protezione oppure creare una nuova policy selezionando *Create new policy*.
 +
-Per ulteriori informazioni sulla creazione di una policy di backup, fare riferimento alink:br-use-policies-create.html["Creare e gestire policy"] .
+Per ulteriori informazioni, vedi link:br-use-policies-create.html["Creare e gestire policy"].
 
 . Selezionare *Avanti*.
 . Rivedere la configurazione.

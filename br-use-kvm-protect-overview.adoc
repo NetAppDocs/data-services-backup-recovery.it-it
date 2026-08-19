@@ -4,7 +4,7 @@ permalink: br-use-kvm-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: È possibile proteggere le macchine virtuali KVM dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati. 
 ---
-= Scopri come proteggere i carichi di lavoro KVM con NetApp Backup and Recovery
+= Flusso di lavoro di protezione KVM con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: È possibile proteggere le macchine virtuali KVM dai sistemi ONTAP loca
 
 
 [role="lead"]
-Proteggi le tue VM KVM gestite e i pool di storage con NetApp Backup and Recovery. NetApp Backup and Recovery offre operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con la VM. Gli host KVM e le VM devono essere gestiti da una piattaforma di gestione come Apache CloudStack prima di poterli proteggere tramite Backup e ripristino.
+Proteggi le tue VM KVM gestite e i pool di storage con NetApp Backup and Recovery. Il servizio offre operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti in caso di arresto anomalo e coerenti con le VM.
 
-È possibile eseguire il backup dei carichi di lavoro KVM su Amazon Web Services S3, Azure NetApp Files o StorageGRID e ripristinare i carichi di lavoro KVM su un host KVM locale.
+I tuoi host KVM e le VM devono essere gestiti da una piattaforma come Apache CloudStack prima che tu possa proteggerli con NetApp Backup and Recovery.
 
 Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 
 * Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
-* L'utilizzo di diversi tipi di supporto aiuta a recuperare i dati se un tipo non funziona.
+* L'utilizzo di diversi tipi di supporti ti aiuta a recuperare i dati se uno di essi si guasta.
 * È possibile ripristinare rapidamente dalla copia in loco e utilizzare le copie fuori sede se la copia in loco è compromessa.
 
 
-È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro KVM:
+Puoi usare NetApp Backup e ripristino per eseguire le seguenti attività per i carichi di lavoro KVM:
 
 * link:br-start-discover-kvm.html["Scopri i carichi di lavoro KVM"]
 * link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro KVM"]

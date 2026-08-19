@@ -14,9 +14,9 @@ summary: 'Riferimento alle azioni di backup e ripristino supportate dall"auditin
 
 
 [role="lead"]
-La pagina Controllo della NetApp Console registra le seguenti azioni eseguite dagli utenti in Backup e ripristino nell'ambito della funzionalità di controllo. Per informazioni dettagliate su come visualizzare e filtrare gli eventi di controllo, consultare  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Verifica l'attività degli utenti dalla pagina Audit"^] nella documentazione della Console.
+Usa questo riferimento per vedere quali azioni di NetApp Backup and Recovery la NetApp Console registra nella pagina Audit. Per dettagli su come visualizzare e filtrare gli eventi di audit, vedi  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Verifica l'attività degli utenti dalla pagina Audit"^] nella documentazione della NetApp Console.
 
-Per ogni azione sottoposta a controllo, la Console registra il nome del servizio, l'agente, la risorsa, l'utente e lo stato dell'azione.
+Per ogni azione sottoposta a controllo, NetApp Console registra il nome del servizio, l'agente, la risorsa, l'utente e lo stato dell'azione.
 
 .Azioni di backup e ripristino verificate
 * Ripristinare il volume o i file dal backup

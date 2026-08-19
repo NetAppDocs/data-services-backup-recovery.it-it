@@ -14,12 +14,12 @@ summary: Potrebbero verificarsi situazioni in cui sarà necessario riavviare Net
 
 
 [role="lead"]
-Potrebbero verificarsi situazioni in cui sarà necessario riavviare NetApp Backup and Recovery.
+Puoi riavviare NetApp Backup and Recovery dall'host dell'agente della Console quando hai bisogno di ripristinare il servizio o applicare una modifica. Usa il comando che corrisponde al tuo tipo di distribuzione e al runtime del container.
 
 L'agente Console include la funzionalità NetApp Backup and Recovery .
 
 .Passi
-. Connettersi al sistema Linux su cui è in esecuzione l'agente Console.
+. Connettiti al sistema Linux in cui è in esecuzione l'agente della Console.
 +
 [cols="25,50"]
 |===

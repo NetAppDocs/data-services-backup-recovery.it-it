@@ -14,7 +14,7 @@ summary: 'Abilita l"anteprima e le funzionalità nascoste per NetApp Backup and 
 
 
 [role="lead"]
-Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery.
+Segui questi passaggi per abilitare le funzionalità di anteprima e nascoste per NetApp Backup and Recovery. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
 
 *Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -44,7 +44,7 @@ Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery.
 Abilita le opzioni del flag di anteprima per utilizzare funzionalità non ancora generalmente disponibili. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
 
 .Passi
-. Utilizza SSH per accedere all'agente della console.
+. Utilizza SSH per accedere all'agente della Console.
 . Passa all'utente root:
 +
 [source, shell]
@@ -129,7 +129,7 @@ Disabilita indicizzazione per volumi specifici o per tutti i volumi appartenenti
 
 
 .Passi
-. Utilizza SSH per accedere all'agente della console.
+. Utilizza SSH per accedere all'agente della Console.
 . Passa all'utente root:
 +
 [source, shell]

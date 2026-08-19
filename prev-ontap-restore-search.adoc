@@ -14,7 +14,7 @@ summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare v
 
 
 [role="lead"]
-È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. La funzione Cerca e ripristina consente di effettuare ricerche in tutti i backup (inclusi snapshot locali, volumi replicati e storage a oggetti) senza dover specificare il nome esatto del sistema, del volume o del file.
+Usa Cerca e ripristina per recuperare volumi, cartelle o file dai backup ONTAP quando non conosci il nome esatto del sistema, del volume o del file. Puoi cercare tra snapshot locali, volumi replicati e backup su storage a oggetti.
 
 Il ripristino da snapshot locali o volumi replicati è in genere più rapido e meno costoso rispetto al ripristino da storage di oggetti.
 
@@ -74,21 +74,21 @@ Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume 
 | Google Cloud Storage | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP | Cloud Volumes ONTAP nel sistema Google On-premises ONTAP 
 
 
-| NetApp StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
+| StorageGRID | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
 
 
 | ONTAP S3 | Sistema ONTAP on-premise Cloud Volumes ONTAP | Sistema ONTAP in sede 
 |===
 Per Search & Restore, l'agente Console può essere installato nei seguenti percorsi:
 
-* Per Amazon S3, l'agente della console può essere distribuito in AWS o nei tuoi locali
-* Per Azure Blob, l'agente Console può essere distribuito in Azure o nei tuoi locali
+* Per Amazon S3, l'agente Console può essere distribuito in AWS o in locale
+* Per Azure Blob, l'agente della Console può essere distribuito in Azure o in locale
 * Per Google Cloud Storage, l'agente della console deve essere distribuito nella VPC di Google Cloud Platform
-* Per StorageGRID, l'agente della console deve essere distribuito nei tuoi locali, con o senza accesso a Internet
-* Per ONTAP S3, l'agente della console può essere distribuito presso la tua sede (con o senza accesso a Internet) o in un ambiente di provider cloud
+* Per StorageGRID, l'agente della Console deve essere distribuito in locale, con o senza accesso a Internet
+* Per ONTAP S3, l'agente Console può essere distribuito in locale (con o senza accesso a Internet) o in un ambiente di cloud provider
 
 
-Si noti che i riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS, AFF e ONTAP Select .
+Nota che i riferimenti a "sistemi ONTAP on-premises" includono FAS, AFF e ONTAP Select.
 
 
 
@@ -166,7 +166,7 @@ Anche se si utilizza un agente Console locale, è necessario soddisfare i requis
 [[search-restore-process]]
 == Processo di ricerca e ripristino
 
-Il processo è il seguente:
+Il processo funziona in questo modo:
 
 . Prima di poter utilizzare Ricerca e ripristino, è necessario abilitare "Indicizzazione" su ciascun sistema sorgente da cui si desidera ripristinare i dati del volume.  Ciò consente al catalogo indicizzato di tenere traccia dei file di backup per ogni volume.
 +
@@ -208,10 +208,10 @@ Il catalogo indicizzato supporta quanto segue:
 * Il tempo massimo per l'indicizzazione di base è inferiore a 7 giorni.  Il tempo effettivo varierà a seconda dell'ambiente.
 
 
-.Passaggi per abilitare l'indicizzazione per un sistema:
+.Procedura per abilitare l'indicizzazione di un sistema:
 Se l'indicizzazione è già stata abilitata per il sistema, passare alla sezione successiva per ripristinare i dati.
 
-Per prima cosa dovrai montare un volume separato per contenere i file di catalogo. In questo modo si evita la perdita di dati se le dimensioni dei file che contengono gli snapshot diventano troppo grandi. Questa operazione non è richiesta su tutti i cluster: è possibile montare un volume qualsiasi da uno qualsiasi dei cluster presenti nel proprio ambiente. In caso contrario, l'indicizzazione potrebbe non funzionare correttamente.
+Innanzitutto, monta un volume separato per contenere i file di catalogo. Questo aiuta a prevenire la perdita di dati se i file di catalogo degli snapshot diventano troppo grandi. Non è necessario farlo su ogni cluster; puoi montare un volume qualsiasi da qualsiasi cluster del tuo ambiente. Se non lo fai, l'indicizzazione potrebbe non funzionare correttamente.
 
 Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
 
@@ -223,7 +223,7 @@ Per il volume montato, utilizzare le seguenti indicazioni di dimensionamento:
 
 
 [[mount-volume-steps]]
-.Passaggio per montare il volume per reindicizzare il catalogo
+.Procedura per montare il volume per la reindicizzazione del catalogo
 . Montare il volume su `/opt/application/netapp/cbs` immettendo il seguente comando, dove:
 +
 ** `volume name` è il volume sul cluster in cui verranno archiviati i file di catalogo
@@ -269,21 +269,20 @@ Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata p
 
 .Passi
 . Dal menu Console, selezionare *Protezione > Backup e ripristino*.
-. Selezionare la scheda *Ripristina* e verrà visualizzata la Dashboard di ripristino.
-. Dalla sezione _Cerca e ripristina_, seleziona *Cerca e ripristina*.
+. Seleziona la scheda *Ripristina* per visualizzare la Restore Dashboard.
 . Dalla sezione _Cerca e ripristina_, seleziona *Cerca e ripristina*.
 . Dalla pagina Cerca e ripristina:
 +
 .. Nella _barra di ricerca_, immettere un nome completo o parziale del volume, un nome della cartella o un nome del file.
 .. Selezionare il tipo di risorsa: *Volumi*, *File*, *Cartelle* o *Tutti*.
-.. Nell'area _Filtra per_, seleziona i criteri di filtro. Ad esempio, è possibile selezionare il sistema in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di posizione di backup se si desidera cercare risultati solo all'interno degli snapshot disponibili o dei file di backup nell'archiviazione degli oggetti.
+.. Nell'area _Filtra per_, seleziona i criteri di filtro. Ad esempio, puoi selezionare il sistema in cui risiedono i dati e il tipo di file, come un file .JPEG. Puoi anche selezionare il tipo di posizione di backup se vuoi cercare solo tra gli snapshot o i file di backup disponibili nello storage a oggetti.
 
 
 . Seleziona *Cerca* e nell'area Risultati della ricerca verranno visualizzate tutte le risorse che contengono un file, una cartella o un volume corrispondente alla tua ricerca.
 . Individua la risorsa che contiene i dati che desideri ripristinare e seleziona *Visualizza tutti i backup* per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
 . Individua il file di backup che desideri utilizzare per ripristinare i dati e seleziona *Ripristina*.
 +
-Si noti che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca.  È possibile scegliere di ripristinare dal file di backup cloud, dallo snapshot o dal volume replicato.
+Tieni presente che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella tua ricerca. Puoi scegliere di ripristinare dal file di backup nel cloud, dallo snapshot o dal volume replicato.
 
 . Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
 +

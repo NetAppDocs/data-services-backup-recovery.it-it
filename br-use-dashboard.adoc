@@ -4,7 +4,7 @@ permalink: br-use-dashboard.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
 summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini e rispondi a tutti gli avvisi che compaiono nella dashboard NetApp Backup and Recovery .  È possibile esaminare il riepilogo della protezione, il riepilogo del ripristino, il riepilogo del sistema e altro ancora. 
 ---
-= Visualizza lo stato di protezione sulla dashboard di NetApp Backup and Recovery
+= Visualizza lo stato di protezione nella dashboard di backup e ripristino
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventu
 
 
 [role="lead"]
-Monitorando lo stato dei carichi di lavoro sarai a conoscenza di eventuali problemi relativi alla protezione dei carichi di lavoro e potrai adottare misure per risolverli.  Visualizza lo stato dei tuoi backup e ripristini nella dashboard NetApp Backup and Recovery .  È possibile esaminare il riepilogo del sistema, il riepilogo della protezione, il riepilogo del processo, il riepilogo del ripristino e altro ancora.
+Monitora lo stato di salute dei tuoi carichi di lavoro per identificare i problemi di protezione e rispondere agli avvisi. Visualizza lo stato dei backup e dei ripristini e consulta i riepiloghi di Sistema, Protezione, Job e Ripristino nella NetApp Backup and Recovery Dashboard.
 
-*Ruolo NetApp Console richiesto* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o ruolo Backup and Recovery viewer. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery o ruolo di viewer di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
-. Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
+. Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
 . Selezionare un riquadro del carico di lavoro (ad esempio, Microsoft SQL Server).
 . Dal menu Backup e ripristino, seleziona *Dashboard*.
 +
@@ -56,10 +56,10 @@ TIP: Un database protetto è un database a cui è assegnata una policy di backup
 [[view-the-job-summary]]
 == Visualizza il riepilogo del lavoro
 
-Esamina il totale dei lavori completati, in esecuzione o non riusciti nel Riepilogo lavori.
+Consulta il numero totale di attività completate, in corso o non riuscite nel riepilogo attività.
 
 .Passi
-. Per ogni distribuzione dei lavori, modifica un filtro per visualizzare il riepilogo di quelli non riusciti, in esecuzione e completati in base al numero di giorni, ad esempio gli ultimi 30 giorni, gli ultimi 7 giorni, le ultime 24 ore o l'ultimo anno.
+. Per ogni distribuzione dei processi, modifica il filtro per visualizzare il riepilogo dei processi non riusciti, in esecuzione e completati in base al numero di giorni, ad esempio gli ultimi 30 giorni, gli ultimi 7 giorni, le ultime 24 ore o l'ultimo anno.
 . Visualizza i dettagli dei processi non riusciti, in esecuzione e completati selezionando *Visualizza monitoraggio processi*.
 
 
@@ -68,7 +68,7 @@ Esamina il totale dei lavori completati, in esecuzione o non riusciti nel Riepil
 [[view-the-restore-summary]]
 == Visualizza il riepilogo del ripristino
 
-Esaminare le seguenti informazioni nel riepilogo del ripristino:
+Esamina le seguenti informazioni nel riepilogo del ripristino:
 
 * Numero totale di processi di ripristino eseguiti
 * La quantità totale di capacità che è stata ripristinata

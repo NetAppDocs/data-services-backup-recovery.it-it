@@ -14,11 +14,9 @@ summary: La funzionalità SnapMirror to Cloud Resync di NetApp Backup and Recove
 
 
 [role="lead"]
-La funzionalità SnapMirror to Cloud Resync di NetApp Backup and Recovery semplifica la protezione e la continuità dei dati durante le migrazioni dei volumi negli ambienti NetApp . Quando un volume viene migrato tramite SnapMirror Logical Replication (LRSE) da una distribuzione NetApp locale a un'altra o a una soluzione basata su cloud come Cloud Volumes ONTAP, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
+Usa SnapMirror to Cloud Resync in NetApp Backup and Recovery per mantenere disponibili i backup cloud esistenti dopo che hai migrato un volume con SnapMirror Logical Replication (LRSE). Questa funzionalità ti permette di continuare i backup senza una nuova baseline ed è disponibile a partire da ONTAP 9.16.1.
 
-Questa funzionalità elimina la necessità di un processo di riconfigurazione della baseline e consente di continuare i backup dopo la migrazione. Questa funzionalità è utile negli scenari di migrazione del carico di lavoro, supportando sia FlexVols che FlexGroups ed è disponibile a partire dalla versione 9.16.1 ONTAP .
-
-SnapMirror to Cloud Resync mantiene la continuità del backup tra gli ambienti, semplificando la gestione dei dati in configurazioni ibride e multi-cloud.
+SnapMirror to Cloud Resync supporta le migrazioni FlexVol e FlexGroup e ti aiuta a mantenere la continuità dei backup in ambienti ibridi e multi-cloud.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -46,7 +44,7 @@ Se si completa un aggiornamento tecnico o si migrano volumi da un cluster ONTAP 
 
 Ecco un esempio:
 
-Immagina di avere un volume locale denominato Vol1a. Questo volume contiene tre istantanee: S1, S2 e S3. Questi snapshot sono punti di ripristino.  Il backup di Vol1 sul cloud avviene tramite SnapMirror to Cloud (SM-C), ma solo S1 e S2 sono presenti nell'archivio oggetti.
+Immagina di avere un volume locale chiamato Vol1a. Questo volume ha tre snapshot: S1, S2 e S3. Questi snapshot sono punti di ripristino. Vol1a viene sottoposto a backup nel cloud tramite SnapMirror to Cloud (SM-C), ma solo S1 e S2 sono presenti nell'archivio di oggetti.
 
 Ora vuoi migrare Vol1 su un altro cluster ONTAP .  Per fare ciò, si crea una relazione SnapMirror Logical Replication (LRSE) su un nuovo volume cloud denominato Vol1b.  In questo modo vengono trasferiti tutti e tre gli snapshot (S1, S2 e S3) da Vol1a a Vol1b.
 
@@ -168,7 +166,7 @@ NOTE: Deve essere utilizzato l'UUID dell'istanza del volume, non l'ID del volume
 NetApp Backup and Recovery verifica che ogni volume selezionato per la risincronizzazione condivida uno snapshot comune con l'archivio di oggetti. In particolare, lo snapshot più recente memorizzato nell'archivio di oggetti deve essere presente anche nello snapshot locale del nuovo volume clonato. Questo controllo garantisce che i volumi siano pronti per l'operazione di SnapMirror to Cloud Resync.
 
 . Esaminare i risultati della convalida, inclusi i nuovi nomi dei volumi di origine e lo stato di risincronizzazione per ciascun volume.
-. Verifica l'idoneità dei volumi. Il sistema controlla se i volumi sono idonei per la risincronizzazione. Se un volume non è idoneo, significa che non sono stati definiti i criteri comuni per gli snapshot.
+. Verifica l'idoneità dei volumi. Il sistema controlla se i volumi sono idonei per la risincronizzazione. Se un volume non è idoneo, significa che non sono stati soddisfatti i criteri comuni per gli snapshot.
 +
 
 IMPORTANT: Per garantire che i volumi rimangano idonei per l'operazione SnapMirror su Cloud Resync, eseguire uno snapshot finale di ciascun volume prima di eliminare qualsiasi relazione SnapMirror durante la fase di pre-migrazione.  In questo modo si preserva lo stato più recente dei dati.

@@ -14,13 +14,13 @@ summary: Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle 
 
 
 [role="lead"]
-Creare gruppi di protezione per gestire le operazioni di backup per un set di risorse di Oracle Database.  Un gruppo di protezione è un raggruppamento logico di risorse, ad esempio database, che si desidera proteggere insieme.  È necessario creare un gruppo di protezione per eseguire il backup dei database Oracle.
+Crea gruppi di protezione per gestire le operazioni di backup delle risorse di database Oracle. Un gruppo di protezione è un raggruppamento logico di risorse, come i database, che vuoi proteggere insieme.
 
 È possibile eseguire le seguenti attività relative ai gruppi di protezione:
 
 * Crea un gruppo di protezione.
 * Visualizza i dettagli della protezione.
-* Esegui subito il backup di un gruppo di protezione. Vedi link:br-use-kvm-backup.html["Esegui subito il backup dei carichi di lavoro Oracle Database"].
+* Esegui subito il backup di un gruppo di protezione. Vedi link:br-use-oracle-backup.html["Esegui subito il backup dei carichi di lavoro Oracle Database"].
 * Elimina un gruppo di protezione.
 
 
@@ -29,7 +29,7 @@ Creare gruppi di protezione per gestire le operazioni di backup per un set di ri
 [[create-a-protection-group]]
 == Crea un gruppo di protezione
 
-Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo di protezione.
+Raggruppa le risorse di database Oracle che vuoi proteggere insieme in un gruppo di protezione.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -40,7 +40,7 @@ Raggruppa le VM e i pool di archiviazione che desideri proteggere in un gruppo d
 . Selezionare la scheda *Gruppi di protezione*.
 . Selezionare *Crea gruppo di protezione*.
 . Fornire un nome per il gruppo di protezione.
-. Selezionare le VM o i pool di archiviazione che si desidera includere nel gruppo di protezione.
+. Seleziona i database che vuoi includere nel gruppo di protezione.
 . Selezionare *Avanti*.
 . Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
 +

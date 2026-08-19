@@ -4,7 +4,7 @@ permalink: br-use-hyper-v-restore-guest-files-and-folders.html
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
 summary: È possibile ripristinare uno o più file o cartelle da uno snapshot di una macchina virtuale Hyper-V a una macchina virtuale guest Windows. 
 ---
-= Ripristina file e cartelle dai backup delle VM Hyper-V con NetApp Backup and Recovery
+= Ripristina file e cartelle guest Hyper-V con NetApp Backup e ripristino
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: È possibile ripristinare uno o più file o cartelle da uno snapshot di
 
 
 [role="lead"]
-Ripristina file e cartelle dai backup di macchine virtuali Hyper-V su storage primario o secondario in una macchina virtuale guest Windows.
+Ripristina file e cartelle dai backup delle macchine virtuali Hyper-V su storage primario o secondario nella macchina virtuale guest Windows originale.
 
 
 
@@ -24,7 +24,7 @@ Ripristina file e cartelle dai backup di macchine virtuali Hyper-V su storage pr
 Monta un disco virtuale da uno Snapshot e ripristina file e cartelle da esso nella macchina virtuale Windows originale (di origine).
 
 .Prima di iniziare
-Prima di poter ripristinare file e cartelle, devi creare una credenziale per la VM di origine in NetApp Backup and Recovery. Questa credenziale viene utilizzata per autenticarti con la VM durante il processo di ripristino.
+Prima di poter ripristinare file e cartelle, devi creare una credenziale per la VM di origine in NetApp Backup e ripristino. Questa credenziale viene utilizzata per autenticarti con la VM durante il processo di ripristino.
 
 .Informazioni su questo compito
 Quando si apre una sessione di ripristino di file e cartelle montando un disco virtuale, la sessione rimane attiva per 48 ore.
@@ -46,8 +46,8 @@ Nota quanto segue durante il ripristino di file e cartelle:
 ====
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
-. Seleziona *Hyper-V* dall'elenco dei carichi di lavoro in alto a destra della pagina.
-. Nell'elenco delle macchine virtuali, seleziona l'azione *Ripristina* per una VM che contiene i file o le cartelle che desideri ripristinare.
+. Seleziona *Hyper-V* dall'elenco dei carichi di lavoro nell'angolo in alto a destra della pagina.
+. Nell'elenco delle macchine virtuali, seleziona l'azione *Ripristina* per la VM che contiene i file o le cartelle che desideri ripristinare.
 . Seleziona *File e cartelle*.
 . Nella pagina *Ripristina da snapshot*, procedi come segue:
 +
@@ -59,14 +59,14 @@ Nota quanto segue durante il ripristino di file e cartelle:
 . Nella pagina _Dettagli della macchina virtuale guest_, procedi come segue:
 +
 .. Nella sezione *Dettagli della macchina virtuale guest*, collega il disco virtuale alla VM originale selezionando *Original virtual machine*.
-.. Facoltativamente, nella sezione *Credenziali della macchina virtuale guest*, se non hai ancora memorizzato una credenziale per il disco virtuale di origine e la macchina virtuale di destinazione, seleziona *Aggiungi credenziali*, inserisci le informazioni sulle credenziali di Windows e seleziona *Aggiungi*.
+.. Facoltativamente, nella sezione *Credenziali della macchina virtuale guest*, se non hai già memorizzato le credenziali per la macchina virtuale di origine e quella di destinazione, seleziona *Aggiungi credenziali*, inserisci le informazioni delle credenziali di Windows e seleziona *Aggiungi*.
 .. Dall'elenco, scegli una credenziale di macchina virtuale da utilizzare.
 .. Selezionare *Avanti*.
 +
 NetApp Backup and Recovery collega il disco virtuale alla macchina virtuale originale e visualizza tutti i file e le cartelle, inclusi quelli nascosti. Assegna una lettera di unità a ogni partizione, comprese le partizioni riservate al sistema.
 
 +
-È possibile utilizzare l'icona della lente d'ingrandimento (ricerca) vicino al riquadro di esplorazione file per cercare file e cartelle. La corrispondenza di pattern non è supportata, ma è possibile cercare file o cartelle in base a un sottoinsieme del nome o dell'estensione.
+Puoi usare l'icona di ricerca vicino al riquadro del file browser per cercare file e cartelle. La corrispondenza di pattern non è supportata, ma puoi cercare file o cartelle in base a un sottoinsieme del nome o dell'estensione.
 
 
 
@@ -81,7 +81,7 @@ I file e le cartelle che hai selezionato per il ripristino sono elencati nell'ar
 
 . Nella pagina _Ripristino file guest - destinazione_, procedi come segue:
 +
-.. Nella sezione "Ripristina nel percorso", immettere il percorso UNC della destinazione VM e la posizione del file system in cui verranno ripristinati i file selezionati:
+.. Nella sezione *Ripristina nel percorso*, inserisci il percorso UNC della destinazione VM e della posizione del file system in cui verranno ripristinati i file selezionati:
 +
 *** Esempio di percorso IPv4: `\\10.60.136.65\c$`
 *** Esempio di percorso IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
@@ -92,7 +92,7 @@ I file e le cartelle che hai selezionato per il ripristino sono elencati nell'ar
 +
 Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli o ignorarli.
 
-. Nella sezione "Opzioni post-ripristino", è possibile disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il disco virtuale e smonta il datastore. Ciò significa che sarà necessario riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
+. Nella sezione *Opzioni post-ripristino*, puoi disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il disco virtuale e smonta il datastore. Questo significa che dovrai riconnettere la sessione guest prima di eseguire altre operazioni di ripristino di file e cartelle.
 . Selezionare *Ripristina*.
 +
 È possibile visualizzare l'avanzamento del ripristino nella pagina Monitoraggio processi.
@@ -108,10 +108,10 @@ Visualizza, utilizza ed elimina le sessioni attive di ripristino di file e carte
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Clona*.
-. Seleziona *Hyper-V* dall'elenco dei carichi di lavoro in alto a destra della pagina.
+. Seleziona *Hyper-V* dall'elenco dei carichi di lavoro nell'angolo in alto a destra della pagina.
 . Selezionare il menu *Sessioni di montaggio disco live*.
 +
-Viene visualizzato l'elenco delle sessioni di montaggio di dischi virtuali aperte.
+Viene visualizzato un elenco delle sessioni di mount di dischi virtuali aperte.
 
 . Facoltativamente, per utilizzare una sessione per ripristinare file e cartelle in una macchina virtuale guest, aprire il menu Azioni image:../media/icon-action.png["Opzione Azioni"] per una sessione e selezionare *Ripristina file e cartelle*.
 . In alternativa, per eliminare una sessione, apri il menu Azioni image:../media/icon-action.png["Opzione Azioni"] per una sessione e seleziona *Elimina*.

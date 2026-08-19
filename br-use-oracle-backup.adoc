@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp backup e ripristino. 
+keywords: backing up, back up, backup, backup application data, Amazon Web Services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
+summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp Backup and Recovery. 
 ---
 = Esegui il backup dei carichi di lavoro di Oracle Database utilizzando NetApp Backup and Recovery
 :hardbreaks:
@@ -14,22 +14,22 @@ summary: Proteggi i carichi di lavoro del tuo database Oracle con NetApp backup 
 
 
 [role="lead"]
-Utilizza NetApp Backup and Recovery per eseguire il backup di gruppi di protezione o database Oracle Database da sistemi ONTAP locali a storage cloud, tra cui Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3.  NetApp Backup and Recovery esegue il backup dei database e dei dati di registro in ciascun gruppo di protezione.
+Esegui il backup dei gruppi di protezione di database Oracle o di singoli database dai sistemi ONTAP on-premises utilizzando NetApp Backup and Recovery. Invia i backup al cloud storage, inclusi Amazon S3, NetApp StorageGRID, Microsoft Azure Blob Storage o ONTAP S3.
 
 
 NOTE: Per eseguire il backup di gruppi di protezione o singoli database in base a una pianificazione, creare policy che gestiscano le operazioni di backup e ripristino. Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
 
-* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedi link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle Database con NetApp Backup and Recovery"] per ulteriori informazioni.
-* Esegui subito il backup di un gruppo di protezione (crea subito un backup su richiesta).
-* Esegui subito il backup di un database.
+* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un insieme di risorse. Vedi link:br-use-kvm-protection-groups.html["Crea e gestisci gruppi di protezione per i carichi di lavoro di Oracle Database con NetApp Backup and Recovery"] per maggiori informazioni.
+* Crea un backup su richiesta di un gruppo di protezione.
+* Crea un backup su richiesta di un database.
 
 
 
 
-[[back-up-protection-groups-now-with-an-on-demand-backup]]
-== Esegui subito il backup dei gruppi di protezione con un backup su richiesta
+[[create-an-on-demand-backup-of-a-protection-group]]
+== Crea un backup su richiesta di un gruppo di protezione
 
-Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
+Crea un backup su richiesta prima di apportare modifiche al sistema per proteggere i tuoi dati.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -39,7 +39,7 @@ Esegui un backup su richiesta prima di apportare modifiche al sistema per garant
 . Selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
+. Seleziona la scheda *Gruppi di protezione*.
 . Selezionare il gruppo di protezione di cui si desidera eseguire il backup.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
@@ -52,10 +52,10 @@ NOTE: NetApp Backup and Recovery utilizza la stessa policy sia per il gruppo di 
 
 
 
-[[back-up-a-database-now-with-an-on-demand-backup]]
-== Esegui subito il backup di un database con un backup su richiesta
+[[create-an-on-demand-backup-of-a-database]]
+== Crea un backup su richiesta di un database
 
-È possibile eseguire un backup su richiesta di un singolo database.
+Crea un backup su richiesta prima di apportare modifiche al sistema per proteggere i tuoi dati.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 

@@ -14,7 +14,7 @@ summary: Le limitazioni note identificano funzioni non supportate da questa vers
 
 
 [role="lead"]
-Qui sono elencate le piattaforme, i dispositivi o le funzionalità che non funzionano o non funzionano bene con questa versione.  Leggere attentamente queste limitazioni.
+Esamina queste limitazioni prima di utilizzare NetApp Backup e ripristino per volumi ONTAP.
 
 * NetApp Backup and Recovery può eseguire il backup Cloud Volumes ONTAP in un archivio oggetti nelle regioni AWS Cina (incluse Pechino e Ningxia); tuttavia, potrebbe essere necessario modificare manualmente prima le policy di identità e di accesso.
 +
@@ -35,9 +35,9 @@ Per i dettagli sulla creazione di un agente Console in Azure, fare riferimento a
 [[replication-limitations-for-ontap-volumes]]
 == Limitazioni di replica per i volumi ONTAP
 
-* È possibile selezionare un solo volume FlexGroup alla volta per la replica.  Sarà necessario attivare i backup separatamente per ogni volume FlexGroup .
+* Puoi selezionare solo un volume FlexGroup alla volta per la replica. Devi attivare i backup separatamente per ogni volume FlexGroup.
 +
-Non vi sono limitazioni per i volumi FlexVol : puoi selezionare tutti i volumi FlexVol nel tuo sistema e assegnare gli stessi criteri di backup.
+I volumi FlexVol non presentano tale limitazione: puoi selezionare tutti i volumi FlexVol nel tuo sistema e assegnare le stesse policy di backup.
 
 * La seguente funzionalità è supportata in https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , ma non quando si utilizza la funzionalità di replica di NetApp Backup and Recovery:
 +
@@ -64,11 +64,11 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 * Quando si crea o si modifica un criterio di backup senza che vi siano volumi assegnati, il numero massimo di backup conservati può essere 1018.  Dopo aver assegnato i volumi al criterio, è possibile modificarlo per creare fino a 4000 backup.
 * Durante il backup dei volumi di protezione dei dati (DP):
 +
-** Relazioni con le etichette SnapMirror `app_consistent` E `all_source_snapshot` non verrà eseguito il backup sul cloud.
-** Se si creano copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), tali Snapshot non verranno spostati nel cloud come backup.  A questo punto sarà necessario creare una policy Snapshot con le etichette desiderate sul volume DP di origine affinché NetApp Backup and Recovery ne esegua il backup.
+** Le relazioni con le etichette SnapMirror `app_consistent` e  `all_source_snapshot` non verranno salvate nel cloud.
+** Se crei copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), questi Snapshot non verranno spostati nel cloud come backup. Devi creare una policy di Snapshot con le etichette desiderate sul volume DP di origine così che NetApp Backup and Recovery possa eseguirne il backup.
 
 
-* I backup dei volumi FlexGroup non possono essere spostati nell'archiviazione.
+* I backup dei volumi FlexGroup non possono essere spostati nello storage di archiviazione.
 * I backup dei volumi FlexGroup possono utilizzare la protezione DataLock e Ransomware se il cluster esegue ONTAP 9.13.1 o versione successiva.
 * Il backup del volume SVM-DR è supportato con le seguenti restrizioni:
 +
@@ -79,12 +79,12 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 
 * Supporto MetroCluster :
 +
-** Se si utilizza ONTAP 9.12.1 GA o versione successiva, il backup è supportato quando si è connessi al sistema primario.  L'intera configurazione del backup viene trasferita al sistema secondario, in modo che i backup sul cloud continuino automaticamente dopo il passaggio.  Non è necessario impostare il backup sul sistema secondario (anzi, non è consentito farlo).
+** Quando usi ONTAP 9.12.1 GA o versioni successive, il backup è supportato quando sei connesso al sistema primario. L'intera configurazione del backup viene trasferita al sistema secondario così i backup sul cloud continuano automaticamente dopo il passaggio. Non devi configurare il backup sul sistema secondario (in realtà, non ti è permesso farlo).
 ** Quando si utilizza ONTAP 9.12.0 e versioni precedenti, il backup è supportato solo dal sistema secondario ONTAP .
 ** A partire da ONTAP 9.18.1, i backup dei volumi FlexGroup sono supportati nelle configurazioni MetroCluster.
 
 
-* Il backup di volumi ad hoc tramite il pulsante *Esegui backup ora* non è supportato sui volumi di protezione dati.
+* Il backup ad hoc del volume tramite il pulsante *Backup Now* non è supportato sui volumi di protezione dei dati.
 * Le configurazioni SM-BC non sono supportate.
 * ONTAP non supporta il fan-out delle relazioni SnapMirror da un singolo volume a più archivi di oggetti; pertanto, questa configurazione non è supportata da NetApp Backup and Recovery.
 * La modalità WORM/Compliance su un archivio di oggetti è supportata su Amazon S3, Google Cloud Platform (GCP), Azure e StorageGRID in questo momento. Questa è nota come funzionalità DataLock e deve essere gestita utilizzando le impostazioni di NetApp Backup and Recovery, non tramite l'interfaccia del cloud provider.
@@ -100,7 +100,7 @@ Queste limitazioni si applicano sia ai metodi Cerca e ripristina che Sfoglia e r
 * Il ripristino delle cartelle da snapshot locali non è supportato.
 * Ripristino di file e cartelle in una configurazione di disaster recovery (DR): dopo un failover, i volumi su una storage VM configurata per il DR mantengono le relazioni SnapMirror preesistenti in uno stato interrotto. I tentativi di ripristinare file o cartelle che creano relazioni RST temporanee SnapMirror vengono bloccati da ONTAP perché il volume di destinazione ha già una relazione.
 * Browse & Restore può ripristinare fino a 100 file singoli alla volta.
-* Search & Restore può ripristinare 1 file alla volta.
+* La funzione Cerca e ripristina consente di ripristinare un file alla volta.
 * Se si utilizza ONTAP 9.13.0 o versione successiva, Browse & Restore e Search & Restore possono ripristinare una cartella insieme a tutti i file e le sottocartelle in essa contenuti.
 +
 Quando si utilizza una versione di ONTAP successiva alla 9.11.1 ma precedente alla 9.13.0, l'operazione di ripristino può ripristinare solo la cartella selezionata e i file in quella cartella; non vengono ripristinate le sottocartelle o i file nelle sottocartelle.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-policies-oracle-create.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
 ---
 = Creare e gestire le policy di backup del database Oracle in NetApp Backup and Recovery
@@ -12,7 +12,7 @@ summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che r
 
 
 [role="lead"]
-In NetApp Backup and Recovery, crea criteri di backup personalizzati per database Oracle che regolano la frequenza dei backup, l'orario di esecuzione e il numero di file di backup conservati.
+Usa NetApp Backup and Recovery per creare policy di backup per database Oracle che controllano la frequenza, la pianificazione e la conservazione dei backup.
 
 
 NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
@@ -25,7 +25,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 * Creare una policy per la replica su storage secondario
 * Creare una policy per le impostazioni di archiviazione degli oggetti
 * Configurare le impostazioni avanzate dei criteri
-* Modifica policy (non disponibile per carichi di lavoro VMware)
+* Modifica le politiche
 * Elimina le policy
 
 
@@ -56,7 +56,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 *Ruolo della console NetApp richiesto* Visualizzatore di storage, Super admin di Backup and Recovery, Admin di backup di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
-Se si prevede di replicare su un archivio secondario e si desidera utilizzare il blocco degli snapshot sugli snapshot locali o sull'archivio secondario ONTAP remoto, è necessario innanzitutto inizializzare il clock di conformità ONTAP a livello di cluster.  Questo è un requisito per abilitare il blocco degli snapshot nella policy.
+Se prevedi di replicare su storage secondario e vuoi usare il blocco delle snapshot su snapshot locali o su storage secondario ONTAP remoto, devi prima inizializzare l'orologio di conformità ONTAP a livello di cluster. Questo è un requisito per abilitare il blocco delle snapshot nella policy.
 
 Per istruzioni su come fare, fare riferimento a https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inizializza l'orologio di conformità in ONTAP"^] .
 
@@ -77,18 +77,18 @@ Viene visualizzata la pagina delle Policy.
 
 . Inserisci le informazioni nella sezione *Architettura di backup*. Scegli il flusso di dati per il backup dall'elenco:
 +
-** *Distribuzione 3-2-1*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object store. Può trattarsi di un cloud hyperscaler object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
-** *Cascata 3-2-1*: Storage primario (disco) verso storage secondario (disco) e storage primario (disco) verso cloud storage (archivio di oggetti). Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo crea una catena di replica dei dati su più sistemi per garantire ridondanza e affidabilità. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
+** *3-2-1 fanout*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi di storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object-store. Può trattarsi di un cloud provider object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
+** *Cascata 3-2-1*: storage primario (disco) verso storage secondario (disco) e storage primario (disco) verso cloud storage (archivio di oggetti). Questo può essere un cloud provider archivio di oggetti o un archivio di oggetti privato come StorageGRID. Questo crea una catena di replica dei dati su più sistemi per garantire ridondanza e affidabilità. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 ** *Da disco a disco*: Storage primario (disco) su storage secondario (disco). La strategia di protezione dei dati ONTAP to ONTAP replica i dati tra due sistemi ONTAP per garantire alta disponibilità e disaster recovery. Questo viene generalmente ottenuto utilizzando SnapMirror, che supporta sia la replica sincrona che asincrona. Questo metodo mantiene i dati aggiornati e disponibili tra le sedi per una solida protezione dei dati.
-** *Archiviazione da disco a oggetto*: storage primario (disco) su cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione dei dati a lungo termine e l'archiviazione. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
+** *Archiviazione da disco a oggetto*: storage primario (disco) verso cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema di storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud provider o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione e l'archiviazione dei dati a lungo termine. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 ** *Fanout da disco a disco*: dallo storage primario (disco) allo storage secondario (disco) e dallo storage primario (disco) allo storage secondario (disco). È possibile configurare più impostazioni secondarie per l'opzione fanout da disco a disco.
 ** *Snapshot locali*: Snapshot locale sul volume selezionato. Questo crea copie point-in-time di sola lettura dei volumi di produzione in cui sono in esecuzione i carichi di lavoro. È possibile utilizzare gli snapshot locali per recuperare i dati in caso di perdita o corruzione, nonché per creare backup a scopo di disaster recovery.
 
 
 . Fornire le informazioni per la sezione *Impostazioni snapshot locali*:
 +
-** Selezionare l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni degli snapshot.  È possibile avere un massimo di 5 pianificazioni.
-** *Frequenza snapshot*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.  La frequenza annuale non è disponibile per i carichi di lavoro Kubernetes.
+** Seleziona l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni Snapshot. Puoi avere un massimo di cinque pianificazioni.
+** *Frequenza Snapshot*: Seleziona la frequenza tra oraria, giornaliera, settimanale, mensile o annuale.
 ** *Conservazione degli snapshot*: immettere il numero di snapshot da conservare.
 ** *Abilita il backup dei log*: Abilita questa opzione per eseguire il backup dei log e impostare la frequenza e la conservazione dei backup dei log. Per farlo, è necessario aver già configurato un backup dei log. Vedi link:br-start-configure.html["Configurare le directory di registro"].
 +
@@ -106,7 +106,7 @@ Viene visualizzata la pagina delle Policy.
 ** *Periodo di blocco dello snapshot*: immettere il numero di giorni, mesi o anni per i quali si desidera bloccare lo snapshot.
 ** *Trasferimento alla secondaria*:
 +
-*** L'opzione * Pianificazione trasferimento ONTAP - Inline* è selezionata per impostazione predefinita e indica che gli snapshot vengono trasferiti immediatamente al sistema di archiviazione secondario.  Non è necessario pianificare il backup.
+*** L'opzione *ONTAP transfer schedule - Inline* è selezionata per impostazione predefinita, il che indica che gli snapshot vengono trasferiti immediatamente allo storage secondario. Non devi pianificare il backup.
 *** Altre opzioni: se si sceglie un trasferimento differito, i trasferimenti non sono immediati e si può impostare una pianificazione.
 
 
@@ -120,20 +120,20 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 +
 ** *Provider*: Seleziona il provider per il tuo archivio di oggetti e inserisci le credenziali nei campi appropriati (i campi delle credenziali variano a seconda del provider).
-** *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+** *Destinazione di backup*: Seleziona un target di storage a oggetti registrato. Verifica che la destinazione sia accessibile all'interno dell'ambiente di backup.
 ** *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
 ** *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
 ** *Copie di conservazione*: immettere il numero di snapshot da conservare.
 ** *Esegui a*: scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archivio oggetti.
 ** *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
-** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sullo storage a oggetti. Ciò garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su 7 giorni per impostazione predefinita. Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'object storage. Questo garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su sette giorni per impostazione predefinita. Per proteggere i tuoi backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
 
 
 . Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
 +
 [%collapsible]
 ====
-** *Impostazioni del catalogo RMAN*: Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino del database Oracle. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo per impostazione predefinita). Consulta link:br-start-configure-oracle-database.html["Configurare un database Oracle"] per modificare queste impostazioni per un database.
+** *Impostazioni del catalogo RMAN*: Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino di Oracle Database. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo di destinazione per impostazione predefinita). Consulta link:br-start-configure-oracle-database.html["Configurare un database Oracle"] per modificare queste impostazioni per un database.
 ** *Verifica del backup*: Seleziona se desideri abilitare la verifica del backup e se desideri eseguirla immediatamente o in un secondo momento. Questa funzione garantisce che i backup siano validi e possano essere ripristinati correttamente. Si consiglia di abilitare questa opzione per garantire l'integrità dei backup. Per impostazione predefinita, la verifica del backup viene eseguita dallo storage secondario, se lo storage secondario è configurato. Se lo storage secondario non è configurato, la verifica del backup viene eseguita dallo storage primario.
 +
 Inoltre, configurare le seguenti opzioni:
@@ -141,7 +141,7 @@ Inoltre, configurare le seguenti opzioni:
 +
 *** Scegli quando eseguire la verifica del backup:
 +
-**** *Immediatamente*: Esegue la verifica come passaggio finale di ogni operazione di backup. Utilizzare questa opzione per convalidare ogni backup non appena viene creato. Si noti che ciò comporta un aumento dei tempi e dell'utilizzo delle risorse durante la finestra di backup.
+**** *Immediatamente*: Esegue la verifica come passaggio finale di ogni operazione di backup. Usa questa opzione per convalidare ogni backup non appena viene creato. Questo aggiunge tempo e utilizzo di risorse alla finestra di backup.
 **** *Più tardi*: Esegue la verifica secondo una pianificazione separata creata dall'utente, indipendente dal processo di backup. Utilizzare questa opzione per ridurre i tempi di backup eseguendo le verifiche al di fuori dell'orario di lavoro, oppure per verificare solo livelli specifici (ad esempio, settimanali e mensili ma non giornalieri).
 
 
@@ -161,7 +161,7 @@ NOTE: Questa opzione viene disabilitata automaticamente se questa policy utilizz
 **** Assicurarsi che i file binari del database Oracle siano installati
 **** Avere la stessa versione di Oracle Database del database di origine
 **** Disporre dell'accesso di rete allo storage che contiene la Snapshot (primario o secondario)
-**** Essere in grado di montare il volume clonato ed eseguire l'utilità DBVERIFY di Oracle Database.
+**** Devi poter montare il volume clonato ed eseguire l'utilità DBVERIFY di Oracle Database.
 
 
 
@@ -172,11 +172,11 @@ NOTE: Questa opzione viene disabilitata automaticamente se questa policy utilizz
 *** *Fornire il formato del volume SnapMirror*: specificare un prefisso, un suffisso o entrambi per modificare il nome predefinito del volume SnapMirror. Per impostazione predefinita, un volume SnapMirror eredita il nome del volume di origine.
 
 
-** *Velocità di trasferimento massima*: Abilitare *Abilita velocità di trasferimento massima* per impostare una velocità di trasferimento massima per gli host selezionati. Per non impostare un limite all'utilizzo della larghezza di banda, selezionare *Illimitata*. Se si desidera limitare la velocità di trasferimento, selezionare *Limitata* e selezionare la larghezza di banda tra 1 e 1.000 Mbps allocata per caricare i backup nello storage a oggetti. Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi del sistema allo storage a oggetti. Se il traffico di backup influisce sui carichi di lavoro, ridurre la larghezza di banda per i trasferimenti.
+** *Velocità di trasferimento massima*: Abilita l'opzione di velocità di trasferimento massima per impostare una velocità di trasferimento massima per gli host selezionati. Per lasciare l'utilizzo della larghezza di banda illimitato, seleziona *Illimitato*. Se vuoi limitare la velocità di trasferimento, seleziona *Limitato* e scegli la larghezza di banda di rete tra 1 e 1.000 Mbps allocata per caricare i backup nello storage a oggetti. Per impostazione predefinita, ONTAP può utilizzare una quantità illimitata di larghezza di banda per trasferire i dati di backup dai volumi nel sistema allo storage a oggetti. Se il traffico di backup influisce sui carichi di lavoro, riduci la larghezza di banda per i trasferimenti.
 ** *Tentativi di backup*: Per riprovare l'operazione in caso di errore o interruzione, selezionare *Abilita tentativi di esecuzione in caso di errore*. Immettere il numero massimo di tentativi per le operazioni di snapshot e backup e l'intervallo di tempo tra i tentativi. Il numero di tentativi deve essere inferiore a 10.
 +
 
-TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, insieme al conteggio dei nuovi tentativi, non dovrebbe superare i 45 minuti.
+TIP: Se la frequenza di acquisizione degli snapshot è impostata su un'ora, il ritardo massimo e il numero di tentativi non devono superare i 45 minuti.
 
 ** *Scansione anti-ransomware*: scegli se abilitare la scansione anti-ransomware per ogni bucket. Questa operazione richiede il blocco DataLock su storage a oggetti. Inserisci la frequenza della scansione in giorni. Questa opzione si applica allo storage a oggetti AWS e Microsoft Azure e potrebbe comportare costi aggiuntivi a seconda del cloud provider.
 ** *Notifica*: Scegli se abilitare le notifiche e-mail per le operazioni di backup. Puoi selezionare quali eventi attivano una notifica, ad esempio quando un backup ha esito positivo, negativo o viene completato con avvisi.
@@ -191,13 +191,13 @@ TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, i
 [[edit-a-policy]]
 == Modifica una policy
 
-Per una policy è possibile modificare l'architettura di backup, la frequenza di backup, la policy di protezione e altre impostazioni. Per le policy dei carichi di lavoro Kubernetes, è possibile modificare solo le impostazioni di pianificazione e conservazione.
+Per una policy è possibile modificare l'architettura di backup, la frequenza di backup, la policy di protezione e altre impostazioni.
 
 È possibile aggiungere un altro livello di protezione quando si modifica una policy, ma non è possibile rimuovere un livello di protezione.  Ad esempio, se il criterio protegge solo gli snapshot locali, è possibile aggiungere la replica all'archiviazione secondaria o i backup all'archiviazione degli oggetti.  Se si dispone di snapshot e repliche locali, è possibile aggiungere l'archiviazione di oggetti.  Tuttavia, se si dispone di snapshot locali, replica e archiviazione di oggetti, non è possibile rimuovere uno di questi livelli.
 
 Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti, è possibile abilitare l'archiviazione.
 
-Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra le policy utilizzate in SnapCenter e quelle utilizzate in NetApp Backup and Recovery. Vedi link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"].
 
 .Ruolo richiesto NetApp Console
 Super amministratore di backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
@@ -226,7 +226,7 @@ Puoi eliminare una policy se non ti serve più.
 TIP: Non è possibile eliminare un criterio associato a un carico di lavoro.
 
 .Passi
-. Nella Console, vai a *Protezione* > *Backup e ripristino*.
+. Nella NetApp Console, vai su *Protezione* > *Backup e ripristino*.
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi eliminare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Elimina*.

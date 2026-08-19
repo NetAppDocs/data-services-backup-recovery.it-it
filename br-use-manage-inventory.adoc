@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-manage-inventory.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery ti aiuta a gestire gli host, i database e le istanze di Microsoft SQL Server. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery, snapcenter 
+summary: Gestisci i tuoi host, le istanze e i database di Microsoft SQL Server in NetApp Backup e ripristino. 
 ---
 = Gestisci l'inventario di Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp Backup and Recovery ti aiuta a gestire gli host, i database e le
 
 
 [role="lead"]
-NetApp Backup and Recovery ti aiuta a gestire gli host, i database e le istanze di Microsoft SQL Server.  Puoi visualizzare, modificare o rimuovere le impostazioni di protezione per il tuo inventario.
+Visualizza e gestisci host, istanze e database di Microsoft SQL Server, e modifica o rimuovi le relative impostazioni di protezione.
 
-Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
+Puoi fare quanto segue per gestire il tuo inventario:
 
 * Gestisci le informazioni dell'host
 +
@@ -24,7 +24,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 ** Modifica o elimina gli host
 
 
-* Gestisci le informazioni sulle istanze
+* Gestisci le informazioni dell'istanza
 +
 ** Associare le credenziali a una risorsa
 ** Esegui subito il backup avviando un backup su richiesta
@@ -39,7 +39,7 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 ** Esegui subito il backup avviando un backup su richiesta
 
 
-* Configurare la directory dei registri (da *Inventario* > *Host*). Se si desidera eseguire il backup dei registri per gli host del database nello snapshot, configurare prima i registri in NetApp Backup and Recovery. Per i dettagli, fare riferimento alink:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"] .
+* Configura la directory dei log da *Inventory* > *Hosts* prima di eseguire il backup dei log degli host del database negli snapshot. Per i dettagli, vedi link:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"].
 
 
 
@@ -47,11 +47,11 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 [[manage-host-information]]
 == Gestisci le informazioni dell'host
 
-È possibile gestire le informazioni sull'host per garantire che vengano protetti gli host giusti.  È possibile visualizzare, modificare ed eliminare le informazioni sull'host.
+Gestisci le informazioni sugli host per garantire che gli host corretti siano protetti. Visualizza, modifica ed elimina le informazioni sugli host secondo necessità.
 
 *Ruolo richiesto nella NetApp Console* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin o Backup and Recovery clone admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
-* Configurare la directory dei registri.  Per i dettagli, fare riferimento alink:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"] .
+* Configura la directory dei log. Per i dettagli, vedi link:br-start-setup.html["Configurare le impostazioni NetApp Backup and Recovery"].
 * Sospendere gli orari
 * Modifica un host
 * Elimina un host
@@ -62,10 +62,10 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 [[manage-hosts]]
 === Gestisci gli host
 
-Puoi gestire gli host rilevati nel tuo sistema.  È possibile gestirli separatamente o in gruppo.
+Puoi gestire gli host rilevati nel tuo sistema, singolarmente o come gruppo.
 
 
-TIP: È possibile gestire gli host con stato "Non gestito" nella colonna Host.  NetApp Backup and Recovery gestisce già gli host con stato "Gestito".
+TIP: Per gestire un host, cerca lo stato "Non gestito" nella colonna Host. NetApp Backup e ripristino gestisce già gli host con stato "Gestito".
 
 Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisce più le risorse su tali host.
 
@@ -76,7 +76,7 @@ Dopo aver gestito gli host in NetApp Backup and Recovery, SnapCenter non gestisc
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Selezionare la scheda *Host*.
-. Seleziona uno o più host.  Se selezioni più host, viene visualizzata l'opzione Azioni in blocco in cui puoi selezionare *Gestisci (fino a 5 host)*.
+. Seleziona uno o più host. Se selezioni più host, viene visualizzata l'opzione *Bulk actions*. Seleziona *Manage (up to 5 hosts)*.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Gestisci*.
 . Esaminare le dipendenze dell'host:
 +
@@ -107,7 +107,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 [[edit-a-host]]
 === Modifica un host
 
-È possibile modificare le informazioni del server vCenter, le credenziali di registrazione dell'host e le opzioni delle impostazioni avanzate.
+Puoi modificare le informazioni del server vCenter, le credenziali di registrazione dell'host e le impostazioni avanzate.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -133,15 +133,15 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 
 
 
-[[manage-instances-information]]
-== Gestisci le informazioni sulle istanze
+[[manage-instance-information]]
+== Gestisci le informazioni dell'istanza
 
-È possibile gestire le informazioni sulle istanze per assegnare le credenziali appropriate per la protezione delle risorse ed eseguire il backup delle risorse nei seguenti modi:
+Gestisci le informazioni relative all'istanza per proteggere le risorse, associare o rimuovere le credenziali, modificare le impostazioni di protezione ed eseguire backup:
 
 * Proteggere le istanze
 * Credenziali associate
 * Disassociare le credenziali
-* Protezione dalle modifiche
+* Modifica le impostazioni di protezione
 * Esegui il backup ora
 
 
@@ -152,7 +152,7 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 [[protect-database-instances]]
 === Proteggere le istanze del database
 
-È possibile assegnare una policy a un'istanza di database utilizzando policy che regolano le pianificazioni e la conservazione della protezione delle risorse.
+Assegna una policy a un'istanza di database per gestire la pianificazione e la conservazione della protezione delle risorse.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -162,19 +162,19 @@ Sospendi le pianificazioni per interrompere le operazioni di backup e ripristino
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Proteggi*.
 . Seleziona una policy o creane una nuova.
 +
-Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
 
-. Fornire informazioni sugli script che si desidera eseguire prima e dopo il backup.
+. Fornisci gli script da eseguire prima e dopo il backup.
 +
-** *Pre-script*: inserisci il nome del file e il percorso dello script per eseguirlo automaticamente prima che venga attivata l'azione di protezione.  Ciò è utile per eseguire attività o configurazioni aggiuntive che devono essere eseguite prima del flusso di lavoro di protezione.
-** *Post-script*: inserisci il nome e il percorso del file dello script per eseguirlo automaticamente al termine dell'azione di protezione.  Ciò è utile per eseguire attività o configurazioni aggiuntive che devono essere eseguite dopo il flusso di lavoro di protezione.
+** *Pre-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente prima che inizi l'azione di protezione. Usa questa opzione per svolgere attività o configurazioni aggiuntive prima del workflow di protezione.
+** *Post-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente al termine dell'azione di protezione. Usa questa opzione per eseguire attività o configurazioni aggiuntive dopo il workflow di protezione.
 
 
-. Fornisci informazioni su come desideri che venga verificato lo snapshot:
+. Fornisci le informazioni di verifica per la snapshot:
 +
-** Posizione di archiviazione: seleziona la posizione in cui verrà archiviato lo snapshot di verifica.
-** Risorsa di verifica: seleziona se la risorsa che desideri verificare si trova nello snapshot locale e nell'archiviazione secondaria ONTAP .
-** Pianificazione della verifica: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.
+** Posizione di archiviazione: Seleziona dove archiviare la snapshot di verifica.
+** Risorsa di verifica: Seleziona se verificare la risorsa sullo snapshot locale, sullo storage secondario ONTAP o su entrambi.
+** Programma di verifica: Seleziona la frequenza: oraria, giornaliera, settimanale, mensile o annuale.
 
 
 
@@ -184,7 +184,7 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 [[associate-credentials-with-a-resource]]
 === Associare le credenziali a una risorsa
 
-È possibile associare le credenziali a una risorsa in modo che possa essere garantita la protezione.
+Puoi associare le credenziali a una risorsa così da poterla proteggere.
 
 Per i dettagli, vederelink:br-start-configure.html["Configurare le impostazioni NetApp Backup and Recovery , incluse le credenziali"] .
 
@@ -211,7 +211,7 @@ Per i dettagli, vederelink:br-start-configure.html["Configurare le impostazioni 
 . Selezionare l'istanza.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica protezione*.
 +
-Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
 
 
 
@@ -230,7 +230,7 @@ Esegui subito il backup dei tuoi dati per proteggerli immediatamente.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Esegui backup ora*.
 . Scegli il tipo di backup e imposta la pianificazione.
 +
-Per i dettagli sulla creazione di un backup ad hoc, fare riferimento alink:br-use-mssql-backup.html["Crea una politica"] .
+Per informazioni dettagliate sulla creazione di un backup ad hoc, vedi link:br-use-mssql-backup.html["Eseguire il backup dei carichi di lavoro di Microsoft SQL Server"].
 
 
 
@@ -264,7 +264,7 @@ Per i dettagli sulla creazione di un backup ad hoc, fare riferimento alink:br-us
 . Selezionare il database.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Proteggi*.
 +
-Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
 
 
 
@@ -273,15 +273,18 @@ Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-poli
 [[restore-databases]]
 === Ripristinare i database
 
-Ripristina un database per proteggere i tuoi dati.
+Ripristina un database quando hai bisogno di recuperare dati.
 
 *Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery, admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Seleziona il carico di lavoro che desideri visualizzare e seleziona *Visualizza*.
 . Selezionare la scheda *Database*.
 . Selezionare il database.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Ripristina*.
 +
-Per informazioni sul ripristino dei carichi di lavoro, fare riferimento alink:br-use-mssql-restore.html["Ripristinare i carichi di lavoro"] .
+Per informazioni sul ripristino dei carichi di lavoro, vedi link:br-use-mssql-restore.html["Ripristinare i carichi di lavoro"].
 
 
 
@@ -301,7 +304,7 @@ Per informazioni sul ripristino dei carichi di lavoro, fare riferimento alink:br
 . Selezionare il database.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica protezione*.
 +
-Per i dettagli sulla creazione di una policy, fare riferimento alink:br-use-policies-create.html["Crea una politica"] .
+Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
 
 
 

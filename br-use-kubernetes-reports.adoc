@@ -12,7 +12,7 @@ summary: Crea report di protezione per i carichi di lavoro Kubernetes per visual
 
 
 [role="lead"]
-In NetApp Backup and Recovery, crea report di protezione per i carichi di lavoro Kubernetes per visualizzare lo stato e i dettagli della protezione, inclusi il conteggio dei backup riusciti e non riusciti, i tipi di backup, le informazioni sullo stato del cluster e altro ancora.
+Crea report di protezione Kubernetes in NetApp Backup e ripristino per monitorare lo stato dei backup, i tipi di backup e l'integrità del cluster.
 
 *Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
@@ -24,7 +24,7 @@ In NetApp Backup and Recovery, crea report di protezione per i carichi di lavoro
 Crea un report di protezione per visualizzare lo stato di protezione dei tuoi cluster.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
 . Seleziona *Crea report*.
 . Inserisci i dettagli dell'ambito del report:
 +
@@ -34,13 +34,13 @@ Crea un report di protezione per visualizzare lo stato di protezione dei tuoi cl
 
 
 . Inserisci l'intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
-. Inserisci i dettagli di configurazione del report: scegli se eseguire il report una sola volta o pianificare una generazione ricorrente. Per i report pianificati, scegli la frequenza di ricorrenza e seleziona una data di inizio.
+. Inserisci i dettagli di configurazione del report: scegli se eseguire il report una sola volta o a intervalli regolari. Per i report programmati, scegli la frequenza di ricorrenza e seleziona una data di inizio.
 +
-.. Inserisci i dettagli di consegna tramite e-mail: (solo per i report programmati) Se desideri che il report venga consegnato tramite e-mail, inserisci uno o più indirizzi e-mail che devono ricevere il report programmato.
+.. Inserisci i dettagli per la consegna via e-mail: solo per i report programmati, inserisci uno o più indirizzi e-mail a cui ricevere il report.
 
 
 +
-Configura le notifiche e-mail nella pagina Impostazioni. Per i dettagli sulla configurazione delle notifiche e-mail, vederelink:br-start-configure.html["Configurare le impostazioni"] .
+Configura le notifiche e-mail nella pagina *Impostazioni*. Per informazioni dettagliate sulla configurazione delle notifiche e-mail, consulta link:br-start-configure.html["Configurare le impostazioni"].
 
 . Seleziona *Crea*.
 
@@ -53,7 +53,7 @@ Configura le notifiche e-mail nella pagina Impostazioni. Per i dettagli sulla co
 Scarica un report di protezione generato come file JSON o come documento PDF, così puoi visualizzarlo e condividerlo.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
 . Nella pagina *Reports*, seleziona il menu *Reports* per visualizzare l'elenco dei report di protezione generati.
 . Per il report che desideri scaricare, seleziona l'icona Actions image:../media/icon-action.png["Opzione Azioni"] > *Download*.
 +
@@ -68,10 +68,10 @@ Scarica un report di protezione generato come file JSON o come documento PDF, co
 [[view-a-protection-report]]
 == Visualizza un report di protezione
 
-Visualizza rapidamente i dettagli interattivi di un report di protezione all'interno di NetApp Backup and Recovery. Puoi visualizzare informazioni di riepilogo del job, lo stato di protezione dei dati, i dettagli di configurazione e altro ancora.
+Visualizza i dettagli interattivi di un report di protezione all'interno di NetApp Backup e ripristino. Puoi visualizzare informazioni di riepilogo sui job, lo stato di protezione dei dati, i dettagli di configurazione e altro ancora.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
 . Nella pagina *Reports*, seleziona il menu *Reports* per visualizzare l'elenco dei report di protezione generati.
 . Per il report che desideri visualizzare, seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Visualizza report*.
 +
@@ -87,7 +87,7 @@ Vengono visualizzati i dettagli del report.
 Elimina un report di protezione quando non ne hai più bisogno.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
 . Nella pagina *Reports*, seleziona il menu *Reports* per visualizzare l'elenco dei report di protezione generati.
 . Per il report che desideri eliminare, seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Elimina*.
 . Conferma l'azione selezionando *Elimina*.

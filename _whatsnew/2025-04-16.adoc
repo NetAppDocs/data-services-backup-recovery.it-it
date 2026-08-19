@@ -34,7 +34,7 @@ NetApp Backup and Recovery estende ora il supporto agli archivi di oggetti di te
 
 ==== Come iniziare con Wasabi
 
-Per iniziare a utilizzare un archivio di terze parti come archivio oggetti, è necessario abilitare un flag nell'agente della console.  Successivamente, puoi immettere i dettagli di connessione per il tuo archivio oggetti di terze parti e integrarlo nei tuoi flussi di lavoro di backup e ripristino.
+Per iniziare a utilizzare storage di terze parti come archivio di oggetti, devi abilitare un flag all'interno dell'agente della Console. Poi puoi inserire i dettagli di connessione per il tuo archivio di oggetti di terze parti e integrarlo nei tuoi flussi di lavoro di Backup and Recovery.
 
 .Passi
 . Accedi tramite SSH al tuo connettore.

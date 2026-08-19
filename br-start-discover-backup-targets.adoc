@@ -14,25 +14,24 @@ summary: 'Completa alcuni passaggi per scoprire le destinazioni di backup offsit
 
 
 [role="lead"]
-Completa alcuni passaggi per scoprire o aggiungere manualmente destinazioni di backup offsite in NetApp Backup and Recovery.
+Scopri o aggiungi manualmente destinazioni di backup remote come AWS S3, Azure Blob Storage, Google Cloud Storage o StorageGRID così puoi archiviare i backup al di fuori del tuo ambiente principale.
 
 
 
 [[discover-a-backup-target]]
 == Scopri un target di backup
 
-Configurare le destinazioni di backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di utilizzare NetApp Backup and Recovery.
+Configura le destinazioni di backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di utilizzare NetApp Backup and Recovery.
 
 È possibile scoprire questi obiettivi automaticamente oppure aggiungerli manualmente.
 
-Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup and Recovery utilizza queste credenziali per individuare i carichi di lavoro di cui si desidera eseguire il backup.
+Fornisci le credenziali per accedere all'account di storage. NetApp Backup and Recovery utilizza queste credenziali per individuare e verificare l'accesso ai bucket di destinazione del backup.
 
 .Prima di iniziare
 È necessario individuare almeno un carico di lavoro prima di poter aggiungere una destinazione di backup fuori sede.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare la scheda *Destinazioni di backup gestite fuori sede*.
+. Dal menu NetApp Backup e ripristino, seleziona *Destinazioni di backup*.
 . Seleziona *Scopri destinazione di backup*.
 . Seleziona uno dei tipi di destinazione di backup disponibili: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* o *GCP*.
 . Selezionare *Avanti*.
@@ -43,7 +42,7 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 ** Per AWS:
 +
 *** *Nome credenziale*: inserisci il nome della credenziale AWS.
-*** *Chiave di accesso*: inserisci il segreto AWS.
+*** *Chiave di accesso*: Inserisci la chiave di accesso AWS.
 *** *Chiave segreta*: inserisci la chiave segreta AWS.
 
 
@@ -51,14 +50,14 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 +
 *** *Nome credenziale*: immettere il nome della credenziale di Azure Blob Storage.
 *** *Segreto client*: immettere il segreto client di Azure Blob Storage.
-*** *ID applicazione (client)*: seleziona l'ID applicazione di Azure Blob Storage.
+*** *ID applicazione (client)*: Inserisci l'ID dell'applicazione Azure Blob Storage.
 *** *ID tenant directory*: immettere l'ID tenant di Azure Blob Storage.
 
 
 ** Per StorageGRID:
 +
 *** *Nome credenziale*: immettere il nome della credenziale StorageGRID .
-*** *FQDN del nodo gateway*: immettere un nome FQDN per StorageGRID.
+*** *FQDN del nodo gateway*: Inserisci un FQDN per il nodo gateway StorageGRID.
 *** *Porta*: immettere il numero di porta per StorageGRID.
 *** *Chiave di accesso*: immettere la chiave di accesso StorageGRID S3.
 *** *Chiave segreta*: immettere la chiave segreta StorageGRID S3.
@@ -67,7 +66,7 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 ** Per ONTAP S3:
 +
 *** *Nome credenziale*: immettere il nome della credenziale ONTAP S3.
-*** *FQDN del nodo gateway*: immettere un nome FQDN per ONTAP S3.
+*** *FQDN del nodo gateway*: Inserisci un FQDN per il nodo gateway ONTAP S3.
 *** *Porta*: immettere il numero di porta per ONTAP S3.
 *** *Chiave di accesso*: immettere la chiave di accesso ONTAP S3.
 *** *Chiave segreta*: Inserisci la chiave segreta ONTAP S3.
@@ -90,12 +89,11 @@ Fornire le credenziali per accedere all'account di archiviazione.  NetApp Backup
 [[add-a-bucket-for-a-backup-target]]
 == Aggiungi un bucket per una destinazione di backup
 
-Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucket, puoi aggiungere manualmente un bucket a una destinazione di backup fuori sede.
+Aggiungi manualmente un bucket a una destinazione di backup remota invece di lasciare che NetApp Backup e ripristino rilevi automaticamente i bucket.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Seleziona *Destinazioni di backup gestite fuori sede*.
-. Seleziona il target e sulla destra seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Aggiungi bucket*.
+. Dal menu NetApp Backup e ripristino, seleziona *Destinazioni di backup*.
+. Seleziona una destinazione e sulla destra seleziona l'icona image:icon-action.png["Icona Azioni"] *Azioni* e poi *Aggiungi bucket*.
 . Inserisci le informazioni sul bucket.  Le informazioni variano a seconda del tipo di destinazione di backup selezionata.
 +
 ** Per AWS:
@@ -116,21 +114,21 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 
 ** Per Azure:
 +
-*** *Sottoscrizione*: seleziona il nome del contenitore Azure Blob Storage.
+*** *Sottoscrizione*: Seleziona il nome della sottoscrizione Azure.
 *** *Gruppo di risorse*: seleziona il nome del gruppo di risorse di Azure.
 *** *Dettagli dell'istanza*:
 +
-**** *Nome account di archiviazione*: immettere il nome del contenitore Azure Blob Storage.
-**** *Regione di Azure*: immettere la regione di Azure per il contenitore.
-**** *Tipo di prestazioni*: selezionare il tipo di prestazioni, standard o premium, per il contenitore Azure Blob Storage, indicando il livello di prestazioni richiesto.
-**** *Crittografia*: seleziona il tipo di crittografia per il contenitore Azure Blob Storage.  Le opzioni sono chiavi gestite da Microsoft o chiavi gestite dal cliente.  Se selezioni chiavi gestite dal cliente, devi fornire il nome del key vault e il nome della chiave.
+**** *Nome dell'account di archiviazione*: inserisci il nome dell'account di Azure Blob Storage.
+**** *Area geografica di Azure*: inserisci l'area geografica di Azure per l'account di storage.
+**** *Tipo di prestazioni*: Seleziona il tipo di prestazioni standard o premium per l'account di Azure Blob Storage, indicando il livello di prestazioni richiesto.
+**** *Crittografia*: Seleziona il tipo di crittografia per l'account di Azure Blob Storage. Le opzioni sono chiavi gestite da Microsoft o chiavi gestite dal cliente. Se selezioni chiavi gestite dal cliente, devi specificare il nome del key vault e il nome della chiave.
 
 
 
 
 ** Per StorageGRID:
 +
-*** *Nome destinazione backup*: seleziona il nome del bucket StorageGRID .
+*** *Destinazione di backup*: Seleziona il nome della destinazione di backup StorageGRID.
 *** *Nome bucket*: immettere il nome del bucket StorageGRID .
 *** *Regione*: immettere la regione StorageGRID per il bucket.
 *** *Abilita controllo delle versioni*: seleziona questa opzione per abilitare il controllo delle versioni per il bucket StorageGRID .  Il controllo delle versioni consente di conservare più versioni degli oggetti nel bucket, il che può essere utile per scopi di backup e ripristino.
@@ -140,8 +138,8 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 
 ** Per ONTAP S3:
 +
-*** *Nome destinazione backup*: seleziona il nome del bucket ONTAP S3.
-*** *Nome destinazione bucket*: immettere il nome del bucket ONTAP S3.
+*** *Destinazione di backup*: Seleziona il nome della destinazione di backup ONTAP S3.
+*** *Nome del bucket*: Inserisci il nome del bucket ONTAP S3.
 *** *Capacità*: immettere la capacità del bucket ONTAP S3.  Questa è la quantità massima di dati che può essere archiviata nel bucket.
 *** *Abilita controllo delle versioni*: seleziona questa opzione per abilitare il controllo delle versioni per il bucket ONTAP S3.  Il controllo delle versioni consente di conservare più versioni degli oggetti nel bucket, il che può essere utile per scopi di backup e ripristino.
 *** *Blocco degli oggetti*: selezionare questa opzione per abilitare il blocco degli oggetti per il bucket ONTAP S3.  Il blocco degli oggetti impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati.  Puoi abilitare questa opzione solo quando crei un bucket e non potrai disattivarla in seguito.
@@ -168,9 +166,8 @@ Invece di lasciare che NetApp Backup and Recovery rilevi automaticamente i bucke
 Immettere le credenziali necessarie per accedere alla destinazione di backup.
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
-. Selezionare *Destinazioni di backup fuori sede*.
-. Seleziona il target e sulla destra seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Modifica credenziali*.
+. Dal menu NetApp Backup e ripristino, seleziona *Destinazioni di backup*.
+. Seleziona una destinazione e sulla destra seleziona l'icona image:icon-action.png["Icona Azioni"] *Azioni* e poi *Modifica credenziali*.
 . Immettere le nuove credenziali per la destinazione di backup.  Le informazioni variano a seconda del tipo di destinazione di backup selezionata.
 . Selezionare *Fatto*.
 

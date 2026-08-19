@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: NetApp Backup and Recovery consente di rimuovere la protezione ed eliminare le applicazioni Kubernetes e le risorse associate. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery, snapcenter 
+summary: Gestisci le applicazioni Kubernetes e i relativi dati di protezione in NetApp Backup e ripristino. 
 ---
 = Gestisci le applicazioni Kubernetes in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery consente di rimuovere la protezione ed elimi
 
 
 [role="lead"]
-NetApp Backup and Recovery consente di rimuovere la protezione ed eliminare le applicazioni Kubernetes e le risorse associate.
+Rimuovi la protezione o elimina le applicazioni Kubernetes e rimuovi i punti di ripristino quando necessario.
 
 .Ruolo richiesto NetApp Console
 Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
@@ -24,16 +24,16 @@ Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-
 [[unprotect-a-kubernetes-application]]
 == Rimuovere la protezione di un'applicazione Kubernetes
 
-È possibile rimuovere la protezione da un'applicazione se non si desidera più proteggerla. Quando si rimuove la protezione di un'applicazione, NetApp Backup and Recovery interrompe la protezione dell'applicazione ma conserva tutti i backup e gli snapshot associati.
+Puoi rimuovere la protezione da un'applicazione se non hai più bisogno di proteggerla. Quando rimuovi la protezione da un'applicazione, NetApp Backup e ripristino smette di proteggerla ma mantiene tutti i backup e gli snapshot associati.
 
 
-NOTE: Non è possibile rimuovere la protezione di un'applicazione mentre sono ancora in esecuzione operazioni di protezione. Attendere il completamento dell'operazione oppure, come soluzione alternativa, <<Rimuovi un punto di ripristino per un'applicazione Kubernetes,rimuovere il punto di ripristino>> che l'operazione di protezione in esecuzione sta utilizzando. A questo punto, è possibile rimuovere la protezione dell'applicazione.
+NOTE: Non puoi rimuovere la protezione da un'applicazione mentre sono ancora in corso operazioni di protezione. Attendi che l'operazione finisca oppure elimina il punto di ripristino che l'operazione di protezione in esecuzione sta utilizzando. A quel punto puoi rimuovere la protezione dall'applicazione.
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. Seleziona un'istanza Kubernetes e seleziona *Visualizza* per aprire le risorse associate a tale istanza.
 . Selezionare la scheda *Applicazioni*.
-. Nell'elenco delle applicazioni, seleziona l'applicazione di cui desideri rimuovere la protezione e seleziona il menu Azioni associato.
+. Nell'elenco delle applicazioni, seleziona l'applicazione che vuoi rimuovere dalla protezione e seleziona il menu Azioni associato.
 . Selezionare *Rimuovi protezione*.
 . Leggi l'avviso e, quando sei pronto, seleziona *Rimuovi protezione*.
 
@@ -43,15 +43,15 @@ NOTE: Non è possibile rimuovere la protezione di un'applicazione mentre sono an
 [[delete-a-kubernetes-application]]
 == Eliminare un'applicazione Kubernetes
 
-Elimina un'applicazione di cui non hai più bisogno.  NetApp Backup and Recovery interrompe la protezione e rimuove tutti i backup e gli snapshot delle applicazioni eliminate.
+Elimina un'applicazione che non ti serve più. NetApp Backup e ripristino interrompe la protezione e rimuove tutti i backup e le snapshot delle applicazioni eliminate.
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. Seleziona un'istanza Kubernetes e seleziona *Visualizza* per aprire le risorse associate a tale istanza.
 . Selezionare la scheda *Applicazioni*.
-. Nell'elenco delle applicazioni, seleziona l'applicazione che desideri eliminare e seleziona il menu Azioni associato.
+. Nell'elenco delle applicazioni, seleziona l'applicazione che vuoi eliminare e seleziona il menu Azioni associato.
 . Seleziona *Elimina*.
-. Abilita *Elimina snapshot e backup* per rimuovere tutti gli snapshot e i backup dell'applicazione.
+. Abilita l'opzione *Elimina snapshot e backup* per rimuovere tutti gli snapshot e i backup dell'applicazione.
 +
 
 CAUTION: Non sarà più possibile ripristinare l'applicazione utilizzando questi snapshot e backup.
@@ -64,13 +64,10 @@ CAUTION: Non sarà più possibile ripristinare l'applicazione utilizzando questi
 [[remove-a-restore-point-for-a-kubernetes-application]]
 == Rimuovi un punto di ripristino per un'applicazione Kubernetes
 
-Potrebbe essere necessario rimuovere un punto di ripristino per un'applicazione se è necessario rimuoverne la protezione e sono attualmente in esecuzione operazioni di protezione.
+Rimuovi un punto di ripristino per un'applicazione se hai bisogno di rimuovere la protezione mentre sono in corso operazioni di protezione.
 
 .Passi
 . Nel menu NetApp Backup e ripristino, seleziona *Ripristina*.
-. Scegli un'applicazione Kubernetes dall'elenco e seleziona *Visualizza e ripristina* per quell'applicazione.
-+
-Viene visualizzato l'elenco dei punti di ripristino.
-
-. Scegli il punto di ripristino che desideri eliminare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Elimina punto di ripristino* per eliminarlo.
+. Seleziona un'applicazione Kubernetes dall'elenco e seleziona *Visualizza e ripristina* per aprire i relativi punti di ripristino.
+. Seleziona il punto di ripristino che vuoi eliminare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Elimina punto di ripristino* per eliminarlo.
 

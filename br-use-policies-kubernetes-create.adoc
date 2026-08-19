@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-policies-kubernetes-create.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
 ---
 = Crea e gestisci le policy di backup di Kubernetes in NetApp Backup and Recovery
@@ -12,7 +12,7 @@ summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che r
 
 
 [role="lead"]
-In NetApp Backup and Recovery, crea le tue policy di backup per Kubernetes che regolano la frequenza dei backup, l'orario di esecuzione e il numero di file di backup conservati.
+Usa NetApp Backup and Recovery per creare policy di backup per Kubernetes che controllano la frequenza, la pianificazione e la conservazione dei backup.
 
 
 NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
@@ -56,7 +56,7 @@ Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i c
 *Ruolo della console NetApp richiesto* Visualizzatore di storage, Super admin di Backup and Recovery, Admin di backup di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
-Se si prevede di replicare su un archivio secondario e si desidera utilizzare il blocco degli snapshot sugli snapshot locali o sull'archivio secondario ONTAP remoto, è necessario innanzitutto inizializzare il clock di conformità ONTAP a livello di cluster.  Questo è un requisito per abilitare il blocco degli snapshot nella policy.
+Se prevedi di replicare su storage secondario e vuoi usare il blocco delle snapshot su snapshot locali o su storage secondario ONTAP remoto, devi prima inizializzare l'orologio di conformità ONTAP a livello di cluster. Questo è un requisito per abilitare il blocco delle snapshot nella policy.
 
 Per istruzioni su come fare, fare riferimento a https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inizializza l'orologio di conformità in ONTAP"^] .
 
@@ -77,15 +77,15 @@ Viene visualizzata la pagina delle Policy.
 
 . Inserisci le informazioni nella sezione *Architettura di backup*. Scegli il flusso di dati per il backup dall'elenco:
 +
-** *Distribuzione 3-2-1*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object store. Può trattarsi di un cloud hyperscaler object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
+** *3-2-1 fanout*: Storage primario (disco) verso storage secondario (disco) verso cloud (archivio di oggetti). Crea più copie dei dati su diversi sistemi di storage, come configurazioni da ONTAP a ONTAP e da ONTAP a object-store. Può trattarsi di un cloud provider object store o di un archivio di oggetti privato. Ideale per una protezione ottimale dei dati e per il disaster recovery. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 ** *Da disco a disco*: Storage primario (disco) su storage secondario (disco). La strategia di protezione dei dati ONTAP to ONTAP replica i dati tra due sistemi ONTAP per garantire alta disponibilità e disaster recovery. Questo viene generalmente ottenuto utilizzando SnapMirror, che supporta sia la replica sincrona che asincrona. Questo metodo mantiene i dati aggiornati e disponibili tra le sedi per una solida protezione dei dati.
-** *Archiviazione da disco a oggetto*: storage primario (disco) su cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud hyperscaler o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione dei dati a lungo termine e l'archiviazione. Questa opzione non è disponibile per Amazon FSx per NetApp ONTAP.
+** *Archiviazione da disco a oggetto*: storage primario (disco) verso cloud (archivio di oggetti). Questa operazione replica i dati da un sistema ONTAP a un sistema di storage a oggetti. Può trattarsi di un archivio di oggetti di un cloud provider o di un archivio di oggetti privato come StorageGRID. Questo metodo è ideale per la conservazione e l'archiviazione dei dati a lungo termine. Questa opzione non è disponibile per Amazon FSx for NetApp ONTAP.
 ** *Snapshot locali*: Snapshot locale sul volume selezionato. Questo crea copie point-in-time di sola lettura dei volumi di produzione in cui sono in esecuzione i carichi di lavoro. È possibile utilizzare gli snapshot locali per recuperare i dati in caso di perdita o corruzione, nonché per creare backup a scopo di disaster recovery.
 
 
 . Fornire le informazioni per la sezione *Impostazioni snapshot locali*:
 +
-** Selezionare l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni degli snapshot.  È possibile avere un massimo di 5 pianificazioni.
+** Seleziona l'opzione *Aggiungi pianificazione* per selezionare la pianificazione o le pianificazioni Snapshot. Puoi avere un massimo di cinque pianificazioni.
 ** *Frequenza snapshot*: seleziona la frequenza oraria, giornaliera, settimanale, mensile o annuale.  La frequenza annuale non è disponibile per i carichi di lavoro Kubernetes.
 ** *Conservazione degli snapshot*: immettere il numero di snapshot da conservare.
 ** *Provider*: Seleziona il provider di storage che ospita le risorse dell'applicazione Kubernetes e inserisci le credenziali per autenticarti con il provider.
@@ -106,7 +106,7 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 +
 ** *Provider*: Seleziona il provider per il tuo archivio di oggetti e inserisci le credenziali nei campi appropriati (i campi delle credenziali variano a seconda del provider).
-** *Destinazione di backup*: seleziona una destinazione di archiviazione di oggetti registrata.  Assicurarsi che la destinazione sia accessibile all'interno dell'ambiente di backup.
+** *Destinazione di backup*: Seleziona un target di storage a oggetti registrato. Verifica che la destinazione sia accessibile all'interno dell'ambiente di backup.
 ** *Spazio IP*: seleziona lo spazio IP da utilizzare per le operazioni di backup.  Questa funzione è utile se si hanno più spazi IP e si desidera controllare quale viene utilizzato per i backup.
 ** *Impostazioni pianificazione*: seleziona la pianificazione impostata per gli snapshot locali.  È possibile rimuovere una pianificazione, ma non aggiungerne una, perché le pianificazioni sono impostate in base alle pianificazioni degli snapshot locali.
 ** *Copie di conservazione*: immettere il numero di snapshot da conservare.
@@ -122,15 +122,15 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 
 
 
-TIP: Se la frequenza degli snapshot è impostata su 1 ora, il ritardo massimo, insieme al conteggio dei nuovi tentativi, non dovrebbe superare i 45 minuti.
+TIP: Se la frequenza di acquisizione degli snapshot è impostata su un'ora, il ritardo massimo e il numero di tentativi non devono superare i 45 minuti.
 
-** *Risultato parziale*: Abilita questa opzione per consentire il completamento di un'operazione di backup anche se Backup and Recovery non riesce a eseguire il backup di tutte le risorse.
 ** *Configurazione VM*: Seleziona il tipo di coerenza del backup di cui hai bisogno:
 +
 *** *Backup crash-consistent*: Seleziona questa opzione per saltare il blocco della VM prima di creare uno snapshot o un backup. Lo snapshot o il backup sarà crash-consistent, il che significa che la memoria di sistema al momento dello snapshot o del backup non viene acquisita.
 *** *Backup coerente con la VM*: Seleziona questa opzione per bloccare le VM prima di creare uno snapshot o un backup. Questo acquisisce lo stato completo della VM (inclusa la memoria) per offrire una protezione coerente con la VM. Facoltativamente, in *Numero massimo di VM contemporaneamente*, specifica quante VM Backup and Recovery può bloccare ed eseguire il backup contemporaneamente. Se abiliti l'opzione *Blocca tutte le VM*, Backup and Recovery blocca tutte le VM contemporaneamente, avvia i backup e poi sblocca tutte le VM al termine di tutte le operazioni di backup.
 
 
+** *Risultato parziale*: Abilita questa opzione per consentire il completamento di un'operazione di backup anche se Backup and Recovery non riesce a eseguire il backup di tutte le risorse.
 
 
 ====
@@ -148,7 +148,7 @@ Per una policy è possibile modificare l'architettura di backup, la frequenza di
 
 Se si modifica un criterio che esegue il backup nell'archiviazione degli oggetti, è possibile abilitare l'archiviazione.
 
-Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
+Se hai importato risorse da SnapCenter, potresti riscontrare alcune differenze tra le policy utilizzate in SnapCenter e quelle utilizzate in NetApp Backup and Recovery. Vedi link:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"].
 
 .Ruolo richiesto NetApp Console
 Super amministratore di backup e ripristino. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è necessario anche il ruolo di Cloud Volumes ONTAP Admin https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
@@ -177,7 +177,7 @@ Puoi eliminare una policy se non ti serve più.
 TIP: Non è possibile eliminare un criterio associato a un carico di lavoro.
 
 .Passi
-. Nella Console, vai a *Protezione* > *Backup e ripristino*.
+. Nella NetApp Console, vai su *Protezione* > *Backup e ripristino*.
 . Selezionare l'opzione *Criteri*.
 . Seleziona la policy che vuoi eliminare.
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Elimina*.

@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery ti consente di scoprire e gestire i tuoi clu
 
 
 [role="lead"]
-NetApp Backup and Recovery ti consente di scoprire e gestire i tuoi cluster Kubernetes in modo da poter proteggere le risorse ospitate dai cluster.
+Scopri e gestisci i cluster Kubernetes per proteggere le risorse in essi ospitate.
 
 .Ruolo richiesto NetApp Console
 Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
@@ -31,9 +31,9 @@ NOTE: Per scoprire i cluster Kubernetes, fare riferimento alink:br-start-discove
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
-. Nell'elenco dei cluster, seleziona il cluster che desideri modificare e seleziona il menu Azioni associato.
+. Nell'elenco dei cluster, seleziona un cluster che vuoi modificare e seleziona il menu Azioni associato.
 . Seleziona *Modifica cluster*.
-. Apportare le modifiche necessarie al nome del cluster. Il nome del cluster deve corrispondere al nome utilizzato con il comando Helm durante il processo di individuazione.
+. Apporta le modifiche necessarie al nome del cluster. Il nome del cluster deve corrispondere al nome che hai usato con il comando Helm durante il processo di rilevamento.
 . Selezionare *Fatto*.
 
 
@@ -46,7 +46,7 @@ Per interrompere la protezione di un cluster Kubernetes, disabilitare la protezi
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
-. Nell'elenco dei cluster, seleziona il cluster che desideri modificare e seleziona il menu Azioni associato.
+. Nell'elenco dei cluster, seleziona il cluster che vuoi rimuovere e seleziona il menu Azioni associato.
 . Selezionare *Rimuovi cluster*.
 . Rivedi le informazioni nella finestra di dialogo di conferma e seleziona *Rimuovi*.
 
@@ -60,7 +60,7 @@ Per i cluster Kubernetes che eseguono Trident Protect 26.05 o versioni successiv
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
-. Scegli un cluster Kubernetes da aggiornare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Aggiorna cluster*.
+. Seleziona un cluster Kubernetes da aggiornare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Aggiorna cluster*.
 . Nella finestra di dialogo di aggiornamento, procedere come segue:
 +
 .. Dall'elenco, seleziona la versione a cui desideri eseguire l'aggiornamento.
@@ -74,12 +74,12 @@ Per i cluster Kubernetes che eseguono Trident Protect 26.05 o versioni successiv
 [[reconnect-a-kubernetes-cluster-to-a-console-agent]]
 == Riconnetti un cluster Kubernetes a un agente della Console
 
-Se l'indirizzo IP dell'agente della Console cambia (ad esempio, dopo un riavvio), il tuo cluster Kubernetes perderà la connessione con l'agente e dovrai riconnetterti.
+Se l'indirizzo IP dell'agente della Console cambia (ad esempio, dopo un riavvio), il cluster Kubernetes perde la connessione con l'agente e devi riconnetterlo.
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
-. Scegli un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Riconnetti cluster*.
-. Nella finestra di dialogo Reconnect cluster, copia le istruzioni della riga di comando ed eseguile sul tuo cluster.
+. Seleziona un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Riconnetti cluster*.
+. Nella finestra di dialogo Riconnetti cluster, copia le istruzioni della riga di comando ed eseguile sul tuo cluster.
 +
 Al termine del comando, il cluster dovrebbe riconnettersi automaticamente.
 
@@ -95,15 +95,15 @@ Se il tuo agente Console viene eliminato o diventa non disponibile, migra tutti 
 
 .Prima di iniziare
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Distribuisci un nuovo agente Console."^]
-* Scegli una policy di protezione da utilizzare con il nuovo agente della Console, link:br-use-policies-kubernetes-create.html#edit-a-policy["modifica la policy"^] e associa la policy di protezione al nuovo agente della Console.
+* Seleziona una policy di protezione da utilizzare con il nuovo agente della Console, link:br-use-policies-kubernetes-create.html#edit-a-policy["modifica la policy"^] e associa la policy di protezione al nuovo agente della Console.
 
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario* > *Cluster*.
-. Scegli un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Gestisci agente*.
+. Seleziona un cluster Kubernetes disconnesso e seleziona l'icona Azione image:../media/icon-action.png["Opzione Azioni"] > *Modifica cluster* > *Gestisci agente*.
 . Dall'elenco, seleziona un nuovo agente Console.
 . Esamina le informazioni dell'agente per assicurarti che il nuovo agente della Console possa accedere ai sistemi, alle destinazioni di backup e alle destinazioni secondarie utilizzate dalle applicazioni protette su questo cluster.
-. Copia le istruzioni della riga di comando per ciascuna sezione ed esegui i comandi sul cluster.
+. Copia le istruzioni da riga di comando per ciascuna sezione ed esegui i comandi sul cluster.
 +
 Questa operazione ricrea i segreti di Kubernetes, reindirizza Trident Protect al nuovo agente Console e ricarica le impostazioni. Dopo che hai eseguito i comandi, il cluster usa il nuovo agente Console.
 

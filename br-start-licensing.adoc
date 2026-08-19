@@ -14,7 +14,7 @@ summary: Licenza NetApp Backup and Recovery acquistando un abbonamento pay-as-yo
 
 
 [role="lead"]
-A seconda che tu stia usando NetApp Console o NetApp Console (deployement locale), puoi ottenere la licenza per NetApp Backup and Recovery acquistando un abbonamento pay-as-you-go (PAYGO) o annuale al marketplace per *NetApp Intelligent Services* dal tuo cloud provider, oppure acquistando una bring-your-own-license (BYOL) da NetApp. È necessaria una licenza valida per attivare NetApp Backup and Recovery su un sistema, per creare backup dei tuoi dati di produzione e per ripristinare i dati di backup su un sistema di produzione.
+Configura le licenze per NetApp Backup and Recovery in NetApp Console o NetApp Console nella distribuzione locale utilizzando un abbonamento marketplace o una licenza bring-your-own (BYOL) di NetApp. È necessaria una licenza valida per attivare il servizio, creare backup e ripristinare i dati nei sistemi di produzione.
 
 Alcune note sul funzionamento delle licenze:
 
@@ -22,19 +22,19 @@ Alcune note sul funzionamento delle licenze:
 * Se usi Backup and Recovery con la distribuzione locale di NetApp Console, puoi acquistare solo una licenza bring-your-own-license (BYOL).
 * La licenza BYOL (Bring Your Own License) NetApp Backup and Recovery è una licenza mobile che puoi utilizzare su tutti i sistemi associati alla tua organizzazione o al tuo account NetApp Console .  Pertanto, se si dispone di una capacità di backup sufficiente da una licenza BYOL esistente, non sarà necessario acquistare un'altra licenza BYOL.
 * Se utilizzi una licenza BYOL con NetApp Console, ti consigliamo di sottoscrivere anche un abbonamento pay-as-you-go (PAYGO). Se esegui il backup di una quantità di dati superiore a quella consentita dalla tua licenza BYOL o se la durata della licenza scade, il backup continuerà tramite il tuo abbonamento pay-as-you-go (PAYGO), senza alcuna interruzione del servizio.
-* Quando si esegue il backup dei dati ONTAP on-premise su StorageGRID, è necessaria una licenza BYOL, ma non vi sono costi per lo spazio di archiviazione del provider cloud.
+* Quando esegui il backup dei dati ONTAP locali su StorageGRID, ti serve una licenza BYOL, ma non c'è alcun costo per lo spazio di storage del cloud provider.
 
 
 link:concept-backup-to-cloud.html["Scopri di più sui costi associati all'utilizzo di NetApp Backup and Recovery."]
 
 
 
-[[set-up-licensing-for-netapp-backup-and-recovery]]
-== Impostare la licenza per NetApp Backup and Recovery
+[[licensing-options-for-netapp-backup-and-recovery]]
+== Opzioni di licenza per NetApp Backup and Recovery
 
 Hai tre opzioni di licenza per NetApp Backup and Recovery:
 
-* Acquista una licenza diretta, nota anche come bring-your-own-license (BYOL), da NetApp. Questa opzione si applica sia a NetApp Console che alla distribuzione locale della Console.
+* Acquista una licenza diretta, nota anche come bring-your-own-license (BYOL), da NetApp. Questa opzione si applica sia a NetApp Console che alla distribuzione locale di Console.
 * Acquista un contratto annuale da un marketplace di hyperscaler. Questa opzione si applica solo a NetApp Console.
 * Abbonati a una licenza pay-as-you-go (PAYGO) da un marketplace di hyperscaler. Questa opzione si applica solo a NetApp Console.
 
@@ -68,11 +68,11 @@ Le licenze Bring-your-own di NetApp sono disponibili con durata di 1, 2 o 3 anni
 
 La licenza BYOL NetApp Backup and Recovery è una licenza mobile in cui la capacità totale è condivisa tra tutti i sistemi associati all'organizzazione o all'account NetApp Console .  Per i sistemi ONTAP , è possibile ottenere una stima approssimativa della capacità necessaria eseguendo il comando CLI `volume show -fields logical-used-by-afs` per i volumi di cui si intende eseguire il backup.
 
-Se non si dispone di una licenza BYOL NetApp Backup and Recovery , fare clic sull'icona della chat in basso a destra della Console per acquistarne una.
+Se non disponi di una licenza BYOL per NetApp Backup and Recovery, seleziona l'icona della chat in basso a destra nella Console per acquistarne una.
 
 Facoltativamente, se disponi di una licenza basata su nodi non assegnata per Cloud Volumes ONTAP che non utilizzerai, puoi convertirla in una licenza NetApp Backup and Recovery con lo stesso equivalente in dollari e la stessa data di scadenza. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["Vai qui per i dettagli"^] .
 
-Usi la NetApp Console o la distribuzione locale della Console per gestire le licenze BYOL. Puoi aggiungere nuove licenze, aggiornare quelle esistenti e visualizzare lo stato delle licenze dalla Console.
+Puoi usare NetApp Console o NetApp Console distribuzione locale per gestire le licenze BYOL. Puoi aggiungere nuove licenze, aggiornare quelle esistenti e visualizzare lo stato delle licenze dalla Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Scopri come aggiungere licenze"^].
 
@@ -124,7 +124,7 @@ Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il 
 [[use-a-netapp-backup-and-recovery-paygo-subscription-applies-to-netapp-console-only]]
 === Usa un abbonamento PAYGO NetApp Backup and Recovery (valido solo per NetApp Console)
 
-Con il pagamento in base al consumo, pagherai al tuo provider cloud i costi di archiviazione degli oggetti e i costi di licenza del backup NetApp su base oraria in un unico abbonamento.  Dovresti abbonarti a * NetApp Intelligent Services* nel Marketplace anche se hai una prova gratuita o se porti la tua licenza (BYOL):
+Con il pay-as-you-go, paghi al tuo cloud provider i costi dello storage a oggetti e i costi di licenza di backup NetApp su base oraria con un unico abbonamento. Dovresti abbonarti a *NetApp Intelligent Services* nel Marketplace anche se hai una prova gratuita o porti la tua licenza (BYOL):
 
 * L'abbonamento garantisce che non vi saranno interruzioni del servizio al termine del periodo di prova gratuito.  Al termine del periodo di prova, ti verrà addebitato un costo orario in base alla quantità di dati sottoposti a backup.
 * Se esegui il backup di più dati di quelli consentiti dalla tua licenza BYOL, le operazioni di backup e ripristino dei dati continueranno tramite l'abbonamento a consumo.  Ad esempio, se si dispone di una licenza BYOL da 10 TiB, tutta la capacità oltre i 10 TiB verrà addebitata tramite l'abbonamento PAYGO.
@@ -137,7 +137,7 @@ Esistono alcuni piani PAYGO per NetApp Backup and Recovery:
 * Un pacchetto "Cloud Backup" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP locali.
 * Un pacchetto "CVO Professional" che consente di raggruppare Cloud Volumes ONTAP e NetApp Backup and Recovery.  Ciò include backup illimitati per il sistema Cloud Volumes ONTAP utilizzando la licenza (la capacità di backup non viene conteggiata nella capacità concessa in licenza).  Questa opzione non consente di eseguire il backup dei dati ONTAP locali.
 +
-Si noti che questa opzione richiede anche un abbonamento PAYGO per backup e ripristino, ma non verranno addebitati costi per i sistemi Cloud Volumes ONTAP idonei.
+Anche questa opzione richiede un abbonamento PAYGO per NetApp Backup and Recovery, ma i sistemi Cloud Volumes ONTAP idonei non prevedono costi.
 
 
 
@@ -155,7 +155,7 @@ Utilizza questi link per abbonarti a NetApp Backup and Recovery dal marketplace 
 [[exceeding-license-capacity]]
 == Superamento della capacità della licenza
 
-Il superamento della capacità concessa dalla licenza attiva le tariffe PAYGO; senza un abbonamento PAYGO, non è possibile creare nuovi backup, anche se i backup esistenti rimangono ripristinabili senza garanzia di servizio. Assicurati di rinnovare la licenza prima che scada; una licenza scaduta impedisce la creazione di nuovi backup e interrompe il servizio.
+Il superamento della capacità concessa dalla licenza attiva le tariffe PAYGO. Senza un abbonamento PAYGO, non puoi creare nuovi backup, anche se puoi comunque ripristinare i backup esistenti senza garanzia di servizio. Rinnova la licenza prima della scadenza, perché una licenza scaduta impedisce la creazione di nuovi backup e interrompe il servizio.
 
 
 

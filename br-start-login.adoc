@@ -14,15 +14,15 @@ summary: Per accedere al servizio NetApp Backup and Recovery, utilizzare NetApp 
 
 
 [role="lead"]
-Per accedere a NetApp Backup and Recovery , utilizzare la NetApp Console .
+Accedi a NetApp Backup and Recovery dalla NetApp Console per individuare i carichi di lavoro e gestire le operazioni di protezione.
 
 NetApp Backup and Recovery utilizza la gestione dell'identità e dell'accesso per controllare cosa può fare ogni utente.
 
 Per i dettagli sulle azioni che ogni ruolo può eseguire, vederelink:reference-roles.html["Ruoli utente di NetApp Backup and Recovery"] .
 
-Per accedere alla NetApp Console, puoi utilizzare le credenziali del sito di supporto NetApp oppure registrarti per accedere alla NetApp Console utilizzando il tuo indirizzo email e una password. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^] .
+Per accedere a NetApp Console, puoi utilizzare le tue credenziali del sito di supporto NetApp, oppure puoi registrarti per un account NetApp Console utilizzando il tuo indirizzo email e una password. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^].
 
-*Ruolo richiesto nella NetApp Console* Ruolo di super amministratore di Backup e Recovery o ruolo di amministratore di ripristino di Backup e Recovery. Se proteggi dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
+*Ruolo richiesto nella NetApp Console* Super admin di Backup and Recovery o admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 Per aggiungere un agente Console, è necessario disporre del ruolo di super amministratore di Backup e ripristino.
 
@@ -39,18 +39,18 @@ Viene visualizzata la pagina di accesso NetApp Console .
 . Accedi alla Console.
 . Dal menu di navigazione a sinistra della Console, seleziona *Protezione* > *Backup e ripristino*.
 +
-** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, Backup and Recovery visualizza la pagina di destinazione "Benvenuti nel nuovo NetApp Backup and Recovery" con un'opzione per aggiungere un sistema. Per i dettagli sull'aggiunta di un sistema alla pagina *Sistemi*, fare riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard NetApp Console"^].
+** Se è la prima volta che accedi a Backup and Recovery e non hai ancora aggiunto un sistema alla pagina *Sistemi*, il servizio Backup and Recovery visualizza la landing page "Welcome to the new NetApp Backup and Recovery" con un'opzione per aggiungere un sistema. Per dettagli su come aggiungere un sistema alla pagina *Sistemi*, vedi  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard NetApp Console"^].
 ** Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella Console ma non sono state rilevate risorse, viene visualizzata la pagina _Benvenuti nel nuovo NetApp Backup and Recovery_ con l'opzione *Rileva risorse*.
 
 
-. Se non lo hai ancora fatto, seleziona l'opzione *Scopri e gestisci*.
+. Se non l'hai ancora fatto, seleziona *Scopri e gestisci*.
 +
-** Per i carichi di lavoro di Microsoft SQL Server, fare riferimento alink:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server"] .
-** Per i carichi di lavoro VMware, fare riferimento alink:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"] .
-** Per i carichi di lavoro KVM, fare riferimento alink:br-start-discover-kvm.html["Scopri i carichi di lavoro KVM"] .
-** Per i carichi di lavoro di Oracle Database, fare riferimento a link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle Database"].
-** Per i carichi di lavoro Hyper-V, fare riferimento alink:br-start-discover-hyperv.html["Scopri i carichi di lavoro Hyper-V"] .
-** Per i carichi di lavoro Kubernetes, fare riferimento alink:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"] .
+** Per i carichi di lavoro di Microsoft SQL Server, vedi link:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server"].
+** Per i carichi di lavoro VMware, vedi link:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"].
+** Per i carichi di lavoro KVM, vedi link:br-start-discover-kvm.html["Scopri i carichi di lavoro KVM"].
+** Per i carichi di lavoro di Oracle Database, vedi link:br-start-discover-oracle.html["Scopri i carichi di lavoro Oracle Database"].
+** Per i carichi di lavoro Hyper-V, vedi link:br-start-discover-hyperv.html["Scopri i carichi di lavoro Hyper-V"].
+** Per i carichi di lavoro Kubernetes, vedi link:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"].
 
 
 

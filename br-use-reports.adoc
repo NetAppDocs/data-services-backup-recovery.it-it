@@ -12,7 +12,7 @@ summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato d
 
 
 [role="lead"]
-In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft SQL Server per visualizzare lo stato e i dettagli del backup, inclusi i conteggi dei backup riusciti e non riusciti, i tipi di backup, i sistemi di archiviazione e i timestamp.
+Crea report per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery per esaminare lo stato e i dettagli dei backup, inclusi il numero di backup riusciti e non riusciti, i tipi di backup, i sistemi di storage e i timestamp.
 
 
 
@@ -22,7 +22,7 @@ In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft 
 *Ruolo NetApp Console richiesto* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
-. Dal menu NetApp Backup and Recovery , selezionare l'opzione *Report*.
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
 . Seleziona *Crea report*.
 . Inserisci i dettagli dell'ambito del report:
 +
@@ -32,9 +32,9 @@ In NetApp Backup and Recovery, crea report per i carichi di lavoro di Microsoft 
 ** *Seleziona contenuto*: scegli se desideri che il report includa un riepilogo di tutti i backup o i dettagli di ciascun backup.  (Se hai scelto "Per account")
 
 
-. Inserisci l'intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
-. Inserisci i dettagli di consegna del report: se desideri che il report venga consegnato via e-mail, seleziona *Invia report tramite e-mail*. Inserisci l'indirizzo email a cui desideri che venga inviato il report.
+. Inserisci l'intervallo di riferimento: scegli se vuoi che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
+. Inserisci i dettagli per la consegna del report: se vuoi che il report venga inviato tramite email, seleziona *Invia report tramite email*. Inserisci l'indirizzo email a cui vuoi che venga inviato il report.
 +
-Configura le notifiche e-mail nella pagina Impostazioni. Per i dettagli sulla configurazione delle notifiche e-mail, vederelink:br-start-configure.html["Configurare le impostazioni"] .
+Configura le notifiche e-mail nella pagina Impostazioni. Per ulteriori dettagli sulla configurazione delle notifiche e-mail, consulta link:br-start-configure.html["Configurare le impostazioni"].
 
 

@@ -4,7 +4,7 @@ permalink: prev-ontap-policy-object-advanced-settings.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
 ---
-= Gestisci le opzioni di backup su oggetto in NetApp Backup and Recovery
+= Gestisci le impostazioni avanzate del backup su oggetto in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-È possibile modificare le impostazioni di archiviazione del backup su oggetto a livello di cluster definite durante l'attivazione di NetApp Backup and Recovery per ciascun sistema ONTAP utilizzando la pagina Impostazioni avanzate. È anche possibile modificare alcune impostazioni applicate come impostazioni di backup "predefinite". Ciò include la modifica della velocità di trasferimento dei backup nell'archiviazione degli oggetti, se gli snapshot storici vengono esportati come file di backup e se si abilitano o disabilitano le scansioni ransomware per un sistema.
+Usa la pagina Impostazioni avanzate per modificare le impostazioni di backup a livello di cluster verso lo storage a oggetti per ciascun sistema ONTAP dopo che hai attivato NetApp Backup and Recovery. Puoi regolare la larghezza di banda, l'esportazione degli snapshot storici, l'eliminazione annuale degli snapshot e le impostazioni di scansione ransomware.
 
 
 NOTE: Queste impostazioni sono disponibili solo per l'archiviazione di backup su oggetti.  Nessuna di queste impostazioni influisce sulle impostazioni di snapshot o replica.
@@ -59,7 +59,7 @@ Quando si attiva NetApp Backup and Recovery per un sistema, per impostazione pre
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, fare clic su image:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Configura impostazioni avanzate > Impostazioni di sistema*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e seleziona *Configura impostazioni avanzate > Impostazioni di sistema*.
 . Nella pagina Impostazioni avanzate, espandi la sezione *Velocità di trasferimento massima*.
 . Scegli un valore compreso tra 1 e 1.000 Mbps come velocità di trasferimento massima.
 . Selezionare il pulsante di opzione *Limitato* e immettere la larghezza di banda massima utilizzabile, oppure selezionare *Illimitato* per indicare che non vi è alcun limite.
@@ -79,7 +79,7 @@ Si noti che questa opzione si applica solo ai nuovi file di backup per nuovi vol
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, fare clic su image:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Configura impostazioni avanzate > Impostazioni di sistema*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e seleziona *Configura impostazioni avanzate > Impostazioni di sistema*.
 . Nella pagina Impostazioni avanzate, espandi la sezione *Esporta copie snapshot esistenti*.
 . Seleziona se desideri esportare gli snapshot esistenti.
 . Selezionare *Applica*.
@@ -94,7 +94,7 @@ Quando si seleziona l'etichetta di backup "annuale" per un criterio di backup pe
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, fare clic su image:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Configura impostazioni avanzate > Impostazioni di sistema*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e seleziona *Configura impostazioni avanzate > Impostazioni di sistema*.
 . Nella pagina Impostazioni avanzate, espandi la sezione *Eliminazione snapshot annuale*.
 . Selezionare *Disabilitato* per conservare gli snapshot annuali sul sistema di origine.
 . Selezionare *Applica*.
@@ -105,11 +105,11 @@ Quando si seleziona l'etichetta di backup "annuale" per un criterio di backup pe
 [[enable-or-disable-ransomware-scans]]
 == Abilita o disabilita le scansioni ransomware
 
-Le scansioni di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è 7 giorni. La scansione avviene solo sull'ultimo snapshot.
+Le scansioni di protezione contro i ransomware sono abilitate per impostazione predefinita. Per impostazione predefinita, le scansioni vengono eseguite ogni 7 giorni. La scansione viene eseguita solo sull'ultima snapshot.
 
-Per informazioni dettagliate sulle opzioni di protezione da Datalock e ransomware, consultare link:prev-ontap-policy-object-options.html["Opzioni di protezione Datalock e ransomware"].
+Per dettagli sulle opzioni di DataLock e protezione dai ransomware, consulta link:prev-ontap-policy-object-options.html["Opzioni di protezione DataLock e Ransomware"].
 
-È possibile modificare la programmazione in giorni o settimane oppure disattivarla, risparmiando sui costi.
+Puoi modificare quella programmazione impostandola su un numero di giorni o settimane, oppure disattivarla per risparmiare sui costi.
 
 
 TIP: L'attivazione delle scansioni ransomware comporterà costi aggiuntivi a seconda del provider cloud.
@@ -127,7 +127,7 @@ Fare riferimento alink:prev-ontap-policy-manage.html["Gestire le politiche"] per
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, fare clic su image:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Configura impostazioni avanzate > Impostazioni di sistema*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e seleziona *Configura impostazioni avanzate > Impostazioni di sistema*.
 . Nella pagina visualizzata, espandi la sezione *Scansione ransomware*.
 . Abilita o disabilita la *Scansione ransomware*.
 . Seleziona *Scansione ransomware pianificata*.
@@ -145,7 +145,7 @@ Fare riferimento alink:prev-ontap-policy-manage.html["Gestire le politiche"] per
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, fare clic su image:icon-actions-horizontal.gif["Più icona"] per il sistema e selezionare *Configura impostazioni avanzate > Impostazioni provider*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e scegli *Configura impostazioni avanzate > Impostazioni provider*.
 . Nella parte superiore della pagina risultante, seleziona il bucket per il quale desideri modificare le impostazioni.
 . Espandi la sezione *Scansione ransomware*.
 . Abilita o disabilita la *Scansione ransomware*.

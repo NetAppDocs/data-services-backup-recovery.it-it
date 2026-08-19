@@ -14,11 +14,11 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Esegui il backup delle VM VMware e degli archivi dati dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+Esegui il backup di macchine virtuali VMware e datastore dai sistemi ONTAP locali su Amazon Web Services, Azure NetApp Files o StorageGRID per aiutarti a proteggere i tuoi dati. I backup vengono generati automaticamente e archiviati in un archivio di oggetti nel tuo account cloud pubblico o privato.
 
 * Per eseguire il backup dei carichi di lavoro in base a una pianificazione, crea policy che regolano le operazioni di backup e ripristino. Vedere link:br-use-policies-create.html["Creare policy di protezione"] per le istruzioni.
 * Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedere link:br-use-vmware-protection-groups.html["Creare e gestire gruppi di protezione"] per ulteriori informazioni.
-* Esegui subito il backup dei carichi di lavoro (crea subito un backup su richiesta).
+* Esegui subito il backup dei workload creando un backup su richiesta.
 
 
 
@@ -31,7 +31,7 @@ Crea subito un backup su richiesta.  Se stai per apportare modifiche al tuo sist
 *Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery o ruolo di viewer di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
-. Dal menu Backup e ripristino, selezionare *Inventario*.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Seleziona il carico di lavoro VMware.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
 . Seleziona la voce di menu *Gruppi di protezione*, *Archivi dati*, *Macchine virtuali* o *Tag*.

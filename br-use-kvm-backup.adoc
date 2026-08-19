@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kvm-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Proteggi i tuoi carichi di lavoro KVM con il backup e il ripristino NetApp . 
+summary: Proteggi i tuoi carichi di lavoro KVM con NetApp Backup and Recovery. 
 ---
 = Esegui il backup dei carichi di lavoro KVM con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,12 +14,12 @@ summary: Proteggi i tuoi carichi di lavoro KVM con il backup e il ripristino Net
 
 
 [role="lead"]
-Esegui il backup dei gruppi di protezione KVM dai sistemi ONTAP locali ad Amazon Web Services, Azure NetApp Files o StorageGRID per garantire la protezione dei dati.  Quando si esegue il backup di un gruppo di protezione, la NetApp Console esegue il backup delle VM e dei pool di archiviazione contenuti nel gruppo di protezione. I backup vengono generati automaticamente e archiviati in un archivio oggetti nel tuo account cloud pubblico o privato.
+Esegui il backup dei gruppi di protezione KVM dai sistemi ONTAP locali su Amazon Web Services, Azure NetApp Files o StorageGRID. Quando esegui il backup di un gruppo di protezione, NetApp Backup and Recovery esegue il backup delle VM e dei pool di storage in quel gruppo e archivia il backup in un archivio di oggetti nel tuo account cloud pubblico o privato.
 
 
-NOTE: Per eseguire il backup dei gruppi di protezione in base a una pianificazione, creare criteri che governino le operazioni di backup e ripristino.  Vederelink:br-use-policies-create.html["Creare politiche"] per istruzioni.
+NOTE: Per eseguire backup pianificati, crea policy che regolano le operazioni di backup e ripristino. Consulta link:br-use-policies-kvm-create.html["Crea criteri di protezione KVM"] per le istruzioni.
 
-* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un set di risorse. Vedi link:br-use-kvm-protection-groups.html["Gestisci i gruppi di protezione KVM in NetApp Backup and Recovery"] per maggiori informazioni.
+* Crea gruppi di protezione per gestire le operazioni di backup e ripristino per un insieme di risorse. Vedi link:br-use-kvm-protection-groups.html["Gestisci i gruppi di protezione KVM in NetApp Backup and Recovery"] per ulteriori informazioni.
 
 
 
@@ -27,7 +27,7 @@ NOTE: Per eseguire il backup dei gruppi di protezione in base a una pianificazio
 [[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Esegui subito il backup dei gruppi di protezione con un backup su richiesta
 
-È possibile eseguire immediatamente un backup su richiesta.  Questa funzione è utile se stai per apportare modifiche al tuo sistema e vuoi assicurarti di avere un backup prima di iniziare.
+Esegui immediatamente un backup su richiesta se stai per apportare modifiche e vuoi prima un backup aggiornato.
 
 *Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
 
@@ -35,9 +35,9 @@ NOTE: Per eseguire il backup dei gruppi di protezione in base a una pianificazio
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Nel riquadro KVM, seleziona *Scopri e gestisci*.
 . Selezionare *Inventario*.
-. Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
+. Seleziona un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Selezionare la scheda *Gruppi di protezione*, *Datastore* o *Macchine virtuali*.
+. Seleziona la scheda *Gruppi di protezione*, *Archivi dati* o *Macchine virtuali*.
 . Selezionare il gruppo di protezione di cui si desidera eseguire il backup.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 +
