@@ -25,8 +25,9 @@ NetApp Backup and Recovery blocca e sblocca i filesystem per applicazioni come K
 
 
 ====
-.Ruolo richiesto NetApp Console
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console*
+
+Super admin di NetApp Backup and Recovery, backup admin di NetApp Backup and Recovery o restore admin di NetApp Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

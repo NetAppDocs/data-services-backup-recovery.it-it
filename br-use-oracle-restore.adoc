@@ -121,29 +121,37 @@ Vengono visualizzate le istantanee corrispondenti.
 ====
 .Ripristina nella posizione originale
 --
+[NOTE]
+====
+Se ripristini PDB o tablespace PDB a uno specifico point-in-time o SCN:
+
+* Seleziona solo un PDB. Il ripristino point-in-time non è compatibile con il ripristino di più PDB.
+* PDB $SEED non può essere selezionato per il ripristino point-in-time.
+* Il ripristino del file di controllo non può essere combinato con il ripristino point-in-time di PDB o tablespace.
+* Assicurati che il backup dei dati e i backup dei log necessari siano catalogati.
+
+
+====
 . *Impostazioni di destinazione*:
+. Seleziona cosa vuoi ripristinare:
 +
-** Scegliere se ripristinare l'intero database o solo i tablespace del database.
-** *File di controllo*: facoltativamente, abilitare questa opzione per ripristinare anche i file di controllo del database.
+** Seleziona *Tutti i file di dati* per ripristinare l'intero database o container database (CDB).
+** Seleziona *Pluggable databases (PDBs)* per ripristinare uno o più PDB da un CDB senza influire sugli altri PDB nel container. Poi seleziona i PDB dall'elenco.
+** Seleziona *Tablespace del database collegabile (PDB)* (visualizzati come *Tablespace* per un database non-CDB) per ripristinare specifici tablespace PDB. Poi, seleziona il PDB e i tablespace.
 
 
-. *Opzioni pre-ripristino*:
+. Facoltativamente, puoi abilitare l'opzione *file di controllo* per ripristinare anche i file di controllo del database. Questa opzione non è disponibile per il ripristino point-in-time o SCN di PDB o tablespace PDB.
+. Facoltativamente, abilita l'opzione *Modifica lo stato del database se necessario per il ripristino e il recupero* per consentire a NetApp Backup and Recovery di gestire lo stato del database a seconda del tipo di recupero.
+. Facoltativamente, puoi abilitare l'opzione *Forza ripristino sul posto* per utilizzare un metodo di ripristino più rapido per i database SAN/ASM, saltando il controllo di convalida dei file esterni. Il database e il gruppo di dischi ASM vengono ripristinati al punto di creazione del backup.
+. Specifica il percorso dei file di log di archivio esterni se ripristini PDB o tablespace PDB a un punto specifico nel tempo o a uno SCN. Inserisci il percorso in cui RMAN crea l'istanza ausiliaria per eseguire il ripristino. Inserisci un full path del file system che inizia con "/" o un gruppo di dischi ASM che inizia con "+". Usa i pulsanti "plus" e "minus" accanto al campo di inserimento testo per aggiungere o rimuovere percorsi.
+. Facoltativamente, puoi abilitare l'opzione *Apri il database o container database in modalità LETTURA-SCRITTURA dopo il ripristino* per aprire i database in modalità LETTURA-SCRITTURA dopo il ripristino. Questo rende online i tablespace ripristinati.
+. *Prescrizioni e postscrizioni*:
 +
-** Facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino e tutti gli argomenti accettati dallo script.
-** Scegli un valore di timeout per lo script. Se lo script non viene eseguito entro questo periodo di tempo, il ripristino procede comunque.
-
-
-. *Opzioni post-ripristino*:
-+
+** *Prescript*: Facoltativamente, abilita questa opzione e inserisci il full path di uno script che deve essere eseguito prima dell'operazione di ripristino e gli eventuali argomenti che lo script accetta.
 ** *Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
-** *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il ripristino*: Al termine dell'operazione di ripristino, NetApp Backup and Recovery abilita la modalità LETTURA-SCRITTURA per il database.
 
 
-. Sezione *Notifiche*:
-+
-** *Abilita notifiche e-mail*: seleziona questa opzione per ricevere notifiche e-mail sull'operazione di ripristino e indica il tipo di notifiche che desideri ricevere.
-
-
+. Scegli un valore di timeout per lo script. Se lo script non viene eseguito entro questo periodo di tempo, il ripristino procederà comunque.
 . Selezionare *Ripristina*.
 
 

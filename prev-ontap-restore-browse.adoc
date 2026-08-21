@@ -153,7 +153,7 @@ Per ripristinare un volume sono necessari il nome del sistema di origine, la mac
 . Dalla sezione _Sfoglia e ripristina_, seleziona *Ripristina volume*.
 . Nella pagina _Seleziona origine_, vai al file di backup per il volume che desideri ripristinare.  Selezionare il *sistema*, il *volume* e il file *backup* con la data/ora da cui si desidera effettuare il ripristino.
 +
-La colonna *Posizione* mostra se il file di backup (Snapshot) è *Locale* (uno snapshot sul sistema di origine), *Secondario* (un volume replicato su un sistema ONTAP secondario) o *Archiviazione oggetti* (un file di backup nell'archiviazione oggetti). Seleziona il file che vuoi ripristinare.
+La colonna *Posizione* indica se il file di backup (snapshot) è *Locale* (uno snapshot sul sistema di origine), *Secondario* (un volume replicato su un sistema ONTAP secondario) o *Storage a oggetti* (un file di backup in storage a oggetti). Scegli il file che vuoi ripristinare.
 
 . Selezionare *Avanti*.
 +

@@ -450,7 +450,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 [[select-the-volumes-that-you-want-to-back-up]]
 === Seleziona i volumi di cui vuoi eseguire il backup
 
-Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che presenta una o più delle seguenti caratteristiche: criterio di snapshot, criterio di replica, criterio di backup su oggetto.
+Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che presenta una o più delle seguenti caratteristiche: criteri di snapshot, criteri di replica, criteri di backup su oggetto.
 
 È possibile scegliere di proteggere i volumi FlexVol o FlexGroup ; tuttavia, non è possibile selezionare una combinazione di questi volumi quando si attiva il backup per un sistema.  Scopri comelink:prev-ontap-backup-manage.html["attiva il backup per volumi aggiuntivi nel sistema"] (FlexVol o FlexGroup) dopo aver configurato il backup per i volumi iniziali.
 
@@ -595,7 +595,7 @@ Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se ne
 
 .Passi
 . Nella pagina Revisione, rivedi le tue selezioni.
-. Facoltativamente, seleziona la casella per *Sincronizzare automaticamente le etichette dei criteri Snapshot con le etichette dei criteri di replica e backup*.  In questo modo vengono creati snapshot con un'etichetta che corrisponde alle etichette nei criteri di replica e backup.
+. Se vuoi, seleziona la casella per *Sincronizzare automaticamente le etichette della policy di snapshot con le etichette delle policy di replica e di backup*. In questo modo vengono creati snapshot con un'etichetta che corrisponde alle etichette presenti nelle policy di replica e di backup.
 . Seleziona *Attiva backup*.
 
 

@@ -59,7 +59,7 @@ image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flus
 
 Usa l'opzione Ripristina per ripristinare i carichi di lavoro VMware. Puoi cercare uno snapshot per nome o utilizzando i filtri.
 
-*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo richiesto nella NetApp Console* Ruolo di super amministratore di Backup e Recovery o ruolo di amministratore di ripristino di Backup e Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.

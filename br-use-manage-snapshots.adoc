@@ -23,7 +23,7 @@ Elimina gli snapshot locali di Microsoft SQL Server da NetApp Backup e ripristin
 
 È possibile eliminare solo gli snapshot locali.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
+*Ruolo richiesto nella NetApp Console* Super admin di Backup and Recovery o admin di backup di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.

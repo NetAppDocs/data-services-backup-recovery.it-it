@@ -16,7 +16,7 @@ summary: Clona i carichi di lavoro del tuo database Oracle con NetApp Backup and
 [role="lead"]
 Usa NetApp Backup and Recovery per creare cloni scrivibili dei carichi di lavoro di database Oracle dai sistemi ONTAP locali su storage primario o secondario. Puoi anche programmare l'aggiornamento dei cloni in base alle tue esigenze.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery o admin di cloni di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
@@ -31,6 +31,15 @@ Crea immediatamente un clone da uno snapshot esistente. Utilizza questo metodo p
 . Seleziona *Clone*.
 . Seleziona *Crea nuovo clone*.
 . Nella sezione *Origine database*, seleziona l'host di origine e il database dagli elenchi.
++
+.. Se il database di origine è un container database (CDB), nella sezione *Tipo di clone* seleziona una delle seguenti opzioni:
++
+*** *Clonazione completa del database*: Clona l'intero container database, inclusi tutti i PDB.
+*** *Clona PDB*: Clona uno specifico PDB dal backup dei dati del database del container in un container database di destinazione esistente.
+
+
+
+
 . Nella sezione *Destinazione database*, seleziona l'host di destinazione e il database dagli elenchi. L'host di destinazione e il database possono essere diversi da quelli di origine.
 . Selezionare *Avanti*.
 . Nella sezione *Clone from* della pagina *Select restore point*, seleziona *Existing snapshots*.
@@ -41,8 +50,9 @@ La pagina *Seleziona la posizione dell'istantanea* viene visualizzata se l'istan
 . Scegli la posizione dello snapshot da utilizzare e seleziona *Avanti*.
 . Nella pagina *Opzioni avanzate*, esegui le seguenti operazioni:
 +
-.. Se hai già salvato un file di specifiche, puoi caricarlo per personalizzare le impostazioni del database clonato. Puoi anche scaricare il file di specifiche predefinito per lo snapshot del database.
-.. Nella sezione *Ambito di ripristino*, scegli come limitare ciò che viene ripristinato per creare il clone e inserisci le informazioni richieste per l'opzione che scegli. Scegliendo *Nessuno* vengono ripristinati tutti i dati.
+.. Facoltativamente, se stai clonando un database multitenant completo, in *Impostazioni di clonazione del database completo*, seleziona uno o più PDB da escludere dalla clonazione (PDB$SEED è sempre escluso). Questa sezione non viene visualizzata quando cloni un database single tenant.
+.. Se in precedenza hai salvato un file di specifica, puoi abilitare l'opzione *Personalizza i parametri del database di destinazione* per caricarlo e personalizzare le impostazioni del database clonato. Puoi anche scaricare il file di specifica predefinito per lo snapshot del database.
+.. Nella sezione *Ambito di ripristino*, seleziona un'opzione per ripristinare il clone utilizzando i log di archivio e inserisci i dettagli richiesti. Se scegli *Nessuno* salti il ripristino (il clone viene creato dallo snapshot senza applicare le modifiche dai log di archivio). *Nessuno* non è disponibile per i cloni PDB.
 .. Nella sezione *Prescripts and postscripts*, abilitare una o entrambe le opzioni *Prescript* e *Postscript* per eseguire uno script prima che l'operazione di clonazione inizi o dopo il suo completamento. Per ciascuna opzione, immettere il percorso completo dello script e gli eventuali argomenti richiesti.
 
 
@@ -55,6 +65,9 @@ La pagina *Seleziona la posizione dell'istantanea* viene visualizzata se l'istan
 == Pianifica una clonazione di un database Oracle
 
 Crea una copia istantanea e pianifica aggiornamenti regolari per mantenerla aggiornata con lo stato più recente del database.
+
+
+NOTE: La creazione di snapshot istantanei e cloni con una pianificazione di aggiornamento si applica solo ai cloni completi del database. Non è disponibile per un clone PDB.
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.

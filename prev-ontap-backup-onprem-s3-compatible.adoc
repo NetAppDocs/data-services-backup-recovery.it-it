@@ -266,7 +266,7 @@ Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che pre
 
 ====
 .Passi
-Tieni presente che se ai volumi scelti sono già applicati criteri di snapshot o di replica, i criteri selezionati in seguito sovrascriveranno quelli esistenti.
+Tieni presente che se ai volumi che scegli sono già applicate policy di snapshot o di replica, le policy che selezionerai in seguito sovrascriveranno quelle esistenti.
 
 . Nella pagina Seleziona volumi, seleziona il volume o i volumi che desideri proteggere.
 +
@@ -312,7 +312,7 @@ Per i dettagli su queste architetture, fare riferimento alink:prev-ontap-protect
 . *Snapshot locale*: scegli un criterio di snapshot esistente o creane uno nuovo.
 +
 
-TIP: Se si desidera creare una policy personalizzata prima di attivare lo Snapshot, è possibile utilizzare System Manager o ONTAP CLI `snapmirror policy create` comando.  Fare riferimento a .
+TIP: Se vuoi creare una policy personalizzata prima di attivare lo snapshot, puoi usare System Manager o il comando ONTAP CLI `snapmirror policy create`. Consulta .
 
 +
 
@@ -373,7 +373,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 *** Seleziona *Crea*.
 
 
-** *Esporta snapshot esistenti nell'archivio oggetti come file di backup*: se sono presenti snapshot locali per i volumi in questo sistema che corrispondono all'etichetta di pianificazione del backup appena selezionata (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Seleziona questa casella per copiare tutti gli snapshot storici nell'archivio oggetti come file di backup, per garantire la protezione più completa per i tuoi volumi.
+** *Esporta gli snapshot esistenti su storage a oggetti come file di backup*: Se in questo sistema sono presenti snapshot locali per volumi che corrispondono all'etichetta di pianificazione del backup appena selezionata (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo messaggio aggiuntivo. Seleziona questa casella per copiare tutti gli snapshot storici su storage a oggetti come file di backup e garantire la protezione più completa per i tuoi volumi.
 
 
 . Selezionare *Avanti*.
@@ -388,7 +388,7 @@ Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se ne
 
 .Passi
 . Nella pagina Revisione, rivedi le tue selezioni.
-. Facoltativamente, seleziona la casella per *Sincronizzare automaticamente le etichette dei criteri Snapshot con le etichette dei criteri di replica e backup*.  In questo modo vengono creati snapshot con un'etichetta che corrisponde alle etichette nei criteri di replica e backup.  Se i criteri non corrispondono, i backup non verranno creati.
+. Se vuoi, seleziona la casella per *Sincronizzare automaticamente le etichette della policy di snapshot con le etichette della policy di replica e della policy di backup*. Questo crea snapshot con un'etichetta che corrisponde alle etichette nelle policy di replica e di backup. Se le policy non corrispondono, i backup non verranno creati.
 . Seleziona *Attiva backup*.
 
 

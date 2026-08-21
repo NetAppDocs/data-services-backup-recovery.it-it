@@ -16,8 +16,9 @@ summary: 'Crea manualmente backup su richiesta delle applicazioni Kubernetes uti
 [role="lead"]
 Utilizza l'interfaccia web per eseguire un backup su richiesta di un'applicazione Kubernetes.
 
-.Ruolo richiesto NetApp Console
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console*
+
+Super admin di NetApp Backup and Recovery o backup admin di NetApp Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

@@ -24,7 +24,7 @@ Scegli tra i seguenti tipi di cloni:
 
 Puoi creare, aggiornare, dividere ed eliminare i cloni.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
+*Ruolo richiesto nella NetApp Console* Ruolo di super admin di Backup and Recovery o ruolo di clone admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
 
 
 

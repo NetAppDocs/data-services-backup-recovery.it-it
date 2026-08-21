@@ -18,7 +18,7 @@ Monitora i job di Snapshot, replica, backup e ripristino. Configura le notifiche
 
 NetApp Backup e ripristino conserva le informazioni sui job per 15 giorni, poi le elimina e le rimuove dal Job Monitor.
 
-*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery o ruolo di viewer di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o ruolo di Backup and Recovery viewer. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

@@ -23,7 +23,8 @@ Ripristina le applicazioni protette da una policy di protezione in NetApp Backup
 
 Per ogni applicazione protetta con Backup and Recovery, è possibile visualizzare le risorse di cui è stato eseguito il backup per uno specifico punto di ripristino.
 
-.Ruolo richiesto NetApp Console
+*Ruolo richiesto NetApp Console*
+
 Visualizzatore di backup e ripristino. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
@@ -46,7 +47,8 @@ Viene visualizzato un elenco di risorse e i relativi dettagli. È possibile visu
 .Prima di iniziare
 Se si sta ripristinando un'applicazione di cui è stato eseguito il backup utilizzando Trident Protect, assicurarsi che Trident Protect sia installato sia sul cluster di origine che sul cluster di destinazione.
 
-.Ruolo richiesto NetApp Console
+*Ruolo richiesto NetApp Console*
+
 Super amministratore di Backup and Recovery o amministratore di ripristino di Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi

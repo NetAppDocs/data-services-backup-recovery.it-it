@@ -28,7 +28,7 @@ Esegui il backup dei carichi di lavoro di Microsoft SQL Server dai sistemi ONTAP
 
 Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi di lavoro.
 
-*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery o ruolo di viewer di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin o ruolo di Backup and Recovery viewer. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -44,7 +44,7 @@ Prima di avviare un backup, visualizza lo stato di protezione dei tuoi carichi d
 
 Imposta il percorso del registro attività per gli host rilevati per monitorare lo stato delle operazioni prima di eseguire il backup dei carichi di lavoro.
 
-*Ruolo della NetApp Console richiesto* Visualizzatore di storage, super admin di Backup and Recovery, admin di backup di Backup and Recovery o admin di ripristino di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -68,7 +68,7 @@ NOTE: I campi visualizzati variano a seconda del modello di distribuzione selezi
 
 Crea un gruppo di protezione per gestire le operazioni di backup e ripristino per più carichi di lavoro.  Un gruppo di protezione è un raggruppamento logico di carichi di lavoro.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Super admin di Backup and Recovery o ruolo di backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -95,7 +95,7 @@ Se vuoi creare una policy, seleziona *Crea nuova policy* e segui le istruzioni. 
 
 Esegui un backup su richiesta prima di apportare modifiche al sistema per garantire la protezione dei dati.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Super admin di Backup and Recovery o ruolo di backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -116,7 +116,7 @@ Esegui un backup su richiesta prima di apportare modifiche al sistema per garant
 
 Sospendi la pianificazione per interrompere temporaneamente i backup durante la manutenzione o la risoluzione dei problemi.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Super admin di Backup and Recovery o ruolo di backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -134,7 +134,7 @@ Sospendi la pianificazione per interrompere temporaneamente i backup durante la 
 
 L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stesso e di tutte le pianificazioni di backup associate. Potrebbe essere necessario eliminare un gruppo di protezione se non è più necessario.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Super admin di Backup and Recovery o ruolo di backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -151,7 +151,7 @@ L'eliminazione di un gruppo di protezione comporta la rimozione del gruppo stess
 
 È possibile rimuovere la protezione da un carico di lavoro se non si desidera più eseguirne il backup o se si desidera interromperne la gestione in NetApp Backup and Recovery.
 
-*Ruolo richiesto nella NetApp Console* Visualizzatore di storage, super admin di Backup and Recovery o admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo della NetApp Console richiesto* Super admin di Backup and Recovery o ruolo di backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.

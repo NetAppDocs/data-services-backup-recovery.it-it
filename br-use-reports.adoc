@@ -19,7 +19,7 @@ Crea report per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and
 [[create-a-protection-report]]
 == Crea un report di protezione
 
-*Ruolo NetApp Console richiesto* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+*Ruolo NetApp Console richiesto* super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery. Se stai proteggendo i dati memorizzati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup e ripristino, seleziona *Report*.

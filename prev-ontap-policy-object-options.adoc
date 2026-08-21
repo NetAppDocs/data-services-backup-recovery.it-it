@@ -29,7 +29,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 NetApp Backup and Recovery consente di creare più policy di backup con pianificazioni univoche per ciascun sistema (cluster).  È possibile assegnare criteri di backup diversi ai volumi che hanno obiettivi del punto di ripristino (RPO) diversi.
 
-Ogni criterio di backup fornisce una sezione per _Etichette e conservazione_ che è possibile applicare ai file di backup.  Si noti che il criterio Snapshot applicato al volume deve essere uno dei criteri riconosciuti da NetApp Backup and Recovery , altrimenti i file di backup non verranno creati.
+Ogni policy di backup include una sezione per _Etichette e conservazione_ che puoi applicare ai file di backup. Nota che la policy di snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, altrimenti i file di backup non verranno creati.
 
 La pianificazione è composta da due parti: l'etichetta e il valore di conservazione:
 

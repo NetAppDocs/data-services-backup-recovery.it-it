@@ -65,7 +65,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 * Durante il backup dei volumi di protezione dei dati (DP):
 +
 ** Le relazioni con le etichette SnapMirror `app_consistent` e  `all_source_snapshot` non verranno salvate nel cloud.
-** Se crei copie locali di Snapshot sul volume di destinazione SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), questi Snapshot non verranno spostati nel cloud come backup. Devi creare una policy di Snapshot con le etichette desiderate sul volume DP di origine così che NetApp Backup and Recovery possa eseguirne il backup.
+** Se crei copie locali delle snapshot sul volume di destinazione di SnapMirror (indipendentemente dalle etichette SnapMirror utilizzate), queste snapshot non verranno spostate nel cloud come backup. Devi creare una policy di snapshot con le etichette desiderate sul volume DP di origine così che NetApp Backup and Recovery possa eseguirne il backup.
 
 
 * I backup dei volumi FlexGroup non possono essere spostati nello storage di archiviazione.
@@ -73,7 +73,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 * Il backup del volume SVM-DR è supportato con le seguenti restrizioni:
 +
 ** I backup sono supportati solo dal dispositivo secondario ONTAP .
-** La policy Snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, tra cui giornaliera, settimanale, mensile, ecc. La policy predefinita "sm_created" (utilizzata per *Mirror All Snapshots*) non viene riconosciuta e il volume DP non verrà visualizzato nell'elenco dei volumi di cui è possibile eseguire il backup.
+** La policy di snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, incluse quelle giornaliere, settimanali, mensili, ecc. La policy predefinita "sm_created" (utilizzata per *Mirror All Snapshots*) non è riconosciuta e il volume DP non verrà visualizzato nell'elenco dei volumi di cui puoi eseguire il backup.
 ** SVM-DR e il backup e ripristino dei volumi funzionano in modo completamente indipendente quando il backup viene eseguito sia dal sistema di origine che dalla destinazione. L'unica limitazione è che SVM-DR non replica la relazione SnapMirror cloud. Nello scenario di disaster recovery, quando la storage VM viene attivata nella posizione secondaria, devi aggiornare manualmente la relazione SnapMirror cloud.
 
 

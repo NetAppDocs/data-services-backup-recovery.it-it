@@ -58,7 +58,7 @@ Dalla pagina Ripristina, puoi ripristinare una macchina virtuale anche se non ri
 
 Ripristina le macchine virtuali KVM utilizzando il menu Ripristina. Puoi cercare gli snapshot per nome o utilizzando i filtri.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup e ripristino o di amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super amministratore di Backup e ripristino o amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.

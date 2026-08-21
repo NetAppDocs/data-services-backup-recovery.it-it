@@ -16,7 +16,7 @@ summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per 
 [role="lead"]
 Individua gli host KVM e le macchine virtuali in NetApp Backup and Recovery così puoi proteggerli con criteri di protezione. Il tuo ambiente KVM deve essere gestito da una piattaforma di gestione come Apache CloudStack prima dell'individuazione.
 
-*Ruolo di console obbligatorio* Super amministratore di backup e ripristino.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi di backup e ripristino"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto nella NetApp Console* super admin di backup e ripristino. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

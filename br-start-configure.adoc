@@ -25,8 +25,6 @@ Configura le impostazioni di backup e ripristino per aggiungere le credenziali p
 * <<Crea un modello di trasformazione delle risorse>>per modificare le risorse durante il ripristino.
 
 
-*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
-
 
 
 [[add-credentials-for-host-resources]]
@@ -44,6 +42,8 @@ Se non si dispone di credenziali, crearle con le autorizzazioni per accedere e g
 * Credenziali del database Oracle
 * Credenziali host Linux
 
+
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
@@ -122,6 +122,8 @@ TIP: Per i carichi di lavoro di Microsoft SQL Server, devi inserire le credenzia
 
 In seguito potrai modificare la password per tutte le credenziali che hai creato.
 
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
 . Selezionare la freccia rivolta verso il basso per espandere la sezione *Credenziali*.
@@ -139,6 +141,8 @@ In seguito potrai modificare la password per tutte le credenziali che hai creato
 == Gestire le impostazioni di VMware vCenter
 
 Fornisci le credenziali di VMware vCenter Server per individuare i carichi di lavoro di cui eseguire il backup. Se non hai credenziali, creale con le autorizzazioni per accedere e gestire i carichi di lavoro di VMware vCenter Server.
+
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
@@ -167,6 +171,8 @@ Si tratta di un processo in due fasi:
 * Importa l'applicazione SnapCenter Server e le risorse host
 * Gestisci le risorse host SnapCenter selezionate
 
+
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery o backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
@@ -249,6 +255,8 @@ La pagina Importa da SnapCenter mostra tutte le importazioni precedenti.
 
 Se usi la piattaforma di gestione Apache CloudStack per gestire le risorse KVM, integrala con NetApp Backup and Recovery così Backup and Recovery può individuare e proteggere gli host e le VM KVM gestiti.
 
+*Ruolo richiesto NetApp Console* Super admin di Backup and Recovery o backup admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
 . Selezionare la freccia rivolta verso il basso per espandere la sezione *Piattaforma di gestione*.
@@ -271,6 +279,8 @@ Se usi la piattaforma di gestione Apache CloudStack per gestire le risorse KVM, 
 == Configurare le directory di registro negli snapshot per gli host Windows
 
 Prima di creare policy per gli host Windows, configura le directory dei log negli snapshot per archiviare i log generati durante il processo di backup.
+
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -311,6 +321,8 @@ Dopo aver creato il modello, questo viene visualizzato nell'elenco dei modelli n
 == Crea un modello di trasformazione delle risorse
 
 Crea modelli di trasformazione delle risorse per memorizzare le trasformazioni comuni che applichi alle risorse durante le operazioni di ripristino.
+
+*Ruolo della NetApp Console richiesto* Backup and Recovery super admin, Backup and Recovery backup admin o Backup and Recovery restore admin. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.

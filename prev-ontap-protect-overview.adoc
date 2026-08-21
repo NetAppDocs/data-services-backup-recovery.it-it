@@ -380,7 +380,7 @@ Quando si abilita NetApp Backup and Recovery per un sistema, tutti i volumi iniz
 È possibile scegliere una combinazione di backup orari, giornalieri, settimanali, mensili e annuali di tutti i volumi.  Per il backup dell'oggetto è anche possibile selezionare una delle policy definite dal sistema che prevedono backup e conservazione per 3 mesi, 1 anno e 7 anni.  Anche i criteri di protezione del backup creati sul cluster tramite ONTAP System Manager o ONTAP CLI verranno visualizzati come selezioni.  Sono incluse le policy create utilizzando etichette SnapMirror personalizzate.
 
 
-NOTE: Il criterio Snapshot applicato al volume deve avere una delle etichette utilizzate nel criterio di replica e nel criterio di backup su oggetto. Se non vengono trovate etichette corrispondenti, non verrà creato alcun file di backup. Ad esempio, se si desidera creare volumi replicati e file di backup "settimanali", è necessario utilizzare un criterio Snapshot che crei snapshot "settimanali".
+NOTE: La policy di snapshot applicata al volume deve avere una delle etichette che stai usando nella policy di replica e nella policy di backup su oggetto. Se non vengono trovate etichette corrispondenti, non verranno creati file di backup. Ad esempio, se vuoi creare volumi replicati e file di backup "weekly", devi usare una policy di snapshot che crei snapshot "weekly".
 
 Una volta raggiunto il numero massimo di backup per una categoria o un intervallo, i backup più vecchi vengono rimossi in modo da avere sempre i backup più recenti (e quindi i backup obsoleti non continuano a occupare spazio).
 

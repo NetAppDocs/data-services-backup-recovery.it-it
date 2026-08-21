@@ -16,8 +16,9 @@ summary: Gestisci le applicazioni Kubernetes e i relativi dati di protezione in 
 [role="lead"]
 Rimuovi la protezione o elimina le applicazioni Kubernetes e rimuovi i punti di ripristino quando necessario.
 
-.Ruolo richiesto NetApp Console
-Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console*
+
+Super admin di NetApp Backup and Recovery o backup admin di NetApp Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 

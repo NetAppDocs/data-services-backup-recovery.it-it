@@ -18,6 +18,7 @@ Esamina le limitazioni attuali e le azioni non supportate per i carichi di lavor
 
 Le seguenti azioni non sono supportate per i workload di database Oracle nella versione di anteprima di NetApp Backup and Recovery:
 
+* Dopo aver eseguito un ripristino incompleto ripristinando un database a un punto specifico nel tempo o a uno SCN, se in seguito devi ripristinarlo a un punto precedente a quel ripristino, devi anche selezionare *file di controllo* nelle impostazioni di destinazione del ripristino. Senza ripristinare il file di controllo, il database non può essere ripristinato a un punto precedente al precedente ripristino incompleto.
 * Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * Backup offline
 

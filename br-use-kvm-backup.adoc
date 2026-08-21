@@ -29,7 +29,7 @@ NOTE: Per eseguire backup pianificati, crea policy che regolano le operazioni di
 
 Esegui immediatamente un backup su richiesta se stai per apportare modifiche e vuoi prima un backup aggiornato.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super amministratore di Backup and Recovery o ruolo di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.

@@ -31,7 +31,7 @@ Crea gruppi di protezione per proteggere insieme le macchine virtuali Hyper-V co
 
 Raggruppa i carichi di lavoro che vuoi proteggere insieme in un gruppo di protezione. Crea un gruppo di protezione per eseguire il backup e il ripristino di questi carichi di lavoro insieme.
 
-*Ruolo di console obbligatorio* Ruolo di super amministratore di Backup and Recovery o di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^] .
+*Ruolo richiesto NetApp Console* Super amministratore di Backup and Recovery o ruolo di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
 * Tieni presente che per i carichi di lavoro Hyper-V, i tempi di backup vengono interpretati nel fuso orario dell'host di gestione. Vedi link:br-use-policies-hyper-v-create.html["Creare e gestire i criteri di backup di Hyper-V in NetApp Backup and Recovery"] per maggiori informazioni.
