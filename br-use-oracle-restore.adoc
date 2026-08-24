@@ -53,6 +53,19 @@ A seconda delle tue esigenze, puoi ripristinare un database Oracle a un punto sp
 
 *Ruolo richiesto NetApp Console* Super amministratore di Backup e ripristino o amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
 
+[NOTE]
+====
+Se ripristini PDB o tablespace a uno specifico point-in-time o SCN:
+
+* Seleziona solo un PDB. Il ripristino point-in-time non è compatibile con il ripristino di più PDB.
+* `PDB$SEED` non puoi selezionarlo per il recovery point-in-time.
+* Il ripristino del file di controllo non può essere combinato con il recovery point-in-time di PDB o tablespace PDB.
+* Assicurati che il backup dei dati e i backup dei log necessari siano catalogati.
+* I `SYSTEM`, `SYSAUX` e `UNDO` tablespace non possono essere selezionati.
+* Verifica che il backup dei dati e i backup dei log richiesti siano catalogati.
+
+
+====
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
@@ -72,8 +85,15 @@ Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca
 .. Selezionare *Avanti*.
 .. Scegli una data dal menu a discesa e seleziona *Cerca*.
 +
-Viene visualizzato un elenco di snapshot corrispondenti alla data specificata.
+Viene visualizzata l'istantanea più vicina alla data e all'ora specificate.
 
+.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
++
+... Verifica che i backup dei log siano montati.
+
+
+.. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
+.. Selezionare *Avanti*.
 
 
 --
@@ -83,8 +103,15 @@ Viene visualizzato un elenco di snapshot corrispondenti alla data specificata.
 .. Selezionare *Avanti*.
 .. Inserisci l'SCN da utilizzare come punto di ripristino e seleziona *Cerca*.
 +
-Viene visualizzato un elenco di snapshot corrispondenti per l'SCN specificato.
+Viene visualizzata l'istantanea più vicina per l'SCN specificato.
 
+.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
++
+... Verifica che i backup dei log siano montati.
+
+
+.. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
+.. Selezionare *Avanti*.
 
 
 --
@@ -93,66 +120,71 @@ Viene visualizzato un elenco di snapshot corrispondenti per l'SCN specificato.
 .. Seleziona *Ripristina all'ultimo backup*.
 .. Selezionare *Avanti*.
 +
-Vengono visualizzati gli ultimi backup completi e di registro.
+Viene visualizzata l'istantanea più recente. L'operazione di ripristino recupera l'ultimo stato valido utilizzando tutti i backup di log disponibili.
 
+.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
++
+... Verifica che i backup dei log siano montati.
+
+
+.. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
+.. Selezionare *Avanti*.
 
 
 --
 .Ripristina da snapshot senza recupero
 --
 .. Seleziona *Ripristina da snapshot senza ripristino*.
++
+Selezionando questa opzione, il database verrà ripristinato dagli snapshot, ma il recovery verrà saltato (i backup dei file di log non verranno applicati).
+
 .. Selezionare *Avanti*.
 +
-Vengono visualizzate le istantanee corrispondenti.
+Vengono visualizzate le istantanee disponibili.
 
+.. Seleziona un'istantanea dall'elenco e seleziona *Avanti*.
+.. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
+.. Selezionare *Avanti*.
 
 
 --
 ====
-. Selezionare una posizione di origine dello snapshot.
-. Selezionare *Avanti* per continuare.
 . Scegli la destinazione e le impostazioni di ripristino:
-
-
-[discrete]
-===== Selezione della destinazione
-
++
 [role="tabbed-block"]
 ====
 .Ripristina nella posizione originale
 --
-[NOTE]
-====
-Se ripristini PDB o tablespace PDB a uno specifico point-in-time o SCN:
-
-* Seleziona solo un PDB. Il ripristino point-in-time non è compatibile con il ripristino di più PDB.
-* PDB $SEED non può essere selezionato per il ripristino point-in-time.
-* Il ripristino del file di controllo non può essere combinato con il ripristino point-in-time di PDB o tablespace.
-* Assicurati che il backup dei dati e i backup dei log necessari siano catalogati.
-
-
-====
-. *Impostazioni di destinazione*:
-. Seleziona cosa vuoi ripristinare:
+.. Nella sezione *Impostazioni destinazione*, procedi come segue:
 +
-** Seleziona *Tutti i file di dati* per ripristinare l'intero database o container database (CDB).
-** Seleziona *Pluggable databases (PDBs)* per ripristinare uno o più PDB da un CDB senza influire sugli altri PDB nel container. Poi seleziona i PDB dall'elenco.
-** Seleziona *Tablespace del database collegabile (PDB)* (visualizzati come *Tablespace* per un database non-CDB) per ripristinare specifici tablespace PDB. Poi, seleziona il PDB e i tablespace.
-
-
-. Facoltativamente, puoi abilitare l'opzione *file di controllo* per ripristinare anche i file di controllo del database. Questa opzione non è disponibile per il ripristino point-in-time o SCN di PDB o tablespace PDB.
-. Facoltativamente, abilita l'opzione *Modifica lo stato del database se necessario per il ripristino e il recupero* per consentire a NetApp Backup and Recovery di gestire lo stato del database a seconda del tipo di recupero.
-. Facoltativamente, puoi abilitare l'opzione *Forza ripristino sul posto* per utilizzare un metodo di ripristino più rapido per i database SAN/ASM, saltando il controllo di convalida dei file esterni. Il database e il gruppo di dischi ASM vengono ripristinati al punto di creazione del backup.
-. Specifica il percorso dei file di log di archivio esterni se ripristini PDB o tablespace PDB a un punto specifico nel tempo o a uno SCN. Inserisci il percorso in cui RMAN crea l'istanza ausiliaria per eseguire il ripristino. Inserisci un full path del file system che inizia con "/" o un gruppo di dischi ASM che inizia con "+". Usa i pulsanti "plus" e "minus" accanto al campo di inserimento testo per aggiungere o rimuovere percorsi.
-. Facoltativamente, puoi abilitare l'opzione *Apri il database o container database in modalità LETTURA-SCRITTURA dopo il ripristino* per aprire i database in modalità LETTURA-SCRITTURA dopo il ripristino. Questo rende online i tablespace ripristinati.
-. *Prescrizioni e postscrizioni*:
+... Per i database RAC, seleziona il nodo RAC su cui eseguire il ripristino. Questa opzione appare solo per i database RAC.
+... Seleziona cosa vuoi ripristinare:
 +
-** *Prescript*: Facoltativamente, abilita questa opzione e inserisci il full path di uno script che deve essere eseguito prima dell'operazione di ripristino e gli eventuali argomenti che lo script accetta.
-** *Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+**** Seleziona *Tutti i file di dati* per ripristinare l'intero database o container database (CDB).
+**** Seleziona *Pluggable databases (PDBs)* per ripristinare uno o più PDB da un CDB senza influire sugli altri PDB nel container. Poi seleziona i PDB dall'elenco.
+**** Seleziona *Tablespace del database collegabile (PDB)* (visualizzati come *Tablespace* per un database non-CDB) per ripristinare specifici tablespace PDB. Poi, seleziona il PDB e i tablespace.
 
 
-. Scegli un valore di timeout per lo script. Se lo script non viene eseguito entro questo periodo di tempo, il ripristino procederà comunque.
-. Selezionare *Ripristina*.
+... Facoltativamente, puoi abilitare l'opzione *File di controllo* per ripristinare anche i file di controllo del database. Questa opzione non può essere selezionata per il recovery point-in-time o SCN di PDB o tablespace PDB.
+... Facoltativamente, abilita l'opzione *Modifica lo stato del database se necessario per il ripristino e il recupero* per consentire a NetApp Backup and Recovery di gestire lo stato del database a seconda del tipo di recupero.
+... Facoltativamente, puoi abilitare l'opzione *Force in place restore* per eseguire un rispristino in-place quando sono stati aggiunti nuovi datafile dopo il backup, o quando LUN sono stati aggiunti, eliminati o ricreati in un gruppo di dischi LVM. Questa opzione ignora il controllo dei file esterni; il recovery del database procede utilizzando l'opzione di restore che hai selezionato.
+... Specifica i percorsi dei file di log di archivio esterni nel campo *Percorsi dei file di log di archivio esterni* se stai ripristinando PDB o tablespace a un point-in-time o SCN specifico e i log di archivio non si trovano nella posizione configurata. Inserisci un percorso del file system che inizia con  `/` o un gruppo di dischi ASM che inizia con  `+`. Usa i pulsanti "più" e "meno" accanto al campo di inserimento testo per aggiungere o rimuovere percorsi. Questo campo non viene visualizzato quando ripristini da snapshot senza recovery.
+... Facoltativamente, abilita l'opzione *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il recovery* e seleziona una sotto-opzione che corrisponde all'ambito del ripristino (queste opzioni non vengono visualizzate quando esegui il ripristino da snapshot senza recovery):
++
+**** *Tutti i datafile*: Apri il database o il container database in modalità READ-WRITE dopo il recovery.
+**** *PDB o tablespace PDB*: Apri i database collegabili in modalità LETTURA-SCRITTURA dopo il recovery.
+**** *Tablespace non CDB*: Porta online i tablespace dopo il recovery.
+
+
+
+
+.. Nella sezione *Prescrizioni e postscrizioni*, fai quanto segue:
++
+... *Prescript*: Facoltativamente, abilita questa opzione e inserisci il full path di uno script che deve essere eseguito prima dell'operazione di ripristino e gli eventuali argomenti che lo script accetta.
+... *Postscript*: facoltativamente, abilitare questa opzione e immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+... Scegli un valore di timeout per lo script. Se lo script non viene eseguito entro questo periodo di tempo, il ripristino procederà comunque.
+
+
 
 
 --
@@ -162,3 +194,5 @@ Non disponibile per i carichi di lavoro di database Oracle in questa versione di
 
 --
 ====
+. Selezionare *Ripristina*.
+
