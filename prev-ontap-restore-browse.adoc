@@ -136,7 +136,7 @@ Quando si ripristina un volume da un file di backup, NetApp Backup and Recovery 
 
 NOTE: Quando si ripristina un volume abilitato SnapLock, il volume ripristinato mantiene la protezione SnapLock solo se la destinazione di storage è abilitata WORM. Se si ripristina su una destinazione non-WORM, lo stato SnapLock viene rimosso dal volume ripristinato.
 
-Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versione successiva oppure su un sistema ONTAP locale che esegue ONTAP 9.14.1, sarà possibile eseguire un'operazione di _ripristino rapido_. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire l'accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume anziché ripristinare l'intero file di backup.  Il ripristino rapido non è consigliato per applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup in storage archiviati.
+Quando ripristini un backup cloud su un sistema Cloud Volumes ONTAP che utilizza ONTAP 9.13.0 o versioni successive oppure su un sistema ONTAP on-premises con ONTAP 9.14.1, hai la possibilità di eseguire un'operazione di _ripristino rapido_. Il ripristino rapido è ideale per situazioni di disaster recovery in cui devi fornire accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup su un volume invece di ripristinare l'intero file di backup. Il ripristino rapido non è consigliato per applicazioni sensibili alle prestazioni o sensibile alla latenza e non è supportato con backup in storage archiviato.
 
 
 NOTE: Il ripristino rapido è supportato per i volumi FlexGroup solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.12.1 o superiore. È supportato per i volumi SnapLock solo se il sistema di origine eseguiva ONTAP 9.11.0 o superiore.
@@ -185,7 +185,11 @@ link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristin
 ** *Ripristino rapido*: i volumi e i dati ripristinati saranno disponibili immediatamente. Non utilizzare questa opzione su volumi che richiedono prestazioni elevate perché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
 
 
-. Selezionando *Ripristina* si torna alla Dashboard di ripristino, dove è possibile esaminare l'avanzamento dell'operazione di ripristino.
+. Facoltativamente, puoi abilitare *Dai priorità a questo ripristino rispetto alla coda di processi esistente* per assegnare a questa operazione di ripristino una priorità più alta. Quando abilitata, altri processi in esecuzione potrebbero essere sospesi o ritardati per consentire a questo ripristino di procedere.
+. Selezionare *Ripristina*.
++
+Torna alla dashboard di ripristino così puoi controllare lo stato di avanzamento dell'operazione di ripristino.
+
 
 
 .Risultato
