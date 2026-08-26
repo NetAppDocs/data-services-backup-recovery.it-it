@@ -460,7 +460,7 @@ Assicurati che la tua istanza Hyper-V soddisfi requisiti specifici per individua
 
 |===
 .Requisiti hardware per l'host Hyper-V
-* Sono supportati host autonomi e in cluster FCI
+* Sono supportati host standalone e configurazioni di failover cluster
 * Almeno 1 GB di RAM per il plug-in NetApp Hyper-V sull'host Hyper-V
 * Spazio minimo di installazione e registro di 5 GB per il plug-in sull'host Hyper-V
 +

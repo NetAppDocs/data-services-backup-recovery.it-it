@@ -14,7 +14,7 @@ summary: È possibile proteggere le macchine virtuali Hyper-V dai sistemi ONTAP 
 
 
 [role="lead"]
-Usa NetApp Backup and Recovery per eseguire il backup e il ripristino di VM Hyper-V autonome, istanze di cluster FCI e VM con provisioning SCVMM ospitate su una CIFS share.
+Utilizza NetApp Backup and Recovery per eseguire il backup e il ripristino di VM Hyper-V autonome, istanze di cluster di failover e VM con provisioning SCVMM ospitate su una CIFS share.
 
 Puoi eseguire il backup dei carichi di lavoro Hyper-V su Amazon S3 o StorageGRID e ripristinarli su un host Hyper-V locale.
 
