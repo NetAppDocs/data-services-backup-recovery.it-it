@@ -25,6 +25,9 @@ Individua gli host KVM e le macchine virtuali in NetApp Backup and Recovery cosÃ
 
 Aggiungi informazioni sulla piattaforma di gestione e sull'host KVM e lascia che NetApp Backup and Recovery rilevi i carichi di lavoro.
 
+
+NOTE: Dopo aver aggiunto un sistema storage a NetApp Console, attendi qualche minuto prima di scoprire le risorse. Scoprire le risorse immediatamente dopo aver aggiunto un sistema storage puÃ² causare il fallimento della scoperta.
+
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . In *Carichi di lavoro*, seleziona il riquadro *KVM*.

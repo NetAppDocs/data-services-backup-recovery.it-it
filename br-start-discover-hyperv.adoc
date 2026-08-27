@@ -26,6 +26,9 @@ Scopri le macchine virtuali Hyper-V in NetApp Backup and Recovery così puoi pro
 Aggiungi le informazioni sull'host Hyper-V per consentire a NetApp Backup and Recovery di individuare le macchine virtuali. In ogni agente della Console, seleziona i sistemi in cui vuoi individuare le risorse.
 
 
+NOTE: Dopo aver aggiunto un sistema storage a NetApp Console, attendi qualche minuto prima di scoprire le risorse. Scoprire le risorse immediatamente dopo aver aggiunto un sistema storage può causare il fallimento della scoperta.
+
+
 NOTE: Quando si aggiungono host Hyper-V e si individuano risorse, NetApp Backup and Recovery installa il plug-in NetApp Hyper-V e il plug-in NetApp SnapCenter Windows FileSystem sull'host Hyper-V per facilitare la gestione e la protezione delle macchine virtuali.
 
 .Passi
