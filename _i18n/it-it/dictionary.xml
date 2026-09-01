@@ -5627,7 +5627,6 @@
   <block id="e90dd1da7e3beb4b00ec4d71a841c82a" category="paragraph">Utilizza il ripristino dei file guest per ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows o Linux.</block>
   <block id="7d11f0d164b3c2f24ac6ebba24d776fd" category="section-title">Workflow di ripristino del file guest</block>
   <block id="132ce8102afdf85562e35cc5b0159f1e" category="paragraph">Il ripristino dei file guest include i seguenti passaggi:</block>
-  <block id="fa48228aaf71277e6bc2d05f062b62bb" category="list-text">È necessario che VMware Tools sia installato e in esecuzione.</block>
   <block id="b7617062b51a8726ceb7fc1cef74fb14" category="paragraph">NetApp Backup and Recovery utilizza le informazioni di VMware Tools per stabilire una connessione al sistema operativo guest VMware.</block>
   <block id="b3e82e6ed4e9c1fea48b8efb84514fc0" category="list-text">Il disco virtuale che colleghi deve essere in un backup di NetApp Backup and Recovery.</block>
   <block id="7882721ef3524a68e1e9dab8597db0a1" category="list-text">Per i file con nomi di caratteri non inglesi, devi ripristinarli in una directory, non come singolo file.</block>
@@ -5960,4 +5959,6 @@
   <block id="e9595cd472d344aa937e119b35d5ad88" category="list-text">Quando ripristini da Amazon S3, seleziona l'IPspace nel cluster ONTAP in cui risiederà il volume di destinazione, inserisci la access key e la secret key per l'utente che hai creato per dare al cluster ONTAP accesso al bucket S3 e, se vuoi, scegli un endpoint VPC privato per un trasferimento sicuro dei dati. Se usi un endpoint VPC privato, questo ha la precedenza su qualsiasi connessione proxy configurata.</block>
   <block id="abefb361c80a6971ec2a25acc5be3b04" category="list-text">Quando ripristini da Amazon S3, seleziona l'IPspace nel cluster ONTAP in cui risiederà il volume di destinazione, inserisci la access key e la secret key per l'utente che hai creato per dare al cluster ONTAP accesso al bucket S3 e, facoltativamente, scegli un endpoint VPC privato per il trasferimento sicuro dei dati. Se usi un endpoint VPC privato, questo ha la precedenza su qualsiasi connessione proxy configurata. <block ref="f17b430f3a657465dd612b247a0f776f" category="inline-link-macro-rx"></block>.</block>
   <block id="bc2daf193cd172b36617e5109a2ade38" category="admonition">Dopo aver aggiunto un sistema storage a NetApp Console, attendi qualche minuto prima di scoprire le risorse. Scoprire le risorse immediatamente dopo aver aggiunto un sistema storage può causare il fallimento della scoperta.</block>
+  <block id="47e1adf864d09fb0e60489239284fdcf" category="list-text">La porta 443 (HTTPS) sul server VMware ESXi deve essere aperta per la comunicazione bidirezionale.</block>
+  <block id="b8b48a359182777f9c1858fe64bd41cf" category="list-text">VMware Tools deve essere installato e in esecuzione sul sistema operativo guest.</block>
 </blocks>

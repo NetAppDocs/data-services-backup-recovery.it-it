@@ -48,7 +48,8 @@ Ripristina i file o le cartelle selezionati in una posizione specificata.
 
 Verifica tutti i requisiti prima di ripristinare file o cartelle da un VMDK.
 
-* È necessario che VMware Tools sia installato e in esecuzione.
+* La porta 443 (HTTPS) sul server VMware ESXi deve essere aperta per la comunicazione bidirezionale.
+* VMware Tools deve essere installato e in esecuzione sul sistema operativo guest.
 +
 NetApp Backup and Recovery utilizza le informazioni di VMware Tools per stabilire una connessione al sistema operativo guest VMware.
 
