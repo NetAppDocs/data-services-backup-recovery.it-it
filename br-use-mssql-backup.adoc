@@ -101,7 +101,7 @@ Esegui un backup su richiesta prima di apportare modifiche al sistema per garant
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
 . Selezionare un carico di lavoro per visualizzare i dettagli della protezione.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
-. Seleziona la scheda *Gruppi di protezione*, *Istanze* o *Database*.
+. Seleziona la scheda *Gruppi di protezione*, *Gruppi di disponibilità*, *Istanze* o *Database*.
 . Seleziona l'istanza o il database di cui vuoi eseguire il backup.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Esegui il backup ora*.
 . Seleziona la policy da applicare al backup.

@@ -133,6 +133,45 @@ Puoi modificare le informazioni del server vCenter, le credenziali di registrazi
 
 
 
+[[manage-availability-group-information]]
+== Gestisci le informazioni sui gruppi di disponibilità
+
+Gestisci le informazioni sui gruppi di disponibilità per proteggere le risorse, modificare le impostazioni di protezione ed eseguire i backup:
+
+* Proteggere le istanze
+* Modifica le impostazioni di protezione
+* Esegui il backup ora
+
+
+*Ruolo richiesto nella NetApp Console* Super admin di Backup and Recovery o admin di backup di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo di Cloud Volumes ONTAP Admin. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
+
+
+[[protect-availability-groups]]
+=== Proteggi i gruppi di disponibilità
+
+Assegna una policy a un gruppo di disponibilità per gestire la pianificazione e la conservazione della protezione delle risorse.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Seleziona il carico di lavoro che desideri visualizzare e seleziona *Visualizza*.
+. Seleziona la scheda *Gruppi di disponibilità*.
+. Seleziona il gruppo di disponibilità.
+. Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Proteggi*.
+. Seleziona una policy o creane una nuova.
++
+Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
+
+. Fornisci gli script da eseguire prima e dopo il backup.
++
+** *Pre-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente prima che inizi l'azione di protezione. Usa questa opzione per svolgere attività o configurazioni aggiuntive prima del workflow di protezione.
+** *Post-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente al termine dell'azione di protezione. Usa questa opzione per eseguire attività o configurazioni aggiuntive dopo il workflow di protezione.
+
+
+
+
+
+
 [[manage-instance-information]]
 == Gestisci le informazioni dell'istanza
 
@@ -265,6 +304,12 @@ Per informazioni dettagliate sulla creazione di un backup ad hoc, vedi link:br-u
 . Seleziona *Azioni*image:icon-action.png["Icona Azioni"] icona e seleziona *Proteggi*.
 +
 Per dettagli sulla creazione di una policy, vedi link:br-use-policies-create.html["Crea una politica"].
+
+. Fornisci gli script da eseguire prima e dopo il backup.
++
+** *Pre-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente prima che inizi l'azione di protezione. Usa questa opzione per svolgere attività o configurazioni aggiuntive prima del workflow di protezione.
+** *Post-script*: Inserisci il nome e il percorso del file dello script da eseguire automaticamente al termine dell'azione di protezione. Usa questa opzione per eseguire attività o configurazioni aggiuntive dopo il workflow di protezione.
+
 
 
 
