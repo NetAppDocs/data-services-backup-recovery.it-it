@@ -5980,4 +5980,5 @@
   <block id="f4c9691991fd542b1f48cc8fcbdef656" category="list-text">Seleziona la scheda *Gruppi di disponibilità*.</block>
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">Seleziona il gruppo di disponibilità.</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">Seleziona la scheda *Gruppi di protezione*, *Gruppi di disponibilità*, *Istanze* o *Database*.</block>
+  <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Il ripristino di un volume o di un file dall'archivio può richiedere più tempo. Il processo rimane *In corso* nel Job Monitor mentre Backup and Recovery riprova il ripristino in base alla priorità selezionata. Monitora il ripristino nel *Job Monitor*; si completa quando il processo raggiunge uno stato finale, come *Completato* o *Non riuscito*, dopo tutti i tentativi. Non avviare un altro ripristino a meno che il processo non fallisca definitivamente.</block>
 </blocks>

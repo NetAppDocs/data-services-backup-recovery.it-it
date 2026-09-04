@@ -81,9 +81,16 @@ Quanto tempo ci vorrà per ripristinare i miei oggetti archiviati in Amazon S3 G
 | *Archivio S3 Glacier Deep* |  | 12 ore | 48 ore 
 |===
 * *Tempo di ripristino*: tempo necessario per ripristinare i dati dal file di backup nell'archiviazione standard.  Questa volta non c'è differenza rispetto alla tipica operazione di ripristino eseguita direttamente dall'archiviazione Standard, quando non si utilizza un livello di archiviazione.
-
-
++
 Per ulteriori informazioni sulle opzioni di recupero di Amazon S3 Glacier e S3 Glacier Deep Archive, fare riferimento a https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["le FAQ di Amazon su queste classi di archiviazione"^] .
+
+
 
 --
 
+
+[NOTE]
+====
+Il ripristino di un volume o di un file dall'archivio può richiedere più tempo. Il processo rimane *In corso* nel Job Monitor mentre Backup and Recovery riprova il ripristino in base alla priorità selezionata. Monitora il ripristino nel *Job Monitor*; si completa quando il processo raggiunge uno stato finale, come *Completato* o *Non riuscito*, dopo tutti i tentativi. Non avviare un altro ripristino a meno che il processo non fallisca definitivamente.
+
+====
