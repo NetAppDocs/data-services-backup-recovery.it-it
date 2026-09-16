@@ -46,8 +46,17 @@ Raggruppa i carichi di lavoro che vuoi proteggere insieme in un gruppo di protez
 . Inserisci un nome per il gruppo di protezione.
 . Selezionare le VM che si desidera includere nel gruppo di protezione.
 . Selezionare *Avanti*.
-. Selezionare il *criterio di backup* che si desidera applicare al gruppo di protezione.
+. Seleziona un comportamento per i dischi di spanning. Attualmente, *Includi sempre tutti i dischi di spanning* è supportata.
++
+
+NOTE: Per le configurazioni CIFS, NetApp Backup and Recovery protegge automaticamente ogni disco collegato a ciascuna VM nel gruppo di protezione. Questo include i file distribuiti su più volumi ONTAP o sistemi di storage ONTAP (dischi spanning) e i file limitati a una singola posizione (dischi non spanning). Per le configurazioni SAN, tutti i dischi non spanning saranno inclusi nel gruppo di protezione.
+
 . Selezionare *Avanti*.
+. Seleziona la policy di protezione che desideri applicare al gruppo di protezione.
++
+Facoltativamente, puoi selezionare *Crea nuova policy* per creare una nuova policy di protezione. Quando selezioni una policy, i dettagli della policy vengono visualizzati.
+
+. Al termine, selezionare *Avanti*.
 . Rivedere la configurazione.
 . Selezionare *Crea* per creare il gruppo di protezione.
 

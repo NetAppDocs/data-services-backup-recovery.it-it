@@ -35,6 +35,9 @@ Segui questi passaggi per abilitare le funzionalità di anteprima e nascoste per
 
 
 | `"prioritize-restore": true` | Consente di selezionare l'opzione *Dai priorità al ripristino rispetto alla coda di processi esistente* durante il flusso di lavoro di ripristino nell'interfaccia web di NetApp Backup and Recovery. Quando si seleziona questa opzione durante il flusso di lavoro di ripristino, le operazioni di ripristino vengono eseguite con priorità rispetto ad altri processi in coda, in modo da essere eseguite anche quando la coda è occupata. 
+
+
+| `"data-transfer-report": true` | Consente il report giornaliero sul trasferimento dei dati di backup nella scheda Report di NetApp Backup and Recovery per i volumi. Il report fornisce informazioni giornaliere sull'attività di trasferimento dei dati di backup e replica nell'ambiente. 
 |===
 
 

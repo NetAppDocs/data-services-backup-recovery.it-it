@@ -31,9 +31,6 @@ NOTE: Dopo aver aggiunto un sistema storage a NetApp Console, attendi qualche mi
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . In *Carichi di lavoro*, seleziona il riquadro *KVM*.
-+
-Se è la prima volta che accedi a NetApp Backup and Recovery e hai già un sistema nella Console ma nessuna risorsa rilevata, viene visualizzata la pagina "Benvenuto nel nuovo NetApp Backup and Recovery" con l'opzione *Rileva risorse*.
-
 . Seleziona *Scopri risorse*.
 . Inserisci le seguenti informazioni:
 +
@@ -52,15 +49,26 @@ Se è la prima volta che accedi a NetApp Backup and Recovery e hai già un siste
 ... Al termine, seleziona *Aggiungi*.
 
 
-.. *Impostazioni KVM*: aggiungi un nuovo host KVM immettendo le seguenti informazioni:
+.. *Impostazioni KVM*: Fai quanto segue:
 +
-*** *FQDN o indirizzo IP KVM*: immettere l'FQDN o l'indirizzo IP dell'host.
-*** *Credenziali*: immettere il nome utente e la password per l'host KVM.
-*** *Agente console*: seleziona l'agente console da utilizzare per la comunicazione tra Backup and Recovery e l'host KVM.
-*** *Numero porta*: immettere la porta da utilizzare per la comunicazione tra Backup and Recovery e l'host KVM.
-*** *Piattaforma di gestione*: se l'host KVM è gestito e hai aggiunto la piattaforma di gestione a Backup e ripristino, seleziona la piattaforma di gestione dall'elenco.
+... Se non hai ancora memorizzato le credenziali per questo host KVM, seleziona *Aggiungi credenziali*.
++
+**** Selezionare l'agente della console da utilizzare con questo host.
+**** Inserisci un nome per questa credenziale.
+**** Inserisci il nome utente e la password per l'account.
+**** Selezionare *Fatto*.
 
 
+... Aggiungi un nuovo host KVM inserendo le seguenti informazioni:
++
+**** *FQDN o indirizzo IP KVM*: immettere l'FQDN o l'indirizzo IP dell'host.
+**** *Agenti*: Scegli l'agente della Console da usare per la comunicazione tra NetApp Backup and Recovery e l'host KVM.
+**** *Credenziali*: Seleziona una credenziale memorizzata per l'host KVM.
+
+
+
+
+.. *Impostazioni avanzate*: Facoltativamente, inserisci una porta per comunicare con l'host KVM e seleziona la piattaforma di gestione dell'host dall'elenco.
 
 
 . Seleziona *Scopri*.
