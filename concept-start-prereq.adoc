@@ -123,7 +123,7 @@ https://forms.cloud.microsoft/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOmN
 
 Prima di poter proteggere i carichi di lavoro in NetApp Backup and Recovery, è necessario aggiungere un sistema storage ONTAP alla NetApp Console.
 
-https://docs.netapp.com/us-en/console-local/task-discover-storage.html["Aggiungi spazio di archiviazione nella distribuzione locale di NetApp Console"^]
+https://docs.netapp.com/us-en/console-local/task-add-systems.html["Aggiungi spazio di archiviazione nella distribuzione locale di NetApp Console"^]
 
 
 
