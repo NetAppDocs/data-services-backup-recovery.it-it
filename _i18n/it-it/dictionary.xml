@@ -6072,102 +6072,36 @@
   <block id="ec893dccc7ac6d8784a958bfecf4c77c" category="list-text">Rivedi e conferma le impostazioni di download del file o della cartella.</block>
   <block id="7f23c16aa83f6a964740b81d87655f97" category="paragraph">Il tuo browser web gestisce il download; salva l'archivio .tar sul tuo computer locale.</block>
   <block id="90ca43420c8056d84e6e779edc155a8e" category="list-text">Per ripristinare file e cartelle da applicazioni basate su macchine virtuali, è necessario SSH. Verifica che il servizio SSH sia abilitato sugli host di destinazione Linux e che un server OpenSSH sia installato e abilitato sugli host di destinazione Windows.</block>
-  <block id="d4184d6f2694971a164a302498e466fd" category="paragraph">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD == 16 settembre 2026</block>
-  <block id="70a78291e1631b6cde41e3ade59523c8" category="paragraph">== 21 settembre 2026</block>
-  <block id="a407b07e11f8594de68b112c2830fda6" category="paragraph">=== Miglioramenti ai carichi di lavoro di Kubernetes In questa versione, i carichi di lavoro di Kubernetes introducono i seguenti miglioramenti:</block>
-  <block id="89b0b0973ed7d73d233126a750ddfd6b" category="paragraph">Per dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a<block ref="1288e5e7d4fc4b4cb3f5e18b91f79147" category="inline-link-rx"></block>. &gt;&gt;&gt;&gt;&gt;&gt;&gt; 13d089e3cffcfba837d21c436e1c43e2f3068e74</block>
-  <block id="8c728109c4958c7277d43ffe29c8ef0a" category="paragraph">== 17 agosto 2026</block>
-  <block id="6d069869f2c6037ee8457ac4c7624330" category="paragraph">=== Miglioramenti ai carichi di lavoro Hyper-V In questa versione, i carichi di lavoro Hyper-V introducono il seguente miglioramento:</block>
-  <block id="c3c5707bca281a527a83cf55e71d695a" category="paragraph">=== Miglioramenti ai carichi di lavoro di Oracle Database In questa versione, i carichi di lavoro di Oracle Database introducono i seguenti miglioramenti:</block>
-  <block id="b54e959e87bb5698a736e59d6f5a002d" category="paragraph">== 10 agosto 2026</block>
-  <block id="f287b5654466c3abdeb336ac00d4d8f1" category="paragraph">=== Miglioramenti generali al backup e al ripristino NetApp</block>
-  <block id="a82be18251af529c0b49e572ccfd11f9" category="paragraph">=== Miglioramenti ai carichi di lavoro VMware In questa versione, VMware workloads introduce i seguenti miglioramenti:</block>
-  <block id="ac971325f67b7b3a698cbc8351dcde0b" category="paragraph">=== Miglioramenti ai carichi di lavoro di ONTAP Volumes In questa versione, i carichi di lavoro di ONTAP Volumes introducono i seguenti miglioramenti:</block>
-  <block id="d09d785bf301546672ec03c2b0c11bfa" category="paragraph">== 13 luglio 2026</block>
-  <block id="53f516dbc86d14a7304ee1e88bd3b704" category="paragraph">=== Supporto multi-bucket migliorato per tutti i carichi di lavoro NetApp Backup and Recovery ora supporta la protezione dei carichi di lavoro all'interno di un sistema con un massimo di 100 bucket su diversi provider cloud. ONTAP 9.19.1 o versioni successive è necessario per supportare più di 6 bucket per sistema.</block>
-  <block id="6c6621b112cd44e3f19750e5a39791d9" category="paragraph">== 15 giugno 2026</block>
-  <block id="40b307f05c7032c9f85e40d510400893" category="paragraph">== 08 giugno 2026</block>
-  <block id="f8ec275b7730fc2e595ba65b1c058574" category="paragraph">=== Miglioramenti ai carichi di lavoro di ONTAP Volumes In questa versione, i carichi di lavoro di ONTAP Volumes introducono il seguente miglioramento:</block>
-  <block id="4ec67842f40ea54ea5b438a562453cf1" category="paragraph">=== Miglioramenti ai carichi di lavoro Hyper-V In questa versione, i carichi di lavoro Hyper-V introducono i seguenti miglioramenti:</block>
-  <block id="dce1d5e7ae21e20ee89f0b1f101c9427" category="paragraph">=== Miglioramenti ai carichi di lavoro VMware In questa versione, VMware workloads introduce il seguente miglioramento:</block>
-  <block id="b1a3c2a41bb4bb53c561a85ae0cf1248" category="paragraph">== 11 maggio 2026</block>
-  <block id="6f53909f8036ed38d1032aa4b3944e9e" category="paragraph">=== Miglioramenti ai carichi di lavoro KVM In questa versione, i carichi di lavoro KVM introducono il seguente miglioramento:</block>
-  <block id="ccc91e40b552042057b233583604db54" category="paragraph">=== Miglioramenti ai carichi di lavoro di Oracle Database In questa versione, i carichi di lavoro di Oracle Database introducono i seguenti miglioramenti:</block>
-  <block id="17be7a4c323a9fc3fab615c02397fd9f" category="paragraph">== 05 maggio 2026</block>
-  <block id="f16933ec3d316d5e96a1236163dfb36d" category="paragraph">== 20 aprile 2026</block>
-  <block id="b72d8649b2b356cbe5babbf6579add93" category="paragraph">== 13 aprile 2026</block>
-  <block id="9126c21d90c9d7085f75c4d7f247aab6" category="paragraph">=== Miglioramenti ai carichi di lavoro Kubernetes In questa versione, i carichi di lavoro Kubernetes introducono i seguenti miglioramenti alle policy di protezione:</block>
-  <block id="7e78fd6a69cbbc1247db21cd6c8e13e5" category="paragraph">=== Miglioramenti ai carichi di lavoro KVM In questa versione, i carichi di lavoro KVM introducono i seguenti miglioramenti:</block>
-  <block id="f337e8ca08eaa583042989c10ca7899d" category="paragraph">== 31 marzo 2026</block>
-  <block id="0815409b15848adeffaa0d8a922efd2f" category="paragraph">=== Miglioramenti ai carichi di lavoro di Oracle Database In questa versione, i carichi di lavoro di Oracle Database introducono il seguente miglioramento:</block>
-  <block id="4ae8b6ebbea1364ad8203f39139a37d8" category="paragraph">== 16 marzo 2026</block>
-  <block id="51bb72becbf87859f54a607272e1a89b" category="paragraph">== 09 marzo 2026</block>
-  <block id="67c4fddfe3106e9875c00dbee11011c7" category="paragraph">=== Miglioramenti ai carichi di lavoro di ONTAP Volumes In questa versione, i carichi di lavoro di ONTAP Volumes introducono le seguenti funzionalità migliorate:</block>
-  <block id="cfb83f51d6065f322a228e358fc2f05c" category="paragraph">=== Miglioramenti ai carichi di lavoro VMware In questa versione, i carichi di lavoro VMware introducono le seguenti funzionalità migliorate:</block>
-  <block id="fba7dd747540d75dba48cab698c23888" category="paragraph">== 23 febbraio 2026</block>
-  <block id="ec22006b7033685da69327f9cacc8d52" category="paragraph">=== Carichi di lavoro KVM supportati nella disponibilità generale (GA) Il supporto per i carichi di lavoro KVM è ora generalmente disponibile (GA) in NetApp Backup and Recovery.</block>
-  <block id="c5722c71a913190d380bf04e7a6ed4c8" category="paragraph">=== Carichi di lavoro Kubernetes supportati nella disponibilità generale (GA) Il supporto per i carichi di lavoro Kubernetes è ora generalmente disponibile (GA) in NetApp Backup and Recovery. Questa versione dei carichi di lavoro Kubernetes introduce anche le seguenti funzionalità migliorate:</block>
-  <block id="af3efc79adefb74a231f94f276e2ba5a" category="paragraph">== 09 febbraio 2026</block>
-  <block id="216eef97ecaa45079d18b2d34115bf4f" category="paragraph">=== Carichi di lavoro Microsoft Hyper-V supportati nella disponibilità generale (GA) Il supporto per i carichi di lavoro Microsoft Hyper-V è ora generalmente disponibile (GA) in NetApp Backup and Recovery.</block>
-  <block id="11e010e32e419136b508c8eef8c92091" category="paragraph">=== Carichi di lavoro VMware supportati nella disponibilità generale (GA) Il supporto per i carichi di lavoro VMware è ora generalmente disponibile (GA) in NetApp Backup and Recovery.</block>
-  <block id="8dd0df63c0a95649c686776beb799237" category="paragraph">=== Miglioramenti ai carichi di lavoro di Kubernetes Questa versione dei carichi di lavoro di Kubernetes introduce le seguenti funzionalità migliorate:</block>
-  <block id="9cc5423dda6fd5f38f97ac0bdeff0f58" category="paragraph">=== Miglioramenti ai carichi di lavoro di Oracle Database Questa versione dei carichi di lavoro di Oracle Database introduce le seguenti funzionalità migliorate:</block>
-  <block id="2d659e9a280c65c8deb8cc284fe3e14b" category="paragraph">== 19 gennaio 2026</block>
-  <block id="6fe165085cb2c3700be8e33e42e78a4a" category="paragraph">=== Miglioramenti ai carichi di lavoro dei volumi ONTAP Questa versione dei carichi di lavoro dei volumi ONTAP introduce la seguente funzionalità migliorata:</block>
-  <block id="31297f3613c2e7b4115c474b28b1bff4" category="paragraph">=== Miglioramenti ai carichi di lavoro VMware Questa versione dei carichi di lavoro VMware introduce le seguenti funzionalità migliorate:</block>
-  <block id="cd89288e9d9f0858cc62aea350694825" category="paragraph">=== Miglioramenti all'anteprima dei carichi di lavoro Hyper-V Questa versione dei carichi di lavoro Hyper-V introduce le seguenti funzionalità migliorate:</block>
-  <block id="17587842376df599ec875a3e9d797fdb" category="paragraph">=== Miglioramenti all'anteprima dei carichi di lavoro KVM</block>
-  <block id="6e9768faae23340967eb21cf6919a719" category="paragraph">== 08 dicembre 2025</block>
-  <block id="a67d7f93f01478c246c7ca4cf3e556f8" category="paragraph">=== Miglioramenti all'anteprima di VMware workloads La versione di anteprima di VMware workloads introduce le seguenti funzionalità migliorate:</block>
-  <block id="c39569cae750214b7a10df9d4fc733c8" category="paragraph">== 06 ottobre 2025</block>
-  <block id="442a41c8c8e85223fb05ea3c47074d13" category="paragraph">=== BlueXP backup and recovery ora è NetApp Backup and Recovery</block>
-  <block id="803d3c219b80ad02de97580ab3a0aa72" category="paragraph">=== BlueXP ora è NetApp Console</block>
-  <block id="9c1f0b5f236d9f3bfe8051ad4f458d03" category="paragraph">=== Supporto per carichi di lavoro Hyper-V in anteprima privata</block>
-  <block id="6ed94356caa3f2763b710210e9cc58e0" category="paragraph">=== Supporto per carichi di lavoro KVM in anteprima privata</block>
-  <block id="a1c0d1219a2e15147d875bb6a67849c4" category="paragraph">=== Miglioramenti dell'anteprima di Kubernetes La versione di anteprima dei carichi di lavoro di Kubernetes introduce le seguenti funzionalità migliorate:</block>
-  <block id="a618eb256af85c299727bbfbd2b6522d" category="paragraph">=== Miglioramenti dell'anteprima di VMware La versione di anteprima di VMware workloads introduce le seguenti funzionalità migliorate:</block>
-  <block id="f5cdc7264c2c276ec322a71e23b24df2" category="paragraph">=== Supporto per carichi di lavoro Oracle Database in anteprima privata</block>
-  <block id="b474bc0b0a63b4bbc898ae1fe117f1ba" category="paragraph">=== ONTAP Miglioramenti ai carichi di lavoro dei volumi ONTAP Questa versione dei carichi di lavoro dei volumi ONTAP introduce la seguente funzionalità migliorata:</block>
-  <block id="d637bd8fac0a994563b26e03c7073dca" category="paragraph">== 25 agosto 2025</block>
-  <block id="ada048348a523ff085b1b54571c32450" category="paragraph">=== Supporto per la protezione dei carichi di lavoro VMware in Preview</block>
-  <block id="dcda6e92dec31087dfd18abb09cd8a8b" category="paragraph">=== Indicizzazione ad alte prestazioni per AWS, Azure e GCP è generalmente disponibile</block>
-  <block id="473aeee1269d3ae3a032ccecc98b140a" category="paragraph">== 12 agosto 2025</block>
-  <block id="25a29f850eda37d86174a804209256e7" category="paragraph">=== Carico di lavoro di Microsoft SQL Server supportato nella disponibilità generale (GA)</block>
-  <block id="19e2d12956734eb717874b0c2525f1c7" category="paragraph">=== Miglioramenti al carico di lavoro dei volumi ONTAP</block>
-  <block id="80762cca91d062aa19d9ba117f7bcb02" category="paragraph">== 28 luglio 2025</block>
-  <block id="b35d6e4fcd3ada17b29bd076e8712792" category="paragraph">=== Supporto per i carichi di lavoro Kubernetes in anteprima</block>
-  <block id="0795a0a6340a6317bcf372e5b47219ff" category="paragraph">== 14 luglio 2025</block>
-  <block id="22789abec35e37054d455eb8859c6d1a" category="paragraph">=== Dashboard del volume ONTAP migliorata</block>
-  <block id="f28686752015d1a89012da407bfdf2d9" category="paragraph">=== Supporto per i carichi di lavoro di Microsoft SQL Server come Public Technology Preview</block>
-  <block id="922f0a9687942be7fb7e984a6cc141e9" category="paragraph">== 9 giugno 2025</block>
-  <block id="a172b36c5c5acfe05abd9a21e1ab4eb8" category="paragraph">=== Aggiornamenti del supporto per il catalogo indicizzato A febbraio 2025, abbiamo introdotto la funzionalità di indicizzazione aggiornata (Indexed Catalog v2) che usi durante il metodo Search &amp; Restore per il ripristino dei dati. La versione precedente ha migliorato significativamente le prestazioni di indicizzazione dei dati negli ambienti on-premises. Con questa versione, il catalogo di indicizzazione è ora disponibile negli ambienti Amazon Web Services, Microsoft Azure e Google Cloud Platform (GCP).</block>
-  <block id="92735fea630fde61126769d266fe2cce" category="paragraph">=== Endpoint di collegamento privato e endpoint di servizio di Azure</block>
-  <block id="28a95f34107e73fb05adcb4edd7a11f4" category="paragraph">=== Supporto per SnapMirror alla risincronizzazione cloud su ONTAP S3</block>
-  <block id="6cc3d130f68a0ffb5aaf8589cce54a9f" category="paragraph">=== Porta il tuo bucket per StorageGRID</block>
-  <block id="a9b1fae739f7787ee78ddd66bdcf424d" category="paragraph">== 13 maggio 2025</block>
-  <block id="b14f61a5b0ebc487f0fd465e2c49e32e" category="paragraph">=== SnapMirror to Cloud Resync per le migrazioni di volumi</block>
-  <block id="b8236f82b43383e75b5279f12c6f169f" category="paragraph">=== Supporto per archivio di oggetti MinIO di terze parti (Anteprima)</block>
-  <block id="ace15ffb1c420f4e688c4d753c91abc2" category="paragraph">== 16 aprile 2025</block>
-  <block id="0070d3e95ff1aae8d3ffc352f20de8de" category="paragraph">=== Miglioramenti all'interfaccia utente</block>
-  <block id="bdb4578e43eced02c733a769b0983420" category="paragraph">=== Dashboard del volume migliorata (Preview)</block>
-  <block id="5815b41fc4b0b5fc6628f93e7610da48" category="paragraph">=== Supporto per archivio di oggetti Wasabi di terze parti (Anteprima)</block>
-  <block id="8db98b381aa8810a494943784a20424c" category="paragraph">==== Introduzione a Wasabi</block>
-  <block id="bd3ba1c2e4596f28a9cd1ca91aedd3b4" category="paragraph">==== Limitazioni della modalità Anteprima</block>
-  <block id="452567068925868042d7a22e17ca9307" category="paragraph">== 17 marzo 2025</block>
-  <block id="0cb3dbd97c09eff0ce8678fb64b0f0a2" category="paragraph">=== Navigazione snapshot SMB</block>
-  <block id="01498e8e7a0ef73ed93903ae97697e76" category="paragraph">=== Aggiornamento dell'ambiente AWS GovCloud</block>
-  <block id="97ce2736e4c8bd5731515aa43edd75cb" category="paragraph">=== Limiti di conservazione delle policy di backup</block>
-  <block id="7c58d26e0365b4a83e4f1d9c7e4ccc46" category="paragraph">=== SnapMirror Cloud risincronizzazione</block>
-  <block id="bfaeb1fd694cc75589ab779429dcc4ff" category="paragraph">== 21 febbraio 2025</block>
-  <block id="9c585448431d433a9610826f9f851c10" category="paragraph">=== indicizzazione ad alte prestazioni</block>
-  <block id="6010004be43684b47a6d391957d245a8" category="paragraph">=== Miglioramenti delle prestazioni della ricerca globale</block>
-  <block id="aa58847eb73583c7e7eb13db78ec9fb7" category="paragraph">== 13 febbraio 2025</block>
-  <block id="08b91ed20ac84659f4ba722f1d440782" category="paragraph">=== NetApp Backup and Recovery Versione di anteprima</block>
-  <block id="43c88f32a9f03a6d424d2ab921e0bd52" category="paragraph">== 22 novembre 2024</block>
-  <block id="c53ce5def215e3c47008afa5fc69244c" category="paragraph">=== Modalità di protezione SnapLock Compliance e SnapLock Enterprise</block>
-  <block id="b86cd1f26c5daf16ef31b85dc0ee88fd" category="paragraph">=== Indicizzazione per il processo di Search &amp; Restore nella pagina Volumi Prima di poter utilizzare Search &amp; Restore, devi abilitare l'indicizzazione su ogni sistema di origine da cui vuoi ripristinare i dati del volume. Questo permette all'Indexed Catalog di tenere traccia dei file di backup per ogni volume. La pagina Volumi ora mostra lo stato dell'indicizzazione:</block>
-  <block id="79a2e1e9f6f67a669beec92e025f60e3" category="paragraph">== 27 settembre 2024</block>
-  <block id="40df578728b85125ad87761e419299c8" category="paragraph">=== Supporto Podman su RHEL 8 o 9 con Browse and Restore NetApp Backup and Recovery ora supporta il ripristino di file e cartelle su Red Hat Enterprise Linux (RHEL) versioni 8 e 9 utilizzando il motore Podman. Questo si applica al metodo Browse and Restore di NetApp Backup and Recovery.</block>
-  <block id="58d5a4dc289b7f40dd73921b8409511a" category="paragraph">=== Un'indicizzazione del catalogo più veloce migliora la funzione Search and Restore. Questa versione include un indice del catalogo migliorato che completa l'indicizzazione di base molto più rapidamente. Un'indicizzazione più veloce ti permette di utilizzare la funzione Search and Restore più rapidamente.</block>
   <block id="b551b4701a9ff2b5829b492b9fb53e09" category="sidebar">Ripristina o scarica file e cartelle da un'applicazione basata su macchina virtuale</block>
+  <block id="6aa44f095b485d103684660cbb7f9328" category="section-title">21 settembre 2026</block>
+  <block id="9d26347bf9049c082d482aa87b79d702" category="section-title">16 settembre 2026</block>
+  <block id="7c3780c8bbc09e634d77ec9249acfb5c" category="section-title">17 agosto 2026</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 agosto 2026</block>
+  <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">13 luglio 2026</block>
+  <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">15 giugno 2026</block>
+  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">8 giugno 2026</block>
+  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 maggio 2026</block>
+  <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">05 maggio 2026</block>
+  <block id="6dba6d956d3e495df0c0575cd1b23218" category="section-title">20 aprile 2026</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">13 aprile 2026</block>
+  <block id="d8fdc2681cdec613a02ac551c44a6e8c" category="section-title">31 marzo 2026</block>
+  <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 marzo 2026</block>
+  <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">9 marzo 2026</block>
+  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">23 febbraio 2026</block>
+  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">9 febbraio 2026</block>
+  <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">19 gennaio 2026</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">8 dicembre 2025</block>
+  <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">06 ottobre 2025</block>
+  <block id="0428e48e7f58929099e52febd0558232" category="section-title">25 agosto 2025</block>
+  <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">12 agosto 2025</block>
+  <block id="67c66b3b8df7b2dee0354dd9f9fcec17" category="section-title">28 luglio 2025</block>
+  <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">14 luglio 2025</block>
+  <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">9 giugno 2025</block>
+  <block id="71df7d09aaee8e6796df0c3d10989fbd" category="section-title">13 maggio 2025</block>
+  <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">16 aprile 2025</block>
+  <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">17 marzo 2025</block>
+  <block id="09d7c2dac047caa965175fead07159aa" category="section-title">21 febbraio 2025</block>
+  <block id="6cdd743b39af79062eb92fec70569354" category="section-title">13 febbraio 2025</block>
+  <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">22 novembre 2024</block>
+  <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">27 settembre 2024</block>
 </blocks>
