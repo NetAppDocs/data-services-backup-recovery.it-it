@@ -1,0 +1,17 @@
+= Miglioramenti dei carichi di lavoro Kubernetes
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro Kubernetes
+
+In questa versione, Kubernetes workloads introduce i seguenti miglioramenti:
+
+* *Trident Protect 26.09*: Questa versione include Trident Protect 26.09.
+* *Controllo degli accessi basato sui ruoli a livello di cluster e di namespace*: Durante la fase di rilevamento di un cluster Kubernetes, puoi controllare l'accesso alle risorse selezionando un progetto o una cartella da associare al nuovo cluster. Puoi anche registrare namespace specifici per il controllo degli accessi. Questo permette un controllo degli accessi più granulare sia a livello di cluster che di namespace.
+* *Ripristino di file e cartelle*: Ora puoi ripristinare o scaricare file e cartelle specifici dai backup delle applicazioni basate su macchine virtuali Kubernetes.
+
+
+Per dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Scopri come proteggere i carichi di lavoro Kubernetes con NetApp Backup and Recovery"].

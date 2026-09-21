@@ -39,13 +39,27 @@ Quando scopri un cluster attualmente protetto con Trident Protect, tutte le pian
 
 . Selezionare il tipo di carico di lavoro *Kubernetes*.
 . Inserisci un nome cluster e scegli un agente Console da usare con il cluster.
+. Facoltativamente, seleziona una cartella o un progetto per determinare dove si applica il controllo degli accessi a questo cluster. Se non selezioni una cartella o un progetto, la risorsa IAM del cluster viene aggiunta a livello di organizzazione:
++
+** *Cartella*: Seleziona questa opzione per controllare l'accesso degli utenti alle risorse del cluster a livello di cartella e seleziona una cartella dall'elenco.
++
+
+NOTE: Se un cluster Kubernetes o un namespace è associato a una cartella, gli utenti hanno anche bisogno del ruolo *Backup and Recovery viewer* per il progetto selezionato nel selettore di progetto in alto a destra. Questo accesso a livello di progetto permette agli utenti di aprire la home page di Backup and Recovery. I ruoli assegnati a livello di cartella (ad esempio, Backup and Recovery backup admin) determinano cosa possono fare gli utenti dopo essere entrati nella pagina del workload, ma da soli non concedono l'accesso alla pagina. Consulta link:br-use-manage-kubernetes-access-control.html["Gestisci l'accesso alle risorse di Kubernetes"] per ulteriori informazioni.
+
+** *Progetto*: Seleziona questa opzione per controllare l'accesso degli utenti alle risorse del cluster a livello di progetto e seleziona un progetto dall'elenco.
++
+https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html#netapp-console-organizational-components["Saperne di più"^] Informazioni sui componenti organizzativi in NetApp Console.
+
+
+
+. Seleziona *Genera comandi di installazione*.
 +
 Backup and Recovery fornisce istruzioni che cambiano in base al tipo di installazione che scegli. Se usi la distribuzione locale di NetApp Console, puoi scegliere le istruzioni per individuare le risorse air-gapped che non hanno connettività di rete esterna.
 
 . Scegli un tipo di installazione per visualizzare le istruzioni per installare Trident Protect sul tuo cluster Kubernetes:
 +
-** Seleziona *Connesso* per individuare i cluster che hanno connettività di rete esterna.
-** Seleziona *Air-gapped* per individuare i cluster privi di connettività di rete esterna.
+** Seleziona *Connesso* per individuare i cluster che dispongono di connettività di rete esterna. Le istruzioni sono specifiche per i cluster connessi.
+** Seleziona *Air-gapped* per individuare i cluster privi di connettività di rete esterna. Le istruzioni sono specifiche per i cluster air-gapped (offline).
 +
 [role="tabbed-block"]
 ====

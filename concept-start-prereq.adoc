@@ -416,6 +416,7 @@ NOTE: NetApp raccomanda vivamente di assegnare un indirizzo IP statico all'agent
 ** Assicurarsi che la porta TCP 443 non sia filtrata in direzione outbound tra il cluster Kubernetes, il Trident Protect Connector e il Trident Protect proxy.
 
 
+* Per ripristinare file e cartelle da applicazioni basate su macchine virtuali, è necessario SSH. Verifica che il servizio SSH sia abilitato sugli host di destinazione Linux e che un server OpenSSH sia installato e abilitato sugli host di destinazione Windows.
 
 
 

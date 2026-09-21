@@ -36,6 +36,7 @@ Aggiungi utenti a ciascun progetto designato per i carichi di lavoro e assegna l
 +
 *** *Amministratore dell'organizzazione* e *Super amministratore di NetApp Backup and Recovery*: un utente con questi ruoli può visualizzare tutte le risorse tra le organizzazioni, individuare i carichi di lavoro di NetApp Backup and Recovery e assegnarli ai progetti (ad esempio, US East o US West).
 *** *Amministratore di cartella o di progetto* e *Super amministratore di NetApp Backup and Recovery*: un utente con questi ruoli può visualizzare solo le risorse nella cartella o nel progetto a cui è assegnato, ma può individuare i workload di NetApp Backup and Recovery e assegnarli a quel progetto.
+*** *Altri ruoli di Backup and Recovery*: Assegna agli utenti i ruoli specifici di Backup and Recovery di cui hanno bisogno, come Backup and Recovery viewer o Backup and Recovery clone admin. Questi ruoli consentono agli utenti di eseguire attività quotidiane come visualizzare le risorse, proteggere i carichi di lavoro, clonare e ripristinare. Assegna i ruoli di Backup and Recovery separatamente dai ruoli a livello di piattaforma. Per ulteriori informazioni, consulta link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^].
 
 
 .. Opzione alternativa:
@@ -46,7 +47,7 @@ Invece di concedere a un utente l'accesso completo come amministratore di Backup
 
 . Scopri i carichi di lavoro in Backup and Recovery.
 +
-Gli amministratori dell'organizzazione, delle cartelle o dei progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato.
+Gli amministratori dell'organizzazione, delle cartelle o dei progetti individuano i carichi di lavoro disponibili e selezionano il progetto appropriato (ad esempio US East o US West). Ogni carico di lavoro viene automaticamente associato al progetto selezionato. Per i cluster Kubernetes, puoi selezionare facoltativamente una cartella o un progetto da associare al cluster durante la fase di individuazione.
 
 . Aggiungi utenti ai progetti.
 +
@@ -59,6 +60,9 @@ Gli amministratori dell'organizzazione, delle cartelle o dei progetti aggiungono
 [[related-information]]
 == Informazioni correlate
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Scopri la gestione dell'identità e dell'accesso della NetApp Console"^].
-* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Scopri la gestione dell'identità e dell'accesso della NetApp Console"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Ruoli NetApp Backup and Recovery nella NetApp Console"^]
+* link:reference-roles.html["NetApp Backup and Recovery: ruoli e privilegi"]
+* link:br-start-discover-kubernetes.html["Scopri i carichi di lavoro di Kubernetes"]
+* link:br-use-manage-kubernetes-access-control.html["Gestisci l'accesso alle risorse di Kubernetes"]
 

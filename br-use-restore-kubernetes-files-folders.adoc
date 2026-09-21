@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-files-folders.html 
+keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 'NetApp Backup and Recovery ti permette di ripristinare e scaricare file e cartelle di cui è stato eseguito il backup da un"applicazione basata su VM.' 
+---
+= Ripristina o scarica file e cartelle di applicazioni basate su macchine virtuali utilizzando NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ripristina o scarica file e cartelle di cui è stato eseguito il backup da un'applicazione Kubernetes basata su VM. Per ripristinare o scaricare file e cartelle, ti serve almeno un punto di ripristino e la VM deve avere una partizione con un filesystem supportato. Al momento puoi ripristinare e scaricare solo dallo snapshot locale.
+
+I sistemi operativi guest e le versioni supportate includono:
+
+* *Windows*: Windows Server 2022, Windows 10, Windows 11
+* *Linux*: Ubuntu 22.04, Red Hat Enterprise Linux 9, Fedora 39, CentOS Stream 9, openSUSE Leap 15.6
+
+
+I filesystem supportati includono:
+
+* BTRFS
+* exFAT
+* ext4
+* NTFS
+* XFS
+
+
+*Ruolo richiesto NetApp Console*
+
+Super amministratore di Backup and Recovery o amministratore di ripristino di Backup and Recovery. link:reference-roles.html["Scopri di più sui ruoli di accesso a NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+
+
+
+[[restore-vm-files-and-folders-from-a-vm-based-application]]
+== Ripristina file e cartelle di macchine virtuali da un'applicazione basata su macchine virtuali
+
+Ripristina file e cartelle basati su VM da un punto di ripristino quando devi recuperare file o cartelle specifici in un'applicazione basata su VM senza ripristinare l'intera applicazione. I file esistenti vengono sovrascritti per impostazione predefinita.
+
+.Prima di iniziare
+Prima di ripristinare file e cartelle da un'applicazione basata su macchina virtuale, verifica che la macchina virtuale di destinazione soddisfi i seguenti requisiti:
+
+* La macchina virtuale di destinazione è in esecuzione e ha un indirizzo IP.
+* Puoi scrivere nella destinazione di ripristino.
+* SSH è abilitato e utilizza l'autenticazione tramite password (l'accesso tramite sola chiave non è supportato). Verifica che il servizio SSH sia abilitato sugli host di destinazione Linux e che un server OpenSSH sia installato e abilitato sugli host di destinazione Windows.
+
+
+.Passi
+. Nel menu NetApp Backup e ripristino, seleziona *Ripristina*.
+. Scegli un'applicazione Kubernetes dall'elenco e seleziona *Visualizza e ripristina* per quell'applicazione.
++
+Viene visualizzato l'elenco dei punti di ripristino.
+
+. Seleziona l'icona image:icon-action.png["Icona Azioni"] *Azioni* per un punto di ripristino e apri il menu *Ripristina file e cartelle*.
+. Seleziona la posizione di origine da cui ripristinare (al momento è supportato solo snapshot).
+. Seleziona una macchina virtuale dal punto di ripristino per visualizzare i relativi file e cartelle.
+. Selezionare *Avanti*.
++
+Viene visualizzato il file browser.
+
+. Scorri l'elenco di file e cartelle e seleziona file e cartelle da ripristinare.
++
+Apri una partizione per visualizzare i file e le cartelle in essa contenuti. Quando selezioni un file o una cartella da ripristinare attivando la relativa check box, viene aggiunto all'elenco "selected" a destra.
+
+. Al termine, selezionare *Avanti*.
+. Seleziona la modalità di trasferimento *Trasferisci su VM*.
+. Scegli le impostazioni di destinazione:
++
+** *Ripristina sulla VM originale*: Abilita questa opzione per ripristinare sulla macchina virtuale originale.
++
+*** *Ripristina nello stesso percorso del backup*: Abilita questa opzione per ripristinare nello stesso percorso utilizzato nel backup.
+*** *Percorso alternativo*: Per ripristinare su un percorso diverso, abilita questa opzione e inserisci il percorso preferito.
+
+
+** *Ripristina su una VM alternativa*: Abilita questa opzione per ripristinare su una macchina virtuale diversa nel cluster. Seleziona una VM dall'elenco e inserisci un percorso di destinazione per i file o le cartelle ripristinati.
+
+
+. Nella sezione *Credenziali della macchina virtuale guest*, seleziona le credenziali per la macchina virtuale guest.
++
+Se non hai ancora aggiunto le credenziali per questa macchina virtuale guest, seleziona *Aggiungi credenziale* per aggiungere una nuova credenziale per la macchina virtuale guest. Dopo che hai aggiunto una credenziale per la macchina virtuale guest, la nuova credenziale appare nell'elenco delle credenziali e puoi selezionarla. Queste credenziali sono uniche per le macchine virtuali guest e possono essere riutilizzate da qualsiasi cluster che utilizza lo stesso agente Console.
+
+. Selezionare *Avanti*.
+. Rivedi e conferma le impostazioni di ripristino del file o della cartella.
+. Selezionare *Ripristina*.
+
+
+
+
+[[download-kubernetes-vm-files-and-folders]]
+== Scarica i file e le cartelle della VM Kubernetes
+
+Scarica file e cartelle da un punto di ripristino quando non vuoi ripristinare i file e le cartelle in un'applicazione basata su VM, ma invece vuoi salvarli sul tuo computer locale. I file e le cartelle scaricati vengono salvati come un unico archivio .tar. Scaricare file e cartelle non richiede credenziali per una guest VM.
+
+.Passi
+. Nel menu NetApp Backup e ripristino, seleziona *Ripristina*.
+. Scegli un'applicazione Kubernetes dall'elenco e seleziona *Visualizza e ripristina* per quell'applicazione.
++
+Viene visualizzato l'elenco dei punti di ripristino.
+
+. Seleziona l'icona image:icon-action.png["Icona Azioni"] *Azioni* per un punto di ripristino e apri il menu *Ripristina file e cartelle*.
+. Seleziona la posizione di origine da cui scaricare (al momento è supportato solo lo snapshot).
+. Seleziona una macchina virtuale dal punto di ripristino per visualizzare i relativi file e cartelle.
+. Selezionare *Avanti*.
++
+Viene visualizzato il file browser.
+
+. Scorri l'elenco di file e cartelle e seleziona file e cartelle da scaricare.
++
+Apri una partizione per visualizzare i file e le cartelle in essa contenuti. Quando selezioni un file o una cartella da scaricare attivando la relativa check box, viene aggiunto all'elenco "selected" a destra.
+
+. Al termine, selezionare *Avanti*.
+. Seleziona la modalità di trasferimento *Download file*.
+. Selezionare *Avanti*.
+. Rivedi e conferma le impostazioni di download del file o della cartella.
+. Selezionare *Ripristina*.
++
+Il tuo browser web gestisce il download; salva l'archivio .tar sul tuo computer locale.
+
+
