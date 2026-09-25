@@ -171,7 +171,7 @@ Per i dettagli sulla protezione dei carichi di lavoro Kubernetes, fare riferimen
 
 In questa versione, i carichi di lavoro ONTAP Volumes introducono i seguenti miglioramenti:
 
-* *Dai priorità ai processi di ripristino rispetto ai backup*: Ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini macchine virtuali o file.
+* *Dai priorità ai processi di ripristino rispetto ai backup*: ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini volumi, file o cartelle.
 * *Scopri i sistemi e i volumi ONTAP senza attivare NetApp Backup and Recovery*: Ora puoi scoprire sistemi e volumi senza attivare NetApp Backup and Recovery.
 
 

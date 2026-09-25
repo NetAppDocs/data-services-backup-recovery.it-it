@@ -4747,7 +4747,6 @@
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Supporto per l'eliminazione di più backup*: Ora puoi eliminare più backup contemporaneamente.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Anteprima del supporto per risorse isolate*: se esegui NetApp Backup and Recovery in una distribuzione locale di NetApp Console, puoi individuare, proteggere e ripristinare risorse Kubernetes isolate. Questa funzionalità è in anteprima per questa versione.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">In questa versione, i carichi di lavoro ONTAP Volumes introducono i seguenti miglioramenti:</block>
-  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Dai priorità ai processi di ripristino rispetto ai backup*: Ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini macchine virtuali o file.</block>
   <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*Scopri i sistemi e i volumi ONTAP senza attivare NetApp Backup and Recovery*: Ora puoi scoprire sistemi e volumi senza attivare NetApp Backup and Recovery.</block>
   <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.</block>
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Anteprima di Backup and Recovery per la limitazione della distribuzione locale della NetApp Console</block>
@@ -6106,4 +6105,5 @@
   <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Miglioramento generale di NetApp Backup and Recovery</block>
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Selezione delle credenziali durante il rilevamento dell'host VM*: Quando rilevi un host KVM, Hyper-V o VMware, ora puoi utilizzare le credenziali che hai già aggiunto a NetApp Backup and Recovery.</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Miglioramento dei carichi di lavoro Hyper-V</block>
+  <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*Dai priorità ai processi di ripristino rispetto ai backup*: ora puoi dare priorità ai processi di ripristino rispetto ai processi di backup quando ripristini volumi, file o cartelle.</block>
 </blocks>
