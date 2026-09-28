@@ -277,8 +277,9 @@ Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti
 
 | Archiviazione connessa  a| 
 * ONTAP 9.13.1 o versioni successive (ONTAP 9.19.1 o versioni successive è richiesta per supportare più di 6 bucket per sistema su diversi cloud provider; fino a 100 bucket massimo)
-* Amazon FSx for NetApp ONTAP storage systems che eseguono la versione 9.13.1 o successiva
 * ASA r2 sistemi solo SAN (ONTAP 9.17.1 o versioni successive richieste)
+* Amazon FSx for NetApp ONTAP storage systems che eseguono la versione 9.13.1 o successiva
+* Google Cloud NetApp Volumes (modalità ONTAP e livello di servizio Flex Unified)
 
 
 |===
