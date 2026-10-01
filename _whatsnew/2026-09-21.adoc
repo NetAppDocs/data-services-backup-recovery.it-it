@@ -1,15 +1,19 @@
-= Miglioramento dei carichi di lavoro dei volumi ONTAP
+= Miglioramenti dei carichi di lavoro di ONTAP Volumes
 :allow-uri-read: 
 
 
 
 
-[[ontap-volumes-workloads-enhancement]]
-=== Miglioramento dei carichi di lavoro dei volumi ONTAP
+[[ontap-volumes-workloads-enhancements]]
+=== Miglioramenti dei carichi di lavoro di ONTAP Volumes
 
-In questa versione, i carichi di lavoro ONTAP Volumes introducono il seguente miglioramento in anteprima:
+In questa versione, i carichi di lavoro di ONTAP Volumes introducono i seguenti miglioramenti in anteprima:
 
-*Supporto migliorato per i dark site*: NetApp Backup and Recovery per i dark site ora offre le stesse funzionalità di protezione dei dati di ONTAP Volumes di NetApp Backup and Recovery. Questo miglioramento include servizi aggiornati di backup, ripristino e gestione dei processi e un nuovo database di metadati. Durante un aggiornamento, i dati del database esistente vengono conservati e migrati automaticamente. Dopo l'aggiornamento, controlla i log di controllo per verificare che la migrazione sia stata completata correttamente. NetApp Backup and Recovery per i dark site supporta solo i carichi di lavoro ONTAP Volumes.
+* *Supporto migliorato per i dark site*: NetApp Backup and Recovery per i dark site ora offre le stesse funzionalità di protezione dei dati di ONTAP Volumes di NetApp Backup and Recovery. Questo miglioramento include servizi aggiornati di backup, ripristino e gestione dei processi e un nuovo database di metadati. Durante un aggiornamento, i dati del database esistente vengono conservati e migrati automaticamente. Dopo l'aggiornamento, controlla i log di controllo per verificare che la migrazione sia stata completata correttamente. NetApp Backup and Recovery per i dark site supporta solo i carichi di lavoro ONTAP Volumes.
+* *Annulla i processi di ripristino dei volumi*: Ora puoi annullare i processi di ripristino dei volumi ONTAP in corso dalla pagina di monitoraggio dei processi, semplificando la gestione dei processi lunghi o lenti.
+* *Segnalazione dello stato di indicizzazione dei volumi migliorata*: la dashboard ONTAP Volumes ora riporta lo stato di indicizzazione in modo più accurato introducendo lo  `Not Applicable` stato per i volumi e le copie snapshot che non sono idonei per l'indicizzazione. Lo  `Not Indexed` stato è ora riservato ai volumi in attesa di essere indicizzati e i dettagli del volume ora mostrano lo stato di indicizzazione per ogni snapshot con un testo al passaggio del mouse che spiega perché un volume o una copia snapshot non verranno indicizzati.
+* *Supporto AFX di NetApp*: Ora puoi proteggere i volumi ospitati su cluster AFX di NetApp a 2 e 4 nodi.
+
 
 Per informazioni dettagliate sulla protezione dei carichi di lavoro di ONTAP Volumes, fare riferimento a  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Scopri la protezione dei volumi ONTAP con NetApp Backup and Recovery"].
 

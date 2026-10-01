@@ -241,7 +241,7 @@ Il Centro notifiche visualizza numerosi eventi di snapshot, replica, backup su c
 
 NOTE: A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi Cloud Volumes ONTAP e ONTAP locali.  Per i sistemi con Cloud Volumes ONTAP 9.13.0 e ONTAP on-premises, viene visualizzato solo l'avviso relativo a "Ripristino attività completato, ma con avvisi".
 
-Per impostazione predefinita, gli amministratori dell'organizzazione e dell'account NetApp Console ricevono e-mail per tutti gli avvisi "Critici" e "Raccomandati". Per impostazione predefinita, il sistema non configura altri utenti e destinatari per ricevere e-mail di notifica.  Configura avvisi e-mail per tutti gli utenti della Console nel tuo account NetApp Cloud o per altri destinatari che devono essere informati sulle attività di backup e ripristino.
+Per impostazione predefinita, gli amministratori dell'organizzazione e dell'account di NetApp Console ricevono notifiche via e-mail per tutti gli avvisi "Critical" e "Recommendation". Gli altri utenti e destinatari non ricevono notifiche via e-mail a meno che non li configuri. Configura gli avvisi via e-mail per gli utenti di Console nel tuo account Cloud NetApp o per altri destinatari che devono monitorare l'attività di backup e ripristino.
 
 Per ricevere gli avvisi e-mail NetApp Backup and Recovery , è necessario selezionare i tipi di gravità della notifica "Critico", "Avviso" ed "Errore" nella pagina delle impostazioni Notifiche.
 
@@ -259,6 +259,59 @@ https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Config
 [[review-operation-activity-in-console-timeline]]
 == Esaminare l'attività operativa nella cronologia della console
 
-Puoi visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori analisi nella Cronologia della Console. La Cronologia della Console fornisce dettagli su ogni evento, sia avviato dall'utente che dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.
+Usa la cronologia di Console per analizzare le operazioni di backup e ripristino. Ti fornisce dettagli su ogni evento, incluso se è stato avviato da un utente o dal sistema, e mostra le azioni eseguite nell'interfaccia utente o tramite l'API.
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Scopri come monitorare le operazioni della NetApp Console"^].
+
+
+
+[[cancel-an-ongoing-job]]
+== Annulla un lavoro in corso
+
+Alcuni carichi di lavoro di backup e ripristino supportano l'annullamento di un'attività in corso se sta impiegando troppo tempo per completarsi e non è fallita.
+
+
+NOTE: Per annullare un'operazione di ripristino di ONTAP Volumes, fai riferimento a <<Annulla un'operazione di ripristino di ONTAP Volumes>>.
+
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
+. Se vuoi, espandi l'area *Ricerca e filtri avanzati* e seleziona criteri specifici per concentrare i risultati della ricerca di lavoro.
+. Seleziona *Search* per visualizzare i lavori di ripristino corrispondenti.
+. Scegli un'attività dall'elenco, seleziona il menu Azioni image:icon-action.png["Icona Azioni"] e seleziona l'azione *Annulla* (l'etichetta dell'azione varia in base al tipo di attività).
+. Nella finestra di dialogo di conferma, conferma l'annullamento.
+
+
+
+
+[[cancel-an-ontap-volumes-restore-job]]
+== Annulla un'operazione di ripristino di ONTAP Volumes
+
+Annulla un'operazione di ripristino di ONTAP Volumes se impiega troppo tempo per essere completata e non ha generato un errore.
+
+Quando annulli un ripristino del volume, l'intera operazione di ripristino viene annullata, in modo che nessuna parte del volume venga ripristinata.
+
+Durante il ripristino di file e cartelle, backup e ripristino ripristina i file in gruppi di otto. Se annulli il ripristino di file e cartelle mentre un gruppo è in corso, il ripristino si interrompe prima che inizi il gruppo successivo. I file e le cartelle già ripristinati rimangono al loro posto.
+
+.Informazioni su questo compito
+Prendi nota dei tipi di processi che puoi e non puoi annullare:
+
+[cols="1,1"]
+|===
+| Puoi annullare | Non puoi annullare 
+
+
+| Ripristino dei volumi da uno snapshot locale o cloud (FlexVol e FlexGroup) | Lavori di ripristino in coda 
+
+
+| Ripristino di file e cartelle dal cloud | Ripristini dall'archivio 
+
+
+| Ripristino di file e cartelle da uno snapshot locale a un volume diverso | Ripristino di file e cartelle da uno snapshot locale sullo stesso volume 
+|===
+.Passi
+. Dal menu NetApp Backup and Recovery , selezionare *Monitoraggio*.
+. Se vuoi, espandi l'area *Ricerca e filtri avanzati* e seleziona criteri specifici per concentrare i risultati della ricerca di lavoro.
+. Seleziona *Search* per visualizzare i lavori di ripristino corrispondenti.
+. Scegli un processo dall'elenco, seleziona il menu Azioni image:icon-action.png["Icona Azioni"] e seleziona l'azione *Annulla ripristino*.
+. Nella finestra di dialogo di conferma, seleziona *Annulla ripristino*.
+
