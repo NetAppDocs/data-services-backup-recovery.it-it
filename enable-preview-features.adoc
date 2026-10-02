@@ -38,6 +38,9 @@ Segui questi passaggi per abilitare le funzionalità di anteprima e nascoste per
 
 
 | `"data-transfer-report": true` | Consente il report giornaliero sul trasferimento dei dati di backup nella scheda Report di NetApp Backup and Recovery per i volumi. Il report fornisce informazioni giornaliere sull'attività di trasferimento dei dati di backup e replica nell'ambiente. 
+
+
+| `"use-azure-msi-cvo": true` | Consente di utilizzare l'autenticazione dell'identità gestita Microsoft Entra ID per lo storage a oggetti di Azure anziché utilizzare una chiave di accesso dell'account di archiviazione. Supportato per Cloud Volumes ONTAP nei sistemi Azure che eseguono ONTAP 9.16.1 o versioni successive. Per ulteriori informazioni, consulta link:prev-ontap-backup-cvo-azure.html["Esegui il backup di Cloud Volumes ONTAP nello storage Azure Blob"]. 
 |===
 
 

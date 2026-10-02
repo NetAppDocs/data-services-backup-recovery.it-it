@@ -155,14 +155,29 @@ Per utilizzare lo storage a oggetti come destinazione di backup, hai bisogno di 
 [[requirements-for-protecting-ontap-volume-workloads]]
 == Requisiti per la protezione dei carichi di lavoro dei volumi ONTAP
 
-Per utilizzare NetApp Backup e ripristino per i carichi di lavoro dei volumi ONTAP, sono necessari i seguenti prerequisiti relativi al sistema host, allo spazio e alle dimensioni.
+Per utilizzare NetApp Backup and Recovery per i carichi di lavoro dei volumi ONTAP, ti servono i seguenti prerequisiti.
 
-* È richiesto ONTAP 9.8 o versioni successive.
-* ONTAP 9.12.1 o versioni successive è richiesto per la protezione dei volumi FlexGroup. Consulta link:br-reference-limitations.html["Limitazioni note con NetApp Backup and Recovery per volumi ONTAP"] per maggiori informazioni.
-* ONTAP 9.17.1 o versioni successive sono necessarie per eseguire il backup o il ripristino su storage a oggetti compatibile con S3.
-* Per supportare più di 6 bucket per sistema su diversi provider cloud (fino a un massimo di 100 bucket) è necessario ONTAP 9.19.1 o versioni successive.
-* Sull'istanza ONTAP locale deve essere abilitata una licenza ONTAP One.
+[cols="2,1"]
+|===
+| Caratteristica | Versione di ONTAP richiesta 
 
+
+| Proteggere i volumi ONTAP | 9.8 o versioni successive 
+
+
+| Proteggi i volumi FlexGroup (per ulteriori informazioni, fai riferimento a link:br-reference-limitations.html["Limitazioni note con NetApp Backup and Recovery per volumi ONTAP"]) | 9.12.1 o versioni successive 
+
+
+| Usa l'autenticazione Microsoft Entra ID per i bucket di Azure quando proteggi Cloud Volumes ONTAP | 9.16.1 o versioni successive 
+
+
+| Esegui il backup o il ripristino nello storage a oggetti compatibile con S3 | 9.17.1 o versioni successive 
+
+
+| Usa più di 6 bucket per sistema tra diversi provider cloud (fino a un massimo di 100 bucket) | 9.19.1 o versioni successive 
+|===
+
+NOTE: Sull'istanza ONTAP locale deve essere abilitata una licenza ONTAP One.
 
 Per informazioni sulle funzionalità supportate, i tipi di volume, le destinazioni di backup e ripristino e altro ancora, fare riferimento a link:prev-ontap-protect-overview.html["Proteggi i dati del tuo volume ONTAP"].
 

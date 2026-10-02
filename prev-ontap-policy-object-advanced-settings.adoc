@@ -154,3 +154,22 @@ Fare riferimento alink:prev-ontap-policy-manage.html["Gestire le politiche"] per
 . Imposta la frequenza in giorni o settimane con cui deve essere eseguita la scansione.
 . Selezionare *Applica*.
 
+
+
+
+[[switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication]]
+== Passa la configurazione di uno storage a oggetti di Azure all'autenticazione con Microsoft Entra ID
+
+Se non vuoi utilizzare la chiave di accesso dell'account di archiviazione per l'autenticazione di Azure, puoi passare all'autenticazione con Microsoft Entra ID per lo storage a oggetti di Azure quando modifichi una configurazione esistente del bucket di Azure. Questa opzione è supportata per Cloud Volumes ONTAP nei sistemi Azure che eseguono ONTAP 9.16.1 o versioni successive.
+
+.Prima di iniziare
+Assicurati che il tuo ambiente soddisfi i requisiti link:prev-ontap-backup-cvo-azure.html#anchor-entraid["requisiti"^] per utilizzare Entra ID.
+
+.Passi
+. Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Più icona"] per il sistema e scegli *Configura impostazioni avanzate > Impostazioni provider*.
+. Nella parte superiore della pagina risultante, seleziona il bucket per il quale desideri modificare le impostazioni.
+. Espandi la sezione *Metodo di autenticazione*.
+. Seleziona *Entra ID (identità gestita)*.
+. Selezionare *Applica*.
+
