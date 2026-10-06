@@ -40,14 +40,17 @@ Segui questi passaggi per abilitare le funzionalità di anteprima e nascoste per
 | `"data-transfer-report": true` | Consente il report giornaliero sul trasferimento dei dati di backup nella scheda Report di NetApp Backup and Recovery per i volumi. Il report fornisce informazioni giornaliere sull'attività di trasferimento dei dati di backup e replica nell'ambiente. 
 
 
-| `"use-azure-msi-cvo": true` | Consente di utilizzare l'autenticazione dell'identità gestita Microsoft Entra ID per lo storage a oggetti di Azure anziché utilizzare una chiave di accesso dell'account di archiviazione. Supportato per Cloud Volumes ONTAP nei sistemi Azure che eseguono ONTAP 9.16.1 o versioni successive. Per ulteriori informazioni, consulta link:prev-ontap-backup-cvo-azure.html["Esegui il backup di Cloud Volumes ONTAP nello storage Azure Blob"]. 
+| `"use-azure-msi-cvo": true` | Consente di utilizzare l'autenticazione dell'identità gestita Microsoft Entra ID per lo storage a oggetti anziché una chiave di accesso dell'account di storage. Supportato per Cloud Volumes ONTAP nei sistemi Azure che eseguono ONTAP 9.16.1 o versioni successive (anche l'agente della console deve risiedere in Azure). Per ulteriori informazioni, consulta link:prev-ontap-backup-cvo-azure.html#anchor-entraid["Requisiti per l'utilizzo dell'autenticazione Microsoft Entra ID con gli archivi di oggetti di Azure"]. 
 |===
 
 
 [[enable-preview-features]]
 == Abilita le funzionalità di anteprima
 
-Abilita le opzioni del flag di anteprima per utilizzare funzionalità non ancora generalmente disponibili. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
+Abilita i flag di anteprima per utilizzare funzionalità non ancora generalmente disponibili. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
+
+
+NOTE: Questi esempi presuppongono che tu usi Docker; se usi Podman, esegui i comandi Podman equivalenti.
 
 .Passi
 . Utilizza SSH per accedere all'agente della Console.
@@ -131,8 +134,11 @@ NOTE: Per disabilitare una funzione di anteprima, segui gli stessi passaggi ma i
 Disabilita indicizzazione per volumi specifici o per tutti i volumi appartenenti a una o più storage VM utilizzando i seguenti flag di opzione:
 
 * `svms-not-to-index`: Un elenco separato da virgole di storage VM i cui volumi non devono essere indicizzati
-* `volumes-not-to-index`: Un elenco separato da virgole di singoli volumi che non devono essere indicizzati
+* `volumes-not-to-index`: Un elenco separato da virgole degli ID dei singoli volumi che non devono essere indicizzati
 
+
+
+NOTE: Questi esempi presuppongono che tu usi Docker; se usi Podman, esegui i comandi Podman equivalenti.
 
 .Passi
 . Utilizza SSH per accedere all'agente della Console.
@@ -176,14 +182,14 @@ Il punto di montaggio differisce tra le implementazioni cloud e quelle private. 
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Crea un file denominato  `production-customer.json` e personalizza i nomi della macchina virtuale di archiviazione e del volume in modo che corrispondano al tuo ambiente:
+. Crea un file denominato `production-customer.json` e personalizza i nomi delle VM di storage e gli ID dei volumi in modo che corrispondano al tuo ambiente:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
-    "volumes-not-to-index": "volume_1,volume_2,volume_3"
+    "svms-not-to-index": "storage_vm_name_1,storage_vm_name_2,storage_vm_name_3",
+    "volumes-not-to-index": "volume_ID_1,volume_ID_2,volume_ID_3"
   }
 }
 ----

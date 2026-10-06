@@ -64,6 +64,7 @@ Puoi abilitare l'autenticazione Microsoft Entra ID per lo storage a oggetti di A
 
 NOTE: Puoi utilizzare metodi di autenticazione diversi per diverse configurazioni di archivio di oggetti all'interno dello stesso sistema Cloud Volumes ONTAP, ma dopo aver impostato una configurazione di archivio di oggetti per l'utilizzo di Microsoft Entra ID, non puoi tornare a utilizzare la chiave dell'account di storage.
 
+* Il sistema Cloud Volumes ONTAP e l'agente Console devono entrambi risiedere in Azure.
 * Verifica che il flag di funzionalità "use-azure-msi-cvo" sia abilitato sul sistema Cloud Volumes ONTAP. Per ulteriori informazioni, consulta link:enable-preview-features.html["Abilita le funzionalità di anteprima"].
 * È supportata solo l'opzione della strategia di backup "Bring Your Own Bucket". Verifica che l'account di archiviazione di Azure esista già e contenga un container con lo stesso nome dell'account.
 * Nelle impostazioni IAM dell'account di archiviazione di Azure, verifica che il  `Storage Blob Data Contributor`ruolo sia assegnato sia ad Azure Agent sia al sistema Cloud Volumes ONTAP. Se usi l'opzione  `Object lock`criterio, abilita anche il controllo delle versioni nell'account di archiviazione e assegna il  `Storage Blob Data Owner`ruolo sia ad Azure Agent sia al sistema Cloud Volumes ONTAP.

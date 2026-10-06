@@ -113,6 +113,10 @@ Viene visualizzato il file browser.
 +
 Apri una partizione per visualizzare i file e le cartelle in essa contenuti. Quando selezioni un file o una cartella da scaricare attivando la relativa check box, viene aggiunto all'elenco "selected" a destra.
 
++
+
+NOTE: La dimensione totale combinata dei file e delle cartelle selezionati non può superare i 5 MB.
+
 . Al termine, selezionare *Avanti*.
 . Seleziona la modalità di trasferimento *Download file*.
 . Selezionare *Avanti*.
