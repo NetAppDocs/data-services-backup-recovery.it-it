@@ -6175,4 +6175,5 @@
   <block id="3a273880b40ea51e4b60121d32145e13" category="list-text">Crea un file denominato<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> e personalizza i nomi delle VM di storage e gli ID dei volumi in modo che corrispondano al tuo ambiente:</block>
   <block id="a940e8044fb83a96d0472abdc71d61e8" category="list-text">Il sistema Cloud Volumes ONTAP e l'agente Console devono entrambi risiedere in Azure.</block>
   <block id="389c52d9a18d68d9dd6a3eb24bc88982" category="list-text">*Supporto di Cloud Volumes ONTAP per Azure Entra ID*: Ora puoi utilizzare l'autenticazione Microsoft Entra ID per le configurazioni dei bucket di storage a oggetti di Azure se non vuoi usare la chiave di accesso dell'account di storage per l'autenticazione Azure. Questa opzione è supportata per Cloud Volumes ONTAP nei sistemi Azure che eseguono ONTAP 9.16.1 o versioni successive.</block>
+  <block id="82d1d9da33b9c6cae173365156457fff" category="section-title">Miglioramento dei carichi di lavoro VMware</block>
 </blocks>
