@@ -1,0 +1,38 @@
+= Miglioramenti ai carichi di lavoro Hyper-V
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Miglioramenti ai carichi di lavoro Hyper-V
+
+In questa versione, Hyper-V workloads introduce i seguenti miglioramenti:
+
+* *Supporto per NetApp MetroCluster*: NetApp Backup and Recovery ora ti consente di proteggere le VM Hyper-V sottoposte a mirroring da NetApp MetroCluster.
+* *Protezione dei dischi estesi per le VM SAN*: Per le configurazioni CIFS e SAN, ora puoi proteggere ogni disco collegato a ciascuna VM in un gruppo di protezione. Ciò include i file distribuiti su più volumi ONTAP o sistemi di storage ONTAP (dischi estesi) e i file limitati a una singola posizione.
+
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Hyper-V, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Scopri come proteggere i carichi di lavoro Hyper-V con NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Miglioramento dei carichi di lavoro di Oracle Database
+
+In questa versione, Oracle Database workloads introduce il seguente miglioramento:
+
+*Gestione automatica dei file di log di archivio*: Durante le operazioni di ripristino e clonazione del database, NetApp Backup and Recovery rileva e monta automaticamente i file di log di archivio necessari, quindi li smonta al termine dell'operazione. Sono supportate le origini dei file di log primarie, secondarie e di storage a oggetti.
+
+Per informazioni dettagliate sulla protezione dei carichi di lavoro Oracle Database, fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Scopri come proteggere i carichi di lavoro di Oracle Database con NetApp Backup and Recovery"].
+
+
+
+[[microsoft-sql-server-workloads-enhancement]]
+=== Miglioramento dei carichi di lavoro di Microsoft SQL Server
+
+In questa versione, i carichi di lavoro di Microsoft SQL Server introducono il seguente miglioramento:
+
+*Modifica delle licenze*: I costi non si applicano più ai backup che utilizzano architetture disk-to-disk o disk-to-disk fan-out. I costi si applicano solo ai backup nello storage a oggetti, inclusi i backup che utilizzano architetture 3-2-1 o disk-to-object-storage.
+
+Per i dettagli sulla protezione dei carichi di lavoro di Microsoft SQL Server, consulta https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["Scopri come proteggere i carichi di lavoro di Microsoft SQL Server con NetApp Backup and Recovery"].

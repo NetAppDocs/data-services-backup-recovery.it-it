@@ -42,7 +42,24 @@ Quando ripristini i carichi di lavoro del database Oracle, succede quanto segue:
 * Quando si ripristina un backup da un archivio oggetti, è possibile ripristinare i dati nell'archivio di origine o in un sistema ONTAP locale e recuperare il database da lì.
 
 
-Dalla pagina Ripristina (nota anche come Cerca e ripristina), puoi ripristinare un database anche se non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni.  È possibile effettuare ricerche nel database utilizzando i filtri.
+
+
+[[view-information-about-available-oracle-database-restore-points]]
+== Visualizza le informazioni sui punti di ripristino disponibili per Oracle Database
+
+Visualizza i punti di ripristino disponibili, inclusi il numero SCN e l'incarnazione del database associata.
+
+
+NOTE: Oracle Database crea una nuova incarnazione del database ogni volta che apri un database con l' `RESETLOGS`opzione. NetApp Backup and Recovery elenca le incarnazioni del database pertinenti quando esamini i punti di ripristino e quando esegui il ripristino a uno SCN specifico.
+
+.Passi
+. Dal menu Backup and Recovery, seleziona *Inventory*.
+. Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.
+. Seleziona *Visualizza* per il carico di lavoro del database Oracle.
+. Selezionare la scheda *Database*.
+. Seleziona l'icona *Azioni* image:icon-action.png["Icona Azioni"] per un database di cui vuoi visualizzare i punti di ripristino e seleziona *Visualizza dettagli di protezione*.
+. Esamina i punti di ripristino disponibili, il numero SCN e l'incarnazione del database associata a ciascuno di essi.
+
 
 
 
@@ -60,9 +77,7 @@ Se ripristini PDB o tablespace a uno specifico point-in-time o SCN:
 * Seleziona solo un PDB. Il ripristino point-in-time non è compatibile con il ripristino di più PDB.
 * `PDB$SEED` non puoi selezionarlo per il recovery point-in-time.
 * Il ripristino del file di controllo non può essere combinato con il recovery point-in-time di PDB o tablespace PDB.
-* Assicurati che il backup dei dati e i backup dei log necessari siano catalogati.
 * I `SYSTEM`, `SYSAUX` e `UNDO` tablespace non possono essere selezionati.
-* Verifica che il backup dei dati e i backup dei log richiesti siano catalogati.
 
 
 ====
@@ -87,11 +102,6 @@ Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca
 +
 Viene visualizzata l'istantanea più vicina alla data e all'ora specificate.
 
-.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
-+
-... Verifica che i backup dei log siano montati.
-
-
 .. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
 .. Selezionare *Avanti*.
 
@@ -99,17 +109,14 @@ Viene visualizzata l'istantanea più vicina alla data e all'ora specificate.
 --
 .Ripristinare un numero di modifica del sistema specifico (SCN)
 --
+.. Facoltativamente, consulta <<Visualizza le informazioni sui punti di ripristino disponibili per Oracle Database>> per vedere gli SCN disponibili e le relative incarnazioni del database.
 .. Selezionare *Ripristina a un numero di modifica del sistema (SCN) specifico*.
 .. Selezionare *Avanti*.
 .. Inserisci l'SCN da utilizzare come punto di ripristino e seleziona *Cerca*.
 +
-Viene visualizzata l'istantanea più vicina per l'SCN specificato.
+Viene visualizzata l'istantanea più simile per l'SCN specificato. Se più incarnazioni del database corrispondono all'SCN, vengono mostrate tutte le incarnazioni corrispondenti.
 
-.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
-+
-... Verifica che i backup dei log siano montati.
-
-
+.. Se più incarnazioni del database corrispondono alla ricerca, seleziona lo snapshot con l'incarnazione corretta.
 .. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
 .. Selezionare *Avanti*.
 
@@ -121,11 +128,6 @@ Viene visualizzata l'istantanea più vicina per l'SCN specificato.
 .. Selezionare *Avanti*.
 +
 Viene visualizzata l'istantanea più recente. L'operazione di ripristino recupera l'ultimo stato valido utilizzando tutti i backup di log disponibili.
-
-.. Facoltativamente, seleziona *Visualizza backup dei log* per vedere i backup dei log associati.
-+
-... Verifica che i backup dei log siano montati.
-
 
 .. Se l'istantanea è memorizzata in più posizioni, seleziona una posizione di origine da utilizzare e aggiungi o rivedi i dettagli della posizione.
 .. Selezionare *Avanti*.
@@ -168,7 +170,7 @@ Vengono visualizzate le istantanee disponibili.
 ... Facoltativamente, puoi abilitare l'opzione *File di controllo* per ripristinare anche i file di controllo del database. Questa opzione non può essere selezionata per il recovery point-in-time o SCN di PDB o tablespace PDB.
 ... Facoltativamente, abilita l'opzione *Modifica lo stato del database se necessario per il ripristino e il recupero* per consentire a NetApp Backup and Recovery di gestire lo stato del database a seconda del tipo di recupero.
 ... Facoltativamente, puoi abilitare l'opzione *Force in place restore* per eseguire un rispristino in-place quando sono stati aggiunti nuovi datafile dopo il backup, o quando LUN sono stati aggiunti, eliminati o ricreati in un gruppo di dischi LVM. Questa opzione ignora il controllo dei file esterni; il recovery del database procede utilizzando l'opzione di restore che hai selezionato.
-... Specifica i percorsi dei file di log di archivio esterni nel campo *Percorsi dei file di log di archivio esterni* se stai ripristinando PDB o tablespace a un point-in-time o SCN specifico e i log di archivio non si trovano nella posizione configurata. Inserisci un percorso del file system che inizia con  `/` o un gruppo di dischi ASM che inizia con  `+`. Usa i pulsanti "più" e "meno" accanto al campo di inserimento testo per aggiungere o rimuovere percorsi. Questo campo non viene visualizzato quando ripristini da snapshot senza recovery.
+... Specifica i percorsi esterni dei file di log di archivio nel campo *Specifica i percorsi esterni dei file di log di archivio* se ripristini PDB o tablespace a un punto specifico nel tempo o SCN e i log di archivio non si trovano nella posizione configurata. Immetti un percorso del file system che inizi con `/`o un gruppo di dischi ASM che inizi con `+`. Usa i pulsanti "più" e "meno" accanto al campo di immissione del testo per aggiungere o rimuovere percorsi. Questo campo non viene visualizzato quando esegui il ripristino da snapshot senza recovery.
 ... Facoltativamente, abilita l'opzione *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il recovery* e seleziona una sotto-opzione che corrisponde all'ambito del ripristino (queste opzioni non vengono visualizzate quando esegui il ripristino da snapshot senza recovery):
 +
 **** *Tutti i datafile*: Apri il database o il container database in modalità READ-WRITE dopo il recovery.
