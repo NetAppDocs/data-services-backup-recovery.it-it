@@ -60,7 +60,10 @@ Per impostazione predefinita, la pagina Monitoraggio processi mostra i processi 
 . Per ordinare i risultati in modo diverso, seleziona ogni intestazione di colonna per ordinarli in base a Stato, Ora di inizio, Nome risorsa e altro ancora.
 . Se stai cercando lavori specifici, seleziona l'area *Ricerca avanzata e filtri* per aprire il pannello di ricerca.
 +
-Utilizza questo pannello per inserire un testo libero per cercare qualsiasi risorsa; ad esempio, "volume 1" o "application 3". Puoi anche filtrare l'elenco dei job in base alle voci presenti nei menu a tendina.
+Utilizza questo pannello per inserire una ricerca a testo libero per qualsiasi risorsa; ad esempio, "volume 1" o "applicazione 3". Puoi anche filtrare l'elenco dei job in base alle voci presenti nei menu a tendina. Puoi anche effettuare una ricerca per un intervallo di tempo.
+
++
+Quando cerchi un intervallo di tempo, seleziona *Intervallo personalizzato* per scegliere una data di inizio e una di fine da un calendario.
 
 +
 La maggior parte dei filtri sono autoesplicativi. Il filtro per "Carico di lavoro" consente di visualizzare i lavori nelle seguenti categorie:
