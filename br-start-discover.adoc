@@ -372,10 +372,19 @@ Se si accede a Backup and Recovery per la prima volta e si ha un sistema nella C
 
 TIP: Se stai inserendo informazioni su vCenter, inserisci le informazioni sia per le impostazioni di vCenter sia per la registrazione dell'host. Se hai aggiunto o inserito informazioni su vCenter qui, devi anche aggiungere le informazioni del plug-in nelle Impostazioni avanzate.
 
-.. *Registrazione host*: seleziona *Aggiungi credenziali* e inserisci le informazioni sugli host che contengono i carichi di lavoro che desideri scoprire.
+.. *Registrazione host*: Inserisci le seguenti informazioni:
++
+*** Il nome di dominio completo (FQDN) o l'indirizzo IP dell'host
+*** L'agente Console che l'host utilizza per comunicare con Backup and Recovery
+*** Le credenziali memorizzate per l'host
++
+Se non hai ancora aggiunto le credenziali per questo host a NetApp Backup and Recovery, seleziona *Aggiungi credenziali* e inserisci le informazioni di autenticazione per l'host.
+
 +
 
 TIP: Se si aggiunge un server autonomo e non un server vCenter, immettere solo le informazioni sull'host.
+
+
 
 
 
@@ -391,13 +400,13 @@ TIP: Questo processo potrebbe richiedere alcuni minuti.
 
 ==== Imposta le opzioni delle impostazioni avanzate durante la fase di rilevamento e installa il plug-in
 
-Con Impostazioni avanzate, puoi installare manualmente l'agente del plug-in su tutti i server che stai registrando. Questo ti permette di importare tutti i carichi di lavoro SnapCenter in NetApp Backup and Recovery così puoi gestire backup e ripristini da lì. NetApp Backup and Recovery mostra i passaggi necessari per installare il plug-in.
+Con Impostazioni avanzate, puoi installare manualmente il plug-in NetApp SnapCenter per Microsoft SQL Server su tutti i server che stai registrando. In questo modo puoi importare tutti i carichi di lavoro di SnapCenter in NetApp Backup and Recovery, così puoi gestire lì backup e ripristini. NetApp Backup and Recovery mostra i passaggi necessari per installare il plug-in.
 
 .Passi
 . Dalla pagina Scopri le risorse, vai alle Impostazioni avanzate selezionando la freccia rivolta verso il basso a destra.
 . Nella pagina Scopri le risorse del carico di lavoro, immetti le seguenti informazioni.
 +
-** *Inserisci il numero di porta del plug-in*: Inserisci il numero di porta che il plug-in utilizza.
+** *Porta del plug-in*: Inserisci il numero di porta utilizzato dal plug-in.
 ** *Percorso di installazione*: Inserisci il percorso in cui verrà installato il plug-in.
 
 

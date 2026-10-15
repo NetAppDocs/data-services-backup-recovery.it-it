@@ -263,6 +263,18 @@ NOTE: La protezione dei database memorizzati in dischi pass-through o file VHD/V
 |===
 
 
+[[required-permissions-for-microsoft-sql-server-host-discovery]]
+=== Autorizzazioni richieste per il rilevamento dell'host di Microsoft SQL Server
+
+Quando rilevi un host SQL Server, NetApp Backup and Recovery installa il plug-in NetApp SnapCenter per Microsoft SQL Server sull'host. Puoi anche scegliere di installare manualmente il plug-in. Se scegli l'installazione automatica, le credenziali host che fornisci durante il rilevamento devono avere le seguenti appartenenze e autorizzazioni, in modo che Backup and Recovery possa installare il plug-in:
+
+* Appartenenza al ruolo fisso a livello di server dell'istanza di Microsoft SQL Server `sysadmin`
+* Appartenenza al gruppo Administrator locale di Windows
+* Autorizzazione ad accedere all'host
+
+
+
+
 [[requirements-for-protecting-vmware-workloads]]
 == Requisiti per la protezione dei carichi di lavoro VMware
 
@@ -411,6 +423,33 @@ NOTE: Per supportare più di 6 bucket per sistema su diversi provider cloud (fin
 
 
 |===
+
+
+[[required-permissions-for-oracle-database-host-discovery]]
+=== Autorizzazioni richieste per il rilevamento dell'host del database Oracle
+
+Quando rilevi un host Oracle Database, NetApp Backup and Recovery installa il plug-in Oracle Database di NetApp sull'host usando SSH con password. Puoi anche scegliere di installare il plug-in manualmente. Hai bisogno di autorizzazioni specifiche per installare il plug-in.
+
+
+
+==== Requisiti in caso di utilizzo dell'installazione automatica del plug-in
+
+Le credenziali host che fornisci durante il rilevamento devono disporre delle seguenti autorizzazioni affinché Backup and Recovery possa installare il plug-in NetApp Oracle Database:
+
+* Permessi di root, ovvero accesso sudo per un utente non root. Per concedere l'accesso sudo durante il rilevamento dell'host, seleziona le credenziali non root nella sezione *Host registration*, quindi seleziona *Configure sudoers* e segui le istruzioni. Le credenziali root non richiedono questo passaggio.
+* Autorizzazione di esecuzione per la JVM Java.
+
+
+
+
+==== Requisiti per l'installazione manuale del plug-in
+
+Se installi il plug-in manualmente, l'account usato per l'installazione deve avere le seguenti autorizzazioni:
+
+* Permessi di root o possibilità di utilizzare sudo per un utente non-root.
+* Autorizzazione di esecuzione per la JVM Java.
+
+
 
 
 [[requirements-for-protecting-kubernetes-applications]]

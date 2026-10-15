@@ -24,8 +24,6 @@ Esamina le limitazioni attuali e le azioni non supportate per i carichi di lavor
 Le seguenti azioni non sono supportate per i carichi di lavoro Hyper-V in NetApp Backup e ripristino:
 
 * Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
-* La protezione delle macchine virtuali di seconda generazione archiviate su storage SAN non è supportata quando si utilizza Microsoft Windows Server 2025.
 * Creare gruppi di risorse usando macchine virtuali da più host Hyper-V
-* Utilizzare dischi spanning su più condivisioni CIFS
 * Non è possibile ripristinare VM o dati di VM tra sistemi con CPU di fornitori diversi (da Intel ad AMD o viceversa), indipendentemente dall'impostazione "Compatibilità processore" in Hyper-V. Questa impostazione supporta solo la compatibilità tra generazioni diverse dello stesso fornitore (ad esempio, da Intel a Intel o da AMD ad AMD).
 
