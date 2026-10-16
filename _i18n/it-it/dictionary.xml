@@ -4561,7 +4561,6 @@
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">Consultare <block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block> per i dettagli sui ruoli e le autorizzazioni necessari per eseguire operazioni in NetApp Backup and Recovery.</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">Requisiti per i backup su storage a oggetti</block>
   <block id="fc0cba16e06b834a59ea2732ce15d74a" category="section-title">Requisiti per la protezione dei carichi di lavoro dei volumi ONTAP</block>
-  <block id="45b096193f4470968c1063df19d1c253" category="list-text">Sull'istanza ONTAP locale deve essere abilitata una licenza ONTAP One.</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">Per informazioni sulle funzionalità supportate, i tipi di volume, le destinazioni di backup e ripristino e altro ancora, fare riferimento a <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>.</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">Host del database</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">Storage supportati</block>
@@ -6209,4 +6208,8 @@
   <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">Requisiti per l'installazione manuale del plug-in</block>
   <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">Se installi il plug-in manualmente, l'account usato per l'installazione deve avere le seguenti autorizzazioni:</block>
   <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">Permessi di root o possibilità di utilizzare sudo per un utente non-root.</block>
+  <block id="061c095c759eb7e64dd46465f3c7a817" category="paragraph">Prima di rilevare un sistema ONTAP in Backup and Recovery, assicurati di disporre dei seguenti elementi:</block>
+  <block id="5df6bd1a45bdd2a4028f468e490de21e" category="list-text">Assicurati che una licenza ONTAP One sia abilitata sull'istanza ONTAP on-premises.</block>
+  <block id="74fbbc0e09dfc08bd2ae9fa2fa257555" category="list-text">Assicurati che l'applicazione AMQP sia abilitata come <block ref="dc647eb65e6711e155375218212b3964" prefix=" " category="inline-code"></block>metodo di accesso per l'utente ONTAP che usi per rilevare i sistemi ONTAP. Questo consente ai processi di backup pianificati di essere visualizzati in Job Monitor. Fai riferimento a <block ref="08349f0e2e31cf6e59517a8789874b25" category="inline-link-rx"></block> per le istruzioni sulla gestione degli utenti.</block>
+  <block id="2a6990e4544c8a19dcf0e20cd83f5c68" category="paragraph">Alcune funzionalità di ONTAP richiedono versioni specifiche di ONTAP:</block>
 </blocks>
