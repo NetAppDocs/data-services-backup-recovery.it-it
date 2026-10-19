@@ -290,13 +290,35 @@ TIP: L'aggiunta delle risorse può richiedere diversi minuti. Per vedere l'avanz
 
 
 .Risultato
-Il carico di lavoro Oracle Database appare nell'elenco dei carichi di lavoro nella pagina Inventario.
+L'host del database Oracle appare nell'elenco dei carichi di lavoro nella pagina Inventory.
+
+
+
+[[view-oracle-database-inventory]]
+== Visualizza l'inventario di Oracle Database
+
+Esamina i dettagli delle risorse di Oracle Database che hai rilevato nell'inventario di Backup and Recovery.
+
+.Passi
+. Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
+. In *Carichi di lavoro*, seleziona il riquadro *Oracle*.
+. Per visualizzare gli host di Oracle Database rilevati, seleziona la scheda *Hosts*.
++
+Puoi usare questa vista per visualizzare dettagli quali ogni host name, quanti database ospita ciascun host, il modello di distribuzione (ad esempio, cluster, Oracle Data Guard o standalone) e altre informazioni.
+
+. Per visualizzare i gruppi di protezione creati per proteggere le risorse di Oracle Database, seleziona la scheda *Gruppi di protezione*.
+. Per visualizzare i database ospitati da ciascun host Oracle Database, seleziona la scheda *Databases*.
++
+Questa visualizzazione mostra informazioni dettagliate, tra cui se ciascun database è un'istanza singola o parte di un cluster o di una configurazione ad alta disponibilità.
+
+
 
 
 
 [[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continua alla dashboard NetApp Backup and Recovery
 
+.Passi
 . Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
 . Seleziona un riquadro del carico di lavoro (ad esempio, Oracle Database).
 . Dal menu Backup e ripristino, seleziona *Dashboard*.

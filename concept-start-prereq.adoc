@@ -437,22 +437,18 @@ Quando rilevi un host Oracle Database, NetApp Backup and Recovery installa il pl
 
 
 
-==== Requisiti in caso di utilizzo dell'installazione automatica del plug-in
+==== Requisiti per l'installazione del plug-in
 
 Le credenziali host che fornisci durante il rilevamento devono disporre delle seguenti autorizzazioni affinché Backup and Recovery possa installare il plug-in NetApp Oracle Database:
 
-* Permessi di root, ovvero accesso sudo per un utente non root. Per concedere l'accesso sudo durante il rilevamento dell'host, seleziona le credenziali non root nella sezione *Host registration*, quindi seleziona *Configure sudoers* e segui le istruzioni. Le credenziali root non richiedono questo passaggio.
+* La possibilità di accedere all'host tramite SSH.
+* Permessi di root, ovvero accesso sudo per un utente non root.
++
+** Per concedere l'accesso sudo durante il rilevamento dell'host, seleziona le credenziali non root nella sezione *Registrazione host*, quindi seleziona *Configura sudoers* e segui le istruzioni. Le credenziali root non richiedono questo passaggio. Questo passaggio non è necessario per l'installazione manuale.
+
+
 * Autorizzazione di esecuzione per la JVM Java.
-
-
-
-
-==== Requisiti per l'installazione manuale del plug-in
-
-Se installi il plug-in manualmente, l'account usato per l'installazione deve avere le seguenti autorizzazioni:
-
-* Permessi di root o possibilità di utilizzare sudo per un utente non-root.
-* Autorizzazione di esecuzione per la JVM Java.
+* `SYSDBA` sono necessari privilegi per l'utente del database Oracle.
 
 
 
