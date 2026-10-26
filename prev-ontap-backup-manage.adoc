@@ -295,7 +295,7 @@ CAUTION: Se si prevede di eliminare un sistema o un cluster che dispone di backu
 [[delete-all-backup-files-for-a-system]]
 === Elimina tutti i file di backup per un sistema
 
-L'eliminazione di tutti i backup nell'archivio oggetti di un sistema non disabilita i backup futuri dei volumi in questo sistema.  Se si desidera interrompere la creazione di backup di tutti i volumi in un sistema, è possibile disattivare i backup<<Disattivare NetApp Backup and Recovery per un sistema,come descritto qui>> .
+L'eliminazione di tutti i backup sullo storage a oggetti per un sistema non disabilita i backup futuri dei volumi in questo sistema. Se vuoi interrompere la creazione di backup di tutti i volumi in un sistema, puoi sospendere i backup <<Metti in pausa tutti i backup per un sistema,come descritto qui>>.
 
 Si noti che questa azione non influisce sugli snapshot o sui volumi replicati: questi tipi di file di backup non vengono eliminati.
 
@@ -386,41 +386,47 @@ NOTE: Non è possibile eliminare i singoli file di backup del volume una volta e
 
 
 
-[[deactivate-netapp-backup-and-recovery-for-a-system]]
-== Disattivare NetApp Backup and Recovery per un sistema
+[[pause-all-backups-for-a-system]]
+== Metti in pausa tutti i backup per un sistema
 
-Disattivando NetApp Backup and Recovery per un sistema, le operazioni di backup e ripristino vengono sospese per tutti i suoi volumi senza eliminare i backup esistenti. Questo consente di sospendere tutte le attività di backup e ripristino per un determinato periodo di tempo senza annullare la registrazione del servizio di backup da questo sistema.
+Metti in pausa tutti i backup di un sistema per sospendere l'attività di backup per tutti i volumi del sistema senza eliminare i backup esistenti. La messa in pausa dei backup non annulla la registrazione del servizio di backup da questo sistema.
 
 Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di archiviazione degli oggetti per la capacità utilizzata dai tuoi backup, a meno che tu non<<Elimina i backup,eliminare i backup>> .
 
 .Passi
 . Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, selezionaimage:icon-actions-horizontal.gif["Icona Azioni"] per il sistema in cui si desidera disattivare i backup e selezionare *Disattiva backup*.
-. Nella finestra di dialogo di conferma, seleziona *Disattiva*.
+. Dalla pagina _Impostazioni di backup_, seleziona image:icon-actions-horizontal.gif["Icona Azioni"] per il sistema per il quale vuoi sospendere i backup e seleziona *Sospendi tutti i backup*.
+. Nella finestra di dialogo di conferma, seleziona *Pausa*.
 
-
-
-NOTE: Quando il backup è disabilitato, per quel sistema viene visualizzato il pulsante *Attiva backup*.  È possibile selezionare questo pulsante quando si desidera riattivare la funzionalità di backup per quel sistema.
 
 
 
 [[unregister-netapp-backup-and-recovery-for-a-system]]
 == Annullare la registrazione NetApp Backup and Recovery per un sistema
 
-È possibile annullare la registrazione di NetApp Backup and Recovery per un sistema se non si desidera più utilizzare la funzionalità di backup e non si desidera più ricevere addebiti per i backup in quel sistema.  In genere questa funzionalità viene utilizzata quando si pianifica di eliminare un sistema e si desidera annullare il servizio di backup.
+L'annullamento della registrazione di NetApp Backup and Recovery per un sistema interrompe i backup futuri per un sistema storage e lo rimuove da NetApp Backup and Recovery. Durante il processo, puoi scegliere se mantenere o eliminare i backup esistenti.
 
-È possibile utilizzare questa funzionalità anche se si desidera modificare l'archivio oggetti di destinazione in cui vengono archiviati i backup del cluster.  Dopo aver annullato la registrazione NetApp Backup and Recovery per il sistema, è possibile abilitare NetApp Backup and Recovery per quel cluster utilizzando le informazioni del nuovo provider cloud.
+.Informazioni su questo compito
+* Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di archiviazione degli oggetti per la capacità utilizzata dai tuoi backup, a meno che tu non<<Elimina i backup,eliminare i backup>> .
+* Per ripristinare i backup esistenti, consulta link:prev-ontap-restore-cli.html["Ripristina i dati ONTAP usando ONTAP CLI"^].
 
-Prima di poter annullare la registrazione NetApp Backup and Recovery, è necessario eseguire i seguenti passaggi, nell'ordine indicato:
-
-* Disattivare NetApp Backup and Recovery per il sistema
-* Elimina tutti i backup per quel sistema
-
-
-L'opzione di annullamento della registrazione non è disponibile finché queste due azioni non sono state completate.
 
 .Passi
-. Dalla scheda *Volumi*, seleziona *Impostazioni di backup*.
-. Dalla pagina _Impostazioni di backup_, selezionaimage:icon-actions-horizontal.gif["Icona Azioni"] per il sistema in cui si desidera annullare la registrazione del servizio di backup e selezionare *Annulla registrazione*.
-. Nella finestra di dialogo di conferma, seleziona *Annulla registrazione*.
+. Vai su *Protezione > Backup and Recovery*.
+. Seleziona il riquadro *Volumi*.
+. Seleziona *Impostazioni di backup*.
+. Nella pagina Impostazioni di backup, seleziona image:icon-actions-horizontal.gif["Icona Azioni"] per il sistema e seleziona *Annulla registrazione dei backup*.
+. Seleziona una delle seguenti opzioni:
++
+** *Disattiva backup*: interrompe i backup futuri, elimina le relazioni di backup dell'archivio di oggetti e mantiene i backup esistenti nello storage a oggetti. Dopo che il sistema è stato annullato dalla registrazione, puoi ripristinare questi backup solo usando ONTAP CLI.
+** *Disattiva ed elimina i backup*: interrompe i backup futuri, elimina le relazioni di backup dell'archivio di oggetti ed elimina i backup esistenti. Facoltativamente, seleziona *Ignora gli errori durante la disattivazione/eliminazione dei backup* se desideri che l'operazione continui anche se una fase non riesce.
 
+
+. Nel campo *Inserisci il nome del sistema per confermare*, inserisci il nome del sistema.
+. In *Conferma backup del report di protezione*, verifica di aver salvato tutti i report necessari.
+. Seleziona *Conferma e annulla registrazione*.
+. Monitora l'operazione nel Job Monitor fino al completamento.
+
+
+
+NOTE: L'annullamento della registrazione del sistema non modifica i volumi, la configurazione degli snapshot o le relazioni di replica del sistema in ONTAP.

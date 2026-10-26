@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-cli.html 
+keywords: CLI, ONTAP, restore, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery 
+summary: In alcune situazioni potrebbe essere necessario utilizzare la CLI di ONTAP per ripristinare i dati di ONTAP. 
+---
+= Ripristina i dati ONTAP usando ONTAP CLI
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Potresti non riuscire a ripristinare alcuni dati ONTAP utilizzando l'interfaccia utente Web di Backup and Recovery. Ciò può accadere se hai mantenuto i backup dopo aver annullato la registrazione di un sistema o se i backup sono stati creati tramite una relazione che non esiste più. In entrambi i casi, ripristina il backup utilizzando l'interfaccia a riga di comando (CLI) di ONTAP.
+
+.Prima di iniziare
+* Assicurati di avere accesso alla CLI ONTAP per il cluster di destinazione e di sapere quale copia di backup desideri ripristinare.
+* Se esegui il ripristino su un cluster ONTAP diverso, quel cluster deve già avere accesso allo stesso archivio di oggetti. Se necessario, configura l'archivio di oggetti sul cluster di destinazione prima del ripristino.
+* Tieni presente che se è stata creata una nuova relazione di backup prima di annullare la registrazione del sistema, NetApp Backup and Recovery potrebbe continuare a mostrare gli snapshot meno recenti per un massimo di un'ora dopo la creazione del nuovo backup. Durante tale intervallo di aggiornamento, i ripristini basati su interfaccia utente di tali snapshot meno recenti potrebbero non riuscire.
+
+
+.Passi
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
+. Scarica il report di backup.
+. Nel report, individua il volume che desideri ripristinare e trova la voce dell'endpoint relativa alla copia di backup necessaria:
++
+** Per un backup precedente da una relazione passata, usa il valore *Endpoint UUID History*.
+** Per un backup dalla relazione corrente, utilizza il valore *Endpoint UUID*.
++
+Ogni voce della cronologia utilizza il formato `<bucket_name>:<endpoint_uuid>`. Annota il nome del bucket e l'UUID dell'endpoint per il backup che vuoi ripristinare.
+
+
+
+. Connettiti alla CLI del cluster ONTAP e accedi alla modalità diagnostica:
++
+[source, shell]
+----
+set -privilege diagnostic
+----
+. Crea un volume per la protezione dati (DP) di destinazione:
++
+[source, shell]
+----
+volume create -vserver <vserver_name> -volume <volume_name> -aggregate <aggr_name> -size <size> -type DP
+----
+. Elenca gli snapshot disponibili per il bucket e l'UUID dell'endpoint che hai registrato:
++
+[source, shell]
+----
+snapm object-store endpoint snapshot show -object-store-name <bucket_name> -endpoint-uuid <endpoint_uuid>
+----
++
+
+NOTE: Questo comando elenca solo gli snapshot di cui ONTAP tiene traccia per quel bucket e quell'endpoint. Non elenca gli snapshot spostati manualmente in un altro bucket.
+
+. Se le credenziali dell'archivio di oggetti sono cambiate dopo la creazione del backup, aggiorna la configurazione dell'archivio di oggetti prima di continuare:
++
+[source, shell]
+----
+snapmirror object-store config show -object-store-name <object_store_name>
+snapmirror object-store config modify -object-store-name <object_store_name> -access-key <new_access_key> -secret-password <new_secret_password>
+----
+. Ripristina lo snapshot selezionato dallo storage a oggetti nel volume DP di destinazione:
++
+[source, shell]
+----
+snapmirror restore -destination-path <vserver>:<destination_volume> -source-path <bucket_name>:/objstore/<endpoint_uuid> -source-snapshot <snapshot_name> -source-endpoint-uuid <endpoint_uuid>
+----
+
+
+
+
+[[find-more-information]]
+== Trova maggiori informazioni
+
+Per ulteriori informazioni sui comandi ONTAP in questa attività, consulta la seguente documentazione ONTAP:
+
+* https://docs.netapp.com/us-en/ontap-cli/volume-create.html["crea volume"]
+* https://docs.netapp.com/us-en/ontap-cli/snapmirror-object-store-config-modify.html["snapmirror object-store config modify"]
+* https://docs.netapp.com/us-en/ontap-cli/snapmirror-restore.html["snapmirror restore"]
+

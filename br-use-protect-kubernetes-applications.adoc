@@ -27,6 +27,9 @@ Super admin di NetApp Backup and Recovery o backup admin di NetApp Backup and Re
 
 Per proteggere un'applicazione Kubernetes, crea prima l'applicazione in NetApp Backup and Recovery. Quando crei l'applicazione, NetApp Backup and Recovery rileva l'applicazione in esecuzione sul cluster Kubernetes.
 
+
+NOTE: Se le tue applicazioni utilizzano volumi FlexVol partizionati con Qtree, la protezione dell'applicazione protegge tutti i Qtree in qualsiasi volume FlexVol che fa parte dell'applicazione.
+
 .Prima di iniziare
 Prima di poter aggiungere e proteggere un'applicazione Kubernetes, è necessariolink:br-start-discover.html["scopri i carichi di lavoro di Kubernetes"] .
 
@@ -59,6 +62,7 @@ NOTE: NetApp Backup and Recovery non memorizza i parametri di ricerca o i risult
 
 
 
+. Facoltativamente, nell'area *Gruppi di volumi*, usa i selettori di etichette per definire i gruppi di volumi. Le risorse in ciascuna etichetta separata da virgole sono protette come un set coerente in caso di crash.
 . Backup and Recovery visualizza un elenco di risorse che corrispondono ai criteri di ricerca.
 . Se l'elenco contiene le risorse che si desidera proteggere, selezionare *Avanti*.
 . Facoltativamente, nell'area *Policy*, scegli una policy di protezione esistente per proteggere l'applicazione oppure creane una nuova. Se non selezioni una policy, l'applicazione viene creata senza una policy di protezione. Puoi link:br-use-policies-kubernetes-create.html#create-a-policy["aggiungere una politica di protezione"] in seguito.
@@ -89,6 +93,7 @@ NOTE: Se selezioni le VM dall'elenco, la definizione dell'applicazione è static
 +
 Le macchine virtuali selezionate vengono visualizzate nell'elenco a destra.
 
+. Facoltativamente, nell'area *Volume groups*, abilita l'opzione per proteggere i dischi della VM selezionata insieme come volume group con coerenza di crash (un volume group per VM).
 . Se l'elenco contiene le macchine virtuali che si desidera proteggere, selezionare *Avanti*.
 . Facoltativamente, nell'area *Policy*, scegli una policy di protezione esistente per proteggere l'applicazione oppure creane una nuova. Se non selezioni una policy, l'applicazione viene creata senza una policy di protezione. Puoi link:br-use-policies-kubernetes-create.html#create-a-policy["aggiungere una politica di protezione"] in seguito.
 . Nell'area *Prescript e postscript*, abilitare e configurare tutti gli hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup.  Per abilitare prescript o postscript, devi averne già creato almeno unolink:br-use-manage-execution-hook-templates.html["modello di gancio di esecuzione"] .
@@ -157,6 +162,10 @@ spec:
       labelSelector:
         matchLabels:
           app: another-example-app
+  volumeGroups:
+    - labelSelector:
+        matchLabels:
+          volume-group: my-volume-group
   includedClusterScopedResources:
     - groupVersionKind:
         group: rbac.authorization.k8s.io

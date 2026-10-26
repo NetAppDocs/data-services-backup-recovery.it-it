@@ -14,9 +14,6 @@ summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che r
 [role="lead"]
 Utilizza NetApp Backup and Recovery per creare policy di backup VMware che controllano la frequenza, la pianificazione e la conservazione dei backup.
 
-
-NOTE: Alcune di queste opzioni e sezioni di configurazione non sono disponibili per tutti i carichi di lavoro.
-
 Se importi risorse da SnapCenter, potresti riscontrare alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati in NetApp Backup and Recovery.  Vederelink:reference-policy-differences-snapcenter.html["Differenze di policy tra SnapCenter e NetApp Backup and Recovery"] .
 
 È possibile raggiungere i seguenti obiettivi relativi alle politiche:
