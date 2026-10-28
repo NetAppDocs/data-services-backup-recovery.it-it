@@ -412,6 +412,7 @@ IMPORTANT: Prima di annullare la registrazione di un sistema, scarica un report 
 .Informazioni su questo compito
 * Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di archiviazione degli oggetti per la capacità utilizzata dai tuoi backup, a meno che tu non<<Elimina i backup,eliminare i backup>> .
 * Per ripristinare i backup esistenti, consulta link:prev-ontap-restore-cli.html["Ripristina i dati ONTAP usando ONTAP CLI"^].
+* Non puoi modificare l'archivio di oggetti di destinazione per un sistema dopo aver abilitato i backup. Per utilizzare un archivio di oggetti diverso, annulla la registrazione di NetApp Backup and Recovery per il sistema, quindi riattivalo usando le informazioni del nuovo cloud provider.
 
 
 .Passi

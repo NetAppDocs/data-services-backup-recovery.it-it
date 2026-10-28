@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: br-start-sources-destinations.html 
+keywords: supported systems, supported regions, backup destinations, restore destinations, backup sources, secondary system, object storage, Amazon S3, Azure Blob, Google Cloud Storage, StorageGRID, ONTAP S3, Amazon FSx for NetApp ONTAP, Google Cloud NetApp Volumes Flex 
+summary: NetApp Backup and Recovery supporta il backup e il ripristino dei dati in una vasta gamma di sistemi di origine, sistemi secondari e destinazioni di storage a oggetti. 
+---
+= Destinazioni supportate per backup e ripristino in NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esamina i sistemi di origine, i sistemi secondari e le destinazioni di storage a oggetti che NetApp Backup and Recovery supporta per le operazioni di backup e ripristino tra i carichi di lavoro.
+
+
+
+[[supported-systems-for-backup-and-restore-operations]]
+== Sistemi supportati per operazioni di backup e ripristino
+
+NetApp Backup and Recovery supporta i sistemi ONTAP e i provider di cloud pubblici e privati.
+
+
+
+[[supported-regions]]
+=== Regioni supportate
+
+NetApp Backup and Recovery è supportato con Cloud Volumes ONTAP in molte regioni di Amazon Web Services, Microsoft Azure e Google Cloud.
+
+https://bluexp.netapp.com/cloud-volumes-global-regions["Scopri di più utilizzando la mappa delle regioni globali"^]
+
+
+
+[[supported-backup-destinations]]
+=== Destinazioni di backup supportate
+
+NetApp Backup and Recovery ti consente di eseguire il backup dei dati dai seguenti sistemi di origine ai seguenti sistemi secondari e allo storage a oggetti nei cloud provider pubblici e privati. Gli snapshot risiedono sul sistema di origine.
+
+
+NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualificato al momento. Gli altri provider compatibili con S3 non sono stati convalidati.
+
+[cols="33,33,33"]
+|===
+| Sistema sorgente | Sistema secondario (Replicazione) | Archivio oggetti di destinazione (backup) 
+
+
+| Cloud Volumes ONTAP in AWS  a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+
+| Amazon S3 
+
+
+| Cloud Volumes ONTAP in Azure  a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+| Blob azzurro 
+
+
+| Cloud Volumes ONTAP in Google  a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+
+| Google Cloud Storage 
+
+
+| Sistema ONTAP in sede  a| 
+* Cloud Volumes ONTAP
+* Sistema ONTAP in sede
+
+ a| 
+* Amazon S3
+* archiviazione compatibile con S3
+* Blob azzurro
+* Google Cloud Storage
+* NetApp StorageGRID
+* ONTAP S3
+
+
+
+
+| Google Cloud NetApp Volumes Flex (solo per carichi di lavoro Oracle Database e VMware) | Google Cloud NetApp Volumes Flex | Google Cloud Storage 
+
+
+| Amazon FSx for NetApp ONTAP (solo per i carichi di lavoro Microsoft SQL Server, Oracle Database e VMware) | Cloud Volumes ONTAP in AWS | Amazon S3 (solo da Cloud Volumes ONTAP) 
+|===
+
+NOTE: I riferimenti a "on-premises ONTAP system" includono i sistemi FAS, AFF e ONTAP Select.
+
+
+
+[[supported-restore-destinations]]
+=== Destinazioni di ripristino supportate
+
+È possibile ripristinare i dati da un file di backup, una macchina virtuale, un database o una risorsa Kubernetes che risiede in un sistema secondario (un volume replicato) o nello storage a oggetti (un file di backup) nei seguenti sistemi. Gli Snapshot risiedono nel sistema di origine e possono essere ripristinati solo in quello stesso sistema.
+
+
+NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualificato al momento. Gli altri provider compatibili con S3 non sono stati convalidati.
+
+[cols="30,35,35"]
+|===
+| Posizione di backup (archivio di oggetti) | Sistemi di destinazione durante il ripristino dallo storage a oggetti (Backup) | Sistemi di destinazione durante il ripristino da un sistema secondario (replica) 
+
+
+| Amazon S3  a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+* Amazon FSx for NetApp ONTAP (solo per i carichi di lavoro Microsoft SQL Server, Oracle Database e VMware)
+
+ a| 
+* Cloud Volumes ONTAP in AWS
+* Sistema ONTAP in sede
+* Amazon FSx for NetApp ONTAP
+
+
+
+
+| Blob azzurro  a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+ a| 
+* Cloud Volumes ONTAP in Azure
+* Sistema ONTAP in sede
+
+
+
+
+| Google Cloud Storage  a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+* Google Cloud NetApp Volumes Flex
+
+ a| 
+* Cloud Volumes ONTAP in Google
+* Sistema ONTAP in sede
+* Google Cloud NetApp Volumes Flex
+
+
+
+
+| StorageGRID  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| ONTAP S3  a| 
+* Sistema ONTAP in sede
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP in sede 
+
+
+| storage a oggetti compatibile con S3 (solo volumi ONTAP) | Sistema ONTAP in sede | Sistema ONTAP in sede 
+|===
+Tieni presenti le seguenti considerazioni relative al ripristino:
+
+* I ripristini da Cloud Volumes ONTAP (replicazione) possono essere effettuati solo su Cloud Volumes ONTAP. Tuttavia, Cloud Volumes ONTAP in AWS supporta anche il ripristino su Amazon FSx for NetApp ONTAP.
+* I ripristini da ONTAP on-premise (replica) possono essere eseguiti solo su ONTAP on-premise.
+* I ripristini da Amazon FSx for NetApp ONTAP e Google Cloud NetApp Volumes (replica) possono essere eseguiti solo nel rispettivo sistema proprietario.
+* Il ripristino da Amazon S3 ad Amazon FSx for NetApp ONTAP deve seguire questo ordine: Amazon S3 a Cloud Volumes ONTAP e poi Cloud Volumes ONTAP ad Amazon FSx for NetApp ONTAP.
+
+
+
+NOTE: I riferimenti a "on-premises ONTAP system" includono i sistemi FAS, AFF e ONTAP Select.

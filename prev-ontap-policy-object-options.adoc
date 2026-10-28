@@ -31,6 +31,9 @@ NetApp Backup and Recovery consente di creare più policy di backup con pianific
 
 Ogni policy di backup include una sezione per _Etichette e conservazione_ che puoi applicare ai file di backup. Nota che la policy di snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, altrimenti i file di backup non verranno creati.
 
+
+NOTE: La policy di snapshot applicata al volume deve avere una delle etichette che stai usando nella policy di replica e nella policy di backup su storage a oggetti. Se non trovi etichette corrispondenti, non verrà creato alcun file di backup. Ad esempio, se vuoi creare volumi replicati e file di backup "settimanali", devi usare una policy di snapshot che crei snapshot "settimanali".
+
 La pianificazione è composta da due parti: l'etichetta e il valore di conservazione:
 
 * L'*etichetta* definisce la frequenza con cui un file di backup viene creato (o aggiornato) dal volume.  È possibile scegliere tra i seguenti tipi di etichette:
@@ -51,6 +54,9 @@ Ad esempio, supponiamo di creare una policy di backup che crea 7 backup *settima
 
 
 I backup annuali vengono eliminati automaticamente dal sistema di origine dopo essere stati trasferiti nell'archiviazione degli oggetti.  Questo comportamento predefinito può essere modificato nella pagina Impostazioni avanzate del sistema.
+
+
+TIP: Il periodo di conservazione dei backup dei volumi di protezione dei dati (DP) è lo stesso definito nella relazione di SnapMirror di origine. Puoi modificarlo usando l'API.
 
 
 
@@ -150,6 +156,8 @@ Le scansioni vengono eseguite nelle seguenti situazioni:
 * Le scansioni ransomware possono essere avviate quando il backup viene selezionato per il processo di ripristino.
 * Le scansioni possono essere eseguite su richiesta in qualsiasi momento.
 
+
+Le scansioni ransomware programmate sono abilitate per impostazione predefinita e vengono eseguite ogni 7 giorni solo sull'istantanea più recente. Puoi modificare la frequenza delle scansioni o disabilitare le scansioni programmate nella pagina Impostazioni avanzate.
 
 *Come funziona il processo di recupero?*
 

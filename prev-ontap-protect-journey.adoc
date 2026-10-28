@@ -25,6 +25,7 @@ Esamineremo le seguenti opzioni:
 * Quale architettura di backup utilizzerai: un backup a cascata o a fan-out dei tuoi volumi
 * Utilizzerai i criteri di backup predefiniti o dovrai creare criteri personalizzati?
 * Desideri che il servizio crei i bucket cloud per te o desideri creare i contenitori di archiviazione degli oggetti prima di iniziare?
+* Alcuni dei tuoi volumi si trovano su aggregati FabricPool e in che modo le relative policy di tiering potrebbero influire sui tuoi backup
 * Quale modalità di distribuzione dell'agente della console stai utilizzando (modalità standard, limitata o privata)
 
 
@@ -229,6 +230,25 @@ Se intendi spostare i vecchi file di backup in un archivio o se intendi abilitar
 ** Per Azure, è necessario creare la classe di archiviazione con supporto di immutabilità a livello di versione.
 
 
+
+
+
+
+[[are-any-of-your-volumes-on-fabricpool-aggregates]]
+== Alcuni dei tuoi volumi sono su aggregati FabricPool
+
+Ci sono alcune cose di cui devi essere a conoscenza quando il volume di cui stai eseguendo il backup risiede su un aggregato FabricPool e ha una politica di suddivisione in livelli assegnata diversa da `none` :
+
+* Il primo backup di un volume FabricPool a livelli richiede la lettura di tutti i dati locali e a livelli (dall'archivio oggetti).  Un'operazione di backup non "riscalda" i dati inattivi archiviati in livelli nell'archiviazione degli oggetti.
++
+Questa operazione potrebbe comportare un aumento una tantum dei costi di lettura dei dati dal tuo provider cloud.
+
++
+** I backup successivi sono incrementali e non hanno questo effetto.
+** Se la policy di tiering viene assegnata al volume al momento della sua creazione iniziale, questo problema non si presenterà.
+
+
+* Considera l'impatto dei backup prima di assegnare ai volumi la `all` policy di tiering. Poiché i dati vengono sottoposti a tiering immediatamente, NetApp Backup and Recovery legge i dati dal tier cloud anziché dal tier locale. Poiché le operazioni di backup simultanee condividono il collegamento di rete con l'archivio di oggetti cloud, potresti riscontrare un peggioramento delle performance se le risorse di rete diventano sature. In questo caso, potresti voler configurare in modo proattivo più interfacce di rete (LIF) per ridurre questo tipo di saturazione della rete.
 
 
 
