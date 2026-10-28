@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-reports.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato dei tuoi backup, incluso il numero di backup, il numero di backup riusciti e il numero di backup non riusciti.  È inoltre possibile visualizzare i dettagli di ciascun backup, tra cui il tipo di backup, il sistema di archiviazione utilizzato per il backup e l"ora del backup.' 
+keywords: reports, protection report, protection overview, usage and charges, status summary, audit report, kubernetes overview, schedule report, download report, delete report, backup status, workloads 
+summary: 'In NetApp Backup and Recovery, puoi creare report per il tuo carico di lavoro per esaminare lo stato della protezione, lo stato dei processi, l"utilizzo e i dettagli di audit.' 
 ---
-= Crea report di protezione di Microsoft SQL Server in NetApp Backup and Recovery
+= Crea e gestisci report in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,29 +12,137 @@ summary: 'In NetApp Backup and Recovery, crea report per visualizzare lo stato d
 
 
 [role="lead"]
-Crea report per i carichi di lavoro di Microsoft SQL Server in NetApp Backup and Recovery per esaminare lo stato e i dettagli dei backup, inclusi il numero di backup riusciti e non riusciti, i tipi di backup, i sistemi di storage e i timestamp.
+Crea report in NetApp Backup and Recovery per verificare che i tuoi carichi di lavoro siano protetti e per individuare i backup che richiedono attenzione. I report mostrano il numero di backup riusciti e non riusciti, i tipi di backup, i sistemi di storage, lo stato del cluster e i timestamp. Esegui un report una sola volta o in base a una pianificazione, quindi visualizza, scarica o elimina i report generati.
+
+*Ruolo richiesto di NetApp Console* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin o Backup and Recovery clone admin. Se proteggi i dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 
 
-[[create-a-protection-report]]
-== Crea un report di protezione
+[[report-types-you-can-create]]
+== Tipi di report che puoi creare
 
-*Ruolo NetApp Console richiesto* super admin di Backup and Recovery, backup admin di Backup and Recovery, restore admin di Backup and Recovery, clone admin di Backup and Recovery. Se stai proteggendo i dati memorizzati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
+Scegli il tipo di report che risponde alla tua domanda, ad esempio se i carichi di lavoro sono protetti, per cosa paghi o quali processi non sono andati a buon fine.
+
+[cols="1,3"]
+|===
+| Tipo di report | Descrizione 
+
+
+| Panoramica della protezione | Una panoramica completa del tuo stato di protezione, inclusi inventario e riepiloghi di ripristino. 
+
+
+| Utilizzo e costi | Dettagli sull'utilizzo e sulla fatturazione per ciascun carico di lavoro o risorsa. 
+
+
+| Riepilogo dello stato | Lo stato di tutti i processi pianificati e su richiesta, con i dettagli per ciascun processo. 
+
+
+| Rapporto di audit | Una traccia di controllo di tutte le azioni e gli eventi eseguiti nel sistema. 
+
+
+| Panoramica di Kubernetes | Stato di protezione e backup per i tuoi cluster Kubernetes, le applicazioni e i namespace. 
+|===
+
+
+[[create-a-report]]
+== Crea un report
+
+Crea un report per verificare lo stato di protezione del tuo account, di agenti specifici, di host specifici o di carichi di lavoro specifici. Puoi eseguire il report una sola volta o a intervalli regolari.
+
+.Passi
+. Dal menu NetApp Backup and Recovery, seleziona *Reports* e quindi *Go to new reports* se viene visualizzata la pagina *Protection reports*.
+. Seleziona *Aggiungi report*.
+. In *Select report type*, scegli un tipo di report e seleziona *Proceed*.
+. Nel campo *Nome del report*, inserisci un nome univoco per il report.
++
+Il nome deve contenere tra 3 e 100 caratteri, può includere solo lettere, numeri, spazi, trattini bassi (_) e trattini (-) e deve iniziare con una lettera.
+
+. In *Ambito*, seleziona il livello dal quale il report raccoglie i dati:
++
+** *Per account*: Includi tutto ciò che è presente nell'account. Non è necessario inserire altro.
+** *Per agente*: In *Agent*, seleziona uno o più agenti della Console. Il report include solo le risorse gestite dagli agenti selezionati.
+** *Per host*: In *Seleziona host*, scegli uno o più host e seleziona *Accetta*. Usa questa opzione per i carichi di lavoro eseguiti su host, come Microsoft SQL Server e Oracle Database.
+** *Per carico di lavoro*: In *Carichi di lavoro*, scegli uno o più tipi di carico di lavoro.
++
+
+NOTE: L'elenco *Per carico di lavoro* non include ONTAP Volumes. Per creare un report per ONTAP Volumes, usa l'ambito *Per account* o *Per agente*.
+
+
+
+. Nella sezione *Frequenza*, scegli con quale frequenza eseguire il report:
++
+** *Una sola volta*: Esegui il report una sola volta. Questa è l'impostazione predefinita.
+** *A intervalli regolari*: esegui il report ripetutamente. In *Esegui ogni*, scegli una frequenza. I report pianificati appaiono nella scheda *Report pianificati*.
+
+
+. In *Opzioni di consegna del report*, puoi facoltativamente abilitare *Invia via e-mail i risultati del report quando il report viene eseguito*.
++
+Questa opzione è disabilitata per impostazione predefinita. Per impostazione predefinita, il sistema invia i report a tutti gli utenti dell'organizzazione. Per inviare i report a destinatari specifici, configura le notifiche e-mail nella pagina *Impostazioni* sotto *Notifiche*. Per dettagli sulla configurazione delle notifiche e-mail, consulta link:br-start-configure.html["Configurare le impostazioni"].
+
+. Nella sezione *Conservazione*, in *Conserva per*, scegli per quanto tempo conservare il report prima di eliminarlo. L'impostazione predefinita è 30 giorni.
+. Selezionare *Aggiungi*.
++
+Il report viene visualizzato in cima all'elenco dei *Report generati*. Quando il report è pronto, viene visualizzato un messaggio di esito positivo e puoi scaricarlo o eliminarlo.
+
+
+
+L'elenco *Report generati* mostra il nome, il tipo, l'intervallo, l'ora di generazione e l'utente per ciascun report. La colonna *Ambito* riepiloga ciò che il report copre, ad esempio "1 Account" o "1 Agent". Seleziona *Visualizza* nella colonna *Ambito* per aprire il report. L'intervallo mostra N/A per i report una tantum.
+
+
+
+[[download-a-report-as-json-pdf-excel-or-csv]]
+== Scarica un report in formato JSON, PDF, Excel o CSV
+
+Scarica il report generato per consultarlo offline o condividerlo con altri utenti che non hanno accesso alla NetApp Console.
 
 .Passi
 . Dal menu NetApp Backup e ripristino, seleziona *Report*.
-. Seleziona *Crea report*.
-. Inserisci i dettagli dell'ambito del report:
+. Nella scheda *Report generati*, individua il report che desideri scaricare.
+. Nella riga del report, seleziona *Scarica* e poi scegli un formato:
 +
-** *Nome del report*: immettere un nome univoco per il report.
-** *Tipo di report*: scegli se desideri un report per account o per carico di lavoro (Microsoft SQL Server).
-** *Seleziona host*: se hai selezionato in base al carico di lavoro, seleziona l'host per il quale desideri generare il report.
-** *Seleziona contenuto*: scegli se desideri che il report includa un riepilogo di tutti i backup o i dettagli di ciascun backup.  (Se hai scelto "Per account")
-
-
-. Inserisci l'intervallo di riferimento: scegli se vuoi che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
-. Inserisci i dettagli per la consegna del report: se vuoi che il report venga inviato tramite email, seleziona *Invia report tramite email*. Inserisci l'indirizzo email a cui vuoi che venga inviato il report.
+** *Scarica JSON*
+** *Scarica il PDF*
+** *Scarica Excel*
+** *Scarica CSV*
 +
-Configura le notifiche e-mail nella pagina Impostazioni. Per ulteriori dettagli sulla configurazione delle notifiche e-mail, consulta link:br-start-configure.html["Configurare le impostazioni"].
+Puoi anche usare il menu *Scarica* nella pagina del report.
 
++
+La preparazione di report di grandi dimensioni può richiedere più tempo.
+
+
+
+
+
+
+
+[[view-report-details]]
+== Visualizza i dettagli del report
+
+Visualizza i dettagli di un report generato all'interno di NetApp Backup and Recovery, inclusi un riepilogo, i conteggi dell'inventario e le tabelle di dettaglio.
+
+.Passi
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
+. Nella scheda *Report generati*, seleziona il nome del report che desideri visualizzare.
+. Espandi *Inventario* per visualizzare il numero di sistemi, SVM, volumi, host, istanze e bucket.
+. Scorri verso il basso per visualizzare le tabelle del report. Le tabelle visualizzate dipendono dal tipo di report.
+. (Facoltativo) Per scegliere quali colonne visualizzare in una tabella, seleziona l'icona della colonna all'estremità destra della riga di intestazione della tabella, seleziona o deseleziona le colonne e quindi seleziona *Applica*.
++
+La colonna *Nome risorsa* rimane sempre visibile. Seleziona *Ripristina impostazioni predefinite* per tornare alle colonne predefinite.
+
+. Per tornare all'elenco dei report, seleziona *Reports* nella parte superiore della pagina.
+
+
+
+
+[[delete-a-report]]
+== Elimina un report
+
+Elimina un report generato per rimuoverlo dall'elenco *Report generati*. I report vengono eliminati automaticamente anche quando termina il loro periodo di conservazione.
+
+.Passi
+. Dal menu NetApp Backup e ripristino, seleziona *Report*.
+. Nella scheda *Report generati*, individua il report che vuoi eliminare.
+. Nella riga del report, seleziona l'icona di eliminazione.
+. Conferma l'azione selezionando *Elimina*.
 

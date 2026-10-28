@@ -25,9 +25,10 @@ Ripristina i carichi di lavoro di database Oracle da Snapshot, backup replicati 
 
 
 .Ripristinare questi punti
-È possibile ripristinare i dati nella posizione originale; il ripristino in una posizione alternativa non è disponibile in questa versione di anteprima privata.
+Puoi ripristinare un database nella sua posizione originale oppure ripristinarlo come nuovo database su un host registrato diverso (posizione alternativa).
 
 * Ripristina la posizione originale
+* Ripristina in una posizione alternativa (un host registrato diverso)
 
 
 
@@ -39,6 +40,7 @@ Quando ripristini i carichi di lavoro del database Oracle, succede quanto segue:
 
 * Quando si ripristina un database da uno snapshot locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
 * Quando si esegue il ripristino da un archivio replicato, è possibile ripristinarlo nella posizione originale.
+* Quando esegui un ripristino in una posizione alternativa, NetApp Backup and Recovery ripristina il backup selezionato del database di origine come nuovo database su un host registrato diverso. Specifichi l'host di destinazione e un nome per il nuovo database. Se non fornisci un file di specifica del ripristino, Backup and Recovery calcola automaticamente le posizioni dei file di dati, dei file di controllo e dei file di redo log sull'host di destinazione.
 * Quando si ripristina un backup da un archivio oggetti, è possibile ripristinare i dati nell'archivio di origine o in un sistema ONTAP locale e recuperare il database da lì.
 
 
@@ -69,6 +71,25 @@ NOTE: Oracle Database crea una nuova incarnazione del database ogni volta che ap
 A seconda delle tue esigenze, puoi ripristinare un database Oracle a un punto specifico nel tempo, a uno specifico numero di modifica del sistema (SCN) o all'ultimo stato valido. Puoi anche ripristinare il database da Snapshot e saltare il processo di ripristino automatico, ad esempio se vuoi eseguire il ripristino manualmente. Puoi cercare il database utilizzando il suo nome o con filtri specifici.
 
 *Ruolo richiesto NetApp Console* Super amministratore di Backup e ripristino o amministratore di ripristino di Backup e ripristino. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^]
+
+[[alternate-location-support]]
+.Prima di iniziare
+Quando esegui un ripristino in una posizione alternativa, tieni presenti i seguenti scenari di ripristino supportati e non supportati:
+
+*Scenari di ripristino in posizione alternativa supportati*
+
+* Ripristino di un singolo, intero database Oracle su un singolo host di destinazione
+* Ripristino a un punto specifico nel tempo, a un SCN specifico o all'ultimo backup
+* Utilizzo di directory di log di archivio esterne quando i log di archivio necessari per il punto di ripristino selezionato non sono inclusi nel backup
+
+
+*Scenari di ripristino in posizioni alternative non supportati*
+
+* Ripristino del solo tablespace, incluso il ripristino dei tablespace all'interno di un PDB
+* Ripristino del solo PDB in un diverso container database (CDB)
+* Ripristino da storage secondario
+* Ripristina da storage a oggetti
+
 
 [NOTE]
 ====
@@ -169,8 +190,8 @@ Vengono visualizzate le istantanee disponibili.
 
 ... Facoltativamente, puoi abilitare l'opzione *File di controllo* per ripristinare anche i file di controllo del database. Questa opzione non può essere selezionata per il recovery point-in-time o SCN di PDB o tablespace PDB.
 ... Facoltativamente, abilita l'opzione *Modifica lo stato del database se necessario per il ripristino e il recupero* per consentire a NetApp Backup and Recovery di gestire lo stato del database a seconda del tipo di recupero.
-... Facoltativamente, puoi abilitare l'opzione *Force in place restore* per eseguire un rispristino in-place quando sono stati aggiunti nuovi datafile dopo il backup, o quando LUN sono stati aggiunti, eliminati o ricreati in un gruppo di dischi LVM. Questa opzione ignora il controllo dei file esterni; il recovery del database procede utilizzando l'opzione di restore che hai selezionato.
-... Specifica i percorsi esterni dei file di log di archivio nel campo *Specifica i percorsi esterni dei file di log di archivio* se ripristini PDB o tablespace a un punto specifico nel tempo o SCN e i log di archivio non si trovano nella posizione configurata. Immetti un percorso del file system che inizi con `/`o un gruppo di dischi ASM che inizi con `+`. Usa i pulsanti "più" e "meno" accanto al campo di immissione del testo per aggiungere o rimuovere percorsi. Questo campo non viene visualizzato quando esegui il ripristino da snapshot senza recovery.
+... Facoltativamente, puoi abilitare l'opzione *Forza rispristino in-place* per eseguire un rispristino in-place quando sono stati aggiunti nuovi file di dati dopo il backup o quando sono state aggiunte, eliminate o ricreate LUN in un gruppo di dischi LVM. Questa opzione ha la precedenza sul controllo dei file esterni; il recovery del database procede utilizzando l'opzione di ripristino selezionata.
+... Specifica i percorsi esterni dei file di log di archivio nel campo *Specifica i percorsi esterni dei file di log di archivio* se ripristini un database a uno specifico momento nel tempo o a uno SCN specifico e i file di log di archivio non si trovano nella posizione configurata. Immetti un percorso del file system che inizi con `/`o un gruppo di dischi ASM che inizi con `+`. Usa i pulsanti "più" e "meno" accanto al campo di immissione del testo per aggiungere o rimuovere posizioni. Questo campo non viene visualizzato quando esegui il ripristino da snapshot senza recovery.
 ... Facoltativamente, abilita l'opzione *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il recovery* e seleziona una sotto-opzione che corrisponde all'ambito del ripristino (queste opzioni non vengono visualizzate quando esegui il ripristino da snapshot senza recovery):
 +
 **** *Tutti i datafile*: Apri il database o il container database in modalità READ-WRITE dopo il recovery.
@@ -192,9 +213,27 @@ Vengono visualizzate le istantanee disponibili.
 --
 .Ripristina in posizione alternativa
 --
-Non disponibile per i carichi di lavoro di database Oracle in questa versione di anteprima.
+Ripristina un database come nuovo database su un host registrato diverso. Consulta <<alternate-location-support,scenari supportati e non supportati>> prima di iniziare.
+
+.. Nella sezione *Impostazioni destinazione*, inserisci le seguenti informazioni:
++
+... *Host di destinazione*: Seleziona l'host registrato in cui vuoi creare il nuovo database.
+... *Database di destinazione*: Inserisci un nome per il database di destinazione. Per impostazione predefinita, il nome inizia con il nome del database di origine e puoi modificarlo.
+... *Personalizza i parametri del database di destinazione*: Abilita questa opzione per caricare un file di specifica di ripristino personalizzato e personalizzare i parametri del database di destinazione.
+... *File di specifica per il ripristino*: se hai abilitato l'opzione *Personalizza i parametri del database di destinazione*, fornisci un file di specifica per il ripristino per controllare dove vengono posizionati i file ripristinati sull'host di destinazione. Puoi scaricare un file di specifica per il ripristino predefinito e personalizzarlo per modificare i dettagli del database di destinazione, come l'autenticazione e le posizioni dei log.
++
+Se non fornisci un file di specifica per il ripristino, Backup and Recovery calcola automaticamente le posizioni dei file di dati, dei file di controllo e dei file di redo log.
+
+... Specifica i percorsi esterni dei file di log di archivio nel campo *Specifica i percorsi esterni dei file di log di archivio* se ripristini un database a uno specifico momento nel tempo o a uno SCN specifico e i file di log di archivio non si trovano nella posizione configurata. Immetti un percorso del file system che inizi con `/`o un gruppo di dischi ASM che inizi con `+`. Usa i pulsanti "più" e "meno" accanto al campo di immissione del testo per aggiungere o rimuovere posizioni. Questo campo non viene visualizzato quando esegui il ripristino da snapshot senza recovery.
+... Facoltativamente, abilita l'opzione *Apri il database o il container database in modalità LETTURA-SCRITTURA dopo il recovery* e seleziona una sotto-opzione che corrisponde all'ambito del ripristino (queste opzioni non vengono visualizzate quando esegui il ripristino da snapshot senza recovery):
+
+
+
 
 --
 ====
 . Selezionare *Ripristina*.
++
+Al termine dell'operazione di ripristino, controlla nella pagina *Inventory* che il nuovo database sia presente nell'elenco. Se il database non è presente, aggiorna l'host di destinazione.
+
 

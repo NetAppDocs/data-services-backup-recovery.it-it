@@ -133,8 +133,6 @@ sidebar:
         url: "/br-use-manage-inventory.html"
       - title: Gestire gli snapshot di Microsoft SQL Server
         url: "/br-use-manage-snapshots.html"
-      - title: Creare report di Microsoft SQL Server
-        url: "/br-use-reports.html"
     - title: Proteggi i carichi di lavoro VMware
       entries:
       - title: Flusso di lavoro di protezione VMware
@@ -258,8 +256,8 @@ sidebar:
         url: "/br-use-manage-kubernetes-access-control.html"
       - title: Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes
         url: "/br-use-manage-execution-hook-templates.html"
-      - title: Crea e gestisci report di protezione
-        url: "/br-use-kubernetes-reports.html"
+    - title: Crea e gestisci report
+      url: "/br-use-reports.html"
     - title: Monitorare i lavori
       url: "/br-use-monitor-tasks.html"
     - title: Riavvia NetApp Backup and Recovery

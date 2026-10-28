@@ -406,6 +406,9 @@ Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di ar
 
 L'annullamento della registrazione di NetApp Backup and Recovery per un sistema interrompe i backup futuri per un sistema storage e lo rimuove da NetApp Backup and Recovery. Durante il processo, puoi scegliere se mantenere o eliminare i backup esistenti.
 
+
+IMPORTANT: Prima di annullare la registrazione di un sistema, scarica un report completo "Protection overview". Il report elenca i backup esistenti e i relativi UUID. Se conservi i backup, ti servono questi UUID per ripristinarli.
+
 .Informazioni su questo compito
 * Tieni presente che il tuo provider cloud continuerà a addebitarti i costi di archiviazione degli oggetti per la capacità utilizzata dai tuoi backup, a meno che tu non<<Elimina i backup,eliminare i backup>> .
 * Per ripristinare i backup esistenti, consulta link:prev-ontap-restore-cli.html["Ripristina i dati ONTAP usando ONTAP CLI"^].
