@@ -71,3 +71,6 @@ Crea un backup su richiesta prima di apportare modifiche al sistema per protegge
 . Selezionare il livello di pianificazione.
 . Selezionare *Backup*.
 
+
+
+NOTE: Per i database Oracle Data Guard, NetApp Backup and Recovery verifica il ruolo corrente di ciascun database all'avvio di un backup e applica le *impostazioni di Data Guard* definite nella policy. Dopo un'operazione di switchover o failover, il backup successivo utilizzerà i nuovi ruoli.

@@ -102,6 +102,17 @@ Se ripristini PDB o tablespace a uno specifico point-in-time o SCN:
 
 
 ====
+*Note importanti sul ripristino dei database di Oracle Data Guard*
+
+* Prima di eseguire il ripristino, assicurati che il ruolo del database sia aggiornato. Se si è verificato uno switchover o un failover, seleziona prima la scheda *Hosts* e poi *Refresh* per l'host. Le opzioni di ripristino disponibili dipendono dal ruolo che il database ha ora.
+* Se il database è attualmente in modalità standby, non puoi ripristinarlo nella posizione originale, indipendentemente dal ruolo che ricopriva al momento del backup. Ripristinalo in una posizione alternativa.
+* Se il database è attualmente in modalità standby, non puoi ripristinare uno snapshot presente solo nello storage secondario o nello storage a oggetti.
+* Puoi ripristinare un backup effettuato mentre il database era in modalità standby nella posizione originale dopo che il database è diventato primario.
+
+
+
+CAUTION: Il ripristino di un database primario non modifica lo standby. Quando apri il database primario con `RESETLOGS` dopo un ripristino point-in-time o SCN, viene avviata una nuova incarnazione del database. Se lo standby ha già applicato i redo oltre quel punto, l'applicazione dei redo sullo standby si interrompe con un errore e lo standby rimane nello stato precedente. Per riprendere la protezione, ristabilisci lo standby dopo il ripristino usando gli strumenti Oracle.
+
 .Passi
 . Dal menu NetApp Console , selezionare *Protezione > Backup e ripristino*.
 . Dal menu NetApp Backup and Recovery , selezionare *Ripristina*.

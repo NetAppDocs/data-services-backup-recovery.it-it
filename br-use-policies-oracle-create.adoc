@@ -137,7 +137,16 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 [%collapsible]
 ====
 ** *Impostazioni del catalogo RMAN*: Abilita l'opzione *Catalog backup with Oracle Recovery Manager (RMAN)* per catalogare automaticamente i metadati per le operazioni di backup e ripristino di Oracle Database. I metadati vengono memorizzati in base alle impostazioni *Configure RMAN catalog* che scegli per il database (nel file di controllo di destinazione per impostazione predefinita). Consulta link:br-start-configure-oracle-database.html["Configurare un database Oracle"] per modificare queste impostazioni per un database.
-** *Impostazioni di Data Guard*: seleziona se vuoi abilitare le impostazioni di Data Guard nella policy e seleziona se eseguire il backup del database primario, secondario o di entrambi quando proteggi i database in una distribuzione Oracle Data Guard. Puoi proteggere i database in una distribuzione Oracle Data Guard utilizzando un gruppo di protezione.
+** *Impostazioni di Data Guard*: Seleziona *Abilita impostazioni di Data Guard* per scegliere quali database di Oracle Data Guard sottoporre a backup:
++
+*** *Esegui il backup sia del primario che dello standby* (predefinito)
+*** *Backup solo sul primario*
+*** *Backup solo in standby*
++
+Se non abiliti le *impostazioni di Data Guard*, viene eseguito il backup sia del database primario sia di quello di standby. Dopo aver assegnato il criterio alle risorse, non puoi disabilitare le *impostazioni di Data Guard*.
+
+
+
 ** *Verifica del backup*: Seleziona se desideri abilitare la verifica del backup e se desideri eseguirla immediatamente o in un secondo momento. Questa funzione garantisce che i backup siano validi e possano essere ripristinati correttamente. Si consiglia di abilitare questa opzione per garantire l'integrità dei backup. Per impostazione predefinita, la verifica del backup viene eseguita dallo storage secondario, se lo storage secondario è configurato. Se lo storage secondario non è configurato, la verifica del backup viene eseguita dallo storage primario.
 +
 Inoltre, configurare le seguenti opzioni:
