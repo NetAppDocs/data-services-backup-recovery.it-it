@@ -4,7 +4,7 @@ permalink: br-start-discover-hyperv.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
 summary: NetApp Backup and Recovery deve rilevare le macchine virtuali Hyper-V prima di poterle proteggere. 
 ---
-= Scopri i carichi di lavoro Hyper-V in NetApp Backup and Recovery
+= Scopri e gestisci i carichi di lavoro Hyper-V in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -62,6 +62,24 @@ TIP: Questo processo potrebbe richiedere alcuni minuti.
 
 .Risultato
 Dopo che NetApp Backup and Recovery rileva le risorse, la pagina Inventario visualizza il carico di lavoro Hyper-V nell'elenco dei carichi di lavoro.
+
+
+
+[[refresh-a-hyper-v-host]]
+== Aggiornare un host Hyper-V
+
+Aggiorna un host Hyper-V per aggiornare l'elenco delle VM sull'host e mappare lo storage connesso. Potresti volerlo fare dopo uno switchover o uno switchback di MetroCluster, oppure se hai aggiunto o rimosso di recente VM dall'host.
+
+
+IMPORTANT: Se un host Hyper-V è protetto da una configurazione NetApp MetroCluster, aggiorna l'host dopo ogni switchover o switchback di MetroCluster e prima del successivo backup o snapshot pianificato o manuale. Tutti i backup o snapshot eseguiti per l'host prima dell'aggiornamento non andranno a buon fine. Se non aggiorni manualmente l'host, Backup and Recovery lo aggiorna automaticamente entro 12 ore.
+
+.Passi
+. Dal menu NetApp Console, seleziona *Protezione* > *Backup and Recovery*.
+. Seleziona il riquadro del carico di lavoro Hyper-V.
+. Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
+. Seleziona il collegamento *View* per il tipo di carico di lavoro Hyper-V.
+. Scegli un host Hyper-V da aggiornare e seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Aggiorna*.
+
 
 
 

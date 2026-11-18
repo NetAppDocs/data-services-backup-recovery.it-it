@@ -28,6 +28,9 @@ Esegui il backup delle macchine virtuali Hyper-V dai sistemi ONTAP locali verso 
 
 Utilizza un backup su richiesta per proteggere i tuoi dati prima di apportare modifiche al sistema.
 
+
+IMPORTANT: Se un host Hyper-V è protetto da una configurazione NetApp MetroCluster, aggiorna l'host dopo ogni switchover o switchback di MetroCluster e prima del successivo backup o snapshot pianificato o manuale. Per istruzioni, consulta link:br-start-discover-hyperv.html#refresh-a-hyper-v-host["Aggiornare un host Hyper-V"].
+
 *Ruolo richiesto NetApp Console* Super amministratore di Backup and Recovery o ruolo di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Passi
