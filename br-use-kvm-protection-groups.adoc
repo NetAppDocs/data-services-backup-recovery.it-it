@@ -16,7 +16,7 @@ summary: Crea e gestisci gruppi di protezione per carichi di lavoro KVM in NetAp
 [role="lead"]
 Crea e gestisci gruppi di protezione per poter eseguire il backup di macchine virtuali KVM e pool di storage correlati insieme.
 
-Puoi fare quanto segue con i gruppi di protezione:
+Puoi eseguire queste operazioni con i gruppi di protezione:
 
 * Crea un gruppo di protezione
 * Visualizza i dettagli della protezione
@@ -61,7 +61,7 @@ Per ulteriori informazioni, vedi link:br-use-policies-create.html["Creare e gest
 [[edit-a-protection-group]]
 == Modifica un gruppo di protezione
 
-Modifica un gruppo di protezione se devi cambiare i dettagli del gruppo di protezione senza eliminarlo e ricrearlo.
+Modifica un gruppo di protezione per cambiarne i dettagli senza eliminarlo e ricrearlo.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.

@@ -43,7 +43,7 @@ Abilita il servizio di backup e ripristino in NetApp Console.
 Abilita il servizio di Backup and Recovery nella distribuzione locale di NetApp Console.
 
 .Prima di iniziare
-Assicurati di aver ottenuto una licenza per NetApp Backup and Recovery. Vedi https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Ottieni una licenza"^] per ulteriori informazioni.
+Verifica di avere una licenza per NetApp Backup and Recovery. Vedi https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Ottieni una licenza"^] per ulteriori informazioni.
 
 .Passi
 . Dal menu NetApp Console, seleziona *Archiviazione* > *Flotte*.

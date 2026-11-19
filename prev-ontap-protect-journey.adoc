@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-journey.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: 'Pianifica come proteggere i volumi ONTAP con NetApp Backup and Recovery scegliendo le funzionalità di protezione, l"architettura di backup, le policy, lo storage a oggetti e la modalità di distribuzione dell"agente Console.' 
 ---
 = Pianifica la protezione del volume ONTAP in NetApp Backup and Recovery
 :hardbreaks:
@@ -14,14 +14,14 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-Usa questa pagina per pianificare come proteggere i tuoi volumi ONTAP con NetApp Backup and Recovery. Prima di abilitare backup e ripristino, rivedi i metodi di protezione, le architetture, le policy, le scelte di storage a oggetti e le modalità di distribuzione dell'agente della Console.
+Pianifica come proteggere i tuoi volumi ONTAP con NetApp Backup and Recovery. Prima di abilitare il backup e ripristino, esamina i metodi di protezione, le architetture, le policy, le opzioni di storage a oggetti e le modalità di distribuzione dell'agente Console.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-Esamineremo le seguenti opzioni:
+Rispondi a queste domande per pianificare la tua protezione:
 
-* Quali funzionalità di protezione utilizzerai: snapshot, volumi replicati e/o backup sul cloud
+* Quali funzionalità di protezione utilizzerai: snapshot, volumi replicati o backup su cloud
 * Quale architettura di backup utilizzerai: un backup a cascata o a fan-out dei tuoi volumi
 * Utilizzerai i criteri di backup predefiniti o dovrai creare criteri personalizzati?
 * Desideri che il servizio crei i bucket cloud per te o desideri creare i contenitori di archiviazione degli oggetti prima di iniziare?
@@ -34,7 +34,7 @@ Esamineremo le seguenti opzioni:
 [[which-protection-features-will-you-use]]
 == Quali funzionalità di protezione utilizzerai?
 
-Prima di selezionare le funzionalità da utilizzare, ecco una breve spiegazione di cosa fa ciascuna funzionalità e del tipo di protezione che offre.
+Prima di selezionare le funzionalità da utilizzare, esamina la loro funzione e il tipo di protezione che offrono.
 
 [cols="20,70"]
 |===
@@ -53,9 +53,9 @@ Gli snapshot sono alla base di tutti i metodi di backup e sono necessari per uti
 
 image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono sul sistema di origine come snapshot, come volumi replicati sul sistema di archiviazione secondario e come file di backup nell'archiviazione di oggetti."]
 
-È possibile scegliere di creare sia volumi replicati su un altro sistema di archiviazione ONTAP sia file di backup nel cloud.  Oppure puoi semplicemente scegliere di creare volumi replicati o file di backup: la scelta è tua.
+Puoi creare volumi replicati su un altro sistema storage ONTAP, eseguire il backup dei file nel cloud o entrambi.
 
-Riassumendo, ecco i flussi di protezione validi che puoi creare per i volumi nel tuo sistema ONTAP :
+Questi sono i flussi di protezione validi che puoi creare per i volumi nel tuo sistema ONTAP:
 
 * Volume di origine -> Snapshot -> Volume replicato -> File di backup
 * Volume sorgente -> Snapshot -> File di backup
@@ -67,9 +67,9 @@ NOTE: La creazione iniziale di un volume replicato o di un file di backup includ
 
 *Confronto tra i diversi metodi di backup*
 
-La tabella seguente mostra un confronto generalizzato dei tre metodi di backup.  Sebbene lo spazio di archiviazione degli oggetti sia in genere meno costoso dell'archiviazione su disco in locale, se pensi di dover ripristinare frequentemente i dati dal cloud, le tariffe di uscita dei provider cloud possono ridurre parte dei tuoi risparmi.  Dovrai stabilire con quale frequenza dovrai ripristinare i dati dai file di backup nel cloud.
+Questa tabella confronta i tre metodi di backup. Lo storage a oggetti è in genere meno costoso dello storage su disco on-premises. Tuttavia, se ripristini spesso i dati dal cloud, le commissioni di uscita applicate dai cloud provider possono ridurre il risparmio. Identifica con quale frequenza devi ripristinare i dati dai file di backup nel cloud.
 
-Oltre a questi criteri, il cloud storage offre ulteriori opzioni di sicurezza se usi la funzionalità *DataLock and Ransomware protection* e ulteriori risparmi sui costi quando selezioni classi di storage archiviate per i file di backup più vecchi. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione DataLock e Ransomware e sulle impostazioni di archiviazione"].
+Oltre a questi criteri, il cloud storage offre opzioni di sicurezza aggiuntive se utilizzi la funzionalità *DataLock e protezione dal ransomware* e ulteriori risparmi sui costi quando selezioni classi di storage di archivio per i file di backup meno recenti link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione DataLock e Ransomware e sulle impostazioni di archiviazione"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -101,14 +101,14 @@ image:diagram-321-cascade-detailed.png["Un diagramma che mostra come uno snapsho
 
 *Confronto tra le diverse scelte architettoniche*
 
-Questa tabella fornisce un confronto tra le architetture fan-out e a cascata.
+Questa tabella confronta le architetture fan-out e a cascata.
 
 [cols="50,50"]
 |===
 | Fan-out | Cascata 
 
 
-| Piccolo impatto sulle prestazioni del sistema sorgente perché invia snapshot a 2 sistemi distinti | Minore impatto sulle prestazioni del sistema di archiviazione di origine perché invia lo snapshot una sola volta 
+| Impatto minimo sulle prestazioni del sistema di origine poiché invia snapshot a due sistemi distinti | Minore impatto sulle prestazioni del sistema di archiviazione di origine perché invia lo snapshot una sola volta 
 
 
 | Più facile da configurare perché tutte le policy, le reti e le configurazioni ONTAP vengono eseguite sul sistema sorgente | Richiede che alcune configurazioni di rete e ONTAP vengano eseguite anche dal sistema secondario. 
@@ -120,9 +120,9 @@ Questa tabella fornisce un confronto tra le architetture fan-out e a cascata.
 
 Puoi usare le policy predefinite fornite da NetApp per creare i tuoi backup, oppure puoi creare policy personalizzate. Quando usi la procedura guidata di attivazione per abilitare il servizio di Backup and Recovery per i tuoi volumi, puoi scegliere tra le policy predefinite e qualsiasi altra policy già presente nel sistema (Cloud Volumes ONTAP o sistema ONTAP on-premises). Se vuoi usare una policy diversa da quelle esistenti, puoi crearla prima di iniziare o mentre usi la procedura guidata di attivazione.
 
-* Il criterio di snapshot predefinito crea snapshot orari, giornalieri e settimanali, conservando 6 snapshot orari, 2 giornalieri e 2 settimanali.
-* La policy di replica predefinita replica snapshot giornalieri e settimanali, conservando 7 snapshot giornalieri e 52 snapshot settimanali.
-* La policy di backup predefinita replica snapshot giornalieri e settimanali, conservando 7 snapshot giornalieri e 52 settimanali.
+* La policy di snapshot predefinita crea snapshot orari, giornalieri e settimanali, conservandone sei orari, due giornalieri e due settimanali.
+* La policy di replica predefinita replica gli snapshot giornalieri e settimanali, conservandone sette giornalieri e 52 settimanali.
+* La policy di backup predefinita replica gli snapshot giornalieri e settimanali, conservandone sette giornalieri e 52 settimanali.
 
 
 Se si creano policy personalizzate per la replica o il backup, le etichette delle policy (ad esempio, "giornaliera" o "settimanale") devono corrispondere alle etichette presenti nelle policy snapshot, altrimenti i volumi replicati e i file di backup non verranno creati.
@@ -137,7 +137,7 @@ Oltre a utilizzare NetApp Backup and Recovery per creare criteri personalizzati,
 
 *Nota:* quando si utilizza System Manager, selezionare *Asincrono* come tipo di policy per le policy di replica e selezionare *Asincrono* e *Backup su cloud* per le policy di backup su oggetto.
 
-Ecco alcuni esempi di comandi ONTAP CLI che potrebbero essere utili se si creano policy personalizzate.  Si noti che è necessario utilizzare il vserver _admin_ (VM di archiviazione) come `<vserver_name>` in questi comandi.
+Questi comandi CLI ONTAP di esempio potrebbero aiutarti a creare policy personalizzate. Devi utilizzare il vserver _admin_ (VM di storage) come  `<vserver_name>` in questi comandi.
 
 [cols="30,70"]
 |===
@@ -189,7 +189,7 @@ Queste differenze sono mostrate nella tabella.
 
 | *Cascata* | Primario | Secondario | Secondario 
 |===
-Quindi, se stai pensando di creare policy personalizzate quando usi l'architettura a cascata, dovrai creare le policy di replica e di backup su oggetto sul sistema secondario dove verranno creati i volumi replicati. Se stai pensando di creare policy personalizzate quando usi l'architettura fan-out, dovrai creare le policy di replica sul sistema secondario dove verranno creati i volumi replicati e le policy di backup su oggetto sul sistema primario.
+Se crei policy personalizzate per l'architettura a cascata, crea le policy di replica e di backup su storage a oggetti sul sistema secondario in cui vengono creati i volumi replicati. Se usi l'architettura fan-out, crea le policy di replica sul sistema secondario in cui vengono creati i volumi replicati e le policy di backup su storage a oggetti sul sistema primario.
 
 Se si utilizzano i criteri predefiniti presenti su tutti i sistemi ONTAP , allora è tutto a posto.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-browse.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Con NetApp Backup and Recovery, ripristina i dati ONTAP utilizzando Sfoglia e Ripristina. 
+summary: Ripristina volumi, cartelle e file ONTAP da snapshot, volumi replicati o backup nello storage a oggetti utilizzando Browse and Restore in NetApp Backup and Recovery. 
 ---
 = Ripristina i dati ONTAP utilizzando Sfoglia e ripristina in NetApp Backup and Recovery
 :hardbreaks:
@@ -121,7 +121,7 @@ Per Sfoglia e Ripristina, l'agente Console può essere installato nei seguenti p
 * Per ONTAP S3, l'agente Console può essere distribuito in locale (con o senza accesso a Internet) o in un ambiente di cloud provider
 
 
-Nota che i riferimenti a "sistemi ONTAP on-premises" includono FAS, AFF e ONTAP Select.
+I riferimenti a "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select.
 
 
 NOTE: Se la versione ONTAP sul sistema è precedente alla 9.13.1, non sarà possibile ripristinare cartelle o file se il file di backup è stato configurato con DataLock e Ransomware.  In questo caso, puoi ripristinare l'intero volume dal file di backup e quindi accedere ai file di cui hai bisogno.
@@ -157,7 +157,7 @@ La colonna *Posizione* indica se il file di backup (snapshot) è *Locale* (uno s
 
 . Selezionare *Avanti*.
 +
-Tieni presente che se selezioni un file di backup nello storage a oggetti e la protezione ransomware è attiva per quel backup (se hai abilitato DataLock e la protezione ransomware nella policy di backup), ti verrà richiesto di eseguire una scansione ransomware aggiuntiva sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire una scansione ransomware sul file di backup. (Sosterrai costi aggiuntivi di egress dal tuo cloud provider per accedere al contenuto del file di backup.)
+Se selezioni un file di backup nello storage a oggetti e la protezione anti-ransomware è attiva per quel backup, ti verrà chiesto di eseguire un'ulteriore scansione anti-ransomware sul file di backup prima di ripristinare i dati (se hai abilitato DataLock e la protezione anti-ransomware nella policy di backup). Ti consigliamo di eseguire la scansione del file di backup per rilevare eventuale ransomware. (Per accedere al contenuto del file di backup, il tuo cloud provider ti addebiterà costi di uscita aggiuntivi.)
 
 . Nella pagina _Seleziona destinazione_, seleziona il *sistema* in cui desideri ripristinare il volume.
 . Quando si ripristina un file di backup da un archivio oggetti, se si seleziona un sistema ONTAP locale e non è ancora stata configurata la connessione del cluster all'archivio oggetti, vengono richieste informazioni aggiuntive:
@@ -195,7 +195,7 @@ Torna alla dashboard di ripristino così puoi controllare lo stato di avanzament
 .Risultato
 NetApp Backup and Recovery crea un nuovo volume in base al backup selezionato.
 
-Si noti che il ripristino di un volume da un file di backup residente in un archivio può richiedere molti minuti o ore, a seconda del livello di archivio e della priorità di ripristino.  È possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.
+Il ripristino di un volume da un file di backup presente nello storage di archiviazione può richiedere molti minuti o ore, a seconda del livello di archiviazione e della priorità di ripristino. Puoi selezionare la scheda *Job Monitoring* per visualizzare l'avanzamento del ripristino.
 
 
 

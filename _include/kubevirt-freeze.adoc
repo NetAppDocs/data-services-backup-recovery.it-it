@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Trident Protect offre funzionalità di blocco e sblocco del file system per le macchine virtuali KubeVirt durante le operazioni di protezione dei dati, per garantire la coerenza dei dati. Il metodo di configurazione e il comportamento predefinito per le operazioni di blocco delle VM variano tra le versioni di Trident Protect, con le release più recenti che offrono una configurazione semplificata tramite i parametri del chart Helm.
+Trident Protect offre funzionalità di blocco e sblocco del file system per le macchine virtuali KubeVirt durante le operazioni di protezione dei dati, per garantire la coerenza dei dati. Il metodo di configurazione e il comportamento predefinito per le operazioni di blocco delle VM variano a seconda delle versioni di Trident Protect; le versioni più recenti offrono una configurazione semplificata tramite i parametri del grafico Helm.
 
 
 NOTE: Durante le operazioni di ripristino, qualsiasi  `VirtualMachineSnapshots` creato per una macchina virtuale (VM) non viene ripristinato.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: È possibile gestire gli snapshot di Microsoft SQL Server eliminandoli da NetApp Backup and Recovery. 
+summary: 'Elimina gli snapshot locali di Microsoft SQL Server dall"inventario in NetApp Backup and Recovery.' 
 ---
 = Gestisci gli snapshot di Microsoft SQL Server con NetApp Backup and Recovery
 :hardbreaks:

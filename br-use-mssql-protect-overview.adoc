@@ -18,7 +18,7 @@ Esegui il backup dei database di Microsoft SQL Server dai sistemi ONTAP locali s
 
 NetApp Backup and Recovery utilizza NetApp SnapMirror per sincronizzare i backup creando snapshot e trasferendoli nelle posizioni di backup.
 
-Utilizza i seguenti flussi di lavoro per proteggere i tuoi dati:
+Utilizza questi flussi di lavoro per proteggere i tuoi dati:
 
 * link:concept-start-prereq-snapcenter-import.html["Configurare elementi aggiuntivi se si importa da SnapCenter"]
 * link:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server e, facoltativamente, importa le risorse SnapCenter"]

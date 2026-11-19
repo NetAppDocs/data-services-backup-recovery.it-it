@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore.html 
 keywords: restore, vmware, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: Ripristina le macchine virtuali VMware da snapshot locali, storage secondario o backup su storage a oggetti nella posizione originale o in una posizione alternativa. 
 ---
 = Ripristina i carichi di lavoro VMware con NetApp Backup and Recovery
 :hardbreaks:
@@ -27,7 +27,7 @@ Utilizza NetApp Backup and Recovery per ripristinare i carichi di lavoro VMware 
 .Ripristinare questi punti
 È possibile ripristinare i dati in questi punti:
 
-* *Ripristina nella posizione originale*: la VM viene ripristinata nella posizione originale, nella stessa distribuzione vCenter, nello stesso host ESXi e nello stesso datastore. La VM e tutti i suoi dati vengono sovrascritti.
+* *Ripristina nella posizione originale*: Il ripristino riporta la macchina virtuale alla stessa distribuzione vCenter, allo stesso host ESXi e allo stesso datastore, sovrascrivendo la macchina virtuale e tutti i suoi dati.
 * *Ripristina in una posizione alternativa*: puoi scegliere un vCenter, un host ESXi o un datastore diverso come destinazione di ripristino per la VM. Questa funzionalità è utile per gestire copie diverse della stessa VM in posizioni e stati diversi.
 
 
@@ -42,7 +42,7 @@ TIP: Potresti dover pagare costi aggiuntivi al tuo provider cloud per accedere a
 [[how-vmware-workload-restore-works]]
 == Come funziona il ripristino dei workload VMware
 
-Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
+Il comportamento del ripristino dipende dall'origine del ripristino:
 
 * Quando si ripristina un carico di lavoro da uno snapshot locale o da un backup remoto, NetApp Backup and Recovery sovrascrive la VM originale se si esegue il ripristino nella posizione originale e crea una _nuova_ risorsa se si esegue il ripristino in una posizione alternativa.
 * Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema ONTAP locale originale o su un sistema ONTAP locale diverso.
@@ -68,7 +68,7 @@ Usa l'opzione Ripristina per ripristinare i carichi di lavoro VMware. Puoi cerca
 +
 Viene visualizzato un elenco di macchine virtuali che corrispondono ai criteri di ricerca.
 
-. Trova la macchina virtuale da cui desideri effettuare il ripristino nell'elenco e seleziona il pulsante del menu delle opzioni per quella macchina virtuale.
+. Nell'elenco, individua la VM che desideri ripristinare e seleziona il pulsante del menu delle opzioni per quella VM.
 . Nel menu visualizzato, seleziona *Ripristina macchina virtuale*.
 +
 Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella macchina virtuale. Per impostazione predefinita, vengono mostrati gli snapshot più recenti per l'intervallo di tempo selezionato nel menu a discesa *Intervallo di tempo*.
@@ -76,7 +76,7 @@ Viene visualizzato un elenco di snapshot (punti di ripristino) creati su quella 
 +
 Per ogni snapshot, le icone illuminate nella colonna *Posizione* indicano le posizioni di archiviazione in cui è disponibile lo snapshot (archiviazione primaria, secondaria o di oggetti).
 
-. Abilita il pulsante di opzione per lo snapshot che desideri ripristinare.
+. Seleziona il pulsante di opzione per lo snapshot che desideri ripristinare.
 . Selezionare *Avanti*.
 +
 Vengono visualizzate le opzioni per la posizione dello snapshot.

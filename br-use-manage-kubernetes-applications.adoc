@@ -55,7 +55,7 @@ Elimina un'applicazione che non ti serve più. NetApp Backup e ripristino interr
 . Abilita l'opzione *Elimina snapshot e backup* per rimuovere tutti gli snapshot e i backup dell'applicazione.
 +
 
-CAUTION: Non sarà più possibile ripristinare l'applicazione utilizzando questi snapshot e backup.
+CAUTION: Non puoi più ripristinare l'applicazione da questi snapshot e backup.
 
 . Confermare l'azione e selezionare *Elimina*.
 

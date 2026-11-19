@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kvm-restore.html 
 keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro KVM con NetApp Backup and Recovery. 
+summary: Ripristina le macchine virtuali KVM nella posizione originale o in una posizione alternativa da snapshot locali, storage secondario o storage a oggetti con NetApp Backup and Recovery. 
 ---
 = Ripristinare le macchine virtuali KVM con NetApp Backup and Recovery
 :hardbreaks:
@@ -42,7 +42,7 @@ TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di usc
 [[how-restoring-virtual-machines-works]]
 == Come funziona il ripristino delle macchine virtuali
 
-Quando ripristini le macchine virtuali, vale quanto segue:
+Il comportamento di ripristino dipende dalla sorgente:
 
 * Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
 * Quando si esegue il ripristino da una VM replicata, è possibile ripristinarla nel sistema originale o in un sistema ONTAP locale.
@@ -66,7 +66,7 @@ Ripristina le macchine virtuali KVM utilizzando il menu Ripristina. Puoi cercare
 . Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *KVM*.
 . Inserisci il nome della macchina virtuale che vuoi ripristinare oppure filtra per host della macchina virtuale o pool di storage in cui si trova la macchina virtuale.
 +
-Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+Vedi un elenco di istantanee che corrispondono ai tuoi criteri di ricerca.
 
 . Seleziona *Ripristina* per l'istantanea che vuoi ripristinare.
 +
@@ -93,14 +93,14 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 .Ripristina in posizione alternativa
 --
 .. Selezionare il riquadro *Posizione alternativa*.
-.. Nella sezione *CloudStack settings*, fornisci le seguenti informazioni:
+.. Nella sezione *impostazioni di CloudStack*, fornisci le seguenti informazioni:
 +
 *** *Zona*: Scegli una zona CloudStack di destinazione dall'elenco.
 *** *Pod*: Scegli un pod di destinazione all'interno della zona selezionata dall'elenco.
 *** *Cluster*: Scegli un cluster di destinazione all'interno del pod selezionato dall'elenco.
 *** *Host*: Scegliere un host di destinazione nel cluster dall'elenco.
 *** *Pool di storage*: Scegli un pool di storage di destinazione dall'elenco (il volume di destinazione deve trovarsi qui).
-*** *Rete*: Seleziona la rete a cui verrà connessa la macchina virtuale ripristinata.
+*** *Rete*: Scegli la rete a cui connettere la VM ripristinata.
 *** *Nome VM*: Inserire un nome per la VM da ripristinare.
 *** *Nome visualizzato*: immettere il nome che deve essere visualizzato per questa VM in Backup and Recovery.
 *** *Percorso del pool di storage*: Inserire il percorso del pool di storage in cui verranno archiviati i volumi delle macchine virtuali.
@@ -108,7 +108,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 
 .. Scegli un'offerta di servizi che definisca il livello di allocazione delle risorse che preferisci dall'elenco *Seleziona offerta di servizi*.
 .. Abilita l'opzione *Forza* per importare la VM ripristinata anche se uno o più indirizzi MAC delle NIC della VM sono già presenti. Se un indirizzo MAC esiste già, viene generato un nuovo indirizzo MAC per quella NIC.
-.. Nella sezione *Opzioni post-ripristino*, prendi in considerazione le seguenti opzioni:
+.. Nella sezione *Opzioni post-ripristino*, configura le seguenti opzioni:
 +
 *** *Riavvia la macchina virtuale*: Abilita questa opzione per avviare la nuova macchina virtuale dopo il ripristino.
 

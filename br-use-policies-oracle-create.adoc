@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-oracle-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: 'In NetApp Backup and Recovery, puoi creare policy personalizzate che regolano la frequenza del backup, l"ora in cui viene eseguito e il numero di file di backup conservati.' 
+summary: Crea criteri di backup per Oracle Database in NetApp Backup and Recovery che controllano la frequenza, la pianificazione e la conservazione dei backup. 
 ---
 = Creare e gestire le policy di backup del database Oracle in NetApp Backup and Recovery
 :hardbreaks:
@@ -129,7 +129,7 @@ NOTE: I campi visualizzati variano a seconda del provider e dell'architettura se
 ** *Copie di conservazione*: immettere il numero di snapshot da conservare.
 ** *Esegui a*: scegli la pianificazione del trasferimento ONTAP per eseguire il backup dei dati nell'archivio oggetti.
 ** *Suddividi i backup dall'archivio oggetti allo storage di archiviazione*: se scegli di suddividere i backup in livelli per lo storage di archiviazione (ad esempio, AWS Glacier), seleziona l'opzione del livello e il numero di giorni di archiviazione.
-** *Abilita scansione di integrità*: Seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sull'object storage. Questo garantisce che i backup siano validi e ripristinabili. La frequenza della scansione di integrità è impostata su sette giorni per impostazione predefinita. Per proteggere i tuoi backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
+** *Abilita scansione di integrità*: seleziona se desideri abilitare le scansioni di integrità (blocco snapshot) sullo storage a oggetti. Questo conferma che i backup sono validi e ripristinabili. La frequenza della scansione di integrità è impostata su sette giorni per impostazione predefinita. Per proteggere i backup da modifiche o eliminazioni, seleziona l'opzione *Scansione di integrità*. La scansione viene eseguita solo sull'ultimo snapshot. Puoi abilitare o disabilitare le scansioni di integrità sull'ultimo snapshot.
 
 
 . Facoltativamente, puoi configurare le impostazioni avanzate nella policy.
@@ -147,7 +147,7 @@ Se non abiliti le *impostazioni di Data Guard*, viene eseguito il backup sia del
 
 
 
-** *Verifica del backup*: Seleziona se desideri abilitare la verifica del backup e se desideri eseguirla immediatamente o in un secondo momento. Questa funzione garantisce che i backup siano validi e possano essere ripristinati correttamente. Si consiglia di abilitare questa opzione per garantire l'integrità dei backup. Per impostazione predefinita, la verifica del backup viene eseguita dallo storage secondario, se lo storage secondario è configurato. Se lo storage secondario non è configurato, la verifica del backup viene eseguita dallo storage primario.
+** *Verifica del backup*: Seleziona se vuoi abilitare la verifica del backup e se vuoi eseguirla immediatamente o in un secondo momento. Questa funzione conferma che i backup sono validi e possono essere ripristinati correttamente. Ti consigliamo di abilitare questa opzione per garantire l'integrità dei tuoi backup. Per impostazione predefinita, la verifica del backup viene eseguita dallo storage secondario se è configurato lo storage secondario. Se lo storage secondario non è configurato, la verifica del backup viene eseguita dallo storage primario.
 +
 Inoltre, configurare le seguenti opzioni:
 

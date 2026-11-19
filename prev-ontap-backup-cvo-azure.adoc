@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: Esegui il backup dei volumi Cloud Volumes ONTAP in Azure Blob storage con NetApp Backup and Recovery, verifica i requisiti, abilita il servizio e attiva i backup sui volumi. 
 ---
-= Esegui il backup di Cloud Volumes ONTAP su Azure Blob storage con NetApp Backup and Recovery
+= Esegui il backup di Cloud Volumes ONTAP in Azure Blob Storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,9 +24,9 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 [[verify-support-for-your-configuration]]
 == Verifica il supporto per la tua configurazione
 
-Leggere i requisiti seguenti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup dei volumi nell'archiviazione BLOB di Azure.
+Assicurati di disporre di una configurazione supportata prima di iniziare il backup dei volumi in Azure Blob Storage.
 
-L'immagine seguente mostra ciascun componente e le connessioni che è necessario predisporre tra di essi.
+L'immagine mostra ciascun componente e i collegamenti che devi predisporre tra di essi.
 
 Facoltativamente, è possibile connettersi a un sistema ONTAP secondario per i volumi replicati utilizzando anche la connessione pubblica o privata.
 
@@ -168,7 +168,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 [[requirements-for-using-customer-managed-keys-for-data-encryption]]
 === Requisiti per l'utilizzo di chiavi gestite dal cliente per la crittografia dei dati
 
-È possibile utilizzare le chiavi gestite dal cliente per la crittografia dei dati nella procedura guidata di attivazione anziché utilizzare le chiavi di crittografia predefinite gestite da Microsoft.  In questo caso, sarà necessario disporre della sottoscrizione di Azure, del nome del Key Vault e della chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Scopri come usare le tue chiavi"^] .
+Nella procedura guidata di attivazione, puoi utilizzare le tue chiavi gestite dal cliente per la crittografia dei dati anziché usare le chiavi di crittografia predefinite gestite da Microsoft. In questo caso, ti servono la sottoscrizione di Azure, il nome di Key Vault e la chiave https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Scopri come usare le tue chiavi"^].
 
 NetApp Backup and Recovery supporta i _criteri di accesso di Azure_, il modello di autorizzazione _Azure role-based access control_ (Azure RBAC) e il _Managed Hardware Security Model_ (HSM) (fare riferimento a https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["Che cos'è Azure Key Vault Managed HSM?"] ).
 
@@ -195,7 +195,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 * Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
-Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+Poiché puoi replicare in Cloud Volumes ONTAP o in sistemi on-premises, verifica i requisiti di peering per i sistemi ONTAP on-premises. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^].
 
 
 
@@ -404,7 +404,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 **** Crea il tuo gruppo di risorse che gestisce il contenitore BLOB oppure seleziona il tipo di gruppo di risorse e il gruppo.
 +
 
-TIP: Se vuoi proteggere i tuoi file di backup da modifiche o eliminazioni, assicurati che l'account di archiviazione sia stato creato con l'archiviazione immutabile abilitata utilizzando un periodo di conservazione di 30 giorni.
+TIP: Se vuoi proteggere i tuoi file di backup da modifiche o eliminazioni, verifica che l'account di archiviazione sia stato creato con l'archiviazione immutabile abilitata e un periodo di conservazione di 30 giorni.
 
 
 
@@ -453,7 +453,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 [[review-your-selections]]
 === Rivedi le tue selezioni
 
-Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se necessario.
+Rivedi le tue selezioni e apporta le modifiche necessarie.
 
 .Passi
 . Nella pagina Revisione, rivedi le tue selezioni.
@@ -479,7 +479,7 @@ Viene visualizzata la Volume Backup Dashboard per consentirti di monitorare lo s
 [[show-the-api-commands]]
 === Mostra i comandi API
 
-Potresti voler visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata di attivazione di Backup and Recovery. Potresti volerlo fare per automatizzare l'attivazione del backup nei sistemi futuri.
+Visualizza e, facoltativamente, copia i comandi API utilizzati nella procedura guidata Activate Backup and Recovery per automatizzare l'attivazione del backup nei sistemi futuri.
 
 .Passi
 . Nella procedura guidata Attiva Backup and Recovery, seleziona *Visualizza richiesta API*.

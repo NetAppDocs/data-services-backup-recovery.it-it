@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro Hyper-V con il backup e il ripristino NetApp . 
+summary: Esegui il backup delle VM Hyper-V con NetApp Backup and Recovery utilizzando policy pianificate, gruppi di protezione o backup on-demand nello storage a oggetti supportato. 
 ---
 = Esegui il backup dei carichi di lavoro Hyper-V con NetApp Backup and Recovery
 :hardbreaks:

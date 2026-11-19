@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-oracle.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle 
-summary: NetApp Backup and Recovery deve prima individuare i carichi di lavoro prima di poterli proteggere. 
+summary: 'Scopri gli host e i carichi di lavoro di Oracle Database in NetApp Backup and Recovery, visualizza l"inventario Oracle e preparati a proteggere i database con backup e snapshot.' 
 ---
 = Scopri i carichi di lavoro di Oracle Database in NetApp Backup and Recovery
 :hardbreaks:

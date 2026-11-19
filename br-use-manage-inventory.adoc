@@ -16,7 +16,7 @@ summary: Gestisci i tuoi host, le istanze e i database di Microsoft SQL Server i
 [role="lead"]
 Visualizza e gestisci host, istanze e database di Microsoft SQL Server, e modifica o rimuovi le relative impostazioni di protezione.
 
-Puoi fare quanto segue per gestire il tuo inventario:
+Gestisci il tuo inventario con queste azioni:
 
 * Gestisci le informazioni dell'host
 +
@@ -278,7 +278,7 @@ Per informazioni dettagliate sulla creazione di un backup ad hoc, vedi link:br-u
 [[manage-database-information]]
 == Gestire le informazioni del database
 
-È possibile gestire le informazioni del database nei seguenti modi:
+Gestisci le informazioni del database con queste azioni:
 
 * Proteggere i database
 * Ripristinare i database

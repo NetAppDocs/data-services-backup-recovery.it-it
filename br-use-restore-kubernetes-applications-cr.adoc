@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications-cr.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. 
+summary: Ripristina le applicazioni Kubernetes da snapshot o backup utilizzando risorse personalizzate, inclusi i ripristini in un namespace diverso, nel namespace originale o in un cluster diverso. 
 ---
-= Ripristina le applicazioni Kubernetes con risorse personalizzate
+= Ripristina le app Kubernetes con risorse personalizzate in NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -39,7 +39,7 @@ Quando si ripristina un backup in un namespace diverso utilizzando una BackupRes
 
 ====
 .Prima di iniziare
-Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
+Assicurati che la scadenza del token di sessione AWS sia sufficiente per eventuali operazioni di ripristino S3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
 
 * Fare riferimento a https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentazione API AWS"^] per ulteriori informazioni sulla verifica della scadenza del token della sessione corrente.
 * Fare riferimento a https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentazione AWS IAM"^] per ulteriori informazioni sulle credenziali con le risorse AWS.
@@ -137,7 +137,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 È possibile ripristinare un backup nello spazio dei nomi originale in qualsiasi momento.
 
 .Prima di iniziare
-Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
+Assicurati che la scadenza del token di sessione AWS sia sufficiente per eventuali operazioni di ripristino S3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
 
 * Fare riferimento a https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentazione API AWS"^] per ulteriori informazioni sulla verifica della scadenza del token della sessione corrente.
 * Fare riferimento a https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentazione AWS IAM"^] per ulteriori informazioni sulle credenziali con le risorse AWS.
@@ -243,7 +243,7 @@ kubectl apply -f trident-protect-backup-ipr-cr.yaml
 
 ====
 .Prima di iniziare
-Assicurarsi che siano soddisfatti i seguenti prerequisiti:
+Conferma di soddisfare questi prerequisiti:
 
 * Il cluster di destinazione ha Trident Protect installato.
 * Il cluster di destinazione ha accesso al percorso del bucket dello stesso AppVault del cluster di origine, dove è archiviato il backup.
@@ -341,7 +341,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 [[restore-a-snapshot-to-a-different-namespace]]
 == Ripristina uno snapshot in un namespace diverso
 
-È possibile ripristinare i dati da uno snapshot utilizzando un file di risorsa personalizzata (CR) sia in un namespace diverso che nel namespace di origine. Quando si ripristina uno snapshot in un namespace diverso utilizzando una SnapshotRestore CR, NetApp Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea una CR dell'applicazione per l'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot su richiesta oppure stabilisci una policy di protezione.
+Puoi ripristinare i dati da uno snapshot utilizzando un file di risorsa personalizzata (CR) in un namespace diverso o nel namespace di origine originale. Quando ripristini uno snapshot in un namespace diverso utilizzando un CR SnapshotRestore, Backup and Recovery ripristina l'applicazione in un nuovo namespace e crea un CR dell'applicazione ripristinata. Per proteggere l'applicazione ripristinata, crea backup o snapshot su richiesta oppure imposta una pianificazione di protezione.
 
 [NOTE]
 ====
@@ -351,7 +351,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 
 ====
 .Prima di iniziare
-Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
+Assicurati che la scadenza del token di sessione AWS sia sufficiente per eventuali operazioni di ripristino S3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
 
 * Fare riferimento a https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentazione API AWS"^] per ulteriori informazioni sulla verifica della scadenza del token della sessione corrente.
 * Fare riferimento a https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentazione AWS IAM"^] per ulteriori informazioni sulle credenziali con le risorse AWS.
@@ -449,7 +449,7 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 NOTE: Il ripristino in loco (ripristino nello spazio dei nomi originale e nel cluster originale) delle app basate su macchine virtuali da snapshot locali non è attualmente supportato.
 
 .Prima di iniziare
-Assicurarsi che la scadenza del token di sessione AWS sia sufficiente per qualsiasi operazione di ripristino s3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
+Assicurati che la scadenza del token di sessione AWS sia sufficiente per eventuali operazioni di ripristino S3 di lunga durata. Se il token scade durante l'operazione di ripristino, l'operazione può non riuscire.
 
 * Fare riferimento a https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentazione API AWS"^] per ulteriori informazioni sulla verifica della scadenza del token della sessione corrente.
 * Fare riferimento a https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentazione AWS IAM"^] per ulteriori informazioni sulle credenziali con le risorse AWS.

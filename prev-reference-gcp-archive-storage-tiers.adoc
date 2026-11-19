@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-reference-gcp-archive-storage-tiers.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: NetApp Backup and Recovery supporta una classe di archiviazione Google e la maggior parte delle regioni. 
+summary: Esamina il livello Archive di Google Cloud Storage supportato da NetApp Backup and Recovery e comprendi i costi di ripristino e i tempi di recupero dei backup archiviati. 
 ---
 = Livelli di archiviazione di Google supportati con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Backup and Recovery supporta una classe di archiviazione Google 
 
 
 [role="lead"]
-Utilizza queste informazioni per comprendere il livello di archiviazione di Google Cloud Storage che NetApp Backup and Recovery supporta. Puoi anche verificare i costi di ripristino e i tempi di recupero per i backup archiviati.
+NetApp Backup and Recovery supporta il livello Archive di Google Cloud Storage per i backup meno recenti. Scopri i costi di ripristino e i tempi di recupero per i backup in questo livello.
 
 
 
@@ -23,9 +23,9 @@ Utilizza queste informazioni per comprendere il livello di archiviazione di Goog
 
 Quando i file di backup vengono creati inizialmente, vengono archiviati nello storage _Standard_. Questo livello è ottimizzato per l'archiviazione di dati a cui si accede raramente, ma consente comunque l'accesso immediato.
 
-Se il tuo cluster on-premises utilizza ONTAP 9.12.1 o versioni successive, puoi scegliere di spostare i backup meno recenti nello storage _Archive_ nell'interfaccia utente di NetApp Backup and Recovery dopo un certo numero di giorni (di solito più di 30 giorni) per ottimizzare ulteriormente i costi. I dati in questo tier avranno un costo di recupero più elevato, quindi devi considerare quanto spesso potresti aver bisogno di ripristinare dati da questi file di backup archiviati. Vedi la sezione in questa pagina sul ripristino dei dati dallo storage di archiviazione.
+Se il tuo cluster on-premises utilizza ONTAP 9.12.1 o versione successiva, puoi eseguire il tiering dei backup meno recenti nello storage _Archive_ nell'interfaccia utente di NetApp Backup and Recovery dopo un certo numero di giorni (in genere più di 30 giorni) per ottimizzare ulteriormente i costi. I dati in questo tier hanno un costo di recupero più elevato, quindi valuta con quale frequenza potresti dover ripristinare i dati da questi file di backup archiviati. Consulta la sezione di questa pagina sul ripristino dei dati dallo storage di archiviazione.
 
-Tieni presente che quando configuri NetApp Backup and Recovery con questo tipo di regola del ciclo di vita, non devi configurare alcuna regola del ciclo di vita quando imposti il ​​bucket nel tuo account Google.
+Quando configuri NetApp Backup and Recovery con questo tipo di regola del ciclo di vita, non configurare alcuna regola del ciclo di vita quando crei il bucket nel tuo account Google.
 
 https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle classi di archiviazione di Google"^].
 
@@ -34,14 +34,14 @@ https://cloud.google.com/storage/docs/storage-classes["Scopri di più sulle clas
 [[restore-data-from-archival-storage]]
 == Ripristinare i dati dall'archivio
 
-Sebbene l'archiviazione di file di backup più vecchi in un archivio sia molto meno costosa rispetto all'archiviazione standard, l'accesso ai dati da un file di backup in un archivio per le operazioni di ripristino richiederà un tempo leggermente più lungo e avrà un costo maggiore.
+Archiviare i file di backup meno recenti nello storage Archive è molto meno costoso rispetto allo storage Standard. Tuttavia, il ripristino dei dati da un file di backup nello storage Archive richiede un po' più di tempo e costa di più.
 
 Quanto costa ripristinare i dati da Google Archive?:: Per i prezzi dettagliati di Google Cloud Storage per regione, visita https://cloud.google.com/storage/pricing["Pagina dei prezzi di Google Cloud Storage"^] .
-Quanto tempo ci vorrà per ripristinare i miei oggetti archiviati in Google Archive?:: Il tempo totale di ripristino è composto da 2 parti:
+Quanto tempo ci vorrà per ripristinare i miei oggetti archiviati in Google Archive?:: Il tempo totale di ripristino si compone di due parti:
 +
 --
 * *Tempo di recupero*: tempo necessario per recuperare il file di backup dall'archivio e posizionarlo nell'archiviazione standard.  Questo è talvolta chiamato il periodo di "reidratazione".  A differenza delle soluzioni di archiviazione "più fredde" offerte da altri provider cloud, i tuoi dati sono accessibili in pochi millisecondi.
-* *Tempo di ripristino*: tempo necessario per ripristinare i dati dal file di backup nell'archiviazione standard.  Questa volta non c'è differenza rispetto alla tipica operazione di ripristino eseguita direttamente dall'archiviazione Standard, quando non si utilizza un livello di archiviazione.
+* *Tempo di ripristino*: Il tempo necessario per ripristinare i dati dal file di backup nello storage Standard. Questo tempo è lo stesso di un tipico ripristino diretto dallo storage Standard quando non utilizzi un tier di archiviazione.
 
 
 --

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-restore-guest-files-and-folders-overview.html 
 keywords:  
-summary: 'È possibile ripristinare file o cartelle da un disco di macchina virtuale (VMDK) su un sistema operativo guest Windows.' 
+summary: Ripristina file o cartelle da un VMDK su un sistema operativo guest Windows o Linux e consulta i requisiti e le limitazioni per il ripristino dei file guest. 
 ---
 = Requisiti per il ripristino dei file guest di VMware in NetApp Backup and Recovery
 :hardbreaks:

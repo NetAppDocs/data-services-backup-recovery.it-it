@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-search.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. 
+summary: In NetApp Backup and Recovery puoi cercare e ripristinare volumi, cartelle o file dai backup ONTAP quando non conosci il nome esatto del sistema, del volume o del file. 
 ---
 = Ripristina i dati ONTAP utilizzando Cerca e ripristina in NetApp Backup and Recovery
 :hardbreaks:
@@ -46,7 +46,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sul ripristin
 
 
 ====
-Prima di iniziare, dovresti avere un'idea del nome o della posizione del volume o del file che vuoi ripristinare.
+Prima di iniziare, devi conoscere almeno una parte del nome o della posizione del volume o del file che vuoi ripristinare.
 
 
 
@@ -88,7 +88,7 @@ Per Search & Restore, l'agente Console può essere installato nei seguenti perco
 * Per ONTAP S3, l'agente Console può essere distribuito in locale (con o senza accesso a Internet) o in un ambiente di cloud provider
 
 
-Nota che i riferimenti a "sistemi ONTAP on-premises" includono FAS, AFF e ONTAP Select.
+I riferimenti a "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select.
 
 
 
@@ -120,7 +120,7 @@ Di seguito sono riportati i requisiti per Search & Restore quando si utilizza l'
 +
 ** È necessario aggiungere autorizzazioni specifiche per Amazon Athena, AWS Glue e AWS S3 al ruolo utente che fornisce le autorizzazioni alla Console. link:prev-ontap-backup-onprem-aws.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
 +
-Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni Athena e Glue al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
+Se in passato utilizzavi già NetApp Backup and Recovery con un agente Console configurato, ora dovrai aggiungere le autorizzazioni Athena e Glue al ruolo utente Console. Sono necessarie per Search & Restore.
 
 
 
@@ -129,7 +129,7 @@ Tieni presente che se stavi già utilizzando NetApp Backup and Recovery con un a
 ** Devi registrare il provider di risorse Azure Synapse Analytics (chiamato "Microsoft.Synapse") con la tua sottoscrizione. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Scopri come registrare questo fornitore di risorse per il tuo abbonamento"^] Per registrare il provider di risorse, devi essere il *proprietario* o il *contributore* della sottoscrizione.
 ** È necessario aggiungere autorizzazioni specifiche per Azure Synapse Workspace e per l'account Data Lake Storage al ruolo utente che fornisce le autorizzazioni alla console. link:prev-ontap-backup-onprem-azure.html["Assicurati che tutte le autorizzazioni siano configurate correttamente"] .
 +
-Tieni presente che se utilizzavi già NetApp Backup and Recovery con un agente Console configurato in passato, ora dovrai aggiungere le autorizzazioni Azure Synapse Workspace e Data Lake Storage Account al ruolo utente Console.  Sono necessari per la ricerca e il ripristino.
+Se in passato utilizzavi già NetApp Backup and Recovery con un agente Console che avevi configurato, ora devi aggiungere al ruolo utente Console le autorizzazioni per Azure Synapse Workspace e Data Lake Storage Account. Sono necessarie per Search & Restore.
 
 ** L'agente Console deve essere configurato *senza* un server proxy per la comunicazione HTTP con Internet.  Se hai configurato un server proxy HTTP per il tuo agente Console, non puoi utilizzare la funzionalità Cerca e ripristina.
 
@@ -282,7 +282,7 @@ Dopo aver<<enable-the-indexed-catalog-for-each-system,indicizzazione abilitata p
 . Individua la risorsa che contiene i dati che desideri ripristinare e seleziona *Visualizza tutti i backup* per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
 . Individua il file di backup che desideri utilizzare per ripristinare i dati e seleziona *Ripristina*.
 +
-Tieni presente che i risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella tua ricerca. Puoi scegliere di ripristinare dal file di backup nel cloud, dallo snapshot o dal volume replicato.
+I risultati identificano gli snapshot dei volumi locali e i volumi replicati remoti che contengono il file cercato. Puoi scegliere di ripristinare dal file di backup nel cloud, dallo snapshot o dal volume replicato.
 
 . Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
 +

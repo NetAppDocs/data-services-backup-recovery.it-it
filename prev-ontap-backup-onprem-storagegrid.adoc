@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-storagegrid.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi ONTAP primari locali a un sistema di storage secondario e allo storage di oggetti nei tuoi sistemi NetApp StorageGRID . 
+summary: 'Esegui il backup dei dati di volume dai sistemi ONTAP on-premises a un sistema di storage secondario e allo storage a oggetti StorageGRID preparando l"ambiente e attivando i backup.' 
 ---
 = Esegui il backup dei dati ONTAP locali su StorageGRID con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Completa alcuni passaggi in NetApp Backup and Recovery per iniziare a e
 
 
 [role="lead"]
-In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai sistemi ONTAP locali primari a uno storage secondario e allo storage a oggetti StorageGRID. Usa questa pagina per preparare l'ambiente e attivare i backup.
+Utilizza NetApp Backup and Recovery per eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP on-premises primari a un sistema di storage secondario e allo storage a oggetti StorageGRID. Prepara l'ambiente e poi attiva i backup per proteggere i tuoi volumi.
 
 
 NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select .
@@ -151,12 +151,12 @@ Sono necessari i seguenti requisiti di rete del cluster ONTAP :
 
 * Il cluster ONTAP avvia una connessione HTTPS tramite una porta specificata dall'utente dal LIF intercluster al nodo gateway StorageGRID per le operazioni di backup e ripristino.  La porta è configurabile durante la configurazione del backup.
 +
-ONTAP legge e scrive dati da e verso l'archiviazione di oggetti.  L'archiviazione degli oggetti non si avvia mai, risponde e basta.
+ONTAP legge e scrive dati da e verso storage a oggetti. Lo storage a oggetti non avvia mai una connessione. Si limita a rispondere.
 
 * ONTAP richiede una connessione in ingresso dall'agente della console al LIF di gestione del cluster.  L'agente della Console deve risiedere presso la tua sede.
 * È necessario un LIF intercluster su ciascun nodo ONTAP che ospita i volumi di cui si desidera eseguire il backup.  Il LIF deve essere associato allo _IPspace_ che ONTAP deve utilizzare per connettersi all'archiviazione degli oggetti. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Scopri di più su IPspaces"^] .
 +
-Quando si configura NetApp Backup and Recovery, viene richiesto di specificare lo spazio IP da utilizzare.  Dovresti scegliere lo spazio IP a cui è associato ciascun LIF.  Potrebbe trattarsi dello spazio IP "predefinito" o di uno spazio IP personalizzato creato da te.
+Quando configuri NetApp Backup and Recovery, ti viene richiesto quale IPspace utilizzare. Scegli l'IPspace a cui è associato ciascun LIF. Potrebbe essere l'IPspace "Default" o un IPspace personalizzato che hai creato.
 
 * I LIF intercluster dei nodi sono in grado di accedere all'archivio oggetti (non necessario quando l'agente Console è installato in un sito "dark").
 * I server DNS sono stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
@@ -178,7 +178,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 * Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
-Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+Poiché puoi replicare in Cloud Volumes ONTAP o in sistemi on-premises, verifica i requisiti di peering per i sistemi ONTAP on-premises. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^].
 
 
 
@@ -235,7 +235,7 @@ Versionamento degli oggetti:: Non è necessario abilitare manualmente il control
 [[prepare-to-archive-older-backup-files-to-public-cloud-storage]]
 === Preparati ad archiviare i vecchi file di backup su un archivio cloud pubblico
 
-L'archiviazione dei file di backup più vecchi consente di risparmiare denaro, utilizzando una classe di archiviazione meno costosa per i backup di cui potresti non aver bisogno.  StorageGRID è una soluzione on-premise (cloud privato) che non fornisce archiviazione, ma consente di spostare i file di backup più vecchi nell'archiviazione su cloud pubblico.  Quando utilizzati in questo modo, i dati archiviati su cloud storage o ripristinati da cloud storage vengono trasferiti tra StorageGRID e cloud storage: la Console non è coinvolta in questo trasferimento di dati.
+Il tiering dei file di backup meno recenti nello storage di archiviazione ti fa risparmiare denaro usando una classe di storage meno costosa per i backup di cui potresti non aver bisogno. StorageGRID è una soluzione on-premises (cloud privato) che non fornisce storage di archiviazione, ma puoi spostare i file di backup meno recenti nello storage di archiviazione del cloud pubblico. Con questa configurazione, i dati di cui esegui il tiering nel cloud storage, o che ripristini dal cloud storage, passano tra StorageGRID e il cloud storage. La Console non è coinvolta in questo trasferimento di dati.
 
 Il supporto attuale consente di archiviare i backup nello storage AWS _S3 Glacier_/_S3 Glacier Deep Archive_ o _Azure Archive_.
 

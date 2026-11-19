@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-options.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: Configura le opzioni della policy di backup su storage a oggetti in NetApp Backup and Recovery, inclusi pianificazioni, periodo di conservazione, DataLock, protezione dal ransomware e storage di archiviazione. 
 ---
 = Opzioni della policy di backup su oggetto in NetApp Backup and Recovery
 :hardbreaks:
@@ -29,12 +29,12 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 
 NetApp Backup and Recovery consente di creare più policy di backup con pianificazioni univoche per ciascun sistema (cluster).  È possibile assegnare criteri di backup diversi ai volumi che hanno obiettivi del punto di ripristino (RPO) diversi.
 
-Ogni policy di backup include una sezione per _Etichette e conservazione_ che puoi applicare ai file di backup. Nota che la policy di snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery, altrimenti i file di backup non verranno creati.
+Ogni policy di backup include una sezione per _Etichette e conservazione_ che puoi applicare ai tuoi file di backup. La policy di snapshot applicata al volume deve essere una delle policy riconosciute da NetApp Backup and Recovery. In caso contrario, il servizio non crea file di backup.
 
 
 NOTE: La policy di snapshot applicata al volume deve avere una delle etichette che stai usando nella policy di replica e nella policy di backup su storage a oggetti. Se non trovi etichette corrispondenti, non verrà creato alcun file di backup. Ad esempio, se vuoi creare volumi replicati e file di backup "settimanali", devi usare una policy di snapshot che crei snapshot "settimanali".
 
-La pianificazione è composta da due parti: l'etichetta e il valore di conservazione:
+La pianificazione ha due parti: l'etichetta e il valore di conservazione:
 
 * L'*etichetta* definisce la frequenza con cui un file di backup viene creato (o aggiornato) dal volume.  È possibile scegliere tra i seguenti tipi di etichette:
 +
@@ -43,17 +43,17 @@ La pianificazione è composta da due parti: l'etichetta e il valore di conservaz
 ** Se sono stati creati criteri di protezione del backup personalizzati sul cluster utilizzando ONTAP System Manager o ONTAP CLI, è possibile selezionare uno di tali criteri.
 
 
-* Il valore *retention* definisce quanti file di backup per ogni etichetta (intervallo di tempo) vengono conservati.  Una volta raggiunto il numero massimo di backup in una categoria o intervallo, i backup più vecchi vengono rimossi, in modo da avere sempre a disposizione i backup più recenti.  In questo modo si risparmia anche sui costi di archiviazione, perché i backup obsoleti non continuano a occupare spazio nel cloud.
+* Il valore di *conservazione* definisce quanti file di backup per ciascuna etichetta (intervallo di tempo) vengono conservati. Una volta raggiunto il numero massimo di backup in una categoria o intervallo, i backup meno recenti vengono rimossi, così hai sempre a disposizione i backup più aggiornati. In questo modo risparmi anche sui costi di storage, perché i backup obsoleti non continuano a occupare spazio nel cloud.
 
 
-Ad esempio, supponiamo di creare una policy di backup che crea 7 backup *settimanali* e 12 backup *mensili*:
+Ad esempio, se crei una policy di backup che prevede 7 backup *settimanali* e 12 backup *mensili*:
 
 * ogni settimana e ogni mese viene creato un file di backup per il volume
 * all'ottava settimana, il primo backup settimanale viene rimosso e viene aggiunto il nuovo backup settimanale per l'ottava settimana (mantenendo un massimo di 7 backup settimanali)
 * al 13° mese, il primo backup mensile viene rimosso e viene aggiunto il nuovo backup mensile per il 13° mese (mantenendo un massimo di 12 backup mensili)
 
 
-I backup annuali vengono eliminati automaticamente dal sistema di origine dopo essere stati trasferiti nell'archiviazione degli oggetti.  Questo comportamento predefinito può essere modificato nella pagina Impostazioni avanzate del sistema.
+I backup annuali vengono eliminati automaticamente dal sistema di origine dopo essere stati trasferiti allo storage a oggetti. Puoi modificare questo comportamento predefinito nella pagina Impostazioni avanzate del sistema.
 
 
 TIP: Il periodo di conservazione dei backup dei volumi di protezione dei dati (DP) è lo stesso definito nella relazione di SnapMirror di origine. Puoi modificarlo usando l'API.
@@ -72,7 +72,7 @@ Questa funzionalità non fornisce protezione per i volumi di origine, ma solo pe
 [CAUTION]
 ====
 * Se si prevede di utilizzare la protezione DataLock e Ransomware, è possibile abilitarla durante la creazione del primo criterio di backup e l'attivazione NetApp Backup and Recovery per quel cluster.  Successivamente potrai abilitare o disabilitare la scansione ransomware utilizzando le impostazioni avanzate NetApp Backup and Recovery .
-* Quando la Console esegue la scansione di un file di backup alla ricerca di ransomware durante il ripristino dei dati del volume, verranno addebitati costi di uscita aggiuntivi al provider cloud per accedere al contenuto del file di backup.
+* Quando la Console analizza un file di backup alla ricerca di ransomware durante un ripristino dei dati del volume, sostieni costi di egress aggiuntivi dal tuo cloud provider per accedere al contenuto del file di backup.
 
 
 ====
@@ -83,11 +83,11 @@ Questa funzionalità non fornisce protezione per i volumi di origine, ma solo pe
 
 Con questa funzionalità, è possibile bloccare gli snapshot cloud replicati tramite SnapMirror su Cloud e abilitare la funzionalità per rilevare un attacco ransomware e recuperare una copia coerente dello snapshot nell'archivio oggetti. Questa funzionalità è supportata su AWS, Azure, Google Cloud Platform e StorageGRID.
 
-DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, noto anche come _archiviazione immutabile_.  Questa funzionalità utilizza la tecnologia del provider di archiviazione oggetti per il "blocco degli oggetti".
+DataLock protegge i tuoi file di backup dalla modifica o dall'eliminazione per un determinato periodo di tempo, chiamato anche _archiviazione immutabile_. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti".
 
 I provider cloud utilizzano una data di conservazione fino alla scadenza (RUD), calcolata in base al periodo di conservazione degli snapshot.  Il periodo di conservazione degli snapshot viene calcolato in base all'etichetta e al conteggio di conservazione definiti nella policy di backup.
 
-Il periodo minimo di conservazione degli snapshot è di 30 giorni.  Diamo un'occhiata ad alcuni esempi di come funziona:
+Il periodo minimo di conservazione di Snapshot è di 30 giorni. Ad esempio:
 
 * Se si sceglie l'etichetta *Giornaliera* con conteggio di conservazione 20, il periodo di conservazione dello snapshot è di 20 giorni, che per impostazione predefinita è il minimo di 30 giorni.
 * Se si sceglie l'etichetta *Settimanale* con conteggio di conservazione 4, il periodo di conservazione dello snapshot è di 28 giorni, che per impostazione predefinita è il minimo di 30 giorni.
@@ -102,11 +102,11 @@ Il periodo minimo di conservazione degli snapshot è di 30 giorni.  Diamo un'occ
 
 La data di conservazione fino alla data (RUD) viene determinata in base al periodo di conservazione dello snapshot.  La data di conservazione fino alla data viene calcolata sommando il periodo di conservazione dello snapshot e un buffer.
 
-* Il buffer è il buffer per il tempo di trasferimento (3 giorni) + il buffer per l'ottimizzazione dei costi (28 giorni), per un totale di 31 giorni.
+* Il buffer è costituito dal buffer per i tempi di trasferimento (3 giorni) più il buffer per l'ottimizzazione dei costi (28 giorni), per un totale di 31 giorni.
 * La data minima di conservazione fino alla data è 30 giorni + 31 giorni di buffer = 61 giorni.
 
 
-Ecco alcuni esempi:
+Esempi:
 
 * Se si crea una pianificazione di backup mensile con 12 conservazioni, i backup vengono bloccati per 12 mesi (più 31 giorni) prima di essere eliminati (sostituiti dal file di backup successivo).
 * Se si crea un criterio di backup che prevede 30 backup giornalieri, 7 settimanali e 12 mensili, sono presenti tre periodi di conservazione bloccati:
@@ -116,13 +116,13 @@ Ecco alcuni esempi:
 ** I backup "12 mensili" vengono conservati per 12 mesi (più 31 giorni).
 
 
-* Se si crea una pianificazione di backup oraria con 24 periodi di conservazione, si potrebbe pensare che i backup siano bloccati per 24 ore.  Tuttavia, poiché questo periodo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 61 giorni (30 giorni più 31 giorni di buffer).
+* Se crei una pianificazione di backup oraria con 24 periodi di conservazione, potresti pensare che i backup vengano bloccati per 24 ore. Tuttavia, poiché questo periodo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 61 giorni (30 giorni più 31 giorni di buffer).
 
 
 
 CAUTION: I vecchi backup vengono eliminati dopo la scadenza del periodo di conservazione di DataLock, non dopo il periodo di conservazione dei criteri di backup.
 
-L'impostazione di conservazione di DataLock sostituisce l'impostazione di conservazione dei criteri dei criteri di backup.  Ciò potrebbe influire sui costi di archiviazione, poiché i file di backup verranno salvati nell'archivio oggetti per un periodo di tempo più lungo.
+L'impostazione del periodo di conservazione di DataLock ha la precedenza sull'impostazione del periodo di conservazione della tua policy di backup. Questo potrebbe influire sui costi di storage, perché i file di backup vengono salvati nell'archivio di oggetti per un periodo di tempo più lungo.
 
 
 
@@ -148,7 +148,7 @@ Fare riferimento alink:prev-ontap-policy-object-advanced-settings.html["Come agg
 [[what-is-ransomware-protection]]
 === Che cos'è la protezione dal ransomware
 
-La protezione ransomware analizza i file di backup per cercare prove di un attacco ransomware. Il rilevamento degli attacchi ransomware viene eseguito tramite un confronto di checksum. Se in un nuovo file di backup viene identificato un potenziale ransomware rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra alcun segno di attacco ransomware. (Il file identificato come vittima di un attacco ransomware viene eliminato 1 giorno dopo essere stato sostituito.)
+La protezione anti-ransomware analizza i file di backup alla ricerca di prove di un attacco ransomware. La protezione anti-ransomware rileva gli attacchi confrontando i checksum. Se in un nuovo file di backup viene identificato un potenziale ransomware rispetto al file di backup precedente, quel file di backup più recente viene sostituito con il file di backup più recente che non mostra alcun segno di attacco ransomware. (Il file identificato come contenente un attacco ransomware viene eliminato 1 giorno dopo essere stato sostituito.)
 
 Le scansioni vengono eseguite nelle seguenti situazioni:
 
@@ -163,7 +163,7 @@ Le scansioni ransomware programmate sono abilitate per impostazione predefinita 
 
 Quando viene rilevato un attacco ransomware, il servizio utilizza l'API REST Integrity Checker dell'agente Active Data Console per avviare il processo di ripristino.  La versione più vecchia degli oggetti dati è la fonte della verità e viene trasformata nella versione corrente come parte del processo di ripristino.
 
-Vediamo come funziona:
+Il ripristino funziona nel seguente modo:
 
 * In caso di attacco ransomware, il servizio tenta di sovrascrivere o eliminare l'oggetto nel bucket.
 * Poiché l'archiviazione cloud è abilitata al controllo delle versioni, crea automaticamente una nuova versione dell'oggetto di backup.  Se un oggetto viene eliminato con il controllo delle versioni attivato, viene contrassegnato come eliminato ma è ancora recuperabile.  Se un oggetto viene sovrascritto, le versioni precedenti vengono memorizzate e contrassegnate.
@@ -342,9 +342,9 @@ Inoltre, è possibile ottenere preventivi per i costi associati a DataLock visit
 [[archival-storage-options]]
 == Opzioni di archiviazione
 
-Quando usi AWS, Azure o Google Cloud Storage, puoi spostare i file di backup meno recenti in una classe di storage di archiviazione o in un tier di accesso meno costoso dopo un certo numero di giorni. Puoi anche scegliere di inviare subito i tuoi file di backup allo storage di archiviazione senza che vengano scritti nello standard cloud storage. Ti basta inserire *0* come "Archivia dopo giorni" per inviare il file di backup direttamente allo storage di archiviazione. Questa opzione può essere particolarmente utile se accedi raramente ai dati dai backup cloud o se stai sostituendo una soluzione di backup su nastro.
+Quando usi AWS, Azure o Google Cloud Storage, puoi spostare i file di backup meno recenti in una classe di storage di archiviazione o in un tier di accesso meno costoso dopo un certo numero di giorni. Puoi anche scegliere di inviare immediatamente i file di backup allo storage di archiviazione senza scriverli nel cloud storage standard. Inserisci *0* come "Archive After Days" per inviare il file di backup direttamente allo storage di archiviazione. Questa opzione può essere particolarmente utile se accedi raramente ai dati dai backup cloud o se stai sostituendo una soluzione di backup su nastro.
 
-I dati nei livelli di archiviazione non sono accessibili immediatamente quando necessario e comportano costi di recupero più elevati, pertanto è necessario valutare la frequenza con cui potrebbe essere necessario ripristinare i dati dai file di backup prima di decidere di archiviare i file di backup.
+Non puoi accedere immediatamente ai dati nei livelli di archiviazione quando ti servono e il loro recupero avrà un costo più elevato, quindi prima di decidere di archiviare i file di backup devi considerare con quale frequenza potresti dover ripristinare i dati dai file di backup.
 
 [NOTE]
 ====
@@ -376,11 +376,11 @@ Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile suddivid
 
 * In GCP, i backup sono associati alla classe di archiviazione _Standard_.
 +
-Se il cluster locale utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di suddividere i backup più vecchi nello storage _Archive_ nell'interfaccia utente NetApp Backup and Recovery dopo un certo numero di giorni per un'ulteriore ottimizzazione dei costi. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'archiviazione di Google"] .
+Se il tuo cluster on-premises utilizza ONTAP 9.12.1 o versione successiva, puoi scegliere di spostare i backup meno recenti nello storage _Archive_ nell'interfaccia utente di NetApp Backup and Recovery dopo un certo numero di giorni per ottimizzare ulteriormente i costi. link:prev-reference-gcp-archive-storage-tiers.html["Scopri di più sull'archiviazione di Google"].
 
 * In StorageGRID, i backup sono associati alla classe di archiviazione _Standard_.
 +
-Se il cluster locale utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza la versione 11.4 o versione successiva, è possibile archiviare i file di backup più vecchi nell'archiviazione cloud pubblica.
+Se il tuo cluster on-premises utilizza ONTAP 9.12.1 o versione successiva e il tuo sistema StorageGRID utilizza la versione 11.4 o successiva, puoi archiviare i file di backup meno recenti nello storage di archiviazione cloud pubblico.
 
 +
 ** Per AWS, è possibile suddividere i backup in livelli nello storage AWS _S3 Glacier_ o _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Scopri di più sullo storage di archiviazione AWS"^].

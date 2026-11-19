@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando i backup dei volumi, sospendendo i backup, eliminando i backup e altro ancora.  È anche possibile annullare la registrazione NetApp Backup and Recovery. 
+summary: Gestisci i backup per Cloud Volumes ONTAP e i sistemi ONTAP on-premises modificando le pianificazioni, mettendo in pausa o eliminando i backup, eseguendo scansioni anti-ransomware e annullando la registrazione del servizio. 
 ---
 = Gestisci i backup per i tuoi sistemi ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -17,7 +17,7 @@ summary: Con NetApp Backup and Recovery puoi gestire i backup per i tuoi sistemi
 Usa NetApp Backup and Recovery per gestire backup di snapshot, replica e storage a oggetti per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premises. Puoi modificare le pianificazioni, abilitare o disabilitare i backup dei volumi, mettere in pausa i backup, eliminarli e annullare la registrazione del servizio.
 
 
-CAUTION: Non gestire o modificare i file di backup direttamente sui tuoi sistemi di archiviazione o dall'ambiente del tuo provider cloud.  Ciò potrebbe danneggiare i file e dar luogo a una configurazione non supportata.
+CAUTION: Non gestire né modificare i file di backup direttamente sui tuoi sistemi di archiviazione o nell'ambiente del tuo cloud provider. Ciò potrebbe danneggiare i file e comportare una configurazione non supportata.
 
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
@@ -83,7 +83,7 @@ Quando si lavora con più volumi, tutti i volumi devono avere le seguenti caratt
 
 * stesso sistema
 * stesso stile (volume FlexVol o FlexGroup )
-* stesso tipo (volume di lettura-scrittura o di protezione dati)
+* stesso tipo (volume di lettura/scrittura o di protezione dati)
 
 
 Se sono abilitati più di cinque volumi per il backup, NetApp Backup and Recovery inizializza solo cinque volumi alla volta. Una volta completati, si continua in gruppi di 5 finché tutti i volumi non vengono inizializzati.
@@ -128,7 +128,7 @@ Il nome del backup include la marca temporale, in modo da poter distinguere il b
 
 Se hai abilitato _DataLock and Ransomware protection_ durante l'attivazione di NetApp Backup and Recovery per questo cluster, anche il backup su richiesta verrà configurato con DataLock e il periodo di conservazione sarà di 30 giorni. Le scansioni ransomware non sono supportate per i backup ad hoc. link:prev-ontap-policy-object-options.html["Scopri di più sulla protezione da DataLock e Ransomware"^].
 
-Quando crei un backup ad hoc, viene creata una snapshot sul volume di origine. Poiché questa snapshot non fa parte di una normale pianificazione delle snapshot, non verrà eliminata automaticamente. Potresti voler eliminare manualmente questa snapshot dal volume di origine una volta completato il backup. In questo modo, i blocchi relativi a questa snapshot verranno liberati. Il nome della snapshot inizierà con `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Scopri come eliminare uno snapshot utilizzando la CLI di ONTAP"^].
+Quando crei un backup ad hoc, viene creata un'istantanea sul volume di origine. Poiché questa istantanea non fa parte di una normale pianificazione di istantanee, non verrà eliminata automaticamente. Potresti voler eliminare manualmente questa istantanea dal volume di origine al termine del backup. Questo permetterà di liberare i blocchi relativi a questa istantanea. Il nome dell'istantanea inizierà con `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Scopri come eliminare uno snapshot utilizzando la CLI di ONTAP"^].
 
 
 NOTE: Il backup del volume su richiesta non è supportato sui volumi di protezione dati.
@@ -203,7 +203,7 @@ La tabella seguente descrive le azioni disponibili:
 | Sospendi replicazione | Sospendi il trasferimento incrementale degli snapshot per aggiornare il volume di destinazione. È possibile riprendere in seguito se si desidera riavviare gli aggiornamenti incrementali. 
 
 
-| Interrompere la replicazione | Interrompe la relazione tra i volumi di origine e di destinazione e attiva il volume di destinazione per l'accesso ai dati, rendendolo di lettura-scrittura.  Questa opzione viene in genere utilizzata quando il volume di origine non può gestire i dati a causa di eventi quali danneggiamento dei dati, eliminazione accidentale o stato offline.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Scopri come configurare un volume di destinazione per l'accesso ai dati e riattivare un volume di origine nella documentazione ONTAP"^] 
+| Interrompere la replicazione | Interrompe la relazione tra i volumi di origine e di destinazione e attiva il volume di destinazione per l'accesso ai dati, rendendolo di lettura/scrittura. Questa opzione viene in genere utilizzata quando il volume di origine non può fornire dati a causa di eventi quali danneggiamento dei dati, eliminazione accidentale o stato offline. https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Scopri come configurare un volume di destinazione per l'accesso ai dati e riattivare un volume di origine nella documentazione ONTAP"^] 
 
 
 | Interrompere la replicazione | Disabilita i backup di questo volume sul sistema di destinazione e disabilita anche la possibilità di ripristinare un volume.  Tutti i backup esistenti non verranno eliminati.  Ciò non elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione. 
@@ -212,7 +212,7 @@ La tabella seguente descrive le azioni disponibili:
 | Risincronizzazione inversa | Inverte i ruoli dei volumi di origine e di destinazione. Il contenuto del volume di origine viene sovrascritto dal contenuto del volume di destinazione. Questa funzione è utile quando si desidera riattivare un volume sorgente che è andato offline. Tutti i dati scritti sul volume di origine originale tra l'ultima replica dei dati e il momento in cui il volume di origine è stato disabilitato non vengono conservati. 
 
 
-| Elimina relazione | Elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione, il che significa che la replica dei dati non avviene più tra i volumi. Questa azione non attiva il volume di destinazione per l'accesso ai dati, ovvero non lo rende di lettura/scrittura.  Questa azione elimina anche la relazione peer del cluster e la relazione peer della VM di archiviazione (SVM), se non sono presenti altre relazioni di protezione dei dati tra i sistemi. 
+| Elimina relazione | Elimina la relazione di protezione dei dati tra i volumi di origine e di destinazione, il che significa che la replica dei dati non avviene più tra i volumi. Questa azione non attiva il volume di destinazione per l'accesso ai dati, ovvero non lo rende di lettura/scrittura. Questa azione elimina anche la cluster peer relationship e la storage VM (SVM) peer relationship, se non esistono altre relazioni di protezione dei dati tra i sistemi. 
 |===
 
 

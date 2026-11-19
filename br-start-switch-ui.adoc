@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-switch-ui.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: 'NetApp Backup and Recovery supporta diversi tipi di carico di lavoro e alcuni carichi di lavoro utilizzano un"interfaccia utente diversa. Usa il selettore di carico di lavoro per passare da uno all"altro.' 
+summary: 'Utilizza lo strumento di selezione del carico di lavoro per passare da un carico di lavoro all"altro nell"interfaccia utente di NetApp Backup and Recovery.' 
 ---
 = Passa a un carico di lavoro di NetApp Backup and Recovery diverso
 :hardbreaks:

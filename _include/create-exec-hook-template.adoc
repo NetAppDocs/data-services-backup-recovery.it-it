@@ -18,7 +18,7 @@ NOTE: I modelli che crei qui sono utilizzabili solo quando proteggi i carichi di
 . Espandi la sezione *Modello di hook di esecuzione*.
 . Selezionare *Crea modello di hook di esecuzione*.
 . Immettere un nome per l'hook di esecuzione.
-. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-restore viene eseguito al termine dell'operazione di ripristino.
+. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-ripristino viene eseguito al termine dell'operazione di ripristino.
 . Nella casella di testo *Script*, immettere lo script shell eseguibile che si desidera eseguire come parte del modello di hook di esecuzione.  Facoltativamente, puoi selezionare *Carica script* per caricare un file di script.
 . Seleziona *Crea*.
 +

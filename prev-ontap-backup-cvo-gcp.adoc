@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: 'Esegui il backup dei volumi Cloud Volumes ONTAP in Google Cloud Storage con NetApp Backup and Recovery, inclusa la preparazione dell"agente Console, delle autorizzazioni e delle chiavi di crittografia.' 
 ---
-= Esegui il backup di Cloud Volumes ONTAP su Google Cloud Storage con NetApp Backup and Recovery
+= Esegui il backup di Cloud Volumes ONTAP su Google Cloud con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,7 +24,7 @@ NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fa
 [[verify-support-for-your-configuration]]
 == Verifica il supporto per la tua configurazione
 
-Leggi i seguenti requisiti per assicurarti di disporre di una configurazione supportata prima di iniziare il backup dei volumi su Google Cloud Storage.
+Prima di iniziare il backup dei volumi su Google Cloud Storage, verifica di disporre di una configurazione supportata.
 
 L'immagine seguente mostra ciascun componente e le connessioni che è necessario predisporre tra di essi.
 
@@ -34,7 +34,7 @@ image:diagram_cloud_backup_cvo_google.png["Un diagramma che mostra come NetApp B
 
 Versioni ONTAP supportate:: Minimo ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.
 Regioni GCP supportate:: NetApp Backup and Recovery è supportato in tutte le regioni GCP.
-Account di servizio GCP:: Devi disporre di un account di servizio nel tuo progetto Google Cloud che abbia il ruolo personalizzato. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Scopri come creare un account di servizio"^] .
+Account di servizio GCP:: Hai bisogno di un account di servizio nel tuo progetto Google Cloud che abbia il ruolo personalizzato. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-creating-gcp-service-account.html["Scopri come creare un account di servizio"^].
 
 
 
@@ -146,7 +146,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 * Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
-Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+Poiché puoi replicare in Cloud Volumes ONTAP o in sistemi on-premises, verifica i requisiti di peering per i sistemi ONTAP on-premises. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^].
 
 
 
@@ -305,7 +305,7 @@ cloudkms.keyRings.setIamPolicy
 
 * Sono supportate sia le chiavi HSM (supportate da hardware) sia quelle generate da software.
 * Sono supportate sia le chiavi Cloud KMS appena create che quelle importate.
-* Sono supportate solo le chiavi regionali, le chiavi globali non sono supportate.
+* Sono supportate solo le chiavi regionali. Le chiavi globali non sono supportate.
 * Attualmente è supportata solo la funzione "Crittografia/decifratura simmetrica".
 * All'agente di servizio associato all'account di archiviazione viene assegnato il ruolo IAM "CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)" da NetApp Backup and Recovery.
 
@@ -369,7 +369,7 @@ Seleziona i volumi che vuoi proteggere.  Un volume protetto è un volume che pre
 
 ====
 .Passi
-Tieni presente che se ai volumi che scegli sono già applicate policy di snapshot o di replica, le policy che selezionerai in seguito sovrascriveranno quelle esistenti.
+Se i volumi che scegli hanno già applicate policy di snapshot o di replica, le policy che selezionerai in seguito sovrascriveranno quelle esistenti.
 
 . Nella pagina Seleziona volumi, seleziona il volume o i volumi che desideri proteggere.
 +

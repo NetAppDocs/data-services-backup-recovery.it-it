@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-restore.html 
 keywords: restore, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, Amazon Web services, AWS, NetApp Backup and Recovery 
-summary: Proteggi i tuoi carichi di lavoro Hyper-V con NetApp Backup and Recovery. 
+summary: Ripristina i carichi di lavoro Hyper-V da snapshot locali, storage secondario o storage a oggetti nella posizione originale o in una posizione alternativa utilizzando NetApp Backup and Recovery. 
 ---
 = Ripristina i carichi di lavoro Hyper-V con NetApp Backup and Recovery
 :hardbreaks:
@@ -32,7 +32,7 @@ Puoi ripristinare i dati verso queste destinazioni:
 
 
 .Considerazioni sul ripristino da storage di oggetti
-Se selezioni un file di backup nello storage a oggetti e la protezione anti-ransomware è attiva per quel backup perché hai abilitato DataLock e la protezione anti-ransomware nella policy di backup, ti viene richiesto di eseguire un controllo di integrità aggiuntivo prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+Se hai abilitato DataLock e la protezione anti-ransomware nella policy di backup, la protezione anti-ransomware è attiva per il backup. Quando selezioni quel file di backup nello storage a oggetti, ti viene richiesto di eseguire un ulteriore controllo di integrità prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
 
 
 TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di uscita aggiuntivi da parte del tuo provider cloud.
@@ -42,7 +42,7 @@ TIP: Per accedere al contenuto del file di backup, dovrai sostenere costi di usc
 [[how-restoring-workloads-works]]
 == Come funziona il ripristino dei carichi di lavoro
 
-Quando ripristini un carico di lavoro, si verificano le seguenti situazioni:
+Quando ripristini un carico di lavoro:
 
 * Quando si ripristina un carico di lavoro da un file di backup locale, NetApp Backup and Recovery crea una _nuova_ risorsa utilizzando i dati del backup.
 * Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro sul sistema originale o su un sistema ONTAP locale.
@@ -64,7 +64,7 @@ Ripristina i carichi di lavoro Hyper-V utilizzando il menu Ripristina. Puoi cerc
 . Dall'elenco a discesa a destra del campo di ricerca del nome, selezionare *Hyper-V*.
 . Inserisci il nome della risorsa che vuoi ripristinare oppure filtra per nome della VM, host della VM o pool di storage in cui si trova la risorsa.
 +
-Viene visualizzato un elenco di snapshot che corrispondono ai criteri di ricerca.
+Vedi un elenco di istantanee che corrispondono ai tuoi criteri di ricerca.
 
 . Selezionare il pulsante *Ripristina* per lo snapshot che si desidera ripristinare.
 +
@@ -84,7 +84,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 .Ripristina nella posizione originale
 --
 .. Seleziona il riquadro *Posizione originale*. Quando ripristini nella posizione originale, puoi visualizzare le impostazioni di destinazione espandendo la sezione *Impostazioni di destinazione*, ma non puoi modificarle.
-.. Nella sezione *Opzioni post-ripristino*, prendere in considerazione la seguente opzione:
+.. Nella sezione *Opzioni post-ripristino*, prendi in considerazione questa opzione:
 +
 *** *Avvia la macchina virtuale*: abilita questa opzione per avviare la nuova macchina virtuale dopo il ripristino.
 
@@ -95,7 +95,7 @@ Viene visualizzato un elenco di possibili punti di ripristino.
 .Ripristina in posizione alternativa
 --
 .. Selezionare il riquadro *Posizione alternativa*.
-.. Nella sezione *Impostazioni destinazione*, inserisci le seguenti informazioni:
+.. Nella sezione *Impostazioni di destinazione*, inserisci queste informazioni:
 +
 *** *FQDN o indirizzo IP Hyper-V*: immettere il nome di dominio completo o l'indirizzo IP dell'host Hyper-V di destinazione.
 *** *Rete*: seleziona la rete di destinazione in cui desideri ripristinare lo snapshot.

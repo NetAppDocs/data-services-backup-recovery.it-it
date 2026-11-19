@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protection-groups.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
-summary: Crea e gestisci gruppi di protezione per carichi di lavoro VMware in NetApp Backup and Recovery. 
+summary: Crea e gestisci gruppi di protezione per i carichi di lavoro VMware, inclusi i gruppi basati su tag, per eseguire il backup e il ripristino insieme di VM e datastore in NetApp Backup and Recovery. 
 ---
 = Gestisci i gruppi di protezione VMware in NetApp Backup and Recovery
 :hardbreaks:
@@ -54,8 +54,8 @@ Crea un gruppo di protezione per organizzare le risorse di cui desideri eseguire
 *Ruolo richiesto NetApp Console* Super amministratore di Backup and Recovery o ruolo di amministratore di backup di Backup and Recovery. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 
 .Prima di iniziare
-* Assicurati che il tuo ambiente utilizzi versioni supportate di VMware vSphere.
-* Quando si crea un gruppo di protezione basato su tag, assicurarsi che le macchine virtuali e i datastore che si desidera proteggere siano già associati a uno o più vSphere tag in vCenter.
+* Verifica che il tuo ambiente utilizzi versioni supportate di VMware vSphere.
+* Quando crei un gruppo di protezione basato su tag, assicurati che le macchine virtuali e i datastore che vuoi proteggere siano già associati a uno o più tag vSphere in vCenter.
 * Per i carichi di lavoro VMware, il tempo di backup programmato utilizza il fuso orario dell'host di gestione. Consulta link:br-use-policies-vmware-create.html["Creare e gestire le policy di backup VMware in NetApp Backup and Recovery"] per maggiori informazioni.
 
 
@@ -77,9 +77,9 @@ IMPORTANT: Non è supportata la combinazione di tipi di risorse diversi (ad esem
 . Al termine, selezionare *Avanti*.
 . Scegli come il gruppo di protezione gestisce le macchine virtuali i cui dischi virtuali si estendono su più datastore:
 +
-** *Escludi sempre tutti i datastore spanning*: il gruppo di protezione includerà solo i datastore aggiunti direttamente, insieme al datastore primario di tutte le VM aggiunte direttamente al gruppo di protezione.
-** *Includi sempre tutti i datastore estesi*: Il gruppo di protezione includerà tutti i datastore estesi dalle VM incluse.
-** *Seleziona manualmente i datastore di copertura da includere*: Se selezioni questa opzione, devi selezionare manualmente quali datastore di copertura includere nel gruppo di protezione dall'elenco visualizzato. Questa selezione è statica; devi aggiornare l'elenco dei datastore di copertura ogni volta che vengono aggiunte nuove VM al gruppo.
+** *Escludi sempre tutti i datastore estesi*: il gruppo di protezione include solo i datastore aggiunti direttamente, insieme al datastore primario di tutte le VM aggiunte direttamente al gruppo di protezione.
+** *Includi sempre tutti i datastore interessati*: il gruppo di protezione include tutti i datastore utilizzati dalle VM incluse.
+** *Seleziona manualmente i datastore di spanning da includere*: Se selezioni questa opzione, seleziona manualmente i datastore di spanning da includere nel gruppo di protezione dall'elenco visualizzato. Questa selezione è statica, quindi aggiorna l'elenco dei datastore di spanning ogni volta che aggiungi nuove VM al gruppo.
 
 
 . Selezionare *Avanti*.
@@ -117,7 +117,7 @@ Quando si sospende un gruppo di protezione, lo stato di protezione cambia in "In
 
 La ripresa di un gruppo di protezione sospeso riavvia i backup pianificati per il gruppo di protezione.
 
-Lo stato di protezione cambia da "In manutenzione" quando si sospende un gruppo di protezione a "Protetto" quando lo si riprende. È possibile riprendere la pianificazione del backup in qualsiasi momento.
+Lo stato di protezione passa da "In manutenzione" a "Protetto" quando riattivi un gruppo di protezione. Puoi riprendere la pianificazione del backup in qualsiasi momento.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Inventario*.
@@ -160,7 +160,7 @@ La procedura guidata Modifica gruppo di protezione ti guida attraverso le impost
 I backup pianificati utilizzano il fuso orario del server vCenter registrato al momento della creazione della pianificazione del gruppo di protezione. Se cambi il fuso orario del server vCenter, i gruppi di protezione esistenti continueranno a funzionare con il loro fuso orario originale (di solito UTC) finché non aggiorni le loro pianificazioni.
 
 
-NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Il salvataggio senza apportare modifiche non aggiorna le pianificazioni. Questo aggiornamento della pianificazione è un'azione una tantum per ciascun gruppo di protezione e non avvia immediatamente un backup.
+NOTE: Le pianificazioni vengono ricreate solo quando modifichi il nome del gruppo di protezione, aggiungi o rimuovi una VM, cambi la policy assegnata o aggiorni gli script pre/post. Se salvi senza apportare modifiche, le pianificazioni non vengono aggiornate. Questo aggiornamento della pianificazione è un'azione da eseguire una sola volta per ogni gruppo di protezione e non avvia un backup immediato.
 
 .Passi
 . Aggiorna il vCenter server in modo che venga recuperato il fuso orario corrente.

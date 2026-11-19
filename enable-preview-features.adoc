@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: enable-preview-features.html 
 keywords: preview features, preview, Backup and Recovery, configuration, NetApp Backup and Recovery 
-summary: 'Abilita l"anteprima e le funzionalità nascoste per NetApp Backup and Recovery.' 
+summary: 'Abilita l"anteprima e le funzionalità nascoste e disabilita l"indicizzazione dei volumi in NetApp Backup and Recovery modificando i file di configurazione nell"agente Console.' 
 ---
 = Abilita l'anteprima e le funzionalità nascoste per NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Abilita l"anteprima e le funzionalità nascoste per NetApp Backup and 
 
 
 [role="lead"]
-Segui questi passaggi per abilitare le funzionalità di anteprima e nascoste per NetApp Backup and Recovery. Utilizza le funzionalità di anteprima con cautela negli ambienti di produzione.
+Abilita le funzionalità di anteprima e nascoste in NetApp Backup and Recovery, incluse quelle non ancora disponibili al pubblico. Usa le funzionalità di anteprima con cautela negli ambienti di produzione.
 
 *Ruolo richiesto NetApp Console* Super admin di Backup and Recovery. Se stai proteggendo dati archiviati su un cluster Cloud Volumes ONTAP, è richiesto anche il ruolo Cloud Volumes ONTAP Admin. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Scopri di più sui ruoli di accesso NetApp Console per tutti i servizi"^].
 

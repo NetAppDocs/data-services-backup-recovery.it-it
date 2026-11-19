@@ -159,7 +159,7 @@ NOTE: Wasabi è l'unico provider di storage a oggetti compatibile con S3 qualifi
 
 | storage a oggetti compatibile con S3 (solo volumi ONTAP) | Sistema ONTAP in sede | Sistema ONTAP in sede 
 |===
-Tieni presenti le seguenti considerazioni relative al ripristino:
+Queste restrizioni si applicano ai ripristini:
 
 * I ripristini da Cloud Volumes ONTAP (replicazione) possono essere effettuati solo su Cloud Volumes ONTAP. Tuttavia, Cloud Volumes ONTAP in AWS supporta anche il ripristino su Amazon FSx for NetApp ONTAP.
 * I ripristini da ONTAP on-premise (replica) possono essere eseguiti solo su ONTAP on-premise.

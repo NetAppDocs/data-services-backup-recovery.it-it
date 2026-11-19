@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
-summary: È possibile ripristinare uno o più file o cartelle da uno snapshot di una macchina virtuale Hyper-V a una macchina virtuale guest Windows. 
+summary: Ripristina file e cartelle da uno snapshot di una macchina virtuale Hyper-V nella macchina virtuale guest Windows originale montando un disco virtuale dallo snapshot. 
 ---
 = Ripristina file e cartelle guest Hyper-V con NetApp Backup e ripristino
 :hardbreaks:
@@ -31,7 +31,7 @@ Quando si apre una sessione di ripristino di file e cartelle montando un disco v
 
 Le prestazioni del ripristino dipendono sia dalle dimensioni che dal numero di file o cartelle da ripristinare. A parità di dimensioni del set di dati, il ripristino di un gran numero di file di piccole dimensioni richiede in genere più tempo rispetto al ripristino di un numero ridotto di file di grandi dimensioni.
 
-Nota quanto segue durante il ripristino di file e cartelle:
+Tieni a mente questi punti quando ripristini file e cartelle:
 
 [NOTE]
 ====
@@ -92,7 +92,7 @@ I file e le cartelle che hai selezionato per il ripristino sono elencati nell'ar
 +
 Se sono già presenti file con lo stesso nome, puoi scegliere di sovrascriverli o ignorarli.
 
-. Nella sezione *Opzioni post-ripristino*, puoi disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. Questa operazione scollega il disco virtuale e smonta il datastore. Questo significa che dovrai riconnettere la sessione guest prima di eseguire altre operazioni di ripristino di file e cartelle.
+. Nella sezione *Opzioni post-ripristino*, puoi facoltativamente disconnettere la sessione guest al termine del ripristino abilitando l'impostazione *Disconnetti sessione guest al termine del ripristino*. In questo modo scolleghi il disco virtuale e smonti il datastore. Dovrai quindi riconnettere la sessione guest prima di eseguire ulteriori operazioni di ripristino di file e cartelle.
 . Selezionare *Ripristina*.
 +
 È possibile visualizzare l'avanzamento del ripristino nella pagina Monitoraggio processi.

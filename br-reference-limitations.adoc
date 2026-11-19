@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-reference-limitations.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, SAP HANA database 
-summary: Le limitazioni note identificano funzioni non supportate da questa versione del prodotto o che non interagiscono correttamente con essa. Esamina attentamente queste limitazioni. 
+summary: Esamina le limitazioni note per NetApp Backup and Recovery con volumi ONTAP. 
 ---
 = Limitazioni note con NetApp Backup and Recovery per volumi ONTAP
 :hardbreaks:
@@ -95,7 +95,7 @@ Per una spiegazione su questi tipi di crittografia, fare riferimento ahttps://do
 [[restore-limitations-for-ontap-volumes]]
 == Limitazioni di ripristino per i volumi ONTAP
 
-Queste limitazioni si applicano sia ai metodi Cerca e ripristina che Sfoglia e ripristina per il ripristino di file e cartelle, a meno che non siano espressamente indicate.
+Queste limitazioni si applicano sia al metodo Search & Restore che al metodo Browse & Restore per il ripristino di file e cartelle, a meno che non sia indicato diversamente.
 
 * Il ripristino delle cartelle da snapshot locali non è supportato.
 * Ripristino di file e cartelle in una configurazione di disaster recovery (DR): dopo un failover, i volumi su una storage VM configurata per il DR mantengono le relazioni SnapMirror preesistenti in uno stato interrotto. I tentativi di ripristinare file o cartelle che creano relazioni RST temporanee SnapMirror vengono bloccati da ONTAP perché il volume di destinazione ha già una relazione.

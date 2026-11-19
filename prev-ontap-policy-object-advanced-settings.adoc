@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-object-advanced-settings.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: 'Modifica le impostazioni di backup su storage a oggetti a livello di cluster in NetApp Backup and Recovery, incluse la larghezza di banda, l"esportazione degli snapshot storici, l"eliminazione annuale degli snapshot e le scansioni ransomware.' 
 ---
 = Gestisci le impostazioni avanzate del backup su oggetto in NetApp Backup and Recovery
 :hardbreaks:
@@ -131,8 +131,8 @@ Fare riferimento alink:prev-ontap-policy-manage.html["Gestire le politiche"] per
 . Nella pagina visualizzata, espandi la sezione *Scansione ransomware*.
 . Abilita o disabilita la *Scansione ransomware*.
 . Seleziona *Scansione ransomware pianificata*.
-. Facoltativamente, è possibile modificare la scansione predefinita ogni settimana in giorni o settimane.
-. Imposta la frequenza in giorni o settimane con cui deve essere eseguita la scansione.
+. Se vuoi, modifica la scansione settimanale predefinita in giorni o settimane.
+. Imposta ogni quanti giorni o settimane eseguire la scansione.
 . Selezionare *Applica*.
 
 
@@ -150,8 +150,8 @@ Fare riferimento alink:prev-ontap-policy-manage.html["Gestire le politiche"] per
 . Espandi la sezione *Scansione ransomware*.
 . Abilita o disabilita la *Scansione ransomware*.
 . Seleziona *Scansione ransomware pianificata*.
-. Facoltativamente, è possibile modificare la scansione predefinita ogni settimana in giorni o settimane.
-. Imposta la frequenza in giorni o settimane con cui deve essere eseguita la scansione.
+. Se vuoi, modifica la scansione settimanale predefinita in giorni o settimane.
+. Imposta ogni quanti giorni o settimane eseguire la scansione.
 . Selezionare *Applica*.
 
 

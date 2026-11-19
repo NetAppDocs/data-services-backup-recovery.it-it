@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-configure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Completare alcuni passaggi per configurare NetApp Backup and Recovery. 
+summary: 'Aggiungi le credenziali dell"host, mantieni le impostazioni VMware vCenter, importa le risorse SnapCenter, aggiungi una piattaforma di gestione KVM e crea modelli in NetApp Backup and Recovery.' 
 ---
 = Configurare le impostazioni NetApp Backup and Recovery
 :hardbreaks:
@@ -55,7 +55,7 @@ Se non si dispone di credenziali, crearle con le autorizzazioni per accedere e g
 ** *Modalità di autenticazione*: selezionare *Windows*, *Microsoft SQL*, *Oracle Database* o *Linux*.
 +
 
-TIP: Per i carichi di lavoro di Microsoft SQL Server, devi inserire le credenziali sia per Windows che per Microsoft SQL Server, quindi sono necessari due set di credenziali.
+TIP: Per i carichi di lavoro di Microsoft SQL Server, devi inserire due set di credenziali: uno per Windows e uno per Microsoft SQL Server.
 
 +
 [role="tabbed-block"]
@@ -182,7 +182,7 @@ Si tratta di un processo in due fasi:
 Questo primo passaggio importa le risorse host da SnapCenter e le visualizza nella pagina Inventario NetApp Backup and Recovery .  A quel punto, le risorse non sono ancora gestite da NetApp Backup and Recovery.
 
 
-TIP: Dopo aver importato le risorse host SnapCenter , NetApp Backup and Recovery non assume la gestione della protezione.  Per farlo, è necessario selezionare esplicitamente la gestione di queste risorse in NetApp Backup and Recovery.
+TIP: Dopo aver importato le risorse host di SnapCenter, NetApp Backup and Recovery non assume la gestione della protezione. Per trasferire la gestione, seleziona esplicitamente queste risorse da gestire in NetApp Backup and Recovery.
 
 .Passi
 . Dal menu NetApp Backup and Recovery , selezionare *Impostazioni*.
@@ -217,10 +217,10 @@ La pagina Inventario mostra le risorse SnapCenter importate.
 [[manage-snapcenter-host-resources]]
 === Gestire le risorse host SnapCenter
 
-Dopo aver importato le risorse SnapCenter , gestisci tali risorse host in NetApp Backup and Recovery.  Dopo aver scelto di gestire le risorse importate, NetApp Backup and Recovery può eseguire il backup e il ripristino delle risorse che stai importando da SnapCenter.  Non è più necessario gestire tali risorse in SnapCenter Server.
+Dopo aver importato le risorse di SnapCenter, gestisci le risorse host corrispondenti in NetApp Backup and Recovery. Dopo aver gestito le risorse importate, NetApp Backup and Recovery può eseguirne il backup e il ripristino. Non devi più gestire tali risorse in SnapCenter Server.
 
 .Passi
-. Dopo aver importato le risorse SnapCenter , nella pagina Inventario visualizzata, seleziona le risorse SnapCenter importate che desideri vengano gestite da NetApp Backup and Recovery da ora in poi.
+. Dopo aver importato le risorse SnapCenter, nella pagina Inventario seleziona le risorse SnapCenter importate che vuoi che NetApp Backup and Recovery gestisca.
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Gestisci* per gestire le risorse.
 . Selezionare *Gestisci nella NetApp Console*.
 +
@@ -307,7 +307,7 @@ NOTE: I modelli che crei qui sono utilizzabili solo quando proteggi i carichi di
 . Espandi la sezione *Modello di hook di esecuzione*.
 . Selezionare *Crea modello di hook di esecuzione*.
 . Immettere un nome per l'hook di esecuzione.
-. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-restore viene eseguito al termine dell'operazione di ripristino.
+. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-ripristino viene eseguito al termine dell'operazione di ripristino.
 . Nella casella di testo *Script*, immettere lo script shell eseguibile che si desidera eseguire come parte del modello di hook di esecuzione.  Facoltativamente, puoi selezionare *Carica script* per caricare un file di script.
 . Seleziona *Crea*.
 +
@@ -342,7 +342,7 @@ Crea modelli di trasformazione delle risorse per memorizzare le trasformazioni c
 .. Inserisci il percorso JSON a cui si applica l'operazione.
 .. Se necessario, inserisci un valore da aggiungere o aggiornare, oppure un percorso JSON da cui partire.
 +
-Questi campi vengono visualizzati solo per le operazioni che li richiedono.
+Questi campi compaiono solo per le operazioni che li richiedono.
 
 .. Per aggiungere un'altra operazione a questo modello, seleziona *Aggiungi operazione*.
 

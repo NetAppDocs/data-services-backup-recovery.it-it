@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Con NetApp Backup and Recovery puoi monitorare gli snapshot locali, le repliche e i processi di backup che avvii. 
+summary: 'Monitora i processi di snapshot, replica, backup e ripristino, controlla gli avvisi nel Notification Center, analizza l"attività nella Console Timeline e annulla i processi in corso.' 
 ---
 = Monitorare i lavori in NetApp Backup and Recovery
 :hardbreaks:
@@ -271,7 +271,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 [[cancel-an-ongoing-job]]
 == Annulla un lavoro in corso
 
-Alcuni carichi di lavoro di backup e ripristino supportano l'annullamento di un'attività in corso se sta impiegando troppo tempo per completarsi e non è fallita.
+Alcuni carichi di lavoro di backup e ripristino supportano l'annullamento di un'attività in corso se sta impiegando troppo tempo per completarsi e non ha avuto esito negativo.
 
 
 NOTE: Per annullare un'operazione di ripristino di ONTAP Volumes, fai riferimento a <<Annulla un'operazione di ripristino di ONTAP Volumes>>.
@@ -289,7 +289,7 @@ NOTE: Per annullare un'operazione di ripristino di ONTAP Volumes, fai riferiment
 [[cancel-an-ontap-volumes-restore-job]]
 == Annulla un'operazione di ripristino di ONTAP Volumes
 
-Annulla un'operazione di ripristino di ONTAP Volumes se impiega troppo tempo per essere completata e non ha generato un errore.
+Annulla un processo di ripristino di ONTAP Volumes se richiede troppo tempo per essere completato e non è in errore.
 
 Quando annulli un ripristino del volume, l'intera operazione di ripristino viene annullata, in modo che nessuna parte del volume venga ripristinata.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: 'Esegui il backup dei dati dei volumi dai sistemi ONTAP on-premises ad Amazon S3 con NetApp Backup and Recovery, inclusa la preparazione dell"ambiente e l"attivazione del backup.' 
 ---
 = Esegui il backup dei dati ONTAP locali su Amazon S3 con NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP locali a uno storage secondario e ad Amazon S3. Usa questa pagina per preparare l'ambiente e attivare i backup.
+Esegui il backup dei dati di volume dai tuoi sistemi ONTAP locali in un sistema di storage secondario e in Amazon S3 con NetApp Backup and Recovery. Prepara il tuo ambiente, quindi attiva i backup.
 
 
 NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select .
@@ -58,7 +58,7 @@ L'agente Console è il software principale per la funzionalità NetApp Console .
 [[create-or-switch-console-agents]]
 === Crea o cambia agenti della console
 
-Se hai già un agente Console distribuito nella tua AWS VPC o in sede, sei a posto.
+Se hai già un agente Console distribuito nella tua VPC AWS o in locale, puoi continuare.
 
 In caso contrario, sarà necessario creare un agente Console in una di queste posizioni per eseguire il backup dei dati ONTAP nello storage AWS S3.  Non è possibile utilizzare un agente Console distribuito in un altro provider cloud.
 
@@ -76,9 +76,9 @@ NetApp Backup and Recovery è supportato nelle regioni GovCloud quando l'agente 
 [[prepare-console-agent-networking-requirements]]
 === Preparare i requisiti di rete dell'agente della console
 
-Assicurarsi che siano soddisfatti i seguenti requisiti di rete:
+Conferma che i seguenti requisiti di rete siano soddisfatti:
 
-* Assicurarsi che la rete in cui è installato l'agente Console consenta le seguenti connessioni:
+* Conferma che la rete in cui è installato il Console agent consenta le seguenti connessioni:
 +
 ** Una connessione HTTPS sulla porta 443 a NetApp Backup and Recovery e al tuo archivio di oggetti S3(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^] )
 ** Una connessione HTTPS sulla porta 443 al LIF di gestione del cluster ONTAP
@@ -184,8 +184,8 @@ Tutti i LIF intercluster all'interno dell'IPspace devono avere accesso all'archi
 
 * I server DNS devono essere stati configurati per la VM di archiviazione in cui si trovano i volumi.  Scopri come https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurare i servizi DNS per l'SVM"^] .
 * Se necessario, aggiornare le regole del firewall per consentire le connessioni NetApp Backup and Recovery da ONTAP all'archiviazione degli oggetti tramite la porta 443 e il traffico di risoluzione dei nomi dalla VM di archiviazione al server DNS tramite la porta 53 (TCP/UDP).
-* Se si utilizza un endpoint di interfaccia VPC privata in AWS per la connessione S3, affinché venga utilizzato HTTPS/443 sarà necessario caricare il certificato dell'endpoint S3 nel cluster ONTAP . <<Configura il tuo sistema per una connessione privata utilizzando un'interfaccia endpoint VPC>>.
-* Assicurati che il tuo cluster ONTAP disponga delle autorizzazioni per accedere al bucket S3.
+* Se utilizzi un Private VPC Interface Endpoint in AWS per la connessione S3, per usare HTTPS/443, carica il certificato dell'endpoint S3 nel cluster ONTAP. <<Configura il tuo sistema per una connessione privata utilizzando un'interfaccia endpoint VPC>>.
+* Verifica che il tuo cluster ONTAP disponga delle autorizzazioni per accedere al bucket S3.
 
 
 
@@ -202,7 +202,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 * Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
-Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+Poiché puoi replicare in Cloud Volumes ONTAP o in sistemi on-premises, verifica i requisiti di peering per i sistemi ONTAP on-premises. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^].
 
 
 
@@ -238,7 +238,7 @@ Sarà necessario configurare due set di autorizzazioni:
 
 
 .Passi
-. Assicurarsi che l'agente della console disponga delle autorizzazioni richieste.  Per i dettagli, vedere https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Autorizzazioni dei criteri NetApp Console"^] .
+. Verifica che l'agente Console disponga delle autorizzazioni necessarie. Per i dettagli, vedi https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Autorizzazioni dei criteri NetApp Console"^].
 +
 
 NOTE: Quando si creano backup nelle regioni AWS Cina, è necessario modificare il nome della risorsa AWS "arn" in tutte le sezioni _Resource_ nelle policy IAM da "aws" a "aws-cn"; ad esempio `arn:aws-cn:s3:::netapp-backup-*` .
@@ -349,7 +349,7 @@ Se si creano bucket personalizzati, è consigliabile utilizzare il nome "netapp-
 [[set-up-customer-managed-aws-keys-for-data-encryption]]
 === Imposta le chiavi AWS gestite dal cliente per la crittografia dei dati
 
-Se desideri utilizzare le chiavi di crittografia Amazon S3 predefinite per crittografare i dati trasmessi tra il cluster locale e il bucket S3, sei a posto perché l'installazione predefinita utilizza quel tipo di crittografia.
+Se vuoi utilizzare le chiavi di crittografia predefinite di Amazon S3 per crittografare i dati trasferiti tra il tuo cluster on-premises e il bucket S3, non devi fare altro, perché l'installazione predefinita utilizza questo tipo di crittografia.
 
 Se invece si desidera utilizzare le chiavi gestite dal cliente per la crittografia dei dati anziché le chiavi predefinite, sarà necessario che le chiavi di crittografia gestite siano già configurate prima di avviare la procedura guidata NetApp Backup and Recovery .
 
@@ -365,13 +365,13 @@ Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/t
 
 Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dall'agente Console e non è necessario fare altro.
 
-Se desideri una connessione Internet più sicura dal tuo data center locale alla VPC, puoi selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup.  È obbligatorio se si prevede di utilizzare una VPN o AWS Direct Connect per connettere il sistema locale tramite un'interfaccia VPC Endpoint che utilizza un indirizzo IP privato.
+Se desideri una connessione più sicura via Internet dal tuo data center on-premises alla VPC, nella procedura guidata di attivazione del backup puoi selezionare una connessione AWS PrivateLink. È necessaria se intendi utilizzare una VPN o AWS Direct Connect per connettere il tuo sistema on-premises tramite un'interfaccia VPC Endpoint che utilizza un indirizzo IP privato.
 
 .Passi
 . Crea una configurazione dell'endpoint dell'interfaccia utilizzando la console Amazon VPC o la riga di comando. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Fare riferimento ai dettagli sull'utilizzo di AWS PrivateLink per Amazon S3"^] .
 . Modificare la configurazione del gruppo di sicurezza associato all'agente Console.  Devi modificare la policy in "Personalizzata" (da "Accesso completo") e devi<<Imposta le autorizzazioni S3,aggiungere le autorizzazioni S3 dalla policy di backup>> come mostrato in precedenza.
 +
-Se si utilizza la porta 80 (HTTP) per la comunicazione con l'endpoint privato, il problema è risolto.  Ora puoi abilitare NetApp Backup and Recovery sul cluster.
+Se utilizzi la porta 80 (HTTP) per la comunicazione con l'endpoint privato, non devi fare altro. Ora puoi abilitare NetApp Backup and Recovery sul cluster.
 
 +
 Se si utilizza la porta 443 (HTTPS) per la comunicazione con l'endpoint privato, è necessario copiare il certificato dall'endpoint VPC S3 e aggiungerlo al cluster ONTAP , come mostrato nei 4 passaggi successivi.
@@ -442,7 +442,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 . Proseguire con le seguenti opzioni:
 +
-** Se hai già un agente Console, sei a posto.  Basta selezionare *Avanti*.
+** Se disponi già di un agente Console, continua. Seleziona *Avanti*.
 ** Se non si dispone già di un agente Console, viene visualizzata l'opzione *Aggiungi un agente Console*.  Fare riferimento a<<Prepara il tuo agente Console>> .
 
 
@@ -594,7 +594,7 @@ Per creare una policy, seleziona *Crea nuova policy* e procedi come segue:
 [[review-your-selections]]
 === Rivedi le tue selezioni
 
-Questa è l'occasione per rivedere le tue selezioni e apportare modifiche, se necessario.
+Rivedi le tue selezioni e apporta le modifiche necessarie.
 
 .Passi
 . Nella pagina Revisione, rivedi le tue selezioni.

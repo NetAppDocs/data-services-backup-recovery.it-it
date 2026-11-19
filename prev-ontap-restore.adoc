@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: È possibile utilizzare la funzione Cerca e ripristina per recuperare volumi, cartelle o file dai file di backup di ONTAP. 
+summary: Confronta Browse and Restore con Search and Restore e scegli come ripristinare volumi ONTAP, cartelle o file da snapshot, volumi replicati o file di backup. 
 ---
 = Opzioni di ripristino dei dati ONTAP in NetApp Backup and Recovery
 :hardbreaks:
@@ -26,7 +26,7 @@ NOTE: Quando si ripristina un volume abilitato SnapLock, il volume ripristinato 
 
 Per ripristinare i dati su un sistema di produzione è necessaria una licenza NetApp Backup and Recovery valida.
 
-Riassumendo, ecco i flussi validi che è possibile utilizzare per ripristinare i dati del volume in un sistema ONTAP :
+Questi flussi sono validi per il ripristino dei dati di volume su un sistema ONTAP:
 
 * File di backup -> volume ripristinato
 * Volume replicato -> volume ripristinato
@@ -58,7 +58,7 @@ La dashboard di ripristino offre due modi diversi per ripristinare i dati dai fi
 
 In linea generale, _Sfoglia e ripristina_ è solitamente più indicato quando devi ripristinare un volume, una cartella o un file specifico dell'ultima settimana o dell'ultimo mese e conosci il nome e la posizione del file e la data in cui era integro l'ultima volta. _Cerca e ripristina_ è solitamente più indicato quando devi ripristinare un volume, una cartella o un file, ma non ricordi il nome esatto, il volume in cui si trova o la data in cui era integro l'ultima volta.
 
-Questa tabella fornisce un confronto delle caratteristiche dei due metodi.
+La tabella confronta le caratteristiche dei due metodi.
 
 [cols="50,50"]
 |===
@@ -73,7 +73,7 @@ Questa tabella fornisce un confronto delle caratteristiche dei due metodi.
 
 | È supportato il ripristino rapido. | Il ripristino rapido non è supportato. 
 |===
-Questa tabella fornisce un elenco di operazioni di ripristino valide in base alla posizione in cui risiedono i file di backup.
+La tabella elenca le operazioni di ripristino valide per ciascuna posizione in cui risiedono i file di backup.
 
 [cols="14h,14,14,14,14,14,14"]
 |===
@@ -91,7 +91,7 @@ Questa tabella fornisce un elenco di operazioni di ripristino valide in base all
 
 | File di backup | SÌ | SÌ | SÌ | SÌ | SÌ | SÌ 
 |===
-Prima di utilizzare uno dei due metodi di ripristino, configurare l'ambiente in modo che soddisfi i requisiti delle risorse.  Per i dettagli, vedere le sezioni seguenti.
+Prima di utilizzare uno dei due metodi di ripristino, configura l'ambiente in modo che soddisfi i requisiti di risorse.
 
 Consultare i requisiti e i passaggi di ripristino per il tipo di operazione di ripristino che si desidera utilizzare:
 

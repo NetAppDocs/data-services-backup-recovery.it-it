@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'In modalità privata (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell"agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.' 
+summary: 'Distribuisci un nuovo agente Console e ripristina i dati di configurazione di NetApp Backup and Recovery da un bucket StorageGRID o ONTAP S3 dopo un errore dell"agente Console in modalità privata.' 
 ---
 = Ripristinare i dati di configurazione di NetApp Backup and Recovery in un sito oscuro
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: 'In modalità privata (senza accesso a Internet), NetApp Backup and Rec
 [role="lead"]
 In  (senza accesso a Internet), NetApp Backup and Recovery memorizza i dati di configurazione nello stesso bucket StorageGRID o ONTAP S3 utilizzato per i backup. In caso di guasto del sistema host dell'agente Console, è possibile distribuire un nuovo agente Console e ripristinare questi dati.
 
-Puoi anche seguire questi passaggi per sostituire l'agente della Console e ripristinare i dati di configurazione che erano memorizzati su di esso quando usi Backup e Recovery in modalità standard on-premises, senza account cloud (ad esempio, quando usi NetApp StorageGRID come destinazione di backup).
+Puoi anche seguire questi passaggi per sostituire l'agente di Console e ripristinare i dati di configurazione memorizzati su di esso quando usi Backup and Recovery in _standard mode_ on-premises senza account cloud coinvolti (ad esempio, quando usi NetApp StorageGRID come destinazione di backup).
 
 
 NOTE: Questa procedura si applica solo ai dati di volume ONTAP .
@@ -26,7 +26,7 @@ Quando si utilizza NetApp Backup and Recovery in un ambiente SaaS con l'agente C
 Esistono due tipi di dati sottoposti a backup:
 
 * Database NetApp Backup and Recovery : contiene un elenco di tutti i volumi, file di backup, policy di backup e informazioni di configurazione.
-* File di catalogo indicizzati: contengono indici dettagliati utilizzati per la funzionalità di ricerca e ripristino, che rendono le ricerche molto rapide ed efficienti quando si cercano dati di volume che si desidera ripristinare.
+* I file di catalogo indicizzati contengono indici dettagliati che la funzionalità Search & Restore utilizza per trovare rapidamente i dati del volume che vuoi ripristinare.
 
 
 Questi dati vengono sottoposti a backup una volta al giorno a mezzanotte e vengono conservate al massimo 7 copie di ciascun file. Se l'agente Console gestisce più sistemi ONTAP locali, i file NetApp Backup and Recovery vengono archiviati nel bucket del sistema attivato per primo.
@@ -46,12 +46,12 @@ Per ripristinare il funzionamento del sistema NetApp Backup and Recovery, è nec
 * Installa un nuovo agente Console
 * Ripristinare il database NetApp Backup and Recovery
 * Ripristina i file del catalogo indicizzato
-* Riscopri tutti i tuoi sistemi ONTAP on-premise e i sistemi StorageGRID nell'interfaccia utente NetApp Console
+* Riscopri tutti i tuoi sistemi ONTAP on-premises e i sistemi StorageGRID in NetApp Console UI
 
 
 Dopo aver verificato il funzionamento del sistema, crea nuovi file di backup.
 
-.Cosa ti servirà
+.Prima di iniziare
 Sarà necessario accedere ai backup più recenti del database e dell'indice dal bucket StorageGRID o ONTAP S3 in cui sono archiviati i file di backup:
 
 * File del database MySQL NetApp Backup and Recovery
@@ -124,7 +124,7 @@ mysql -u root -p cloud_backup
 mysql> show tables;
 mysql> select * from volume;
 ----
-. Assicurarsi che i volumi visualizzati siano gli stessi presenti nell'ambiente originale.
+. Verifica che i volumi visualizzati siano gli stessi di quelli presenti nel tuo ambiente originale.
 
 
 

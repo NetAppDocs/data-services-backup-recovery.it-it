@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-backup-targets.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
-summary: 'Completa alcuni passaggi per scoprire le destinazioni di backup offsite in NetApp Backup and Recovery.  Questi obiettivi potrebbero includere Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage e StorageGRID.' 
+summary: Scopri le destinazioni di backup remote, aggiungi bucket e modifica le credenziali in NetApp Backup and Recovery. 
 ---
 = Scopri le destinazioni di backup fuori sede in NetApp Backup and Recovery
 :hardbreaks:
@@ -21,7 +21,7 @@ Scopri o aggiungi manualmente destinazioni di backup remote come AWS S3, Azure B
 [[discover-a-backup-target]]
 == Scopri un target di backup
 
-Configura le destinazioni di backup (Amazon Web Services (AWS) S3, ONTAP S3, storage a oggetti compatibile con S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di utilizzare NetApp Backup and Recovery.
+Configura le destinazioni di backup (Amazon Web Services (AWS) S3, ONTAP S3, storage a oggetti compatibile con S3, Microsoft Azure Blob Storage, Google Cloud Storage o StorageGRID) prima di usare NetApp Backup and Recovery.
 
 È possibile scoprire questi obiettivi automaticamente oppure aggiungerli manualmente.
 
@@ -108,7 +108,7 @@ Aggiungi manualmente un bucket a una destinazione di backup remota invece di las
 +
 ** Per AWS:
 +
-*** *Nome bucket*: immettere il nome del bucket S3. Il prefisso "netapp-backup" è obbligatorio e viene aggiunto automaticamente al nome fornito.
+*** *Nome del bucket*: Inserisci il nome del bucket S3. Il prefisso obbligatorio "netapp-backup" viene aggiunto automaticamente al nome che inserisci.
 *** *Account AWS*: inserisci il nome dell'account AWS.
 *** *Regione del bucket*: immettere la regione AWS per il bucket.
 *** *Abilita blocco oggetto S3*: seleziona questa opzione per abilitare il blocco oggetto S3 per il bucket.  S3 Object Lock impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati.  Puoi abilitare questa opzione solo quando crei un bucket e non potrai disattivarla in seguito.

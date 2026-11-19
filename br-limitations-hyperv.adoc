@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, SAP HANA database, virtual machine, vm 
-summary: Esaminare queste limitazioni di NetApp Backup and Recovery prima di utilizzare Backup and Recovery nel proprio ambiente. 
+summary: Prima di usare NetApp Backup and Recovery per proteggere le macchine virtuali, esamina le limitazioni e le azioni non supportate per i carichi di lavoro Hyper-V. 
 ---
 = Limitazioni note con NetApp Backup and Recovery per carichi di lavoro Hyper-V
 :hardbreaks:
@@ -21,10 +21,10 @@ Esamina le limitazioni attuali e le azioni non supportate per i carichi di lavor
 [[unsupported-actions]]
 == Azioni non supportate
 
-Le seguenti azioni non sono supportate per i carichi di lavoro Hyper-V in NetApp Backup e ripristino:
+NetApp Backup and Recovery non supporta queste azioni per i carichi di lavoro Hyper-V:
 
 * Nella versione di anteprima di Backup and Recovery per la distribuzione locale di NetApp Console, i backup su storage a oggetti sono supportati solo per le destinazioni ONTAP S3 e StorageGRID. L'archiviazione dei backup non è supportata in questa versione di anteprima.
 * NetApp Backup and Recovery al momento non supporta la protezione delle LUN Hyper-V ospitate sui volumi FlexGroup.
 * Non è possibile creare gruppi di risorse con macchine virtuali provenienti da più host Hyper-V.
-* Non è possibile ripristinare VM o dati di VM tra sistemi con CPU di fornitori diversi (da Intel ad AMD o viceversa), indipendentemente dall'impostazione "Compatibilità processore" in Hyper-V. Questa impostazione supporta solo la compatibilità tra generazioni diverse dello stesso fornitore (ad esempio, da Intel a Intel o da AMD ad AMD).
+* Non puoi ripristinare VM o dati delle VM tra sistemi con CPU di produttori diversi (da Intel ad AMD o viceversa), indipendentemente dall'impostazione "Processor compatibility" in Hyper-V. Questa impostazione supporta solo la compatibilità tra generazioni diverse dello stesso produttore (ad esempio, da Intel a Intel o da AMD ad AMD).
 

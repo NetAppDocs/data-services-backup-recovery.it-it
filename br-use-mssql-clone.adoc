@@ -16,7 +16,7 @@ summary: Clona i dati delle applicazioni Microsoft SQL Server per scopi di svilu
 [role="lead"]
 Crea, aggiorna, suddividi ed elimina cloni di Microsoft SQL Server per sviluppo, test o protezione.
 
-Scegli tra i seguenti tipi di cloni:
+Scegli uno di questi tipi di clone:
 
 * *Snapshot e clone istantanei*: puoi creare un clone dei tuoi carichi di lavoro di Microsoft SQL Server da uno snapshot istantaneo, ovvero una copia puntuale dei dati di origine creata da un backup. Il clone viene archiviato in un archivio oggetti nel tuo account cloud pubblico o privato. È possibile utilizzare il clone per ripristinare i carichi di lavoro in caso di perdita o danneggiamento dei dati.
 * *Clona da uno snapshot esistente*: puoi scegliere uno snapshot esistente da un elenco di snapshot disponibili per il carico di lavoro.  Questa opzione è utile se si desidera creare un clone da un punto specifico nel tempo.  Clonazione su storage primario o secondario.
@@ -83,7 +83,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 . Completa la sezione *Opzioni avanzate*.
 . Se scegli *Instant snapshot and clone*, completa le seguenti opzioni:
 +
-** *Pianificazione e scadenza dell'aggiornamento del clone*: Inserisci la data in cui iniziare ad aggiornare il clone. La pianificazione dell'aggiornamento definisce quando inizia l'aggiornamento del clone.
+** *Pianificazione e scadenza dell'aggiornamento del clone*: Inserisci la data di inizio dell'aggiornamento del clone. La pianificazione definisce quando inizia l'aggiornamento del clone.
 +
 *** *Elimina il clone alla scadenza della pianificazione*: Seleziona questa opzione per eliminare il clone alla scadenza della pianificazione.
 *** *Aggiorna il clone ogni*: Seleziona la frequenza di aggiornamento. Puoi scegliere di aggiornare il clone ogni ora, ogni giorno, ogni settimana, ogni mese o ogni trimestre. Questa opzione mantiene il clone sincronizzato con il carico di lavoro di origine.
@@ -114,7 +114,7 @@ Facoltativamente, selezionare *Suffisso* dall'elenco a discesa del nome di desti
 . Completa la sezione *Impostazioni avanzate*:
 +
 ** *Ambito di ripristino*: scegli se ripristinare tutti i backup del registro o solo i backup del registro fino a un punto specifico nel tempo.  Questa opzione è utile se si desidera ripristinare il clone fino a un punto specifico nel tempo.
-** *Pianificazione e scadenza dell'aggiornamento del clone*: Inserisci la data in cui iniziare ad aggiornare il clone. La pianificazione dell'aggiornamento definisce quando inizia l'aggiornamento del clone.
+** *Pianificazione e scadenza dell'aggiornamento del clone*: Inserisci la data di inizio dell'aggiornamento del clone. La pianificazione definisce quando inizia l'aggiornamento del clone.
 +
 *** *Elimina il clone alla scadenza della pianificazione*: Seleziona questa opzione per eliminare il clone alla scadenza della pianificazione.
 *** *Aggiorna il clone ogni*: Seleziona la frequenza di aggiornamento. Puoi scegliere di aggiornare il clone ogni ora, ogni giorno, ogni settimana, ogni mese o ogni trimestre. Questa opzione mantiene il clone sincronizzato con il carico di lavoro di origine.
@@ -178,7 +178,7 @@ Rimuovi i cloni dei carichi di lavoro di Microsoft SQL Server per liberare spazi
 . Seleziona l'icona Azioniimage:../media/icon-action.png["Opzione Azioni"] > *Elimina clone*.
 . Nella finestra di dialogo di conferma dell'eliminazione del clone, controlla i dettagli dell'eliminazione.
 +
-.. Per eliminare le risorse clonate da SnapCenter anche se i cloni o il loro archivio non sono accessibili, selezionare *Forza eliminazione*.
+.. Per eliminare le risorse clonate da SnapCenter anche se i cloni o il relativo storage non sono accessibili, seleziona *Force delete*.
 .. Seleziona *Elimina*.
 
 

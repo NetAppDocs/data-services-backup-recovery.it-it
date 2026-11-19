@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: È possibile proteggere le macchine virtuali Hyper-V dai sistemi ONTAP locali allo storage primario e secondario, garantendo la protezione dei dati. 
+summary: Esegui il backup delle macchine virtuali Hyper-V dai sistemi ONTAP on-premise nello storage primario e secondario e ripristinale per proteggere i tuoi dati. 
 ---
 = Proteggi i carichi di lavoro Hyper-V con NetApp Backup and Recovery
 :hardbreaks:
@@ -18,16 +18,16 @@ Utilizza NetApp Backup and Recovery per eseguire il backup e il ripristino di VM
 
 Puoi eseguire il backup dei carichi di lavoro Hyper-V su Amazon S3 o StorageGRID e ripristinarli su un host Hyper-V locale.
 
-Usa NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, con 3 copie dei tuoi dati di origine su 2 diversi sistemi di storage e 1 copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
+Utilizza NetApp Backup and Recovery per implementare una strategia di protezione 3-2-1, con tre copie dei tuoi dati di origine su due diversi sistemi di storage e una copia nel cloud. I vantaggi dell'approccio 3-2-1 includono:
 
 * Più copie di dati proteggono dalle minacce informatiche interne ed esterne.
-* Diversi tipi di supporto garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
+* Più tipi di supporti mantengono la capacità di failover se un tipo di supporto si guasta fisicamente o logicamente.
 * La copia locale ti aiuta a ripristinare rapidamente i dati e puoi usare le copie esterne se la copia locale viene compromessa.
 
 
 Quando aggiungi host Hyper-V e scopri le risorse, NetApp Backup and Recovery installa il plug-in NetApp Hyper-V e il plug-in NetApp SnapCenter Windows FileSystem su ogni host Hyper-V per aiutarti a gestire e proteggere le macchine virtuali.
 
-È possibile utilizzare NetApp Backup and Recovery per eseguire le seguenti attività relative ai carichi di lavoro Hyper-V:
+Usa NetApp Backup and Recovery per completare queste attività per i carichi di lavoro Hyper-V:
 
 * link:br-start-discover-hyperv.html["Scopri i carichi di lavoro Hyper-V"]
 * link:br-use-hyperv-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro Hyper-V"]

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-kubernetes-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: È possibile proteggere le applicazioni Kubernetes e i dati delle applicazioni dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati. 
+summary: Proteggi le applicazioni Kubernetes e i dati delle applicazioni dai sistemi ONTAP on-premises verso Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID. 
 ---
 = Flusso di lavoro di protezione di Kubernetes con NetApp Backup and Recovery
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: È possibile proteggere le applicazioni Kubernetes e i dati delle appli
 [role="lead"]
 Utilizza NetApp Backup e ripristino per individuare, gestire e proteggere cluster e applicazioni Kubernetes da un'unica interfaccia.
 
-Il diagramma seguente mostra i componenti e l'architettura di base per il backup e il ripristino di Kubernetes e come le copie dei tuoi dati possono essere archiviate in posizioni diverse:
+Il diagramma mostra i componenti e l'architettura di base per il backup e il ripristino di Kubernetes e come le copie dei tuoi dati possono essere archiviate in posizioni diverse:
 
 image:../media/backup-recovery-architecture-diagram.png["Diagramma dell'architettura di backup e ripristino per i carichi di lavoro Kubernetes"]
 

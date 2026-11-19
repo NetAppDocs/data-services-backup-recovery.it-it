@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery consente di ripristinare le applicazioni protette tramite una policy di protezione. 
+summary: Ripristina le applicazioni Kubernetes protette da una policy in NetApp Backup and Recovery, utilizzando tutte le risorse o un sottoinsieme selezionato, nei namespace originali o nuovi. 
 ---
 = Ripristina le applicazioni Kubernetes utilizzando l'interfaccia utente web di NetApp Backup and Recovery
 :hardbreaks:
@@ -45,7 +45,7 @@ Viene visualizzato un elenco di risorse e i relativi dettagli. È possibile visu
 È possibile ripristinare applicazioni basate su namespace o su macchine virtuali da un punto di ripristino, ripristinando tutte le risorse oppure selezionando un sottoinsieme di risorse da ripristinare.
 
 .Prima di iniziare
-Se si sta ripristinando un'applicazione di cui è stato eseguito il backup utilizzando Trident Protect, assicurarsi che Trident Protect sia installato sia sul cluster di origine che sul cluster di destinazione.
+Se stai ripristinando un'applicazione di cui è stato eseguito il backup utilizzando Trident Protect, verifica che Trident Protect sia installato sia sul cluster di origine sia sul cluster di destinazione.
 
 *Ruolo richiesto NetApp Console*
 
@@ -159,7 +159,7 @@ Viene visualizzata la pagina _Impostazioni destinazione_.
 
 NOTE: Se è necessario creare un AppVault su un cluster Kubernetes per facilitare il ripristino di un backup o di uno snapshot creato utilizzando Trident Protect, fare riferimento a  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Utilizzare gli oggetti Trident Protect AppVault per gestire i bucket"].
 
-. Facoltativamente, espandi la sezione *Script di ripristino* e abilita l'opzione *Postscript* per scegliere un modello di hook di esecuzione che verrà eseguito al termine dell'operazione di ripristino. Se necessario, inserisci gli argomenti di cui lo script ha bisogno e aggiungi selettori di etichetta per filtrare le risorse in base alle etichette delle risorse.
+. Facoltativamente, espandi la sezione *Script di ripristino* e abilita l'opzione *Postscript* per scegliere un modello di hook di esecuzione da eseguire al termine dell'operazione di ripristino. Se necessario, inserisci gli argomenti richiesti dallo script e aggiungi selettori di etichette per filtrare le risorse in base alle etichette delle risorse.
 . Facoltativamente, è possibile espandere la sezione *Trasformazioni delle risorse* per aggiungere, rimuovere o modificare gli attributi delle risorse durante il processo di ripristino. Quindi, procedere come segue:
 +
 

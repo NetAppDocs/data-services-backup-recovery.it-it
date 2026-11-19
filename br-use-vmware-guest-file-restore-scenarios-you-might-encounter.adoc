@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html 
 keywords:  
-summary: 'Quando si tenta di ripristinare un file guest, potrebbero verificarsi situazioni in cui la sessione di ripristino del file guest è vuota, l"operazione di collegamento del disco di ripristino del file guest non riesce o i backup non vengono scollegati dopo l"interruzione della sessione di ripristino del file guest.' 
+summary: 'Risolvi i problemi di ripristino dei file guest VMware in NetApp Backup and Recovery, incluse una sessione di ripristino vuota, un"operazione di collegamento del disco non riuscita e backup che rimangono collegati.' 
 ---
 = Risolvi i problemi relativi al ripristino dei file guest di VMware in NetApp Backup and Recovery
 :hardbreaks:
@@ -23,7 +23,7 @@ Se riscontri problemi durante il ripristino di un file guest, utilizza questi sc
 
 Questo problema si verifica se si crea una sessione di ripristino file guest e il sistema operativo guest si riavvia durante la sessione. I VMDK nel sistema operativo guest potrebbero rimanere offline, pertanto l'elenco delle sessioni di ripristino dei file guest è vuoto.
 
-Per correggere il problema, rimettere manualmente online i VMDK nel sistema operativo guest. Quando i VMDK sono online, la sessione di ripristino dei file guest visualizzerà il contenuto corretto.
+Per risolvere il problema, rimetti manualmente i file VMDK online nel sistema operativo guest. Quando i file VMDK sono online, la sessione di ripristino dei file del sistema operativo guest visualizza il contenuto corretto.
 
 
 

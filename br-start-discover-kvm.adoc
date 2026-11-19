@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-kvm.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, KVM, workloads, protect 
-summary: NetApp Backup and Recovery deve prima rilevare i carichi di lavoro per consentirti di proteggerli. 
+summary: Aggiungi una piattaforma di gestione e un host KVM per individuare i carichi di lavoro KVM in NetApp Backup and Recovery, quindi verifica lo stato di protezione nella Dashboard. 
 ---
 = Scopri i carichi di lavoro KVM in NetApp Backup and Recovery
 :hardbreaks:
@@ -90,5 +90,5 @@ Il carico di lavoro KVM viene visualizzato nell'elenco dei carichi di lavoro nel
 . Dal menu NetApp Console , selezionare *Protezione* > *Backup e ripristino*.
 . Seleziona il riquadro del carico di lavoro KVM.
 . Dal menu Backup e ripristino, seleziona *Dashboard*.
-. Esaminare lo stato di salute della protezione dei dati.  Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
+. Verifica lo stato di protezione dei dati. Il numero di carichi di lavoro a rischio o protetti aumenta in base ai carichi di lavoro appena scoperti, protetti e sottoposti a backup.
 

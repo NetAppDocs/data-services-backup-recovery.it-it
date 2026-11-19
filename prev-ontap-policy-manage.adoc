@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: Visualizza, crea, modifica ed elimina le policy di snapshot, replica e backup su storage a oggetti che controllano la frequenza di backup e il periodo di conservazione per i volumi ONTAP. 
 ---
 = Gestisci le policy di backup per i volumi ONTAP con NetApp Backup and Recovery
 :hardbreaks:
@@ -19,7 +19,7 @@ In NetApp Backup and Recovery, puoi usare le policy di backup predefinite oppure
 
 NOTE: Per passare da e verso i carichi di lavoro NetApp Backup and Recovery , fare riferimento alink:br-start-switch-ui.html["Passa a diversi carichi di lavoro NetApp Backup and Recovery"] .
 
-Quando usi la procedura guidata di attivazione per abilitare il servizio NetApp Backup and Recovery per i tuoi volumi, puoi scegliere tra le policy predefinite e qualsiasi altra policy già presente nel sistema (Cloud Volumes ONTAP o sistema ONTAP on-premises). Se vuoi usare una policy diversa da quelle esistenti, puoi crearla prima o mentre usi la procedura guidata di attivazione.
+Quando usi la procedura guidata di attivazione per abilitare il servizio Backup and Recovery per i tuoi volumi, puoi selezionare le policy predefinite e qualsiasi altra policy già esistente nel sistema (Cloud Volumes ONTAP o sistema ONTAP on-premises). Se vuoi una policy diversa, creala prima o durante l'utilizzo della procedura guidata di attivazione.
 
 Per informazioni sulle policy di backup predefinite fornite, fare riferimento alink:prev-ontap-protect-journey.html["Pianifica il tuo percorso di protezione"] .
 
@@ -55,7 +55,7 @@ TIP: Quando si utilizza System Manager, selezionare *Asincrono* come tipo di pol
 +
 Viene visualizzata la pagina di gestione delle policy.  Per impostazione predefinita, vengono visualizzati i criteri snapshot.
 
-. Per visualizzare altre policy presenti nel sistema, selezionare *Replication Policies* o *Backup Policies*.  Se le policy esistenti possono essere utilizzate per i tuoi piani di backup, sei a posto.  Se hai bisogno di una polizza con caratteristiche diverse, puoi creare nuove polizze da questa pagina.
+. Per visualizzare le altre policy presenti nel sistema, seleziona *Policy di replica* o *Policy di backup*. Se le policy esistenti soddisfano le tue esigenze di backup, puoi usarle. Se hai bisogno di una policy con caratteristiche diverse, puoi crearne di nuove da questa pagina.
 
 
 
@@ -87,7 +87,7 @@ Viene visualizzata la pagina di gestione delle policy.
 
 . Nella pagina Gestione policy, seleziona *Crea policy* > *Crea policy snapshot*.
 . Specificare il nome della policy.
-. Selezionare la pianificazione o le pianificazioni degli snapshot.  Puoi avere un massimo di 5 etichette.  Oppure crea un programma.
+. Seleziona la pianificazione o le pianificazioni di snapshot. Puoi avere un massimo di cinque etichette. In alternativa, crea una pianificazione.
 . Se scegli di creare una pianificazione:
 +
 .. Seleziona la frequenza: oraria, giornaliera, settimanale, mensile o annuale.
@@ -129,7 +129,7 @@ La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di a
 .Passi
 . Nella pagina Gestione policy, seleziona *Crea policy* > *Crea policy di replica*.
 . Nella sezione Dettagli policy, specificare il nome della policy.
-. Specificare le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
+. Specifica le etichette SnapMirror (massimo cinque) che indicano il periodo di conservazione per ciascuna etichetta.
 . Specificare il programma di trasferimento.
 . Seleziona *Crea*.
 
@@ -150,7 +150,7 @@ Questa policy di archiviazione risiede in diverse posizioni del sistema di archi
 .Passi
 . Nella pagina Gestione criteri, seleziona *Crea criterio* > *Crea policy di backup*.
 . Nella sezione Dettagli policy, specificare il nome della policy.
-. Specificare le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
+. Specifica le etichette SnapMirror (massimo cinque) che indicano il periodo di conservazione per ciascuna etichetta.
 . Specificare le impostazioni, tra cui la pianificazione del trasferimento e quando archiviare i backup.
 . (Facoltativo) Per spostare i file di backup più vecchi in una classe di archiviazione o in un livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivia* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati.  Inserisci *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio.
 +

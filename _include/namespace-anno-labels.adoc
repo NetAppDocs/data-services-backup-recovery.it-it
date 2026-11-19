@@ -27,7 +27,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
   --reuse-values
 ----
 
-NOTE: Durante il ripristino o il failover, tutte le annotazioni e le etichette dello spazio dei nomi specificate in `restoreSkipNamespaceAnnotations` e `restoreSkipNamespaceLabels` sono escluse dall'operazione di ripristino o failover. Assicurarsi che queste impostazioni siano configurate durante l'installazione iniziale di Helm. Per ulteriori informazioni, consultare https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura impostazioni aggiuntive dell'helm chart Trident Protect"].
+NOTE: Durante il ripristino o il failover, tutte le annotazioni e le etichette dello spazio dei nomi specificate in `restoreSkipNamespaceAnnotations` e `restoreSkipNamespaceLabels` sono escluse dall'operazione di ripristino o failover. Configura queste impostazioni durante l'installazione iniziale di Helm. Per ulteriori informazioni, consulta https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configura impostazioni aggiuntive dell'helm chart Trident Protect"].
 
 Se hai utilizzato Helm con il  `--create-namespace` flag per installare l'applicazione sorgente, Trident Protect copia l'etichetta del nome nello spazio dei nomi di destinazione. Se il valore dell'etichetta corrisponde al nome dello spazio dei nomi di origine, viene sostituito con il nome dello spazio dei nomi di destinazione; in caso contrario, viene lasciato invariato.
 
@@ -74,7 +74,7 @@ La tabella seguente illustra lo stato degli spazi dei nomi di origine e di desti
 
 ==== Dopo l'operazione di ripristino
 
-La tabella seguente illustra lo stato dello spazio dei nomi di destinazione di esempio dopo l'operazione di ripristino o failover. Alcune chiavi sono state aggiunte, alcune sono state sovrascritte e l' `name`etichetta è stata aggiornata per corrispondere allo spazio dei nomi di destinazione:
+La tabella seguente illustra lo stato dello spazio dei nomi di destinazione di esempio dopo l'operazione di ripristino o failover. L'operazione ha aggiunto alcune chiavi, ne ha sovrascritte altre e ha aggiornato l' `name`etichetta in modo che corrisponda allo spazio dei nomi di destinazione:
 
 [cols="1,2a,2a"]
 |===

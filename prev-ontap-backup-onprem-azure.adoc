@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-azure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery. 
+summary: Prepara il tuo ambiente e attiva i backup dei volumi ONTAP on-premises in Azure Blob Storage con NetApp Backup and Recovery. 
 ---
-= Esegui il backup dei dati ONTAP locali nell'archiviazione BLOB di Azure con NetApp Backup and Recovery
+= Esegui il backup dei dati ONTAP on-premises in Azure Blob Storage con NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteggi i tuoi carichi di lavoro VMware con NetApp Backup and Recovery
 
 
 [role="lead"]
-In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai sistemi ONTAP locali a uno storage secondario e ad Azure Blob. Usa questa pagina per preparare l'ambiente e attivare i backup.
+In NetApp Backup and Recovery, puoi eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP on-premises a un sistema secondario e ad Azure Blob Storage. Prepara l'ambiente, quindi attiva i backup per proteggere i volumi.
 
 
 NOTE: I "sistemi ONTAP on-premises" includono i sistemi FAS, AFF e ONTAP Select .
@@ -80,7 +80,7 @@ Assicurarsi che l'agente della console disponga delle connessioni di rete richie
 +
 ** Una connessione HTTPS sulla porta 443 a NetApp Backup and Recovery e al tuo archivio di oggetti BLOB(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["vedere l'elenco degli endpoint"^] )
 ** Una connessione HTTPS sulla porta 443 al LIF di gestione del cluster ONTAP
-** Per il corretto funzionamento della funzionalità NetApp Backup and Recovery Search & Restore, la porta 1433 deve essere aperta per la comunicazione tra l'agente della console e i servizi Azure Synapse SQL.
+** Affinché NetApp Backup and Recovery Search & Restore funzioni, la porta 1433 deve essere aperta per la comunicazione tra l'agente Console e i servizi Azure Synapse SQL.
 ** Per le distribuzioni di Azure e Azure Government sono necessarie regole aggiuntive per i gruppi di sicurezza in ingresso.  Vedere https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Regole per l'agente Console in Azure"^] per i dettagli.
 
 
@@ -272,7 +272,7 @@ Se si prevede di creare volumi replicati su un sistema ONTAP secondario utilizza
 * Se il cluster è in locale, dovresti avere una connessione dalla tua rete aziendale alla tua rete virtuale nel provider cloud. In genere si tratta di una connessione VPN.
 * I cluster ONTAP devono soddisfare requisiti aggiuntivi relativi a subnet, porte, firewall e cluster.
 +
-Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esaminare i requisiti di peering per i sistemi ONTAP locali. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^] .
+Poiché puoi replicare in Cloud Volumes ONTAP o in sistemi on-premises, verifica i requisiti di peering per i sistemi ONTAP on-premises. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizza i prerequisiti per il peering dei cluster nella documentazione ONTAP"^].
 
 
 
@@ -290,9 +290,9 @@ Poiché è possibile replicare su Cloud Volumes ONTAP o su sistemi locali, esami
 
 . È possibile utilizzare le proprie chiavi personalizzate per la crittografia dei dati nella procedura guidata di attivazione anziché utilizzare le chiavi di crittografia predefinite gestite da Microsoft.  In questo caso sarà necessario disporre della sottoscrizione di Azure, del nome del Key Vault e della chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Impara a usare le tue chiavi"^] .
 +
-Nota che NetApp Backup and Recovery supporta i criteri di accesso di Azure come modello di autorizzazione. Il modello di autorizzazione in base al ruolo _Azure role-based access control_ (Azure RBAC) non è attualmente supportato.
+NetApp Backup and Recovery supporta i criteri di accesso di Azure come modello di autorizzazione. Il modello di autorizzazione Azure role-based access control (Azure RBAC) non è attualmente supportato.
 
-. Se desideri una connessione più sicura tramite Internet pubblica dal tuo data center locale alla rete virtuale, è disponibile un'opzione per configurare un endpoint privato di Azure nella procedura guidata di attivazione.  In questo caso sarà necessario conoscere la VNet e la Subnet per questa connessione. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Fare riferimento ai dettagli sull'utilizzo di un endpoint privato"^] .
+. Se vuoi avere una connessione più sicura tramite l'internet pubblico dal tuo data center on-premises alla VNet, puoi configurare un Azure Private Endpoint nella procedura guidata di attivazione. In questo caso dovrai conoscere la VNet e la Subnet per questa connessione https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Fare riferimento ai dettagli sull'utilizzo di un endpoint privato"^].
 
 
 

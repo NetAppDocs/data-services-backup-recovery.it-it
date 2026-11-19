@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-protect-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: 'NetApp Backup and Recovery consente di gestire le informazioni sull"host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze.  Puoi visualizzare, modificare ed eliminare le impostazioni di protezione per il tuo inventario.' 
+summary: 'Aggiungi applicazioni Kubernetes basate su namespace o su VM a NetApp Backup and Recovery per proteggerle usando l"interfaccia utente web o file di risorse personalizzati.' 
 ---
 = Aggiungi e proteggi le applicazioni Kubernetes in NetApp Backup and Recovery
 :hardbreaks:
@@ -39,7 +39,7 @@ Prima di poter aggiungere e proteggere un'applicazione Kubernetes, è necessario
 --
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. In alto a destra della pagina, assicurati che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
+. In alto a destra della pagina, verifica che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
 . Seleziona *Visualizza* per la voce di riga del workload per visualizzare le risorse Kubernetes.
 . Selezionare la scheda *Applicazioni*.
 . Seleziona *Crea applicazione*.
@@ -78,7 +78,7 @@ L'applicazione viene creata e compare nell'elenco delle applicazioni nella sched
 --
 .Passi
 . In NetApp Backup and Recovery, seleziona *Inventario*.
-. In alto a destra della pagina, assicurati che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
+. In alto a destra della pagina, verifica che *Kubernetes* sia selezionato nell'elenco dei carichi di lavoro.
 . Seleziona *Visualizza* per la voce di riga del workload per visualizzare le risorse Kubernetes.
 . Selezionare la scheda *Applicazioni*.
 . Seleziona *Crea applicazione*.
